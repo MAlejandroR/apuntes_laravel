@@ -1,0 +1,589 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=37705&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:37705/laravel/docs/laravel/02_instalaci%C3%B3n/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Instalación | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:37705/laravel/docs/laravel/02_instalaci%C3%B3n/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Instalación">
+  <meta property="og:description" content="La instalación Como ya hemos comentado Laravel , uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes. Para comenzar un proyecto en Laravel, existen dos enfoques principales:
+crear un proyecto con composer Instalar un programa llamado laravel con el que crearemos proyectos. Instalar composer Lo primero que necesitamos es tener composer instalado en nuestro sistema
+Composer es un sistema de gestión de dependencias para PHP que permite especificar y manejar las librerías de las cuales sus proyectos dependen, a través de un fichero llamado composer.json . Igualmente, composer permite aportar documentación sobre el proyecto y automatizar la autocarga de clases para la ejecución del mismo. Funciona descargando e instalando estas librerías y sus dependencias en el proyecto, asegurando compatibilidad y facilitando la actualización. Es esencial para proyectos modernos de PHP, ya que automatiza y gestiona tareas complejas de gestión de paquetes de forma eficiente. Composer Para instalar composer Linux- Mac: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos Windows https://getcomposer.org/doc/00-intro.md#installation-windows">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Instalación">
+  <meta itemprop="description" content="La instalación Como ya hemos comentado Laravel , uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes. Para comenzar un proyecto en Laravel, existen dos enfoques principales:
+crear un proyecto con composer Instalar un programa llamado laravel con el que crearemos proyectos. Instalar composer Lo primero que necesitamos es tener composer instalado en nuestro sistema
+Composer es un sistema de gestión de dependencias para PHP que permite especificar y manejar las librerías de las cuales sus proyectos dependen, a través de un fichero llamado composer.json . Igualmente, composer permite aportar documentación sobre el proyecto y automatizar la autocarga de clases para la ejecución del mismo. Funciona descargando e instalando estas librerías y sus dependencias en el proyecto, asegurando compatibilidad y facilitando la actualización. Es esencial para proyectos modernos de PHP, ya que automatiza y gestiona tareas complejas de gestión de paquetes de forma eficiente. Composer Para instalar composer Linux- Mac: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos Windows https://getcomposer.org/doc/00-intro.md#installation-windows">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="384">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Instalación">
+  <meta name="twitter:description" content="La instalación Como ya hemos comentado Laravel , uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes. Para comenzar un proyecto en Laravel, existen dos enfoques principales:
+crear un proyecto con composer Instalar un programa llamado laravel con el que crearemos proyectos. Instalar composer Lo primero que necesitamos es tener composer instalado en nuestro sistema
+Composer es un sistema de gestión de dependencias para PHP que permite especificar y manejar las librerías de las cuales sus proyectos dependen, a través de un fichero llamado composer.json . Igualmente, composer permite aportar documentación sobre el proyecto y automatizar la autocarga de clases para la ejecución del mismo. Funciona descargando e instalando estas librerías y sus dependencias en el proyecto, asegurando compatibilidad y facilitando la actualización. Es esencial para proyectos modernos de PHP, ya que automatiza y gestiona tareas complejas de gestión de paquetes de forma eficiente. Composer Para instalar composer Linux- Mac: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos Windows https://getcomposer.org/doc/00-intro.md#installation-windows">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/laravel/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs-li">
+  <a href="/laravel/docs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laraveldocs"><span class="">Docs</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocslaravel-li">
+  <input type="checkbox" id="m-laraveldocslaravel-check" checked/>
+  <label for="m-laraveldocslaravel-check"><a href="/laravel/docs/laravel/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel01_instalacion-li">
+  <input type="checkbox" id="m-laraveldocslaravel01_instalacion-check"/>
+  <label for="m-laraveldocslaravel01_instalacion-check"><a href="/laravel/docs/laravel/01_instalacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel01_instalacion"><span class="">Instalacion y rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laraveldocslaravel01_introduccic3b3n-check"/>
+  <label for="m-laraveldocslaravel01_introduccic3b3n-check"><a href="/laravel/docs/laravel/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel02_controlador-li">
+  <input type="checkbox" id="m-laraveldocslaravel02_controlador-check"/>
+  <label for="m-laraveldocslaravel02_controlador-check"><a href="/laravel/docs/laravel/02_controlador/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel02_controlador"><span class="">Controlador</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocslaravel02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laraveldocslaravel02_instalacic3b3n-check" checked/>
+  <label for="m-laraveldocslaravel02_instalacic3b3n-check"><a href="/laravel/docs/laravel/02_instalaci%C3%B3n/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="td-sidebar-nav-active-item">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocslaravel10_test-li">
+  <input type="checkbox" id="m-laraveldocslaravel10_test-check"/>
+  <label for="m-laraveldocslaravel10_test-check"><a href="/laravel/docs/laravel/10_test/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel10_test"><span class="">10_Test unitarios</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel10_testchat-li">
+  <input type="checkbox" id="m-laraveldocslaravel10_testchat-check"/>
+  <label for="m-laraveldocslaravel10_testchat-check"><a href="/laravel/docs/laravel/10_test/chat/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel10_testchat"><span class="">10_Test unitarios del chat</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel03_rutas-li">
+  <input type="checkbox" id="m-laraveldocslaravel03_rutas-check"/>
+  <label for="m-laraveldocslaravel03_rutas-check"><a href="/laravel/docs/laravel/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocslaravel04_plantillas-li">
+  <input type="checkbox" id="m-laraveldocslaravel04_plantillas-check"/>
+  <label for="m-laraveldocslaravel04_plantillas-check"><a href="/laravel/docs/laravel/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laraveldocslaravel04_plantillas01_blade-check"/>
+  <label for="m-laraveldocslaravel04_plantillas01_blade-check"><a href="/laravel/docs/laravel/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laraveldocslaravel04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laraveldocslaravel04_plantillas02_creandodisec3b1o-check"><a href="/laravel/docs/laravel/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laraveldocslaravel04_plantillas03_componentes-check"/>
+  <label for="m-laraveldocslaravel04_plantillas03_componentes-check"><a href="/laravel/docs/laravel/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel05_multilenguaje-li">
+  <input type="checkbox" id="m-laraveldocslaravel05_multilenguaje-check"/>
+  <label for="m-laraveldocslaravel05_multilenguaje-check"><a href="/laravel/docs/laravel/05_multilenguaje/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel05_multilenguaje"><span class="">Multilenguaje</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocslaravel06_autenticacion-li">
+  <input type="checkbox" id="m-laraveldocslaravel06_autenticacion-check"/>
+  <label for="m-laraveldocslaravel06_autenticacion-check"><a href="/laravel/docs/laravel/06_autenticacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel06_autenticacion"><i class="fa-solid fa-sitemap"></i><span class="">Autenticación</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocslaravel06_autenticacionfortify-li">
+  <input type="checkbox" id="m-laraveldocslaravel06_autenticacionfortify-check"/>
+  <label for="m-laraveldocslaravel06_autenticacionfortify-check"><a href="/laravel/docs/laravel/06_autenticacion/fortify/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel06_autenticacionfortify"><i class="fa-solid fa-sitemap"></i><span class="">Fortify y Jetstream</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel06_autenticacionfortify02_page_role_autenticated-li">
+  <input type="checkbox" id="m-laraveldocslaravel06_autenticacionfortify02_page_role_autenticated-check"/>
+  <label for="m-laraveldocslaravel06_autenticacionfortify02_page_role_autenticated-check"><a href="/laravel/docs/laravel/06_autenticacion/fortify/02_page_role_autenticated/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocslaravel06_autenticacionfortify02_page_role_autenticated"><i class="fa-solid fa-sitemap"></i><span class="">Dashboard según rol</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel06_autenticacionfortify01_instalacion-li">
+  <input type="checkbox" id="m-laraveldocslaravel06_autenticacionfortify01_instalacion-check"/>
+  <label for="m-laraveldocslaravel06_autenticacionfortify01_instalacion-check"><a href="/laravel/docs/laravel/06_autenticacion/fortify/01_instalacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocslaravel06_autenticacionfortify01_instalacion"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel06_autenticacionfortifydiagrama-li">
+  <input type="checkbox" id="m-laraveldocslaravel06_autenticacionfortifydiagrama-check"/>
+  <label for="m-laraveldocslaravel06_autenticacionfortifydiagrama-check"><a href="/laravel/docs/laravel/06_autenticacion/fortify/diagrama/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocslaravel06_autenticacionfortifydiagrama"><i class="fa-solid fa-sitemap"></i><span class="">Diagrama de flujo</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel06_autenticacionfortifyperonsalizar_controladores-li">
+  <input type="checkbox" id="m-laraveldocslaravel06_autenticacionfortifyperonsalizar_controladores-check"/>
+  <label for="m-laraveldocslaravel06_autenticacionfortifyperonsalizar_controladores-check"><a href="/laravel/docs/laravel/06_autenticacion/fortify/peronsalizar_controladores/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocslaravel06_autenticacionfortifyperonsalizar_controladores"><i class="fa-solid fa-sitemap"></i><span class="">Personalizar controladores</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocslaravel07_migraciones-li">
+  <input type="checkbox" id="m-laraveldocslaravel07_migraciones-check"/>
+  <label for="m-laraveldocslaravel07_migraciones-check"><a href="/laravel/docs/laravel/07_migraciones/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel07_migraciones"><i class="fa-solid fa-database"></i><span class="">Migracioens</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel07_migracioneseloquent-li">
+  <input type="checkbox" id="m-laraveldocslaravel07_migracioneseloquent-check"/>
+  <label for="m-laraveldocslaravel07_migracioneseloquent-check"><a href="/laravel/docs/laravel/07_migraciones/eloquent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocslaravel07_migracioneseloquent"><i class="fa-solid fa-database"></i><span class="">Migracioens</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocslaravel08_crud-li">
+  <input type="checkbox" id="m-laraveldocslaravel08_crud-check"/>
+  <label for="m-laraveldocslaravel08_crud-check"><a href="/laravel/docs/laravel/08_crud/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel08_crud"><i class="fa-solid fa-database"></i><span class="">Creando un CRUD</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel08_crud01_la-tabla-li">
+  <input type="checkbox" id="m-laraveldocslaravel08_crud01_la-tabla-check"/>
+  <label for="m-laraveldocslaravel08_crud01_la-tabla-check"><a href="/laravel/docs/laravel/08_crud/01_la-tabla/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel08_crud01_la-tabla"><i class="fa-solid fa-database"></i><span class="">Creando la tabla</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocslaravel08_crud03_el-controlador-li">
+  <input type="checkbox" id="m-laraveldocslaravel08_crud03_el-controlador-check"/>
+  <label for="m-laraveldocslaravel08_crud03_el-controlador-check"><a href="/laravel/docs/laravel/08_crud/03_el-controlador/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel08_crud03_el-controlador"><i class="fa-solid fa-database"></i><span class="">El controlador y las vistas</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel08_crud03_el-controlador01_listado-li">
+  <input type="checkbox" id="m-laraveldocslaravel08_crud03_el-controlador01_listado-check"/>
+  <label for="m-laraveldocslaravel08_crud03_el-controlador01_listado-check"><a href="/laravel/docs/laravel/08_crud/03_el-controlador/01_listado/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel08_crud03_el-controlador01_listado"><i class="fa-solid fa-database"></i><span class="">Obtener el listado</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel08_crud03_el-controlador02_crearalumno-li">
+  <input type="checkbox" id="m-laraveldocslaravel08_crud03_el-controlador02_crearalumno-check"/>
+  <label for="m-laraveldocslaravel08_crud03_el-controlador02_crearalumno-check"><a href="/laravel/docs/laravel/08_crud/03_el-controlador/02_crearalumno/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel08_crud03_el-controlador02_crearalumno"><i class="fa-solid fa-database"></i><span class="">Creando elementos</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel08_crud03_el-controlador03_modificar-li">
+  <input type="checkbox" id="m-laraveldocslaravel08_crud03_el-controlador03_modificar-check"/>
+  <label for="m-laraveldocslaravel08_crud03_el-controlador03_modificar-check"><a href="/laravel/docs/laravel/08_crud/03_el-controlador/03_modificar/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel08_crud03_el-controlador03_modificar"><i class="fa-solid fa-database"></i><span class="">Modificando elementos</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel08_crud03_el-controlador04_borrar-li">
+  <input type="checkbox" id="m-laraveldocslaravel08_crud03_el-controlador04_borrar-check"/>
+  <label for="m-laraveldocslaravel08_crud03_el-controlador04_borrar-check"><a href="/laravel/docs/laravel/08_crud/03_el-controlador/04_borrar/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel08_crud03_el-controlador04_borrar"><i class="fa-solid fa-database"></i><span class="">Borrando</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel09_api-li">
+  <input type="checkbox" id="m-laraveldocslaravel09_api-check"/>
+  <label for="m-laraveldocslaravel09_api-check"><a href="/laravel/docs/laravel/09_api/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel09_api"><i class="fa-solid fa-info"></i><span class="">Inercia</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel09_inertia-li">
+  <input type="checkbox" id="m-laraveldocslaravel09_inertia-check"/>
+  <label for="m-laraveldocslaravel09_inertia-check"><a href="/laravel/docs/laravel/09_inertia/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel09_inertia"><i class="fa-solid fa-info"></i><span class="">inertia</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocslaravel100_anexos-li">
+  <input type="checkbox" id="m-laraveldocslaravel100_anexos-check"/>
+  <label for="m-laraveldocslaravel100_anexos-check"><a href="/laravel/docs/laravel/100_anexos/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel100_anexos"><span class="">Anexos</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel100_anexosbootstrap-li">
+  <input type="checkbox" id="m-laraveldocslaravel100_anexosbootstrap-check"/>
+  <label for="m-laraveldocslaravel100_anexosbootstrap-check"><a href="/laravel/docs/laravel/100_anexos/bootstrap/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel100_anexosbootstrap"><span class="">app.php</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocslaravel10_api-li">
+  <input type="checkbox" id="m-laraveldocslaravel10_api-check"/>
+  <label for="m-laraveldocslaravel10_api-check"><a href="/laravel/docs/laravel/10_api/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel10_api"><i class="fas fa-code"></i><span class="">Creando un api</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel10_api1instalacion-li">
+  <input type="checkbox" id="m-laraveldocslaravel10_api1instalacion-check"/>
+  <label for="m-laraveldocslaravel10_api1instalacion-check"><a href="/laravel/docs/laravel/10_api/1.instalacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel10_api1instalacion"><span class="">01_Introducción y rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel10_api2visiongeneral-li">
+  <input type="checkbox" id="m-laraveldocslaravel10_api2visiongeneral-check"/>
+  <label for="m-laraveldocslaravel10_api2visiongeneral-check"><a href="/laravel/docs/laravel/10_api/2.visiongeneral/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel10_api2visiongeneral"><span class="">Controlador</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel10_api3la-vista-li">
+  <input type="checkbox" id="m-laraveldocslaravel10_api3la-vista-check"/>
+  <label for="m-laraveldocslaravel10_api3la-vista-check"><a href="/laravel/docs/laravel/10_api/3.la-vista/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel10_api3la-vista"><span class="">3.La Vista unitarios</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocslaravel11_roles-li">
+  <input type="checkbox" id="m-laraveldocslaravel11_roles-check"/>
+  <label for="m-laraveldocslaravel11_roles-check"><a href="/laravel/docs/laravel/11_roles/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel11_roles"><i class="fa-brands fa-critical-role"></i><span class="">Roles</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel11_roleseloquent-li">
+  <input type="checkbox" id="m-laraveldocslaravel11_roleseloquent-check"/>
+  <label for="m-laraveldocslaravel11_roleseloquent-check"><a href="/laravel/docs/laravel/11_roles/eloquent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocslaravel11_roleseloquent"><i class="fa-solid fa-database"></i><span class="">Migracioens</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel12_provider-li">
+  <input type="checkbox" id="m-laraveldocslaravel12_provider-check"/>
+  <label for="m-laraveldocslaravel12_provider-check"><a href="/laravel/docs/laravel/12_provider/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel12_provider"><i class="fa-brands fa-critical-role"></i><span class="">12_Provider</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocslaravel999_cheatseet-li">
+  <input type="checkbox" id="m-laraveldocslaravel999_cheatseet-check"/>
+  <label for="m-laraveldocslaravel999_cheatseet-check"><a href="/laravel/docs/laravel/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel999_cheatseet"><span class="">Cheat Sheet</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocslaravel999_cheatseethelper-li">
+  <input type="checkbox" id="m-laraveldocslaravel999_cheatseethelper-check"/>
+  <label for="m-laraveldocslaravel999_cheatseethelper-check"><a href="/laravel/docs/laravel/999_cheatseet/helper/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel999_cheatseethelper"><span class="">Helper en Laravel</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel999_cheatseethelperrutas-li">
+  <input type="checkbox" id="m-laraveldocslaravel999_cheatseethelperrutas-check"/>
+  <label for="m-laraveldocslaravel999_cheatseethelperrutas-check"><a href="/laravel/docs/laravel/999_cheatseet/helper/rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel999_cheatseethelperrutas"><span class="">Rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel999_cheatseethelpervistas-li">
+  <input type="checkbox" id="m-laraveldocslaravel999_cheatseethelpervistas-check"/>
+  <label for="m-laraveldocslaravel999_cheatseethelpervistas-check"><a href="/laravel/docs/laravel/999_cheatseet/helper/vistas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel999_cheatseethelpervistas"><span class="">Vistas</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel999_cheatseetartisan-li">
+  <input type="checkbox" id="m-laraveldocslaravel999_cheatseetartisan-check"/>
+  <label for="m-laraveldocslaravel999_cheatseetartisan-check"><a href="/laravel/docs/laravel/999_cheatseet/artisan/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel999_cheatseetartisan"><span class="">Artisan (CLI)</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel999_cheatseetblade-li">
+  <input type="checkbox" id="m-laraveldocslaravel999_cheatseetblade-check"/>
+  <label for="m-laraveldocslaravel999_cheatseetblade-check"><a href="/laravel/docs/laravel/999_cheatseet/blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel999_cheatseetblade"><span class="">Directivas Blade</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocslaravel999_cheatseet04_despliegue-li">
+  <input type="checkbox" id="m-laraveldocslaravel999_cheatseet04_despliegue-check"/>
+  <label for="m-laraveldocslaravel999_cheatseet04_despliegue-check"><a href="/laravel/docs/laravel/999_cheatseet/04_despliegue/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel999_cheatseet04_despliegue"><span class="">Desplegar en hosgint</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel999_cheatseet04_desplieguerutas-li">
+  <input type="checkbox" id="m-laraveldocslaravel999_cheatseet04_desplieguerutas-check"/>
+  <label for="m-laraveldocslaravel999_cheatseet04_desplieguerutas-check"><a href="/laravel/docs/laravel/999_cheatseet/04_despliegue/rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel999_cheatseet04_desplieguerutas"><span class="">Rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocslaravel999_cheatseet04_desplieguevistas-li">
+  <input type="checkbox" id="m-laraveldocslaravel999_cheatseet04_desplieguevistas-check"/>
+  <label for="m-laraveldocslaravel999_cheatseet04_desplieguevistas-check"><a href="/laravel/docs/laravel/999_cheatseet/04_despliegue/vistas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocslaravel999_cheatseet04_desplieguevistas"><span class="">Vistas</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#la-instalación">La instalación</a></li>
+    <li><a href="#instalar-composer">Instalar composer</a></li>
+    <li><a href="#instalar-el-instalardor-laravel">Instalar el instalardor Laravel</a>
+      <ul>
+        <li><a href="#creando-un-proyecto">Creando un proyecto</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel/docs/">Docs</a></li>
+  <li class="breadcrumb-item">
+    <a href="/laravel/docs/laravel/">Laravel</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Instalación</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Instalación</h1>
+  
+	<header class="article-meta">
+		
+</header>
+	<h2 id="la-instalación">La instalación</h2>
+<p>Como ya hemos comentado 
+<span class="font-weight-bold text-primary">
+
+
+    Laravel
+
+</span>
+, uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes. <br>
+Para comenzar un proyecto en Laravel, existen dos enfoques principales:</p>
+<ul>
+<li>crear un proyecto con composer</li>
+<li>Instalar un programa llamado 
+<span class="font-weight-bold text-primary">
+
+
+    laravel
+
+</span>
+ con el que crearemos proyectos.</li>
+</ul>
+<h2 id="instalar-composer">Instalar composer</h2>
+<p>Lo primero que necesitamos es tener 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    composer
+
+</span>
+</strong>
+ instalado en nuestro sistema</p>
+<p>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Composer
+
+</span>
+</strong>
+ es un sistema de gestión de dependencias para PHP que permite  especificar y manejar las librerías de las cuales sus proyectos dependen, a través de un fichero llamado 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    composer.json
+
+</span>
+</strong>
+.  <br>
+Igualmente, composer permite aportar documentación sobre el proyecto y automatizar la autocarga de clases para la ejecución del mismo. <br>
+Funciona <strong>descargando e instalando estas librerías y sus dependencias en el proyecto, asegurando compatibilidad y facilitando la actualización</strong>. <br>
+Es esencial para proyectos modernos de PHP, ya que automatiza y gestiona tareas complejas de gestión de paquetes de forma eficiente.
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Composer</h4>
+
+    <!-- raw HTML omitted -->
+<pre><code>Para instalar composer
+</code></pre>
+<!-- raw HTML omitted -->
+<ul>
+<li>Linux- Mac: <a href="https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos">https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos</a></li>
+<li>Windows <a href="https://getcomposer.org/doc/00-intro.md#installation-windows">https://getcomposer.org/doc/00-intro.md#installation-windows</a></li>
+</ul>
+
+
+</div>
+</p>
+<ul>
+<li><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>  composer -V
+</span></span><span style="display:flex;"><span>  
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Entonces veremos una salida, si simplemente escribmos 
+<span class="font-weight-bold text-primary">
+
+
+    composer
+
+</span>
+ saldrán todas las opciones disponibles
+Una vez instalado en un terminal (CMD o PowerShell en windows) escribimos
+<img src="/laravel/docs/laravel/02_instalaci%C3%B3n/img_1.png" alt="img_1.png"></li>
+</ul>
+<h2 id="instalar-el-instalardor-laravel">Instalar el instalardor Laravel</h2>
+
+
+<div class="pageinfo pageinfo-primary">
+<h4 id="laravel-installer">Laravel installer</h4>
+<p><img src="/laravel/docs/laravel/02_instalaci%C3%B3n/img.png" alt="img.png"></p>
+<hr>
+<!-- raw HTML omitted -->
+<pre><code>Laravel no es ni un EDI, ni un lenguaje de programación
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>es un framework
+</code></pre>
+<!-- raw HTML omitted -->
+<p>Necesitamos de alugna manera un programa que nos permita crear un proyecto nuevo con la estructura y todas las utilidades que ofrece el framework
+Podemos instalar un instalador de laravel  con composer:</p>
+<!-- raw HTML omitted -->
+<pre><code>Instalador de Laravel
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+
+<h3 id="creando-un-proyecto">Creando un proyecto</h3>
+<blockquote>
+<ul>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Uso de Composer
+
+</span>
+</strong>
+: <br>
+Puedes crear un nuevo proyecto Laravel ejecutando el comando
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>composer create-project laravel/laravel nombre_proyecto</span></span></code></pre></td></tr></table>
+</div>
+</div>  <br>
+Este método instala Laravel y todas sus dependencias, configurando una estructura de directorios lista para comenzar a desarrollar tu aplicación.</li>
+</ul>
+</blockquote>
+<p>Este instalador permite crear nuevos proyectos rápidamente con el comando laravel new nombre_proyecto.
+Además utilizando esta herramiena, el comando 
+<span class="font-weight-bold text-primary">
+
+
+    laravel
+
+</span>
+ durante el proceso de instalación, se irán planteando opciones durante que puedes elegir</p>
+<p>Este programa es un instalador de proyectos de laravel que es una herramienta en línea de comandos que nos va a permitir crear un proyecto  base de laravel.   Para ello escribimos
+laravel new nombre_proyecto
+Puede ser que dé algún problema y no reconozca la orden laravel. en este caso deberíamos de actualizar el path del sistema incluyendo el directorio donde haya instalado laravel</p>
+
+  <div class="section-index">
+    
+    
+    </div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2024
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

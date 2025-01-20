@@ -1,0 +1,16 @@
+### Editar un alumno concreto
+{{% imgproc createAlumno Fill "400x450" %}}
+
+{{% /imgproc %}}
+#### Primero visualizamos los datos del alumnos seleccionad
+#### Guardamos los datos acutalizados y retornamos el listado de todos los alumnos
+### Borrar un alumno
+{{% imgproc createAlumno Fill "400x450" %}}
+
+{{% /imgproc %}}
+#### Borramos el alumno seleccionado y  retornamos el listado de todos los alumnos
+
+
+
+
+

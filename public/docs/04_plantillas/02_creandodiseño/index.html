@@ -1,0 +1,520 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/04_plantillas/02_creandodise%C3%B1o/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Diseñando el layout | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/04_plantillas/02_creandodise%C3%B1o/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Diseñando el layout">
+  <meta property="og:description" content="Creando un diseño Proceso de diseño Diseñar es un aspecto fundamentan antes de crear las páginas Para crear un proyecto debemos crear previaemnte los mockups o Prototipados de pantallas Posteriormente hemos de crear las páginas usando los estilos adecuados para conseguir los diseños previamente prototipados, esto implicará usar html y css Para crear los diseños se usan herramientas gráficas de prototipado, y para el css normalmente usaremos algún fremework tipo Bootstrap o tailwindcss">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Diseñando el layout">
+  <meta itemprop="description" content="Creando un diseño Proceso de diseño Diseñar es un aspecto fundamentan antes de crear las páginas Para crear un proyecto debemos crear previaemnte los mockups o Prototipados de pantallas Posteriormente hemos de crear las páginas usando los estilos adecuados para conseguir los diseños previamente prototipados, esto implicará usar html y css Para crear los diseños se usan herramientas gráficas de prototipado, y para el css normalmente usaremos algún fremework tipo Bootstrap o tailwindcss">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="495">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Diseñando el layout">
+  <meta name="twitter:description" content="Creando un diseño Proceso de diseño Diseñar es un aspecto fundamentan antes de crear las páginas Para crear un proyecto debemos crear previaemnte los mockups o Prototipados de pantallas Posteriormente hemos de crear las páginas usando los estilos adecuados para conseguir los diseños previamente prototipados, esto implicará usar html y css Para crear los diseños se usan herramientas gráficas de prototipado, y para el css normalmente usaremos algún fremework tipo Bootstrap o tailwindcss">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs-li">
+  <a href="/laravel/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laraveldocs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs01_introduccic3b3n-check"/>
+  <label for="m-laraveldocs01_introduccic3b3n-check"><a href="/laravel/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs02_instalacic3b3n-check"/>
+  <label for="m-laraveldocs02_instalacic3b3n-check"><a href="/laravel/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs03_rutas-li">
+  <input type="checkbox" id="m-laraveldocs03_rutas-check"/>
+  <label for="m-laraveldocs03_rutas-check"><a href="/laravel/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs05_controlador-li">
+  <input type="checkbox" id="m-laraveldocs05_controlador-check"/>
+  <label for="m-laraveldocs05_controlador-check"><a href="/laravel/docs/05_controlador/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs05_controlador"><i class="fas fa-cogs"></i><span class="">Controlador</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs04_plantillas-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas-check" checked/>
+  <label for="m-laraveldocs04_plantillas-check"><a href="/laravel/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas01_blade-check"/>
+  <label for="m-laraveldocs04_plantillas01_blade-check"><a href="/laravel/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas02_creandodisec3b1o-check" checked/>
+  <label for="m-laraveldocs04_plantillas02_creandodisec3b1o-check"><a href="/laravel/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="td-sidebar-nav-active-item">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas03_componentes-check"/>
+  <label for="m-laraveldocs04_plantillas03_componentes-check"><a href="/laravel/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs100_anexos-li">
+  <input type="checkbox" id="m-laraveldocs100_anexos-check"/>
+  <label for="m-laraveldocs100_anexos-check"><a href="/laravel/docs/100_anexos/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs100_anexos"><span class="">Anexos</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs100_anexosbootstrap-li">
+  <input type="checkbox" id="m-laraveldocs100_anexosbootstrap-check"/>
+  <label for="m-laraveldocs100_anexosbootstrap-check"><a href="/laravel/docs/100_anexos/bootstrap/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs100_anexosbootstrap"><span class="">app.php</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#creando-un-diseño">Creando un diseño</a>
+      <ul>
+        <li><a href="#herramientas-para-el-diseño">Herramientas para el diseño</a></li>
+        <li><a href="#laravel-como-fullstack">Laravel como fullstack</a></li>
+        <li><a href="#instalación-de-tailwindhttpstailwindcsscom-framework-de-css">Instalación de <a href="https://tailwindcss.com/">Tailwind</a>: framework de css</a></li>
+        <li><a href="#diseño-del-layout">Diseño del layout</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel/docs/">Laravel</a></li>
+  <li class="breadcrumb-item">
+    <a href="/laravel/docs/04_plantillas/">Plantillas en laravel</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Diseñando el layout</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Diseñando el layout</h1>
+  
+	<header class="article-meta">
+		
+</header>
+	<h2 id="creando-un-diseño">Creando un diseño</h2>
+
+
+<div class="pageinfo pageinfo-primary">
+<hr>
+<h4 id="proceso-de-diseño">Proceso de diseño</h4>
+<hr>
+<p>Diseñar es un aspecto fundamentan antes de crear las páginas  <br>
+Para crear un proyecto debemos crear previaemnte <strong>los mockups</strong> o <strong>Prototipados de pantallas</strong> <br>
+Posteriormente hemos de crear las páginas usando los estilos adecuados para conseguir los diseños previamente prototipados, esto implicará usar <strong>html y css</strong>
+Para crear los diseños se usan herramientas gráficas de prototipado, y para el css normalmente usaremos algún fremework tipo <strong>Bootstrap</strong> o <strong>tailwindcss</strong></p>
+
+</div>
+
+<h3 id="herramientas-para-el-diseño">Herramientas para el diseño</h3>
+
+
+<div class="pageinfo pageinfo-primary">
+<h4 id="heading"></h4>
+<p>Vamos a usar <strong>Balsamiq</strong> porque disponemos de licencia estudiante en el centro <br>
+Existen varias herramientas alternativas:</p>
+<hr>
+<ol>
+<li><strong><a href="https://pencil.evolus.vn/">Pencil Project</a>:</strong>
+<ul>
+<li>Pencil Project es una herramienta de prototipado de código abierto que te permite crear mockups de manera sencilla. Es fácil de usar y ofrece una variedad de elementos predefinidos.</li>
+</ul>
+</li>
+<li><strong><a href="https://www.mockflow.com/">MockFlow</a>:</strong>
+<ul>
+<li>MockFlow es una plataforma en línea que ofrece una herramienta de diseño de wireframes y mockups. La versión gratuita tiene algunas limitaciones, pero aún así proporciona funcionalidades útiles.</li>
+</ul>
+</li>
+<li><strong><a href="https://balsamiq.cloud/">Balsamiq Cloud (versión gratuita)</a> ):</strong>
+<ul>
+<li>Balsamiq, conocido por su aplicación de escritorio, también ofrece una versión en línea gratuita llamada Balsamiq Cloud que permite crear mockups y wireframes.</li>
+</ul>
+</li>
+<li><strong><a href="https://www.figma.com/">Figma</a>:</strong>
+<ul>
+<li>Figma es una herramienta de diseño colaborativo en línea que permite crear mockups, wireframes y prototipos. Tiene una versión gratuita con muchas funcionalidades.</li>
+</ul>
+</li>
+<li><strong><a href="https://wireframe.cc/">Wireframe.cc</a>:</strong>
+<ul>
+<li>Wireframe.cc es una herramienta simple y fácil de usar para crear wireframes rápidos y sencillos. Puedes comenzar a usarla directamente en el navegador.</li>
+</ul>
+</li>
+</ol>
+
+</div>
+
+<h3 id="laravel-como-fullstack">Laravel como fullstack</h3>
+<p><strong>Laravel es un poderoso framework de backend.</strong></p>
+<p>Con Laravel, es posible realizar 
+<span class="font-weight-bold text-primary">
+
+
+    desarrollos web full-stack
+
+</span>
+. Esto  significa que este framework nos habilita para gestionar tanto <strong>el backend como el frontend</strong> de una aplicación web.<br>
+Así, Laravel se convierte en <strong>una solución integral</strong> que permite implementar todas las facetas del desarrollo web, desde la lógica del servidor hasta la interfaz de usuario.</p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Recuerda</h4>
+
+    <!-- raw HTML omitted -->
+<pre><code>Laravel
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>forma agnóstica
+</code></pre>
+<!-- raw HTML omitted -->
+<p>Muchos paquetes traen integrado los framework
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+<pre><code>tailwind
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>vue
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+
+<h3 id="instalación-de-tailwindhttpstailwindcsscom-framework-de-css">Instalación de <a href="https://tailwindcss.com/">Tailwind</a>: framework de css</h3>
+
+
+<div class="pageinfo pageinfo-primary">
+<h4 id="introducción"><strong>Introducción</strong></h4>
+<!-- raw HTML omitted -->
+<pre><code>Tailwind CSS
+</code></pre>
+<!-- raw HTML omitted -->
+<p>La  simplicidad y flexibilidad de
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+<pre><code>Tailwind
+</code></pre>
+<!-- raw HTML omitted -->
+<p>Muchos paquetes y recursos integrados en el ecosistema de Laravel incorporan Tailwind CSS como herramienta preferida para la estilización de componentes y diseños, por ese motivo lo vamos a utilizar en este curso.</p>
+<hr>
+<h4 id="instalación"><strong>Instalación</strong></h4>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+</div>
+
+<h3 id="diseño-del-layout">Diseño del layout</h3>
+
+
+<div class="pageinfo pageinfo-primary">
+<h4 id="planteamos-el-siguiente-layout-general">Planteamos el siguiente layout general</h4>
+<!-- raw HTML omitted -->
+<p><strong>Para conseguirlo escribimos el siguiente código</strong></p>
+<!-- raw HTML omitted -->
+
+</div>
+
+<h4 id="diseño-de-la-cabecera-hahahugoshortcode11s6hbhb">Diseño de la cabecera 
+<span class="font-weight-bold text-primary">
+
+
+    header
+
+</span>
+</h4>
+
+
+<div class="pageinfo pageinfo-primary">
+<!-- raw HTML omitted -->
+<p><strong>Escribimos el siguiente código</strong></p>
+<!-- raw HTML omitted -->
+
+</div>
+
+<h4 id="diseño-de-la-sección-de-menú--hahahugoshortcode11s8hbhb">Diseño de la sección de menú:  
+<span class="font-weight-bold text-primary">
+
+
+    nav
+
+</span>
+</h4>
+<p>
+
+<div class="pageinfo pageinfo-primary">
+<!-- raw HTML omitted -->
+<hr>
+<p><strong>Escribimos el siguiente código</strong></p>
+<!-- raw HTML omitted -->
+
+</div>
+
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">helper route</h4>
+
+    <p>El helper
+<!-- raw HTML omitted --></p>
+<pre><code>route
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>routes/web.php
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+
+**</p>
+<h4 id="diseño-de-la-sección-de-principal---hahahugoshortcode11s11hbhb">Diseño de la sección de principal :  
+<span class="font-weight-bold text-primary">
+
+
+    main
+
+</span>
+</h4>
+<p>En este caso vamos a escribir el contenido de una página 
+<span class="font-weight-bold text-primary">
+
+
+    landing page
+
+</span>
+</p>
+<p>Para ello usaremos de la librería 
+<span class="font-weight-bold text-primary">
+
+
+    <a href="https://daisyui.com">Daisy</a>
+
+</span>
+, el componente 
+<span class="font-weight-bold text-primary">
+
+
+    <a href="https://daisyui.com/components/hero/">Hero</a>
+
+</span>
+
+
+
+<div class="pageinfo pageinfo-primary">
+<!-- raw HTML omitted -->
+<p><strong>Escribimos el siguiente código</strong></p>
+<!-- raw HTML omitted -->
+<pre><code>home.blade.php
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>Establece una página de hereda de otra (un layout)
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>Para establecer una sección dónde se aportará contenido en la página que herede de ella
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;!-- raw HTML omitted --&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+</p>
+<hr>
+<h4 id="diseño-footer">Diseño footer</h4>
+
+
+<div class="pageinfo pageinfo-primary">
+<h4 id="heading"></h4>
+<hr>
+<h4 id="diseño-de-la-sección-de-pie-de-página-">Diseño de la sección de pie de página :</h4>
+<!-- raw HTML omitted -->
+<pre><code>footer
+</code></pre>
+<!-- raw HTML omitted -->
+<p>En este caso vamos a escribir el contenido de una página
+<!-- raw HTML omitted --></p>
+<pre><code>landing page
+</code></pre>
+<!-- raw HTML omitted -->
+<p>En este caso vamos a seleccionar un
+<!-- raw HTML omitted --></p>
+<pre><code>footer
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+</div>
+
+
+  <div class="section-index">
+    
+    
+    </div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

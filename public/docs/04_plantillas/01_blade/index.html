@@ -1,0 +1,412 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/04_plantillas/01_blade/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Plantillas en laravel | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/04_plantillas/01_blade/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Plantillas en laravel">
+  <meta property="og:description" content="Plantillas con Blade Blade Una herramienta poderosa y flexible incluida en Laravel, que nos va a permitir escribir html e incluir php y visualizar datos del servidor balde.php Los ficheros blade, tienen extensión
+blade.php ./resources/view Contenido de un fichero blade Dentro de un fichero blade">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Plantillas en laravel">
+  <meta itemprop="description" content="Plantillas con Blade Blade Una herramienta poderosa y flexible incluida en Laravel, que nos va a permitir escribir html e incluir php y visualizar datos del servidor balde.php Los ficheros blade, tienen extensión
+blade.php ./resources/view Contenido de un fichero blade Dentro de un fichero blade">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="439">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Plantillas en laravel">
+  <meta name="twitter:description" content="Plantillas con Blade Blade Una herramienta poderosa y flexible incluida en Laravel, que nos va a permitir escribir html e incluir php y visualizar datos del servidor balde.php Los ficheros blade, tienen extensión
+blade.php ./resources/view Contenido de un fichero blade Dentro de un fichero blade">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs-li">
+  <a href="/laravel/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laraveldocs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs01_introduccic3b3n-check"/>
+  <label for="m-laraveldocs01_introduccic3b3n-check"><a href="/laravel/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs02_instalacic3b3n-check"/>
+  <label for="m-laraveldocs02_instalacic3b3n-check"><a href="/laravel/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs03_rutas-li">
+  <input type="checkbox" id="m-laraveldocs03_rutas-check"/>
+  <label for="m-laraveldocs03_rutas-check"><a href="/laravel/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs05_controlador-li">
+  <input type="checkbox" id="m-laraveldocs05_controlador-check"/>
+  <label for="m-laraveldocs05_controlador-check"><a href="/laravel/docs/05_controlador/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs05_controlador"><i class="fas fa-cogs"></i><span class="">Controlador</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs04_plantillas-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas-check" checked/>
+  <label for="m-laraveldocs04_plantillas-check"><a href="/laravel/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas01_blade-check" checked/>
+  <label for="m-laraveldocs04_plantillas01_blade-check"><a href="/laravel/docs/04_plantillas/01_blade/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="td-sidebar-nav-active-item">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laraveldocs04_plantillas02_creandodisec3b1o-check"><a href="/laravel/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas03_componentes-check"/>
+  <label for="m-laraveldocs04_plantillas03_componentes-check"><a href="/laravel/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs100_anexos-li">
+  <input type="checkbox" id="m-laraveldocs100_anexos-check"/>
+  <label for="m-laraveldocs100_anexos-check"><a href="/laravel/docs/100_anexos/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs100_anexos"><span class="">Anexos</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs100_anexosbootstrap-li">
+  <input type="checkbox" id="m-laraveldocs100_anexosbootstrap-check"/>
+  <label for="m-laraveldocs100_anexosbootstrap-check"><a href="/laravel/docs/100_anexos/bootstrap/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs100_anexosbootstrap"><span class="">app.php</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#plantillas-con-blade">Plantillas con Blade</a>
+      <ul>
+        <li><a href="#contenido-de-un-fichero-blade">Contenido de un fichero blade</a></li>
+        <li><a href="#herencia-creando-un-layout">Herencia: Creando un layout</a></li>
+        <li><a href="#comentarios-blade">Comentarios blade</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel/docs/">Laravel</a></li>
+  <li class="breadcrumb-item">
+    <a href="/laravel/docs/04_plantillas/">Plantillas en laravel</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Plantillas en laravel</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Plantillas en laravel</h1>
+  
+	<header class="article-meta">
+		
+</header>
+	<h2 id="plantillas-con-blade">Plantillas con Blade</h2>
+
+
+<div class="pageinfo pageinfo-primary">
+<hr>
+<h2 id="blade">Blade</h2>
+<hr>
+<p>Una herramienta poderosa y flexible incluida en Laravel, que nos va a permitir
+<!-- raw HTML omitted --></p>
+<pre><code>escribir html e incluir php y visualizar datos del servidor
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>balde.php
+</code></pre>
+<!-- raw HTML omitted -->
+<p>Los ficheros blade, tienen extensión<br>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+<pre><code>blade.php
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>./resources/view
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+
+<h3 id="contenido-de-un-fichero-blade">Contenido de un fichero blade</h3>
+
+
+<div class="pageinfo pageinfo-primary">
+<p><strong>Dentro de un fichero blade</strong>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+<pre><code>(.blade.php)
+</code></pre>
+<!-- raw HTML omitted -->
+<p>En él podemos  encontrar el siguiente tipo de <strong>código o instrucciones</strong>:
+*
+<!-- raw HTML omitted --></p>
+<pre><code>Código html y js
+</code></pre>
+<!-- raw HTML omitted -->
+<blockquote>
+<blockquote>
+<p>(como cualquier página html)</p>
+</blockquote>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<!-- raw HTML omitted -->
+<pre><code>{{}} Doble braquets
+</code></pre>
+<!-- raw HTML omitted -->
+<blockquote>
+<blockquote>
+<p>Para mostrar el contenido de variables PHP.   <br>
+Blade automáticamente escapa el HTML en las variables para evitar ataques XSS.     <br>
+También para comentar, en lugar de <strong>&lt;!- - Comentario html - -&gt;</strong>, podemos usar  <strong>{{- - Comentario html - -}}</strong></p>
+</blockquote>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<!-- raw HTML omitted -->
+<pre><code>@
+</code></pre>
+<!-- raw HTML omitted -->
+<blockquote>
+<blockquote>
+<p>para utilizar directivas/estructuras de control propias de laravel, como como condicionales y bucles. Por ejemplo, @if, @foreach, @switch, entre otras.
+También acciones propias de laravel con sus directivas, como heredar de una plantilla o incluir en una determinada sección un código html como veremos a continuación en las herecias</p>
+</blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+
+</div>
+
+<h3 id="herencia-creando-un-layout">Herencia: Creando un layout</h3>
+<p>
+
+<div class="pageinfo pageinfo-primary">
+<h4 id="concepto">Concepto</h4>
+<p>En el desarrollo web con Laravel,
+<!-- raw HTML omitted --></p>
+<pre><code>la herencia en las plantillas Blade
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>una estructura consistente en todas las páginas
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+
+
+
+<div class="pageinfo pageinfo-primary">
+<h4 id="idea-de-su-usofuncionamiento">Idea de su uso/funcionamiento</h4>
+<p>Con este concepto
+<!-- raw HTML omitted --></p>
+<pre><code>se establece una página inicial o &amp;rsquo;layout&amp;rsquo; que define los aspectos generales de la interfaz, dejando espacios designados para personalizaciones específicas
+</code></pre>
+<!-- raw HTML omitted -->
+<p>Con ello, cada página individual
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+<pre><code>hereda de esta plantilla principal
+</code></pre>
+<!-- raw HTML omitted -->
+<p>Este método facilita la gestión y mantenimiento del diseño, ya que cualquier cambio realizado en la plantilla principal se reflejará automáticamente en todas las páginas que heredan de ella. De este modo, la herencia en las plantillas Blade contribuye a una experiencia de desarrollo eficiente y a la creación de interfaces consistentes y atractivas.</p>
+
+</div>
+</p>
+<h3 id="comentarios-blade">Comentarios blade</h3>
+
+
+<div class="pageinfo pageinfo-primary">
+<hr>
+<h4 id="insertando-comentarios-en-fichero-bladephp">Insertando comentarios en fichero .blade.php</h4>
+<hr>
+<p>Dentro de un fichero
+<!-- raw HTML omitted --></p>
+<pre><code>Blade
+</code></pre>
+<!-- raw HTML omitted -->
+<p><strong>Comentarios HTML (<code>&lt;!-- Comentarios --&gt;</code>):</strong></p>
+<ul>
+<li>Son comentarios estándar de HTML.</li>
+<li>Serán visibles en el código fuente del HTML generado y enviado al navegador.</li>
+<li>Cualquiera que inspeccione el código fuente de la página en el navegador podrá ver estos comentarios.</li>
+<li>Son útiles para anotaciones que no afectan la presentación de la página pero podrían ser de ayuda durante el desarrollo o para otros desarrolladores.</li>
+</ul>
+<p><strong>Comentarios Blade (<code>{{-- Comentarios --}}</code>):</strong></p>
+<ul>
+<li>Son específicos del motor de plantillas Blade de Laravel.</li>
+<li>No serán incluidos en el HTML final generado. Esto significa que no aparecerán en el código fuente de la página cuando se vea en un navegador.</li>
+<li>Son útiles para dejar notas o comentarios en el código que solo deben ser visibles durante el desarrollo y no deben ser expuestos a los usuarios finales o en el ambiente de producción.</li>
+<li>Proporcionan una manera de hacer anotaciones en las plantillas Blade sin afectar lo que ve el usuario.</li>
+</ul>
+<hr>
+<p><img src="" alt=""></p>
+
+</div>
+
+
+  <div class="section-index">
+    
+    
+    </div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

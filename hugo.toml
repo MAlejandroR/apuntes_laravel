@@ -1,0 +1,155 @@
+baseURL = 'https://web.infenlaces.com/laravel/'
+#baseURL = 'http://localhost'
+languageCode = 'es-es'
+title = 'Laravel'
+
+
+
+# Para poder cargar emogin https://www.webfx.com/tools/emoji-cheat-sheet/
+enableEmoji = true
+
+
+#busquedas
+gcs_engine_id = "e0a656d2baca94"
+
+#Language settings   content dir
+contentDir = "content/es"
+defaultContentLanguage = "es"
+defaultContentLanguageInSubdir = false
+
+
+# Enable syntax highlighting and copy buttons on code blocks with Prism
+prism_syntax_highlighting = true
+#
+## Highlighting config
+#pygmentsCodeFences = true
+#pygmentsUseClasses = false
+## Use the new Chroma Go highlighter in Hugo.
+#pygmentsUseClassic = false
+##pygmentsOptions = "linenos=table"
+## See https://help.farbox.com/pygments.html
+ShowCodeCopyButtons = true
+pygmentsStyle = "perldoc"
+
+
+
+#
+#[markup]
+#[markup.highlight]
+#anchorLineNos = false
+#codeFences = true
+#guessSyntax = false
+#hl_Lines = ''
+#lineAnchors = ''
+#lineNoStart = 1
+#lineNos = false
+#lineNumbersInTable = true
+#noClasses = true
+#noHl = false
+#style = 'tango'
+#tabWidth = 4
+
+
+#
+#[highlight]
+#    codeFences = true
+#    hl_Lines = ""
+#    lineNoStart = 1
+#    lineNos = true
+#    lineNumbersInTable = true
+#    noClasses = true
+##    style = "tango"
+##    style="base16-snazzy"
+#    style="monokai"
+#    tabWidth = 4
+
+[languages.en]
+title = "Laravel"
+languageName = "English"
+contentDir = "content/en"
+
+[languages.es]
+title = "Laravel: Framework de php"
+languageName = "Español"
+contentDir = "content/es"
+
+[languages.fr]
+title = "Docsy"
+languageName = "Francés"
+contentDir = "content/fr"
+
+[params.ui]
+sidebar_menu_compact = true
+ul_show = 1
+sidebar_menu_foldable = true
+
+[params]
+custom_css=['/css/estilo.css']
+copyright = "@MRomero"
+privacy_policy = "https://policies.google.com/privacy"
+disableToc = true
+disable_toc= false
+[print]
+
+
+[params.links]
+# # End user relevant links. These will show up on left side of footer and in the community page if you have one.
+[[params.links.user]]
+name = "Correo del usuario"
+url = "https://example.org/mail"
+icon = "fa fa-envelope"
+desc = "Discussion and help from your fellow users"
+# [[params.links.user]]
+# 	name ="Twitter"
+# 	url = "https://example.org/twitter"
+# 	icon = "fab fa-twitter"
+#         desc = "Follow us on Twitter to get the latest news!"
+# [[params.links.user]]
+# 	name = "Stack Overflow"
+# 	url = "https://example.org/stack"
+# 	icon = "fab fa-stack-overflow"
+#         desc = "Practical questions and curated answers"
+# # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
+[[params.links.user]]
+name = "GitHub"
+url = "https://github.com/MAlejandroR"
+icon = "fab fa-github"
+desc = "Development takes place here!"
+# [[params.links.developer]]
+# 	name = "Slack"
+# 	url = "https://example.org/slack"
+# 	icon = "fab fa-slack"
+#         desc = "Chat with other project developers"
+# [[params.links.developer]]
+# 	name = "Developer mailing list"
+# 	url = "https://example.org/mail"
+# 	icon = "fa fa-envelope"
+#         desc = "Discuss development issues around the project"
+
+# Google Custom Search Engine ID. Remove or comment out to disable search.
+gcs_engine_id = "e0a656d2baca94d5b"
+
+
+# Enable Algolia DocSearch
+algolia_docsearch = false
+
+[module]
+  # uncomment line below for temporary local development of module
+  # replacements = "github.com/google/docsy -> ../../docsy"
+  [module.hugoVersion]
+    extended = true
+    min = "0.75.0"
+  [[module.imports]]
+    path = "github.com/google/docsy"
+    disable = false
+  [[module.imports]]
+    path = "github.com/google/docsy/dependencies"
+    disable = false
+  [[module.imports]]
+    path = "github.com/hugomods/mermaid"
+    disable = false
+
+[params.markmap]
+enable = true
+[params.mermaid]
+enable = true
