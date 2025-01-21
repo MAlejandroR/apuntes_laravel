@@ -2,166 +2,166 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:37313/laravel/docs/10_api/1.instalacion/</loc>
+    <loc>http://localhost:1313/laravel/docs/10_api/1.instalacion/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/06_autenticacion/fortify/02_page_role_autenticated/</loc>
+    <loc>http://localhost:1313/laravel/docs/06_autenticacion/fortify/02_page_role_autenticated/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/999_cheatseet/helper/</loc>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/helper/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/06_autenticacion/breeze/</loc>
+    <loc>http://localhost:1313/laravel/docs/06_autenticacion/breeze/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/06_autenticacion/fortify/01_instalacion/</loc>
+    <loc>http://localhost:1313/laravel/docs/06_autenticacion/fortify/01_instalacion/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/01_introducci%C3%B3n/</loc>
+    <loc>http://localhost:1313/laravel/docs/01_introducci%C3%B3n/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/07_migraciones/eloquent/</loc>
+    <loc>http://localhost:1313/laravel/docs/07_migraciones/eloquent/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/11_roles/eloquent/</loc>
+    <loc>http://localhost:1313/laravel/docs/11_roles/eloquent/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/08_crud/03_el-controlador/01_listado/</loc>
+    <loc>http://localhost:1313/laravel/docs/08_crud/03_el-controlador/01_listado/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/04_plantillas/01_blade/</loc>
+    <loc>http://localhost:1313/laravel/docs/04_plantillas/01_blade/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/</loc>
+    <loc>http://localhost:1313/laravel/docs/</loc>
     <lastmod>2024-08-08T18:23:50+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/10_api/2.visiongeneral/</loc>
+    <loc>http://localhost:1313/laravel/docs/10_api/2.visiongeneral/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/08_crud/03_el-controlador/02_crearalumno/</loc>
+    <loc>http://localhost:1313/laravel/docs/08_crud/03_el-controlador/02_crearalumno/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/04_plantillas/02_creandodise%C3%B1o/</loc>
+    <loc>http://localhost:1313/laravel/docs/04_plantillas/02_creandodise%C3%B1o/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/02_instalaci%C3%B3n/</loc>
+    <loc>http://localhost:1313/laravel/docs/02_instalaci%C3%B3n/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/999_cheatseet/04_despliegue/rutas/</loc>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/04_despliegue/rutas/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/999_cheatseet/helper/rutas/</loc>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/helper/rutas/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/999_cheatseet/04_despliegue/vistas/</loc>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/04_despliegue/vistas/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/999_cheatseet/helper/vistas/</loc>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/helper/vistas/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/10_test/chat/</loc>
+    <loc>http://localhost:1313/laravel/docs/10_test/chat/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/10_api/3.la-vista/</loc>
+    <loc>http://localhost:1313/laravel/docs/10_api/3.la-vista/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/999_cheatseet/artisan/</loc>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/artisan/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/04_plantillas/03_componentes/</loc>
+    <loc>http://localhost:1313/laravel/docs/04_plantillas/03_componentes/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/999_cheatseet/blade/</loc>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/blade/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/08_crud/03_el-controlador/03_modificar/</loc>
+    <loc>http://localhost:1313/laravel/docs/08_crud/03_el-controlador/03_modificar/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/03_rutas/</loc>
+    <loc>http://localhost:1313/laravel/docs/03_rutas/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/08_crud/03_el-controlador/04_borrar/</loc>
+    <loc>http://localhost:1313/laravel/docs/08_crud/03_el-controlador/04_borrar/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/05_controlador/</loc>
+    <loc>http://localhost:1313/laravel/docs/05_controlador/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/999_cheatseet/04_despliegue/</loc>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/04_despliegue/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/04_plantillas/</loc>
+    <loc>http://localhost:1313/laravel/docs/04_plantillas/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/06_autenticacion/fortify/diagrama/</loc>
+    <loc>http://localhost:1313/laravel/docs/06_autenticacion/fortify/diagrama/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/06_autenticacion/fortify/</loc>
+    <loc>http://localhost:1313/laravel/docs/06_autenticacion/fortify/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/06_autenticacion/fortify/peronsalizar_controladores/</loc>
+    <loc>http://localhost:1313/laravel/docs/06_autenticacion/fortify/peronsalizar_controladores/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/08_crud/01_la-tabla/</loc>
+    <loc>http://localhost:1313/laravel/docs/08_crud/01_la-tabla/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/100_anexos/</loc>
+    <loc>http://localhost:1313/laravel/docs/100_anexos/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/docs/100_anexos/bootstrap/</loc>
+    <loc>http://localhost:1313/laravel/docs/100_anexos/bootstrap/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37313/laravel/</loc>
+    <loc>http://localhost:1313/laravel/</loc>
     <lastmod>2024-08-08T18:23:50+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:37313/laravel/fr/"
+                href="http://localhost:1313/laravel/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:37313/laravel/en/"
+                href="http://localhost:1313/laravel/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:37313/laravel/"
+                href="http://localhost:1313/laravel/"
                 />
   </url><url>
-    <loc>http://localhost:37313/laravel/categories/</loc>
+    <loc>http://localhost:1313/laravel/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:37313/laravel/en/categories/"
+                href="http://localhost:1313/laravel/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:37313/laravel/fr/categories/"
+                href="http://localhost:1313/laravel/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:37313/laravel/categories/"
+                href="http://localhost:1313/laravel/categories/"
                 />
   </url><url>
-    <loc>http://localhost:37313/laravel/search/</loc>
+    <loc>http://localhost:1313/laravel/search/</loc>
   </url><url>
-    <loc>http://localhost:37313/laravel/tags/</loc>
+    <loc>http://localhost:1313/laravel/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:37313/laravel/en/tags/"
+                href="http://localhost:1313/laravel/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:37313/laravel/fr/tags/"
+                href="http://localhost:1313/laravel/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:37313/laravel/tags/"
+                href="http://localhost:1313/laravel/tags/"
                 />
   </url>
 </urlset>
