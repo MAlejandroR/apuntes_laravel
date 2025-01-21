@@ -1,6 +1,7 @@
 {{ $color := .Get "color" | default "primary" }}
+{{ $size := .Get "size" | default 1.5 }}
 <strong>
-<span class="font-weight-bold text-{{ $color }}">
+<span class="font-weight-bold text-{{ $color }} fs-{{ $size }}">
 {{ if eq .Page.File.Ext "md" }}
     {{.Inner|markdownify}}
 {{ else }}

@@ -24,24 +24,18 @@
 <meta property="og:url" content="http://localhost:1313/laravel/docs/03_rutas/">
   <meta property="og:site_name" content="Laravel: Framework de php">
   <meta property="og:title" content="Rutas en laravel">
-  <meta property="og:description" content="Concetpo de rutas Las rutas son la forma de definir cómo se deben manejar las solicitudes HTTP a tu aplicación .
-Especifican qué acción se debe tomar cuando se accede a una URI específica, conectando URLs con el código que genera las respuestas a esas URLs.
-Las podemos ver como las reglas que determinan cómo se responde a cada petición entrante a tu aplicación web. Directorio Routes La carpeta routes en un proyecto Laravel es crucial, ya que en los fichero que contiene, se van a definir cómo tu aplicación responde a las solicitudes HTTP">
+  <meta property="og:description" content="Concetpo de rutas Las rutas son determinan cómo se deben manejar las solicitudes HTTP a tu aplicación . Las rutas son la definición o configuración de las solicitudes que mi proyecto admite o para las que está preparado, y determinan cómo la aplicación gestiona y responde a dichas solicitudes HTTP Especifican qué acción se debe tomar cuando se accede a una URI específica, conectando URLs con el código que genera las respuestas a esas URLs.">
   <meta property="og:locale" content="es">
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Rutas en laravel">
-  <meta itemprop="description" content="Concetpo de rutas Las rutas son la forma de definir cómo se deben manejar las solicitudes HTTP a tu aplicación .
-Especifican qué acción se debe tomar cuando se accede a una URI específica, conectando URLs con el código que genera las respuestas a esas URLs.
-Las podemos ver como las reglas que determinan cómo se responde a cada petición entrante a tu aplicación web. Directorio Routes La carpeta routes en un proyecto Laravel es crucial, ya que en los fichero que contiene, se van a definir cómo tu aplicación responde a las solicitudes HTTP">
+  <meta itemprop="description" content="Concetpo de rutas Las rutas son determinan cómo se deben manejar las solicitudes HTTP a tu aplicación . Las rutas son la definición o configuración de las solicitudes que mi proyecto admite o para las que está preparado, y determinan cómo la aplicación gestiona y responde a dichas solicitudes HTTP Especifican qué acción se debe tomar cuando se accede a una URI específica, conectando URLs con el código que genera las respuestas a esas URLs.">
   <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
   <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="237">
+  <meta itemprop="wordCount" content="1574">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Rutas en laravel">
-  <meta name="twitter:description" content="Concetpo de rutas Las rutas son la forma de definir cómo se deben manejar las solicitudes HTTP a tu aplicación .
-Especifican qué acción se debe tomar cuando se accede a una URI específica, conectando URLs con el código que genera las respuestas a esas URLs.
-Las podemos ver como las reglas que determinan cómo se responde a cada petición entrante a tu aplicación web. Directorio Routes La carpeta routes en un proyecto Laravel es crucial, ya que en los fichero que contiene, se van a definir cómo tu aplicación responde a las solicitudes HTTP">
+  <meta name="twitter:description" content="Concetpo de rutas Las rutas son determinan cómo se deben manejar las solicitudes HTTP a tu aplicación . Las rutas son la definición o configuración de las solicitudes que mi proyecto admite o para las que está preparado, y determinan cómo la aplicación gestiona y responde a dichas solicitudes HTTP Especifican qué acción se debe tomar cuando se accede a una URI específica, conectando URLs con el código que genera las respuestas a esas URLs.">
 
 
 <link href="/laravel/scss/main.css" rel="stylesheet">
@@ -214,13 +208,27 @@ Las podemos ver como las reglas que determinan cómo se responde a cada petició
 <strong>
 <span class="font-weight-bold text-primary">
 
-    la forma de definir cómo se deben manejar las solicitudes HTTP a tu aplicación
+    determinan  cómo se deben manejar las solicitudes HTTP a tu aplicación
 
 </span>
 </strong>
-.</p>
+.
+<div class="definicion-concepto">
+  <div class="definicion-titulo">
+    
+    <i class="fas fa-info-circle" aria-hidden="true"></i>
+    
+    <strong></strong>
+  </div>
+  <div class="definicion-contenido">
+    
+Las rutas son la definición o configuración de las solicitudes que mi proyecto admite o para las que está preparado, y determinan cómo la aplicación gestiona y responde a dichas solicitudes HTTP
+
+  </div>
+</div></p>
+<!-- raw HTML omitted -->
 <p>Especifican qué acción se debe tomar cuando se accede a una URI específica, conectando URLs con el código que genera las respuestas a esas URLs.</p>
-<p>Las podemos ver como 
+<p>En ellas,  podemos ver cómo 
 <strong>
 <span class="font-weight-bold text-primary">
 
@@ -285,6 +293,616 @@ La idea es establecer ante una solicitud establecer una acción :</p>
 <hr>
 <h2 id="rutas">Rutas</h2>
 <h2 id="artisan">Artisan</h2>
+<p>= Qué es routing =</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">URL Vs Ruta (route)</h4>
+
+    <ul>
+<li>Una aplicación web es</li>
+</ul>
+<!-- raw HTML omitted -->
+<pre><code>invocada
+</code></pre>
+<!-- raw HTML omitted -->
+
+
+</div>
+
+<ul>
+<li>En las aplicaciones que venimos desarrollando en el curso, el proceso de ejecución de la solicitud de un recurso web, de forma básica, es:
+<ol>
+<li>El cliente escribe una URL solicitando una página web o PHP. Por ejemplo:</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>http://localhost/paginaPrincipal.php</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<ol start="2">
+<li>Ahora el servidor web procesa la petición ejecutando el fichero <strong>PHP</strong> y retornando una <strong>página web</strong> al cliente.</li>
+</ol>
+
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Nota</h4>
+
+    Entendemos que existe un fichero en el servidor con el nombre <strong>paginaPrincipal.php</strong>.
+
+</div>
+
+<ul>
+<li>Es esta la primera diferencia que podemos encontrar con una aplicación web tradicional de PHP, como hemos trabajado en el curso.</li>
+<li>Ahora no vamos a funcionar exactamente así en la parte del servidor.</li>
+</ul>
+<!-- raw HTML omitted -->
+<p>Con el routing, vamos a especificar los diferentes recursos que nuestra aplicación va a atender como solicitudes HTTP. Esto se hará en un único fichero donde se especifican estas rutas: <strong>web.php</strong>, de modo que todo lo relacionado con las rutas esté ahí especificado:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/routes/web.php
+</span></span></code></pre></div><div class="definicion-concepto">
+  <div class="definicion-titulo">
+    
+    <i class="fas fa-info-circle" aria-hidden="true"></i>
+    
+    <strong>Una ruta en Laravel</strong>
+  </div>
+  <div class="definicion-contenido">
+    
+Una ruta en Laravel es la definición de una **URL** de solicitud web que accede a una página o recurso particular de la aplicación, y la acción correspondiente a esta solicitud.
+
+  </div>
+</div>
+<ul>
+<li>En la versión 11 de Laravel, el archivo principal de rutas es <strong>routes/web.php</strong>. Las rutas de API o canales se gestionan de forma diferente y ya no están definidas en ficheros separados como <strong>api.php</strong> o <strong>channels.php</strong>.</li>
+</ul>
+<p>= Contenido de web.php =</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>El proceso quedará definido por la siguiente secuencia:
+<ol>
+<li>El cliente escribirá una ruta a la que quiere acceder en forma de URL.</li>
+<li>La aplicación buscará dicha ruta en el fichero <strong>web.php</strong>.</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>Hay diferentes maneras de especificar estas rutas en el fichero <strong>web.php</strong>, como veremos a continuación.</li>
+</ul>
+<p>= Levantando el servidor =</p>
+<ul>
+<li>Antes de probar las rutas, debemos poner nuestro servidor en funcionamiento. Para ello, cada proyecto tiene un pequeño servidor interno que nos permite probar en local sin necesidad de depender de Apache.</li>
+</ul>
+<ol>
+<li>Primero levantamos el servidor que viene con Laravel en el puerto 8000.</li>
+<li>Usamos los comandos de <strong>Artisan</strong>:</li>
+</ol>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>php artisan serve</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Si estamos usando Docker, debemos indicar que el navegador o la solicitud pueda hacerse desde cualquier host con la opción <code>--host 0.0.0.0</code>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>php artisan serve --host 0.0.0.0</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Tip</h4>
+
+    Artisan viene de &ldquo;artesano&rdquo; y es un poderoso interfaz de comandos que nos permite realizar muchas acciones rápidamente en nuestro proyecto.
+
+</div>
+
+<p>Al ejecutar el comando, vemos la siguiente salida, que responde al route con la URL <code>/</code>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>Laravel development server started on http://localhost:8000</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>Ahora abrimos el navegador y escribimos <code>http://localhost:8000</code>, obteniendo una vista similar a esta:</li>
+</ul>
+<p>= Especificando la ruta en Laravel =</p>
+<!-- raw HTML omitted -->
+<p>Para ello se usa la clase <strong>Router</strong>. Más información:</p>
+<p><a href="https://laravel.com/docs/master/routing">Laravel Routing Documentation</a></p>
+<p>Usamos lo que en Laravel se conoce como <strong>Facade</strong>.</p>
+<div class="definicion-concepto">
+  <div class="definicion-titulo">
+    
+    <i class="fas fa-info-circle" aria-hidden="true"></i>
+    
+    <strong>Facade</strong>
+  </div>
+  <div class="definicion-contenido">
+    
+* Una **Facade** es una interfaz estática de una clase del Service Container.
+* Cuando usamos una Facade, se produce lo que se llama **inyección de dependencias**.
+	- Esto implica que se importarán todas las clases necesarias para su ejecución de manera implícita.
+	  
+  </div>
+</div>
+<p>De esta forma no tendremos que instanciar un objeto de la clase <strong>Router</strong>. La clase cuenta con una serie de métodos para especificar las rutas según el tipo de solicitud HTTP que se hace al servidor.</p>
+<p>Por ejemplo:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>&lt;?php
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// app/web.php
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>Route::<span style="color:#658b00">get</span>(<span style="color:#00688b">$uri</span>, <span style="color:#00688b">$callback</span>);
+</span></span><span style="display:flex;"><span>Route::<span style="color:#658b00">post</span>(<span style="color:#00688b">$uri</span>, <span style="color:#00688b">$callback</span>);
+</span></span><span style="display:flex;"><span>Route::<span style="color:#658b00">put</span>(<span style="color:#00688b">$uri</span>, <span style="color:#00688b">$callback</span>);
+</span></span><span style="display:flex;"><span>Route::<span style="color:#658b00">patch</span>(<span style="color:#00688b">$uri</span>, <span style="color:#00688b">$callback</span>);
+</span></span><span style="display:flex;"><span>Route::<span style="color:#658b00">delete</span>(<span style="color:#00688b">$uri</span>, <span style="color:#00688b">$callback</span>);
+</span></span><span style="display:flex;"><span>Route::<span style="color:#658b00">options</span>(<span style="color:#00688b">$uri</span>, <span style="color:#00688b">$callback</span>);
+</span></span><span style="display:flex;"><span><span style="color:#1e889b">?&gt;</span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>También podemos tener métodos más flexibles:</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#228b22">// Cualquiera de los métodos GET o POST
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>Route::<span style="color:#658b00">match</span>([<span style="color:#cd5555">&#39;get&#39;</span>, <span style="color:#cd5555">&#39;post&#39;</span>], <span style="color:#cd5555">&#39;/&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span><span style="color:#228b22">//
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// Cualquier método HTTP
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>Route::<span style="color:#658b00">any</span>(<span style="color:#cd5555">&#39;foo&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span><span style="color:#228b22">//
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>== Routing básico: funciones anónimas o closures ==</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>En este caso, la acción básica será una <strong>función anónima</strong> o <strong>closure</strong>.</p>
+</li>
+<li>
+<p>Una función de closure es una función sin nombre (anónima) que se ejecutará y puede retornar algún valor.</p>
+</li>
+<li>
+<p>Ejemplo: dotamos a nuestra aplicación del recurso o ruta llamada &ldquo;primera&rdquo;:</p>
+</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#34;primera&#34;</span>, <span style="color:#8b008b;font-weight:bold">function</span>(){
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;&lt;h1&gt;Estás en la página primera con método GET&lt;/h1&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>También funciona con <code>echo</code>:</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#34;primera_echo&#34;</span>, <span style="color:#8b008b;font-weight:bold">function</span>(){
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#cd5555">&#34;&lt;h1&gt;Estás en la página primera con método GET&lt;/h1&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>Podemos devolver una vista o página HTML. Para ello, creamos una vista:</li>
+</ul>
+<div class="definicion-concepto">
+  <div class="definicion-titulo">
+    
+    <i class="fas fa-info-circle" aria-hidden="true"></i>
+    
+    <strong>Vista en Laravel</strong>
+  </div>
+  <div class="definicion-contenido">
+    
+* Usa un gestor de plantillas llamado **Blade**.
+* Los ficheros tienen extensión `.blade.php`.
+* Se ubican en **/resources/views**.
+* Son ficheros **HTML**.
+  
+  </div>
+</div>
+<ul>
+<li>Ejemplo básico:
+Creamos la vista <strong>prueba.blade.php</strong>:</li>
+</ul>
+<pre tabindex="0"><code class="language-html5" data-lang="html5">&lt;!doctype html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+    &lt;meta charset=&#34;UTF-8&#34;&gt;
+    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Esto es una prueba&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<ul>
+<li>Agregamos la ruta:</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>Route::<span style="color:#658b00">any</span>(<span style="color:#cd5555">&#39;about&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span>(){
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> view(<span style="color:#cd5555">&#39;prueba&#39;</span>);
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>También podemos usar el método <code>view</code> directamente:</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>Route::<span style="color:#658b00">view</span>(<span style="color:#cd5555">&#39;ruta&#39;</span>, <span style="color:#cd5555">&#39;vista&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>== Práctica: rutas básicas ==</p>
+<details>
+    <summary>Instrucciones de práctica</summary>
+    <div class="solution-content">
+        
+* Haz un sitio con 5 URL básicas en un directorio llamado **rutas_basicas** en **resources/views**. Ademas del **home**:
+	- home
+    - about
+	- principal
+	- contacta
+	- noticias
+* Cada una debe mostrar un texto que comente la página donde estás.
+* Crea un menú con submit para navegar a una nueva página llamada navegación.
+* Añade un botón "volver" en cada página para regresar a navegación.
+  
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+<p>== Routing parametrizado ==</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Laravel permite que las rutas incluyan parámetros, los cuales se pasan a las funciones como argumentos.</p>
+</li>
+<li>
+<p>Ejemplo básico:</p>
+</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;/numero/{number}&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span>(<span style="color:#00688b">$number</span>){
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;&lt;h2&gt;Estás en el número </span><span style="color:#cd5555">$number</span><span style="color:#cd5555">&lt;/h2&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>
+<p>Los parámetros en las rutas se indican entre llaves <code>{}</code>. Laravel inyecta automáticamente el valor del parámetro en la función.</p>
+</li>
+<li>
+<p>Ejemplo con varios parámetros:</p>
+</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;noticias/{categoria}/{id}&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span>(<span style="color:#00688b">$categoria</span>, <span style="color:#00688b">$id</span>){
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;&lt;h1&gt;Categoria: </span><span style="color:#cd5555">$categoria</span><span style="color:#cd5555">, Noticia: </span><span style="color:#cd5555">$id</span><span style="color:#cd5555">&lt;/h1&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>== Parámetros con valores por defecto ==</p>
+<ul>
+<li>Si un parámetro no es obligatorio, podemos asignarle un valor por defecto:</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;/usuario/{nombre?}&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span>(<span style="color:#00688b">$nombre</span> = <span style="color:#cd5555">&#39;Invitado&#39;</span>){
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;&lt;h2&gt;Hola, </span><span style="color:#cd5555">$nombre</span><span style="color:#cd5555">&lt;/h2&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>== Práctica: rutas parametrizadas ==</p>
+<details>
+    <summary>Instrucciones de práctica</summary>
+    <div class="solution-content">
+        
+* Crea una ruta que reciba dos parámetros:
+	- `seccion`
+	- `numero`
+* La función debe devolver un mensaje con estos valores.
+* Modifica la ruta para que `seccion` tenga un valor por defecto de "general".
+* Crea una vista llamada **detalle.blade.php** que muestre la información en formato HTML.
+  
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<p>== Restricciones y validación de parámetros ==</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Podemos usar expresiones regulares para restringir los valores permitidos en los parámetros.</p>
+</li>
+<li>
+<p>Ejemplo restringiendo a números:</p>
+</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;noticias/{id}&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span>(<span style="color:#00688b">$id</span>){
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;&lt;h2&gt;Noticia número </span><span style="color:#cd5555">$id</span><span style="color:#cd5555">&lt;/h2&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>})-&gt;<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;id&#39;</span>, <span style="color:#cd5555">&#39;[0-9]+&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>También se pueden aplicar múltiples restricciones:</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;categoria/{name}/{id}&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span>(<span style="color:#00688b">$name</span>, <span style="color:#00688b">$id</span>){
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;&lt;h2&gt;Categoria: </span><span style="color:#cd5555">$name</span><span style="color:#cd5555">, ID: </span><span style="color:#cd5555">$id</span><span style="color:#cd5555">&lt;/h2&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>})-&gt;<span style="color:#658b00">where</span>([<span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;[A-Za-z]+&#39;</span>, <span style="color:#cd5555">&#39;id&#39;</span> =&gt; <span style="color:#cd5555">&#39;[0-9]+&#39;</span>]);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>Laravel incluye helpers para simplificar estas restricciones:</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;user/{name}&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span>(<span style="color:#00688b">$name</span>){
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;&lt;h2&gt;Usuario: </span><span style="color:#cd5555">$name</span><span style="color:#cd5555">&lt;/h2&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>})-&gt;<span style="color:#658b00">whereAlpha</span>(<span style="color:#cd5555">&#39;name&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;product/{id}&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span>(<span style="color:#00688b">$id</span>){
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;&lt;h2&gt;Producto ID: </span><span style="color:#cd5555">$id</span><span style="color:#cd5555">&lt;/h2&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>})-&gt;<span style="color:#658b00">whereNumber</span>(<span style="color:#cd5555">&#39;id&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>== Parámetros opcionales con validación ==</p>
+<ul>
+<li>Es posible combinar parámetros opcionales con restricciones:</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;profile/{name?}&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span>(<span style="color:#00688b">$name</span> = <span style="color:#cd5555">&#39;Invitado&#39;</span>){
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;&lt;h2&gt;Perfil de: </span><span style="color:#cd5555">$name</span><span style="color:#cd5555">&lt;/h2&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>})-&gt;<span style="color:#658b00">whereAlpha</span>(<span style="color:#cd5555">&#39;name&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>== Práctica: restricciones y validación ==</p>
+<p><details>
+    <summary>Instrucciones de práctica</summary>
+    <div class="solution-content">
+        
+* Crea rutas con restricciones de tipo:
+	- Una ruta para noticias que acepte solo números.
+	- Una ruta para categorías que acepte solo letras.
+	- Una ruta opcional para perfiles que acepte solo nombres alfabéticos.
+* Implementa vistas para cada ruta mostrando la información correspondiente.
+  
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+== Nomenclatura de rutas ==</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Podemos asignar nombres a las rutas para facilitar su referencia en la aplicación.</p>
+</li>
+<li>
+<p>Ejemplo de nombrado de rutas:</p>
+</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;/home&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span>(){
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> view(<span style="color:#cd5555">&#39;home&#39;</span>);
+</span></span><span style="display:flex;"><span>})-&gt;<span style="color:#658b00">name</span>(<span style="color:#cd5555">&#39;home&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;/profile&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span>(){
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> view(<span style="color:#cd5555">&#39;profile&#39;</span>);
+</span></span><span style="display:flex;"><span>})-&gt;<span style="color:#658b00">name</span>(<span style="color:#cd5555">&#39;profile&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>Con el nombre asignado, podemos generar URLs dinámicamente:</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#00688b">$url</span> = route(<span style="color:#cd5555">&#39;home&#39;</span>); <span style="color:#228b22">// Genera la URL de la ruta &#39;home&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#00688b">$url</span> = route(<span style="color:#cd5555">&#39;profile&#39;</span>); <span style="color:#228b22">// Genera la URL de la ruta &#39;profile&#39;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>También es posible redirigir a una ruta nombrada:</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#8b008b;font-weight:bold">return</span> redirect()-&gt;<span style="color:#658b00">route</span>(<span style="color:#cd5555">&#39;home&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>== Práctica: nomenclatura de rutas ==</p>
+<details>
+    <summary>Instrucciones de práctica</summary>
+    <div class="solution-content">
+        
+* Crea tres rutas nombradas: inicio, contacto, y servicios.
+* Implementa una vista para cada ruta con un contenido básico.
+* Utiliza el helper `route` para generar enlaces a estas rutas desde una página principal.
+* Redirige a la ruta "inicio" desde otra ruta usando el método `redirect`.
+  
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
 
   <div class="section-index">
     
