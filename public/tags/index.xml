@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Laravel: Framework de php</title>
-    <link>http://localhost:41225/laravel/tags/</link>
+    <link>https://web.infenlaces.com/laravel/tags/</link>
     <description>Recent content in Tags on Laravel: Framework de php</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Sun, 02 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:41225/laravel/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://web.infenlaces.com/laravel/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Facades</title>
-      <link>http://localhost:41225/laravel/tags/facades/</link>
+      <link>https://web.infenlaces.com/laravel/tags/facades/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41225/laravel/tags/facades/</guid>
+      <guid>https://web.infenlaces.com/laravel/tags/facades/</guid>
       <description></description>
     </item>
     <item>
       <title>File</title>
-      <link>http://localhost:41225/laravel/tags/file/</link>
+      <link>https://web.infenlaces.com/laravel/tags/file/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41225/laravel/tags/file/</guid>
+      <guid>https://web.infenlaces.com/laravel/tags/file/</guid>
       <description></description>
     </item>
     <item>
       <title>Laravel</title>
-      <link>http://localhost:41225/laravel/tags/laravel/</link>
+      <link>https://web.infenlaces.com/laravel/tags/laravel/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41225/laravel/tags/laravel/</guid>
+      <guid>https://web.infenlaces.com/laravel/tags/laravel/</guid>
       <description></description>
     </item>
   </channel>

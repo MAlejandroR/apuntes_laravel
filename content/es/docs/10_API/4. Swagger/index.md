@@ -131,11 +131,100 @@ Y accede a la documentación desde el navegador:
 {{< color >}}http://127.0.0.1:8000/api/documentation{{< /color >}}
 
 {{% line %}}
+## 🔹 1. Información General de la API (**@OA\Info**)
+
+Define los metadatos sobre la API.
+
+{{< highlight php "linenos=table, hl_lines=1" >}}
+/**
+* @OA\Info(
+*      version="1.0.0",
+*      title="My API",
+*      description="This is an example API using Swagger in Laravel 11",
+*      @OA\Contact(
+*          email="admin@example.com"
+*      )
+* )
+  */
+  {{< /highlight >}}
+
+## 🔹 2. Definir Endpoints de la API
+
+Cada método HTTP tiene su propia anotación:
+
+### 🟢 **GET Request (@OA\Get)** - Recupera datos
+
+{{< highlight php "linenos=table, hl_lines=1" >}}
+/**
+* @OA\Get(
+*      path="/api/users",
+*      operationId="getUsersList",
+*      tags={"Users"},
+*      summary="Get all users",
+*      description="Returns a list of users",
+*      @OA\Response(
+*          response=200,
+*          description="Successful response",
+*          @OA\JsonContent(type="array", @OA\Items(ref="#/components/schemas/User"))
+*      )
+* )
+  */
+  {{< /highlight >}}
+
+### 🟡 **POST Request (@OA\Post)** - Crea un nuevo recurso
+
+{{< highlight php "linenos=table, hl_lines=1" >}}
+/**
+* @OA\Post(
+*      path="/api/users",
+*      operationId="createUser",
+*      tags={"Users"},
+*      summary="Create a new user",
+*      description="Stores a new user in the database",
+*      @OA\RequestBody(
+*          required=true,
+*          @OA\JsonContent(
+*              required={"name","email","password"},
+*              @OA\Property(property="name", type="string", example="John Doe"),
+*              @OA\Property(property="email", type="string", example="johndoe@example.com"),
+*              @OA\Property(property="password", type="string", example="123456")
+*          )
+*      ),
+*      @OA\Response(response=201, description="User created successfully")
+* )
+  */
+  {{< /highlight >}}
+
+## 🔹 3. Definir Modelos de Respuesta (**@OA\Schema**)
+
+{{< highlight php "linenos=table, hl_lines=1" >}}
+/**
+* @OA\Schema(
+*     schema="User",
+*     type="object",
+*     required={"id", "name", "email"},
+*     @OA\Property(property="id", type="integer", example=1),
+*     @OA\Property(property="name", type="string", example="John Doe"),
+*     @OA\Property(property="email", type="string", example="johndoe@example.com")
+* )
+  */
+  {{< /highlight >}}
+
+## 🔹 4. Autenticación (**@OA\SecurityScheme**)
+
+{{< highlight php "linenos=table, hl_lines=1" >}}
+/**
+* @OA\SecurityScheme(
+*      securityScheme="bearerAuth",
+*      type="http",
+*      scheme="bearer",
+*      bearerFormat="JWT"
+* )
+  */
+  {{< /highlight >}}
+
+
 
 ## 🔹 Conclusión
 
 Con estos pasos, has configurado ***Swagger en Laravel 11*** y documentado el primer endpoint (`index`). Puedes continuar documentando otros métodos como `store`, `update` y `destroy` siguiendo la misma estructura.
-
-{{< alert title="Nota" color="info" >}}
-Si necesitas ayuda con otra parte de Swagger, ¡pregunta! 🚀
-{{< /alert >}}

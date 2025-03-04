@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>File on Laravel: Framework de php</title>
-    <link>http://localhost:41225/laravel/tags/file/</link>
+    <link>https://web.infenlaces.com/laravel/tags/file/</link>
     <description>Recent content in File on Laravel: Framework de php</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Sun, 02 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:41225/laravel/tags/file/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://web.infenlaces.com/laravel/tags/file/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Laravel: Uso de la Facade File</title>
-      <link>http://localhost:41225/laravel/docs/999_cheatseet/05_filefacade/</link>
+      <link>https://web.infenlaces.com/laravel/docs/999_cheatseet/05_filefacade/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:41225/laravel/docs/999_cheatseet/05_filefacade/</guid>
+      <guid>https://web.infenlaces.com/laravel/docs/999_cheatseet/05_filefacade/</guid>
       <description>Laravel: Uso de la Facade File La facade File en Laravel permite manipular archivos de manera sencilla sin necesidad de utilizar directamente funciones de PHP como fopen, fwrite, o unlink.&#xA;Importación de la Facade Antes de usarla, es necesario importar la clase:&#xA;1 use Illuminate\Support\Facades\File; Escribir en un Archivo Para escribir en un archivo, usamos File::put():&#xA;1 File::put(storage_path(&amp;#39;logs/laravel.log&amp;#39;), &amp;#39;Este es un nuevo contenido.&amp;#39;); Esto sobrescribe el contenido del archivo con el nuevo texto.</description>
     </item>
   </channel>
