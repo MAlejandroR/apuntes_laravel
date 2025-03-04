@@ -2,73 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Laravel on Laravel: Framework de php</title>
-    <link>http://localhost:1313/laravel/</link>
+    <link>http://localhost:41225/laravel/</link>
     <description>Recent content in Laravel on Laravel: Framework de php</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/laravel/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:41225/laravel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dashboard según rol</title>
-      <link>http://localhost:1313/laravel/docs/06_autenticacion/fortify/02_page_role_autenticated/</link>
+      <link>http://localhost:41225/laravel/docs/06_autenticacion/fortify/02_page_role_autenticated/</link>
       <pubDate>Sat, 08 Apr 2023 18:21:47 +0200</pubDate>
-      <guid>http://localhost:1313/laravel/docs/06_autenticacion/fortify/02_page_role_autenticated/</guid>
+      <guid>http://localhost:41225/laravel/docs/06_autenticacion/fortify/02_page_role_autenticated/</guid>
       <description>Página user autenticado según rol Se pretende una vez autenticado entregar un dashboard u otro&#xA;En este caso tenemos 3 roles:&#xA;admin studnet teacher Crear middleware Primero creamos un middleware para que se ejecute una vez autenticado 1 php artisan make:middleware RedirectIfAuthenticated El código </description>
     </item>
     <item>
       <title>Instalación</title>
-      <link>http://localhost:1313/laravel/docs/06_autenticacion/fortify/01_instalacion/</link>
+      <link>http://localhost:41225/laravel/docs/06_autenticacion/fortify/01_instalacion/</link>
       <pubDate>Sat, 08 Apr 2023 18:21:47 +0200</pubDate>
-      <guid>http://localhost:1313/laravel/docs/06_autenticacion/fortify/01_instalacion/</guid>
+      <guid>http://localhost:41225/laravel/docs/06_autenticacion/fortify/01_instalacion/</guid>
       <description>Instalando fortify Referencia en la web https://laravel.com/docs/master/fortify&#xA;Instalación 1 2 3 4 composer require laravel/fortify # Instalar el paquete php artisan fortify:install # publicar los recursos de fortify php artisan migrate # ejecutar las migraciones * **Qué se ha instalado y cómo usarlo Observamos que no se ha Http/Controller: Por otro lado, respecto a las migracines aparece una migración que modifica la tabla users, añadiendo los siguientes campos para la autenticaciń 2FA:</description>
     </item>
     <item>
       <title>Migracioens</title>
-      <link>http://localhost:1313/laravel/docs/07_migraciones/eloquent/</link>
+      <link>http://localhost:41225/laravel/docs/07_migraciones/eloquent/</link>
       <pubDate>Sat, 08 Apr 2023 18:21:47 +0200</pubDate>
-      <guid>http://localhost:1313/laravel/docs/07_migraciones/eloquent/</guid>
+      <guid>http://localhost:41225/laravel/docs/07_migraciones/eloquent/</guid>
       <description>Eloquent ORM en Laravel Eloquent ORM en Laravel ofrece una variedad de métodos para interactuar con la base de datos de forma eficiente y elegante. Aquí tienes un resumen escueto de algunos de los métodos más comunes que puedes usar para consultas, inserciones, actualizaciones y borrados:&#xA;Métodos para Consultas all(): Recupera todas las filas de la tabla. find($id): Encuentra un registro por su clave primaria. where(&#39;column&#39;, &#39;value&#39;): Aplica una condición SQL WHERE.</description>
     </item>
     <item>
       <title>Migracioens</title>
-      <link>http://localhost:1313/laravel/docs/11_roles/eloquent/</link>
+      <link>http://localhost:41225/laravel/docs/11_roles/eloquent/</link>
       <pubDate>Sat, 08 Apr 2023 18:21:47 +0200</pubDate>
-      <guid>http://localhost:1313/laravel/docs/11_roles/eloquent/</guid>
+      <guid>http://localhost:41225/laravel/docs/11_roles/eloquent/</guid>
       <description>Eloquent ORM en Laravel Eloquent ORM en Laravel ofrece una variedad de métodos para interactuar con la base de datos de forma eficiente y elegante. Aquí tienes un resumen escueto de algunos de los métodos más comunes que puedes usar para consultas, inserciones, actualizaciones y borrados:&#xA;Métodos para Consultas all(): Recupera todas las filas de la tabla. find($id): Encuentra un registro por su clave primaria. where(&#39;column&#39;, &#39;value&#39;): Aplica una condición SQL WHERE.</description>
     </item>
     <item>
       <title>Laravel: Uso de la Facade File</title>
-      <link>http://localhost:1313/laravel/docs/999_cheatseet/05_filefacade/</link>
+      <link>http://localhost:41225/laravel/docs/999_cheatseet/05_filefacade/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/laravel/docs/999_cheatseet/05_filefacade/</guid>
+      <guid>http://localhost:41225/laravel/docs/999_cheatseet/05_filefacade/</guid>
       <description>Laravel: Uso de la Facade File La facade File en Laravel permite manipular archivos de manera sencilla sin necesidad de utilizar directamente funciones de PHP como fopen, fwrite, o unlink.&#xA;Importación de la Facade Antes de usarla, es necesario importar la clase:&#xA;1 use Illuminate\Support\Facades\File; Escribir en un Archivo Para escribir en un archivo, usamos File::put():&#xA;1 File::put(storage_path(&amp;#39;logs/laravel.log&amp;#39;), &amp;#39;Este es un nuevo contenido.&amp;#39;); Esto sobrescribe el contenido del archivo con el nuevo texto.</description>
     </item>
     <item>
       <title>Diagrama de flujo</title>
-      <link>http://localhost:1313/laravel/docs/06_autenticacion/fortify/diagrama/</link>
+      <link>http://localhost:41225/laravel/docs/06_autenticacion/fortify/diagrama/</link>
       <pubDate>Sat, 08 Apr 2023 18:21:47 +0200</pubDate>
-      <guid>http://localhost:1313/laravel/docs/06_autenticacion/fortify/diagrama/</guid>
+      <guid>http://localhost:41225/laravel/docs/06_autenticacion/fortify/diagrama/</guid>
       <description>Idea del Diagrama 1. Configuración Inicial Archivo de Configuración fortify.php Ruta: config/fortify.php Elementos configurables: features, views, guard, passwords, etc. username, email, lowercase_username, home, prefix, domain, middleware, limiters 2. Proceso de Autenticación Solicitudes de Autenticación Rutas de Fortify Registro /register Inicio de sesión /login Restablecimiento de contraseña /forgot-password, /reset-password Controladores de Fortify RegistersUsers, AuthenticatesUsers, ResetsPasswords, ConfirmsPasswords, VerifiesEmails, UpdatesPasswords, TwoFactorAuthenticatesUsers, LogoutUsers Eventos y Acciones Registro exitoso Inicio de sesión exitoso Restablecimiento de contraseña exitoso 3.</description>
     </item>
     <item>
       <title>Personalizar controladores</title>
-      <link>http://localhost:1313/laravel/docs/06_autenticacion/fortify/peronsalizar_controladores/</link>
+      <link>http://localhost:41225/laravel/docs/06_autenticacion/fortify/peronsalizar_controladores/</link>
       <pubDate>Sat, 08 Apr 2023 18:21:47 +0200</pubDate>
-      <guid>http://localhost:1313/laravel/docs/06_autenticacion/fortify/peronsalizar_controladores/</guid>
+      <guid>http://localhost:41225/laravel/docs/06_autenticacion/fortify/peronsalizar_controladores/</guid>
       <description>Personalización del Proceso de Autenticación en Laravel Fortify Personalizar los controladores para autenticación con fortify Al instalar Laravel Fortify , los controladores que manejan el proceso de login, registro y otras acciones de autenticación no se encuentran de forma explícita en el directorio Http\Controllers de tu aplicación.&#xA;Estos Controladores están ubicados en vendor/laravel/fortify/src/Http/Controllers :&#xA;Estos Controladores están ubicados en vendor/laravel/fortify/src/Http/Controllers: Loguearse AuthenticatedSessionController : Maneja el inicio de sesión y cierre de sesión.</description>
     </item>
     <item>
-      <title>index</title>
-      <link>http://localhost:1313/laravel/docs/10_api/4.-swagger/</link>
+      <title>swagger</title>
+      <link>http://localhost:41225/laravel/docs/10_api/4.-swagger/</link>
       <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/laravel/docs/10_api/4.-swagger/</guid>
-      <description>📌 Documentación de API con Swagger en Laravel 11 🔹 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas. En Laravel, la biblioteca L5 Swagger ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.&#xA;Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar los endpoints de una API.</description>
+      <guid>http://localhost:41225/laravel/docs/10_api/4.-swagger/</guid>
+      <description>Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki 📌 Documentación de API con Swagger en Laravel 11 🔹 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas. En Laravel, la biblioteca L5 Swagger ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.&#xA;Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar los endpoints de una API.</description>
     </item>
     <item>
       <title>Search Results</title>
-      <link>http://localhost:1313/laravel/search/</link>
+      <link>http://localhost:41225/laravel/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/laravel/search/</guid>
+      <guid>http://localhost:41225/laravel/search/</guid>
       <description></description>
     </item>
   </channel>

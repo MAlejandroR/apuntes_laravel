@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Laravel: Framework de php</title>
-    <link>http://localhost:1313/laravel/categories/</link>
+    <link>http://localhost:41225/laravel/categories/</link>
     <description>Recent content in Categories on Laravel: Framework de php</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Sun, 02 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/laravel/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:41225/laravel/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Archivos</title>
-      <link>http://localhost:1313/laravel/categories/archivos/</link>
+      <link>http://localhost:41225/laravel/categories/archivos/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/laravel/categories/archivos/</guid>
+      <guid>http://localhost:41225/laravel/categories/archivos/</guid>
       <description></description>
     </item>
     <item>
       <title>Facades</title>
-      <link>http://localhost:1313/laravel/categories/facades/</link>
+      <link>http://localhost:41225/laravel/categories/facades/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/laravel/categories/facades/</guid>
+      <guid>http://localhost:41225/laravel/categories/facades/</guid>
       <description></description>
     </item>
     <item>
       <title>Laravel</title>
-      <link>http://localhost:1313/laravel/categories/laravel/</link>
+      <link>http://localhost:41225/laravel/categories/laravel/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/laravel/categories/laravel/</guid>
+      <guid>http://localhost:41225/laravel/categories/laravel/</guid>
       <description></description>
     </item>
   </channel>

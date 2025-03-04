@@ -1,5 +1,5 @@
 ---
-title: "index"
+title: "swagger"
 date: "2025-03-03"
 categories: [ ]
 tags: [ ]
@@ -9,7 +9,7 @@ tags: [ ]
 
 {{< / highlight >}}
 
-{{<referenicas>}}
+{{<referencias>}}
 *  https://github.com/DarkaOnLine/L5-Swagger/wiki
 {{</referencias>}} 
 # 📌 Documentación de API con Swagger en Laravel 11
