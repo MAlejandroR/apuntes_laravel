@@ -11,7 +11,7 @@ Artisan es la interfaz de línea de comandos (CLI) incluida con Laravel.
 Ofrece una variedad de comandos útiles para realizar tareas comunes de desarrollo y mantenimiento de aplicaciones.
 La palabra artisan viene de artesano intentando reflejar la sencillez y eficiencia de su utilización
 
-# Características Clave
+# Características principales
 
 - **Generación de Código**: Artisan facilita la creación de modelos, controladores, y otras clases necesarias en aplicaciones Laravel.
 - **Migraciones de Bases de Datos**: Permite manejar fácilmente las migraciones de bases de datos.
@@ -19,6 +19,19 @@ La palabra artisan viene de artesano intentando reflejar la sencillez y eficienc
 - **Entorno de Pruebas**: Ofrece comandos para ejecutar pruebas y otros chequeos.
 
 {{<color_green>}}Artisan es una herramienta esencial en el desarrollo de Laravel{{</color_green>}}, que aumenta la eficiencia y simplifica muchas tareas de programación.
+# Creando un comando en artisan
+> Podemos crear comandos presonalizados para trabajar en nuestros proyectos. Para ello seguiremos las siguientes acciones
+ 
+{{<desplegable title="Creando un comando con artisan">}}
+;Creamos un fichero con command con una clase para especificar el comando
+{{< highlight php "linenos=table, hl_lines=1" >}}
+php artisan make:command ClearLog
+{{< / highlight >}}
+![Carpeta de comando](folderCommand.png)
+
+{{</desplegable>}}
+{{% line %}}
+
 # Ejemplo de Uso
 
 Para ver una lista de todos los comandos disponibles, puedes ejecutar:

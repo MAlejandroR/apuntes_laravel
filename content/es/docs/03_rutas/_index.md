@@ -48,22 +48,16 @@ La idea es establecer ante una solicitud establecer una acción :
 
 En la imagen siguiente especificamos con más detelle el contenido
 
-### La solicitud
-### La acción 
-
-***
-
- 
-## Rutas
-## Artisan
 
 
-= Qué es routing =
 
-{{< alert title="URL Vs Ruta (route)" color="info" >}}
-* Una aplicación web es {{< color >}}invocada{{< /color >}} mediante una **solicitud HTTP**, usando sus verbos **GET o POST** principalmente.
+### {{< color >}} Routing {{< /color >}}
+
+{{< alert title="Routing vs Url" color="warning" >}}
+* Una aplicación web es invocada mediante una **solicitud HTTP**, usando sus verbos **GET o POST** principalmente.
 * Para ello solicitamos un recurso mediante lo que comúnmente llamamos **URL**.
-  {{< /alert >}}
+
+{{< /alert >}}
 
 * En las aplicaciones que venimos desarrollando en el curso, el proceso de ejecución de la solicitud de un recurso web, de forma básica, es:
 	1. El cliente escribe una URL solicitando una página web o PHP. Por ejemplo:
@@ -95,7 +89,7 @@ Una ruta en Laravel es la definición de una **URL** de solicitud web que accede
 
 * En la versión 11 de Laravel, el archivo principal de rutas es **routes/web.php**. Las rutas de API o canales se gestionan de forma diferente y ya no están definidas en ficheros separados como **api.php** o **channels.php**.
 
-= Contenido de web.php =
+### Contenido de web.php 
 
 {{% line %}}
 
@@ -107,6 +101,9 @@ Una ruta en Laravel es la definición de una **URL** de solicitud web que accede
 
 [//]: # ({{< /imgproc >}})
 
+{{< imgproc img_3 Fill "1513x702" >}}
+
+{{< /imgproc >}}
 * Hay diferentes maneras de especificar estas rutas en el fichero **web.php**, como veremos a continuación.
 
 = Levantando el servidor =
