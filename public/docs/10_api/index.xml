@@ -13,7 +13,7 @@
       <link>http://localhost:1313/laravel/docs/10_api/4.-swagger/</link>
       <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/laravel/docs/10_api/4.-swagger/</guid>
-      <description>Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki 📌 Documentación de API con Swagger en Laravel 11 🔹 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas. En Laravel, la biblioteca L5 Swagger ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.&#xA;Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar los endpoints de una API.</description>
+      <description>Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki Swagger en Laravel 11 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.&#xA;En Laravel, la biblioteca L5 Swagger ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.&#xA;Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar los endpoints de una API.</description>
     </item>
   </channel>
 </rss>

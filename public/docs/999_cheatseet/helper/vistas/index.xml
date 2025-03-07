@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vistas on Laravel: Framework de php</title>
-    <link>https://web.infenlaces.com/laravel/docs/999_cheatseet/helper/vistas/</link>
+    <link>http://localhost:1313/laravel/docs/999_cheatseet/helper/vistas/</link>
     <description>Recent content in Vistas on Laravel: Framework de php</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://web.infenlaces.com/laravel/docs/999_cheatseet/helper/vistas/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/laravel/docs/999_cheatseet/helper/vistas/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

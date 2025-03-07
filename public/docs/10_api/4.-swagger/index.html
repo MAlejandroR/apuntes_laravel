@@ -18,11 +18,13 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>swagger | Laravel: Framework de php</title>
-<meta name="description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki 📌 Documentación de API con Swagger en Laravel 11 🔹 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas. En Laravel, la biblioteca L5 Swagger ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.
+<meta name="description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki Swagger en Laravel 11 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.
+En Laravel, la biblioteca L5 Swagger ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.
 Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar los endpoints de una API.">
 
 <meta property="og:title" content="swagger" />
-<meta property="og:description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki 📌 Documentación de API con Swagger en Laravel 11 🔹 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas. En Laravel, la biblioteca L5 Swagger ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.
+<meta property="og:description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki Swagger en Laravel 11 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.
+En Laravel, la biblioteca L5 Swagger ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.
 Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar los endpoints de una API." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/laravel/docs/10_api/4.-swagger/" /><meta property="article:section" content="docs" />
@@ -30,12 +32,14 @@ Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar
 <meta property="article:modified_time" content="2025-03-03T00:00:00+00:00" />
 
 <meta itemprop="name" content="swagger">
-<meta itemprop="description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki 📌 Documentación de API con Swagger en Laravel 11 🔹 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas. En Laravel, la biblioteca L5 Swagger ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.
+<meta itemprop="description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki Swagger en Laravel 11 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.
+En Laravel, la biblioteca L5 Swagger ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.
 Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar los endpoints de una API."><meta itemprop="datePublished" content="2025-03-03T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2025-03-03T00:00:00+00:00" />
-<meta itemprop="wordCount" content="657">
+<meta itemprop="wordCount" content="1419">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="swagger"/>
-<meta name="twitter:description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki 📌 Documentación de API con Swagger en Laravel 11 🔹 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas. En Laravel, la biblioteca L5 Swagger ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.
+<meta name="twitter:description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki Swagger en Laravel 11 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.
+En Laravel, la biblioteca L5 Swagger ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.
 Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar los endpoints de una API."/>
 
 
@@ -237,20 +241,21 @@ Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#-introducción">🔹 Introducción</a></li>
-    <li><a href="#-instalación-de-swagger-en-laravel-11">🔹 Instalación de Swagger en Laravel 11</a></li>
-    <li><a href="#-configuración-de-swagger">🔹 Configuración de Swagger</a></li>
-    <li><a href="#-documentar-el-método-index">🔹 Documentar el método <em><strong>index</strong></em></a></li>
-    <li><a href="#-generar-y-visualizar-la-documentación">🔹 Generar y visualizar la documentación</a></li>
-    <li><a href="#-1-información-general-de-la-api-oainfo">🔹 1. Información General de la API (<strong>@OA\Info</strong>)</a></li>
-    <li><a href="#-2-definir-endpoints-de-la-api">🔹 2. Definir Endpoints de la API</a>
+    <li><a href="#introducción">Introducción</a></li>
+    <li><a href="#instalación-de-swagger-en-laravel-12">Instalación de Swagger en Laravel 12</a></li>
+    <li><a href="#configuración-de-swagger">Configuración de Swagger</a></li>
+    <li><a href="#incluir-informacion-sobre-el-api-usando-swager">Incluir informacion sobre el api usando swager</a>
       <ul>
+        <li><a href="#incluyendo-información-general">Incluyendo información general</a></li>
+        <li><a href="#-2-definir-endpoints-de-la-api">🔹 2. Definir Endpoints de la API</a></li>
         <li><a href="#-get-request-oaget---recupera-datos">🟢 <strong>GET Request (@OA\Get)</strong> - Recupera datos</a></li>
         <li><a href="#-post-request-oapost---crea-un-nuevo-recurso">🟡 <strong>POST Request (@OA\Post)</strong> - Crea un nuevo recurso</a></li>
       </ul>
     </li>
     <li><a href="#-3-definir-modelos-de-respuesta-oaschema">🔹 3. Definir Modelos de Respuesta (<strong>@OA\Schema</strong>)</a></li>
     <li><a href="#-4-autenticación-oasecurityscheme">🔹 4. Autenticación (<strong>@OA\SecurityScheme</strong>)</a></li>
+    <li><a href="#-documentar-el-método-index">🔹 Documentar el método <em><strong>index</strong></em></a></li>
+    <li><a href="#-generar-y-visualizar-la-documentación">🔹 Generar y visualizar la documentación</a></li>
     <li><a href="#-conclusión">🔹 Conclusión</a></li>
   </ul>
 </nav>
@@ -338,23 +343,42 @@ Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar
     </div>
 </div>
 
-<h1 id="-documentación-de-api-con-swagger-en-laravel-11">📌 Documentación de API con Swagger en Laravel 11</h1>
+<h1 id="swagger-en-laravel-11">Swagger en Laravel 11</h1>
 <!-- raw HTML omitted -->
-<h2 id="-introducción">🔹 Introducción</h2>
-<p>Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas. En Laravel, la biblioteca <em><strong>L5 Swagger</strong></em> ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.</p>
+<h2 id="introducción">Introducción</h2>
+<p>
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    Swagger (OpenAPI)
+
+
+</span>
+</strong> es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.</p>
+<p>En Laravel, la biblioteca 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    L5 Swagger
+
+
+</span>
+</strong> ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.</p>
 <p>Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar los endpoints de una API.</p>
 <!-- raw HTML omitted -->
-<h2 id="-instalación-de-swagger-en-laravel-11">🔹 Instalación de Swagger en Laravel 11</h2>
-<p>Ejecuta el siguiente comando para instalar la biblioteca:</p>
+<h2 id="instalación-de-swagger-en-laravel-12">Instalación de Swagger en Laravel 12</h2>
+<p>Instalamos con composer la librería <strong>darkaonline/l5-swagger</strong></p>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>composer require darkaonline/l5-swagger</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>  composer require darkaonline/l5-swagger</span></span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Luego, publica la configuración:</p>
+<p>Publicamos la configuración para ponerla disponible en el direcotiro del proyecto.</p>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -364,163 +388,150 @@ Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar
 </div>
 </div>
 <!-- raw HTML omitted -->
-<h2 id="-configuración-de-swagger">🔹 Configuración de Swagger</h2>
-<p>Edita el archivo <em><strong>config/l5-swagger.php</strong></em> y verifica que la configuración sea la siguiente:</p>
+<h2 id="configuración-de-swagger">Configuración de Swagger</h2>
+<p>Swagger tiene un fichero de cofiguracion en la carpeta <strong>config</strong>:</p>
+<ul>
+<li><em><strong>config/l5-swagger.php</strong></em>
+En su contendio podemos especificar diferentes directivas, como el directorio dónde se ubica los fichero de anotaciones o especificación general:</li>
+</ul>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#cd5555">&#39;paths&#39;</span> =&gt; [
-</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;docs&#39;</span> =&gt; storage_path(<span style="color:#cd5555">&#39;api-docs&#39;</span>),
-</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;annotations&#39;</span> =&gt; base_path(<span style="color:#cd5555">&#39;app/Http/Controllers&#39;</span>),
-</span></span><span style="display:flex;"><span>],</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#cd5555">&#39;paths&#39;</span> =&gt; [
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>            <span style="color:#cd5555">&#39;docs&#39;</span> =&gt; storage_path(<span style="color:#cd5555">&#39;api-docs&#39;</span>),
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>            <span style="color:#cd5555">&#39;annotations&#39;</span> =&gt; base_path(<span style="color:#cd5555">&#39;app/Http/Controllers&#39;</span>),
+</span></span><span style="display:flex;"><span>          ],</span></span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Si tu API usa autenticación, puedes configurar el esquema de seguridad:</p>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#cd5555">&#39;defaults&#39;</span> =&gt; [
-</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;security&#39;</span> =&gt; [
-</span></span><span style="display:flex;"><span>[
-</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;bearerAuth&#39;</span> =&gt; []
-</span></span><span style="display:flex;"><span>],
-</span></span><span style="display:flex;"><span>],
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#cd5555">&#39;defaults&#39;</span> =&gt; [
+</span></span><span style="display:flex;"><span>      <span style="color:#cd5555">&#39;security&#39;</span> =&gt; [
+</span></span><span style="display:flex;"><span>          [
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>              <span style="color:#cd5555">&#39;bearerAuth&#39;</span> =&gt; []
+</span></span><span style="display:flex;"><span>          ],
+</span></span><span style="display:flex;"><span>      ],
 </span></span><span style="display:flex;"><span>],</span></span></code></pre></td></tr></table>
 </div>
 </div>
 <!-- raw HTML omitted -->
-<h2 id="-documentar-el-método-index">🔹 Documentar el método <em><strong>index</strong></em></h2>
-<p>Edita <code>app/Http/Controllers/Api/UserController.php</code> y agrega las anotaciones de Swagger:</p>
-<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#8b008b;font-weight:bold">namespace</span> App\Http\Controllers\Api;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Http\Request;
-</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> App\Http\Controllers\Controller;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cd5555">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* @OA\Get(
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      path=&#34;/api/users&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      operationId=&#34;getUsersList&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      tags={&#34;Usuarios&#34;},
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      summary=&#34;Obtener lista de usuarios&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      description=&#34;Retorna una lista de usuarios&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      @OA\Response(
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          response=200,
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          description=&#34;Éxito&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          @OA\JsonContent(
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*              type=&#34;array&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*              @OA\Items(
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*                  type=&#34;object&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*                  @OA\Property(property=&#34;id&#34;, type=&#34;integer&#34;, example=1),
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*                  @OA\Property(property=&#34;name&#34;, type=&#34;string&#34;, example=&#34;Juan Pérez&#34;),
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*                  @OA\Property(property=&#34;email&#34;, type=&#34;string&#34;, example=&#34;juan@example.com&#34;)
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*              )
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          )
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      )
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* )
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">  */</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">UserController</span> <span style="color:#8b008b;font-weight:bold">extends</span> Controller
-</span></span><span style="display:flex;"><span>  {
-</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">index</span>()
-</span></span><span style="display:flex;"><span>  {
-</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> response()-&gt;<span style="color:#658b00">json</span>([
-</span></span><span style="display:flex;"><span>  [<span style="color:#cd5555">&#39;id&#39;</span> =&gt; <span style="color:#b452cd">1</span>, <span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;Juan Pérez&#39;</span>, <span style="color:#cd5555">&#39;email&#39;</span> =&gt; <span style="color:#cd5555">&#39;juan@example.com&#39;</span>],
-</span></span><span style="display:flex;"><span>  [<span style="color:#cd5555">&#39;id&#39;</span> =&gt; <span style="color:#b452cd">2</span>, <span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;Ana Gómez&#39;</span>, <span style="color:#cd5555">&#39;email&#39;</span> =&gt; <span style="color:#cd5555">&#39;ana@example.com&#39;</span>],
-</span></span><span style="display:flex;"><span>  ]);
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<!-- raw HTML omitted -->
-<h2 id="-generar-y-visualizar-la-documentación">🔹 Generar y visualizar la documentación</h2>
-<p>Ejecuta el siguiente comando para generar la documentación:</p>
-<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>php artisan l5-swagger:generate</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<p>Luego, inicia el servidor:</p>
-<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>php artisan serve</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<p>Y accede a la documentación desde el navegador:</p>
-
+<h2 id="incluir-informacion-sobre-el-api-usando-swager">Incluir informacion sobre el api usando swager</h2>
+<p>Para incluir información sobre nuestra api, lo realizaremos incluyendo las 
 
 <strong>
 <span class="font-weight-bold text-primary fs-1.5">
 
-    http://127.0.0.1:8000/api/documentation
+    Etiquetas de swagger
 
 
 </span>
-</strong>
+</strong> o 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    Anotaciones de swagger
+
+
+</span>
+</strong>.</p>
+<p>Estas etiquetas se incluyen entre comentarios en el fichero correspondiente usando la forma de comentar
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#cd5555">/**
+</span></span></span><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#cd5555"> @OA/anotacion (anotaciones swager)
+</span></span></span><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#cd5555">*/</span></span></span></code></pre></td></tr></table>
+</div>
+</div></p>
 <!-- raw HTML omitted -->
-<h2 id="-1-información-general-de-la-api-oainfo">🔹 1. Información General de la API (<strong>@OA\Info</strong>)</h2>
-<p>Define los metadatos sobre la API.</p>
+<p>Las anotaciones más comúnmente usadas son:</p>
+<table>
+<thead>
+<tr>
+<th>Anotación</th>
+<th>Descripción en Español</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@OA\Info</code></td>
+<td>Define los metadatos de la API (título, versión, descripción).</td>
+</tr>
+<tr>
+<td><code>@OA\Get</code></td>
+<td>Define una petición GET.</td>
+</tr>
+<tr>
+<td><code>@OA\Post</code></td>
+<td>Define una petición POST.</td>
+</tr>
+<tr>
+<td><code>@OA\Put</code></td>
+<td>Define una petición PUT.</td>
+</tr>
+<tr>
+<td><code>@OA\Delete</code></td>
+<td>Define una petición DELETE.</td>
+</tr>
+<tr>
+<td><code>@OA\Schema</code></td>
+<td>Define un modelo reutilizable.</td>
+</tr>
+<tr>
+<td><code>@OA\Property</code></td>
+<td>Define una propiedad dentro de un esquema.</td>
+</tr>
+<tr>
+<td><code>@OA\Parameter</code></td>
+<td>Define un parámetro de consulta o ruta.</td>
+</tr>
+<tr>
+<td><code>@OA\RequestBody</code></td>
+<td>Define el cuerpo de una petición (POST/PUT).</td>
+</tr>
+<tr>
+<td><code>@OA\Response</code></td>
+<td>Define posibles respuestas.</td>
+</tr>
+<tr>
+<td><code>@OA\JsonContent</code></td>
+<td>Define la estructura JSON dentro de una respuesta.</td>
+</tr>
+<tr>
+<td><code>@OA\SecurityScheme</code></td>
+<td>Define el método de autenticación (Bearer, API Key).</td>
+</tr>
+<tr>
+<td><code>@OA\Tag</code></td>
+<td>Agrupa endpoints bajo una etiqueta.</td>
+</tr>
+<tr>
+<td><code>@OA\Server</code></td>
+<td>Define la URL base del servidor.</td>
+</tr>
+</tbody>
+</table>
+<p>Aquí un ejemplo de información general de nuestra API
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -539,8 +550,8 @@ Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#cd5555">/**
 </span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* @OA\Info(
 </span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      version=&#34;1.0.0&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      title=&#34;My API&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      description=&#34;This is an example API using Swagger in Laravel 11&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      title=&#34;Api de Alumnos&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      description=&#34;Cómo interactuar con Alumnos usando esta API&#34;,
 </span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      @OA\Contact(
 </span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          email=&#34;admin@example.com&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      )
@@ -549,8 +560,491 @@ Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar
 </span></span><span style="display:flex;"><span>  
 </span></span></code></pre></td></tr></table>
 </div>
+</div></p>
+<ul>
+<li>Una vez escritos las anotaciones, ya las podemos ver en la web:
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>  php artisan l5-swagger:generate</span></span></code></pre></td></tr></table>
 </div>
-<h2 id="-2-definir-endpoints-de-la-api">🔹 2. Definir Endpoints de la API</h2>
+</div></li>
+<li>Y ahora accedemos a la web, levantando previamente nuestra aplicación:
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>composer run dev
+</span></span><span style="display:flex;"><span>http://<span style="color:#b452cd">127.0</span>.<span style="color:#b452cd">0.1</span>:<span style="color:#b452cd">8000</span>/api/documentatios</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="incluyendo-información-general">Incluyendo información general</h3>
+<p>La información general, debería de ir en un fichero dedicado para esto: 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    app/Http/Swagger.php
+
+
+</span>
+</strong>.
+Alternativamente podemos incluirlo directamente el en controlador de la API, por tener todo concentrado en un solo fichero</p>
+<h4 id="principales-campos-de-metadatos-en-oainfo">Principales Campos de Metadatos en @OA\Info</h4>
+<p>Estos son los campos de 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    metadatos
+
+
+</span>
+</strong> u opciones  más importantes utilizados en <code>@OA\Info</code>:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Campo</strong></th>
+<th><strong>Descripción en Español</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>Define el título de la API.</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td>Especifica la versión de la API.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>Proporciona una descripción general de la API.</td>
+</tr>
+<tr>
+<td><code>termsOfService</code></td>
+<td>Enlace a los términos de servicio de la API.</td>
+</tr>
+<tr>
+<td><code>@OA\Contact</code></td>
+<td>Información de contacto del responsable de la API.</td>
+</tr>
+<tr>
+<td><code>@OA\License</code></td>
+<td>Detalles sobre la licencia de la API.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="-2-definir-endpoints-de-la-api">🔹 2. Definir Endpoints de la API</h3>
+<h4 id="principales-campos-de-metadatos-en-oaget-oapost-oaput-y-oadelete">Principales Campos de Metadatos en @OA\Get, @OA\Post, @OA\Put y @OA\Delete</h4>
+<p>Estos son los campos de metadatos más importantes utilizados en los métodos HTTP dentro de Swagger:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Anotación</strong></th>
+<th><strong>Descripción en Español</strong></th>
+<th><strong>Obligatorio</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td>Define la ruta de la API donde se ejecutará la operación.</td>
+<td>✅ Sí</td>
+</tr>
+<tr>
+<td><code>operationId</code></td>
+<td>Identificador único de la operación dentro de la API.</td>
+<td>✅ Sí</td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td>Agrupa las operaciones en categorías dentro de la documentación.</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>summary</code></td>
+<td>Breve descripción de la operación.</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>Explicación más detallada de la operación.</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>@OA\Response</code></td>
+<td>Define las respuestas esperadas de la API.</td>
+<td>✅ Sí</td>
+</tr>
+<tr>
+<td><code>@OA\Parameter</code></td>
+<td>Define los parámetros que recibe la API en la URL o query.</td>
+<td>✅ Solo si hay parámetros en la URL</td>
+</tr>
+<tr>
+<td><code>@OA\RequestBody</code></td>
+<td>Define los datos que se envían en una petición (POST o PUT).</td>
+<td>✅ Solo en <code>POST</code> y <code>PUT</code></td>
+</tr>
+<tr>
+<td><code>@OA\JsonContent</code></td>
+<td>Especifica el formato de respuesta en JSON.</td>
+<td>✅ Solo si la respuesta es JSON</td>
+</tr>
+<tr>
+<td><code>@OA\Items</code></td>
+<td>Define los elementos dentro de una respuesta que es un array.</td>
+<td>✅ Solo si la respuesta es un array</td>
+</tr>
+</tbody>
+</table>
+<details>
+    <summary>@OA\Response</summary>
+    <div class="summary-content">
+        <table>
+<thead>
+<tr>
+<th><strong>Opción</strong></th>
+<th><strong>Descripción</strong></th>
+<th><strong>Obligatorio</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>response</code></td>
+<td>Código de estado HTTP (<code>200</code>, <code>400</code>, <code>404</code>, etc.).</td>
+<td>✅ Sí</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>Breve descripción de la respuesta.</td>
+<td>✅ Sí</td>
+</tr>
+<tr>
+<td><code>@OA\JsonContent</code></td>
+<td>Define el contenido en formato JSON.</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>@OA\XmlContent</code></td>
+<td>Define el contenido en formato XML.</td>
+<td>❌ No</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+<details>
+    <summary>@OA\Parameter</summary>
+    <div class="summary-content">
+        <table>
+<thead>
+<tr>
+<th><strong>Opción</strong></th>
+<th><strong>Descripción</strong></th>
+<th><strong>Obligatorio</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Nombre del parámetro (<code>id</code>, <code>page</code>, etc.).</td>
+<td>✅ Sí</td>
+</tr>
+<tr>
+<td><code>in</code></td>
+<td>Ubicación (<code>query</code>, <code>path</code>, <code>header</code>, <code>cookie</code>).</td>
+<td>✅ Sí</td>
+</tr>
+<tr>
+<td><code>required</code></td>
+<td>Indica si el parámetro es obligatorio (<code>true</code> o <code>false</code>).</td>
+<td>✅ Solo en <code>path</code></td>
+</tr>
+<tr>
+<td><code>@OA\Schema</code></td>
+<td>Define el tipo de dato (<code>string</code>, <code>integer</code>, <code>boolean</code>).</td>
+<td>❌ No</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+<details>
+    <summary>@OA\RequestBody</summary>
+    <div class="summary-content">
+        <table>
+<thead>
+<tr>
+<th><strong>Opción</strong></th>
+<th><strong>Descripción</strong></th>
+<th><strong>Obligatorio</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>required</code></td>
+<td>Indica si el cuerpo es obligatorio (<code>true</code> o <code>false</code>).</td>
+<td>✅ Sí</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>Explicación del contenido del cuerpo.</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>@OA\JsonContent</code></td>
+<td>Define el contenido en JSON.</td>
+<td>✅ Solo si la petición envía datos</td>
+</tr>
+<tr>
+<td><code>@OA\XmlContent</code></td>
+<td>Define el contenido en XML (opcional).</td>
+<td>❌ No</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+<details>
+    <summary>@OA\JsonContent</summary>
+    <div class="summary-content">
+        <table>
+<thead>
+<tr>
+<th><strong>Opción</strong></th>
+<th><strong>Descripción</strong></th>
+<th><strong>Obligatorio</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>Tipo de dato (<code>object</code>, <code>array</code>).</td>
+<td>✅ Sí</td>
+</tr>
+<tr>
+<td><code>@OA\Items</code></td>
+<td>Define elementos dentro de un array.</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>@OA\Property</code></td>
+<td>Define propiedades dentro de un objeto JSON.</td>
+<td>❌ No</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+<details>
+    <summary>@OA\Items</summary>
+    <div class="summary-content">
+        <table>
+<thead>
+<tr>
+<th><strong>Opción</strong></th>
+<th><strong>Descripción</strong></th>
+<th><strong>Obligatorio</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>Tipo de dato de los elementos (<code>string</code>, <code>integer</code>, <code>object</code>).</td>
+<td>✅ Sí</td>
+</tr>
+<tr>
+<td><code>@OA\Property</code></td>
+<td>Define propiedades dentro del objeto del array.</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>example</code></td>
+<td>Define un valor de ejemplo para un elemento del array.</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>ref</code></td>
+<td>Permite hacer referencia a un esquema predefinido (<code>ref=&quot;#/components/schemas/Alumno&quot;</code>).</td>
+<td>❌ No</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+<details>
+    <summary>@OA\Property</summary>
+    <div class="summary-content">
+        <table>
+<thead>
+<tr>
+<th><strong>Opción</strong></th>
+<th><strong>Descripción</strong></th>
+<th><strong>Obligatorio</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>property</code></td>
+<td>Nombre de la propiedad en el objeto JSON.</td>
+<td>✅ Sí</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>Tipo de dato (<code>string</code>, <code>integer</code>, <code>boolean</code>, <code>array</code>, <code>object</code>).</td>
+<td>✅ Sí</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td>Formato del dato (<code>date-time</code>, <code>email</code>, <code>uuid</code>, etc.).</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>example</code></td>
+<td>Valor de ejemplo para la propiedad.</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>Breve explicación de la propiedad.</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>@OA\Items</code></td>
+<td>Se usa si la propiedad es un array (<code>type=&quot;array&quot;</code>).</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>@OA\Schema</code></td>
+<td>Se usa si la propiedad es un objeto (<code>type=&quot;object&quot;</code>).</td>
+<td>❌ No</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
 <p>Cada método HTTP tiene su propia anotación:</p>
 <h3 id="-get-request-oaget---recupera-datos">🟢 <strong>GET Request (@OA\Get)</strong> - Recupera datos</h3>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
@@ -694,6 +1188,123 @@ Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
+<h2 id="-documentar-el-método-index">🔹 Documentar el método <em><strong>index</strong></em></h2>
+<p>Edita <code>app/Http/Controllers/Api/UserController.php</code> y agrega las anotaciones de Swagger:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#8b008b;font-weight:bold">namespace</span> App\Http\Controllers\Api;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Http\Request;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> App\Http\Controllers\Controller;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* @OA\Get(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      path=&#34;/api/users&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      operationId=&#34;getUsersList&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      tags={&#34;Usuarios&#34;},
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      summary=&#34;Obtener lista de usuarios&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      description=&#34;Retorna una lista de usuarios&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      @OA\Response(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          response=200,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          description=&#34;Éxito&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          @OA\JsonContent(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*              type=&#34;array&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*              @OA\Items(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*                  type=&#34;object&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*                  @OA\Property(property=&#34;id&#34;, type=&#34;integer&#34;, example=1),
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*                  @OA\Property(property=&#34;name&#34;, type=&#34;string&#34;, example=&#34;Juan Pérez&#34;),
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*                  @OA\Property(property=&#34;email&#34;, type=&#34;string&#34;, example=&#34;juan@example.com&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*              )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">  */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">UserController</span> <span style="color:#8b008b;font-weight:bold">extends</span> Controller
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">index</span>()
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> response()-&gt;<span style="color:#658b00">json</span>([
+</span></span><span style="display:flex;"><span>  [<span style="color:#cd5555">&#39;id&#39;</span> =&gt; <span style="color:#b452cd">1</span>, <span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;Juan Pérez&#39;</span>, <span style="color:#cd5555">&#39;email&#39;</span> =&gt; <span style="color:#cd5555">&#39;juan@example.com&#39;</span>],
+</span></span><span style="display:flex;"><span>  [<span style="color:#cd5555">&#39;id&#39;</span> =&gt; <span style="color:#b452cd">2</span>, <span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;Ana Gómez&#39;</span>, <span style="color:#cd5555">&#39;email&#39;</span> =&gt; <span style="color:#cd5555">&#39;ana@example.com&#39;</span>],
+</span></span><span style="display:flex;"><span>  ]);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<!-- raw HTML omitted -->
+<h2 id="-generar-y-visualizar-la-documentación">🔹 Generar y visualizar la documentación</h2>
+<p>Ejecuta el siguiente comando para generar la documentación:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>php artisan l5-swagger:generate</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Luego, inicia el servidor:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>php artisan serve</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Y accede a la documentación desde el navegador:</p>
+
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    http://127.0.0.1:8000/api/documentation
+
+
+</span>
+</strong>
+<!-- raw HTML omitted -->
 <h2 id="-conclusión">🔹 Conclusión</h2>
 <p>Con estos pasos, has configurado <em><strong>Swagger en Laravel 11</strong></em> y documentado el primer endpoint (<code>index</code>). Puedes continuar documentando otros métodos como <code>store</code>, <code>update</code> y <code>destroy</code> siguiendo la misma estructura.</p>
 

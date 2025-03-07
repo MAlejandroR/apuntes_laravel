@@ -5,6 +5,8 @@ categories: [ ]
 tags: [ ]
 ---
 
+
+
 {{< highlight php "linenos=table, hl_lines=1" >}}
 
 {{< / highlight >}}
@@ -12,28 +14,29 @@ tags: [ ]
 {{<referencias>}}
 *  https://github.com/DarkaOnLine/L5-Swagger/wiki
 {{</referencias>}} 
-# 📌 Documentación de API con Swagger en Laravel 11
+# Swagger en Laravel 11
 
 {{% line %}}
 
-## 🔹 Introducción
+## Introducción
 
-Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas. En Laravel, la biblioteca ***L5 Swagger*** ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.
+{{< color >}} Swagger (OpenAPI) {{< /color >}} es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.
+
+En Laravel, la biblioteca {{< color >}} L5 Swagger {{< /color >}} ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.
 
 Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar los endpoints de una API.
 
 {{% line %}}
 
-## 🔹 Instalación de Swagger en Laravel 11
+## Instalación de Swagger en Laravel 12
 
-Ejecuta el siguiente comando para instalar la biblioteca:
+Instalamos con composer la librería **darkaonline/l5-swagger**
 
 {{< highlight bash "linenos=table, hl_lines=1" >}}
-composer require darkaonline/l5-swagger
-
+  composer require darkaonline/l5-swagger
 {{< /highlight >}}
 
-Luego, publica la configuración:
+Publicamos la configuración para ponerla disponible en el direcotiro del proyecto.
 
 {{< highlight bash "linenos=table, hl_lines=1" >}}
 php artisan vendor:publish --provider="L5Swagger\\L5SwaggerServiceProvider"
@@ -41,106 +44,70 @@ php artisan vendor:publish --provider="L5Swagger\\L5SwaggerServiceProvider"
 
 {{% line %}}
 
-## 🔹 Configuración de Swagger
+## Configuración de Swagger
 
-Edita el archivo ***config/l5-swagger.php*** y verifica que la configuración sea la siguiente:
+[//]: # (MRM => Revisar este apartado  )
 
-{{< highlight php "linenos=table, hl_lines=1" >}}
+Swagger tiene un fichero de cofiguracion en la carpeta **config**:
+* ***config/l5-swagger.php***
+En su contendio podemos especificar diferentes directivas, como el directorio dónde se ubica los fichero de anotaciones o especificación general:
+
+{{< highlight php "linenos=table, hl_lines=2 3" >}}
 'paths' => [
-'docs' => storage_path('api-docs'),
-'annotations' => base_path('app/Http/Controllers'),
-],
+            'docs' => storage_path('api-docs'),
+            'annotations' => base_path('app/Http/Controllers'),
+          ],
 {{< /highlight >}}
 
 Si tu API usa autenticación, puedes configurar el esquema de seguridad:
 
-{{< highlight php "linenos=table, hl_lines=1" >}}
+{{< highlight php "linenos=table, hl_lines=4" >}}
 'defaults' => [
-'security' => [
-[
-'bearerAuth' => []
-],
-],
+      'security' => [
+          [
+              'bearerAuth' => []
+          ],
+      ],
 ],
 {{< /highlight >}}
 
 {{% line %}}
 
-## 🔹 Documentar el método ***index***
+## Incluir informacion sobre el api usando swager
+Para incluir información sobre nuestra api, lo realizaremos incluyendo las {{< color >}} Etiquetas de swagger {{< /color >}} o {{< color >}} Anotaciones de swagger {{< /color >}}.
 
-Edita `app/Http/Controllers/Api/UserController.php` y agrega las anotaciones de Swagger:
-
-{{< highlight php "linenos=table, hl_lines=1" >}}
-namespace App\Http\Controllers\Api;
-
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
+Estas etiquetas se incluyen entre comentarios en el fichero correspondiente usando la forma de comentar
+{{< highlight php "linenos=table, hl_lines=1-3" >}}
 /**
-* @OA\Get(
-*      path="/api/users",
-*      operationId="getUsersList",
-*      tags={"Usuarios"},
-*      summary="Obtener lista de usuarios",
-*      description="Retorna una lista de usuarios",
-*      @OA\Response(
-*          response=200,
-*          description="Éxito",
-*          @OA\JsonContent(
-*              type="array",
-*              @OA\Items(
-*                  type="object",
-*                  @OA\Property(property="id", type="integer", example=1),
-*                  @OA\Property(property="name", type="string", example="Juan Pérez"),
-*                  @OA\Property(property="email", type="string", example="juan@example.com")
-*              )
-*          )
-*      )
-* )
-  */
-  class UserController extends Controller
-  {
-  public function index()
-  {
-  return response()->json([
-  ['id' => 1, 'name' => 'Juan Pérez', 'email' => 'juan@example.com'],
-  ['id' => 2, 'name' => 'Ana Gómez', 'email' => 'ana@example.com'],
-  ]);
-  }
-  }
-  {{< /highlight >}}
-
+ @OA/anotacion (anotaciones swager)
+*/
+{{< / highlight >}}
 {{% line %}}
+Las anotaciones más comúnmente usadas son:
+| Anotación            | Descripción en Español |
+|----------------------|----------------------|
+| `@OA\Info`         | Define los metadatos de la API (título, versión, descripción). |
+| `@OA\Get`          | Define una petición GET. |
+| `@OA\Post`         | Define una petición POST. |
+| `@OA\Put`          | Define una petición PUT. |
+| `@OA\Delete`       | Define una petición DELETE. |
+| `@OA\Schema`       | Define un modelo reutilizable. |
+| `@OA\Property`     | Define una propiedad dentro de un esquema. |
+| `@OA\Parameter`    | Define un parámetro de consulta o ruta. |
+| `@OA\RequestBody`  | Define el cuerpo de una petición (POST/PUT). |
+| `@OA\Response`     | Define posibles respuestas. |
+| `@OA\JsonContent`  | Define la estructura JSON dentro de una respuesta. |
+| `@OA\SecurityScheme` | Define el método de autenticación (Bearer, API Key). |
+| `@OA\Tag`         | Agrupa endpoints bajo una etiqueta. |
+| `@OA\Server`      | Define la URL base del servidor. |
 
-## 🔹 Generar y visualizar la documentación
-
-Ejecuta el siguiente comando para generar la documentación:
-
-{{< highlight bash "linenos=table, hl_lines=1" >}}
-php artisan l5-swagger:generate
-{{< /highlight >}}
-
-Luego, inicia el servidor:
-
-{{< highlight bash "linenos=table, hl_lines=1" >}}
-php artisan serve
-{{< /highlight >}}
-
-Y accede a la documentación desde el navegador:
-
-{{< color >}}http://127.0.0.1:8000/api/documentation{{< /color >}}
-
-{{% line %}}
-## 🔹 1. Información General de la API (**@OA\Info**)
-
-Define los metadatos sobre la API.
-
+Aquí un ejemplo de información general de nuestra API
 {{< highlight php "linenos=table, hl_lines=1" >}}
 /**
 * @OA\Info(
 *      version="1.0.0",
-*      title="My API",
-*      description="This is an example API using Swagger in Laravel 11",
+*      title="Api de Alumnos",
+*      description="Cómo interactuar con Alumnos usando esta API",
 *      @OA\Contact(
 *          email="admin@example.com"
 *      )
@@ -148,7 +115,121 @@ Define los metadatos sobre la API.
   */
   {{< /highlight >}}
 
-## 🔹 2. Definir Endpoints de la API
+* Una vez escritos las anotaciones, ya las podemos ver en la web:
+{{< highlight php "linenos=table, hl_lines=1" >}}
+  php artisan l5-swagger:generate
+{{< / highlight >}}
+* Y ahora accedemos a la web, levantando previamente nuestra aplicación:
+{{< highlight php "linenos=table, hl_lines=1" >}}
+composer run dev
+http://127.0.0.1:8000/api/documentatios
+{{< / highlight >}}
+### Incluyendo información general
+
+La información general, debería de ir en un fichero dedicado para esto: {{< color >}} app/Http/Swagger.php {{< /color >}}.
+Alternativamente podemos incluirlo directamente el en controlador de la API, por tener todo concentrado en un solo fichero
+
+
+#### Principales Campos de Metadatos en @OA\Info
+
+Estos son los campos de {{< color >}} metadatos {{< /color >}} u opciones  más importantes utilizados en `@OA\Info`:
+
+| **Campo**           | **Descripción en Español**                                      |
+|---------------------|----------------------------------------------------------------|
+| `title`            | Define el título de la API.                                    |
+| `version`          | Especifica la versión de la API.                               |
+| `description`      | Proporciona una descripción general de la API.                 |
+| `termsOfService`   | Enlace a los términos de servicio de la API.                   |
+| `@OA\Contact`      | Información de contacto del responsable de la API.             |
+| `@OA\License`      | Detalles sobre la licencia de la API.                          |
+
+{{< highlight php "linenos=table, hl_lines=1" >}}
+
+{{< / highlight >}}
+### 🔹 2. Definir Endpoints de la API
+#### Principales Campos de Metadatos en @OA\Get, @OA\Post, @OA\Put y @OA\Delete
+
+Estos son los campos de metadatos más importantes utilizados en los métodos HTTP dentro de Swagger:
+
+| **Anotación**       | **Descripción en Español**                                      | **Obligatorio** |
+|---------------------|----------------------------------------------------------------|---------------|
+| `path`             | Define la ruta de la API donde se ejecutará la operación.      | ✅ Sí  |
+| `operationId`      | Identificador único de la operación dentro de la API.         | ✅ Sí  |
+| `tags`            | Agrupa las operaciones en categorías dentro de la documentación. | ❌ No  |
+| `summary`         | Breve descripción de la operación.                              | ❌ No  |
+| `description`     | Explicación más detallada de la operación.                      | ❌ No  |
+| `@OA\Response`    | Define las respuestas esperadas de la API.                      | ✅ Sí  |
+| `@OA\Parameter`   | Define los parámetros que recibe la API en la URL o query.      | ✅ Solo si hay parámetros en la URL |
+| `@OA\RequestBody` | Define los datos que se envían en una petición (POST o PUT).    | ✅ Solo en `POST` y `PUT` |
+| `@OA\JsonContent` | Especifica el formato de respuesta en JSON.                     | ✅ Solo si la respuesta es JSON |
+| `@OA\Items`       | Define los elementos dentro de una respuesta que es un array.   | ✅ Solo si la respuesta es un array |
+
+{{< summary title="@OA\Response" >}}
+| **Opción**         | **Descripción** | **Obligatorio** |
+|---------------------|----------------|----------------|
+| `response`         | Código de estado HTTP (`200`, `400`, `404`, etc.). | ✅ Sí |
+| `description`      | Breve descripción de la respuesta. | ✅ Sí |
+| `@OA\JsonContent`  | Define el contenido en formato JSON. | ❌ No |
+| `@OA\XmlContent`   | Define el contenido en formato XML. | ❌ No |
+{{</summary>}}
+
+{{% line %}}
+
+{{< summary title="@OA\Parameter" >}}
+| **Opción**  | **Descripción** | **Obligatorio** |
+|------------|----------------|----------------|
+| `name`     | Nombre del parámetro (`id`, `page`, etc.). | ✅ Sí |
+| `in`       | Ubicación (`query`, `path`, `header`, `cookie`). | ✅ Sí |
+| `required` | Indica si el parámetro es obligatorio (`true` o `false`). | ✅ Solo en `path` |
+| `@OA\Schema` | Define el tipo de dato (`string`, `integer`, `boolean`). | ❌ No |
+{{</summary>}}
+
+{{% line %}}
+
+{{< summary title="@OA\RequestBody" >}}
+| **Opción**    | **Descripción** | **Obligatorio** |
+|--------------|----------------|----------------|
+| `required`   | Indica si el cuerpo es obligatorio (`true` o `false`). | ✅ Sí |
+| `description` | Explicación del contenido del cuerpo. | ❌ No |
+| `@OA\JsonContent` | Define el contenido en JSON. | ✅ Solo si la petición envía datos |
+| `@OA\XmlContent`  | Define el contenido en XML (opcional). | ❌ No |
+{{</summary>}}
+
+{{% line %}}
+
+{{< summary title="@OA\JsonContent" >}}
+| **Opción**   | **Descripción** | **Obligatorio** |
+|-------------|----------------|----------------|
+| `type`      | Tipo de dato (`object`, `array`). | ✅ Sí |
+| `@OA\Items` | Define elementos dentro de un array. | ❌ No |
+| `@OA\Property` | Define propiedades dentro de un objeto JSON. | ❌ No |
+{{</summary>}}
+
+{{% line %}}
+
+{{< summary title="@OA\Items" >}}
+| **Opción**   | **Descripción** | **Obligatorio** |
+|-------------|----------------|----------------|
+| `type`      | Tipo de dato de los elementos (`string`, `integer`, `object`). | ✅ Sí |
+| `@OA\Property` | Define propiedades dentro del objeto del array. | ❌ No |
+| `example`   | Define un valor de ejemplo para un elemento del array. | ❌ No |
+| `ref`       | Permite hacer referencia a un esquema predefinido (`ref="#/components/schemas/Alumno"`). | ❌ No |
+{{</summary>}}
+{{% line %}}
+
+{{< summary title="@OA\Property" >}}
+| **Opción**  | **Descripción** | **Obligatorio** |
+|------------|----------------|----------------|
+| `property` | Nombre de la propiedad en el objeto JSON. | ✅ Sí |
+| `type`     | Tipo de dato (`string`, `integer`, `boolean`, `array`, `object`). | ✅ Sí |
+| `format`   | Formato del dato (`date-time`, `email`, `uuid`, etc.). | ❌ No |
+| `example`  | Valor de ejemplo para la propiedad. | ❌ No |
+| `description` | Breve explicación de la propiedad. | ❌ No |
+| `@OA\Items` | Se usa si la propiedad es un array (`type="array"`). | ❌ No |
+| `@OA\Schema` | Se usa si la propiedad es un objeto (`type="object"`). | ❌ No |
+{{</summary>}}
+
+{{% line %}}
 
 Cada método HTTP tiene su propia anotación:
 
@@ -222,6 +303,71 @@ Cada método HTTP tiene su propia anotación:
 * )
   */
   {{< /highlight >}}
+## 🔹 Documentar el método ***index***
+
+Edita `app/Http/Controllers/Api/UserController.php` y agrega las anotaciones de Swagger:
+
+{{< highlight php "linenos=table, hl_lines=1" >}}
+namespace App\Http\Controllers\Api;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+/**
+* @OA\Get(
+*      path="/api/users",
+*      operationId="getUsersList",
+*      tags={"Usuarios"},
+*      summary="Obtener lista de usuarios",
+*      description="Retorna una lista de usuarios",
+*      @OA\Response(
+*          response=200,
+*          description="Éxito",
+*          @OA\JsonContent(
+*              type="array",
+*              @OA\Items(
+*                  type="object",
+*                  @OA\Property(property="id", type="integer", example=1),
+*                  @OA\Property(property="name", type="string", example="Juan Pérez"),
+*                  @OA\Property(property="email", type="string", example="juan@example.com")
+*              )
+*          )
+*      )
+* )
+  */
+  class UserController extends Controller
+  {
+  public function index()
+  {
+  return response()->json([
+  ['id' => 1, 'name' => 'Juan Pérez', 'email' => 'juan@example.com'],
+  ['id' => 2, 'name' => 'Ana Gómez', 'email' => 'ana@example.com'],
+  ]);
+  }
+  }
+  {{< /highlight >}}
+
+{{% line %}}
+
+## 🔹 Generar y visualizar la documentación
+
+Ejecuta el siguiente comando para generar la documentación:
+
+{{< highlight bash "linenos=table, hl_lines=1" >}}
+php artisan l5-swagger:generate
+{{< /highlight >}}
+
+Luego, inicia el servidor:
+
+{{< highlight bash "linenos=table, hl_lines=1" >}}
+php artisan serve
+{{< /highlight >}}
+
+Y accede a la documentación desde el navegador:
+
+{{< color >}}http://127.0.0.1:8000/api/documentation{{< /color >}}
+
+{{% line %}}
 
 
 
