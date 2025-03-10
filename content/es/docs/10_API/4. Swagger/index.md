@@ -101,52 +101,93 @@ Las anotaciones más comúnmente usadas son:
 | `@OA\Tag`         | Agrupa endpoints bajo una etiqueta. |
 | `@OA\Server`      | Define la URL base del servidor. |
 
-Aquí un ejemplo de información general de nuestra API
-{{< highlight php "linenos=table, hl_lines=1" >}}
+> A continuación mostramos un ejemplo de información general de nuestra API, que habrá que ubicarlo en {{< color >}} el fichero del controlador antes de la especificación de la clase {{< /color >}}
+>> {{<summary title="Ejemplo de @OA\Info">}}
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use  ...
 /**
 * @OA\Info(
-*      version="1.0.0",
-*      title="Api de Alumnos",
-*      description="Cómo interactuar con Alumnos usando esta API",
-*      @OA\Contact(
-*          email="admin@example.com"
-*      )
+*     title="API de Alumnos",
+*     version="1.0.0",
+*     description="Para obtener listado de alumnos",
+*     @OA\Contact(
+*         name="Manuel",
+*         email="manuelromeromiguel@gmail.com"
+*     ),
+*     @OA\License(
+*         name="MIT",
+*         url="https://opensource.org/license/mit"
+*     )
 * )
   */
-  {{< /highlight >}}
 
-* Una vez escritos las anotaciones, ya las podemos ver en la web:
-{{< highlight php "linenos=table, hl_lines=1" >}}
+class AlumnoApiController extends Controller{
+.....
+ ```
+{{</summary>}}
+
+
+ 
+* Una vez escritos las anotaciones, ya las podemos ver en la web, para ello temeos que generar la documentación y acceder a la web donde se ha generado dicha información:
+```bash
   php artisan l5-swagger:generate
-{{< / highlight >}}
-* Y ahora accedemos a la web, levantando previamente nuestra aplicación:
-{{< highlight php "linenos=table, hl_lines=1" >}}
+```
+* Y ahora accedemos a la web.
+
+> _(debemos tener levantada nuestra aplicación, si estamos en local podemos ejecutar el script dev de composer.json)_:
+>> {{< highlight php "linenos=table, hl_lines=1" >}}
 composer run dev
-http://127.0.0.1:8000/api/documentatios
 {{< / highlight >}}
+ 
+Y podemos acceder a la información en nuestro navegador
+```php
+http://127.0.0.1:8000/api/documentation
+```
+
 ### Incluyendo información general
 
-La información general, debería de ir en un fichero dedicado para esto: {{< color >}} app/Http/Swagger.php {{< /color >}}.
-Alternativamente podemos incluirlo directamente el en controlador de la API, por tener todo concentrado en un solo fichero
+La información general, debería de ir en un fichero dedicado para esto: {{< color >}} app/Http/Swagger.php {{< /color >}}.   
+
+Alternativamente podemos incluirlo directamente el en controlador de la API, y así  tener todo concentrado en un solo fichero.
 
 
 #### Principales Campos de Metadatos en @OA\Info
 
 Estos son los campos de {{< color >}} metadatos {{< /color >}} u opciones  más importantes utilizados en `@OA\Info`:
+{{< summary title="Principales Campos en @OA\Info" >}}
+| **Campo**           | **Descripción en Español**                                      | **Obligatorio** |
+|---------------------|----------------------------------------------------------------|----------------|
+| `title`            | Define el título de la API.                                    | ✅ **Sí** |
+| `version`          | Especifica la versión de la API.                               | ✅ **Sí** |
+| `description`      | Proporciona una descripción general de la API.                 | ❌ **No** |
+| `termsOfService`   | Enlace a los términos de servicio de la API.                   | ❌ **No** |
+| `@OA\Contact`      | Información de contacto del responsable de la API.             | ❌ **No** |
+| `@OA\License`      | Detalles sobre la licencia de la API.                          | ❌ **No** |
+{{</summary>}}
 
-| **Campo**           | **Descripción en Español**                                      |
-|---------------------|----------------------------------------------------------------|
-| `title`            | Define el título de la API.                                    |
-| `version`          | Especifica la versión de la API.                               |
-| `description`      | Proporciona una descripción general de la API.                 |
-| `termsOfService`   | Enlace a los términos de servicio de la API.                   |
-| `@OA\Contact`      | Información de contacto del responsable de la API.             |
-| `@OA\License`      | Detalles sobre la licencia de la API.                          |
+> Vemos que tenemos dos componentes o campos de anotación como elementos del componente {{< color >}} OA\Info {{< /color >}}:
+>> {{< summary title="Campos dentro de @OA\Contact" >}}
+| **Opción**  | **Descripción** | **Obligatorio** |
+|------------|----------------|----------------|
+| `name`     | Nombre de la persona de contacto. | ❌ No |
+| `email`    | Dirección de correo electrónico de contacto. | ❌ No |
+| `url`      | URL con más información de contacto. | ❌ No |
+{{</summary>}}
+>> {{< summary title="Campos dentro de @OA\License" >}}
+| **Campo**  | **Descripción en Español** | **Obligatorio** |
+|------------|----------------------------|----------------|
+| `name`     | Nombre de la licencia de la API. | ✅ **Sí** |
+| `url`      | Enlace a la licencia de la API. | ❌ **No** |
+{{</summary>}}
 
-{{< highlight php "linenos=table, hl_lines=1" >}}
 
-{{< / highlight >}}
+
 ### 🔹 2. Definir Endpoints de la API
+Para poder general la información de nuestra apì, al menos tenemos que tener un entrypoint de acceso, si no, no nos generará la documentación
 #### Principales Campos de Metadatos en @OA\Get, @OA\Post, @OA\Put y @OA\Delete
 
 Estos son los campos de metadatos más importantes utilizados en los métodos HTTP dentro de Swagger:

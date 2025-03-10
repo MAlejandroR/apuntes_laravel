@@ -36,7 +36,7 @@ Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar
 En Laravel, la biblioteca L5 Swagger ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.
 Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar los endpoints de una API."><meta itemprop="datePublished" content="2025-03-03T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2025-03-03T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1419">
+<meta itemprop="wordCount" content="1604">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="swagger"/>
 <meta name="twitter:description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki Swagger en Laravel 11 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.
 En Laravel, la biblioteca L5 Swagger ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.
@@ -531,59 +531,88 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
 </tr>
 </tbody>
 </table>
-<p>Aquí un ejemplo de información general de nuestra API
-<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#cd5555">/**
+<blockquote>
+<p>A continuación mostramos un ejemplo de información general de nuestra API, que habrá que ubicarlo en 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    el fichero del controlador antes de la especificación de la clase
+
+
+</span>
+</strong></p>
+<blockquote>
+<details>
+    <summary>Ejemplo de @OA\Info</summary>
+    <div class="summary-content">
+        <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?php
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">namespace</span> App\Http\Controllers;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span>  ...
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">/**
 </span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* @OA\Info(
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      version=&#34;1.0.0&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      title=&#34;Api de Alumnos&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      description=&#34;Cómo interactuar con Alumnos usando esta API&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      @OA\Contact(
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          email=&#34;admin@example.com&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     title=&#34;API de Alumnos&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     version=&#34;1.0.0&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     description=&#34;Para obtener listado de alumnos&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     @OA\Contact(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*         name=&#34;Manuel&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*         email=&#34;manuelromeromiguel@gmail.com&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     ),
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     @OA\License(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*         name=&#34;MIT&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*         url=&#34;https://opensource.org/license/mit&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     )
 </span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* )
 </span></span></span><span style="display:flex;"><span><span style="color:#cd5555">  */</span>
-</span></span><span style="display:flex;"><span>  
-</span></span></code></pre></td></tr></table>
-</div>
-</div></p>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">AlumnoApiController</span> <span style="color:#8b008b;font-weight:bold">extends</span> Controller{
+</span></span><span style="display:flex;"><span>.....
+</span></span></code></pre></div>
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+</blockquote>
+</blockquote>
 <ul>
-<li>Una vez escritos las anotaciones, ya las podemos ver en la web:
+<li>Una vez escritos las anotaciones, ya las podemos ver en la web, para ello temeos que generar la documentación y acceder a la web donde se ha generado dicha información:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  php artisan l5-swagger:generate
+</span></span></code></pre></div><ul>
+<li>Y ahora accedemos a la web.</li>
+</ul>
+<blockquote>
+<p><em>(debemos tener levantada nuestra aplicación, si estamos en local podemos ejecutar el script dev de composer.json)</em>:</p>
+<blockquote>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>  php artisan l5-swagger:generate</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>composer run dev</span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-<li>Y ahora accedemos a la web, levantando previamente nuestra aplicación:
-<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>composer run dev
-</span></span><span style="display:flex;"><span>http://<span style="color:#b452cd">127.0</span>.<span style="color:#b452cd">0.1</span>:<span style="color:#b452cd">8000</span>/api/documentatios</span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-</ul>
-<h3 id="incluyendo-información-general">Incluyendo información general</h3>
+</blockquote>
+</blockquote>
+<p>Y podemos acceder a la información en nuestro navegador</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>http://<span style="color:#b452cd">127.0</span>.<span style="color:#b452cd">0.1</span>:<span style="color:#b452cd">8000</span>/api/documentation
+</span></span></code></pre></div><h3 id="incluyendo-información-general">Incluyendo información general</h3>
 <p>La información general, debería de ir en un fichero dedicado para esto: 
 
 <strong>
@@ -593,8 +622,8 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
 
 
 </span>
-</strong>.
-Alternativamente podemos incluirlo directamente el en controlador de la API, por tener todo concentrado en un solo fichero</p>
+</strong>.</p>
+<p>Alternativamente podemos incluirlo directamente el en controlador de la API, y así  tener todo concentrado en un solo fichero.</p>
 <h4 id="principales-campos-de-metadatos-en-oainfo">Principales Campos de Metadatos en @OA\Info</h4>
 <p>Estos son los campos de 
 
@@ -605,49 +634,177 @@ Alternativamente podemos incluirlo directamente el en controlador de la API, por
 
 
 </span>
-</strong> u opciones  más importantes utilizados en <code>@OA\Info</code>:</p>
-<table>
+</strong> u opciones  más importantes utilizados en <code>@OA\Info</code>:
+<details>
+    <summary>Principales Campos en @OA\Info</summary>
+    <div class="summary-content">
+        <table>
 <thead>
 <tr>
 <th><strong>Campo</strong></th>
 <th><strong>Descripción en Español</strong></th>
+<th><strong>Obligatorio</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>title</code></td>
 <td>Define el título de la API.</td>
+<td>✅ <strong>Sí</strong></td>
 </tr>
 <tr>
 <td><code>version</code></td>
 <td>Especifica la versión de la API.</td>
+<td>✅ <strong>Sí</strong></td>
 </tr>
 <tr>
 <td><code>description</code></td>
 <td>Proporciona una descripción general de la API.</td>
+<td>❌ <strong>No</strong></td>
 </tr>
 <tr>
 <td><code>termsOfService</code></td>
 <td>Enlace a los términos de servicio de la API.</td>
+<td>❌ <strong>No</strong></td>
 </tr>
 <tr>
 <td><code>@OA\Contact</code></td>
 <td>Información de contacto del responsable de la API.</td>
+<td>❌ <strong>No</strong></td>
 </tr>
 <tr>
 <td><code>@OA\License</code></td>
 <td>Detalles sobre la licencia de la API.</td>
+<td>❌ <strong>No</strong></td>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"></code></pre></td></tr></table>
-</div>
-</div>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+</p>
+<blockquote>
+<p>Vemos que tenemos dos componentes o campos de anotación como elementos del componente 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    OA\Info
+
+
+</span>
+</strong>:</p>
+<blockquote>
+<p><details>
+    <summary>Campos dentro de @OA\Contact</summary>
+    <div class="summary-content">
+        <table>
+<thead>
+<tr>
+<th><strong>Opción</strong></th>
+<th><strong>Descripción</strong></th>
+<th><strong>Obligatorio</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Nombre de la persona de contacto.</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>Dirección de correo electrónico de contacto.</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>URL con más información de contacto.</td>
+<td>❌ No</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<details>
+    <summary>Campos dentro de @OA\License</summary>
+    <div class="summary-content">
+        <table>
+<thead>
+<tr>
+<th><strong>Campo</strong></th>
+<th><strong>Descripción en Español</strong></th>
+<th><strong>Obligatorio</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Nombre de la licencia de la API.</td>
+<td>✅ <strong>Sí</strong></td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>Enlace a la licencia de la API.</td>
+<td>❌ <strong>No</strong></td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+</p>
+</blockquote>
+</blockquote>
 <h3 id="-2-definir-endpoints-de-la-api">🔹 2. Definir Endpoints de la API</h3>
+<p>Para poder general la información de nuestra apì, al menos tenemos que tener un entrypoint de acceso, si no, no nos generará la documentación</p>
 <h4 id="principales-campos-de-metadatos-en-oaget-oapost-oaput-y-oadelete">Principales Campos de Metadatos en @OA\Get, @OA\Post, @OA\Put y @OA\Delete</h4>
 <p>Estos son los campos de metadatos más importantes utilizados en los métodos HTTP dentro de Swagger:</p>
 <table>
