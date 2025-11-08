@@ -1,0 +1,1481 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/80_api_openai/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>API OpenAI | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/80_api_openai/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="API OpenAI">
+  <meta property="og:description" content="📚 Course Chatbots personalizados con Laravel &amp; OpenAI https://aprendible.com/series/chatbots-personalizados-con-laravel-openai
+📘 Curso: Chatbots personalizados con Laravel &amp; OpenAI 44 lecciones • 3h 08m
+Tecnologías: Laravel, Inertia.js, Vue 3, OpenAI
+🔹 Módulo 1: Introducción Qué es OpenAI y su API Qué son los tokens y cómo se calculan los precios Casos de uso reales en Laravel 🔹 Módulo 2: Preparación del entorno Requisitos previos (PHP, Laravel, Composer, Node) Instalación paso a paso con Jetstream e Inertia Herramientas de calidad: Pint, PHPStan, Laravel DebugBar 🔹 Módulo 3: CRUD de Chatbots Modelo Chatbot con UUID Listado y detalle de chatbots Formularios de edición y validación Reutilización de componentes con Inertia 🔹 Módulo 4: Fuentes de conocimiento Subida de archivos (PDFs) con Inertia Extraer texto desde PDF y webs con DomCrawler Diseño de componentes (botón eliminar, listas con Tailwind) 🔹 Módulo 5: Chats en vivo Crear modelo Chat y Message Mostrar conversaciones y enviar mensajes Manejo de Shift&#43;Enter, validación, textarea personalizado Inline editing de título de chat 🔹 Módulo 6: Integración con OpenAI Configurar API Key y librería OpenAI::chat()-&gt;create([ &#39;model&#39; =&gt; &#39;gpt-4o&#39;, &#39;messages&#39; =&gt; [[&#39;role&#39; =&gt; &#39;user&#39;, &#39;content&#39; =&gt; &#39;Hola&#39;]], ]);">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="API OpenAI">
+  <meta itemprop="description" content="📚 Course Chatbots personalizados con Laravel &amp; OpenAI https://aprendible.com/series/chatbots-personalizados-con-laravel-openai
+📘 Curso: Chatbots personalizados con Laravel &amp; OpenAI 44 lecciones • 3h 08m
+Tecnologías: Laravel, Inertia.js, Vue 3, OpenAI
+🔹 Módulo 1: Introducción Qué es OpenAI y su API Qué son los tokens y cómo se calculan los precios Casos de uso reales en Laravel 🔹 Módulo 2: Preparación del entorno Requisitos previos (PHP, Laravel, Composer, Node) Instalación paso a paso con Jetstream e Inertia Herramientas de calidad: Pint, PHPStan, Laravel DebugBar 🔹 Módulo 3: CRUD de Chatbots Modelo Chatbot con UUID Listado y detalle de chatbots Formularios de edición y validación Reutilización de componentes con Inertia 🔹 Módulo 4: Fuentes de conocimiento Subida de archivos (PDFs) con Inertia Extraer texto desde PDF y webs con DomCrawler Diseño de componentes (botón eliminar, listas con Tailwind) 🔹 Módulo 5: Chats en vivo Crear modelo Chat y Message Mostrar conversaciones y enviar mensajes Manejo de Shift&#43;Enter, validación, textarea personalizado Inline editing de título de chat 🔹 Módulo 6: Integración con OpenAI Configurar API Key y librería OpenAI::chat()-&gt;create([ &#39;model&#39; =&gt; &#39;gpt-4o&#39;, &#39;messages&#39; =&gt; [[&#39;role&#39; =&gt; &#39;user&#39;, &#39;content&#39; =&gt; &#39;Hola&#39;]], ]);">
+  <meta itemprop="datePublished" content="2025-07-27T12:30:00+02:00">
+  <meta itemprop="dateModified" content="2025-07-27T12:30:00+02:00">
+  <meta itemprop="wordCount" content="2552">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="API OpenAI">
+  <meta name="twitter:description" content="📚 Course Chatbots personalizados con Laravel &amp; OpenAI https://aprendible.com/series/chatbots-personalizados-con-laravel-openai
+📘 Curso: Chatbots personalizados con Laravel &amp; OpenAI 44 lecciones • 3h 08m
+Tecnologías: Laravel, Inertia.js, Vue 3, OpenAI
+🔹 Módulo 1: Introducción Qué es OpenAI y su API Qué son los tokens y cómo se calculan los precios Casos de uso reales en Laravel 🔹 Módulo 2: Preparación del entorno Requisitos previos (PHP, Laravel, Composer, Node) Instalación paso a paso con Jetstream e Inertia Herramientas de calidad: Pint, PHPStan, Laravel DebugBar 🔹 Módulo 3: CRUD de Chatbots Modelo Chatbot con UUID Listado y detalle de chatbots Formularios de edición y validación Reutilización de componentes con Inertia 🔹 Módulo 4: Fuentes de conocimiento Subida de archivos (PDFs) con Inertia Extraer texto desde PDF y webs con DomCrawler Diseño de componentes (botón eliminar, listas con Tailwind) 🔹 Módulo 5: Chats en vivo Crear modelo Chat y Message Mostrar conversaciones y enviar mensajes Manejo de Shift&#43;Enter, validación, textarea personalizado Inline editing de título de chat 🔹 Módulo 6: Integración con OpenAI Configurar API Key y librería OpenAI::chat()-&gt;create([ &#39;model&#39; =&gt; &#39;gpt-4o&#39;, &#39;messages&#39; =&gt; [[&#39;role&#39; =&gt; &#39;user&#39;, &#39;content&#39; =&gt; &#39;Hola&#39;]], ]);">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs-li">
+  <a href="/laravel/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laraveldocs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs01_introduccic3b3n-check"/>
+  <label for="m-laraveldocs01_introduccic3b3n-check"><a href="/laravel/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs02_instalacic3b3n-check"/>
+  <label for="m-laraveldocs02_instalacic3b3n-check"><a href="/laravel/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs10_test-li">
+  <input type="checkbox" id="m-laraveldocs10_test-check"/>
+  <label for="m-laraveldocs10_test-check"><a href="/laravel/docs/10_test/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_test"><span class="">10_Test unitarios</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_testchat-li">
+  <input type="checkbox" id="m-laraveldocs10_testchat-check"/>
+  <label for="m-laraveldocs10_testchat-check"><a href="/laravel/docs/10_test/chat/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_testchat"><span class="">10_Test unitarios del chat</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_testpest-li">
+  <input type="checkbox" id="m-laraveldocs10_testpest-check"/>
+  <label for="m-laraveldocs10_testpest-check"><a href="/laravel/docs/10_test/pest/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs10_testpest"><span class="">Pest</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs03_rutas-li">
+  <input type="checkbox" id="m-laraveldocs03_rutas-check"/>
+  <label for="m-laraveldocs03_rutas-check"><a href="/laravel/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs05_controlador-li">
+  <input type="checkbox" id="m-laraveldocs05_controlador-check"/>
+  <label for="m-laraveldocs05_controlador-check"><a href="/laravel/docs/05_controlador/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs05_controlador"><i class="fas fa-cogs"></i><span class="">Controlador</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs04_plantillas-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas-check"/>
+  <label for="m-laraveldocs04_plantillas-check"><a href="/laravel/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas01_blade-check"/>
+  <label for="m-laraveldocs04_plantillas01_blade-check"><a href="/laravel/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laraveldocs04_plantillas02_creandodisec3b1o-check"><a href="/laravel/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas03_componentes-check"/>
+  <label for="m-laraveldocs04_plantillas03_componentes-check"><a href="/laravel/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs50_tinker-li">
+  <input type="checkbox" id="m-laraveldocs50_tinker-check"/>
+  <label for="m-laraveldocs50_tinker-check"><a href="/laravel/docs/50_tinker/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs50_tinker"><span class="">tinker</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs60_collection-li">
+  <input type="checkbox" id="m-laraveldocs60_collection-check"/>
+  <label for="m-laraveldocs60_collection-check"><a href="/laravel/docs/60_collection/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs60_collection"><span class="">Collection en Laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacion-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacion-check"/>
+  <label for="m-laraveldocs06_autenticacion-check"><a href="/laravel/docs/06_autenticacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacion"><i class="fa-solid fa-sitemap"></i><span class="">Autenticación</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionbreeze-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionbreeze-check"/>
+  <label for="m-laraveldocs06_autenticacionbreeze-check"><a href="/laravel/docs/06_autenticacion/breeze/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionbreeze"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacionfortify-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify-check"/>
+  <label for="m-laraveldocs06_autenticacionfortify-check"><a href="/laravel/docs/06_autenticacion/fortify/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionfortify"><i class="fa-solid fa-sitemap"></i><span class="">Fortify y Jetstream</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-check"/>
+  <label for="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-check"><a href="/laravel/docs/06_autenticacion/fortify/02_page_role_autenticated/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated"><i class="fa-solid fa-sitemap"></i><span class="">Dashboard según rol</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortify01_instalacion-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify01_instalacion-check"/>
+  <label for="m-laraveldocs06_autenticacionfortify01_instalacion-check"><a href="/laravel/docs/06_autenticacion/fortify/01_instalacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortify01_instalacion"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortifydiagrama-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionfortifydiagrama-check"/>
+  <label for="m-laraveldocs06_autenticacionfortifydiagrama-check"><a href="/laravel/docs/06_autenticacion/fortify/diagrama/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortifydiagrama"><i class="fa-solid fa-sitemap"></i><span class="">Diagrama de flujo</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-check"/>
+  <label for="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-check"><a href="/laravel/docs/06_autenticacion/fortify/peronsalizar_controladores/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores"><i class="fa-solid fa-sitemap"></i><span class="">Personalizar controladores</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionotp-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionotp-check"/>
+  <label for="m-laraveldocs06_autenticacionotp-check"><a href="/laravel/docs/06_autenticacion/otp/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionotp"><i class="fa-solid fa-sitemap"></i><span class="">OTP One-Time Password</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs70_laravel_idea-li">
+  <input type="checkbox" id="m-laraveldocs70_laravel_idea-check"/>
+  <label for="m-laraveldocs70_laravel_idea-check"><a href="/laravel/docs/70_laravel_idea/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs70_laravel_idea"><span class="">Laravel Idea</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs07_migraciones-li">
+  <input type="checkbox" id="m-laraveldocs07_migraciones-check"/>
+  <label for="m-laraveldocs07_migraciones-check"><a href="/laravel/docs/07_migraciones/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs07_migraciones"><i class="fa-solid fa-database"></i><span class="">Migracioens</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs07_migracioneseloquent-li">
+  <input type="checkbox" id="m-laraveldocs07_migracioneseloquent-check"/>
+  <label for="m-laraveldocs07_migracioneseloquent-check"><a href="/laravel/docs/07_migraciones/eloquent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs07_migracioneseloquent"><i class="fa-solid fa-database"></i><span class="">Eloquent</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs07_migracionessql_to_eloquent-li">
+  <input type="checkbox" id="m-laraveldocs07_migracionessql_to_eloquent-check"/>
+  <label for="m-laraveldocs07_migracionessql_to_eloquent-check"><a href="/laravel/docs/07_migraciones/sql_to_eloquent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs07_migracionessql_to_eloquent"><i class="fa-solid fa-database"></i><span class="">SQL vs Eloquent</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocs80_api_openai-li">
+  <input type="checkbox" id="m-laraveldocs80_api_openai-check" checked/>
+  <label for="m-laraveldocs80_api_openai-check"><a href="/laravel/docs/80_api_openai/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laraveldocs80_api_openai"><span class="td-sidebar-nav-active-item">API OpenAI</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs90_helper-li">
+  <input type="checkbox" id="m-laraveldocs90_helper-check"/>
+  <label for="m-laraveldocs90_helper-check"><a href="/laravel/docs/90_helper/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs90_helper"><span class="">API OpenAI</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs100_anexos-li">
+  <input type="checkbox" id="m-laraveldocs100_anexos-check"/>
+  <label for="m-laraveldocs100_anexos-check"><a href="/laravel/docs/100_anexos/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs100_anexos"><span class="">Anexos</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs100_anexosbootstrap-li">
+  <input type="checkbox" id="m-laraveldocs100_anexosbootstrap-check"/>
+  <label for="m-laraveldocs100_anexosbootstrap-check"><a href="/laravel/docs/100_anexos/bootstrap/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs100_anexosbootstrap"><span class="">app.php</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs10_api-li">
+  <input type="checkbox" id="m-laraveldocs10_api-check"/>
+  <label for="m-laraveldocs10_api-check"><a href="/laravel/docs/10_api/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api"><i class="fas fa-code"></i><span class="">Creando un api</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_api1instalacion-li">
+  <input type="checkbox" id="m-laraveldocs10_api1instalacion-check"/>
+  <label for="m-laraveldocs10_api1instalacion-check"><a href="/laravel/docs/10_api/1.instalacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api1instalacion"><span class="">01_Introducción y 20_rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_api2visiongeneral-li">
+  <input type="checkbox" id="m-laraveldocs10_api2visiongeneral-check"/>
+  <label for="m-laraveldocs10_api2visiongeneral-check"><a href="/laravel/docs/10_api/2.visiongeneral/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api2visiongeneral"><span class="">Controlador</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_api3la-vista-li">
+  <input type="checkbox" id="m-laraveldocs10_api3la-vista-check"/>
+  <label for="m-laraveldocs10_api3la-vista-check"><a href="/laravel/docs/10_api/3.la-vista/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api3la-vista"><span class="">3.La Vista unitarios</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_api4-swagger-li">
+  <input type="checkbox" id="m-laraveldocs10_api4-swagger-check"/>
+  <label for="m-laraveldocs10_api4-swagger-check"><a href="/laravel/docs/10_api/4.-swagger/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs10_api4-swagger"><span class="">swagger</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs11_roles-li">
+  <input type="checkbox" id="m-laraveldocs11_roles-check"/>
+  <label for="m-laraveldocs11_roles-check"><a href="/laravel/docs/11_roles/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs11_roles"><i class="fa-brands fa-critical-role"></i><span class="">Roles</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs13_blueprint-li">
+  <input type="checkbox" id="m-laraveldocs13_blueprint-check"/>
+  <label for="m-laraveldocs13_blueprint-check"><a href="/laravel/docs/13_blueprint/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_blueprint"><i class="fas fa-database"></i><span class="">Blueprint</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs14_filament-li">
+  <input type="checkbox" id="m-laraveldocs14_filament-check"/>
+  <label for="m-laraveldocs14_filament-check"><a href="/laravel/docs/14_filament/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filament"><i class="fas fa-sliders-h"></i><span class="">Filament</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filamentpage-li">
+  <input type="checkbox" id="m-laraveldocs14_filamentpage-check"/>
+  <label for="m-laraveldocs14_filamentpage-check"><a href="/laravel/docs/14_filament/page/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filamentpage"><i class="fas"></i><span class="">Creando Páginas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filamentwidget-li">
+  <input type="checkbox" id="m-laraveldocs14_filamentwidget-check"/>
+  <label for="m-laraveldocs14_filamentwidget-check"><a href="/laravel/docs/14_filament/widget/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filamentwidget"><i class="fas"></i><span class="">Widgets en el Panel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs14_filamentpanel-li">
+  <input type="checkbox" id="m-laraveldocs14_filamentpanel-check"/>
+  <label for="m-laraveldocs14_filamentpanel-check"><a href="/laravel/docs/14_filament/panel/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filamentpanel"><i class="fas fa-rectangle-group"></i><span class="">Panel </span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filamentpanelpanel-li">
+  <input type="checkbox" id="m-laraveldocs14_filamentpanelpanel-check"/>
+  <label for="m-laraveldocs14_filamentpanelpanel-check"><a href="/laravel/docs/14_filament/panel/panel/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs14_filamentpanelpanel"><i class="fas fa-bars"></i><span class="">Navegación</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs15_storage-li">
+  <input type="checkbox" id="m-laraveldocs15_storage-check"/>
+  <label for="m-laraveldocs15_storage-check"><a href="/laravel/docs/15_storage/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs15_storage"><i class="fas fa-sliders-h"></i><span class="">Storage</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs30_pinia-li">
+  <input type="checkbox" id="m-laraveldocs30_pinia-check"/>
+  <label for="m-laraveldocs30_pinia-check"><a href="/laravel/docs/30_pinia/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs30_pinia"><i class="fas fa-database"></i><span class="">Pinia</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs40_league_csv-li">
+  <input type="checkbox" id="m-laraveldocs40_league_csv-check"/>
+  <label for="m-laraveldocs40_league_csv-check"><a href="/laravel/docs/40_league_csv/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs40_league_csv"><span class="">Ficheros CSV en Laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs31_optimizacion_carga-li">
+  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga-check"/>
+  <label for="m-laraveldocs31_optimizacion_carga-check"><a href="/laravel/docs/31_optimizacion_carga/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs31_optimizacion_carga"><i class="fas fa-tachometer-alt"></i><span class="">Optimización de carga con Laravel &#43; Inertia &#43; Vue</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga02_lazy-li">
+  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga02_lazy-check"/>
+  <label for="m-laraveldocs31_optimizacion_carga02_lazy-check"><a href="/laravel/docs/31_optimizacion_carga/02_lazy/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga02_lazy"><i class="fas fa-code-split"></i><span class="">Lazy Loading con Vue &#43; Inertia</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga03_tiempos-li">
+  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga03_tiempos-check"/>
+  <label for="m-laraveldocs31_optimizacion_carga03_tiempos-check"><a href="/laravel/docs/31_optimizacion_carga/03_tiempos/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga03_tiempos"><i class="fas fa-code-split"></i><span class="">tiempos de carga</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga04_props_pesadas-li">
+  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga04_props_pesadas-check"/>
+  <label for="m-laraveldocs31_optimizacion_carga04_props_pesadas-check"><a href="/laravel/docs/31_optimizacion_carga/04_props_pesadas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga04_props_pesadas"><i class="fas fa-box-open"></i><span class="">Cómo detectar y optimizar props pesadas en Inertia.js</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga05_carga_datos_axios-li">
+  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga05_carga_datos_axios-check"/>
+  <label for="m-laraveldocs31_optimizacion_carga05_carga_datos_axios-check"><a href="/laravel/docs/31_optimizacion_carga/05_carga_datos_axios/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga05_carga_datos_axios"><i class="fas fa-cloud-download-alt"></i><span class="">Cargar datos desde Vue con Fetch o Axios (Inertia)</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet-check"/>
+  <label for="m-laraveldocs999_cheatseet-check"><a href="/laravel/docs/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet"><span class="">Cheat Sheet</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseethelper-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper-check"/>
+  <label for="m-laraveldocs999_cheatseethelper-check"><a href="/laravel/docs/999_cheatseet/helper/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper"><span class="">Helper en Laravel</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper10_vistas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper10_vistas-check"/>
+  <label for="m-laraveldocs999_cheatseethelper10_vistas-check"><a href="/laravel/docs/999_cheatseet/helper/10_vistas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper10_vistas"><span class="">Vistas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper20_rutas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper20_rutas-check"/>
+  <label for="m-laraveldocs999_cheatseethelper20_rutas-check"><a href="/laravel/docs/999_cheatseet/helper/20_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper20_rutas"><span class="">Rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper30_request-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper30_request-check"/>
+  <label for="m-laraveldocs999_cheatseethelper30_request-check"><a href="/laravel/docs/999_cheatseet/helper/30_request/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper30_request"><span class="">Request en Laravel</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetartisan-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetartisan-check"/>
+  <label for="m-laraveldocs999_cheatseetartisan-check"><a href="/laravel/docs/999_cheatseet/artisan/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetartisan"><span class="">Artisan (CLI)</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetblade-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetblade-check"/>
+  <label for="m-laraveldocs999_cheatseetblade-check"><a href="/laravel/docs/999_cheatseet/blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetblade"><span class="">Directivas Blade</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetcarbon-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetcarbon-check"/>
+  <label for="m-laraveldocs999_cheatseetcarbon-check"><a href="/laravel/docs/999_cheatseet/carbon/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetcarbon"><span class="">Carbon (fechas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet04_despliegue-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet04_despliegue-check"/>
+  <label for="m-laraveldocs999_cheatseet04_despliegue-check"><a href="/laravel/docs/999_cheatseet/04_despliegue/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet04_despliegue"><span class="">Desplegar en hosgint</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseet04_desplieguerutas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet04_desplieguerutas-check"/>
+  <label for="m-laraveldocs999_cheatseet04_desplieguerutas-check"><a href="/laravel/docs/999_cheatseet/04_despliegue/rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet04_desplieguerutas"><span class="">Rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseet04_desplieguevistas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet04_desplieguevistas-check"/>
+  <label for="m-laraveldocs999_cheatseet04_desplieguevistas-check"><a href="/laravel/docs/999_cheatseet/04_despliegue/vistas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet04_desplieguevistas"><span class="">Vistas</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseet07_database-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet07_database-check"/>
+  <label for="m-laraveldocs999_cheatseet07_database-check"><a href="/laravel/docs/999_cheatseet/07_database/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet07_database"><span class="">Desplegar en hosgint</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseet05_filefacade-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet05_filefacade-check"/>
+  <label for="m-laraveldocs999_cheatseet05_filefacade-check"><a href="/laravel/docs/999_cheatseet/05_filefacade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs999_cheatseet05_filefacade"><span class="">Laravel: Uso de la Facade File</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseet06_authfortity-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet06_authfortity-check"/>
+  <label for="m-laraveldocs999_cheatseet06_authfortity-check"><a href="/laravel/docs/999_cheatseet/06_authfortity/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs999_cheatseet06_authfortity"><span class="">Laravel: Uso de la Facade File</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs00_vue-li">
+  <input type="checkbox" id="m-laraveldocs00_vue-check"/>
+  <label for="m-laraveldocs00_vue-check"><a href="/laravel/docs/00_vue/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs00_vue"><span class="">Vue</span></a></label>
+  
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-módulo-1-introducción">🔹 Módulo 1: Introducción</a></li>
+    <li><a href="#-módulo-2-preparación-del-entorno">🔹 Módulo 2: Preparación del entorno</a></li>
+    <li><a href="#-módulo-3-crud-de-chatbots">🔹 Módulo 3: CRUD de Chatbots</a></li>
+    <li><a href="#-módulo-4-fuentes-de-conocimiento">🔹 Módulo 4: Fuentes de conocimiento</a></li>
+    <li><a href="#-módulo-5-chats-en-vivo">🔹 Módulo 5: Chats en vivo</a></li>
+    <li><a href="#-módulo-6-integración-con-openai">🔹 Módulo 6: Integración con OpenAI</a></li>
+    <li><a href="#-tokens-y-precios">📊 Tokens y precios</a></li>
+    <li><a href="#-recursos-técnicos">📦 Recursos técnicos</a></li>
+    <li><a href="#-conocimientos-clave-adquiridos">🧠 Conocimientos clave adquiridos</a></li>
+    <li><a href="#-temas-del-curso">📌 Temas del curso</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#-qué-es-openai">✅ ¿Qué es OpenAI?</a></li>
+    <li><a href="#-cómo-funciona-su-api">⚙️ ¿Cómo funciona su API?</a></li>
+    <li><a href="#-qué-son-los-tokens">🧩 ¿Qué son los tokens?</a></li>
+    <li><a href="#-cómo-se-calculan-los-precios">💰 ¿Cómo se calculan los precios?</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-por-qué-usar-iconos">📌 ¿Por qué usar iconos?</a></li>
+        <li><a href="#-paso-a-paso">✅ Paso a paso</a></li>
+        <li><a href="#-consejo">🎨 Consejo</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-objetivo">🎯 Objetivo</a></li>
+        <li><a href="#-paso-a-paso-1">✅ Paso a paso</a></li>
+        <li><a href="#-resultado">🔍 Resultado</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-objetivo-1">🎯 Objetivo</a></li>
+        <li><a href="#-paso-a-paso-2">✅ Paso a paso</a></li>
+        <li><a href="#-nota">🔄 Nota</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-objetivo-2">🎯 Objetivo</a></li>
+        <li><a href="#-paso-a-paso-3">✅ Paso a paso</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-objetivo-3">🎯 Objetivo</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-objetivo-4">🎯 Objetivo</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-objetivo-5">🎯 Objetivo</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-crear-chatbotformvue-como-vimos-antes">✅ Crear <code>ChatbotForm.vue</code> (como vimos antes)</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-objetivo-6">🎯 Objetivo</a></li>
+      </ul>
+    </li>
+    <li><a href="#-paso-a-paso-4">✅ Paso a paso</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-objetivo-7">🎯 Objetivo</a></li>
+      </ul>
+    </li>
+    <li><a href="#-paso-a-paso-5">✅ Paso a paso</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-qué-son">🎯 ¿Qué son?</a></li>
+      </ul>
+    </li>
+    <li><a href="#-paso-a-paso-6">✅ Paso a paso</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-objetivo-8">🎯 Objetivo</a></li>
+      </ul>
+    </li>
+    <li><a href="#-paso-a-paso-7">✅ Paso a paso</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-objetivo-9">🎯 Objetivo</a></li>
+      </ul>
+    </li>
+    <li><a href="#-paso-a-paso-8">✅ Paso a paso</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-objetivo-10">🎯 Objetivo</a></li>
+      </ul>
+    </li>
+    <li><a href="#-paso-a-paso-9">✅ Paso a paso</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-mostrar-todos-los-chats-que-un-chatbot-tiene">🎯 Mostrar todos los chats que un chatbot tiene.</a></li>
+      </ul>
+    </li>
+    <li><a href="#-paso-a-paso-10">✅ Paso a paso</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#-paso-a-paso-11">✅ Paso a paso</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-guardar-los-mensajes-que-se-envían-en-el-chat">🎯 Guardar los mensajes que se envían en el chat.</a></li>
+      </ul>
+    </li>
+    <li><a href="#-paso-a-paso-12">✅ Paso a paso</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-explicación-clave">🎯 Explicación clave</a></li>
+      </ul>
+    </li>
+    <li><a href="#-en-laravel">📦 En Laravel</a></li>
+  </ul>
+</nav>
+      </div>
+    
+            <div class="taxonomy taxonomy-terms-cloud taxo-categories">
+      <h5 class="taxonomy-title">Categories</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/ficheros/" data-taxonomy-term="ficheros"><span class="taxonomy-label">Ficheros</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">10</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">5</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      <h5 class="taxonomy-title">Tags</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/blueprint/" data-taxonomy-term="blueprint"><span class="taxonomy-label">Blueprint</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/csv/" data-taxonomy-term="csv"><span class="taxonomy-label">CSV</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dasboard/" data-taxonomy-term="dasboard"><span class="taxonomy-label">Dasboard</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/files/" data-taxonomy-term="files"><span class="taxonomy-label">Files</span><span class="taxonomy-count">2</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/generaci%C3%B3n-de-componentes/" data-taxonomy-term="generaci%C3%B3n-de-componentes"><span class="taxonomy-label">Generación De Componentes</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">13</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/pinia/" data-taxonomy-term="pinia"><span class="taxonomy-label">Pinia</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/storage/" data-taxonomy-term="storage"><span class="taxonomy-label">Storage</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">5</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/yaml/" data-taxonomy-term="yaml"><span class="taxonomy-label">YAML</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel/docs/">Laravel</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    API OpenAI</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>API OpenAI</h1>
+  
+	<header class="article-meta">
+		
+</header>
+	<h1 id="-course">📚 Course</h1>
+<p><strong>Chatbots personalizados con Laravel &amp; OpenAI</strong>
+<a href="https://aprendible.com/series/chatbots-personalizados-con-laravel-openai">https://aprendible.com/series/chatbots-personalizados-con-laravel-openai</a></p>
+<h1 id="-curso-chatbots-personalizados-con-laravel--openai">📘 Curso: Chatbots personalizados con Laravel &amp; OpenAI</h1>
+<p>44 lecciones • 3h 08m<br>
+Tecnologías: Laravel, Inertia.js, Vue 3, OpenAI</p>
+<hr>
+<h2 id="-módulo-1-introducción">🔹 Módulo 1: Introducción</h2>
+<ul>
+<li>Qué es OpenAI y su API</li>
+<li>Qué son los tokens y cómo se calculan los precios</li>
+<li>Casos de uso reales en Laravel</li>
+</ul>
+<hr>
+<h2 id="-módulo-2-preparación-del-entorno">🔹 Módulo 2: Preparación del entorno</h2>
+<ul>
+<li>Requisitos previos (PHP, Laravel, Composer, Node)</li>
+<li>Instalación paso a paso con Jetstream e Inertia</li>
+<li>Herramientas de calidad: Pint, PHPStan, Laravel DebugBar</li>
+</ul>
+<hr>
+<h2 id="-módulo-3-crud-de-chatbots">🔹 Módulo 3: CRUD de Chatbots</h2>
+<ul>
+<li>Modelo Chatbot con UUID</li>
+<li>Listado y detalle de chatbots</li>
+<li>Formularios de edición y validación</li>
+<li>Reutilización de componentes con Inertia</li>
+</ul>
+<hr>
+<h2 id="-módulo-4-fuentes-de-conocimiento">🔹 Módulo 4: Fuentes de conocimiento</h2>
+<ul>
+<li>Subida de archivos (PDFs) con Inertia</li>
+<li>Extraer texto desde PDF y webs con DomCrawler</li>
+<li>Diseño de componentes (botón eliminar, listas con Tailwind)</li>
+</ul>
+<hr>
+<h2 id="-módulo-5-chats-en-vivo">🔹 Módulo 5: Chats en vivo</h2>
+<ul>
+<li>Crear modelo <code>Chat</code> y <code>Message</code></li>
+<li>Mostrar conversaciones y enviar mensajes</li>
+<li>Manejo de Shift+Enter, validación, textarea personalizado</li>
+<li>Inline editing de título de chat</li>
+</ul>
+<hr>
+<h2 id="-módulo-6-integración-con-openai">🔹 Módulo 6: Integración con OpenAI</h2>
+<ul>
+<li>
+<p>Configurar API Key y librería
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>OpenAI::<span style="color:#658b00">chat</span>()-&gt;<span style="color:#658b00">create</span>([
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;model&#39;</span> =&gt; <span style="color:#cd5555">&#39;gpt-4o&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;messages&#39;</span> =&gt; [[<span style="color:#cd5555">&#39;role&#39;</span> =&gt; <span style="color:#cd5555">&#39;user&#39;</span>, <span style="color:#cd5555">&#39;content&#39;</span> =&gt; <span style="color:#cd5555">&#39;Hola&#39;</span>]],
+</span></span><span style="display:flex;"><span>]);</span></span></code></pre></div></p>
+</li>
+<li>
+<p>Mostrar respuestas del modelo</p>
+</li>
+<li>
+<p>Calcular tokens usados y precios</p>
+</li>
+</ul>
+<hr>
+<h2 id="-tokens-y-precios">📊 Tokens y precios</h2>
+<ul>
+<li>Un <em>token</em> ≈ 4 caracteres o 0.75 palabras</li>
+<li>Precio depende del modelo (ej. GPT-4o es más caro que GPT-3.5)</li>
+<li>Se cobra por input y output tokens</li>
+</ul>
+<hr>
+<h2 id="-recursos-técnicos">📦 Recursos técnicos</h2>
+<ul>
+<li>Laravel Jetstream + Inertia</li>
+<li>Tailwind CSS y Tailwind Merge</li>
+<li>DomCrawler de Symfony</li>
+<li>openai-php/laravel</li>
+</ul>
+<hr>
+<h2 id="-conocimientos-clave-adquiridos">🧠 Conocimientos clave adquiridos</h2>
+<ul>
+<li>SPA con Laravel + Vue 3</li>
+<li>Componentes reutilizables</li>
+<li>Comunicación entre backend y frontend</li>
+<li>Procesamiento de lenguaje natural (NLP)</li>
+</ul>
+<hr>
+<p>44 lecciones • 3h 08m</p>
+<h2 id="-temas-del-curso">📌 Temas del curso</h2>
+<ul>
+<li>Introducción al curso de Chatbots personalizados con Laravel &amp; OpenAI – 05:03</li>
+<li>Prerequisitos para el Curso de Chatbots con Laravel y OpenAI – 00:42</li>
+<li>Instalación de una App Laravel con Inertia y Jetstream: Paso a Paso – 02:52</li>
+<li>Herramientas de Calidad – 05:29</li>
+<li>Cuándo y porqué utilizar UUIDs – 04:19</li>
+<li>Modelo Chatbot – 03:21</li>
+<li>Links de Navegación para los Chatbots – 02:26</li>
+<li>Listado de Chatbots – 06:34</li>
+<li>Formatear fechas en Javascript – 03:13</li>
+<li>Qué es y cómo utiliza Tailwind Merge – 03:46</li>
+<li>Restructurando los botones de Jetstream Vue – 04:52</li>
+<li>Uso de iconos con Vue3 – 02:54</li>
+<li>Detalle de un Chatbot – 03:03</li>
+<li>Página para editar Chatbots – 03:17</li>
+<li>Formulario para editar Chatbots – 06:08</li>
+<li>Validación del Chatbot – 02:45</li>
+<li>Actualizar Chatbot – 02:46</li>
+<li>Crear Chatbots – 02:56</li>
+<li>Cómo reutilizar formularios de inertia – 04:59</li>
+<li>Componente Textarea – 02:22</li>
+<li>Componente Select – 02:46</li>
+<li>Fuentes de conocimiento para los chatbots – 03:00</li>
+<li>Cómo crear ventanas modales – 05:00</li>
+<li>Formulario para crear fuentes de conocimientos – 04:10</li>
+<li>Formulario para crear fuentes de conocimientos - Parte 2 – 02:49</li>
+<li>Validación de las fuentes de conocimiento – 04:15</li>
+<li>Cómo subir archivos con Inertia – 05:57</li>
+<li>Diseñando el campo para seleccionar PDFs – 01:50</li>
+<li>Botón para quitar archivo – 04:05</li>
+<li>Listado de fuentes de conocimientos – 02:46</li>
+<li>Diseñando una Lista de elementos con Tailwind CSS – 07:22</li>
+<li>Mostrando Fuentes de Conocimiento en Laravel: PDFs y URLs en el Chatbot – 03:43</li>
+<li>Cómo eliminar una fuente de conocimiento con confirmación en Laravel (UX segura paso a paso) – 07:18</li>
+<li>Inertia v2 y Polling con Vue.js en Laravel – 03:02</li>
+<li>Extracción de texto desde un PDF en Laravel – 03:12</li>
+<li>Extrae Texto de Cualquier Web con Laravel y Symfony DomCrawler – 04:38</li>
+<li>Crear el Modelo Chat en Laravel: Relaciones, UUID y Estructura – 05:48</li>
+<li>Cómo editar el título de un chat en línea con Laravel e Inertia – 08:45</li>
+<li>Listado de conversaciones de un Chatbot – 11:05</li>
+<li>Componente Textarea para enviar mensajes – 07:09</li>
+<li>Integrar el componente ChatInput en la interfaz de chat con Vue y Laravel – 02:59</li>
+<li>Manejo de Shift+Enter en textareas con Vue 3 – 02:16</li>
+<li>Modelo Message y Rutas Anidadas – 07:22</li>
+<li>Introducción a la API de OpenAI: Qué es, cómo funciona, precios y tokens – 03:07</li>
+</ul>
+<hr>
+<h1 id="-introducción-a-la-api-de-openai-qué-es-cómo-funciona-precios-y-tokens">🧠 Introducción a la API de OpenAI: qué es, cómo funciona, precios y tokens</h1>
+<p>En esta clase aprenderás los conceptos esenciales para trabajar con OpenAI en un proyecto Laravel + Inertia.js + Vue.</p>
+<h2 id="-qué-es-openai">✅ ¿Qué es OpenAI?</h2>
+<p>OpenAI es una empresa que desarrolla modelos de inteligencia artificial como <strong>GPT</strong>, que pueden generar texto, resumir, traducir, etc.</p>
+<p>Con su API puedes construir chatbots, asistentes virtuales y muchas más aplicaciones.</p>
+<hr>
+<h2 id="-cómo-funciona-su-api">⚙️ ¿Cómo funciona su API?</h2>
+<p>OpenAI ofrece una API REST a la que puedes enviar peticiones HTTP.</p>
+<p>En Laravel puedes usar el cliente HTTP (<code>Http::post()</code>) para enviar prompts y recibir las respuestas del modelo.</p>
+<p>Ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$response</span> = Http::<span style="color:#658b00">withToken</span>(env(<span style="color:#cd5555">&#39;OPENAI_API_KEY&#39;</span>))
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">post</span>(<span style="color:#cd5555">&#39;https://api.openai.com/v1/chat/completions&#39;</span>, [
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;model&#39;</span> =&gt; <span style="color:#cd5555">&#39;gpt-4o&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;messages&#39;</span> =&gt; [
+</span></span><span style="display:flex;"><span>[<span style="color:#cd5555">&#39;role&#39;</span> =&gt; <span style="color:#cd5555">&#39;user&#39;</span>, <span style="color:#cd5555">&#39;content&#39;</span> =&gt; <span style="color:#cd5555">&#39;Hola, ¿qué tal?&#39;</span>],
+</span></span><span style="display:flex;"><span>],
+</span></span><span style="display:flex;"><span>]);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$text</span> = <span style="color:#00688b">$response</span>-&gt;<span style="color:#658b00">json</span>(<span style="color:#cd5555">&#39;choices.0.message.content&#39;</span>);</span></span></code></pre></div>
+<p>En tu app con Inertia.js y Vue:</p>
+<ul>
+<li>Laravel hace la petición a OpenAI.</li>
+<li>Vue muestra el texto generado al usuario.</li>
+<li>Inertia mantiene todo sincronizado sin recargar la página.</li>
+</ul>
+<hr>
+<h2 id="-qué-son-los-tokens">🧩 ¿Qué son los tokens?</h2>
+<p>Los modelos de OpenAI no trabajan directamente con palabras, sino con <strong>tokens</strong> (que pueden ser palabras, partes de palabras o signos de puntuación).</p>
+<p>Ejemplo:</p>
+<ul>
+<li><code>&quot;Hola, ¿qué tal?&quot;</code> ≈ 5 tokens.</li>
+</ul>
+<p>El número de tokens determina cuánto te costará cada petición:</p>
+<ul>
+<li>Tokens que envías (prompt)</li>
+<li>Tokens que devuelve el modelo (respuesta)</li>
+</ul>
+<hr>
+<h2 id="-cómo-se-calculan-los-precios">💰 ¿Cómo se calculan los precios?</h2>
+<p>El coste depende de:</p>
+<ul>
+<li>El modelo que elijas (ejemplo: <code>gpt-4o</code> es más caro que <code>gpt-3.5-turbo</code>).</li>
+<li>Cuántos tokens usas en total.</li>
+</ul>
+<p>El precio se indica como <strong>precio por 1.000 tokens</strong>.</p>
+<p>Ejemplo: si el modelo cuesta $0.01 por 1.000 tokens, y usas 500 tokens en total (entrada + salida), pagas $0.005.</p>
+<hr>
+<p>✨ Con esto tienes una visión general para empezar a crear tu chatbot personalizado con Laravel, Inertia.js y Vue usando la API de OpenAI.</p>
+<h1 id="-uso-de-iconos-con-vue3--0254">🖼 Uso de iconos con Vue3 – 02:54</h1>
+<h3 id="-por-qué-usar-iconos">📌 ¿Por qué usar iconos?</h3>
+<p>Los iconos mejoran la interfaz: guían visualmente y hacen más intuitiva la navegación.</p>
+<h3 id="-paso-a-paso">✅ Paso a paso</h3>
+<p><strong>1️⃣ Elegir una librería</strong><br>
+Por ejemplo, <a href="https://heroicons.com/">Heroicons</a> o <a href="https://lucide.dev/">Lucide</a>. Ambas tienen soporte oficial para Vue 3.</p>
+<p><strong>2️⃣ Instalar con npm</strong><br>
+Ejemplo con Heroicons:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install @heroicons/vue</span></span></code></pre></div></p>
+<p><strong>3️⃣ Importar el icono que necesitas</strong><br>
+En tu componente Vue:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">script</span> <span style="color:#658b00">setup</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> { PlusIcon } from <span style="color:#cd5555">&#39;@heroicons/vue/24/solid&#39;</span>;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">script</span>&gt;</span></span></code></pre></div></p>
+<p><strong>4️⃣ Usarlo en la plantilla</strong><br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">button</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;flex items-center space-x-1 text-blue-500&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">PlusIcon</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;w-5 h-5&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">span</span>&gt;Nuevo&lt;/<span style="color:#8b008b;font-weight:bold">span</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">button</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">template</span>&gt;</span></span></code></pre></div></p>
+<h3 id="-consejo">🎨 Consejo</h3>
+<ul>
+<li>Puedes controlar el tamaño con clases Tailwind (<code>w-4 h-4</code>, <code>w-6 h-6</code>).</li>
+<li>Cambiar color con <code>text-blue-500</code>, <code>text-gray-600</code>, etc.</li>
+</ul>
+<p>Así tendrás iconos consistentes, escalables y fáciles de mantener.</p>
+<hr>
+<h1 id="-detalle-de-un-chatbot--0303">📋 Detalle de un Chatbot – 03:03</h1>
+<h3 id="-objetivo">🎯 Objetivo</h3>
+<p>Mostrar información detallada de un chatbot seleccionado:</p>
+<ul>
+<li>Nombre</li>
+<li>Descripción</li>
+<li>Fecha de creación</li>
+<li>Opcional: botones para editar o eliminar</li>
+</ul>
+<h3 id="-paso-a-paso-1">✅ Paso a paso</h3>
+<p><strong>1️⃣ Crear ruta en Laravel</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;/chatbots/{chatbot}&#39;</span>, [ChatbotController::<span style="color:#658b00">class</span>, <span style="color:#cd5555">&#39;show&#39;</span>])
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">name</span>(<span style="color:#cd5555">&#39;chatbots.show&#39;</span>);</span></span></code></pre></div></p>
+<p><strong>2️⃣ Controlador</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">show</span>(Chatbot <span style="color:#00688b">$chatbot</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> Inertia::<span style="color:#658b00">render</span>(<span style="color:#cd5555">&#39;Chatbots/Show&#39;</span>, [
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;chatbot&#39;</span> =&gt; <span style="color:#00688b">$chatbot</span>,
+</span></span><span style="display:flex;"><span>]);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<p><strong>3️⃣ Componente Vue <code>Show.vue</code></strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">h1</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;text-xl font-bold mb-2&#34;</span>&gt;{{ chatbot.name }}&lt;/<span style="color:#8b008b;font-weight:bold">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">p</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;text-gray-700&#34;</span>&gt;{{ chatbot.description }}&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">p</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;text-xs text-gray-500&#34;</span>&gt;Creado el: {{ formatDate(chatbot.created_at) }}&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;mt-4 space-x-2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">inertia-link</span> :<span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;route(&#39;chatbots.edit&#39;, chatbot.id)&#34;</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;btn&#34;</span>&gt;Editar&lt;/<span style="color:#8b008b;font-weight:bold">inertia-link</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">script</span> <span style="color:#658b00">setup</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> props = defineProps([<span style="color:#cd5555">&#39;chatbot&#39;</span>]);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> formatDate(date) {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">new</span> <span style="color:#658b00">Date</span>(date).toLocaleDateString(<span style="color:#cd5555">&#39;es-ES&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">script</span>&gt;</span></span></code></pre></div></p>
+<h3 id="-resultado">🔍 Resultado</h3>
+<p>Página detallada clara, mostrando datos y permitiendo navegar a editar.</p>
+<hr>
+<h1 id="-página-para-editar-chatbots--0317">📝 Página para editar Chatbots – 03:17</h1>
+<h3 id="-objetivo-1">🎯 Objetivo</h3>
+<p>Tener una vista para editar los datos de un chatbot existente.</p>
+<h3 id="-paso-a-paso-2">✅ Paso a paso</h3>
+<p><strong>1️⃣ Ruta en Laravel</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;/chatbots/{chatbot}/edit&#39;</span>, [ChatbotController::<span style="color:#658b00">class</span>, <span style="color:#cd5555">&#39;edit&#39;</span>])
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">name</span>(<span style="color:#cd5555">&#39;chatbots.edit&#39;</span>);</span></span></code></pre></div></p>
+<p><strong>2️⃣ Método <code>edit</code> en el controlador</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">edit</span>(Chatbot <span style="color:#00688b">$chatbot</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> Inertia::<span style="color:#658b00">render</span>(<span style="color:#cd5555">&#39;Chatbots/Edit&#39;</span>, [
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;chatbot&#39;</span> =&gt; <span style="color:#00688b">$chatbot</span>,
+</span></span><span style="display:flex;"><span>]);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<p><strong>3️⃣ Componente Vue <code>Edit.vue</code></strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">h1</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;text-xl font-bold mb-4&#34;</span>&gt;Editar Chatbot&lt;/<span style="color:#8b008b;font-weight:bold">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">ChatbotForm</span> <span style="color:#8b008b;font-weight:bold">:initialData</span>=<span style="color:#cd5555">&#34;chatbot&#34;</span> <span style="color:#8b008b;font-weight:bold">@submit</span><span style="color:#cd5555">=&#34;updateChatbot&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">script</span> <span style="color:#658b00">setup</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> ChatbotForm from <span style="color:#cd5555">&#39;./Partials/ChatbotForm.vue&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> props = defineProps([<span style="color:#cd5555">&#39;chatbot&#39;</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> updateChatbot(data) {
+</span></span><span style="display:flex;"><span>  router.put(route(<span style="color:#cd5555">&#39;chatbots.update&#39;</span>, props.chatbot.id), data);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">script</span>&gt;</span></span></code></pre></div></p>
+<h3 id="-nota">🔄 Nota</h3>
+<p>Se usa un formulario reutilizable <code>ChatbotForm</code> que recibe datos iniciales.</p>
+<hr>
+<h1 id="-formulario-para-editar-chatbots--0608">🧰 Formulario para editar Chatbots – 06:08</h1>
+<h3 id="-objetivo-2">🎯 Objetivo</h3>
+<p>Crear un formulario reutilizable para crear y editar chatbots.</p>
+<h3 id="-paso-a-paso-3">✅ Paso a paso</h3>
+<p><strong>1️⃣ Crear componente <code>ChatbotForm.vue</code></strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">form</span> <span style="color:#8b008b;font-weight:bold">@submit.prevent</span><span style="color:#cd5555">=&#34;submit&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;mb-4&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">label</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;block&#34;</span>&gt;Nombre&lt;/<span style="color:#8b008b;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#8b008b;font-weight:bold">v-model</span>=<span style="color:#cd5555">&#34;form.name&#34; class=&#34;input&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;mb-4&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">label</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;block&#34;</span>&gt;Descripción&lt;/<span style="color:#8b008b;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">textarea</span> <span style="color:#8b008b;font-weight:bold">v-model</span>=<span style="color:#cd5555">&#34;form.description&#34; class=&#34;input&#34;</span>&gt;&lt;/<span style="color:#8b008b;font-weight:bold">textarea</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">button</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;submit&#34;</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;btn-primary&#34;</span>&gt;Guardar&lt;/<span style="color:#8b008b;font-weight:bold">button</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#8b008b;font-weight:bold">form</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">script</span> <span style="color:#658b00">setup</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> { reactive } from <span style="color:#cd5555">&#39;vue&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> props = defineProps([<span style="color:#cd5555">&#39;initialData&#39;</span>]);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> emit = defineEmits([<span style="color:#cd5555">&#39;submit&#39;</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> form = reactive({
+</span></span><span style="display:flex;"><span>  name: props.initialData?.name || <span style="color:#cd5555">&#39;&#39;</span>,
+</span></span><span style="display:flex;"><span>  description: props.initialData?.description || <span style="color:#cd5555">&#39;&#39;</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> submit() {
+</span></span><span style="display:flex;"><span>  emit(<span style="color:#cd5555">&#39;submit&#39;</span>, { ...form });
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">script</span>&gt;</span></span></code></pre></div></p>
+<p><strong>2️⃣ Reutilizar el formulario</strong></p>
+<ul>
+<li>En <code>Edit.vue</code>: para editar</li>
+<li>En <code>Create.vue</code>: para crear</li>
+</ul>
+<hr>
+<h1 id="-validación-del-chatbot--0245">✅ Validación del Chatbot – 02:45</h1>
+<h3 id="-objetivo-3">🎯 Objetivo</h3>
+<p>Validar los datos antes de guardar.</p>
+<p><strong>En Laravel</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$request</span>-&gt;<span style="color:#658b00">validate</span>([
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;required|string|max:255&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;description&#39;</span> =&gt; <span style="color:#cd5555">&#39;nullable|string&#39;</span>,
+</span></span><span style="display:flex;"><span>]);</span></span></code></pre></div></p>
+<p><strong>En Vue</strong>
+Puedes mostrar errores:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">p</span> <span style="color:#8b008b;font-weight:bold">v-if</span>=<span style="color:#cd5555">&#34;errors.name&#34; class=&#34;text-red-500&#34;</span>&gt;{{ <span style="color:#658b00">errors.name</span> }}&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;</span></span></code></pre></div></p>
+<hr>
+<h1 id="-actualizar-chatbot--0246">🔄 Actualizar Chatbot – 02:46</h1>
+<h3 id="-objetivo-4">🎯 Objetivo</h3>
+<p>Guardar cambios del chatbot.</p>
+<p><strong>En el controlador</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">update</span>(Request <span style="color:#00688b">$request</span>, Chatbot <span style="color:#00688b">$chatbot</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$validated</span> = <span style="color:#00688b">$request</span>-&gt;<span style="color:#658b00">validate</span>([
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;required|string|max:255&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;description&#39;</span> =&gt; <span style="color:#cd5555">&#39;nullable|string&#39;</span>,
+</span></span><span style="display:flex;"><span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$chatbot</span>-&gt;<span style="color:#658b00">update</span>(<span style="color:#00688b">$validated</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> redirect()-&gt;<span style="color:#658b00">route</span>(<span style="color:#cd5555">&#39;chatbots.index&#39;</span>)
+</span></span><span style="display:flex;"><span>                     -&gt;<span style="color:#658b00">with</span>(<span style="color:#cd5555">&#39;success&#39;</span>, <span style="color:#cd5555">&#39;Chatbot actualizado&#39;</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<hr>
+<h1 id="-crear-chatbots--0256">➕ Crear Chatbots – 02:56</h1>
+<h3 id="-objetivo-5">🎯 Objetivo</h3>
+<p>Permitir crear nuevos chatbots.</p>
+<p><strong>1️⃣ Ruta</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;/chatbots/create&#39;</span>, [ChatbotController::<span style="color:#658b00">class</span>, <span style="color:#cd5555">&#39;create&#39;</span>])
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">name</span>(<span style="color:#cd5555">&#39;chatbots.create&#39;</span>);</span></span></code></pre></div></p>
+<p><strong>2️⃣ Método <code>create</code></strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">create</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> Inertia::<span style="color:#658b00">render</span>(<span style="color:#cd5555">&#39;Chatbots/Create&#39;</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<p><strong>3️⃣ En Vue</strong>
+Reutilizas <code>ChatbotForm</code> y envías los datos:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> createChatbot(data) {
+</span></span><span style="display:flex;"><span>router.post(route(<span style="color:#cd5555">&#39;chatbots.store&#39;</span>), data);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<hr>
+<h1 id="-cómo-reutilizar-formularios-de-inertia--0459">♻️ Cómo reutilizar formularios de Inertia – 04:59</h1>
+<h3 id="-crear-chatbotformvue-como-vimos-antes">✅ Crear <code>ChatbotForm.vue</code> (como vimos antes)</h3>
+<ul>
+<li>Recibe <code>initialData</code> para editar.</li>
+<li>Si no hay datos, es crear.</li>
+</ul>
+<p><strong>Beneficio</strong>:</p>
+<ul>
+<li>Mantienes mismo diseño y validación.</li>
+<li>Cambia solo la lógica al guardar.</li>
+</ul>
+<hr>
+<h1 id="-componente-textarea--0222">📝 Componente Textarea – 02:22</h1>
+<h3 id="-objetivo-6">🎯 Objetivo</h3>
+<p>Tener un textarea reutilizable con <code>v-model</code> para usar en cualquier formulario.</p>
+<hr>
+<h2 id="-paso-a-paso-4">✅ Paso a paso</h2>
+<p><strong>1️⃣ Crear el componente <code>Textarea.vue</code></strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">textarea</span>
+</span></span><span style="display:flex;"><span><span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;border rounded w-full p-2&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">:value</span>=<span style="color:#cd5555">&#34;modelValue&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">@input</span><span style="color:#cd5555">=&#34;$emit(&#39;update:modelValue&#39;, $event.target.value)&#34;</span>
+</span></span><span style="display:flex;"><span>&gt;&lt;/<span style="color:#8b008b;font-weight:bold">textarea</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">script</span> <span style="color:#658b00">setup</span>&gt;
+</span></span><span style="display:flex;"><span>defineProps([<span style="color:#cd5555">&#39;modelValue&#39;</span>]);
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">script</span>&gt;</span></span></code></pre></div></p>
+<hr>
+<p><strong>2️⃣ Usarlo</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">Textarea</span> <span style="color:#8b008b;font-weight:bold">v-model</span>=<span style="color:#cd5555">&#34;form.description&#34;</span> /&gt;</span></span></code></pre></div></p>
+<p>Así puedes usarlo igual que un <code>&lt;textarea&gt;</code> normal, pero centralizando estilos y lógica.</p>
+<hr>
+<h1 id="-componente-select--0246">🔽 Componente Select – 02:46</h1>
+<h3 id="-objetivo-7">🎯 Objetivo</h3>
+<p>Un componente reutilizable para <code>&lt;select&gt;</code>.</p>
+<hr>
+<h2 id="-paso-a-paso-5">✅ Paso a paso</h2>
+<p><strong>1️⃣ Crear <code>Select.vue</code></strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">select</span>
+</span></span><span style="display:flex;"><span><span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;border rounded w-full p-2&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">:value</span>=<span style="color:#cd5555">&#34;modelValue&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">@change</span><span style="color:#cd5555">=&#34;$emit(&#39;update:modelValue&#39;, $event.target.value)&#34;</span>
+</span></span><span style="display:flex;"><span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">option</span> <span style="color:#8b008b;font-weight:bold">v-for</span>=<span style="color:#cd5555">&#34;option in options&#34; :key=&#34;option.value&#34; :value=&#34;option.value&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      {{ <span style="color:#658b00">option.label</span> }}
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">option</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#8b008b;font-weight:bold">select</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">script</span> <span style="color:#658b00">setup</span>&gt;
+</span></span><span style="display:flex;"><span>defineProps([<span style="color:#cd5555">&#39;modelValue&#39;</span>, <span style="color:#cd5555">&#39;options&#39;</span>]);
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">script</span>&gt;</span></span></code></pre></div></p>
+<hr>
+<p><strong>2️⃣ Usarlo</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">Select</span> <span style="color:#8b008b;font-weight:bold">v-model</span>=<span style="color:#cd5555">&#34;form.type&#34;</span> :<span style="color:#658b00">options</span>=<span style="color:#cd5555">&#34;[
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">{ value: &#39;pdf&#39;, label: &#39;PDF&#39; },
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">{ value: &#39;url&#39;, label: &#39;URL&#39; }
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">]&#34;</span> /&gt;</span></span></code></pre></div></p>
+<p>Permite usarlo para elegir tipo de fuente de conocimiento, etc.</p>
+<hr>
+<h1 id="-fuentes-de-conocimiento-para-los-chatbots--0300">📚 Fuentes de conocimiento para los chatbots – 03:00</h1>
+<h3 id="-qué-son">🎯 ¿Qué son?</h3>
+<p>Documentos o enlaces que alimentan de contexto al chatbot para responder mejor.</p>
+<hr>
+<h2 id="-paso-a-paso-6">✅ Paso a paso</h2>
+<p><strong>1️⃣ Crear modelo <code>Source</code></strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan make:model Source -m</span></span></code></pre></div></p>
+<hr>
+<p><strong>2️⃣ Migración</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">uuid</span>(<span style="color:#cd5555">&#39;id&#39;</span>)-&gt;<span style="color:#658b00">primary</span>();
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">foreignUuid</span>(<span style="color:#cd5555">&#39;chatbot_id&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;title&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">enum</span>(<span style="color:#cd5555">&#39;type&#39;</span>, [<span style="color:#cd5555">&#39;pdf&#39;</span>, <span style="color:#cd5555">&#39;url&#39;</span>]);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;file_path&#39;</span>)-&gt;<span style="color:#658b00">nullable</span>();
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;url&#39;</span>)-&gt;<span style="color:#658b00">nullable</span>();</span></span></code></pre></div></p>
+<hr>
+<p><strong>3️⃣ Relación en <code>Chatbot</code></strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">sources</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">hasMany</span>(Source::<span style="color:#658b00">class</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<hr>
+<h1 id="-cómo-crear-ventanas-modales--0500">🪟 Cómo crear ventanas modales – 05:00</h1>
+<h3 id="-objetivo-8">🎯 Objetivo</h3>
+<p>Mostrar formularios o confirmaciones sin recargar.</p>
+<hr>
+<h2 id="-paso-a-paso-7">✅ Paso a paso</h2>
+<p><strong>1️⃣ Crear <code>Modal.vue</code></strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;fixed inset-0 bg-black/50 flex items-center justify-center&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;bg-white p-4 rounded shadow max-w-md w-full&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#8b008b;font-weight:bold">slot</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">template</span>&gt;</span></span></code></pre></div></p>
+<hr>
+<p><strong>2️⃣ Controlar visibilidad</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">Modal</span> <span style="color:#8b008b;font-weight:bold">v-if</span>=<span style="color:#cd5555">&#34;showModal&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">p</span>&gt;Contenido del modal&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">Modal</span>&gt;</span></span></code></pre></div></p>
+<hr>
+<h1 id="-cómo-subir-archivos-con-inertia--0557">📤 Cómo subir archivos con Inertia – 05:57</h1>
+<h3 id="-objetivo-9">🎯 Objetivo</h3>
+<p>Permitir que el usuario cargue PDFs como fuentes.</p>
+<hr>
+<h2 id="-paso-a-paso-8">✅ Paso a paso</h2>
+<p><strong>1️⃣ Formulario</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;file&#34;</span> <span style="color:#8b008b;font-weight:bold">@change</span><span style="color:#cd5555">=&#34;handleFile&#34;</span> /&gt;</span></span></code></pre></div></p>
+<hr>
+<p><strong>2️⃣ Crear <code>FormData</code> y enviar</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> handleFile(event) {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> file = event.target.files[<span style="color:#b452cd">0</span>];
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> formData = <span style="color:#8b008b;font-weight:bold">new</span> FormData();
+</span></span><span style="display:flex;"><span>formData.append(<span style="color:#cd5555">&#39;file&#39;</span>, file);
+</span></span><span style="display:flex;"><span>formData.append(<span style="color:#cd5555">&#39;title&#39;</span>, form.title);
+</span></span><span style="display:flex;"><span>formData.append(<span style="color:#cd5555">&#39;type&#39;</span>, form.type);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>router.post(route(<span style="color:#cd5555">&#39;sources.store&#39;</span>, chatbot.id), formData);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<hr>
+<p><strong>3️⃣ En Laravel</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$file</span> = <span style="color:#00688b">$request</span>-&gt;<span style="color:#658b00">file</span>(<span style="color:#cd5555">&#39;file&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$path</span> = <span style="color:#00688b">$file</span>-&gt;<span style="color:#658b00">store</span>(<span style="color:#cd5555">&#39;sources&#39;</span>);</span></span></code></pre></div></p>
+<hr>
+<h1 id="-diseñando-el-campo-para-seleccionar-pdfs--0150">📁 Diseñando el campo para seleccionar PDFs – 01:50</h1>
+<p>Usar clases Tailwind:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;file&#34;</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;border p-2 rounded w-full&#34;</span> /&gt;</span></span></code></pre></div></p>
+<hr>
+<h1 id="-botón-para-quitar-archivo--0405">❌ Botón para quitar archivo – 04:05</h1>
+<p>Permite quitar archivo antes de enviar:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">button</span> <span style="color:#8b008b;font-weight:bold">@click</span><span style="color:#cd5555">=&#34;form.file = null&#34;</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;text-red-500&#34;</span>&gt;Quitar&lt;/<span style="color:#8b008b;font-weight:bold">button</span>&gt;</span></span></code></pre></div></p>
+<hr>
+<h1 id="-listado-de-fuentes-de-conocimientos--0246">📄 Listado de fuentes de conocimientos – 02:46</h1>
+<p>En Laravel:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$chatbot</span>-&gt;<span style="color:#658b00">load</span>(<span style="color:#cd5555">&#39;sources&#39;</span>);</span></span></code></pre></div></p>
+<hr>
+<p>En Vue:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">ul</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">li</span> <span style="color:#8b008b;font-weight:bold">v-for</span>=<span style="color:#cd5555">&#34;source in chatbot.sources&#34; :key=&#34;source.id&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    {{ <span style="color:#658b00">source.title</span> }} <span style="color:#a61717;background-color:#e3d2d2">(</span>{{ <span style="color:#658b00">source.type</span> }}<span style="color:#a61717;background-color:#e3d2d2">)</span>
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#8b008b;font-weight:bold">li</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">ul</span>&gt;</span></span></code></pre></div></p>
+<hr>
+<h1 id="-diseñando-lista-con-tailwind-css--0722">🎨 Diseñando lista con Tailwind CSS – 07:22</h1>
+<p>Tarjetas con sombra, padding, borde:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#8b008b;font-weight:bold">v-for</span>=<span style="color:#cd5555">&#34;source in chatbot.sources&#34; class=&#34;p-4 border rounded shadow mb-2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">p</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;font-semibold&#34;</span>&gt;{{ source.title }}&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;</span></span></code></pre></div></p>
+<hr>
+<h1 id="-mostrar-pdfs-y-urls-en-el-chatbot--0343">📄 Mostrar PDFs y URLs en el Chatbot – 03:43</h1>
+<p>Si es PDF, mostrar enlace para descargar:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">a</span> <span style="color:#8b008b;font-weight:bold">:href</span>=<span style="color:#cd5555">&#34;`/storage/${source.file_path}`&#34;</span> <span style="color:#658b00">target</span>=<span style="color:#cd5555">&#34;_blank&#34;</span>&gt;Ver PDF&lt;/<span style="color:#8b008b;font-weight:bold">a</span>&gt;</span></span></code></pre></div></p>
+<p>Si es URL, mostrar enlace:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">a</span> <span style="color:#8b008b;font-weight:bold">:href</span>=<span style="color:#cd5555">&#34;source.url&#34;</span> <span style="color:#658b00">target</span>=<span style="color:#cd5555">&#34;_blank&#34;</span>&gt;{{ source.url }}&lt;/<span style="color:#8b008b;font-weight:bold">a</span>&gt;</span></span></code></pre></div></p>
+<hr>
+<h1 id="-eliminar-fuente-de-conocimiento-con-confirmación--0718">🗑 Eliminar fuente de conocimiento con confirmación – 07:18</h1>
+<p><strong>1️⃣ Botón abre modal</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">button</span> <span style="color:#8b008b;font-weight:bold">@click</span><span style="color:#cd5555">=&#34;showConfirm = true&#34;</span>&gt;<span style="color:#658b00">Eliminar</span>&lt;/<span style="color:#8b008b;font-weight:bold">button</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">Modal</span> <span style="color:#8b008b;font-weight:bold">v-if</span>=<span style="color:#cd5555">&#34;showConfirm&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">p</span>&gt;<span style="color:#a61717;background-color:#e3d2d2">¿</span>Seguro?&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">button</span> <span style="color:#8b008b;font-weight:bold">@click</span><span style="color:#cd5555">=&#34;deleteSource(source.id)&#34;</span>&gt;<span style="color:#658b00">Sí</span>&lt;/<span style="color:#8b008b;font-weight:bold">button</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">Modal</span>&gt;</span></span></code></pre></div></p>
+<hr>
+<p><strong>2️⃣ Enviar petición</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> deleteSource(id) {
+</span></span><span style="display:flex;"><span>router.<span style="color:#8b008b;font-weight:bold">delete</span>(route(<span style="color:#cd5555">&#39;sources.destroy&#39;</span>, [chatbot.id, id]));
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<hr>
+<h1 id="-inertia-v2-y-polling-con-vuejs--0302">🔄 Inertia v2 y Polling con Vue.js – 03:02</h1>
+<p>Petición cada x segundos:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>setInterval(() =&gt; {
+</span></span><span style="display:flex;"><span>router.reload();
+</span></span><span style="display:flex;"><span>}, <span style="color:#b452cd">5000</span>);</span></span></code></pre></div></p>
+<hr>
+<h1 id="-extraer-texto-desde-pdf-en-laravel--0312">📄 Extraer texto desde PDF en Laravel – 03:12</h1>
+<p>Instalar parser:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require smalot/pdfparser</span></span></code></pre></div></p>
+<hr>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$parser</span> = <span style="color:#8b008b;font-weight:bold">new</span> \Smalot\PdfParser\Parser();
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$pdf</span> = <span style="color:#00688b">$parser</span>-&gt;<span style="color:#658b00">parseFile</span>(storage_path(<span style="color:#cd5555">&#39;app/&#39;</span> . <span style="color:#00688b">$source</span>-&gt;<span style="color:#658b00">file_path</span>));
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$text</span> = <span style="color:#00688b">$pdf</span>-&gt;<span style="color:#658b00">getText</span>();</span></span></code></pre></div>
+<hr>
+<h1 id="-extraer-texto-de-webs-con-domcrawler--0438">🌐 Extraer texto de webs con DomCrawler – 04:38</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require symfony/dom-crawler</span></span></code></pre></div>
+<hr>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$crawler</span> = <span style="color:#8b008b;font-weight:bold">new</span> \Symfony\Component\DomCrawler\Crawler(<span style="color:#00688b">$html</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$text</span> = <span style="color:#00688b">$crawler</span>-&gt;<span style="color:#658b00">filter</span>(<span style="color:#cd5555">&#39;body&#39;</span>)-&gt;<span style="color:#658b00">text</span>();</span></span></code></pre></div>
+<hr>
+<h1 id="-crear-el-modelo-chat--0548">💬 Crear el Modelo Chat – 05:48</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan make:model Chat -m</span></span></code></pre></div>
+<hr>
+<p>Migración:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">uuid</span>(<span style="color:#cd5555">&#39;id&#39;</span>)-&gt;<span style="color:#658b00">primary</span>();
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">foreignUuid</span>(<span style="color:#cd5555">&#39;chatbot_id&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;title&#39;</span>);</span></span></code></pre></div></p>
+<hr>
+<p>Relación:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">messages</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">hasMany</span>(Message::<span style="color:#658b00">class</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<hr>
+<h1 id="-cómo-editar-el-título-de-un-chat-en-línea-con-laravel-e-inertia--0845">✏️ Cómo editar el título de un chat en línea con Laravel e Inertia – 08:45</h1>
+<h3 id="-objetivo-10">🎯 Objetivo</h3>
+<p>Permitir al usuario cambiar el título del chat directamente en la interfaz (inline editing).</p>
+<hr>
+<h2 id="-paso-a-paso-9">✅ Paso a paso</h2>
+<p><strong>1️⃣ Mostrar título editable</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">input</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#8b008b;font-weight:bold">v-model</span>=<span style="color:#cd5555">&#34;title&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#8b008b;font-weight:bold">@blur</span><span style="color:#cd5555">=&#34;updateTitle&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;border rounded px-2&#34;</span>
+</span></span><span style="display:flex;"><span>    /&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">template</span>&gt;</span></span></code></pre></div></p>
+<hr>
+<p><strong>2️⃣ Enviar petición a backend</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> updateTitle() {
+</span></span><span style="display:flex;"><span>router.put(route(<span style="color:#cd5555">&#39;chats.update&#39;</span>, chat.id), { title });
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<hr>
+<p><strong>3️⃣ En Laravel</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">update</span>(Request <span style="color:#00688b">$request</span>, Chat <span style="color:#00688b">$chat</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$chat</span>-&gt;<span style="color:#658b00">update</span>(<span style="color:#00688b">$request</span>-&gt;<span style="color:#658b00">validate</span>([
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;title&#39;</span> =&gt; <span style="color:#cd5555">&#39;required|string|max:255&#39;</span>,
+</span></span><span style="display:flex;"><span>]));
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> back();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<hr>
+<h1 id="-listado-de-conversaciones-de-un-chatbot--1105">📃 Listado de conversaciones de un Chatbot – 11:05</h1>
+<h3 id="-mostrar-todos-los-chats-que-un-chatbot-tiene">🎯 Mostrar todos los chats que un chatbot tiene.</h3>
+<hr>
+<h2 id="-paso-a-paso-10">✅ Paso a paso</h2>
+<p><strong>1️⃣ Relación en modelo <code>Chatbot</code></strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">chats</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">hasMany</span>(Chat::<span style="color:#658b00">class</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<hr>
+<p><strong>2️⃣ Ruta en Laravel</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;/chatbots/{chatbot}/chats&#39;</span>, [ChatController::<span style="color:#658b00">class</span>, <span style="color:#cd5555">&#39;index&#39;</span>])
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">name</span>(<span style="color:#cd5555">&#39;chatbots.chats.index&#39;</span>);</span></span></code></pre></div></p>
+<hr>
+<p><strong>3️⃣ Controlador</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">index</span>(Chatbot <span style="color:#00688b">$chatbot</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> Inertia::<span style="color:#658b00">render</span>(<span style="color:#cd5555">&#39;Chats/Index&#39;</span>, [
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;chats&#39;</span> =&gt; <span style="color:#00688b">$chatbot</span>-&gt;<span style="color:#658b00">chats</span>,
+</span></span><span style="display:flex;"><span>]);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<hr>
+<p><strong>4️⃣ Vista en Vue</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">ul</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">li</span> <span style="color:#8b008b;font-weight:bold">v-for</span>=<span style="color:#cd5555">&#34;chat in chats&#34; :key=&#34;chat.id&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    {{ <span style="color:#658b00">chat.title</span> }}
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#8b008b;font-weight:bold">li</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">ul</span>&gt;</span></span></code></pre></div></p>
+<hr>
+<h1 id="-componente-textarea-para-enviar-mensajes--0709">💬 Componente Textarea para enviar mensajes – 07:09</h1>
+<p>Textarea donde el usuario escribe mensajes.</p>
+<hr>
+<h2 id="-paso-a-paso-11">✅ Paso a paso</h2>
+<p><strong>1️⃣ Crear <code>ChatInput.vue</code></strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">form</span> <span style="color:#8b008b;font-weight:bold">@submit.prevent</span><span style="color:#cd5555">=&#34;sendMessage&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">textarea</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#8b008b;font-weight:bold">v-model</span>=<span style="color:#cd5555">&#34;message&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;border rounded w-full p-2&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#658b00">placeholder</span>=<span style="color:#cd5555">&#34;Escribe tu mensaje...&#34;</span>
+</span></span><span style="display:flex;"><span>    &gt;&lt;/<span style="color:#8b008b;font-weight:bold">textarea</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">button</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;submit&#34;</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;btn-primary mt-2&#34;</span>&gt;Enviar&lt;/<span style="color:#8b008b;font-weight:bold">button</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#8b008b;font-weight:bold">form</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">script</span> <span style="color:#658b00">setup</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> { ref } from <span style="color:#cd5555">&#39;vue&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> message = ref(<span style="color:#cd5555">&#39;&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> sendMessage() {
+</span></span><span style="display:flex;"><span>  router.post(route(<span style="color:#cd5555">&#39;messages.store&#39;</span>, chat.id), { content: message.value });
+</span></span><span style="display:flex;"><span>  message.value = <span style="color:#cd5555">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">script</span>&gt;</span></span></code></pre></div></p>
+<hr>
+<h1 id="-integrar-chatinput-en-la-interfaz--0259">🔗 Integrar ChatInput en la interfaz – 02:59</h1>
+<p>En vista <code>Chats/Show.vue</code>:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;messages&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#228b22">&lt;!--</span> Aquí listamos mensajes --&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">ChatInput</span> /&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">template</span>&gt;</span></span></code></pre></div></p>
+<hr>
+<h1 id="-manejo-de-shiftenter-en-textareas--0216">↩️ Manejo de Shift+Enter en textareas – 02:16</h1>
+<p>Permitir salto de línea con Shift+Enter:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">textarea</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">@keydown.enter.exact.prevent</span><span style="color:#cd5555">=&#34;sendMessage&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">@keydown.enter.shift.exact</span>
+</span></span><span style="display:flex;"><span>&gt;&lt;/<span style="color:#8b008b;font-weight:bold">textarea</span>&gt;</span></span></code></pre></div></p>
+<hr>
+<h1 id="-modelo-message-y-rutas-anidadas--0722">📦 Modelo Message y rutas anidadas – 07:22</h1>
+<h3 id="-guardar-los-mensajes-que-se-envían-en-el-chat">🎯 Guardar los mensajes que se envían en el chat.</h3>
+<hr>
+<h2 id="-paso-a-paso-12">✅ Paso a paso</h2>
+<p><strong>1️⃣ Crear modelo</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan make:model Message -m</span></span></code></pre></div></p>
+<hr>
+<p><strong>2️⃣ Migración</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">uuid</span>(<span style="color:#cd5555">&#39;id&#39;</span>)-&gt;<span style="color:#658b00">primary</span>();
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">foreignUuid</span>(<span style="color:#cd5555">&#39;chat_id&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">text</span>(<span style="color:#cd5555">&#39;content&#39;</span>);</span></span></code></pre></div></p>
+<hr>
+<p><strong>3️⃣ Relación</strong></p>
+<ul>
+<li>En <code>Chat</code>: <code>$this-&gt;hasMany(Message::class)</code></li>
+<li>En <code>Message</code>: <code>$this-&gt;belongsTo(Chat::class)</code></li>
+</ul>
+<hr>
+<p><strong>4️⃣ Rutas anidadas</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Route::<span style="color:#658b00">resource</span>(<span style="color:#cd5555">&#39;chats.messages&#39;</span>, MessageController::<span style="color:#658b00">class</span>);</span></span></code></pre></div></p>
+<hr>
+<h1 id="-introducción-a-la-api-de-openai--0307">🧠 Introducción a la API de OpenAI – 03:07</h1>
+<h3 id="-explicación-clave">🎯 Explicación clave</h3>
+<ul>
+<li><strong>Qué es OpenAI</strong>: compañía de IA creadora de modelos como GPT.</li>
+<li><strong>API</strong>: permite enviar texto/preguntas y recibir respuestas.</li>
+<li><strong>Tokens</strong>: unidad que mide el texto enviado + recibido.</li>
+<li><strong>Precio</strong>: depende de la cantidad de tokens usados.</li>
+</ul>
+<hr>
+<h2 id="-en-laravel">📦 En Laravel</h2>
+<p><strong>1️⃣ Instalar cliente oficial</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require openai-php/laravel</span></span></code></pre></div></p>
+<hr>
+<p><strong>2️⃣ Configurar clave en <code>.env</code></strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-env" data-lang="env"><span style="display:flex;"><span><span style="color:#00688b">OPENAI_API_KEY</span>=sk-xxxxxxxx</span></span></code></pre></div></p>
+<hr>
+<p><strong>3️⃣ Llamar a la API</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$response</span> = OpenAI::<span style="color:#658b00">chat</span>()-&gt;<span style="color:#658b00">create</span>([
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;model&#39;</span> =&gt; <span style="color:#cd5555">&#39;gpt-4o&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;messages&#39;</span> =&gt; [
+</span></span><span style="display:flex;"><span>[<span style="color:#cd5555">&#39;role&#39;</span> =&gt; <span style="color:#cd5555">&#39;user&#39;</span>, <span style="color:#cd5555">&#39;content&#39;</span> =&gt; <span style="color:#cd5555">&#39;Hola!&#39;</span>],
+</span></span><span style="display:flex;"><span>],
+</span></span><span style="display:flex;"><span>]);</span></span></code></pre></div></p>
+<hr>
+<p><strong>4️⃣ Leer respuesta</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$text</span> = <span style="color:#00688b">$response</span>-&gt;<span style="color:#658b00">choices</span>[<span style="color:#b452cd">0</span>]-&gt;<span style="color:#658b00">message</span>-&gt;<span style="color:#658b00">content</span>;</span></span></code></pre></div></p>
+<hr>
+<h1 id="-tokens-y-precios-1">📊 Tokens y precios</h1>
+<ul>
+<li>Cuantos más tokens, más caro.</li>
+<li>Precio = (tokens usados / 1000) × precio del modelo.</li>
+</ul>
+<hr>
+<p>✨ <strong>¡FIN DEL CURSO!</strong> 🎉</p>
+<hr>
+<h1 id="-resumen-final">✅ Resumen final</h1>
+<p>Has aprendido:</p>
+<ul>
+<li>Laravel + Inertia + Vue 3</li>
+<li>Componentes reutilizables (Textarea, Select, Modal)</li>
+<li>Subir archivos, manejar fuentes de conocimiento</li>
+<li>Crear modelos Chat, Message, Source</li>
+<li>Integración real con OpenAI</li>
+</ul>
+<hr>
+<p>🚀 ¿Quieres que ahora te haga:</p>
+<ul>
+<li>un <em>índice resumen</em></li>
+<li>un <em>PDF</em></li>
+<li>o diagramas del flujo de la app?</li>
+</ul>
+<p>👉 Solo dímelo y lo preparo.</p>
+
+  <div class="section-index">
+    
+    
+    </div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

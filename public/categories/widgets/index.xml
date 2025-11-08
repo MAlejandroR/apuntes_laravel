@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Widgets on Laravel: Framework de php</title>
+    <link>http://localhost:1313/laravel/categories/widgets/</link>
+    <description>Recent content in Widgets on Laravel: Framework de php</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Mon, 26 Aug 2024 18:45:00 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/laravel/categories/widgets/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Widgets en el Panel</title>
+      <link>http://localhost:1313/laravel/docs/14_filament/widget/</link>
+      <pubDate>Mon, 26 Aug 2024 18:45:00 +0200</pubDate>
+      <guid>http://localhost:1313/laravel/docs/14_filament/widget/</guid>
+      <description>&lt;h1 id=&#34;qué-es-un-widget-en-filament&#34;&gt;Qué es un widget en Filament&lt;/h1&gt;&#xA;&lt;p&gt;Un &lt;strong&gt;widget&lt;/strong&gt; es un componente reutilizable que se muestra dentro del panel de administración.&lt;br&gt;&#xA;Sirve para aportar información rápida, estadísticas, accesos directos o mensajes de bienvenida al usuario.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;tipos-de-widget-que-puedo-usar&#34;&gt;Tipos de widget que puedo usar&lt;/h1&gt;&#xA;&lt;p&gt;En Filament existen varios tipos de widgets, por ejemplo:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Stats Overview&lt;/strong&gt; → muestra métricas y estadísticas rápidas.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Charts&lt;/strong&gt; → gráficos para visualizar datos.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Tables&lt;/strong&gt; → listados o tablas interactivas.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Custom Widgets&lt;/strong&gt; → creados por el desarrollador con contenido libre.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;crear-un-widget-de-presentación-multilenguaje-en-filament&#34;&gt;Crear un widget de presentación multilenguaje en Filament&lt;/h1&gt;&#xA;&lt;p&gt;Una idea muy útil 👌 es añadir un widget personalizado que muestre un texto de introducción o presentación en el panel principal de Filament.&lt;br&gt;&#xA;Además, podemos aprovechar las traducciones de Laravel (&lt;code&gt;__(&#39;...&#39;)&lt;/code&gt;) para hacerlo &lt;strong&gt;multilenguaje&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

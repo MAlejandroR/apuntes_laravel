@@ -4,7 +4,7 @@
     <title>Docsy</title>
     <link>http://localhost:1313/laravel/fr/</link>
     <description>Recent content on Docsy</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>fr</language>
     <atom:link href="http://localhost:1313/laravel/fr/index.xml" rel="self" type="application/rss+xml" />
   </channel>

@@ -4,7 +4,7 @@
     <title>Categories on Docsy</title>
     <link>http://localhost:1313/laravel/fr/categories/</link>
     <description>Recent content in Categories on Docsy</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>fr</language>
     <atom:link href="http://localhost:1313/laravel/fr/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>

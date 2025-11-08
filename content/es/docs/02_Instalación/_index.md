@@ -115,3 +115,80 @@ Hay que seguir estos pasos:
 {{< / highlight >}}
 Si alguna extensión no la tuvieses, eso implica que habría que descargar el **dll**
   https://windows.php.net/download
+# Poner el proyecto en ejecución
+
+En este proyecto usamos Laravel con Inertia.js (Vue) y Filament para la administración.  
+La base de datos se ejecuta en Docker, configurada mediante el archivo `.env`.
+
+En el archivo `package.json` tenemos scripts para facilitar el desarrollo local.  
+Por ejemplo, el script `npm run dev` se encarga de lanzar Vite para compilar y recargar automáticamente nuestros assets (JavaScript, CSS, etc.).
+
+Además, usamos `php artisan serve` para levantar el servidor web de Laravel, que por defecto escucha en el puerto **8000**.
+
+## Script básico para desarrollo
+
+En la sección `"scripts"` de `package.json` podemos tener algo así:
+
+{{< highlight json >}}
+"scripts": {
+"dev": "vite",
+"build": "vite build"
+}
+{{< / highlight >}}
+
+---
+
+## Usar Docker para la base de datos
+
+Con Docker podemos levantar la base de datos MySQL y phpMyAdmin fácilmente.  
+El archivo `docker-compose.yml` define los servicios y mapea puertos para acceder desde el host.
+
+Para iniciarlo en segundo plano:
+
+{{< highlight bash >}}
+docker compose up -d
+{{< / highlight >}}
+
+---
+
+## Crear un script para todo en uno
+
+Podemos crear un script que ejecute a la vez:
+- Docker para la base de datos
+- Vite (`npm run dev`)
+- Laravel (`php artisan serve`)
+
+Para ello instalamos el paquete **concurrently**:
+
+{{< highlight bash >}}
+npm install --save-dev concurrently
+{{< / highlight >}}
+
+Y añadimos en `package.json`:
+
+{{< highlight json >}}
+"scripts": {
+"dev": "vite",
+"build": "vite build",
+"localdev": "docker compose up -d && concurrently \"npm run dev\" \"php artisan serve\""
+}
+{{< / highlight >}}
+
+Así, con un solo comando:
+
+{{< highlight bash >}}
+npm run localdev
+{{< / highlight >}}
+
+se pondrá en marcha todo el entorno local de desarrollo.
+
+---
+
+**Resumen:**
+- `npm run dev` → lanza Vite para desarrollo frontend
+- `php artisan serve` → levanta el servidor Laravel en localhost:8000
+  > En lugar de usar el ejecutable php, se puede usar @php artisan serve en los scripts del package.json.
+  >  Esto hace que el comando sea más portable entre distintos sistemas operativos, ya que utiliza el ejecutable de PHP que está configurado en el PATH del sistema.
+- `docker compose up -d` → arranca la base de datos y phpMyAdmin
+- `npm run localdev` → todo junto, usando `concurrently`
+

@@ -38,6 +38,15 @@ Helpers en Laravel son funciones globales que proporcionan una manera convenient
 ### Helpers Generales
 - `app()`: Accede a la instancia del contenedor de servicios.
 - `config()`: Obtiene o establece valores de configuración.
+
+
+## Crear un helper
+
+Creamos una carpeta en app:
+```js
+app\helper
+
+```
 ## Facade Vs Helper
 https://medium.com/@azimidev/laravel-facades-vs-helpers-understanding-the-differences-and-use-cases-007d41a1b257
 

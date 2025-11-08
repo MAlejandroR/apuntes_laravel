@@ -4,15 +4,50 @@
     <title>Categories on Laravel: Framework de php</title>
     <link>http://localhost:1313/laravel/categories/</link>
     <description>Recent content in Categories on Laravel: Framework de php</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 02 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Sep 2025 08:32:21 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/laravel/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Filament</title>
+      <link>http://localhost:1313/laravel/categories/filament/</link>
+      <pubDate>Sun, 21 Sep 2025 08:32:21 +0200</pubDate>
+      <guid>http://localhost:1313/laravel/categories/filament/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Laravel</title>
+      <link>http://localhost:1313/laravel/categories/laravel/</link>
+      <pubDate>Sun, 21 Sep 2025 08:32:21 +0200</pubDate>
+      <guid>http://localhost:1313/laravel/categories/laravel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Páginas</title>
+      <link>http://localhost:1313/laravel/categories/p%C3%A1ginas/</link>
+      <pubDate>Sun, 21 Sep 2025 08:32:21 +0200</pubDate>
+      <guid>http://localhost:1313/laravel/categories/p%C3%A1ginas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Panel</title>
+      <link>http://localhost:1313/laravel/categories/panel/</link>
+      <pubDate>Sun, 21 Sep 2025 08:32:21 +0200</pubDate>
+      <guid>http://localhost:1313/laravel/categories/panel/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Archivos</title>
       <link>http://localhost:1313/laravel/categories/archivos/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/laravel/categories/archivos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Auth</title>
+      <link>http://localhost:1313/laravel/categories/auth/</link>
+      <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/laravel/categories/auth/</guid>
       <description></description>
     </item>
     <item>
@@ -23,10 +58,31 @@
       <description></description>
     </item>
     <item>
-      <title>Laravel</title>
-      <link>http://localhost:1313/laravel/categories/laravel/</link>
+      <title>Fortity</title>
+      <link>http://localhost:1313/laravel/categories/fortity/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/laravel/categories/laravel/</guid>
+      <guid>http://localhost:1313/laravel/categories/fortity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Widgets</title>
+      <link>http://localhost:1313/laravel/categories/widgets/</link>
+      <pubDate>Mon, 26 Aug 2024 18:45:00 +0200</pubDate>
+      <guid>http://localhost:1313/laravel/categories/widgets/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Optimización</title>
+      <link>http://localhost:1313/laravel/categories/optimizaci%C3%B3n/</link>
+      <pubDate>Thu, 08 Aug 2024 18:27:00 +0200</pubDate>
+      <guid>http://localhost:1313/laravel/categories/optimizaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ficheros</title>
+      <link>http://localhost:1313/laravel/categories/ficheros/</link>
+      <pubDate>Thu, 08 Aug 2024 18:23:50 +0200</pubDate>
+      <guid>http://localhost:1313/laravel/categories/ficheros/</guid>
       <description></description>
     </item>
   </channel>

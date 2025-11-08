@@ -4,7 +4,7 @@
     <title>Laravel</title>
     <link>http://localhost:1313/laravel/en/</link>
     <description>Recent content on Laravel</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <atom:link href="http://localhost:1313/laravel/en/index.xml" rel="self" type="application/rss+xml" />
   </channel>

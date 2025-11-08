@@ -1,0 +1,1387 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/14_filament/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Filament | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/14_filament/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Filament">
+  <meta property="og:description" content="Qué es y Cómo integrar filament en un projecto de laravel
+Qué es filament? Es un paquete que implementa un panel de administración para Laravel
+Permite construir páginas y administrar un sencillo y elegante CRUD para los diferentes modelos de la aplicación
+Filament usa Tailwind CSS para los estilos y Livewire para el front, el cual permite construir páginas interactivas con php dentro de Laravel.
+🧱 Requirements Laravel 9, 10, or 11 PHP 8.1&#43; Working database Laravel Auth (Breeze, Jetstream, etc.) php-intl (se necesita esta extensión, que no suele estar instalada) 1 sudo apt install php-intl 1. Install Filament 1 composer require filament/filament Recuerda tener instalado el paquete de internacionalización intl">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Filament">
+  <meta itemprop="description" content="Qué es y Cómo integrar filament en un projecto de laravel
+Qué es filament? Es un paquete que implementa un panel de administración para Laravel
+Permite construir páginas y administrar un sencillo y elegante CRUD para los diferentes modelos de la aplicación
+Filament usa Tailwind CSS para los estilos y Livewire para el front, el cual permite construir páginas interactivas con php dentro de Laravel.
+🧱 Requirements Laravel 9, 10, or 11 PHP 8.1&#43; Working database Laravel Auth (Breeze, Jetstream, etc.) php-intl (se necesita esta extensión, que no suele estar instalada) 1 sudo apt install php-intl 1. Install Filament 1 composer require filament/filament Recuerda tener instalado el paquete de internacionalización intl">
+  <meta itemprop="datePublished" content="2024-08-08T18:23:50+02:00">
+  <meta itemprop="dateModified" content="2024-08-08T18:23:50+02:00">
+  <meta itemprop="wordCount" content="1494">
+  <meta itemprop="keywords" content="Laravel,Filament,Dasboard,Herramientas">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Filament">
+  <meta name="twitter:description" content="Qué es y Cómo integrar filament en un projecto de laravel
+Qué es filament? Es un paquete que implementa un panel de administración para Laravel
+Permite construir páginas y administrar un sencillo y elegante CRUD para los diferentes modelos de la aplicación
+Filament usa Tailwind CSS para los estilos y Livewire para el front, el cual permite construir páginas interactivas con php dentro de Laravel.
+🧱 Requirements Laravel 9, 10, or 11 PHP 8.1&#43; Working database Laravel Auth (Breeze, Jetstream, etc.) php-intl (se necesita esta extensión, que no suele estar instalada) 1 sudo apt install php-intl 1. Install Filament 1 composer require filament/filament Recuerda tener instalado el paquete de internacionalización intl">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs-li">
+  <a href="/laravel/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laraveldocs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs01_introduccic3b3n-check"/>
+  <label for="m-laraveldocs01_introduccic3b3n-check"><a href="/laravel/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs02_instalacic3b3n-check"/>
+  <label for="m-laraveldocs02_instalacic3b3n-check"><a href="/laravel/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs10_test-li">
+  <input type="checkbox" id="m-laraveldocs10_test-check"/>
+  <label for="m-laraveldocs10_test-check"><a href="/laravel/docs/10_test/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_test"><span class="">10_Test unitarios</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_testchat-li">
+  <input type="checkbox" id="m-laraveldocs10_testchat-check"/>
+  <label for="m-laraveldocs10_testchat-check"><a href="/laravel/docs/10_test/chat/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_testchat"><span class="">10_Test unitarios del chat</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_testpest-li">
+  <input type="checkbox" id="m-laraveldocs10_testpest-check"/>
+  <label for="m-laraveldocs10_testpest-check"><a href="/laravel/docs/10_test/pest/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs10_testpest"><span class="">Pest</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs03_rutas-li">
+  <input type="checkbox" id="m-laraveldocs03_rutas-check"/>
+  <label for="m-laraveldocs03_rutas-check"><a href="/laravel/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs05_controlador-li">
+  <input type="checkbox" id="m-laraveldocs05_controlador-check"/>
+  <label for="m-laraveldocs05_controlador-check"><a href="/laravel/docs/05_controlador/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs05_controlador"><i class="fas fa-cogs"></i><span class="">Controlador</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs04_plantillas-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas-check"/>
+  <label for="m-laraveldocs04_plantillas-check"><a href="/laravel/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas01_blade-check"/>
+  <label for="m-laraveldocs04_plantillas01_blade-check"><a href="/laravel/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laraveldocs04_plantillas02_creandodisec3b1o-check"><a href="/laravel/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas03_componentes-check"/>
+  <label for="m-laraveldocs04_plantillas03_componentes-check"><a href="/laravel/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs50_tinker-li">
+  <input type="checkbox" id="m-laraveldocs50_tinker-check"/>
+  <label for="m-laraveldocs50_tinker-check"><a href="/laravel/docs/50_tinker/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs50_tinker"><span class="">tinker</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs60_collection-li">
+  <input type="checkbox" id="m-laraveldocs60_collection-check"/>
+  <label for="m-laraveldocs60_collection-check"><a href="/laravel/docs/60_collection/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs60_collection"><span class="">Collection en Laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacion-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacion-check"/>
+  <label for="m-laraveldocs06_autenticacion-check"><a href="/laravel/docs/06_autenticacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacion"><i class="fa-solid fa-sitemap"></i><span class="">Autenticación</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionbreeze-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionbreeze-check"/>
+  <label for="m-laraveldocs06_autenticacionbreeze-check"><a href="/laravel/docs/06_autenticacion/breeze/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionbreeze"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacionfortify-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify-check"/>
+  <label for="m-laraveldocs06_autenticacionfortify-check"><a href="/laravel/docs/06_autenticacion/fortify/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionfortify"><i class="fa-solid fa-sitemap"></i><span class="">Fortify y Jetstream</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-check"/>
+  <label for="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-check"><a href="/laravel/docs/06_autenticacion/fortify/02_page_role_autenticated/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated"><i class="fa-solid fa-sitemap"></i><span class="">Dashboard según rol</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortify01_instalacion-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify01_instalacion-check"/>
+  <label for="m-laraveldocs06_autenticacionfortify01_instalacion-check"><a href="/laravel/docs/06_autenticacion/fortify/01_instalacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortify01_instalacion"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortifydiagrama-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionfortifydiagrama-check"/>
+  <label for="m-laraveldocs06_autenticacionfortifydiagrama-check"><a href="/laravel/docs/06_autenticacion/fortify/diagrama/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortifydiagrama"><i class="fa-solid fa-sitemap"></i><span class="">Diagrama de flujo</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-check"/>
+  <label for="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-check"><a href="/laravel/docs/06_autenticacion/fortify/peronsalizar_controladores/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores"><i class="fa-solid fa-sitemap"></i><span class="">Personalizar controladores</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionotp-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionotp-check"/>
+  <label for="m-laraveldocs06_autenticacionotp-check"><a href="/laravel/docs/06_autenticacion/otp/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionotp"><i class="fa-solid fa-sitemap"></i><span class="">OTP One-Time Password</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs70_laravel_idea-li">
+  <input type="checkbox" id="m-laraveldocs70_laravel_idea-check"/>
+  <label for="m-laraveldocs70_laravel_idea-check"><a href="/laravel/docs/70_laravel_idea/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs70_laravel_idea"><span class="">Laravel Idea</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs07_migraciones-li">
+  <input type="checkbox" id="m-laraveldocs07_migraciones-check"/>
+  <label for="m-laraveldocs07_migraciones-check"><a href="/laravel/docs/07_migraciones/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs07_migraciones"><i class="fa-solid fa-database"></i><span class="">Migracioens</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs07_migracioneseloquent-li">
+  <input type="checkbox" id="m-laraveldocs07_migracioneseloquent-check"/>
+  <label for="m-laraveldocs07_migracioneseloquent-check"><a href="/laravel/docs/07_migraciones/eloquent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs07_migracioneseloquent"><i class="fa-solid fa-database"></i><span class="">Eloquent</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs07_migracionessql_to_eloquent-li">
+  <input type="checkbox" id="m-laraveldocs07_migracionessql_to_eloquent-check"/>
+  <label for="m-laraveldocs07_migracionessql_to_eloquent-check"><a href="/laravel/docs/07_migraciones/sql_to_eloquent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs07_migracionessql_to_eloquent"><i class="fa-solid fa-database"></i><span class="">SQL vs Eloquent</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs80_api_openai-li">
+  <input type="checkbox" id="m-laraveldocs80_api_openai-check"/>
+  <label for="m-laraveldocs80_api_openai-check"><a href="/laravel/docs/80_api_openai/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs80_api_openai"><span class="">API OpenAI</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs90_helper-li">
+  <input type="checkbox" id="m-laraveldocs90_helper-check"/>
+  <label for="m-laraveldocs90_helper-check"><a href="/laravel/docs/90_helper/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs90_helper"><span class="">API OpenAI</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs100_anexos-li">
+  <input type="checkbox" id="m-laraveldocs100_anexos-check"/>
+  <label for="m-laraveldocs100_anexos-check"><a href="/laravel/docs/100_anexos/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs100_anexos"><span class="">Anexos</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs100_anexosbootstrap-li">
+  <input type="checkbox" id="m-laraveldocs100_anexosbootstrap-check"/>
+  <label for="m-laraveldocs100_anexosbootstrap-check"><a href="/laravel/docs/100_anexos/bootstrap/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs100_anexosbootstrap"><span class="">app.php</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs10_api-li">
+  <input type="checkbox" id="m-laraveldocs10_api-check"/>
+  <label for="m-laraveldocs10_api-check"><a href="/laravel/docs/10_api/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api"><i class="fas fa-code"></i><span class="">Creando un api</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_api1instalacion-li">
+  <input type="checkbox" id="m-laraveldocs10_api1instalacion-check"/>
+  <label for="m-laraveldocs10_api1instalacion-check"><a href="/laravel/docs/10_api/1.instalacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api1instalacion"><span class="">01_Introducción y 20_rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_api2visiongeneral-li">
+  <input type="checkbox" id="m-laraveldocs10_api2visiongeneral-check"/>
+  <label for="m-laraveldocs10_api2visiongeneral-check"><a href="/laravel/docs/10_api/2.visiongeneral/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api2visiongeneral"><span class="">Controlador</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_api3la-vista-li">
+  <input type="checkbox" id="m-laraveldocs10_api3la-vista-check"/>
+  <label for="m-laraveldocs10_api3la-vista-check"><a href="/laravel/docs/10_api/3.la-vista/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api3la-vista"><span class="">3.La Vista unitarios</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_api4-swagger-li">
+  <input type="checkbox" id="m-laraveldocs10_api4-swagger-check"/>
+  <label for="m-laraveldocs10_api4-swagger-check"><a href="/laravel/docs/10_api/4.-swagger/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs10_api4-swagger"><span class="">swagger</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs11_roles-li">
+  <input type="checkbox" id="m-laraveldocs11_roles-check"/>
+  <label for="m-laraveldocs11_roles-check"><a href="/laravel/docs/11_roles/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs11_roles"><i class="fa-brands fa-critical-role"></i><span class="">Roles</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs13_blueprint-li">
+  <input type="checkbox" id="m-laraveldocs13_blueprint-check"/>
+  <label for="m-laraveldocs13_blueprint-check"><a href="/laravel/docs/13_blueprint/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_blueprint"><i class="fas fa-database"></i><span class="">Blueprint</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs14_filament-li">
+  <input type="checkbox" id="m-laraveldocs14_filament-check" checked/>
+  <label for="m-laraveldocs14_filament-check"><a href="/laravel/docs/14_filament/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filament"><i class="fas fa-sliders-h"></i><span class="td-sidebar-nav-active-item">Filament</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filamentpage-li">
+  <input type="checkbox" id="m-laraveldocs14_filamentpage-check"/>
+  <label for="m-laraveldocs14_filamentpage-check"><a href="/laravel/docs/14_filament/page/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filamentpage"><i class="fas"></i><span class="">Creando Páginas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filamentwidget-li">
+  <input type="checkbox" id="m-laraveldocs14_filamentwidget-check"/>
+  <label for="m-laraveldocs14_filamentwidget-check"><a href="/laravel/docs/14_filament/widget/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filamentwidget"><i class="fas"></i><span class="">Widgets en el Panel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs14_filamentpanel-li">
+  <input type="checkbox" id="m-laraveldocs14_filamentpanel-check"/>
+  <label for="m-laraveldocs14_filamentpanel-check"><a href="/laravel/docs/14_filament/panel/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filamentpanel"><i class="fas fa-rectangle-group"></i><span class="">Panel </span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filamentpanelpanel-li">
+  <input type="checkbox" id="m-laraveldocs14_filamentpanelpanel-check"/>
+  <label for="m-laraveldocs14_filamentpanelpanel-check"><a href="/laravel/docs/14_filament/panel/panel/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs14_filamentpanelpanel"><i class="fas fa-bars"></i><span class="">Navegación</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs15_storage-li">
+  <input type="checkbox" id="m-laraveldocs15_storage-check"/>
+  <label for="m-laraveldocs15_storage-check"><a href="/laravel/docs/15_storage/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs15_storage"><i class="fas fa-sliders-h"></i><span class="">Storage</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs30_pinia-li">
+  <input type="checkbox" id="m-laraveldocs30_pinia-check"/>
+  <label for="m-laraveldocs30_pinia-check"><a href="/laravel/docs/30_pinia/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs30_pinia"><i class="fas fa-database"></i><span class="">Pinia</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs40_league_csv-li">
+  <input type="checkbox" id="m-laraveldocs40_league_csv-check"/>
+  <label for="m-laraveldocs40_league_csv-check"><a href="/laravel/docs/40_league_csv/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs40_league_csv"><span class="">Ficheros CSV en Laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs31_optimizacion_carga-li">
+  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga-check"/>
+  <label for="m-laraveldocs31_optimizacion_carga-check"><a href="/laravel/docs/31_optimizacion_carga/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs31_optimizacion_carga"><i class="fas fa-tachometer-alt"></i><span class="">Optimización de carga con Laravel &#43; Inertia &#43; Vue</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga02_lazy-li">
+  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga02_lazy-check"/>
+  <label for="m-laraveldocs31_optimizacion_carga02_lazy-check"><a href="/laravel/docs/31_optimizacion_carga/02_lazy/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga02_lazy"><i class="fas fa-code-split"></i><span class="">Lazy Loading con Vue &#43; Inertia</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga03_tiempos-li">
+  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga03_tiempos-check"/>
+  <label for="m-laraveldocs31_optimizacion_carga03_tiempos-check"><a href="/laravel/docs/31_optimizacion_carga/03_tiempos/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga03_tiempos"><i class="fas fa-code-split"></i><span class="">tiempos de carga</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga04_props_pesadas-li">
+  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga04_props_pesadas-check"/>
+  <label for="m-laraveldocs31_optimizacion_carga04_props_pesadas-check"><a href="/laravel/docs/31_optimizacion_carga/04_props_pesadas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga04_props_pesadas"><i class="fas fa-box-open"></i><span class="">Cómo detectar y optimizar props pesadas en Inertia.js</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga05_carga_datos_axios-li">
+  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga05_carga_datos_axios-check"/>
+  <label for="m-laraveldocs31_optimizacion_carga05_carga_datos_axios-check"><a href="/laravel/docs/31_optimizacion_carga/05_carga_datos_axios/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga05_carga_datos_axios"><i class="fas fa-cloud-download-alt"></i><span class="">Cargar datos desde Vue con Fetch o Axios (Inertia)</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet-check"/>
+  <label for="m-laraveldocs999_cheatseet-check"><a href="/laravel/docs/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet"><span class="">Cheat Sheet</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseethelper-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper-check"/>
+  <label for="m-laraveldocs999_cheatseethelper-check"><a href="/laravel/docs/999_cheatseet/helper/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper"><span class="">Helper en Laravel</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper10_vistas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper10_vistas-check"/>
+  <label for="m-laraveldocs999_cheatseethelper10_vistas-check"><a href="/laravel/docs/999_cheatseet/helper/10_vistas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper10_vistas"><span class="">Vistas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper20_rutas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper20_rutas-check"/>
+  <label for="m-laraveldocs999_cheatseethelper20_rutas-check"><a href="/laravel/docs/999_cheatseet/helper/20_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper20_rutas"><span class="">Rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper30_request-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper30_request-check"/>
+  <label for="m-laraveldocs999_cheatseethelper30_request-check"><a href="/laravel/docs/999_cheatseet/helper/30_request/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper30_request"><span class="">Request en Laravel</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetartisan-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetartisan-check"/>
+  <label for="m-laraveldocs999_cheatseetartisan-check"><a href="/laravel/docs/999_cheatseet/artisan/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetartisan"><span class="">Artisan (CLI)</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetblade-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetblade-check"/>
+  <label for="m-laraveldocs999_cheatseetblade-check"><a href="/laravel/docs/999_cheatseet/blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetblade"><span class="">Directivas Blade</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetcarbon-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetcarbon-check"/>
+  <label for="m-laraveldocs999_cheatseetcarbon-check"><a href="/laravel/docs/999_cheatseet/carbon/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetcarbon"><span class="">Carbon (fechas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet04_despliegue-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet04_despliegue-check"/>
+  <label for="m-laraveldocs999_cheatseet04_despliegue-check"><a href="/laravel/docs/999_cheatseet/04_despliegue/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet04_despliegue"><span class="">Desplegar en hosgint</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseet04_desplieguerutas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet04_desplieguerutas-check"/>
+  <label for="m-laraveldocs999_cheatseet04_desplieguerutas-check"><a href="/laravel/docs/999_cheatseet/04_despliegue/rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet04_desplieguerutas"><span class="">Rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseet04_desplieguevistas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet04_desplieguevistas-check"/>
+  <label for="m-laraveldocs999_cheatseet04_desplieguevistas-check"><a href="/laravel/docs/999_cheatseet/04_despliegue/vistas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet04_desplieguevistas"><span class="">Vistas</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseet07_database-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet07_database-check"/>
+  <label for="m-laraveldocs999_cheatseet07_database-check"><a href="/laravel/docs/999_cheatseet/07_database/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet07_database"><span class="">Desplegar en hosgint</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseet05_filefacade-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet05_filefacade-check"/>
+  <label for="m-laraveldocs999_cheatseet05_filefacade-check"><a href="/laravel/docs/999_cheatseet/05_filefacade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs999_cheatseet05_filefacade"><span class="">Laravel: Uso de la Facade File</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseet06_authfortity-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet06_authfortity-check"/>
+  <label for="m-laraveldocs999_cheatseet06_authfortity-check"><a href="/laravel/docs/999_cheatseet/06_authfortity/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs999_cheatseet06_authfortity"><span class="">Laravel: Uso de la Facade File</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs00_vue-li">
+  <input type="checkbox" id="m-laraveldocs00_vue-check"/>
+  <label for="m-laraveldocs00_vue-check"><a href="/laravel/docs/00_vue/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs00_vue"><span class="">Vue</span></a></label>
+  
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#qué-es-filament">Qué es filament?</a></li>
+    <li><a href="#-requirements">🧱 Requirements</a>
+      <ul>
+        <li><a href="#1-install-filament">1. Install Filament</a></li>
+        <li><a href="#2-publicar-recursos-assets-y-configuración-config">2. Publicar recursos (assets) y configuración (config)</a></li>
+        <li><a href="#3-crear-un-usuario-administrador">3. Crear un usuario Administrador</a></li>
+        <li><a href="#4-crear-páginas">4. Crear páginas</a></li>
+        <li><a href="#creando-un-dashboard-personalizado">Creando un dashboard personalizado</a></li>
+        <li><a href="#5--asociar-ruta-con-panel">5.- Asociar ruta con panel</a></li>
+        <li><a href="#6--modificar-la-vista-de-admin-de-panel">6.- Modificar la vista de admin de panel</a></li>
+        <li><a href="#personalizando-el-dasboard">Personalizando el dasboard</a></li>
+      </ul>
+    </li>
+    <li><a href="#-qué-son-form-y-table-en-un-resource">🧩 ¿Qué son <code>form()</code> y <code>table()</code> en un Resource?</a>
+      <ul>
+        <li><a href="#-formform-form-form">✏️ <code>form(Form $form): Form</code></a></li>
+        <li><a href="#-tabletable-table-table">📊 <code>table(Table $table): Table</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#-relacionar-datos-relationship">🔗 Relacionar datos (relationship)</a>
+      <ul>
+        <li><a href="#-cómo-funciona">✅ ¿Cómo funciona?</a></li>
+      </ul>
+    </li>
+    <li><a href="#-mostrar-datos-de-relaciones-anidadas">🧬 Mostrar datos de relaciones anidadas</a></li>
+    <li><a href="#-resumen">✅ Resumen</a></li>
+    <li><a href="#-ejemplo-completo">✏️ Ejemplo completo</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#-básicos">✅ Básicos</a></li>
+    <li><a href="#-descripción">✏ Descripción</a></li>
+    <li><a href="#-colores-e-iconos">🎨 Colores e iconos</a></li>
+    <li><a href="#-gráfico-sparkline">📈 Gráfico (sparkline)</a></li>
+    <li><a href="#-insignias">🏷 Insignias</a></li>
+    <li><a href="#-url-y-html-extra">🌐 URL y HTML extra</a></li>
+    <li><a href="#-avanzados">🛠 Avanzados</a></li>
+    <li><a href="#-ejemplo-completo-1">✨ Ejemplo completo</a></li>
+    <li><a href="#-fuente">📦 Fuente</a></li>
+    <li><a href="#-tips">🧰 Tips</a></li>
+  </ul>
+</nav>
+      </div>
+    
+            <div class="taxonomy taxonomy-terms-cloud taxo-categories">
+      <h5 class="taxonomy-title">Categories</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/ficheros/" data-taxonomy-term="ficheros"><span class="taxonomy-label">Ficheros</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">10</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">5</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      <h5 class="taxonomy-title">Tags</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/blueprint/" data-taxonomy-term="blueprint"><span class="taxonomy-label">Blueprint</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/csv/" data-taxonomy-term="csv"><span class="taxonomy-label">CSV</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dasboard/" data-taxonomy-term="dasboard"><span class="taxonomy-label">Dasboard</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/files/" data-taxonomy-term="files"><span class="taxonomy-label">Files</span><span class="taxonomy-count">2</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/generaci%C3%B3n-de-componentes/" data-taxonomy-term="generaci%C3%B3n-de-componentes"><span class="taxonomy-label">Generación De Componentes</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">13</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/pinia/" data-taxonomy-term="pinia"><span class="taxonomy-label">Pinia</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/storage/" data-taxonomy-term="storage"><span class="taxonomy-label">Storage</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">5</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/yaml/" data-taxonomy-term="yaml"><span class="taxonomy-label">YAML</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel/docs/">Laravel</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Filament</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Filament</h1>
+  
+	<header class="article-meta">
+		<div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dasboard/" data-taxonomy-term="dasboard"><span class="taxonomy-label">Dasboard</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span></a></li>
+    </ul>
+</div>
+
+</header>
+	<p>Qué es y Cómo integrar filament en un projecto de laravel</p>
+<h2 id="qué-es-filament">Qué es filament?</h2>
+<p>Es un paquete que implementa  <strong>un panel de administración</strong> para Laravel</p>
+<p>Permite construir páginas y administrar un sencillo y elegante CRUD para los diferentes modelos de la aplicación</p>
+<p>Filament usa <strong>Tailwind CSS</strong> para los estilos  y Livewire para el front, el cual permite construir páginas interactivas con php dentro de Laravel.</p>
+<h2 id="-requirements">🧱 Requirements</h2>
+<ul>
+<li>Laravel 9, 10, or 11</li>
+<li>PHP 8.1+</li>
+<li>Working database</li>
+<li>Laravel Auth (Breeze, Jetstream, etc.)</li>
+<li>php-intl (se necesita esta extensión, que no suele estar instalada)</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>sudo apt install php-intl</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="1-install-filament">1. Install Filament</h3>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>composer require filament/filament</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Recuerda tener instalado el  paquete de internacionalización <strong>intl</strong></p>
+
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    ¿Qué es ext-intl?
+
+
+</span>
+</strong>
+<p>Es una extensión de PHP llamada Internationalization (intl), usada para operaciones con fechas, idiomas, formatos internacionales, etc. Filament la requiere como dependencia.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>sudo apt install php-intl</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h3 id="2-publicar-recursos-assets-y-configuración-config">2. Publicar recursos (assets) y configuración (config)</h3>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>php artisan filament:install</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="3-crear-un-usuario-administrador">3. Crear un usuario Administrador</h3>
+<p>Se puede usar un admin</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:filament-user</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Fill in name, email, and password.</p>
+<h3 id="4-crear-páginas">4. Crear páginas</h3>
+<ul>
+<li>Se crean páginas a las que se accederá desde el panel (solo con crearla se verá)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>artisan make:filament-page PruebaPage1
+</span></span></code></pre></div><p>Esto crea dos ficheros (controlador y vista)</p>
+<p><img src="/laravel/docs/14_filament/img.png" alt="img.png"></p>
+<p><img src="/laravel/docs/14_filament/img_1.png" alt="img_1.png"></p>
+<h3 id="creando-un-dashboard-personalizado">Creando un dashboard personalizado</h3>
+<p><strong>El Dashboard en Filament</strong> es la página principal que se muestra al entrar en /admin.</p>
+<p>Si no se define de forma explícita, se usa Filament\Pages\Dashboard, que incluye algunos widgets básicos.
+Puedes reemplazarlo con tu propia página Dashboard personalizada para mostrar tus propios componentes y estadísticas.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan make:filament-page Dashboard
+</span></span></code></pre></div><h3 id="5--asociar-ruta-con-panel">5.- Asociar ruta con panel</h3>
+<p>Estoy en la aplicación y de repente (cambios varios), la ruta /admin no se asocioa con el panel de filament
+
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    Asociar la ruta /admin a panel admin de filament
+
+
+</span>
+</strong></p>
+<!-- raw HTML omitted -->
+<ul>
+<li>Se asocia por el paquete instalado</li>
+<li>No hay que hacer nada</li>
+<li>El problema era que tenía una ruta asociada a esa vista.</li>
+</ul>
+<h3 id="6--modificar-la-vista-de-admin-de-panel">6.- Modificar la vista de admin de panel</h3>
+<p>Esta es una parte que se me está complicando. He investigado varias opcioens y vamos a probar:</p>
+
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    1.-Crear un componente simplemente y asociarlo a la vista
+
+
+</span>
+</strong>
+<blockquote>
+<p>No sé muy bien cómo lo he hecho, he seguido el chat gpt, pendiente comprenderlo bien:</p>
+<ul>
+<li>Se crea un componente hmtl llamado language-switcher.blade.php, y se ubica en el sitio de los componentes</li>
+</ul>
+<blockquote>
+<p>Mucho código para los svg pero lo que intereas es el desplegable con las banderas.
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>&lt;details class=<span style="color:#cd5555">&#34;dropdown bg-amber-100 rounded-2xl relative group cursor-pointer p-2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;summary class=<span style="color:#cd5555">&#34;flex items-center space-x-1 cursor-pointer list-none&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;!-- Icono del globo --&gt;
+</span></span><span style="display:flex;"><span>        &lt;svg xmlns=<span style="color:#cd5555">&#34;http://www.w3.org/2000/svg&#34;</span> fill=<span style="color:#cd5555">&#34;none&#34;</span> viewBox=<span style="color:#cd5555">&#34;0 0 24 24&#34;</span> stroke-width=<span style="color:#cd5555">&#34;1.5&#34;</span>
+</span></span><span style="display:flex;"><span>             stroke=<span style="color:#cd5555">&#34;currentColor&#34;</span> class=<span style="color:#cd5555">&#34;w-6 h-6&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;path stroke-linecap=<span style="color:#cd5555">&#34;round&#34;</span> stroke-linejoin=<span style="color:#cd5555">&#34;round&#34;</span>
+</span></span><span style="display:flex;"><span>                  d=<span style="color:#cd5555">&#34;m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802&#34;</span>/&gt;
+</span></span><span style="display:flex;"><span>        &lt;/svg&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        &lt;!-- Flecha abajo --&gt;
+</span></span><span style="display:flex;"><span>        &lt;svg xmlns=<span style="color:#cd5555">&#34;http://www.w3.org/2000/svg&#34;</span> fill=<span style="color:#cd5555">&#34;none&#34;</span> viewBox=<span style="color:#cd5555">&#34;0 0 24 24&#34;</span>
+</span></span><span style="display:flex;"><span>             stroke-width=<span style="color:#cd5555">&#34;1.5&#34;</span> stroke=<span style="color:#cd5555">&#34;currentColor&#34;</span> class=<span style="color:#cd5555">&#34;w-6 h-6&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;path stroke-linecap=<span style="color:#cd5555">&#34;round&#34;</span> stroke-linejoin=<span style="color:#cd5555">&#34;round&#34;</span>
+</span></span><span style="display:flex;"><span>                  d=<span style="color:#cd5555">&#34;m19.5 8.25-7.5 7.5-7.5-7.5&#34;</span>/&gt;
+</span></span><span style="display:flex;"><span>        &lt;/svg&gt;
+</span></span><span style="display:flex;"><span>    &lt;/summary&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;!-- Menú desplegable --&gt;
+</span></span><span style="display:flex;"><span>    &lt;div class=<span style="color:#cd5555">&#34;absolute z-50 mt-2 flex flex-col bg-white rounded-xl shadow p-2 w-32&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        @<span style="color:#8b008b;font-weight:bold">foreach</span>(config(<span style="color:#cd5555">&#34;language&#34;</span>) <span style="color:#8b008b;font-weight:bold">as</span> <span style="color:#00688b">$locale</span> =&gt; <span style="color:#00688b">$lang</span>)
+</span></span><span style="display:flex;"><span>            &lt;a href=<span style="color:#cd5555">&#34;{{ route(&#39;change-locale&#39;, </span><span style="color:#cd5555">$locale</span><span style="color:#cd5555">) }}&#34;</span>
+</span></span><span style="display:flex;"><span>               class=<span style="color:#cd5555">&#34;px-2 py-1 text-sm hover:bg-amber-200 rounded transition&#34;</span>
+</span></span><span style="display:flex;"><span>               title=<span style="color:#cd5555">&#34;{{ </span><span style="color:#cd5555">$lang[&#39;lang_name&#39;]</span><span style="color:#cd5555"> }}&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                {{ <span style="color:#00688b">$lang</span>[<span style="color:#cd5555">&#39;flag&#39;</span>] ?? strtoupper(<span style="color:#00688b">$locale</span>) }}
+</span></span><span style="display:flex;"><span>            &lt;/a&gt;
+</span></span><span style="display:flex;"><span>        @<span style="color:#8b008b;font-weight:bold">endforeach</span>
+</span></span><span style="display:flex;"><span>    &lt;/div&gt;
+</span></span><span style="display:flex;"><span>&lt;/details&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div></p></blockquote></blockquote>
+<ul>
+<li>
+<p>Posteriormente creo un componente en filament para cargar el componentes html creado,  llamado <strong>topbar.blade.php</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-html" data-lang="html"><span style="display:flex; background-color:#d6d6c6"><span>  &lt;<span style="color:#8b008b;font-weight:bold">x-filament::layouts.topbar</span>&gt;
+</span></span><span style="display:flex;"><span>	  &lt;<span style="color:#8b008b;font-weight:bold">x-slot</span> <span style="color:#658b00">name</span>=<span style="color:#cd5555">&#34;end&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#8b008b;font-weight:bold">x-language-switcher</span> /&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#8b008b;font-weight:bold">x-slot</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#8b008b;font-weight:bold">x-filament::layouts.topbar</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+</li>
+<li>
+<p>Y por último cargo el componente de filamente en el panel. Esto es algo que hay que investigar, con el método 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    renderHooks
+
+
+</span>
+</strong>. En app/Provider/Filament/AdminPanelProvider.php
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>  <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">AdminPanelProvider</span> <span style="color:#8b008b;font-weight:bold">extends</span> PanelProvider
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">panel</span>(Panel <span style="color:#00688b">$panel</span>): Panel
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$panel</span>
+</span></span><span style="display:flex;"><span>  -&gt;<span style="color:#658b00">id</span>(<span style="color:#cd5555">&#39;admin&#39;</span>)
+</span></span><span style="display:flex;"><span>  -&gt;<span style="color:#658b00">path</span>(<span style="color:#cd5555">&#39;admin&#39;</span>)
+</span></span><span style="display:flex;"><span>  -&gt;<span style="color:#658b00">renderHook</span>(<span style="color:#cd5555">&#39;panels::topbar.end&#39;</span>, fn () =&gt; view(<span style="color:#cd5555">&#39;components.language-switcher&#39;</span>))
+</span></span><span style="display:flex;"><span>  -&gt;<span style="color:#658b00">colors</span>([
+</span></span><span style="display:flex;"><span>  <span style="color:#cd5555">&#39;primary&#39;</span> =&gt; Color::<span style="color:#658b00">Amber</span>,
+</span></span><span style="display:flex;"><span>  ])
+</span></span><span style="display:flex;"><span><span style="color:#228b22">/// ......
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>* 
+</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+</li>
+</ul>
+<h3 id="personalizando-el-dasboard">Personalizando el dasboard</h3>
+<p>Se pueden añadir facilemnte secciones al dashboard o panel, sin tener que volver a escribir la página, inyectoando lo que se llama hooks en el objeto panel:
+Filament supports these layout hooks (among others):
+Filament permite ejecutar estos hooks de layout para la personalizar l,a apariencia de la págian dashboard:</p>
+<p>Hook Name	What it does
+panels::topbar.start	Start of the topbar
+panels::topbar.end	End of the topbar
+panels::body.start	Before main content
+panels::body.end	After main content
+panels::page.start	Before a page starts
+panels::page.end	After a page finishes
+panels::header.start
+&hellip;.</p>
+<p>Pro ejemplo para poner un header en el dashboard, en el provider (mirar los renderHook)</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>**<span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">AdminPanelProvider</span> <span style="color:#8b008b;font-weight:bold">extends</span> PanelProvider
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">panel</span>(Panel <span style="color:#00688b">$panel</span>): Panel
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        info(<span style="color:#00688b">__CLASS__</span>.<span style="color:#cd5555">&#34; con user -&#34;</span>.auth()-&gt;<span style="color:#658b00">user</span>().<span style="color:#cd5555">&#34;-&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$panel</span>
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">viteTheme</span>(<span style="color:#cd5555">&#39;resources/css/filament/app.css&#39;</span>)
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">id</span>(<span style="color:#cd5555">&#39;admin&#39;</span>)
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">path</span>(<span style="color:#cd5555">&#39;admin&#39;</span>)
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">brandName</span>(__(<span style="color:#cd5555">&#39;panel.project_repository&#39;</span>))
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">renderHook</span>(<span style="color:#cd5555">&#39;panels::body.start&#39;</span>, fn() =&gt;view(<span style="color:#cd5555">&#39;components.filament.topmenu&#39;</span>))
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">renderHook</span>(<span style="color:#cd5555">&#39;panels::topbar.end&#39;</span>, fn() =&gt; view(<span style="color:#cd5555">&#39;components.filament.LanguageSwitcher&#39;</span>))
+</span></span><span style="display:flex;"><span>**
+</span></span></code></pre></div><p>Siendo topmenu una página blade normal:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>    <span style="color:#228b22">&lt;!--Desktop Diseño para pantalla de 768 y mas--&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;hidden md:flex justify-between items-center h-16 bg-header text-white px-6 flex-wrap&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;flex justify-end  items-center space-x-4 w-full mr-20&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            <span style="color:#228b22">&lt;!-- Enlaces de texto --&gt;</span>
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;flex items-center space-x-1 hover:underline&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#8b008b;font-weight:bold">svg</span> <span style="color:#658b00">xmlns</span>=<span style="color:#cd5555">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#658b00">fill</span>=<span style="color:#cd5555">&#34;none&#34;</span> <span style="color:#658b00">viewBox</span>=<span style="color:#cd5555">&#34;0 0 24 24&#34;</span> <span style="color:#658b00">stroke-width</span>=<span style="color:#cd5555">&#34;1.5&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">....</span>
+</span></span></code></pre></div><h4 id="estilos">Estilos</h4>
+<p>Usar los estilos de mi proyecto para filament me ha requerido los siguientes cambios:</p>
+<ul>
+<li>
+<ol>
+<li>importar el preset de filament en tailwind.config.js</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> preset from <span style="color:#cd5555">&#39;./vendor/filament/support/tailwind.config.preset&#39;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#8b008b;font-weight:bold">export</span> <span style="color:#8b008b;font-weight:bold">default</span> {
+</span></span><span style="display:flex;"><span>   presets: [preset], <span style="color:#228b22">// 👈 Esto permite que tu Tailwind herede de Filament
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>   content: [
+</span></span><span style="display:flex;"><span>       ......
+</span></span></code></pre></div><ol start="2">
+<li>Crear un css para filamente con tailwind y asiganrlo en el provider</li>
+</ol>
+<ul>
+<li>creo <strong>resources/css/filament/app.css</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#8b008b;font-weight:bold">tailwind</span> <span style="color:#8b008b;font-weight:bold">base</span>;
+</span></span><span style="display:flex;"><span>@<span style="color:#8b008b;font-weight:bold">tailwind</span> <span style="color:#8b008b;font-weight:bold">components</span>;
+</span></span><span style="display:flex;"><span>@<span style="color:#8b008b;font-weight:bold">tailwind</span> <span style="color:#8b008b;font-weight:bold">utilities</span>;
+</span></span></code></pre></div><ul>
+<li>Lo añado en vite.config.js</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">export</span> <span style="color:#8b008b;font-weight:bold">default</span> defineConfig({
+</span></span><span style="display:flex;"><span>    plugins: [
+</span></span><span style="display:flex;"><span>        laravel({
+</span></span><span style="display:flex;"><span>            input: [
+</span></span><span style="display:flex;"><span>                <span style="color:#cd5555">&#39;resources/css/app.css&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#cd5555">&#39;resources/css/filament/app.css&#39;</span>, <span style="color:#228b22">// 👈 añade este
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>                <span style="color:#cd5555">&#39;resources/js/app.js&#39;</span>,
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            refresh: <span style="color:#8b008b;font-weight:bold">true</span>,
+</span></span><span style="display:flex;"><span>        }),
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><ul>
+<li>El el provider le digo que lo use</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>-&gt;<span style="color:#658b00">viteTheme</span>(<span style="color:#cd5555">&#39;resources/css/filament/app.css&#39;</span>) <span style="color:#228b22">// 👈 usa tu CSS personalizado
+</span></span></span></code></pre></div><h2 id="-qué-son-form-y-table-en-un-resource">🧩 ¿Qué son <code>form()</code> y <code>table()</code> en un Resource?</h2>
+<p>Cuando creamos un Resource en Filament (ejemplo: <code>UserResource</code>), definimos dos métodos muy importantes:</p>
+<h3 id="-formform-form-form">✏️ <code>form(Form $form): Form</code></h3>
+<p>Define el <strong>formulario</strong> que usamos para crear o editar registros.<br>
+Aquí configuramos los campos (inputs, selects, datepickers, etc.) y sus validaciones.</p>
+<p>Ejemplo:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span>public static <span style="color:#8b008b;font-weight:bold">function</span> form(Form <span style="color:#00688b">$form</span>): Form<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>{<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$form</span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;schema([<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>Forms<span style="color:#cd5555">\C</span>omponents<span style="color:#cd5555">\T</span>extInput::make(<span style="color:#cd5555">&#39;name&#39;</span>)-&gt;required(),<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>Forms<span style="color:#cd5555">\C</span>omponents<span style="color:#cd5555">\S</span>elect::make(<span style="color:#cd5555">&#39;specialization_id&#39;</span>)<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;relationship(<span style="color:#cd5555">&#39;specialization&#39;</span>, <span style="color:#cd5555">&#39;name&#39;</span>)<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;label(<span style="color:#cd5555">&#34;Especialidad&#34;</span>)<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;required(),<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>]);<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h3 id="-tabletable-table-table">📊 <code>table(Table $table): Table</code></h3>
+<p>Define la <strong>tabla</strong> que muestra el listado de registros.<br>
+Aquí decidimos qué columnas queremos, si son buscables, ordenables, etc.</p>
+<p>Ejemplo:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span>public static <span style="color:#8b008b;font-weight:bold">function</span> table(Table <span style="color:#00688b">$table</span>): Table<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>{<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$table</span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;columns([<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>Tables<span style="color:#cd5555">\C</span>olumns<span style="color:#cd5555">\T</span>extColumn::make(<span style="color:#cd5555">&#39;name&#39;</span>)-&gt;searchable(),<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>Tables<span style="color:#cd5555">\C</span>olumns<span style="color:#cd5555">\T</span>extColumn::make(<span style="color:#cd5555">&#39;email&#39;</span>)-&gt;searchable(),<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>Tables<span style="color:#cd5555">\C</span>olumns<span style="color:#cd5555">\T</span>extColumn::make(<span style="color:#cd5555">&#39;specialization.family.name&#39;</span>)<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;label(<span style="color:#cd5555">&#34;Departamento&#34;</span>)<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;sortable(),<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>]);<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="-relacionar-datos-relationship">🔗 Relacionar datos (relationship)</h2>
+<p>Filament permite mostrar datos relacionados entre modelos de forma muy sencilla gracias al método <code>relationship()</code>.</p>
+<h3 id="-cómo-funciona">✅ ¿Cómo funciona?</h3>
+<ul>
+<li>
+<p>Si el modelo <code>User</code> tiene una foreign key <code>specialization_id</code> → definimos una relación:
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span>public <span style="color:#8b008b;font-weight:bold">function</span> specialization()<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>{<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$this</span>-&gt;belongsTo(Specialization::class);<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>}</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+</li>
+<li>
+<p>En el formulario usamos:
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span>Forms<span style="color:#cd5555">\C</span>omponents<span style="color:#cd5555">\S</span>elect::make(<span style="color:#cd5555">&#39;specialization_id&#39;</span>)<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;relationship(<span style="color:#cd5555">&#39;specialization&#39;</span>, <span style="color:#cd5555">&#39;name&#39;</span>)<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;label(<span style="color:#cd5555">&#34;Especialidad&#34;</span>)</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+</li>
+</ul>
+<p>Así, Filament cargará los datos de <code>specializations</code> y mostrará el campo <code>name</code>.</p>
+<hr>
+<h2 id="-mostrar-datos-de-relaciones-anidadas">🧬 Mostrar datos de relaciones anidadas</h2>
+<p>Si queremos mostrar el <strong>nombre del departamento</strong> al que pertenece la especialidad:</p>
+<ul>
+<li>User → specialization → family → name</li>
+</ul>
+<p>Podemos hacerlo directamente:
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span>Tables<span style="color:#cd5555">\C</span>olumns<span style="color:#cd5555">\T</span>extColumn::make(<span style="color:#cd5555">&#39;specialization.family.name&#39;</span>)<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;label(<span style="color:#cd5555">&#34;Departamento&#34;</span>)<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;sortable()</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<hr>
+<h2 id="-resumen">✅ Resumen</h2>
+<ul>
+<li><code>form()</code> → define el formulario para crear/editar</li>
+<li><code>table()</code> → define las columnas del listado</li>
+<li><code>relationship()</code> → vincula foreign keys con otras tablas</li>
+<li>Podemos usar rutas anidadas (<code>specialization.family.name</code>) para mostrar datos relacionados</li>
+</ul>
+<hr>
+<h2 id="-ejemplo-completo">✏️ Ejemplo completo</h2>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span>public static <span style="color:#8b008b;font-weight:bold">function</span> form(Form <span style="color:#00688b">$form</span>): Form<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>{<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$form</span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;schema([<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>Forms<span style="color:#cd5555">\C</span>omponents<span style="color:#cd5555">\T</span>extInput::make(<span style="color:#cd5555">&#39;name&#39;</span>)-&gt;required(),<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>Forms<span style="color:#cd5555">\C</span>omponents<span style="color:#cd5555">\S</span>elect::make(<span style="color:#cd5555">&#39;specialization_id&#39;</span>)<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;relationship(<span style="color:#cd5555">&#39;specialization&#39;</span>, <span style="color:#cd5555">&#39;name&#39;</span>)<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;label(<span style="color:#cd5555">&#34;Especialidad&#34;</span>)<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;required(),<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>]);<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>}<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>public static <span style="color:#8b008b;font-weight:bold">function</span> table(Table <span style="color:#00688b">$table</span>): Table<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>{<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$table</span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;columns([<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>Tables<span style="color:#cd5555">\C</span>olumns<span style="color:#cd5555">\T</span>extColumn::make(<span style="color:#cd5555">&#39;name&#39;</span>)-&gt;searchable(),<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>Tables<span style="color:#cd5555">\C</span>olumns<span style="color:#cd5555">\T</span>extColumn::make(<span style="color:#cd5555">&#39;specialization.family.name&#39;</span>)<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;label(<span style="color:#cd5555">&#34;Departamento&#34;</span>)<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>-&gt;sortable(),<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>]);<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h1 id="-chuleta-de-statmake-de-filament">📊 Chuleta de <code>Stat::make</code> de Filament</h1>
+<p>Todos los métodos más usados y avanzados que puedes encadenar sobre un <code>Stat</code> dentro de <code>StatsOverviewWidget</code>.</p>
+<hr>
+<h2 id="-básicos">✅ Básicos</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Método</th>
+          <th>Ejemplo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>make($label, $value = null)</code></td>
+          <td><code>Stat::make('Usuarios', 100)</code></td>
+          <td>Crea la tarjeta del estadístico</td>
+      </tr>
+      <tr>
+          <td><code>label($label)</code></td>
+          <td><code>-&gt;label('Total usuarios')</code></td>
+          <td>Cambia la etiqueta dinámicamente</td>
+      </tr>
+      <tr>
+          <td><code>value($value)</code></td>
+          <td><code>-&gt;value(150)</code></td>
+          <td>Cambia el valor dinámicamente</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-descripción">✏ Descripción</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Método</th>
+          <th>Ejemplo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>description($texto)</code></td>
+          <td><code>-&gt;description('Usuarios activos')</code></td>
+          <td>Texto pequeño debajo del valor</td>
+      </tr>
+      <tr>
+          <td><code>descriptionIcon($icono)</code></td>
+          <td><code>-&gt;descriptionIcon('heroicon-o-check')</code></td>
+          <td>Icono al lado de la descripción</td>
+      </tr>
+      <tr>
+          <td><code>descriptionColor($color)</code></td>
+          <td><code>-&gt;descriptionColor('success')</code></td>
+          <td>Color del texto de la descripción</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-colores-e-iconos">🎨 Colores e iconos</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Método</th>
+          <th>Ejemplo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>color($color)</code></td>
+          <td><code>-&gt;color('primary')</code></td>
+          <td>Color del valor</td>
+      </tr>
+      <tr>
+          <td><code>icon($icono)</code></td>
+          <td><code>-&gt;icon('heroicon-o-user-group')</code></td>
+          <td>Añade un icono</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>Colores típicos: <code>primary</code>, <code>success</code>, <code>danger</code>, <code>warning</code>, <code>gray</code>, etc.</p></blockquote>
+<hr>
+<h2 id="-gráfico-sparkline">📈 Gráfico (sparkline)</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Método</th>
+          <th>Ejemplo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>chart([10, 20, 15])</code></td>
+          <td><code>-&gt;chart([5, 8, 6, 7])</code></td>
+          <td>Mini gráfico de líneas</td>
+      </tr>
+      <tr>
+          <td><code>chartColor($color)</code></td>
+          <td><code>-&gt;chartColor('success')</code></td>
+          <td>Color de la línea del gráfico</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-insignias">🏷 Insignias</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Método</th>
+          <th>Ejemplo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>badge($texto)</code></td>
+          <td><code>-&gt;badge('Nuevo')</code></td>
+          <td>Pequeña insignia en la tarjeta</td>
+      </tr>
+      <tr>
+          <td><code>badgeColor($color)</code></td>
+          <td><code>-&gt;badgeColor('warning')</code></td>
+          <td>Color de fondo de la insignia</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-url-y-html-extra">🌐 URL y HTML extra</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Método</th>
+          <th>Ejemplo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>url($url)</code></td>
+          <td><code>-&gt;url(route('filament.admin.resources.users.index'))</code></td>
+          <td>Hace la tarjeta clicable</td>
+      </tr>
+      <tr>
+          <td><code>extraAttributes(['class' =&gt; 'cursor-pointer'])</code></td>
+          <td>Añade atributos HTML extra al contenedor</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-avanzados">🛠 Avanzados</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Método</th>
+          <th>Ejemplo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>tooltip($texto)</code></td>
+          <td><code>-&gt;tooltip('Número total de usuarios')</code></td>
+          <td>Tooltip al pasar el ratón</td>
+      </tr>
+      <tr>
+          <td><code>view($vista)</code></td>
+          <td><code>-&gt;view('custom.stat')</code></td>
+          <td>Usa una vista Blade personalizada</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-ejemplo-completo-1">✨ Ejemplo completo</h2>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="-fuente">📦 Fuente</h2>
+<p>Puedes ver <strong>todos los métodos</strong> con comentarios en:</p>
+<ul>
+<li><code>vendor/filament/widgets/src/StatsOverviewWidget/Stat.php</code></li>
+<li>o online: <a href="https://github.com/filamentphp/filament">https://github.com/filamentphp/filament</a></li>
+</ul>
+<hr>
+<h2 id="-tips">🧰 Tips</h2>
+<p>✅ Usa <code>__()</code> para etiquetas multilingües<br>
+✅ Usa <code>route()</code> para URLs dinámicas<br>
+✅ Combina colores e iconos para que el panel sea más visual</p>
+<hr>
+<hr>
+
+
+
+
+<div style="border: 1px solid navy; border-radius: 5px; overflow: hidden;">
+    <div style="background-color: navy; color: white;
+    font-weight: bold; padding: 10px; display: flex; align-items: center;">
+        
+        <span style="margin-right: 8px;">
+            
+                <img src="filament.svg" alt="Icono de Referencias" style="width: 24px; height: 24px;">
+            
+        </span>
+        
+        <span>Filament Docs</span>
+    </div>
+
+    <h3 style="padding: 5px; font-weight: bold; color: navy;">Documentación oficial</h3>
+
+    <hr style="border-color: lightblue; border-width: 3px"/>
+    
+    <div style="background-color: #e0f7fa; color: navy; padding: 10px;">
+        <ul>
+            
+            <li><ul>
+<li><a href="https://filamentphp.com/docs/3.x/admin/resources/overview">https://filamentphp.com/docs/3.x/admin/resources/overview</a></li>
+</ul>
+</li>
+            
+            <li><ul>
+<li><a href="https://filamentphp.com/docs/3.x/admin/resources/table">https://filamentphp.com/docs/3.x/admin/resources/table</a></li>
+</ul>
+</li>
+            
+            <li><ul>
+<li><a href="https://filamentphp.com/docs/3.x/admin/resources/form">https://filamentphp.com/docs/3.x/admin/resources/form</a></li>
+</ul>
+</li>
+            
+            <li></li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+  <div class="section-index">
+    
+    
+    <hr class="panel-line">
+        <div class="entry">
+                <h5>
+                    <a href="/laravel/docs/14_filament/page/">Creando Páginas</a>
+                </h5>
+                <p></p>
+            </div>
+        <div class="entry">
+                <h5>
+                    <a href="/laravel/docs/14_filament/widget/">Widgets en el Panel</a>
+                </h5>
+                <p></p>
+            </div>
+        <div class="entry">
+                <h5>
+                    <a href="/laravel/docs/14_filament/panel/">Panel </a>
+                </h5>
+                <p></p>
+            </div>
+        </div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

@@ -1,7 +1,7 @@
 <details>
     <summary>{{ .Get "title" }}</summary>
     <div class="solution-content">
-        {{ .Inner }}
+        {{ .Inner | markdownify }}
     </div>
 </details>
 

@@ -1,0 +1,673 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Laravel: Framework de php</title>
+<meta name="description" content="**&amp;mdash; title: &amp;lsquo;Lazy Loading con Vue &#43; Inertia&amp;rsquo; date: 2024-08-08T18:24:10&#43;02:00 draft: false tags: [&amp;lsquo;Vue&amp;rsquo;, &amp;lsquo;Inertia&amp;rsquo;, &amp;lsquo;Performance&amp;rsquo;] categories: [&amp;lsquo;Optimización&amp;rsquo;] weight: 410 icon: fas fa-code-split 💤 Lazy Loading en Vue 3 &#43; Inertia.js Lazy loading (carga diferida) permite dividir tu frontend en partes pequeñas que se cargan sólo cuando se necesitan, mejorando mucho el rendimiento.
+⚙️ Lazy loading de componentes Vue Evita esto:
+1 2 // ❌ Carga directa del componente import Dashboard from &amp;#39;@/Pages/Dashboard.">
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="**&mdash; title: &lsquo;Lazy Loading con Vue &#43; Inertia&rsquo; date: 2024-08-08T18:24:10&#43;02:00 draft: false tags: [&lsquo;Vue&rsquo;, &lsquo;Inertia&rsquo;, &lsquo;Performance&rsquo;] categories: [&lsquo;Optimización&rsquo;] weight: 410 icon: fas fa-code-split 💤 Lazy Loading en Vue 3 &#43; Inertia.js Lazy loading (carga diferida) permite dividir tu frontend en partes pequeñas que se cargan sólo cuando se necesitan, mejorando mucho el rendimiento.
+⚙️ Lazy loading de componentes Vue Evita esto:
+1 2 // ❌ Carga directa del componente import Dashboard from &#39;@/Pages/Dashboard." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/laravel/docs/31_optimizacion_carga/tiempos/" /><meta property="article:section" content="docs" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="**&mdash; title: &lsquo;Lazy Loading con Vue &#43; Inertia&rsquo; date: 2024-08-08T18:24:10&#43;02:00 draft: false tags: [&lsquo;Vue&rsquo;, &lsquo;Inertia&rsquo;, &lsquo;Performance&rsquo;] categories: [&lsquo;Optimización&rsquo;] weight: 410 icon: fas fa-code-split 💤 Lazy Loading en Vue 3 &#43; Inertia.js Lazy loading (carga diferida) permite dividir tu frontend en partes pequeñas que se cargan sólo cuando se necesitan, mejorando mucho el rendimiento.
+⚙️ Lazy loading de componentes Vue Evita esto:
+1 2 // ❌ Carga directa del componente import Dashboard from &#39;@/Pages/Dashboard.">
+
+<meta itemprop="wordCount" content="425">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="**&mdash; title: &lsquo;Lazy Loading con Vue &#43; Inertia&rsquo; date: 2024-08-08T18:24:10&#43;02:00 draft: false tags: [&lsquo;Vue&rsquo;, &lsquo;Inertia&rsquo;, &lsquo;Performance&rsquo;] categories: [&lsquo;Optimización&rsquo;] weight: 410 icon: fas fa-code-split 💤 Lazy Loading en Vue 3 &#43; Inertia.js Lazy loading (carga diferida) permite dividir tu frontend en partes pequeñas que se cargan sólo cuando se necesitan, mejorando mucho el rendimiento.
+⚙️ Lazy loading de componentes Vue Evita esto:
+1 2 // ❌ Carga directa del componente import Dashboard from &#39;@/Pages/Dashboard."/>
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs-li">
+  <a href="/laravel/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laraveldocs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs01_introduccic3b3n-check"/>
+  <label for="m-laraveldocs01_introduccic3b3n-check"><a href="/laravel/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs02_instalacic3b3n-check"/>
+  <label for="m-laraveldocs02_instalacic3b3n-check"><a href="/laravel/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs10_test-li">
+  <input type="checkbox" id="m-laraveldocs10_test-check"/>
+  <label for="m-laraveldocs10_test-check"><a href="/laravel/docs/10_test/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_test"><span class="">10_Test unitarios</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_testchat-li">
+  <input type="checkbox" id="m-laraveldocs10_testchat-check"/>
+  <label for="m-laraveldocs10_testchat-check"><a href="/laravel/docs/10_test/chat/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_testchat"><span class="">10_Test unitarios del chat</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_testpest-li">
+  <input type="checkbox" id="m-laraveldocs10_testpest-check"/>
+  <label for="m-laraveldocs10_testpest-check"><a href="/laravel/docs/10_test/pest/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs10_testpest"><span class="">Pest</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs03_rutas-li">
+  <input type="checkbox" id="m-laraveldocs03_rutas-check"/>
+  <label for="m-laraveldocs03_rutas-check"><a href="/laravel/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs05_controlador-li">
+  <input type="checkbox" id="m-laraveldocs05_controlador-check"/>
+  <label for="m-laraveldocs05_controlador-check"><a href="/laravel/docs/05_controlador/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs05_controlador"><i class="fas fa-cogs"></i><span class="">Controlador</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs04_plantillas-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas-check"/>
+  <label for="m-laraveldocs04_plantillas-check"><a href="/laravel/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas01_blade-check"/>
+  <label for="m-laraveldocs04_plantillas01_blade-check"><a href="/laravel/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laraveldocs04_plantillas02_creandodisec3b1o-check"><a href="/laravel/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas03_componentes-check"/>
+  <label for="m-laraveldocs04_plantillas03_componentes-check"><a href="/laravel/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacion-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacion-check"/>
+  <label for="m-laraveldocs06_autenticacion-check"><a href="/laravel/docs/06_autenticacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacion"><i class="fa-solid fa-sitemap"></i><span class="">Autenticación</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionbreeze-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionbreeze-check"/>
+  <label for="m-laraveldocs06_autenticacionbreeze-check"><a href="/laravel/docs/06_autenticacion/breeze/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionbreeze"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacionfortify-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify-check"/>
+  <label for="m-laraveldocs06_autenticacionfortify-check"><a href="/laravel/docs/06_autenticacion/fortify/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionfortify"><i class="fa-solid fa-sitemap"></i><span class="">Fortify y Jetstream</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-check"/>
+  <label for="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-check"><a href="/laravel/docs/06_autenticacion/fortify/02_page_role_autenticated/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated"><i class="fa-solid fa-sitemap"></i><span class="">Dashboard según rol</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortify01_instalacion-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify01_instalacion-check"/>
+  <label for="m-laraveldocs06_autenticacionfortify01_instalacion-check"><a href="/laravel/docs/06_autenticacion/fortify/01_instalacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortify01_instalacion"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortifydiagrama-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionfortifydiagrama-check"/>
+  <label for="m-laraveldocs06_autenticacionfortifydiagrama-check"><a href="/laravel/docs/06_autenticacion/fortify/diagrama/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortifydiagrama"><i class="fa-solid fa-sitemap"></i><span class="">Diagrama de flujo</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-check"/>
+  <label for="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-check"><a href="/laravel/docs/06_autenticacion/fortify/peronsalizar_controladores/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores"><i class="fa-solid fa-sitemap"></i><span class="">Personalizar controladores</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionotp-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionotp-check"/>
+  <label for="m-laraveldocs06_autenticacionotp-check"><a href="/laravel/docs/06_autenticacion/otp/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionotp"><i class="fa-solid fa-sitemap"></i><span class="">OTP One-Time Password</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs100_anexos-li">
+  <input type="checkbox" id="m-laraveldocs100_anexos-check"/>
+  <label for="m-laraveldocs100_anexos-check"><a href="/laravel/docs/100_anexos/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs100_anexos"><span class="">Anexos</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs100_anexosbootstrap-li">
+  <input type="checkbox" id="m-laraveldocs100_anexosbootstrap-check"/>
+  <label for="m-laraveldocs100_anexosbootstrap-check"><a href="/laravel/docs/100_anexos/bootstrap/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs100_anexosbootstrap"><span class="">app.php</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs10_api-li">
+  <input type="checkbox" id="m-laraveldocs10_api-check"/>
+  <label for="m-laraveldocs10_api-check"><a href="/laravel/docs/10_api/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api"><i class="fas fa-code"></i><span class="">Creando un api</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_api1instalacion-li">
+  <input type="checkbox" id="m-laraveldocs10_api1instalacion-check"/>
+  <label for="m-laraveldocs10_api1instalacion-check"><a href="/laravel/docs/10_api/1.instalacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api1instalacion"><span class="">01_Introducción y rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_api2visiongeneral-li">
+  <input type="checkbox" id="m-laraveldocs10_api2visiongeneral-check"/>
+  <label for="m-laraveldocs10_api2visiongeneral-check"><a href="/laravel/docs/10_api/2.visiongeneral/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api2visiongeneral"><span class="">Controlador</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_api3la-vista-li">
+  <input type="checkbox" id="m-laraveldocs10_api3la-vista-check"/>
+  <label for="m-laraveldocs10_api3la-vista-check"><a href="/laravel/docs/10_api/3.la-vista/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api3la-vista"><span class="">3.La Vista unitarios</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_api4-swagger-li">
+  <input type="checkbox" id="m-laraveldocs10_api4-swagger-check"/>
+  <label for="m-laraveldocs10_api4-swagger-check"><a href="/laravel/docs/10_api/4.-swagger/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs10_api4-swagger"><span class="">swagger</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs11_roles-li">
+  <input type="checkbox" id="m-laraveldocs11_roles-check"/>
+  <label for="m-laraveldocs11_roles-check"><a href="/laravel/docs/11_roles/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs11_roles"><i class="fa-brands fa-critical-role"></i><span class="">Roles</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs11_roleseloquent-li">
+  <input type="checkbox" id="m-laraveldocs11_roleseloquent-check"/>
+  <label for="m-laraveldocs11_roleseloquent-check"><a href="/laravel/docs/11_roles/eloquent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs11_roleseloquent"><i class="fa-solid fa-database"></i><span class="">Migraciones</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs13_blueprint-li">
+  <input type="checkbox" id="m-laraveldocs13_blueprint-check"/>
+  <label for="m-laraveldocs13_blueprint-check"><a href="/laravel/docs/13_blueprint/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_blueprint"><i class="fas fa-database"></i><span class="">Blueprint</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filament-li">
+  <input type="checkbox" id="m-laraveldocs14_filament-check"/>
+  <label for="m-laraveldocs14_filament-check"><a href="/laravel/docs/14_filament/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filament"><i class="fas fa-database"></i><span class="">Filament</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs30_pinia-li">
+  <input type="checkbox" id="m-laraveldocs30_pinia-check"/>
+  <label for="m-laraveldocs30_pinia-check"><a href="/laravel/docs/30_pinia/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs30_pinia"><i class="fas fa-database"></i><span class="">Pinia</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs31_optimizacion_carga-li">
+  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga-check" checked/>
+  <label for="m-laraveldocs31_optimizacion_carga-check"><a href="/laravel/docs/31_optimizacion_carga/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs31_optimizacion_carga"><i class="fas fa-tachometer-alt"></i><span class="">Optimización de carga con Laravel &#43; Inertia &#43; Vue</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_cargalazy-li">
+  <input type="checkbox" id="m-laraveldocs31_optimizacion_cargalazy-check"/>
+  <label for="m-laraveldocs31_optimizacion_cargalazy-check"><a href="/laravel/docs/31_optimizacion_carga/lazy/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_cargalazy"><span class=""></span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocs31_optimizacion_cargatiempos-li">
+  <input type="checkbox" id="m-laraveldocs31_optimizacion_cargatiempos-check" checked/>
+  <label for="m-laraveldocs31_optimizacion_cargatiempos-check"><a href="/laravel/docs/31_optimizacion_carga/tiempos/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_cargatiempos"><span class="td-sidebar-nav-active-item"></span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet-check"/>
+  <label for="m-laraveldocs999_cheatseet-check"><a href="/laravel/docs/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet"><span class="">Cheat Sheet</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseethelper-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper-check"/>
+  <label for="m-laraveldocs999_cheatseethelper-check"><a href="/laravel/docs/999_cheatseet/helper/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper"><span class="">Helper en Laravel</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelperrutas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelperrutas-check"/>
+  <label for="m-laraveldocs999_cheatseethelperrutas-check"><a href="/laravel/docs/999_cheatseet/helper/rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelperrutas"><span class="">Rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelpervistas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelpervistas-check"/>
+  <label for="m-laraveldocs999_cheatseethelpervistas-check"><a href="/laravel/docs/999_cheatseet/helper/vistas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelpervistas"><span class="">Vistas</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetartisan-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetartisan-check"/>
+  <label for="m-laraveldocs999_cheatseetartisan-check"><a href="/laravel/docs/999_cheatseet/artisan/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetartisan"><span class="">Artisan (CLI)</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetblade-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetblade-check"/>
+  <label for="m-laraveldocs999_cheatseetblade-check"><a href="/laravel/docs/999_cheatseet/blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetblade"><span class="">Directivas Blade</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetcarbon-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetcarbon-check"/>
+  <label for="m-laraveldocs999_cheatseetcarbon-check"><a href="/laravel/docs/999_cheatseet/carbon/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetcarbon"><span class="">Carbon (fechas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet04_despliegue-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet04_despliegue-check"/>
+  <label for="m-laraveldocs999_cheatseet04_despliegue-check"><a href="/laravel/docs/999_cheatseet/04_despliegue/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet04_despliegue"><span class="">Desplegar en hosgint</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseet04_desplieguerutas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet04_desplieguerutas-check"/>
+  <label for="m-laraveldocs999_cheatseet04_desplieguerutas-check"><a href="/laravel/docs/999_cheatseet/04_despliegue/rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet04_desplieguerutas"><span class="">Rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseet04_desplieguevistas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet04_desplieguevistas-check"/>
+  <label for="m-laraveldocs999_cheatseet04_desplieguevistas-check"><a href="/laravel/docs/999_cheatseet/04_despliegue/vistas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet04_desplieguevistas"><span class="">Vistas</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseet05_filefacade-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet05_filefacade-check"/>
+  <label for="m-laraveldocs999_cheatseet05_filefacade-check"><a href="/laravel/docs/999_cheatseet/05_filefacade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs999_cheatseet05_filefacade"><span class="">Laravel: Uso de la Facade File</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseet06_authfortity-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet06_authfortity-check"/>
+  <label for="m-laraveldocs999_cheatseet06_authfortity-check"><a href="/laravel/docs/999_cheatseet/06_authfortity/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs999_cheatseet06_authfortity"><span class="">Laravel: Uso de la Facade File</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#icon-fas-fa-code-split">**&mdash;
+title: &lsquo;Lazy Loading con Vue + Inertia&rsquo;
+date: 2024-08-08T18:24:10+02:00
+draft: false
+tags: [&lsquo;Vue&rsquo;, &lsquo;Inertia&rsquo;, &lsquo;Performance&rsquo;]
+categories: [&lsquo;Optimización&rsquo;]
+weight: 410
+icon: fas fa-code-split</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#-lazy-loading-de-componentes-vue">⚙️ Lazy loading de componentes Vue</a></li>
+    <li><a href="#-lazy-loading-de-vistas-inertia">📁 Lazy loading de vistas Inertia</a>
+      <ul>
+        <li><a href="#appjs-carga-dinámica-por-nombre">app.js (carga dinámica por nombre)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-lazy-loading-con-layouts">🧩 Lazy loading con layouts</a>
+      <ul>
+        <li><a href="#layoutguestvue">LayoutGuest.vue</a></li>
+        <li><a href="#página-con-layout-asíncrono">Página con layout asíncrono</a></li>
+      </ul>
+    </li>
+    <li><a href="#-lazy-loading-por-secciones">📂 Lazy loading por secciones</a></li>
+    <li><a href="#-medir-rendimiento-en-devtools">🧪 Medir rendimiento en DevTools</a></li>
+    <li><a href="#-ventajas-del-lazy-loading">✅ Ventajas del Lazy Loading</a></li>
+    <li><a href="#-recomendaciones-finales">📌 Recomendaciones finales</a></li>
+  </ul>
+</nav>
+      </div>
+    
+            <div class="taxonomy taxonomy-terms-cloud taxo-categories">
+      <h5 class="taxonomy-title">Categories</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">5</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      <h5 class="taxonomy-title">Tags</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/blueprint/" data-taxonomy-term="blueprint"><span class="taxonomy-label">Blueprint</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dasboard/" data-taxonomy-term="dasboard"><span class="taxonomy-label">Dasboard</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">2</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/generaci%C3%B3n-de-componentes/" data-taxonomy-term="generaci%C3%B3n-de-componentes"><span class="taxonomy-label">Generación De Componentes</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">2</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">2</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/pinia/" data-taxonomy-term="pinia"><span class="taxonomy-label">Pinia</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">2</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/yaml/" data-taxonomy-term="yaml"><span class="taxonomy-label">YAML</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel/docs/">Laravel</a></li>
+  <li class="breadcrumb-item">
+    <a href="/laravel/docs/31_optimizacion_carga/">Optimización de carga con Laravel &#43; Inertia &#43; Vue</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    </li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1></h1>
+	
+	<header class="article-meta">
+		
+</header>
+	<h2 id="icon-fas-fa-code-split">**&mdash;
+title: &lsquo;Lazy Loading con Vue + Inertia&rsquo;
+date: 2024-08-08T18:24:10+02:00
+draft: false
+tags: [&lsquo;Vue&rsquo;, &lsquo;Inertia&rsquo;, &lsquo;Performance&rsquo;]
+categories: [&lsquo;Optimización&rsquo;]
+weight: 410
+icon: fas fa-code-split</h2>
+<h1 id="-lazy-loading-en-vue-3--inertiajs">💤 Lazy Loading en Vue 3 + Inertia.js</h1>
+<p><strong>Lazy loading (carga diferida)</strong> permite dividir tu frontend en partes pequeñas que se cargan <strong>sólo cuando se necesitan</strong>, mejorando mucho el rendimiento.</p>
+<hr>
+<h2 id="-lazy-loading-de-componentes-vue">⚙️ Lazy loading de componentes Vue</h2>
+<p>Evita esto:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#228b22">// ❌ Carga directa del componente
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">import</span> Dashboard from <span style="color:#cd5555">&#39;@/Pages/Dashboard.vue&#39;</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Haz esto:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> { defineAsyncComponent } from <span style="color:#cd5555">&#39;vue&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> Dashboard = defineAsyncComponent(() =&gt;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span>(<span style="color:#cd5555">&#39;@/Pages/Dashboard.vue&#39;</span>)
+</span></span><span style="display:flex;"><span>)</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Usado en el template:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">Dashboard</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">template</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="-lazy-loading-de-vistas-inertia">📁 Lazy loading de vistas Inertia</h2>
+<h3 id="appjs-carga-dinámica-por-nombre">app.js (carga dinámica por nombre)</h3>
+<p>Esta configuración es estándar y muy eficiente:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#228b22">// resources/js/app.js
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>
+</span></span><span style="display:flex;"><span>createInertiaApp({
+</span></span><span style="display:flex;"><span>resolve: name =&gt;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span>(<span style="color:#cd5555">`./Pages/</span><span style="color:#cd5555">${</span>name<span style="color:#cd5555">}</span><span style="color:#cd5555">.vue`</span>).then(module =&gt; module.<span style="color:#8b008b;font-weight:bold">default</span>),
+</span></span><span style="display:flex;"><span>setup({ el, App, props, plugin }) {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> app = createApp({ render: () =&gt; h(App, props) })
+</span></span><span style="display:flex;"><span>app.use(plugin).mount(el)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>})</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Inertia cargará automáticamente <strong>solo</strong> el componente Vue que corresponda a la ruta Laravel.</p>
+<hr>
+<h2 id="-lazy-loading-con-layouts">🧩 Lazy loading con layouts</h2>
+<p>Puedes hacer que cada layout se cargue de forma diferida. Ejemplo:</p>
+<h3 id="layoutguestvue">LayoutGuest.vue</h3>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">export</span> <span style="color:#8b008b;font-weight:bold">default</span> {
+</span></span><span style="display:flex;"><span>name: <span style="color:#cd5555">&#39;LayoutGuest&#39;</span>,
+</span></span><span style="display:flex;"><span>setup(_, { slots }) {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> () =&gt; h(<span style="color:#cd5555">&#39;div&#39;</span>, { <span style="color:#8b008b;font-weight:bold">class</span>: <span style="color:#cd5555">&#39;guest-layout&#39;</span> }, slots.<span style="color:#8b008b;font-weight:bold">default</span>?.())
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="página-con-layout-asíncrono">Página con layout asíncrono</h3>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>&lt;script setup&gt;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> { defineAsyncComponent } from <span style="color:#cd5555">&#39;vue&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> Layout = defineAsyncComponent(() =&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">import</span>(<span style="color:#cd5555">&#39;@/Layouts/LayoutGuest.vue&#39;</span>)
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>defineOptions({ layout: Layout })
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a61717;background-color:#e3d2d2">/script&gt;</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Esto divide tu layout y evita que se cargue en páginas donde no es necesario (ej. admin).</p>
+<hr>
+<h2 id="-lazy-loading-por-secciones">📂 Lazy loading por secciones</h2>
+<p>Supón esta estructura de carpetas:</p>
+<p>Pages/
+├── Auth/
+│ └── Login.vue
+├── Admin/
+│ └── Dashboard.vue</p>
+<p>yaml
+Copiar
+Editar</p>
+<p>Puedes modificar <code>resolve:</code> para detectar carpetas distintas:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>resolve: name =&gt; {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">if</span> (name.startsWith(<span style="color:#cd5555">&#39;Admin/&#39;</span>)) {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">import</span>(<span style="color:#cd5555">`./Pages/Admin/</span><span style="color:#cd5555">${</span>name.replace(<span style="color:#cd5555">&#39;Admin/&#39;</span>, <span style="color:#cd5555">&#39;&#39;</span>)<span style="color:#cd5555">}</span><span style="color:#cd5555">.vue`</span>).then(m =&gt; m.<span style="color:#8b008b;font-weight:bold">default</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">import</span>(<span style="color:#cd5555">`./Pages/</span><span style="color:#cd5555">${</span>name<span style="color:#cd5555">}</span><span style="color:#cd5555">.vue`</span>).then(m =&gt; m.<span style="color:#8b008b;font-weight:bold">default</span>)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Esto te permite organizar mejor grandes áreas (como admin).</p>
+<hr>
+<h2 id="-medir-rendimiento-en-devtools">🧪 Medir rendimiento en DevTools</h2>
+<ol>
+<li>Abre Chrome DevTools → Network</li>
+<li>Activa <strong>Disable cache</strong></li>
+<li>Navega entre páginas</li>
+<li>Verás cómo los archivos <code>.js</code> sólo se descargan cuando hacen falta</li>
+</ol>
+<hr>
+<h2 id="-ventajas-del-lazy-loading">✅ Ventajas del Lazy Loading</h2>
+<ul>
+<li>⚡ Reduce el <strong>bundle inicial</strong></li>
+<li>🧠 Mejora el <strong>First Load</strong> para usuarios</li>
+<li>🔁 Compatible con layouts, rutas y secciones enteras</li>
+<li>🔧 Sin configuración extra (funciona con Vite por defecto)</li>
+</ul>
+<hr>
+<h2 id="-recomendaciones-finales">📌 Recomendaciones finales</h2>
+<ul>
+<li>Usa lazy loading para vistas no críticas (admin, ajustes, estadísticas&hellip;)</li>
+<li>Siempre combina con <code>npm run build</code> en producción</li>
+<li>Agrupa layouts por sección si tu app tiene frontend + backend</li>
+</ul>
+
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>
