@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pinia on Laravel: Framework de php</title>
-    <link>http://localhost:1313/laravel/tags/pinia/</link>
+    <link>https://web.infenlaces.com/laravel/tags/pinia/</link>
     <description>Recent content in Pinia on Laravel: Framework de php</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 08 Aug 2024 18:23:50 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/laravel/tags/pinia/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://web.infenlaces.com/laravel/tags/pinia/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pinia</title>
-      <link>http://localhost:1313/laravel/docs/30_pinia/</link>
+      <link>https://web.infenlaces.com/laravel/docs/30_pinia/</link>
       <pubDate>Thu, 08 Aug 2024 18:23:50 +0200</pubDate>
-      <guid>http://localhost:1313/laravel/docs/30_pinia/</guid>
+      <guid>https://web.infenlaces.com/laravel/docs/30_pinia/</guid>
       <description>&lt;h1 id=&#34;-qué-es-pinia&#34;&gt;📦 ¿Qué es Pinia?&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Pinia&lt;/strong&gt; es una &lt;strong&gt;librería de gestión de estado&lt;/strong&gt; para aplicaciones creadas con Vue.js (especialmente Vue 3). Permite &lt;strong&gt;almacenar y compartir datos&lt;/strong&gt; de forma centralizada entre diferentes componentes.&lt;/p&gt;&#xA;&lt;p&gt;Es el &lt;strong&gt;reemplazo oficial&lt;/strong&gt; de Vuex, más sencilla y moderna, compatible con la &lt;strong&gt;Composition API&lt;/strong&gt; y con soporte para TypeScript, devtools, SSR y más.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;-cuándo-usar-pinia&#34;&gt;🧩 ¿Cuándo usar Pinia?&lt;/h1&gt;&#xA;&lt;p&gt;Usa Pinia cuando:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Varios componentes necesitan &lt;strong&gt;acceder o modificar el mismo estado&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Quieres tener &lt;strong&gt;una fuente central de datos reactivos&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Necesitas &lt;strong&gt;persistir datos&lt;/strong&gt;, como autenticación o configuración de usuario.&lt;/li&gt;&#xA;&lt;li&gt;Quieres &lt;strong&gt;organizar tu lógica de negocio&lt;/strong&gt; fuera de los componentes.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;-instalación-básica&#34;&gt;🚀 Instalación básica&lt;/h1&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install pinia&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Luego, en tu aplicación Vue 3:&lt;/p&gt;</description>
     </item>
   </channel>

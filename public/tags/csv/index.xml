@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CSV on Laravel: Framework de php</title>
-    <link>http://localhost:1313/laravel/tags/csv/</link>
+    <link>https://web.infenlaces.com/laravel/tags/csv/</link>
     <description>Recent content in CSV on Laravel: Framework de php</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 08 Aug 2024 18:23:50 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/laravel/tags/csv/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://web.infenlaces.com/laravel/tags/csv/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ficheros CSV en Laravel</title>
-      <link>http://localhost:1313/laravel/docs/40_league_csv/</link>
+      <link>https://web.infenlaces.com/laravel/docs/40_league_csv/</link>
       <pubDate>Thu, 08 Aug 2024 18:23:50 +0200</pubDate>
-      <guid>http://localhost:1313/laravel/docs/40_league_csv/</guid>
+      <guid>https://web.infenlaces.com/laravel/docs/40_league_csv/</guid>
       <description>&lt;h1 id=&#34;gestionando-ficheros-csv-con-laravel&#34;&gt;Gestionando ficheros CSV con Laravel&lt;/h1&gt;&#xA;&lt;p&gt;Este documento resume cómo trabajar con archivos CSV en proyectos Laravel, especialmente si utilizas Inertia.js y Vue. Cuando los campos de un CSV contienen saltos de línea (&lt;code&gt;\n&lt;/code&gt;), es importante usar una librería que respete correctamente el formato del archivo. Una de las mejores opciones es &lt;code&gt;league/csv&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-instalación-de-la-librería&#34;&gt;📦 Instalación de la librería&lt;/h2&gt;&#xA;&lt;p&gt;Para instalar la librería oficial:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;composer require league/csv&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;h2 id=&#34;-lectura-básica-de-un-archivo-csv&#34;&gt;▶️ Lectura básica de un archivo CSV&lt;/h2&gt;&#xA;&lt;p&gt;Este es un ejemplo básico de cómo leer un archivo CSV desde el directorio &lt;code&gt;storage/app&lt;/code&gt; usando &lt;code&gt;league/csv&lt;/code&gt;:&lt;/p&gt;</description>
     </item>
   </channel>
