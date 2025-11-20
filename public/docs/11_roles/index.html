@@ -24,27 +24,36 @@
 <meta property="og:url" content="https://web.infenlaces.com/laravel/docs/11_roles/">
   <meta property="og:site_name" content="Laravel: Framework de php">
   <meta property="og:title" content="Roles">
-  <meta property="og:description" content="Gestión de roles Spatie Laravel Permision
-Obtener todos los roles
-1 $rol = auth()-&gt;user()-&gt;getRoleNames(); Solo hay un rol, puedo quedarme con el primero (y único) 1 $rol = auth()-&gt;user()-&gt;getRoleNames(); Instalación composer require spatie/laravel-permission">
+  <meta property="og:description" content="Gestión de roles Spatie Laravel Permission
+El paquete spatie/laravel-permission permite gestionar roles y permisos fácilmente en Laravel.
+Se integra con el sistema de autenticación estándar, por lo que puedes asignar y comprobar el rol de cualquier usuario autenticado.
+🧩 Instalación 1 composer require spatie/laravel-permission Publica la configuración y migraciones:
+1 php artisan vendor:publish --provider=&#34;Spatie\Permission\PermissionServiceProvider&#34; Ejecuta las migraciones:
+1 php artisan migrate Esto creará las tablas necesarias:">
   <meta property="og:locale" content="es">
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Roles">
-  <meta itemprop="description" content="Gestión de roles Spatie Laravel Permision
-Obtener todos los roles
-1 $rol = auth()-&gt;user()-&gt;getRoleNames(); Solo hay un rol, puedo quedarme con el primero (y único) 1 $rol = auth()-&gt;user()-&gt;getRoleNames(); Instalación composer require spatie/laravel-permission">
+  <meta itemprop="description" content="Gestión de roles Spatie Laravel Permission
+El paquete spatie/laravel-permission permite gestionar roles y permisos fácilmente en Laravel.
+Se integra con el sistema de autenticación estándar, por lo que puedes asignar y comprobar el rol de cualquier usuario autenticado.
+🧩 Instalación 1 composer require spatie/laravel-permission Publica la configuración y migraciones:
+1 php artisan vendor:publish --provider=&#34;Spatie\Permission\PermissionServiceProvider&#34; Ejecuta las migraciones:
+1 php artisan migrate Esto creará las tablas necesarias:">
   <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
   <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="33">
+  <meta itemprop="wordCount" content="414">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Roles">
-  <meta name="twitter:description" content="Gestión de roles Spatie Laravel Permision
-Obtener todos los roles
-1 $rol = auth()-&gt;user()-&gt;getRoleNames(); Solo hay un rol, puedo quedarme con el primero (y único) 1 $rol = auth()-&gt;user()-&gt;getRoleNames(); Instalación composer require spatie/laravel-permission">
+  <meta name="twitter:description" content="Gestión de roles Spatie Laravel Permission
+El paquete spatie/laravel-permission permite gestionar roles y permisos fácilmente en Laravel.
+Se integra con el sistema de autenticación estándar, por lo que puedes asignar y comprobar el rol de cualquier usuario autenticado.
+🧩 Instalación 1 composer require spatie/laravel-permission Publica la configuración y migraciones:
+1 php artisan vendor:publish --provider=&#34;Spatie\Permission\PermissionServiceProvider&#34; Ejecuta las migraciones:
+1 php artisan migrate Esto creará las tablas necesarias:">
 
 
-<link rel="preload" href="/laravel/scss/main.min.c1e2c2e78a15bd372c45747d397bac90c132a7c508b6ad53a47ebc0008785cd3.css" as="style"><link href="/laravel/scss/main.min.c1e2c2e78a15bd372c45747d397bac90c132a7c508b6ad53a47ebc0008785cd3.css" rel="stylesheet">
+<link rel="preload" href="/laravel/scss/main.min.f08d3ee4c2260e45bc83dcd9b8fb5edb2d493ec4ff88d5536efe7bcddf062080.css" as="style"><link href="/laravel/scss/main.min.f08d3ee4c2260e45bc83dcd9b8fb5edb2d493ec4ff88d5536efe7bcddf062080.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -418,7 +427,13 @@ Obtener todos los roles
     <li>
       <ul>
         <li></li>
-        <li><a href="#instalación">Instalación</a></li>
+        <li><a href="#-instalación">🧩 Instalación</a></li>
+        <li><a href="#-configuración-inicial">⚙️ Configuración inicial</a></li>
+        <li><a href="#-crear-roles">🧱 Crear roles</a></li>
+        <li><a href="#-asignar-un-rol-a-un-usuario">👤 Asignar un rol a un usuario</a></li>
+        <li><a href="#-obtener-y-comprobar-roles">🔍 Obtener y comprobar roles</a></li>
+        <li><a href="#-usar-roles-en-vistas-blade">🛡️ Usar roles en vistas (Blade)</a></li>
+        <li><a href="#-resumen-final">🧭 Resumen final</a></li>
       </ul>
     </li>
   </ul>
@@ -495,29 +510,286 @@ Obtener todos los roles
 </header>
 	<h4 id="gestión-de-roles">Gestión de roles</h4>
 <hr>
-<p>Spatie Laravel Permision</p>
+<p><strong>Spatie Laravel Permission</strong></p>
+<p>El paquete <a href="https://spatie.be/docs/laravel-permission">spatie/laravel-permission</a> permite gestionar <strong>roles</strong> y <strong>permisos</strong> fácilmente en Laravel.<br>
+Se integra con el sistema de autenticación estándar, por lo que puedes asignar y comprobar el rol de cualquier usuario autenticado.</p>
+<hr>
+<h3 id="-instalación">🧩 Instalación</h3>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require spatie/laravel-permission</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Publica la configuración y migraciones:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan vendor:publish --provider=<span style="color:#cd5555">&#34;Spatie\Permission\PermissionServiceProvider&#34;</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Ejecuta las migraciones:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan migrate</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Esto creará las tablas necesarias:</p>
+<ul>
+<li><code>roles</code></li>
+<li><code>permissions</code></li>
+<li><code>model_has_roles</code></li>
+<li><code>model_has_permissions</code></li>
+<li><code>role_has_permissions</code></li>
+</ul>
+<hr>
+<h3 id="-configuración-inicial">⚙️ Configuración inicial</h3>
+<p>En el modelo <code>User.php</code> añade el trait:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Spatie\Permission\Traits\HasRoles;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">User</span> <span style="color:#8b008b;font-weight:bold">extends</span> Authenticatable
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> HasRoles;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
 <blockquote>
-<p>Obtener todos los roles</p></blockquote>
+<p>Si tu modelo autenticable es <code>Student</code> (en lugar de <code>User</code>), añade el mismo <code>use HasRoles;</code> allí.</p></blockquote>
+<hr>
+<h3 id="-crear-roles">🧱 Crear roles</h3>
+<p>Puedes crear roles desde el seeder, Tinker o directamente en código:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Spatie\Permission\Models\Role;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// Crear roles
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>Role::<span style="color:#658b00">create</span>([<span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;student&#39;</span>]);
+</span></span><span style="display:flex;"><span>Role::<span style="color:#658b00">create</span>([<span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;teacher&#39;</span>]);
+</span></span><span style="display:flex;"><span>Role::<span style="color:#658b00">create</span>([<span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;admin&#39;</span>]);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>También puedes hacerlo desde un seeder:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan make:seeder RolesTableSeeder</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Y dentro de él:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Database\Seeder;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Spatie\Permission\Models\Role;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">RolesTableSeeder</span> <span style="color:#8b008b;font-weight:bold">extends</span> Seeder
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">run</span>(): void
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>Role::<span style="color:#658b00">firstOrCreate</span>([<span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;student&#39;</span>]);
+</span></span><span style="display:flex;"><span>Role::<span style="color:#658b00">firstOrCreate</span>([<span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;teacher&#39;</span>]);
+</span></span><span style="display:flex;"><span>Role::<span style="color:#658b00">firstOrCreate</span>([<span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;admin&#39;</span>]);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Ejecuta el seeder:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan db:seed --class=RolesTableSeeder</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h3 id="-asignar-un-rol-a-un-usuario">👤 Asignar un rol a un usuario</h3>
+<p>Cuando registras un usuario o estudiante, puedes asignarle un rol inmediatamente:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$user</span> = User::<span style="color:#658b00">create</span>([
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;Manuel&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;email&#39;</span> =&gt; <span style="color:#cd5555">&#39;manuel@example.com&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;password&#39;</span> =&gt; Hash::<span style="color:#658b00">make</span>(<span style="color:#cd5555">&#39;12345678&#39;</span>),
+</span></span><span style="display:flex;"><span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$user</span>-&gt;<span style="color:#658b00">assignRole</span>(<span style="color:#cd5555">&#39;student&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>También puedes hacerlo dinámicamente:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>auth()-&gt;<span style="color:#658b00">user</span>()-&gt;<span style="color:#658b00">assignRole</span>(<span style="color:#cd5555">&#39;teacher&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h3 id="-obtener-y-comprobar-roles">🔍 Obtener y comprobar roles</h3>
+<blockquote>
+<p>Obtener todos los roles del usuario autenticado:</p></blockquote>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#00688b">$rol</span> = auth()-&gt;<span style="color:#658b00">user</span>()-&gt;<span style="color:#658b00">getRoleNames</span>();</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#00688b">$roles</span> = auth()-&gt;<span style="color:#658b00">user</span>()-&gt;<span style="color:#658b00">getRoleNames</span>();</span></span></code></pre></td></tr></table>
 </div>
 </div>
 <blockquote>
-<p>Solo hay un rol, puedo quedarme con el primero (y único)
+<p>Si el usuario solo tiene un rol, puedes obtener el primero:</p></blockquote>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#00688b">$rol</span> = auth()-&gt;<span style="color:#658b00">user</span>()-&gt;<span style="color:#658b00">getRoleNames</span>();</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#00688b">$rol</span> = auth()-&gt;<span style="color:#658b00">user</span>()-&gt;<span style="color:#658b00">getRoleNames</span>()-&gt;<span style="color:#658b00">first</span>();</span></span></code></pre></td></tr></table>
 </div>
-</div></p></blockquote>
-<h3 id="instalación">Instalación</h3>
-<p>composer require spatie/laravel-permission</p>
+</div>
+<blockquote>
+<p>Comprobar si el usuario tiene un rol específico:</p></blockquote>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#8b008b;font-weight:bold">if</span> (auth()-&gt;<span style="color:#658b00">user</span>()-&gt;<span style="color:#658b00">hasRole</span>(<span style="color:#cd5555">&#39;teacher&#39;</span>)) {
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// Mostrar contenido solo para profesores
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>Comprobar si tiene alguno de varios roles:</p></blockquote>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#8b008b;font-weight:bold">if</span> (auth()-&gt;<span style="color:#658b00">user</span>()-&gt;<span style="color:#658b00">hasAnyRole</span>([<span style="color:#cd5555">&#39;admin&#39;</span>, <span style="color:#cd5555">&#39;teacher&#39;</span>])) {
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// Acceso especial
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h3 id="-usar-roles-en-vistas-blade">🛡️ Usar roles en vistas (Blade)</h3>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">@role(&#39;admin&#39;)
+&lt;p&gt;Panel de administración&lt;/p&gt;
+@endrole
+
+@hasrole(&#39;teacher&#39;)
+&lt;p&gt;Zona del profesor&lt;/p&gt;
+@endhasrole</code></pre>
+<p>También puedes usar directivas condicionales:</p>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">@hasanyrole(&#39;admin|teacher&#39;)
+&lt;p&gt;Bienvenido profesor o administrador&lt;/p&gt;
+@endhasanyrole</code></pre>
+<hr>
+<h3 id="-resumen-final">🧭 Resumen final</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Acción</th>
+          <th>Ejemplo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Instalar paquete</strong></td>
+          <td><code>composer require spatie/laravel-permission</code></td>
+      </tr>
+      <tr>
+          <td><strong>Publicar y migrar</strong></td>
+          <td><code>php artisan vendor:publish ... &amp;&amp; php artisan migrate</code></td>
+      </tr>
+      <tr>
+          <td><strong>Añadir HasRoles al modelo</strong></td>
+          <td><code>use HasRoles;</code></td>
+      </tr>
+      <tr>
+          <td><strong>Crear roles</strong></td>
+          <td><code>Role::create(['name' =&gt; 'student']);</code></td>
+      </tr>
+      <tr>
+          <td><strong>Asignar rol a usuario</strong></td>
+          <td><code>$user-&gt;assignRole('student');</code></td>
+      </tr>
+      <tr>
+          <td><strong>Comprobar rol</strong></td>
+          <td><code>auth()-&gt;user()-&gt;hasRole('admin');</code></td>
+      </tr>
+      <tr>
+          <td><strong>Obtener rol actual</strong></td>
+          <td><code>auth()-&gt;user()-&gt;getRoleNames()-&gt;first();</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    🧠 <strong>Consejo:</strong><br>
+Puedes combinar roles con permisos (<code>permissions</code>) para definir acciones más precisas, como “crear ejercicios”, “editar unidades” o “ver reportes”.
+
+
+</span>
+</strong>
+<hr>
 
   <div class="section-index">
     
