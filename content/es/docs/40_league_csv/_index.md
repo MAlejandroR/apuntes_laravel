@@ -1,7 +1,7 @@
 ---
 title: 'Ficheros CSV en Laravel'
 date: 2024-08-08T18:23:50+02:00
-draft: false
+draft: true
 tags: ['Laravel', 'Inertia', 'CSV', 'files']
 categories: ['Ficheros']
 weight: 400

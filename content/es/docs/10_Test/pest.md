@@ -16,6 +16,22 @@ Esta chuleta resume cómo usar `it`, `beforeEach`, `Mockery`, `$this->get`, `$th
 
 ---
 
+## Instalar pest en el proyecto
+{{< highlight bash Pest "linenos=table, hl_lines=" >}}
+composer require pestphp/pest --dev --with-all-dependencies
+{{< /highlight>}}
+* Instalar el plugin de pest para php
+{{< highlight php tabla_alumnos "linenos=table, hl_lines=" >}}
+ composer require pestphp/pest-plugin-laravel --dev
+{{< /highlight>}}
+* Crear un test:
+·Esto creará un test llamado UserCourseContentServiceTest
+{{< highlight php tabla_alumnos "linenos=table, hl_lines=" >}}
+ php artisan pest:test UserCourseContentServiceTest
+{{< /highlight>}}
+ 
+
+
 ## ✅ Estructura básica de un archivo de test
 
 {{< highlight php "linenos=table" >}}

@@ -2,7 +2,7 @@
 ---
 title: 'Blueprint'
 date: 2024-08-08T18:23:50+02:00
-draft: false
+draft: true
 tags: ['Laravel', 'Blueprint', 'YAML', 'Herramientas', 'Generación de componentes']
 categories: ['Laravel']
 weight: 130

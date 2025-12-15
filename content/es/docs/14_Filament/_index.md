@@ -1,7 +1,7 @@
 ---
 title: 'Filament'
 date: 2024-08-08T18:23:50+02:00
-draft: false
+draft: true
 tags: ['Laravel', 'Filament', 'Dasboard', 'Herramientas']
 categories: ['Laravel']
 weight: 140

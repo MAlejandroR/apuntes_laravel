@@ -40,7 +40,7 @@ Laravel News: . Laravel News https://laravel-news.com/
 > Noticias, tutoriales y paquetes relacionados con Laravel
 
 **Laravel Daily** https://laraveldaily.com/
- >>  Es un sitio dedicado a tutoriales y recursos para desarrolladores de Laravel, ofreciendo desde consejos rápidos hasta cursos y tutoriales premium. Contiene una variedad de contenidos que cubren aspectos básicos hasta avanzados de Laravel, como Eloquent ORM y nuevas funcionalidades en Laravel 11. Además, provee ejemplos de código, ofertas de trabajo, y herramientas premium, haciéndolo un recurso valioso tanto para aprendices como para desarrolladores experimentados en busca de mantenerse actualizados con Laravel.    
+ >>  Sitio web dedicado a tutoriales y recursos para desarrolladores de Laravel, ofreciendo desde consejos rápidos hasta cursos y tutoriales premium. Contiene una variedad de contenidos que cubren aspectos básicos hasta avanzados de Laravel, como Eloquent ORM y nuevas funcionalidades en Laravel 11. Además, provee ejemplos de código, ofertas de trabajo, y herramientas premium, haciéndolo un recurso valioso tanto para aprendices como para desarrolladores experimentados en busca de mantenerse actualizados con Laravel.    
 * **GitHub y Packagist** (https://github.com/search?q=laravel&type=repositories) 
 >>Para buscar paquetes de Laravel y proyectos de código abierto. GitHub  Packagist
 {{</referencias>}}
@@ -53,16 +53,25 @@ Este esquema muestra cómo vamos a abordar los aspectos de laravel
 # Laravel
 ## Instalación
 ## MVC
+### Mas allá de MVC
+#### Middleware
+#### Servicios
+#### Eventos
+#### Injección de dependencias
 ## Blade
 ### Jerarquía de plantillas
-### Componentes html
-#### Laravel [Livewire](https://laravel-livewire.com/)
+#### Directivas blade
+#### Componentes html
+### Laravel [Livewire](https://laravel-livewire.com/)
 ### Componentes JS
-#### Inertia [Inertia](https://inertiajs.com/)
+#### Inertia [Inertia](https://inertiajs.com/) (Es un response, aquí indica la parte html)
 ## Rutas
+### Fichero de Rutas
+### Rutas parametrizadas
 ## Artisan
 ## Controladores
 ## Modelos
+### Eloquent
 ## RestFull
 ## Api
 ## Autenticacion

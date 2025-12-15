@@ -1,7 +1,7 @@
 ---
 title: 'Optimización de carga con Laravel + Inertia + Vue'
 date: 2024-08-08T18:23:50+02:00
-draft: false
+draft: true
 tags: ['Laravel', 'Inertia', 'Vue', 'Filament']
 categories: ['Optimización']
 weight: 400

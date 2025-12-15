@@ -11,7 +11,7 @@ Laravel Idea es un plugin premium para PhpStorm que facilita el desarrollo de pr
 
 ---
 
-## 🚀 Instalación
+##  Instalación
 
 1. Abre **PhpStorm**.
 2. Ve a **Preferences / Settings → Plugins**.
@@ -21,7 +21,7 @@ Laravel Idea es un plugin premium para PhpStorm que facilita el desarrollo de pr
 
 ---
 
-## ⚙️ Configuración
+## ️ Configuración
 
 En **Preferences → Laravel Idea** puedes ajustar:
 
@@ -33,7 +33,7 @@ En **Preferences → Laravel Idea** puedes ajustar:
 
 ---
 
-## ✏️ Generar código (ejemplo)
+## ️ Generar código (ejemplo)
 
 Para crear un modelo con migration y factory:
 
@@ -58,7 +58,7 @@ php artisan make:model Book -mfs
 ---
 
 
-## 🛠️ Actualizar
+## ️ Actualizar
 
 Para actualizar el plugin:
 
@@ -68,7 +68,7 @@ Para actualizar el plugin:
 
 ---
 
-## 📦 Integración con paquetes populares
+##  Integración con paquetes populares
 
 Laravel Idea ofrece autocompletado y helpers para:
 
@@ -82,7 +82,7 @@ Laravel Idea ofrece autocompletado y helpers para:
 
 ---
 
-## ⌨️ Tabla de atajos útiles
+## ️ Tabla de atajos útiles
 
 | Acción                                         | Atajo (Mac / Windows)                     |
 |-----------------------------------------------|-------------------------------------------|
@@ -95,7 +95,7 @@ Laravel Idea ofrece autocompletado y helpers para:
 
 ---
 
-## ✅ Consejos finales
+##  Consejos finales
 
 - Usa los snippets para relaciones: `hasMany`, `belongsTo`, `belongsToMany`, etc.
 - Activa sugerencias para *casts*, scopes y recursos.
@@ -112,7 +112,7 @@ Laravel Idea ayuda a organizar y acelerar el desarrollo siguiendo un flujo de tr
 
 ---
 
-## 🔄 Flujo recomendado
+##  Flujo recomendado
 
 1. **Definir la idea del modelo**  
    Pensar qué entidades vas a necesitar, sus campos y relaciones.
@@ -136,7 +136,7 @@ php artisan migrate
 
 ---
 
-### 📦 Crear recurso Filament (si aplica)
+###  Crear recurso Filament (si aplica)
 
 - <code>Alt+Insert → Generate Laravel Code → Filament Resource</code>
 - Elegir el modelo creado.
@@ -144,7 +144,7 @@ php artisan migrate
 
 ---
 
-### ✏️ Configurar el formulario y la tabla
+### ️ Configurar el formulario y la tabla
 
 - Usar autocompletado para campos:  
   <code>TextInput</code>, <code>Select</code>, <code>DatePicker</code>.
@@ -154,7 +154,7 @@ php artisan migrate
 
 ---
 
-### 🔗 Añadir relaciones y métodos en el modelo
+###  Añadir relaciones y métodos en el modelo
 
 - Crear relaciones como:  
   <code>hasMany</code>, <code>belongsTo</code>, etc.
@@ -162,13 +162,13 @@ php artisan migrate
 
 ---
 
-### 🧪 Probar en el panel Filament
+###  Probar en el panel Filament
 
 - Acceder al panel y verificar que todo funciona correctamente.
 
 ---
 
-### 🔧 Refinar
+###  Refinar
 
 - Ajustar formularios y tablas.
 - Crear <code>policies</code>, <code>tests</code> y <code>factories</code> extra si son necesarios.
@@ -176,7 +176,7 @@ php artisan migrate
 
 ---
 
-## ✅ Ventajas de este flujo
+##  Ventajas de este flujo
 
 - Menos errores manuales.
 - Archivos relacionados generados automáticamente.

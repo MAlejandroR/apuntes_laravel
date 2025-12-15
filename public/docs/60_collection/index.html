@@ -1,10 +1,10 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head>
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="alternate" type="application/rss&#43;xml" href="https://web.infenlaces.com/laravel/docs/60_collection/index.xml">
-<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/60_collection/index.xml">
+<meta name="robots" content="noindex, nofollow">
 
 
 <link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
@@ -21,30 +21,30 @@
 <title>Collection en Laravel | Laravel: Framework de php</title>
 <meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
 
-<meta property="og:url" content="https://web.infenlaces.com/laravel/docs/60_collection/">
+<meta property="og:url" content="http://localhost:1313/laravel/docs/60_collection/">
   <meta property="og:site_name" content="Laravel: Framework de php">
   <meta property="og:title" content="Collection en Laravel">
   <meta property="og:description" content="Collection Las Collections en Laravel son una herramienta muy poderosa que extiende las posibilidades de trabajar con arrays de PHP. Permiten transformar, filtrar, ordenar o agrupar datos de forma más expresiva, elegante y legible .
-✏️ ¿Qué es una Collection en Laravel? Collection Una Collection es un objeto de la clase `Illuminate\Support\Collection` que envuelve un array y nos da métodos extra para trabajar de forma fluida y encadenada. 🔍 Diferencia principal con un array tradicional Un array de PHP tiene funciones globales como array_map, array_filter…
+️ ¿Qué es una Collection en Laravel? Collection Una Collection es un objeto de la clase `Illuminate\Support\Collection` que envuelve un array y nos da métodos extra para trabajar de forma fluida y encadenada. Diferencia principal con un array tradicional Un array de PHP tiene funciones globales como array_map, array_filter…
 Una Collection permite encadenar métodos , haciendo el código más limpio y fácil de leer.">
   <meta property="og:locale" content="es">
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Collection en Laravel">
   <meta itemprop="description" content="Collection Las Collections en Laravel son una herramienta muy poderosa que extiende las posibilidades de trabajar con arrays de PHP. Permiten transformar, filtrar, ordenar o agrupar datos de forma más expresiva, elegante y legible .
-✏️ ¿Qué es una Collection en Laravel? Collection Una Collection es un objeto de la clase `Illuminate\Support\Collection` que envuelve un array y nos da métodos extra para trabajar de forma fluida y encadenada. 🔍 Diferencia principal con un array tradicional Un array de PHP tiene funciones globales como array_map, array_filter…
+️ ¿Qué es una Collection en Laravel? Collection Una Collection es un objeto de la clase `Illuminate\Support\Collection` que envuelve un array y nos da métodos extra para trabajar de forma fluida y encadenada. Diferencia principal con un array tradicional Un array de PHP tiene funciones globales como array_map, array_filter…
 Una Collection permite encadenar métodos , haciendo el código más limpio y fácil de leer.">
   <meta itemprop="datePublished" content="2025-07-24T12:00:00+02:00">
   <meta itemprop="dateModified" content="2025-07-24T12:00:00+02:00">
-  <meta itemprop="wordCount" content="742">
+  <meta itemprop="wordCount" content="725">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Collection en Laravel">
   <meta name="twitter:description" content="Collection Las Collections en Laravel son una herramienta muy poderosa que extiende las posibilidades de trabajar con arrays de PHP. Permiten transformar, filtrar, ordenar o agrupar datos de forma más expresiva, elegante y legible .
-✏️ ¿Qué es una Collection en Laravel? Collection Una Collection es un objeto de la clase `Illuminate\Support\Collection` que envuelve un array y nos da métodos extra para trabajar de forma fluida y encadenada. 🔍 Diferencia principal con un array tradicional Un array de PHP tiene funciones globales como array_map, array_filter…
+️ ¿Qué es una Collection en Laravel? Collection Una Collection es un objeto de la clase `Illuminate\Support\Collection` que envuelve un array y nos da métodos extra para trabajar de forma fluida y encadenada. Diferencia principal con un array tradicional Un array de PHP tiene funciones globales como array_map, array_filter…
 Una Collection permite encadenar métodos , haciendo el código más limpio y fácil de leer.">
 
 
-<link rel="preload" href="/laravel/scss/main.min.f08d3ee4c2260e45bc83dcd9b8fb5edb2d493ec4ff88d5536efe7bcddf062080.css" as="style"><link href="/laravel/scss/main.min.f08d3ee4c2260e45bc83dcd9b8fb5edb2d493ec4ff88d5536efe7bcddf062080.css" rel="stylesheet">
+<link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -112,21 +112,6 @@ Una Collection permite encadenar métodos , haciendo el código más limpio y f�
   <input type="checkbox" id="m-laraveldocs02_instalacic3b3n-check"/>
   <label for="m-laraveldocs02_instalacic3b3n-check"><a href="/laravel/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs10_test-li">
-  <input type="checkbox" id="m-laraveldocs10_test-check"/>
-  <label for="m-laraveldocs10_test-check"><a href="/laravel/docs/10_test/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_test"><span class="">10_Test unitarios</span></a></label>
-  
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_testchat-li">
-  <input type="checkbox" id="m-laraveldocs10_testchat-check"/>
-  <label for="m-laraveldocs10_testchat-check"><a href="/laravel/docs/10_test/chat/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_testchat"><span class="">10_Test unitarios del chat</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_testpest-li">
-  <input type="checkbox" id="m-laraveldocs10_testpest-check"/>
-  <label for="m-laraveldocs10_testpest-check"><a href="/laravel/docs/10_test/pest/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs10_testpest"><span class="">Pest</span></a></label>
-  
-</li>
-  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs03_rutas-li">
   <input type="checkbox" id="m-laraveldocs03_rutas-check"/>
   <label for="m-laraveldocs03_rutas-check"><a href="/laravel/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
@@ -154,10 +139,6 @@ Una Collection permite encadenar métodos , haciendo el código más limpio y f�
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs50_tinker-li">
-  <input type="checkbox" id="m-laraveldocs50_tinker-check"/>
-  <label for="m-laraveldocs50_tinker-check"><a href="/laravel/docs/50_tinker/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs50_tinker"><span class="">tinker</span></a></label>
-  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocs60_collection-li">
   <input type="checkbox" id="m-laraveldocs60_collection-check" checked/>
   <label for="m-laraveldocs60_collection-check"><a href="/laravel/docs/60_collection/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laraveldocs60_collection"><span class="td-sidebar-nav-active-item">Collection en Laravel</span></a></label>
@@ -170,33 +151,6 @@ Una Collection permite encadenar métodos , haciendo el código más limpio y f�
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionbreeze-li">
   <input type="checkbox" id="m-laraveldocs06_autenticacionbreeze-check"/>
   <label for="m-laraveldocs06_autenticacionbreeze-check"><a href="/laravel/docs/06_autenticacion/breeze/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionbreeze"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacionfortify-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify-check"/>
-  <label for="m-laraveldocs06_autenticacionfortify-check"><a href="/laravel/docs/06_autenticacion/fortify/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionfortify"><i class="fa-solid fa-sitemap"></i><span class="">Fortify y Jetstream</span></a></label>
-  
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-check"/>
-  <label for="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-check"><a href="/laravel/docs/06_autenticacion/fortify/02_page_role_autenticated/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated"><i class="fa-solid fa-sitemap"></i><span class="">Dashboard según rol</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortify01_instalacion-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify01_instalacion-check"/>
-  <label for="m-laraveldocs06_autenticacionfortify01_instalacion-check"><a href="/laravel/docs/06_autenticacion/fortify/01_instalacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortify01_instalacion"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortifydiagrama-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionfortifydiagrama-check"/>
-  <label for="m-laraveldocs06_autenticacionfortifydiagrama-check"><a href="/laravel/docs/06_autenticacion/fortify/diagrama/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortifydiagrama"><i class="fa-solid fa-sitemap"></i><span class="">Diagrama de flujo</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-check"/>
-  <label for="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-check"><a href="/laravel/docs/06_autenticacion/fortify/peronsalizar_controladores/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores"><i class="fa-solid fa-sitemap"></i><span class="">Personalizar controladores</span></a></label>
-  
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionotp-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionotp-check"/>
-  <label for="m-laraveldocs06_autenticacionotp-check"><a href="/laravel/docs/06_autenticacion/otp/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionotp"><i class="fa-solid fa-sitemap"></i><span class="">OTP One-Time Password</span></a></label>
   
 </li>
   </ul>
@@ -219,14 +173,6 @@ Una Collection permite encadenar métodos , haciendo el código más limpio y f�
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs80_api_openai-li">
-  <input type="checkbox" id="m-laraveldocs80_api_openai-check"/>
-  <label for="m-laraveldocs80_api_openai-check"><a href="/laravel/docs/80_api_openai/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs80_api_openai"><span class="">API OpenAI</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs90_helper-li">
-  <input type="checkbox" id="m-laraveldocs90_helper-check"/>
-  <label for="m-laraveldocs90_helper-check"><a href="/laravel/docs/90_helper/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs90_helper"><span class="">API OpenAI</span></a></label>
-  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs100_anexos-li">
   <input type="checkbox" id="m-laraveldocs100_anexos-check"/>
   <label for="m-laraveldocs100_anexos-check"><a href="/laravel/docs/100_anexos/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs100_anexos"><span class="">Anexos</span></a></label>
@@ -265,71 +211,6 @@ Una Collection permite encadenar métodos , haciendo el código más limpio y f�
   <input type="checkbox" id="m-laraveldocs11_roles-check"/>
   <label for="m-laraveldocs11_roles-check"><a href="/laravel/docs/11_roles/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs11_roles"><i class="fa-brands fa-critical-role"></i><span class="">Roles</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs13_blueprint-li">
-  <input type="checkbox" id="m-laraveldocs13_blueprint-check"/>
-  <label for="m-laraveldocs13_blueprint-check"><a href="/laravel/docs/13_blueprint/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_blueprint"><i class="fas fa-database"></i><span class="">Blueprint</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs14_filament-li">
-  <input type="checkbox" id="m-laraveldocs14_filament-check"/>
-  <label for="m-laraveldocs14_filament-check"><a href="/laravel/docs/14_filament/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filament"><i class="fas fa-sliders-h"></i><span class="">Filament</span></a></label>
-  
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filamentpage-li">
-  <input type="checkbox" id="m-laraveldocs14_filamentpage-check"/>
-  <label for="m-laraveldocs14_filamentpage-check"><a href="/laravel/docs/14_filament/page/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filamentpage"><i class="fas"></i><span class="">Creando Páginas</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filamentwidget-li">
-  <input type="checkbox" id="m-laraveldocs14_filamentwidget-check"/>
-  <label for="m-laraveldocs14_filamentwidget-check"><a href="/laravel/docs/14_filament/widget/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filamentwidget"><i class="fas"></i><span class="">Widgets en el Panel</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs14_filamentpanel-li">
-  <input type="checkbox" id="m-laraveldocs14_filamentpanel-check"/>
-  <label for="m-laraveldocs14_filamentpanel-check"><a href="/laravel/docs/14_filament/panel/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filamentpanel"><i class="fas fa-rectangle-group"></i><span class="">Panel </span></a></label>
-  
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filamentpanelpanel-li">
-  <input type="checkbox" id="m-laraveldocs14_filamentpanelpanel-check"/>
-  <label for="m-laraveldocs14_filamentpanelpanel-check"><a href="/laravel/docs/14_filament/panel/panel/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs14_filamentpanelpanel"><i class="fas fa-bars"></i><span class="">Navegación</span></a></label>
-  
-</li>
-  </ul>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs15_storage-li">
-  <input type="checkbox" id="m-laraveldocs15_storage-check"/>
-  <label for="m-laraveldocs15_storage-check"><a href="/laravel/docs/15_storage/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs15_storage"><i class="fas fa-sliders-h"></i><span class="">Storage</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs30_pinia-li">
-  <input type="checkbox" id="m-laraveldocs30_pinia-check"/>
-  <label for="m-laraveldocs30_pinia-check"><a href="/laravel/docs/30_pinia/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs30_pinia"><i class="fas fa-database"></i><span class="">Pinia</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs40_league_csv-li">
-  <input type="checkbox" id="m-laraveldocs40_league_csv-check"/>
-  <label for="m-laraveldocs40_league_csv-check"><a href="/laravel/docs/40_league_csv/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs40_league_csv"><span class="">Ficheros CSV en Laravel</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs31_optimizacion_carga-li">
-  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga-check"/>
-  <label for="m-laraveldocs31_optimizacion_carga-check"><a href="/laravel/docs/31_optimizacion_carga/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs31_optimizacion_carga"><i class="fas fa-tachometer-alt"></i><span class="">Optimización de carga con Laravel &#43; Inertia &#43; Vue</span></a></label>
-  
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga02_lazy-li">
-  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga02_lazy-check"/>
-  <label for="m-laraveldocs31_optimizacion_carga02_lazy-check"><a href="/laravel/docs/31_optimizacion_carga/02_lazy/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga02_lazy"><i class="fas fa-code-split"></i><span class="">Lazy Loading con Vue &#43; Inertia</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga03_tiempos-li">
-  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga03_tiempos-check"/>
-  <label for="m-laraveldocs31_optimizacion_carga03_tiempos-check"><a href="/laravel/docs/31_optimizacion_carga/03_tiempos/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga03_tiempos"><i class="fas fa-code-split"></i><span class="">tiempos de carga</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga04_props_pesadas-li">
-  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga04_props_pesadas-check"/>
-  <label for="m-laraveldocs31_optimizacion_carga04_props_pesadas-check"><a href="/laravel/docs/31_optimizacion_carga/04_props_pesadas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga04_props_pesadas"><i class="fas fa-box-open"></i><span class="">Cómo detectar y optimizar props pesadas en Inertia.js</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga05_carga_datos_axios-li">
-  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga05_carga_datos_axios-check"/>
-  <label for="m-laraveldocs31_optimizacion_carga05_carga_datos_axios-check"><a href="/laravel/docs/31_optimizacion_carga/05_carga_datos_axios/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga05_carga_datos_axios"><i class="fas fa-cloud-download-alt"></i><span class="">Cargar datos desde Vue con Fetch o Axios (Inertia)</span></a></label>
-  
-</li>
-  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet-li">
   <input type="checkbox" id="m-laraveldocs999_cheatseet-check"/>
   <label for="m-laraveldocs999_cheatseet-check"><a href="/laravel/docs/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet"><span class="">Cheat Sheet</span></a></label>
@@ -395,10 +276,6 @@ Una Collection permite encadenar métodos , haciendo el código más limpio y f�
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs00_vue-li">
-  <input type="checkbox" id="m-laraveldocs00_vue-check"/>
-  <label for="m-laraveldocs00_vue-check"><a href="/laravel/docs/00_vue/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs00_vue"><span class="">Vue</span></a></label>
-  
 </li>
   </ul>
 </li>
@@ -415,40 +292,40 @@ Una Collection permite encadenar métodos , haciendo el código más limpio y f�
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#-qué-es-una-collection-en-laravel">✏️ ¿Qué es una Collection en Laravel?</a></li>
-    <li><a href="#-diferencia-principal-con-un-array-tradicional">🔍 Diferencia principal con un array tradicional</a></li>
-    <li><a href="#-ejemplo-rápido-en-tinker">🧪 Ejemplo rápido en Tinker</a></li>
-    <li><a href="#-métodos-más-usados">✅ Métodos más usados</a>
+    <li><a href="#-qué-es-una-collection-en-laravel">️ ¿Qué es una Collection en Laravel?</a></li>
+    <li><a href="#diferencia-principal-con-un-array-tradicional">Diferencia principal con un array tradicional</a></li>
+    <li><a href="#ejemplo-rápido-en-tinker">Ejemplo rápido en Tinker</a></li>
+    <li><a href="#métodos-más-usados">Métodos más usados</a>
       <ul>
-        <li><a href="#-map">🧰 map()</a></li>
-        <li><a href="#-filter">🔎 filter()</a></li>
-        <li><a href="#-reduce">➕ reduce()</a></li>
+        <li><a href="#map">map()</a></li>
+        <li><a href="#filter">filter()</a></li>
+        <li><a href="#reduce">reduce()</a></li>
       </ul>
     </li>
-    <li><a href="#-más-métodos-interesantes">📚 Más métodos interesantes</a></li>
-    <li><a href="#-por-qué-usar-collections">🧩 ¿Por qué usar Collections?</a></li>
-    <li><a href="#-conclusión">📌 Conclusión</a></li>
+    <li><a href="#más-métodos-interesantes">Más métodos interesantes</a></li>
+    <li><a href="#por-qué-usar-collections">¿Por qué usar Collections?</a></li>
+    <li><a href="#conclusión">Conclusión</a></li>
   </ul>
 
   <ul>
-    <li><a href="#-cómo-hacerlo">⚙️ ¿Cómo hacerlo?</a></li>
-    <li><a href="#-ejemplo-práctico">✏️ Ejemplo práctico</a>
+    <li><a href="#-cómo-hacerlo">️ ¿Cómo hacerlo?</a></li>
+    <li><a href="#-ejemplo-práctico">️ Ejemplo práctico</a>
       <ul>
-        <li><a href="#-paso-1-editar-el-service-provider">📂 Paso 1: Editar el Service Provider</a></li>
+        <li><a href="#paso-1-editar-el-service-provider">Paso 1: Editar el Service Provider</a></li>
       </ul>
     </li>
-    <li><a href="#-paso-2-usarlo-en-tinker-o-en-el-código">✅ Paso 2: Usarlo en Tinker o en el código</a></li>
-    <li><a href="#-resumen">📌 Resumen</a></li>
-    <li><a href="#-más-información">📚 Más información</a></li>
-    <li><a href="#hahahugoshortcode67s19hbhb">HAHAHUGOSHORTCODE67s19HBHB</a></li>
+    <li><a href="#paso-2-usarlo-en-tinker-o-en-el-código">Paso 2: Usarlo en Tinker o en el código</a></li>
+    <li><a href="#resumen">Resumen</a></li>
+    <li><a href="#más-información">Más información</a></li>
+    <li><a href="#hahahugoshortcode65s19hbhb">HAHAHUGOSHORTCODE65s19HBHB</a></li>
   </ul>
 
   <ul>
-    <li><a href="#-paso-1-definir-el-macro-en-el-service-provider">⚙️ Paso 1: Definir el macro en el Service Provider</a></li>
-    <li><a href="#-explicación-rápida">✏️ Explicación rápida</a></li>
-    <li><a href="#-paso-2-probarlo-en-tinker">🧪 Paso 2: Probarlo en Tinker</a></li>
-    <li><a href="#-ventajas">✅ Ventajas</a></li>
-    <li><a href="#-más-información-1">📚 Más información</a></li>
+    <li><a href="#-paso-1-definir-el-macro-en-el-service-provider">️ Paso 1: Definir el macro en el Service Provider</a></li>
+    <li><a href="#-explicación-rápida">️ Explicación rápida</a></li>
+    <li><a href="#paso-2-probarlo-en-tinker">Paso 2: Probarlo en Tinker</a></li>
+    <li><a href="#ventajas">Ventajas</a></li>
+    <li><a href="#más-información-1">Más información</a></li>
   </ul>
 </nav>
       </div>
@@ -456,47 +333,38 @@ Una Collection permite encadenar métodos , haciendo el código más limpio y f�
             <div class="taxonomy taxonomy-terms-cloud taxo-categories">
       <h5 class="taxonomy-title">Categories</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/ficheros/" data-taxonomy-term="ficheros"><span class="taxonomy-label">Ficheros</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">10</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">5</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
   <div class="taxonomy taxonomy-terms-cloud taxo-tags">
       <h5 class="taxonomy-title">Tags</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/blueprint/" data-taxonomy-term="blueprint"><span class="taxonomy-label">Blueprint</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/csv/" data-taxonomy-term="csv"><span class="taxonomy-label">CSV</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/dasboard/" data-taxonomy-term="dasboard"><span class="taxonomy-label">Dasboard</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">6</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/files/" data-taxonomy-term="files"><span class="taxonomy-label">Files</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/generaci%C3%B3n-de-componentes/" data-taxonomy-term="generaci%C3%B3n-de-componentes"><span class="taxonomy-label">Generación De Componentes</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">6</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">7</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">13</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/pinia/" data-taxonomy-term="pinia"><span class="taxonomy-label">Pinia</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/storage/" data-taxonomy-term="storage"><span class="taxonomy-label">Storage</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">5</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/yaml/" data-taxonomy-term="yaml"><span class="taxonomy-label">YAML</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
   
@@ -543,7 +411,7 @@ Permiten transformar, filtrar, ordenar o agrupar datos de forma más
 </span>
 </strong>.</p>
 <hr>
-<h2 id="-qué-es-una-collection-en-laravel">✏️ ¿Qué es una Collection en Laravel?</h2>
+<h2 id="-qué-es-una-collection-en-laravel">️ ¿Qué es una Collection en Laravel?</h2>
 <div class="definicion-concepto">
   <div class="definicion-titulo">
     
@@ -558,7 +426,7 @@ Una Collection es un objeto de la clase `Illuminate\Support\Collection` que envu
   </div>
 </div>
 <hr>
-<h2 id="-diferencia-principal-con-un-array-tradicional">🔍 Diferencia principal con un array tradicional</h2>
+<h2 id="diferencia-principal-con-un-array-tradicional">Diferencia principal con un array tradicional</h2>
 <p>Un <strong>array</strong> de PHP tiene funciones globales como <code>array_map</code>, <code>array_filter</code>…<br>
 Una <strong>Collection</strong> permite 
 
@@ -572,7 +440,7 @@ Una <strong>Collection</strong> permite
 </strong>, haciendo el código más limpio y fácil de leer.</p>
 <!-- raw HTML omitted -->
 <hr>
-<h2 id="-ejemplo-rápido-en-tinker">🧪 Ejemplo rápido en Tinker</h2>
+<h2 id="ejemplo-rápido-en-tinker">Ejemplo rápido en Tinker</h2>
 <p>Abre Tinker:</p>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -594,10 +462,10 @@ Una <strong>Collection</strong> permite
 </div>
 </div>
 <hr>
-<h2 id="-métodos-más-usados">✅ Métodos más usados</h2>
+<h2 id="métodos-más-usados">Métodos más usados</h2>
 <p>A continuación, algunos métodos básicos que marcan la diferencia frente a los arrays:</p>
 <hr>
-<h3 id="-map">🧰 map()</h3>
+<h3 id="map">map()</h3>
 <p>Aplica una función a cada elemento.</p>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -610,7 +478,7 @@ Una <strong>Collection</strong> permite
 </div>
 </div>
 <hr>
-<h3 id="-filter">🔎 filter()</h3>
+<h3 id="filter">filter()</h3>
 <p>Filtra elementos que cumplen una condición.</p>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -623,7 +491,7 @@ Una <strong>Collection</strong> permite
 </div>
 </div>
 <hr>
-<h3 id="-reduce">➕ reduce()</h3>
+<h3 id="reduce">reduce()</h3>
 <p>Reduce la colección a un solo valor.</p>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -636,7 +504,7 @@ Una <strong>Collection</strong> permite
 </div>
 </div>
 <hr>
-<h2 id="-más-métodos-interesantes">📚 Más métodos interesantes</h2>
+<h2 id="más-métodos-interesantes">Más métodos interesantes</h2>
 <ul>
 <li><code>first()</code>: devuelve el primer elemento.</li>
 <li><code>pluck('campo')</code>: extrae los valores de una clave de un array de arrays u objetos.</li>
@@ -644,7 +512,7 @@ Una <strong>Collection</strong> permite
 <li><code>sum()</code>: suma todos los valores.</li>
 </ul>
 <hr>
-<h2 id="-por-qué-usar-collections">🧩 ¿Por qué usar Collections?</h2>
+<h2 id="por-qué-usar-collections">¿Por qué usar Collections?</h2>
 
 
 <div class="alert alert-success" role="alert">
@@ -659,7 +527,7 @@ Una <strong>Collection</strong> permite
 </div>
 
 <hr>
-<h2 id="-conclusión">📌 Conclusión</h2>
+<h2 id="conclusión">Conclusión</h2>
 <p>Las Collections hacen que trabajar con datos sea más fácil y claro.
 Aunque internamente son arrays, nos ofrecen 
 
@@ -708,7 +576,7 @@ Aunque internamente son arrays, nos ofrecen
     </div>
 </div>
 
-<h1 id="-añadir-métodos-personalizados-a-las-collections">🛠️ Añadir métodos personalizados a las Collections</h1>
+<h1 id="-añadir-métodos-personalizados-a-las-collections">️ Añadir métodos personalizados a las Collections</h1>
 <p>Laravel permite añadir nuevos métodos a las Collections usando la función 
 
 <strong>
@@ -721,7 +589,7 @@ Aunque internamente son arrays, nos ofrecen
 </strong>.<br>
 Esto es muy útil si queremos reutilizar lógica que usamos frecuentemente.</p>
 <hr>
-<h2 id="-cómo-hacerlo">⚙️ ¿Cómo hacerlo?</h2>
+<h2 id="-cómo-hacerlo">️ ¿Cómo hacerlo?</h2>
 <p>Se hace dentro del método <code>boot</code> de un 
 
 <strong>
@@ -734,7 +602,7 @@ Esto es muy útil si queremos reutilizar lógica que usamos frecuentemente.</p>
 </strong>.</p>
 <p>Normalmente, puedes usar el <code>AppServiceProvider</code> que Laravel crea por defecto.</p>
 <hr>
-<h2 id="-ejemplo-práctico">✏️ Ejemplo práctico</h2>
+<h2 id="-ejemplo-práctico">️ Ejemplo práctico</h2>
 <p>Imagina que queremos crear un método llamado 
 
 <strong>
@@ -746,7 +614,7 @@ Esto es muy útil si queremos reutilizar lógica que usamos frecuentemente.</p>
 </span>
 </strong> para transformar todos los strings de una colección a mayúsculas.</p>
 <hr>
-<h3 id="-paso-1-editar-el-service-provider">📂 Paso 1: Editar el Service Provider</h3>
+<h3 id="paso-1-editar-el-service-provider">Paso 1: Editar el Service Provider</h3>
 <p>Edita <code>app/Providers/AppServiceProvider.php</code> y dentro del método <code>boot</code> añade:</p>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -775,7 +643,7 @@ Esto es muy útil si queremos reutilizar lógica que usamos frecuentemente.</p>
 </div>
 </div>
 <hr>
-<h2 id="-paso-2-usarlo-en-tinker-o-en-el-código">✅ Paso 2: Usarlo en Tinker o en el código</h2>
+<h2 id="paso-2-usarlo-en-tinker-o-en-el-código">Paso 2: Usarlo en Tinker o en el código</h2>
 <p>Abre Tinker:</p>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -797,15 +665,15 @@ Esto es muy útil si queremos reutilizar lógica que usamos frecuentemente.</p>
 </div>
 </div>
 <hr>
-<h2 id="-resumen">📌 Resumen</h2>
+<h2 id="resumen">Resumen</h2>
 <ul>
 <li><code>macro()</code> es un método estático para añadir métodos personalizados a las Collections.</li>
 <li>Se suele registrar en el método <code>boot</code> de un Service Provider.</li>
 <li>Permite extender las Collections con métodos que necesitemos frecuentemente.</li>
 </ul>
 <hr>
-<h2 id="-más-información">📚 Más información</h2>
-<h2 id="hahahugoshortcode67s19hbhb">
+<h2 id="más-información">Más información</h2>
+<h2 id="hahahugoshortcode65s19hbhb">
 
 
 
@@ -841,7 +709,7 @@ Esto es muy útil si queremos reutilizar lógica que usamos frecuentemente.</p>
     </div>
 </div>
 </h2>
-<h1 id="-crear-un-macro-para-convertir-claves-a-camelcase">🐫 Crear un macro para convertir claves a camelCase</h1>
+<h1 id="crear-un-macro-para-convertir-claves-a-camelcase">Crear un macro para convertir claves a camelCase</h1>
 <p>A veces tenemos una colección de arrays con claves en 
 
 <strong>
@@ -863,7 +731,7 @@ Esto es muy útil si queremos reutilizar lógica que usamos frecuentemente.</p>
 </strong>.</p>
 <p>Con un macro, podemos hacerlo de forma elegante y reutilizable.</p>
 <hr>
-<h2 id="-paso-1-definir-el-macro-en-el-service-provider">⚙️ Paso 1: Definir el macro en el Service Provider</h2>
+<h2 id="-paso-1-definir-el-macro-en-el-service-provider">️ Paso 1: Definir el macro en el Service Provider</h2>
 <p>Edita el archivo <code>app/Providers/AppServiceProvider.php</code>:</p>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -904,14 +772,14 @@ Esto es muy útil si queremos reutilizar lógica que usamos frecuentemente.</p>
 </div>
 </div>
 <hr>
-<h2 id="-explicación-rápida">✏️ Explicación rápida</h2>
+<h2 id="-explicación-rápida">️ Explicación rápida</h2>
 <ul>
 <li>Recorremos cada elemento de la colección.</li>
 <li>Si el elemento es un array, convertimos sus claves a camelCase usando <code>Str::camel</code>.</li>
 <li>Si no es un array, lo devolvemos tal cual.</li>
 </ul>
 <hr>
-<h2 id="-paso-2-probarlo-en-tinker">🧪 Paso 2: Probarlo en Tinker</h2>
+<h2 id="paso-2-probarlo-en-tinker">Paso 2: Probarlo en Tinker</h2>
 <p>Abre Tinker:</p>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -959,7 +827,7 @@ Esto es muy útil si queremos reutilizar lógica que usamos frecuentemente.</p>
 </div>
 </div>
 <hr>
-<h2 id="-ventajas">✅ Ventajas</h2>
+<h2 id="ventajas">Ventajas</h2>
 
 
 <div class="alert alert-info" role="alert">
@@ -971,7 +839,7 @@ puedes transformarlas a camelCase de forma directa, sin escribir la lógica de n
 </div>
 
 <hr>
-<h2 id="-más-información-1">📚 Más información</h2>
+<h2 id="más-información-1">Más información</h2>
 
 
 
@@ -1073,8 +941,8 @@ window.markmap = {
 };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
-<script src="/laravel/js/main.min.6eb0b9973712a5097eb2eed7270caf210eef4a627ea63b065e308df139220920.js" integrity="sha256-brC5lzcSpQl&#43;su7XJwyvIQ7vSmJ&#43;pjsGXjCN8TkiCSA=" crossorigin="anonymous"></script>
-<script defer src="/laravel/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
 <script src='/laravel/js/tabpane-persist.js'></script>
 
   </body>

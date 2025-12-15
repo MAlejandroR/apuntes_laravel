@@ -2,7 +2,7 @@
 title: "10_Test unitarios"
 date: 2023-04-08T18:21:47+02:00
 draft: true
-weight: 30
+weight: 1
 ---
 ## Tipos de test en laravel
 Realizar test, es **muy importante**. Muchas veces pensamos que como no los necesitamos para que la apliación funcione lo dejamos para el final, o simplemente no lo hacemos (para ejemplo yo mismo :cold_face: )

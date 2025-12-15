@@ -12,7 +12,7 @@ Permiten transformar, filtrar, ordenar o agrupar datos de forma más {{< color >
 
 ---
 
-## ✏️ ¿Qué es una Collection en Laravel?
+## ️ ¿Qué es una Collection en Laravel?
 
 {{<definicion title="Collection" icon="fa-solid fa-layer-group">}}
 Una Collection es un objeto de la clase `Illuminate\Support\Collection` que envuelve un array y nos da métodos extra para trabajar de forma fluida y encadenada.
@@ -20,7 +20,7 @@ Una Collection es un objeto de la clase `Illuminate\Support\Collection` que envu
 
 ---
 
-## 🔍 Diferencia principal con un array tradicional
+##  Diferencia principal con un array tradicional
 
 Un **array** de PHP tiene funciones globales como `array_map`, `array_filter`…  
 Una **Collection** permite {{< color >}}encadenar métodos{{< /color >}}, haciendo el código más limpio y fácil de leer.
@@ -29,7 +29,7 @@ Una **Collection** permite {{< color >}}encadenar métodos{{< /color >}}, hacien
 
 ---
 
-## 🧪 Ejemplo rápido en Tinker
+##  Ejemplo rápido en Tinker
 
 Abre Tinker:
 
@@ -46,13 +46,13 @@ collect([1, 2, 3, 4])->map(fn($n) => $n * 2);
 
 ---
 
-## ✅ Métodos más usados
+##  Métodos más usados
 
 A continuación, algunos métodos básicos que marcan la diferencia frente a los arrays:
 
 ---
 
-### 🧰 map()
+###  map()
 
 Aplica una función a cada elemento.
 
@@ -63,7 +63,7 @@ collect([1, 2, 3])->map(fn($n) => $n + 10);
 
 ---
 
-### 🔎 filter()
+### filter()
 
 Filtra elementos que cumplen una condición.
 
@@ -74,7 +74,7 @@ collect([1, 2, 3, 4])->filter(fn($n) => $n > 2);
 
 ---
 
-### ➕ reduce()
+###  reduce()
 
 Reduce la colección a un solo valor.
 
@@ -85,7 +85,7 @@ collect([1, 2, 3])->reduce(fn($carry, $n) => $carry + $n, 0);
 
 ---
 
-## 📚 Más métodos interesantes
+##  Más métodos interesantes
 
 - `first()`: devuelve el primer elemento.
 - `pluck('campo')`: extrae los valores de una clave de un array de arrays u objetos.
@@ -94,7 +94,7 @@ collect([1, 2, 3])->reduce(fn($carry, $n) => $carry + $n, 0);
 
 ---
 
-## 🧩 ¿Por qué usar Collections?
+##  ¿Por qué usar Collections?
 
 {{< alert title="Ventaja principal" color="success" >}}
 Permiten escribir código más {{< color >}}declarativo, limpio y mantenible{{< /color >}}, sobre todo cuando trabajamos con datos de base de datos o APIs.
@@ -102,7 +102,7 @@ Permiten escribir código más {{< color >}}declarativo, limpio y mantenible{{< 
 
 ---
 
-## 📌 Conclusión
+## Conclusión
 
 Las Collections hacen que trabajar con datos sea más fácil y claro.
 Aunque internamente son arrays, nos ofrecen {{< color >}}decenas de métodos{{< /color >}} que podemos encadenar para transformar y filtrar datos de forma elegante.
@@ -113,14 +113,14 @@ Aunque internamente son arrays, nos ofrecen {{< color >}}decenas de métodos{{< 
 - https://laravel.com/docs/12.x/collections
   {{</referencias>}}
 
-# 🛠️ Añadir métodos personalizados a las Collections
+# ️ Añadir métodos personalizados a las Collections
 
 Laravel permite añadir nuevos métodos a las Collections usando la función {{< color >}}macro(){{< /color >}}.  
 Esto es muy útil si queremos reutilizar lógica que usamos frecuentemente.
 
 ---
 
-## ⚙️ ¿Cómo hacerlo?
+## ️ ¿Cómo hacerlo?
 
 Se hace dentro del método `boot` de un {{< color >}}Service Provider{{< /color >}}.
 
@@ -128,13 +128,13 @@ Normalmente, puedes usar el `AppServiceProvider` que Laravel crea por defecto.
 
 ---
 
-## ✏️ Ejemplo práctico
+## ️ Ejemplo práctico
 
 Imagina que queremos crear un método llamado {{< color >}}toUpper{{< /color >}} para transformar todos los strings de una colección a mayúsculas.
 
 ---
 
-### 📂 Paso 1: Editar el Service Provider
+###  Paso 1: Editar el Service Provider
 
 Edita `app/Providers/AppServiceProvider.php` y dentro del método `boot` añade:
 
@@ -153,7 +153,7 @@ return strtoupper($value);
 
 ---
 
-## ✅ Paso 2: Usarlo en Tinker o en el código
+##  Paso 2: Usarlo en Tinker o en el código
 
 Abre Tinker:
 
@@ -170,7 +170,7 @@ collect(['hola', 'mundo'])->toUpper();
 
 ---
 
-## 📌 Resumen
+##  Resumen
 
 - `macro()` es un método estático para añadir métodos personalizados a las Collections.
 - Se suele registrar en el método `boot` de un Service Provider.
@@ -178,13 +178,13 @@ collect(['hola', 'mundo'])->toUpper();
 
 ---
 
-## 📚 Más información
+## Más información
 
 {{<referencias title="Laravel Collections Macro" sub_title="Documentación y ejemplos" icon_image="laravel.svg">}}
 - https://laravel.com/docs/12.x/collections#extending-collections
   {{</referencias>}}
 -
-# 🐫 Crear un macro para convertir claves a camelCase
+#  Crear un macro para convertir claves a camelCase
 
 A veces tenemos una colección de arrays con claves en {{< color >}}snake_case{{< /color >}} y queremos transformarlas en {{< color >}}camelCase{{< /color >}}.
 
@@ -192,7 +192,7 @@ Con un macro, podemos hacerlo de forma elegante y reutilizable.
 
 ---
 
-## ⚙️ Paso 1: Definir el macro en el Service Provider
+## ️ Paso 1: Definir el macro en el Service Provider
 
 Edita el archivo `app/Providers/AppServiceProvider.php`:
 
@@ -217,7 +217,7 @@ return $item;
 
 ---
 
-## ✏️ Explicación rápida
+## ️ Explicación rápida
 
 - Recorremos cada elemento de la colección.
 - Si el elemento es un array, convertimos sus claves a camelCase usando `Str::camel`.
@@ -225,7 +225,7 @@ return $item;
 
 ---
 
-## 🧪 Paso 2: Probarlo en Tinker
+##  Paso 2: Probarlo en Tinker
 
 Abre Tinker:
 
@@ -258,7 +258,7 @@ $data->camelKeys();
 
 ---
 
-## ✅ Ventajas
+##  Ventajas
 
 {{< alert title="Reutilizable" color="info" >}}
 Con este macro, cada vez que tengas arrays con claves en snake_case,
@@ -267,7 +267,7 @@ puedes transformarlas a camelCase de forma directa, sin escribir la lógica de n
 
 ---
 
-## 📚 Más información
+##  Más información
 
 {{<referencias title="Laravel Collections Macro" sub_title="Documentación y ejemplos" icon_image="laravel.svg">}}
 - https://laravel.com/docs/12.x/collections#extending-collections

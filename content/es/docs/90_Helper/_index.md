@@ -1,11 +1,11 @@
 ---
 title: "API OpenAI"
 date: 2025-07-27T12:30:00+02:00
-draft: false
+draft: true
 weight: 80
 ---
 
-# 📚 Course
+#  Course
 **Chatbots personalizados con Laravel & OpenAI**
 https://aprendible.com/series/chatbots-personalizados-con-laravel-openai
 

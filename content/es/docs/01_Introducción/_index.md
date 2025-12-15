@@ -9,7 +9,7 @@ icon: fa-solid fa-info
 Idea de lo que es un framework.
 Trabajar con una herramienta profesional. 
 Entender el entorno (Instalación y configuración de Laravel).
-El patrón MVC y cómo Laravel lo implementa.
+El patrón MVC y cómo Laravel lo implementa. (Laravel es más que un típico MVC)
 El sistema de enrutamiento, middleware, y controladores.
 El ORM Eloquent para operaciones de base de datos.
 Autenticación, autorización y seguridad.
@@ -51,7 +51,7 @@ Laravel se ha ganado un lugar destacado en el desarrollo web por varias razones:
  >Laravel ofrece una **estructura de carpetas y ficheros del proyecto**  bien definida.    
  > Esto  **facilita el mantenimiento** del código y la colaboración entre desarrolladores.    
  > Es una organización intuitiva, pero puede ser uno de los puntos flojos, ya que nos tenemos que mover entre diferentes carpetas para localizar nuestros ficheros, y eso, sobre todo al principio, cuesta acostumbrarse.  
- > En la versión actual, **versión 11**, se ha reducido bastante respecto a versiones anteriores.  
+ > En la versión actual, **versión 12**, se ha reducido bastante respecto a versiones anteriores (Esta característica se potención en la versión 11.  
   {{< imgproc estructura_carpetas Fill "300x250" >}}
  Proyecto de laravel creado con phpstorm 
  {{< /imgproc >}}

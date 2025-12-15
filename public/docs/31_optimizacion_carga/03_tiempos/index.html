@@ -1,9 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head>
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 
 
 <link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
@@ -23,7 +23,7 @@ Instalación (solo en local) 1 composer require barryvdh/laravel-debugbar --dev 
 APP_DEBUG=true DEBUGBAR_ENABLED=true Te muestra:
 Tiempo total de ejecución Consultas SQL lentas Props de Inertia y su tamaño Eventos del ciclo de vida 🌐 4. Herramientas externas Google Lighthouse GTmetrix WebPageTest Lighthouse en Chrome F12 → pestaña Lighthouse Selecciona tipo de análisis (Mobile/Desktop) Ejecuta Revisa: First Contentful Paint, JS Execution Time, etc. 📌 Recomendaciones Mide siempre en modo producción (APP_ENV=production) Usa npm run build para tener JS optimizado Usa php artisan optimize y config:cache Usa lazy loading donde puedas Reduce props innecesarias en Inertia::share() ¿Quieres que prepare también una guía para detectar props pesadas en Inertia y cómo optimizarlas?">
 
-<meta property="og:url" content="https://web.infenlaces.com/laravel/docs/31_optimizacion_carga/03_tiempos/">
+<meta property="og:url" content="http://localhost:1313/laravel/docs/31_optimizacion_carga/03_tiempos/">
   <meta property="og:site_name" content="Laravel: Framework de php">
   <meta property="og:title" content="tiempos de carga">
   <meta property="og:description" content="🧰 3. Usar Laravel Debugbar Para ver tiempos del backend: consultas, render Blade, controladores, etc.
@@ -56,7 +56,7 @@ APP_DEBUG=true DEBUGBAR_ENABLED=true Te muestra:
 Tiempo total de ejecución Consultas SQL lentas Props de Inertia y su tamaño Eventos del ciclo de vida 🌐 4. Herramientas externas Google Lighthouse GTmetrix WebPageTest Lighthouse en Chrome F12 → pestaña Lighthouse Selecciona tipo de análisis (Mobile/Desktop) Ejecuta Revisa: First Contentful Paint, JS Execution Time, etc. 📌 Recomendaciones Mide siempre en modo producción (APP_ENV=production) Usa npm run build para tener JS optimizado Usa php artisan optimize y config:cache Usa lazy loading donde puedas Reduce props innecesarias en Inertia::share() ¿Quieres que prepare también una guía para detectar props pesadas en Inertia y cómo optimizarlas?">
 
 
-<link rel="preload" href="/laravel/scss/main.min.f08d3ee4c2260e45bc83dcd9b8fb5edb2d493ec4ff88d5536efe7bcddf062080.css" as="style"><link href="/laravel/scss/main.min.f08d3ee4c2260e45bc83dcd9b8fb5edb2d493ec4ff88d5536efe7bcddf062080.css" rel="stylesheet">
+<link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -124,21 +124,6 @@ Tiempo total de ejecución Consultas SQL lentas Props de Inertia y su tamaño Ev
   <input type="checkbox" id="m-laraveldocs02_instalacic3b3n-check"/>
   <label for="m-laraveldocs02_instalacic3b3n-check"><a href="/laravel/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs10_test-li">
-  <input type="checkbox" id="m-laraveldocs10_test-check"/>
-  <label for="m-laraveldocs10_test-check"><a href="/laravel/docs/10_test/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_test"><span class="">10_Test unitarios</span></a></label>
-  
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_testchat-li">
-  <input type="checkbox" id="m-laraveldocs10_testchat-check"/>
-  <label for="m-laraveldocs10_testchat-check"><a href="/laravel/docs/10_test/chat/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_testchat"><span class="">10_Test unitarios del chat</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_testpest-li">
-  <input type="checkbox" id="m-laraveldocs10_testpest-check"/>
-  <label for="m-laraveldocs10_testpest-check"><a href="/laravel/docs/10_test/pest/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs10_testpest"><span class="">Pest</span></a></label>
-  
-</li>
-  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs03_rutas-li">
   <input type="checkbox" id="m-laraveldocs03_rutas-check"/>
   <label for="m-laraveldocs03_rutas-check"><a href="/laravel/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
@@ -166,10 +151,6 @@ Tiempo total de ejecución Consultas SQL lentas Props de Inertia y su tamaño Ev
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs50_tinker-li">
-  <input type="checkbox" id="m-laraveldocs50_tinker-check"/>
-  <label for="m-laraveldocs50_tinker-check"><a href="/laravel/docs/50_tinker/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs50_tinker"><span class="">tinker</span></a></label>
-  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs60_collection-li">
   <input type="checkbox" id="m-laraveldocs60_collection-check"/>
   <label for="m-laraveldocs60_collection-check"><a href="/laravel/docs/60_collection/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs60_collection"><span class="">Collection en Laravel</span></a></label>
@@ -182,33 +163,6 @@ Tiempo total de ejecución Consultas SQL lentas Props de Inertia y su tamaño Ev
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionbreeze-li">
   <input type="checkbox" id="m-laraveldocs06_autenticacionbreeze-check"/>
   <label for="m-laraveldocs06_autenticacionbreeze-check"><a href="/laravel/docs/06_autenticacion/breeze/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionbreeze"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacionfortify-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify-check"/>
-  <label for="m-laraveldocs06_autenticacionfortify-check"><a href="/laravel/docs/06_autenticacion/fortify/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionfortify"><i class="fa-solid fa-sitemap"></i><span class="">Fortify y Jetstream</span></a></label>
-  
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-check"/>
-  <label for="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-check"><a href="/laravel/docs/06_autenticacion/fortify/02_page_role_autenticated/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated"><i class="fa-solid fa-sitemap"></i><span class="">Dashboard según rol</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortify01_instalacion-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify01_instalacion-check"/>
-  <label for="m-laraveldocs06_autenticacionfortify01_instalacion-check"><a href="/laravel/docs/06_autenticacion/fortify/01_instalacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortify01_instalacion"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortifydiagrama-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionfortifydiagrama-check"/>
-  <label for="m-laraveldocs06_autenticacionfortifydiagrama-check"><a href="/laravel/docs/06_autenticacion/fortify/diagrama/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortifydiagrama"><i class="fa-solid fa-sitemap"></i><span class="">Diagrama de flujo</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-check"/>
-  <label for="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-check"><a href="/laravel/docs/06_autenticacion/fortify/peronsalizar_controladores/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores"><i class="fa-solid fa-sitemap"></i><span class="">Personalizar controladores</span></a></label>
-  
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionotp-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionotp-check"/>
-  <label for="m-laraveldocs06_autenticacionotp-check"><a href="/laravel/docs/06_autenticacion/otp/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionotp"><i class="fa-solid fa-sitemap"></i><span class="">OTP One-Time Password</span></a></label>
   
 </li>
   </ul>
@@ -231,14 +185,6 @@ Tiempo total de ejecución Consultas SQL lentas Props de Inertia y su tamaño Ev
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs80_api_openai-li">
-  <input type="checkbox" id="m-laraveldocs80_api_openai-check"/>
-  <label for="m-laraveldocs80_api_openai-check"><a href="/laravel/docs/80_api_openai/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs80_api_openai"><span class="">API OpenAI</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs90_helper-li">
-  <input type="checkbox" id="m-laraveldocs90_helper-check"/>
-  <label for="m-laraveldocs90_helper-check"><a href="/laravel/docs/90_helper/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs90_helper"><span class="">API OpenAI</span></a></label>
-  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs100_anexos-li">
   <input type="checkbox" id="m-laraveldocs100_anexos-check"/>
   <label for="m-laraveldocs100_anexos-check"><a href="/laravel/docs/100_anexos/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs100_anexos"><span class="">Anexos</span></a></label>
@@ -277,71 +223,6 @@ Tiempo total de ejecución Consultas SQL lentas Props de Inertia y su tamaño Ev
   <input type="checkbox" id="m-laraveldocs11_roles-check"/>
   <label for="m-laraveldocs11_roles-check"><a href="/laravel/docs/11_roles/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs11_roles"><i class="fa-brands fa-critical-role"></i><span class="">Roles</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs13_blueprint-li">
-  <input type="checkbox" id="m-laraveldocs13_blueprint-check"/>
-  <label for="m-laraveldocs13_blueprint-check"><a href="/laravel/docs/13_blueprint/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_blueprint"><i class="fas fa-database"></i><span class="">Blueprint</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs14_filament-li">
-  <input type="checkbox" id="m-laraveldocs14_filament-check"/>
-  <label for="m-laraveldocs14_filament-check"><a href="/laravel/docs/14_filament/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filament"><i class="fas fa-sliders-h"></i><span class="">Filament</span></a></label>
-  
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filamentpage-li">
-  <input type="checkbox" id="m-laraveldocs14_filamentpage-check"/>
-  <label for="m-laraveldocs14_filamentpage-check"><a href="/laravel/docs/14_filament/page/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filamentpage"><i class="fas"></i><span class="">Creando Páginas</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filamentwidget-li">
-  <input type="checkbox" id="m-laraveldocs14_filamentwidget-check"/>
-  <label for="m-laraveldocs14_filamentwidget-check"><a href="/laravel/docs/14_filament/widget/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filamentwidget"><i class="fas"></i><span class="">Widgets en el Panel</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs14_filamentpanel-li">
-  <input type="checkbox" id="m-laraveldocs14_filamentpanel-check"/>
-  <label for="m-laraveldocs14_filamentpanel-check"><a href="/laravel/docs/14_filament/panel/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filamentpanel"><i class="fas fa-rectangle-group"></i><span class="">Panel </span></a></label>
-  
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filamentpanelpanel-li">
-  <input type="checkbox" id="m-laraveldocs14_filamentpanelpanel-check"/>
-  <label for="m-laraveldocs14_filamentpanelpanel-check"><a href="/laravel/docs/14_filament/panel/panel/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs14_filamentpanelpanel"><i class="fas fa-bars"></i><span class="">Navegación</span></a></label>
-  
-</li>
-  </ul>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs15_storage-li">
-  <input type="checkbox" id="m-laraveldocs15_storage-check"/>
-  <label for="m-laraveldocs15_storage-check"><a href="/laravel/docs/15_storage/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs15_storage"><i class="fas fa-sliders-h"></i><span class="">Storage</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs30_pinia-li">
-  <input type="checkbox" id="m-laraveldocs30_pinia-check"/>
-  <label for="m-laraveldocs30_pinia-check"><a href="/laravel/docs/30_pinia/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs30_pinia"><i class="fas fa-database"></i><span class="">Pinia</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs40_league_csv-li">
-  <input type="checkbox" id="m-laraveldocs40_league_csv-check"/>
-  <label for="m-laraveldocs40_league_csv-check"><a href="/laravel/docs/40_league_csv/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs40_league_csv"><span class="">Ficheros CSV en Laravel</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs31_optimizacion_carga-li">
-  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga-check" checked/>
-  <label for="m-laraveldocs31_optimizacion_carga-check"><a href="/laravel/docs/31_optimizacion_carga/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs31_optimizacion_carga"><i class="fas fa-tachometer-alt"></i><span class="">Optimización de carga con Laravel &#43; Inertia &#43; Vue</span></a></label>
-  
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga02_lazy-li">
-  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga02_lazy-check"/>
-  <label for="m-laraveldocs31_optimizacion_carga02_lazy-check"><a href="/laravel/docs/31_optimizacion_carga/02_lazy/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga02_lazy"><i class="fas fa-code-split"></i><span class="">Lazy Loading con Vue &#43; Inertia</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocs31_optimizacion_carga03_tiempos-li">
-  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga03_tiempos-check" checked/>
-  <label for="m-laraveldocs31_optimizacion_carga03_tiempos-check"><a href="/laravel/docs/31_optimizacion_carga/03_tiempos/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga03_tiempos"><i class="fas fa-code-split"></i><span class="td-sidebar-nav-active-item">tiempos de carga</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga04_props_pesadas-li">
-  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga04_props_pesadas-check"/>
-  <label for="m-laraveldocs31_optimizacion_carga04_props_pesadas-check"><a href="/laravel/docs/31_optimizacion_carga/04_props_pesadas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga04_props_pesadas"><i class="fas fa-box-open"></i><span class="">Cómo detectar y optimizar props pesadas en Inertia.js</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga05_carga_datos_axios-li">
-  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga05_carga_datos_axios-check"/>
-  <label for="m-laraveldocs31_optimizacion_carga05_carga_datos_axios-check"><a href="/laravel/docs/31_optimizacion_carga/05_carga_datos_axios/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga05_carga_datos_axios"><i class="fas fa-cloud-download-alt"></i><span class="">Cargar datos desde Vue con Fetch o Axios (Inertia)</span></a></label>
-  
-</li>
-  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet-li">
   <input type="checkbox" id="m-laraveldocs999_cheatseet-check"/>
   <label for="m-laraveldocs999_cheatseet-check"><a href="/laravel/docs/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet"><span class="">Cheat Sheet</span></a></label>
@@ -407,10 +288,6 @@ Tiempo total de ejecución Consultas SQL lentas Props de Inertia y su tamaño Ev
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs00_vue-li">
-  <input type="checkbox" id="m-laraveldocs00_vue-check"/>
-  <label for="m-laraveldocs00_vue-check"><a href="/laravel/docs/00_vue/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs00_vue"><span class="">Vue</span></a></label>
-  
 </li>
   </ul>
 </li>
@@ -445,47 +322,38 @@ Tiempo total de ejecución Consultas SQL lentas Props de Inertia y su tamaño Ev
             <div class="taxonomy taxonomy-terms-cloud taxo-categories">
       <h5 class="taxonomy-title">Categories</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/ficheros/" data-taxonomy-term="ficheros"><span class="taxonomy-label">Ficheros</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">10</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">5</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
   <div class="taxonomy taxonomy-terms-cloud taxo-tags">
       <h5 class="taxonomy-title">Tags</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/blueprint/" data-taxonomy-term="blueprint"><span class="taxonomy-label">Blueprint</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/csv/" data-taxonomy-term="csv"><span class="taxonomy-label">CSV</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/dasboard/" data-taxonomy-term="dasboard"><span class="taxonomy-label">Dasboard</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">6</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/files/" data-taxonomy-term="files"><span class="taxonomy-label">Files</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/generaci%C3%B3n-de-componentes/" data-taxonomy-term="generaci%C3%B3n-de-componentes"><span class="taxonomy-label">Generación De Componentes</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">6</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">7</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">13</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/pinia/" data-taxonomy-term="pinia"><span class="taxonomy-label">Pinia</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/storage/" data-taxonomy-term="storage"><span class="taxonomy-label">Storage</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">5</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/yaml/" data-taxonomy-term="yaml"><span class="taxonomy-label">YAML</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
   
@@ -500,7 +368,7 @@ Tiempo total de ejecución Consultas SQL lentas Props de Inertia y su tamaño Ev
   <li class="breadcrumb-item">
     <a href="/laravel/docs/">Laravel</a></li>
   <li class="breadcrumb-item">
-    <a href="/laravel/docs/31_optimizacion_carga/">Optimización de carga con Laravel &#43; Inertia &#43; Vue</a></li>
+    <a href="">Optimización de carga con Laravel &#43; Inertia &#43; Vue</a></li>
   <li class="breadcrumb-item active" aria-current="page">
     tiempos de carga</li>
   </ol>
@@ -513,15 +381,15 @@ Tiempo total de ejecución Consultas SQL lentas Props de Inertia y su tamaño Ev
 		<div class="taxonomy taxonomy-terms-article taxo-categories">
   <h5 class="taxonomy-title">Categories:</h5>
   <ul class="taxonomy-terms">
-    <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span></a></li>
     </ul>
 </div>
 <div class="taxonomy taxonomy-terms-article taxo-tags">
   <h5 class="taxonomy-title">Tags:</h5>
   <ul class="taxonomy-terms">
-    <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span></a></li>
-    <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span></a></li>
-    <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span></a></li>
     </ul>
 </div>
 
@@ -630,8 +498,8 @@ window.markmap = {
 };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
-<script src="/laravel/js/main.min.6eb0b9973712a5097eb2eed7270caf210eef4a627ea63b065e308df139220920.js" integrity="sha256-brC5lzcSpQl&#43;su7XJwyvIQ7vSmJ&#43;pjsGXjCN8TkiCSA=" crossorigin="anonymous"></script>
-<script defer src="/laravel/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
 <script src='/laravel/js/tabpane-persist.js'></script>
 
   </body>

@@ -16,7 +16,7 @@ Se integra con el sistema de autenticación estándar, por lo que puedes asignar
 
 ---
 
-### 🧩 Instalación
+###  Instalación
 
 {{< highlight bash "linenos=table" >}}
 composer require spatie/laravel-permission
@@ -43,7 +43,7 @@ Esto creará las tablas necesarias:
 
 ---
 
-### ⚙️ Configuración inicial
+### ️ Configuración inicial
 
 En el modelo `User.php` añade el trait:
 
@@ -60,7 +60,7 @@ use HasRoles;
 
 ---
 
-### 🧱 Crear roles
+###  Crear roles
 
 Puedes crear roles desde el seeder, Tinker o directamente en código:
 
@@ -104,7 +104,7 @@ php artisan db:seed --class=RolesTableSeeder
 
 ---
 
-### 👤 Asignar un rol a un usuario
+###  Asignar un rol a un usuario
 
 Cuando registras un usuario o estudiante, puedes asignarle un rol inmediatamente:
 
@@ -126,7 +126,7 @@ auth()->user()->assignRole('teacher');
 
 ---
 
-### 🔍 Obtener y comprobar roles
+###  Obtener y comprobar roles
 
 > Obtener todos los roles del usuario autenticado:
 
@@ -158,7 +158,7 @@ if (auth()->user()->hasAnyRole(['admin', 'teacher'])) {
 
 ---
 
-### 🛡️ Usar roles en vistas (Blade)
+### ️ Usar roles en vistas (Blade)
 
 {{< highlight blade "linenos=table" >}}
 @role('admin')
@@ -180,17 +180,18 @@ También puedes usar directivas condicionales:
 
 ---
 
-### 🧭 Resumen final
+###  Resumen final
 
-| Acción | Ejemplo |
-|--------|----------|
-| **Instalar paquete** | `composer require spatie/laravel-permission` |
-| **Publicar y migrar** | `php artisan vendor:publish ... && php artisan migrate` |
-| **Añadir HasRoles al modelo** | `use HasRoles;` |
-| **Crear roles** | `Role::create(['name' => 'student']);` |
-| **Asignar rol a usuario** | `$user->assignRole('student');` |
-| **Comprobar rol** | `auth()->user()->hasRole('admin');` |
-| **Obtener rol actual** | `auth()->user()->getRoleNames()->first();` |
+| Acción                        | Ejemplo                                                 |
+|-------------------------------|---------------------------------------------------------|
+| **Instalar paquete**          | `composer require spatie/laravel-permission`            |
+| **Publicar y migrar**         | `php artisan vendor:publish ... && php artisan migrate` |
+| **Añadir HasRoles al modelo** | `use HasRoles;`                                         |
+| **Crear roles**               | `Role::create(['name' => 'student']);`                  |
+| **Asignar rol a usuario**     | `$user->assignRole('student');`                         |
+| **Comprobar rol**             | `auth()->user()->hasRole('admin');`                     |
+| **Obtener rol actual**        | `auth()->user()->getRoleNames()->first();`              |
+| **Usuarios con un rol**       | `User::role("admin")->get();`                           |
 
 ---
 
