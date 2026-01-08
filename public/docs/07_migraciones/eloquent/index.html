@@ -1,9 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 
 
 <link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
@@ -21,7 +21,7 @@
 <meta name="description" content="Eloquent ORM en Laravel Eloquent ORM en Laravel ofrece una variedad de métodos para interactuar con la base de datos de forma eficiente y elegante. Aquí tienes un resumen escueto de algunos de los métodos más comunes que puedes usar para consultas, inserciones, actualizaciones y borrados:
 Métodos para Consultas all(): Recupera una colección con todos los registros del modelo. Cada ítem es un objeto del modelo ya “hidratado” (con datos y métodos listos para usar). find($id): Encuentra un registro por su clave primaria. where(&#39;column&#39;, &#39;value&#39;): Aplica una condición SQL WHERE. whereNull(&#39;column&#39;): Filtra registros donde la columna es NULL. whereNotNull(&#39;column&#39;): Filtra registros donde la columna NO es NULL. orderBy(&#39;column&#39;, &#39;direction&#39;): Ordena los resultados. take($limit): Limita el número de resultados. get(): Ejecuta la consulta y devuelve una colección de modelos completamente hidratados (objetos Eloquent). Se aplica sobre un Query Builder. $users = User::where(&#39;active&#39;, 1)-&gt;get(); // Collection&lt;User&gt; Métodos para Inserciones y Actualizaciones save(): Guarda un nuevo modelo o actualiza un modelo existente. create($attributes): Crea un nuevo registro con los atributos proporcionados. update($attributes): Actualiza un modelo con los atributos proporcionados. Métodos para Borrados delete(): Elimina un modelo de la base de datos. destroy($ids): Elimina modelos por su clave primaria. softDeletes(): Hace un borrado suave (no elimina los registros de la base de datos, solo los marca como borrados). Métodos avanzados con relaciones has(&#39;relation&#39;): Filtra los registros que tienen al menos una relación. Family::has(&#39;cycles&#39;)-&gt;get(); whereHas(&#39;relation&#39;, function($query){ ... }): Igual que has(), pero permite añadir condiciones a la relación. Family::whereHas(&#39;cycles&#39;, function($q) { $q-&gt;where(&#39;year&#39;, 2025); })-&gt;get(); orWhereHas(&#39;relation&#39;, function($query){ ... }): Igual que whereHas(), pero combina la condición usando OR.">
 
-<meta property="og:url" content="http://localhost:1313/laravel/docs/07_migraciones/eloquent/">
+<meta property="og:url" content="https://web.infenlaces.com/laravel/docs/07_migraciones/eloquent/">
   <meta property="og:site_name" content="Laravel: Framework de php">
   <meta property="og:title" content="Eloquent">
   <meta property="og:description" content="Eloquent ORM en Laravel Eloquent ORM en Laravel ofrece una variedad de métodos para interactuar con la base de datos de forma eficiente y elegante. Aquí tienes un resumen escueto de algunos de los métodos más comunes que puedes usar para consultas, inserciones, actualizaciones y borrados:
@@ -44,7 +44,7 @@ Métodos para Consultas all(): Recupera una colección con todos los registros d
 Métodos para Consultas all(): Recupera una colección con todos los registros del modelo. Cada ítem es un objeto del modelo ya “hidratado” (con datos y métodos listos para usar). find($id): Encuentra un registro por su clave primaria. where(&#39;column&#39;, &#39;value&#39;): Aplica una condición SQL WHERE. whereNull(&#39;column&#39;): Filtra registros donde la columna es NULL. whereNotNull(&#39;column&#39;): Filtra registros donde la columna NO es NULL. orderBy(&#39;column&#39;, &#39;direction&#39;): Ordena los resultados. take($limit): Limita el número de resultados. get(): Ejecuta la consulta y devuelve una colección de modelos completamente hidratados (objetos Eloquent). Se aplica sobre un Query Builder. $users = User::where(&#39;active&#39;, 1)-&gt;get(); // Collection&lt;User&gt; Métodos para Inserciones y Actualizaciones save(): Guarda un nuevo modelo o actualiza un modelo existente. create($attributes): Crea un nuevo registro con los atributos proporcionados. update($attributes): Actualiza un modelo con los atributos proporcionados. Métodos para Borrados delete(): Elimina un modelo de la base de datos. destroy($ids): Elimina modelos por su clave primaria. softDeletes(): Hace un borrado suave (no elimina los registros de la base de datos, solo los marca como borrados). Métodos avanzados con relaciones has(&#39;relation&#39;): Filtra los registros que tienen al menos una relación. Family::has(&#39;cycles&#39;)-&gt;get(); whereHas(&#39;relation&#39;, function($query){ ... }): Igual que has(), pero permite añadir condiciones a la relación. Family::whereHas(&#39;cycles&#39;, function($q) { $q-&gt;where(&#39;year&#39;, 2025); })-&gt;get(); orWhereHas(&#39;relation&#39;, function($query){ ... }): Igual que whereHas(), pero combina la condición usando OR.">
 
 
-<link href="/laravel/scss/main.css" rel="stylesheet">
+<link rel="preload" href="/laravel/scss/main.min.f08d3ee4c2260e45bc83dcd9b8fb5edb2d493ec4ff88d5536efe7bcddf062080.css" as="style"><link href="/laravel/scss/main.min.f08d3ee4c2260e45bc83dcd9b8fb5edb2d493ec4ff88d5536efe7bcddf062080.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -342,38 +342,38 @@ Métodos para Consultas all(): Recupera una colección con todos los registros d
             <div class="taxonomy taxonomy-terms-cloud taxo-categories">
       <h5 class="taxonomy-title">Categories</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
   <div class="taxonomy taxonomy-terms-cloud taxo-tags">
       <h5 class="taxonomy-title">Tags</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="https://web.infenlaces.com/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
   
@@ -1286,8 +1286,8 @@ window.markmap = {
 };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
-<script src="/laravel/js/main.js"></script>
-<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src="/laravel/js/main.min.6eb0b9973712a5097eb2eed7270caf210eef4a627ea63b065e308df139220920.js" integrity="sha256-brC5lzcSpQl&#43;su7XJwyvIQ7vSmJ&#43;pjsGXjCN8TkiCSA=" crossorigin="anonymous"></script>
+<script defer src="/laravel/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
 <script src='/laravel/js/tabpane-persist.js'></script>
 
   </body>
