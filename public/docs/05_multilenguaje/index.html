@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="alternate" type="application/rss&#43;xml" href="https://web.infenlaces.com/laravel/docs/08_crud/03_el-controlador/02_crearalumno/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="https://web.infenlaces.com/laravel/docs/05_multilenguaje/index.xml">
 <meta name="robots" content="index, follow">
 
 
@@ -18,27 +18,30 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
-<title>Creando elementos | Laravel: Framework de php</title>
+<title>Multilenguaje | Laravel: Framework de php</title>
 <meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
 
-<meta property="og:url" content="https://web.infenlaces.com/laravel/docs/08_crud/03_el-controlador/02_crearalumno/">
+<meta property="og:url" content="https://web.infenlaces.com/laravel/docs/05_multilenguaje/">
   <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Creando elementos">
-  <meta property="og:description" content="Crear un nuevo alumno Crear un nuevo alumno es una acción de dos pasos
-Primero retornamos un formulario para rellenar los datos del nuevo alumno Segundo guardamos el alumno en la base de datos y retornamos todos un listado con todos los alumnos Retornando el formulario Lo primero debemos de generar un botón en la vista para que el usuario pueda seleccionar la opción de crear un nuevo alumno. Para ello modificamos el fichero resources/view/alumnos/listado.blade.php">
+  <meta property="og:title" content="Multilenguaje">
+  <meta property="og:description" content="Estableciendo lenguajes title: “Selector de idioma en Laravel 12 con Alpine.js” date: 2026-01-08 draft: false weight: 20 icon: fa-solid fa-language Selector de idioma en Laravel 12 con Alpine.js En este apartado se explica paso a paso cómo implementar un selector de idiomas desplegable usando Alpine.js, con persistencia del idioma en sesión mediante un middleware en Laravel 12.
+1. Instalación del paquete de idiomas Laravel incluye el sistema de localización, pero no incluye traducciones.
+El paquete recomendado actualmente es laravel-lang/lang.">
   <meta property="og:locale" content="es">
   <meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Creando elementos">
-  <meta itemprop="description" content="Crear un nuevo alumno Crear un nuevo alumno es una acción de dos pasos
-Primero retornamos un formulario para rellenar los datos del nuevo alumno Segundo guardamos el alumno en la base de datos y retornamos todos un listado con todos los alumnos Retornando el formulario Lo primero debemos de generar un botón en la vista para que el usuario pueda seleccionar la opción de crear un nuevo alumno. Para ello modificamos el fichero resources/view/alumnos/listado.blade.php">
+  <meta itemprop="name" content="Multilenguaje">
+  <meta itemprop="description" content="Estableciendo lenguajes title: “Selector de idioma en Laravel 12 con Alpine.js” date: 2026-01-08 draft: false weight: 20 icon: fa-solid fa-language Selector de idioma en Laravel 12 con Alpine.js En este apartado se explica paso a paso cómo implementar un selector de idiomas desplegable usando Alpine.js, con persistencia del idioma en sesión mediante un middleware en Laravel 12.
+1. Instalación del paquete de idiomas Laravel incluye el sistema de localización, pero no incluye traducciones.
+El paquete recomendado actualmente es laravel-lang/lang.">
   <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
   <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="733">
+  <meta itemprop="wordCount" content="618">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Creando elementos">
-  <meta name="twitter:description" content="Crear un nuevo alumno Crear un nuevo alumno es una acción de dos pasos
-Primero retornamos un formulario para rellenar los datos del nuevo alumno Segundo guardamos el alumno en la base de datos y retornamos todos un listado con todos los alumnos Retornando el formulario Lo primero debemos de generar un botón en la vista para que el usuario pueda seleccionar la opción de crear un nuevo alumno. Para ello modificamos el fichero resources/view/alumnos/listado.blade.php">
+  <meta name="twitter:title" content="Multilenguaje">
+  <meta name="twitter:description" content="Estableciendo lenguajes title: “Selector de idioma en Laravel 12 con Alpine.js” date: 2026-01-08 draft: false weight: 20 icon: fa-solid fa-language Selector de idioma en Laravel 12 con Alpine.js En este apartado se explica paso a paso cómo implementar un selector de idiomas desplegable usando Alpine.js, con persistencia del idioma en sesión mediante un middleware en Laravel 12.
+1. Instalación del paquete de idiomas Laravel incluye el sistema de localización, pero no incluye traducciones.
+El paquete recomendado actualmente es laravel-lang/lang.">
 
 
 <link rel="preload" href="/laravel/scss/main.min.f08d3ee4c2260e45bc83dcd9b8fb5edb2d493ec4ff88d5536efe7bcddf062080.css" as="style"><link href="/laravel/scss/main.min.f08d3ee4c2260e45bc83dcd9b8fb5edb2d493ec4ff88d5536efe7bcddf062080.css" rel="stylesheet">
@@ -136,9 +139,9 @@ Primero retornamos un formulario para rellenar los datos del nuevo alumno Segund
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs05_multilenguaje-li">
-  <input type="checkbox" id="m-laraveldocs05_multilenguaje-check"/>
-  <label for="m-laraveldocs05_multilenguaje-check"><a href="/laravel/docs/05_multilenguaje/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs05_multilenguaje"><span class="">Multilenguaje</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocs05_multilenguaje-li">
+  <input type="checkbox" id="m-laraveldocs05_multilenguaje-check" checked/>
+  <label for="m-laraveldocs05_multilenguaje-check"><a href="/laravel/docs/05_multilenguaje/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laraveldocs05_multilenguaje"><span class="td-sidebar-nav-active-item">Multilenguaje</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs60_collection-li">
   <input type="checkbox" id="m-laraveldocs60_collection-check"/>
@@ -297,15 +300,41 @@ Primero retornamos un formulario para rellenar los datos del nuevo alumno Segund
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#crear-un-nuevo-alumno">Crear un nuevo alumno</a>
+    <li><a href="#estableciendo-lenguajes">Estableciendo lenguajes</a></li>
+    <li><a href="#icon-fa-solid-fa-language">title: &ldquo;Selector de idioma en Laravel 12 con Alpine.js&rdquo;
+date: 2026-01-08
+draft: false
+weight: 20
+icon: fa-solid fa-language</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1-instalación-del-paquete-de-idiomas">1. Instalación del paquete de idiomas</a>
       <ul>
-        <li><a href="#retornando-el-formulario">Retornando el formulario</a></li>
-        <li><a href="#el-controlador">El controlador</a></li>
-        <li><a href="#creando-la-vista">Creando la vista</a></li>
-        <li><a href="#método-store">Método store</a></li>
-        <li><a href="#clases-de-request-en-laravel">Clases de Request en Laravel</a></li>
+        <li><a href="#instalación">Instalación</a></li>
+        <li><a href="#añadir-idiomas">Añadir idiomas</a></li>
       </ul>
     </li>
+    <li><a href="#2-configuración-básica-de-localización">2. Configuración básica de localización</a></li>
+    <li><a href="#3-middleware-para-establecer-el-idioma">3. Middleware para establecer el idioma</a>
+      <ul>
+        <li><a href="#31-crear-el-middleware">3.1 Crear el middleware</a></li>
+        <li><a href="#32-implementación-del-middleware">3.2 Implementación del middleware</a></li>
+        <li><a href="#33-registro-del-middleware-laravel-12">3.3 Registro del middleware (Laravel 12)</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-ruta-para-cambiar-el-idioma">4. Ruta para cambiar el idioma</a></li>
+    <li><a href="#5-alpinejs-en-laravel-12">5. Alpine.js en Laravel 12</a></li>
+    <li><a href="#6-componente-desplegable-de-idiomas">6. Componente desplegable de idiomas</a></li>
+    <li><a href="#7-uso-del-componente">7. Uso del componente</a></li>
+    <li><a href="#8-uso-de-traducciones">8. Uso de traducciones</a>
+      <ul>
+        <li><a href="#ejemplo-simple">Ejemplo simple</a></li>
+        <li><a href="#archivos-personalizados">Archivos personalizados</a></li>
+      </ul>
+    </li>
+    <li><a href="#9-flujo-completo-del-sistema">9. Flujo completo del sistema</a></li>
+    <li><a href="#10-observaciones-importantes">10. Observaciones importantes</a></li>
   </ul>
 </nav>
       </div>
@@ -358,346 +387,97 @@ Primero retornamos un formulario para rellenar los datos del nuevo alumno Segund
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
     <a href="/laravel/docs/">Laravel</a></li>
-  <li class="breadcrumb-item">
-    <a href="">Creando un CRUD</a></li>
-  <li class="breadcrumb-item">
-    <a href="">El controlador y las 10_vistas</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    Creando elementos</li>
+    Multilenguaje</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>Creando elementos</h1>
+	<h1>Multilenguaje</h1>
   
 	<header class="article-meta">
 		
 </header>
-	<h2 id="crear-un-nuevo-alumno">Crear un nuevo alumno</h2>
-<p><strong>Crear un nuevo alumno es una acción de dos pasos</strong></p>
-<ol>
-<li>Primero 
-<strong>
-<span class="font-weight-bold text-primary">
-
-    retornamos un formulario
-
-</span>
-</strong>
- para rellenar los datos del nuevo alumno</li>
-<li>Segundo 
-<strong>
-<span class="font-weight-bold text-primary">
-
-    guardamos el alumno en la base de datos
-
-</span>
-</strong>
- y retornamos todos un listado con todos los alumnos</li>
-</ol>
-<h3 id="retornando-el-formulario">Retornando el formulario</h3>
-<ul>
-<li>Lo primero debemos de generar un botón en la vista para que el usuario pueda seleccionar la opción de crear un nuevo
-alumno.</li>
-<li>Para ello modificamos el fichero 
-<span class="font-weight-bold text-primary">
-
-
-    resources/view/alumnos/listado.blade.php
-
-</span>
-</li>
-</ul>
-<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 923px">
-<img class="card-img-top" src="/laravel/docs/08_crud/03_el-controlador/02_crearalumno/createAlumno_hu_62c2de1925d2eba0.png" width="913" height="372">
-<figcaption class="card-body px-0 pt-2 pb-0">
-<p class="card-text">
-
-
-
-
-</p>
-</figcaption>
-</figure>
-
-<p><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+	<h2 id="estableciendo-lenguajes">Estableciendo lenguajes</h2>
+<hr>
+<h2 id="icon-fa-solid-fa-language">title: &ldquo;Selector de idioma en Laravel 12 con Alpine.js&rdquo;
+date: 2026-01-08
+draft: false
+weight: 20
+icon: fa-solid fa-language</h2>
+<h1 id="selector-de-idioma-en-laravel-12-con-alpinejs">Selector de idioma en Laravel 12 con Alpine.js</h1>
+<p>En este apartado se explica <strong>paso a paso</strong> cómo implementar un <strong>selector de idiomas desplegable</strong> usando <strong>Alpine.js</strong>, con <strong>persistencia del idioma en sesión</strong> mediante un <strong>middleware en Laravel 12</strong>.</p>
+<hr>
+<h2 id="1-instalación-del-paquete-de-idiomas">1. Instalación del paquete de idiomas</h2>
+<p>Laravel incluye el sistema de localización, pero <strong>no incluye traducciones</strong>.<br>
+El paquete recomendado actualmente es <code>laravel-lang/lang</code>.</p>
+<h3 id="instalación">Instalación</h3>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;head&gt;
-</span></span><span style="display:flex;"><span>&lt;!-- ....  --&gt;
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>  @vite([<span style="color:#cd5555">&#34;resources/css/app.css&#34;</span>])
-</span></span><span style="display:flex;"><span>&lt;/head&gt;
-</span></span><span style="display:flex;"><span>&lt;body&gt;
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>&lt;div class=<span style="color:#cd5555">&#34;flex flex-col justify-center items-center w-full&#34;</span>&gt;
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>&lt;a href=<span style="color:#cd5555">&#34;{{route(&#34;</span>alumnos.create<span style="color:#cd5555">&#34;)}}&#34;</span> class=<span style="color:#cd5555">&#34;bg-amber-700 text-4xl text-white p-5 m-5 rounded-3xl outline-4  &#34;</span>&gt;Crear Nuevo Alumno&lt;/a&gt;
-</span></span><span style="display:flex;"><span>  &lt;table&gt;
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>      &lt;caption class=<span style="color:#cd5555">&#34;text-3xl text-green-800 mb-5&#34;</span>&gt;Listado de alumnos&lt;/caption&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>     &lt;!-- .... --&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;/div&gt;</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require laravel-lang/lang</span></span></code></pre></td></tr></table>
 </div>
 </div>
-
-
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Acciones</h4>
-
-    <p>Hemos usado tailwindcss y agregado
-<!-- raw HTML omitted --></p>
-<pre><code>el nuevo botón
-</code></pre>
-<!-- raw HTML omitted -->
-<pre><code>route()
-</code></pre>
-<!-- raw HTML omitted -->
-<p>Se da un poco de estilo para que el botón y la tabla queden en medio</p>
-
-
-</div>
-</p>
-<h3 id="el-controlador">El controlador</h3>
-<ul>
-<li>
-<p>Esta acción, 
-<strong>
-<span class="font-weight-bold text-primary">
-
-    presionar el botón del formulario
-
-</span>
-</strong>
-, hará que se invoque el método       
-<span class="font-weight-bold text-primary">
-
-
-    create
-
-</span>
- del controlador.</p>
-</li>
-<li>
-<p>Tenemos que especificar qué acción queremos hacer en el método correspondiente:  
-<span class="font-weight-bold text-primary">
-
-
-    create
-
-</span>
-</p>
-</li>
-<li>
-<p>Necesitamos que nos retorne una vista con un formulario para insertar el nuevo alumno
-<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<h3 id="añadir-idiomas">Añadir idiomas</h3>
+<p>Ejemplo: español e inglés.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan lang:add es
+</span></span><span style="display:flex;"><span>php artisan lang:add en</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Esto genera la estructura:</p>
+<p>lang/</p>
+<ul>
+<li>en/</li>
+<li>es/</li>
+</ul>
+<p>con archivos como <code>auth.php</code>, <code>validation.php</code>, etc.</p>
+<hr>
+<h2 id="2-configuración-básica-de-localización">2. Configuración básica de localización</h2>
+<p>Archivo <code>config/app.php</code>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">create</span>()
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> view (<span style="color:#cd5555">&#34;alumnos.create&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#228b22">//
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>}</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#cd5555">&#39;locale&#39;</span> =&gt; <span style="color:#cd5555">&#39;es&#39;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;fallback_locale&#39;</span> =&gt; <span style="color:#cd5555">&#39;en&#39;</span>,</span></span></code></pre></td></tr></table>
 </div>
-</div></p>
-</li>
-<li></li>
-</ul>
-<h3 id="creando-la-vista">Creando la vista</h3>
-<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 260px">
-<img class="card-img-top" src="/laravel/docs/08_crud/03_el-controlador/02_crearalumno/vistaCrearAlumno_hu_65402ad14c9e39a2.png" width="250" height="100">
-<figcaption class="card-body px-0 pt-2 pb-0">
-<p class="card-text">
-
-
-
-<strong>
-<span class="font-weight-bold text-primary">
-
-    Vista crear un alumno
-
-</span>
-</strong>
-
-
-</p>
-</figcaption>
-</figure>
-
+</div>
 <ul>
-<li>Debemos retornar una vista con un formulario para rellenar datos de un nuevo 
-<span class="font-weight-bold text-primary">
-
-
-    alumno
-
-</span>
-</li>
+<li><code>locale</code>: idioma por defecto</li>
+<li><code>fallback_locale</code>: idioma de respaldo</li>
 </ul>
-<p>El fichero 
-<span class="font-weight-bold text-primary">
-
-
-    create.blade.php
-
-</span>
-</p>
-<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<hr>
+<h2 id="3-middleware-para-establecer-el-idioma">3. Middleware para establecer el idioma</h2>
+<p>El idioma se almacenará en <strong>sesión</strong>, y un middleware se encargará de aplicarlo en cada request.</p>
+<hr>
+<h3 id="31-crear-el-middleware">3.1 Crear el middleware</h3>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;!DOCTYPE html&gt;
-</span></span><span style="display:flex;"><span>&lt;html lang=<span style="color:#cd5555">&#34;en&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;head&gt;
-</span></span><span style="display:flex;"><span>    &lt;meta charset=<span style="color:#cd5555">&#34;UTF-8&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;meta name=<span style="color:#cd5555">&#34;viewport&#34;</span> content=<span style="color:#cd5555">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;meta http-equiv=<span style="color:#cd5555">&#34;X-UA-Compatible&#34;</span> content=<span style="color:#cd5555">&#34;ie=edge&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;title&gt;Formulario&lt;/title&gt;
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>    @vite([<span style="color:#cd5555">&#34;resources/css/app.css&#34;</span>])
-</span></span><span style="display:flex;"><span>&lt;/head&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;body class=<span style="color:#cd5555">&#34;flex items-center justify-center h-screen bg-gray-100&#34;</span>&gt;
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>    &lt;form action=<span style="color:#cd5555">&#34;&#34;</span> class=<span style="color:#cd5555">&#34;bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4&#34;</span>&gt;
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;div class=<span style="color:#cd5555">&#34;mb-4&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;label <span style="color:#8b008b;font-weight:bold">for</span>=<span style="color:#cd5555">&#34;nombre&#34;</span> class=<span style="color:#cd5555">&#34;block text-gray-700 text-sm font-bold mb-2&#34;</span>&gt;Nombre:&lt;/label&gt;
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>            &lt;input type=<span style="color:#cd5555">&#34;text&#34;</span> name=<span style="color:#cd5555">&#34;nombre&#34;</span> id=<span style="color:#cd5555">&#34;nombre&#34;</span>
-</span></span><span style="display:flex;"><span>                class=<span style="color:#cd5555">&#34;shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;/div&gt;
-</span></span><span style="display:flex;"><span>        &lt;div class=<span style="color:#cd5555">&#34;mb-4&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;label <span style="color:#8b008b;font-weight:bold">for</span>=<span style="color:#cd5555">&#34;direccion&#34;</span> class=<span style="color:#cd5555">&#34;block text-gray-700 text-sm font-bold mb-2&#34;</span>&gt;Dirección:&lt;/label&gt;
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>            &lt;input type=<span style="color:#cd5555">&#34;text&#34;</span> name=<span style="color:#cd5555">&#34;direccion&#34;</span> id=<span style="color:#cd5555">&#34;direccion&#34;</span>
-</span></span><span style="display:flex;"><span>                class=<span style="color:#cd5555">&#34;shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;/div&gt;
-</span></span><span style="display:flex;"><span>        &lt;div class=<span style="color:#cd5555">&#34;mb-4&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;label <span style="color:#8b008b;font-weight:bold">for</span>=<span style="color:#cd5555">&#34;email&#34;</span> class=<span style="color:#cd5555">&#34;block text-gray-700 text-sm font-bold mb-2&#34;</span>&gt;Email:&lt;/label&gt;
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>            &lt;input type=<span style="color:#cd5555">&#34;text&#34;</span> name=<span style="color:#cd5555">&#34;email&#34;</span> id=<span style="color:#cd5555">&#34;email&#34;</span>
-</span></span><span style="display:flex;"><span>                class=<span style="color:#cd5555">&#34;shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;/div&gt;
-</span></span><span style="display:flex;"><span>        &lt;div class=<span style="color:#cd5555">&#34;mb-4&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;label <span style="color:#8b008b;font-weight:bold">for</span>=<span style="color:#cd5555">&#34;dni&#34;</span> class=<span style="color:#cd5555">&#34;block text-gray-700 text-sm font-bold mb-2&#34;</span>&gt;DNI:&lt;/label&gt;
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>            &lt;input type=<span style="color:#cd5555">&#34;text&#34;</span> name=<span style="color:#cd5555">&#34;dni&#34;</span> id=<span style="color:#cd5555">&#34;dni&#34;</span>
-</span></span><span style="display:flex;"><span>                class=<span style="color:#cd5555">&#34;shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;/div&gt;
-</span></span><span style="display:flex;"><span>        &lt;div class=<span style="color:#cd5555">&#34;flex items-center justify-between&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;button type=<span style="color:#cd5555">&#34;submit&#34;</span>
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>                class=<span style="color:#cd5555">&#34;bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                Guardar
-</span></span><span style="display:flex;"><span>            &lt;/button&gt;
-</span></span><span style="display:flex;"><span>            &lt;button type=<span style="color:#cd5555">&#34;button&#34;</span>
-</span></span><span style="display:flex;"><span>                class=<span style="color:#cd5555">&#34;bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline&#34;</span>&gt;
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>                Cancelar
-</span></span><span style="display:flex;"><span>            &lt;/button&gt;
-</span></span><span style="display:flex;"><span>        &lt;/div&gt;
-</span></span><span style="display:flex;"><span>    &lt;/form&gt;
-</span></span><span style="display:flex;"><span>&lt;/body&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;/html&gt;</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan make:middleware SetLocale</span></span></code></pre></td></tr></table>
 </div>
 </div>
-
-
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">El formulario</h4>
-
-    <p>Este html lo ha retornado chat-gpt para centrar el formulario
-Lo importante es respetar que
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></p>
-<pre><code>los name de los input sean los nombres de las tabls
-</code></pre>
-<!-- raw HTML omitted -->
-
-</div>
-
-<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 510px">
-<img class="card-img-top" src="/laravel/docs/08_crud/03_el-controlador/02_crearalumno/formularioNuevoAlumno_hu_b12d289d0e8bb0f6.jpg" width="500" height="700">
-<figcaption class="card-body px-0 pt-2 pb-0">
-<p class="card-text">
-
-
-
-
-</p>
-</figcaption>
-</figure>
-
-<h3 id="método-store">Método store</h3>
-<p>*Ahora debemos de implementar el método 
-<span class="font-weight-bold text-primary">
-
-
-    store
-
-</span>
- del controlador.
-<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<hr>
+<h3 id="32-implementación-del-middleware">3.2 Implementación del middleware</h3>
+<p>Archivo <code>app/Http/Middleware/SetLocale.php</code>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
@@ -706,94 +486,252 @@ Lo importante es respetar que
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>   <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">store</span>(StoreAlumnoRequest <span style="color:#00688b">$request</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#228b22">//Obtener los datos del formulario
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>        <span style="color:#00688b">$datos</span> = <span style="color:#00688b">$request</span>-&gt;<span style="color:#658b00">input</span>();
-</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$alumno</span> = <span style="color:#8b008b;font-weight:bold">new</span> Alumno(<span style="color:#00688b">$datos</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$alumno</span>-&gt;<span style="color:#658b00">save</span>();
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">return</span> redirect()-&gt;<span style="color:#658b00">route</span>(<span style="color:#cd5555">&#34;alumnos.index&#34;</span>);
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?php
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#228b22">//
-</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>    }</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">namespace</span> App\Http\Middleware;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Closure;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Http\Request;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Support\Facades\App;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">SetLocale</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">handle</span>(Request <span style="color:#00688b">$request</span>, Closure <span style="color:#00688b">$next</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$locale</span> = session(<span style="color:#cd5555">&#39;locale&#39;</span>, config(<span style="color:#cd5555">&#39;app.locale&#39;</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        App::<span style="color:#658b00">setLocale</span>(<span style="color:#00688b">$locale</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$next</span>(<span style="color:#00688b">$request</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
 </div>
 </div>
-*Si ahora rellenamos y 
-<strong>
-<span class="font-weight-bold text-primary">
-
-    damos a guardar
-
-</span>
-</strong>
- obtenemos 
-<strong>
-<span class="font-weight-bold text-primary">
-
-    un forbbiden
-
-</span>
-</strong>
- por parte del servidor:
-<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 710px">
-<img class="card-img-top" src="/laravel/docs/08_crud/03_el-controlador/02_crearalumno/forbbiden_hu_49605404d921748a.png" width="700" height="250">
-<figcaption class="card-body px-0 pt-2 pb-0">
-<p class="card-text">
-
-
-
-
-</p>
-</figcaption>
-</figure>
-
-<strong>Esto se debe a que hay unq clase 
-<strong>
-<span class="font-weight-bold text-primary">
-
-    Request
-
-</span>
-</strong>
- que va a controlar la autorizacioń</strong></p>
-<h3 id="clases-de-request-en-laravel">Clases de Request en Laravel</h3>
-
-
-<div class="pageinfo pageinfo-primary">
-<h4></h4>
+<p>Este middleware:</p>
+<ul>
+<li>Lee el idioma desde sesión</li>
+<li>Aplica el locale dinámicamente a Laravel</li>
+</ul>
 <hr>
-<p>Las clases de Request en Laravel, como <code>ProfileUpdateRequest</code>, <code>StoreAlumnoRequest</code>, y <code>UpdateAlumnoRequest</code>, son una parte integral de la validación de datos en aplicaciones Laravel.</p>
-<p>Estas clases extienden la clase base <code>FormRequest</code> de Laravel y proporcionan un lugar centralizado y organizado para manejar la validación y la autorización de las solicitudes HTTP entrantes.</p>
-<h2 id="características">Características</h2>
-<ul>
-<li><strong>Validación Personalizada</strong>: Permiten especificar reglas de validación para los datos entrantes de manera detallada y clara. Esto lo veremos más adelante</li>
-<li><strong>Autorización</strong>: Pueden contener lógica para determinar si un usuario tiene permiso para realizar la solicitud.</li>
-<li><strong>Reutilización</strong>: Facilitan la reutilización de reglas de validación en diferentes partes de la aplicación.</li>
-</ul>
-<h2 id="ejemplos">Ejemplos</h2>
-<ul>
-<li><code>ProfileUpdateRequest</code>: Podría contener reglas para validar la actualización de perfiles de usuario.</li>
-<li><code>StoreAlumnoRequest</code>: Específica para validar los datos al crear un nuevo alumno.</li>
-<li><code>UpdateAlumnoRequest</code>: Utilizada para validar los datos al actualizar la información de un alumno existente.</li>
-</ul>
-<p>Al usar el comando <code>php artisan make:model Alumno --all</code>, Laravel genera automáticamente estas clases de Request (si se especifica) para proporcionar una estructura inicial para la validación y autorización relacionadas con el modelo <code>Alumno</code>.</p>
-<p>*En nuestro clasoo tendremos que especificar en
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></p>
-<pre><code>StoreAlumnoRequest
-</code></pre>
-<!-- raw HTML omitted -->
-<pre><code>autorize
-</code></pre>
-<!-- raw HTML omitted -->
-<pre><code>true
-</code></pre>
-<!-- raw HTML omitted -->
-
+<h3 id="33-registro-del-middleware-laravel-12">3.3 Registro del middleware (Laravel 12)</h3>
+<p>En Laravel 12 <strong>no existe Kernel.php</strong>.<br>
+El middleware se registra en <code>bootstrap/app.php</code>.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>-&gt;<span style="color:#658b00">withMiddleware</span>(<span style="color:#8b008b;font-weight:bold">function</span> (<span style="color:#00688b">$middleware</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$middleware</span>-&gt;<span style="color:#658b00">append</span>(\App\Http\Middleware\SetLocale::<span style="color:#658b00">class</span>);
+</span></span><span style="display:flex;"><span>})</span></span></code></pre></td></tr></table>
 </div>
-
+</div>
+<p>De esta forma el middleware es <strong>global</strong>.</p>
+<hr>
+<h2 id="4-ruta-para-cambiar-el-idioma">4. Ruta para cambiar el idioma</h2>
+<p>Se define una ruta que:</p>
+<ul>
+<li>Recibe el idioma</li>
+<li>Lo guarda en sesión</li>
+<li>Redirige a la página anterior</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Support\Facades\Route;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;/lang/{locale}&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span> (string <span style="color:#00688b">$locale</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">if</span> (! in_array(<span style="color:#00688b">$locale</span>, [<span style="color:#cd5555">&#39;es&#39;</span>, <span style="color:#cd5555">&#39;en&#39;</span>])) {
+</span></span><span style="display:flex;"><span>        abort(<span style="color:#b452cd">400</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    session([<span style="color:#cd5555">&#39;locale&#39;</span> =&gt; <span style="color:#00688b">$locale</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> redirect()-&gt;<span style="color:#658b00">back</span>();
+</span></span><span style="display:flex;"><span>})-&gt;<span style="color:#658b00">name</span>(<span style="color:#cd5555">&#39;lang.switch&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="5-alpinejs-en-laravel-12">5. Alpine.js en Laravel 12</h2>
+<p>Laravel 12 ya incluye Alpine.js si se ha instalado Breeze o Jetstream.</p>
+<p>Si no está instalado:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install alpinejs</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Archivo <code>resources/js/app.js</code>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">import</span> Alpine from <span style="color:#cd5555">&#39;alpinejs&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#658b00">window</span>.Alpine = Alpine
+</span></span><span style="display:flex;"><span>Alpine.start()</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="6-componente-desplegable-de-idiomas">6. Componente desplegable de idiomas</h2>
+<p>Se crea un componente Blade con Alpine.js.</p>
+<p>Archivo <code>resources/views/components/language-switcher.blade.php</code>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">x-data</span>=<span style="color:#cd5555">&#34;{ open: false }&#34;</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;relative inline-block text-left&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">button</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a61717;background-color:#e3d2d2">@</span><span style="color:#658b00">click</span>=<span style="color:#cd5555">&#34;open = !open&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;inline-flex items-center px-4 py-2 bg-gray-200 rounded-md&#34;</span>
+</span></span><span style="display:flex;"><span>    &gt;
+</span></span><span style="display:flex;"><span>        {{ strtoupper(app()-&gt;getLocale()) }}
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#8b008b;font-weight:bold">svg</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;w-4 h-4 ml-2&#34;</span> <span style="color:#658b00">fill</span>=<span style="color:#cd5555">&#34;none&#34;</span> <span style="color:#658b00">stroke</span>=<span style="color:#cd5555">&#34;currentColor&#34;</span> <span style="color:#658b00">viewBox</span>=<span style="color:#cd5555">&#34;0 0 24 24&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#8b008b;font-weight:bold">path</span> <span style="color:#658b00">stroke-linecap</span>=<span style="color:#cd5555">&#34;round&#34;</span> <span style="color:#658b00">stroke-linejoin</span>=<span style="color:#cd5555">&#34;round&#34;</span> <span style="color:#658b00">stroke-width</span>=<span style="color:#cd5555">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#658b00">d</span>=<span style="color:#cd5555">&#34;M19 9l-7 7-7-7&#34;</span>/&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#8b008b;font-weight:bold">svg</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">button</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#658b00">x-show</span>=<span style="color:#cd5555">&#34;open&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a61717;background-color:#e3d2d2">@</span><span style="color:#658b00">click</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#658b00">outside</span>=<span style="color:#cd5555">&#34;open = false&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#658b00">x-transition</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;absolute right-0 z-50 mt-2 w-32 bg-white border rounded shadow&#34;</span>
+</span></span><span style="display:flex;"><span>    &gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#8b008b;font-weight:bold">a</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;{{ route(&#39;lang.switch&#39;, &#39;es&#39;) }}&#34;</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;block px-4 py-2 hover:bg-gray-100&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            Español
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#8b008b;font-weight:bold">a</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#8b008b;font-weight:bold">a</span> <span style="color:#658b00">href</span>=<span style="color:#cd5555">&#34;{{ route(&#39;lang.switch&#39;, &#39;en&#39;) }}&#34;</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;block px-4 py-2 hover:bg-gray-100&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            English
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#8b008b;font-weight:bold">a</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="7-uso-del-componente">7. Uso del componente</h2>
+<p>En cualquier vista Blade:</p>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">&lt;x-language-switcher /&gt;</code></pre>
+<p>Ejemplo en un layout:</p>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">&lt;header class=&#34;flex justify-end p-4&#34;&gt;
+    &lt;x-language-switcher /&gt;
+&lt;/header&gt;</code></pre>
+<hr>
+<h2 id="8-uso-de-traducciones">8. Uso de traducciones</h2>
+<h3 id="ejemplo-simple">Ejemplo simple</h3>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">{{ __(&#39;Welcome&#39;) }}</code></pre>
+<hr>
+<h3 id="archivos-personalizados">Archivos personalizados</h3>
+<p>Archivo <code>lang/es/messages.php</code>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;welcome&#39;</span> =&gt; <span style="color:#cd5555">&#39;Bienvenido&#39;</span>,
+</span></span><span style="display:flex;"><span>];</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Archivo <code>lang/en/messages.php</code>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;welcome&#39;</span> =&gt; <span style="color:#cd5555">&#39;Welcome&#39;</span>,
+</span></span><span style="display:flex;"><span>];</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Uso en Blade:</p>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">{{ __(&#39;messages.welcome&#39;) }}</code></pre>
+<hr>
+<h2 id="9-flujo-completo-del-sistema">9. Flujo completo del sistema</h2>
+<ol>
+<li>El usuario selecciona un idioma</li>
+<li>Se llama a la ruta <code>/lang/{locale}</code></li>
+<li>El idioma se guarda en sesión</li>
+<li>El middleware <code>SetLocale</code> se ejecuta</li>
+<li>Laravel ajusta el locale</li>
+<li>Las vistas se renderizan traducidas</li>
+</ol>
+<hr>
+<h2 id="10-observaciones-importantes">10. Observaciones importantes</h2>
+<ul>
+<li>El uso de sesión es preferible a cookies directas</li>
+<li>El middleware debe ejecutarse antes de renderizar vistas</li>
+<li>Alpine.js es ideal para componentes pequeños y reactivos</li>
+<li>El sistema es compatible con Blade, Inertia y Filament</li>
+</ul>
+<hr>
 
   <div class="section-index">
     
