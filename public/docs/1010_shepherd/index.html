@@ -3,7 +3,7 @@
   <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/00_vue/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/1010_shepherd/index.xml">
 <meta name="robots" content="noindex, nofollow">
 
 
@@ -18,27 +18,30 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
-<title>Vue | Laravel: Framework de php</title>
+<title>Controlar componentes Vue desde Shepherd | Laravel: Framework de php</title>
 <meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
 
-<meta property="og:url" content="http://localhost:1313/laravel/docs/00_vue/">
+<meta property="og:url" content="http://localhost:1313/laravel/docs/1010_shepherd/">
   <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Vue">
-  <meta property="og:description" content="Empezando *Vue tiene dos maneras de ser utilizado: 1 Composition Api 2 Options Api
-Options Api Más antigua Mejor para empezar Mas legible Si el código crece, más difícil de mantener Organizas el código por el tipo de código (métodos, datos, …) * &lt;script&gt; export default { data() { return { contador: 0, }; }, methods: { incrementar() { this.contador&#43;&#43;; }, }, mounted() { console.log(&#34;Componente montado&#34;); }, }; &lt;/script&gt; &lt;template&gt; &lt;button @click=&#34;incrementar&#34;&gt;Contador: {{ contador }}&lt;/button&gt; &lt;/template&gt; Composition API Usaré esta Más moderna, mas expresiva, menos legible …. Se organiza el código por funcionalidad o por lógica El código es más limpio y más fácil de mantener Va todo en &lt;script&gt; export default { data() { return { contador: 0, }; }, methods: { incrementar() { this.contador&#43;&#43;; }, }, mounted() { console.log(&#34;Componente montado&#34;); }, }; &lt;/script&gt; &lt;template&gt; &lt;button @click=&#34;incrementar&#34;&gt;Contador: {{ contador }}&lt;/button&gt; &lt;/template&gt; Concepto Options API Composition API Estilo Clásico, estructurado por secciones Moderno, estructurado por lógica Reutilización de código Difícil (mixins) Fácil (composables) Soporte en Vue 3 Da soporte total (se puede usar) Es el modo Recomendado Ideal para Proyectos pequeños o migraciones de Vue 2 Proyectos nuevos, Inertia, Vite Performance Similar Similar (ligeramente mejor en algunos casos)">
+  <meta property="og:title" content="Controlar componentes Vue desde Shepherd">
+  <meta property="og:description" content="Introducción Cuando se utiliza Shepherd para crear tours guiados en una aplicación Vue 3, no es recomendable simular clics sobre el DOM. En su lugar, lo correcto es controlar el estado interno de los componentes de forma reactiva.
+En este ejemplo se muestra cómo abrir programáticamente la primera unidad de una lista (como si el usuario hubiese hecho clic), manteniendo una arquitectura limpia y coherente con Vue.
+El problema El estado que controla la apertura de una unidad vive dentro del componente hijo (UnitItem):">
   <meta property="og:locale" content="es">
   <meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Vue">
-  <meta itemprop="description" content="Empezando *Vue tiene dos maneras de ser utilizado: 1 Composition Api 2 Options Api
-Options Api Más antigua Mejor para empezar Mas legible Si el código crece, más difícil de mantener Organizas el código por el tipo de código (métodos, datos, …) * &lt;script&gt; export default { data() { return { contador: 0, }; }, methods: { incrementar() { this.contador&#43;&#43;; }, }, mounted() { console.log(&#34;Componente montado&#34;); }, }; &lt;/script&gt; &lt;template&gt; &lt;button @click=&#34;incrementar&#34;&gt;Contador: {{ contador }}&lt;/button&gt; &lt;/template&gt; Composition API Usaré esta Más moderna, mas expresiva, menos legible …. Se organiza el código por funcionalidad o por lógica El código es más limpio y más fácil de mantener Va todo en &lt;script&gt; export default { data() { return { contador: 0, }; }, methods: { incrementar() { this.contador&#43;&#43;; }, }, mounted() { console.log(&#34;Componente montado&#34;); }, }; &lt;/script&gt; &lt;template&gt; &lt;button @click=&#34;incrementar&#34;&gt;Contador: {{ contador }}&lt;/button&gt; &lt;/template&gt; Concepto Options API Composition API Estilo Clásico, estructurado por secciones Moderno, estructurado por lógica Reutilización de código Difícil (mixins) Fácil (composables) Soporte en Vue 3 Da soporte total (se puede usar) Es el modo Recomendado Ideal para Proyectos pequeños o migraciones de Vue 2 Proyectos nuevos, Inertia, Vite Performance Similar Similar (ligeramente mejor en algunos casos)">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="198">
+  <meta itemprop="name" content="Controlar componentes Vue desde Shepherd">
+  <meta itemprop="description" content="Introducción Cuando se utiliza Shepherd para crear tours guiados en una aplicación Vue 3, no es recomendable simular clics sobre el DOM. En su lugar, lo correcto es controlar el estado interno de los componentes de forma reactiva.
+En este ejemplo se muestra cómo abrir programáticamente la primera unidad de una lista (como si el usuario hubiese hecho clic), manteniendo una arquitectura limpia y coherente con Vue.
+El problema El estado que controla la apertura de una unidad vive dentro del componente hijo (UnitItem):">
+  <meta itemprop="datePublished" content="2025-01-05T10:00:00+01:00">
+  <meta itemprop="dateModified" content="2025-01-05T10:00:00+01:00">
+  <meta itemprop="wordCount" content="393">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Vue">
-  <meta name="twitter:description" content="Empezando *Vue tiene dos maneras de ser utilizado: 1 Composition Api 2 Options Api
-Options Api Más antigua Mejor para empezar Mas legible Si el código crece, más difícil de mantener Organizas el código por el tipo de código (métodos, datos, …) * &lt;script&gt; export default { data() { return { contador: 0, }; }, methods: { incrementar() { this.contador&#43;&#43;; }, }, mounted() { console.log(&#34;Componente montado&#34;); }, }; &lt;/script&gt; &lt;template&gt; &lt;button @click=&#34;incrementar&#34;&gt;Contador: {{ contador }}&lt;/button&gt; &lt;/template&gt; Composition API Usaré esta Más moderna, mas expresiva, menos legible …. Se organiza el código por funcionalidad o por lógica El código es más limpio y más fácil de mantener Va todo en &lt;script&gt; export default { data() { return { contador: 0, }; }, methods: { incrementar() { this.contador&#43;&#43;; }, }, mounted() { console.log(&#34;Componente montado&#34;); }, }; &lt;/script&gt; &lt;template&gt; &lt;button @click=&#34;incrementar&#34;&gt;Contador: {{ contador }}&lt;/button&gt; &lt;/template&gt; Concepto Options API Composition API Estilo Clásico, estructurado por secciones Moderno, estructurado por lógica Reutilización de código Difícil (mixins) Fácil (composables) Soporte en Vue 3 Da soporte total (se puede usar) Es el modo Recomendado Ideal para Proyectos pequeños o migraciones de Vue 2 Proyectos nuevos, Inertia, Vite Performance Similar Similar (ligeramente mejor en algunos casos)">
+  <meta name="twitter:title" content="Controlar componentes Vue desde Shepherd">
+  <meta name="twitter:description" content="Introducción Cuando se utiliza Shepherd para crear tours guiados en una aplicación Vue 3, no es recomendable simular clics sobre el DOM. En su lugar, lo correcto es controlar el estado interno de los componentes de forma reactiva.
+En este ejemplo se muestra cómo abrir programáticamente la primera unidad de una lista (como si el usuario hubiese hecho clic), manteniendo una arquitectura limpia y coherente con Vue.
+El problema El estado que controla la apertura de una unidad vive dentro del componente hijo (UnitItem):">
 
 
 <link href="/laravel/scss/main.css" rel="stylesheet">
@@ -101,22 +104,7 @@ Options Api Más antigua Mejor para empezar Mas legible Si el código crece, má
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs-li">
   <a href="/laravel/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laraveldocs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
   <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs10_test-li">
-  <input type="checkbox" id="m-laraveldocs10_test-check"/>
-  <label for="m-laraveldocs10_test-check"><a href="/laravel/docs/10_test/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_test"><span class="">10_Test unitarios</span></a></label>
-  
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_testchat-li">
-  <input type="checkbox" id="m-laraveldocs10_testchat-check"/>
-  <label for="m-laraveldocs10_testchat-check"><a href="/laravel/docs/10_test/chat/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_testchat"><span class="">10_Test unitarios del chat</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_testpest-li">
-  <input type="checkbox" id="m-laraveldocs10_testpest-check"/>
-  <label for="m-laraveldocs10_testpest-check"><a href="/laravel/docs/10_test/pest/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs10_testpest"><span class="">Pest</span></a></label>
-  
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs01_introduccic3b3n-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs01_introduccic3b3n-li">
   <input type="checkbox" id="m-laraveldocs01_introduccic3b3n-check"/>
   <label for="m-laraveldocs01_introduccic3b3n-check"><a href="/laravel/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
   
@@ -164,33 +152,6 @@ Options Api Más antigua Mejor para empezar Mas legible Si el código crece, má
   <input type="checkbox" id="m-laraveldocs06_autenticacionbreeze-check"/>
   <label for="m-laraveldocs06_autenticacionbreeze-check"><a href="/laravel/docs/06_autenticacion/breeze/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionbreeze"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacionfortify-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify-check"/>
-  <label for="m-laraveldocs06_autenticacionfortify-check"><a href="/laravel/docs/06_autenticacion/fortify/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionfortify"><i class="fa-solid fa-sitemap"></i><span class="">Fortify y Jetstream</span></a></label>
-  
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-check"/>
-  <label for="m-laraveldocs06_autenticacionfortify02_page_role_autenticated-check"><a href="/laravel/docs/06_autenticacion/fortify/02_page_role_autenticated/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortify02_page_role_autenticated"><i class="fa-solid fa-sitemap"></i><span class="">Dashboard según rol</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortify01_instalacion-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionfortify01_instalacion-check"/>
-  <label for="m-laraveldocs06_autenticacionfortify01_instalacion-check"><a href="/laravel/docs/06_autenticacion/fortify/01_instalacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortify01_instalacion"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortifydiagrama-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionfortifydiagrama-check"/>
-  <label for="m-laraveldocs06_autenticacionfortifydiagrama-check"><a href="/laravel/docs/06_autenticacion/fortify/diagrama/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortifydiagrama"><i class="fa-solid fa-sitemap"></i><span class="">Diagrama de flujo</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-check"/>
-  <label for="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores-check"><a href="/laravel/docs/06_autenticacion/fortify/peronsalizar_controladores/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs06_autenticacionfortifyperonsalizar_controladores"><i class="fa-solid fa-sitemap"></i><span class="">Personalizar controladores</span></a></label>
-  
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionotp-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionotp-check"/>
-  <label for="m-laraveldocs06_autenticacionotp-check"><a href="/laravel/docs/06_autenticacion/otp/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionotp"><i class="fa-solid fa-sitemap"></i><span class="">OTP One-Time Password</span></a></label>
-  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs70_laravel_idea-li">
@@ -212,14 +173,6 @@ Options Api Más antigua Mejor para empezar Mas legible Si el código crece, má
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs80_api_openai-li">
-  <input type="checkbox" id="m-laraveldocs80_api_openai-check"/>
-  <label for="m-laraveldocs80_api_openai-check"><a href="/laravel/docs/80_api_openai/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs80_api_openai"><span class="">API OpenAI</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs90_helper-li">
-  <input type="checkbox" id="m-laraveldocs90_helper-check"/>
-  <label for="m-laraveldocs90_helper-check"><a href="/laravel/docs/90_helper/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs90_helper"><span class="">API OpenAI</span></a></label>
-  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs100_anexos-li">
   <input type="checkbox" id="m-laraveldocs100_anexos-check"/>
   <label for="m-laraveldocs100_anexos-check"><a href="/laravel/docs/100_anexos/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs100_anexos"><span class="">Anexos</span></a></label>
@@ -258,71 +211,6 @@ Options Api Más antigua Mejor para empezar Mas legible Si el código crece, má
   <input type="checkbox" id="m-laraveldocs11_roles-check"/>
   <label for="m-laraveldocs11_roles-check"><a href="/laravel/docs/11_roles/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs11_roles"><i class="fa-brands fa-critical-role"></i><span class="">Roles</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs13_blueprint-li">
-  <input type="checkbox" id="m-laraveldocs13_blueprint-check"/>
-  <label for="m-laraveldocs13_blueprint-check"><a href="/laravel/docs/13_blueprint/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_blueprint"><i class="fas fa-database"></i><span class="">Blueprint</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs14_filament-li">
-  <input type="checkbox" id="m-laraveldocs14_filament-check"/>
-  <label for="m-laraveldocs14_filament-check"><a href="/laravel/docs/14_filament/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filament"><i class="fas fa-sliders-h"></i><span class="">Filament</span></a></label>
-  
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filamentpage-li">
-  <input type="checkbox" id="m-laraveldocs14_filamentpage-check"/>
-  <label for="m-laraveldocs14_filamentpage-check"><a href="/laravel/docs/14_filament/page/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filamentpage"><i class="fas"></i><span class="">Creando Páginas</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filamentwidget-li">
-  <input type="checkbox" id="m-laraveldocs14_filamentwidget-check"/>
-  <label for="m-laraveldocs14_filamentwidget-check"><a href="/laravel/docs/14_filament/widget/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filamentwidget"><i class="fas"></i><span class="">Widgets en el Panel</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs14_filamentpanel-li">
-  <input type="checkbox" id="m-laraveldocs14_filamentpanel-check"/>
-  <label for="m-laraveldocs14_filamentpanel-check"><a href="/laravel/docs/14_filament/panel/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs14_filamentpanel"><i class="fas fa-rectangle-group"></i><span class="">Panel </span></a></label>
-  
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs14_filamentpanelpanel-li">
-  <input type="checkbox" id="m-laraveldocs14_filamentpanelpanel-check"/>
-  <label for="m-laraveldocs14_filamentpanelpanel-check"><a href="/laravel/docs/14_filament/panel/panel/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs14_filamentpanelpanel"><i class="fas fa-bars"></i><span class="">Navegación</span></a></label>
-  
-</li>
-  </ul>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs15_storage-li">
-  <input type="checkbox" id="m-laraveldocs15_storage-check"/>
-  <label for="m-laraveldocs15_storage-check"><a href="/laravel/docs/15_storage/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs15_storage"><i class="fas fa-sliders-h"></i><span class="">Storage</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs30_pinia-li">
-  <input type="checkbox" id="m-laraveldocs30_pinia-check"/>
-  <label for="m-laraveldocs30_pinia-check"><a href="/laravel/docs/30_pinia/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs30_pinia"><i class="fas fa-database"></i><span class="">Pinia</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs40_league_csv-li">
-  <input type="checkbox" id="m-laraveldocs40_league_csv-check"/>
-  <label for="m-laraveldocs40_league_csv-check"><a href="/laravel/docs/40_league_csv/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs40_league_csv"><span class="">Ficheros CSV en Laravel</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs31_optimizacion_carga-li">
-  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga-check"/>
-  <label for="m-laraveldocs31_optimizacion_carga-check"><a href="/laravel/docs/31_optimizacion_carga/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs31_optimizacion_carga"><i class="fas fa-tachometer-alt"></i><span class="">Optimización de carga con Laravel &#43; Inertia &#43; Vue</span></a></label>
-  
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga02_lazy-li">
-  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga02_lazy-check"/>
-  <label for="m-laraveldocs31_optimizacion_carga02_lazy-check"><a href="/laravel/docs/31_optimizacion_carga/02_lazy/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga02_lazy"><i class="fas fa-code-split"></i><span class="">Lazy Loading con Vue &#43; Inertia</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga03_tiempos-li">
-  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga03_tiempos-check"/>
-  <label for="m-laraveldocs31_optimizacion_carga03_tiempos-check"><a href="/laravel/docs/31_optimizacion_carga/03_tiempos/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga03_tiempos"><i class="fas fa-code-split"></i><span class="">tiempos de carga</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga04_props_pesadas-li">
-  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga04_props_pesadas-check"/>
-  <label for="m-laraveldocs31_optimizacion_carga04_props_pesadas-check"><a href="/laravel/docs/31_optimizacion_carga/04_props_pesadas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga04_props_pesadas"><i class="fas fa-box-open"></i><span class="">Cómo detectar y optimizar props pesadas en Inertia.js</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs31_optimizacion_carga05_carga_datos_axios-li">
-  <input type="checkbox" id="m-laraveldocs31_optimizacion_carga05_carga_datos_axios-check"/>
-  <label for="m-laraveldocs31_optimizacion_carga05_carga_datos_axios-check"><a href="/laravel/docs/31_optimizacion_carga/05_carga_datos_axios/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs31_optimizacion_carga05_carga_datos_axios"><i class="fas fa-cloud-download-alt"></i><span class="">Cargar datos desde Vue con Fetch o Axios (Inertia)</span></a></label>
-  
-</li>
-  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet-li">
   <input type="checkbox" id="m-laraveldocs999_cheatseet-check"/>
   <label for="m-laraveldocs999_cheatseet-check"><a href="/laravel/docs/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet"><span class="">Cheat Sheet</span></a></label>
@@ -388,9 +276,9 @@ Options Api Más antigua Mejor para empezar Mas legible Si el código crece, má
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocs00_vue-li">
-  <input type="checkbox" id="m-laraveldocs00_vue-check" checked/>
-  <label for="m-laraveldocs00_vue-check"><a href="/laravel/docs/00_vue/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laraveldocs00_vue"><span class="td-sidebar-nav-active-item">Vue</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocs1010_shepherd-li">
+  <input type="checkbox" id="m-laraveldocs1010_shepherd-check" checked/>
+  <label for="m-laraveldocs1010_shepherd-check"><a href="/laravel/docs/1010_shepherd/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laraveldocs1010_shepherd"><span class="td-sidebar-nav-active-item">Controlar componentes Vue desde Shepherd</span></a></label>
   
 </li>
   </ul>
@@ -408,12 +296,13 @@ Options Api Más antigua Mejor para empezar Mas legible Si el código crece, má
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#empezando">Empezando</a>
-      <ul>
-        <li><a href="#options-api">Options Api</a></li>
-        <li><a href="#composition-api">Composition API</a></li>
-      </ul>
-    </li>
+    <li><a href="#introducción">Introducción</a></li>
+    <li><a href="#el-problema">El problema</a></li>
+    <li><a href="#exponer-acciones-desde-el-componente-hijo">Exponer acciones desde el componente hijo</a></li>
+    <li><a href="#referenciar-el-primer-componente-desde-el-padre">Referenciar el primer componente desde el padre</a></li>
+    <li><a href="#exponer-una-acción-de-alto-nivel-desde-el-componente-padre">Exponer una acción de alto nivel desde el componente padre</a></li>
+    <li><a href="#uso-desde-shepherd">Uso desde Shepherd</a></li>
+    <li><a href="#modelo-mental-clave">Modelo mental clave</a></li>
   </ul>
 </nav>
       </div>
@@ -424,11 +313,10 @@ Options Api Más antigua Mejor para empezar Mas legible Si el código crece, má
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/ficheros/" data-taxonomy-term="ficheros"><span class="taxonomy-label">Ficheros</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">10</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">5</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
@@ -439,29 +327,21 @@ Options Api Más antigua Mejor para empezar Mas legible Si el código crece, má
       <ul class="taxonomy-terms">
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/blueprint/" data-taxonomy-term="blueprint"><span class="taxonomy-label">Blueprint</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/csv/" data-taxonomy-term="csv"><span class="taxonomy-label">CSV</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dasboard/" data-taxonomy-term="dasboard"><span class="taxonomy-label">Dasboard</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/files/" data-taxonomy-term="files"><span class="taxonomy-label">Files</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/generaci%C3%B3n-de-componentes/" data-taxonomy-term="generaci%C3%B3n-de-componentes"><span class="taxonomy-label">Generación De Componentes</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">6</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">7</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">13</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/pinia/" data-taxonomy-term="pinia"><span class="taxonomy-label">Pinia</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/storage/" data-taxonomy-term="storage"><span class="taxonomy-label">Storage</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">5</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
         <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/yaml/" data-taxonomy-term="yaml"><span class="taxonomy-label">YAML</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
   
@@ -476,115 +356,136 @@ Options Api Más antigua Mejor para empezar Mas legible Si el código crece, má
   <li class="breadcrumb-item">
     <a href="/laravel/docs/">Laravel</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    Vue</li>
+    Controlar componentes Vue desde Shepherd</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>Vue</h1>
+	<h1>Controlar componentes Vue desde Shepherd</h1>
   
 	<header class="article-meta">
 		
 </header>
-	<h2 id="empezando">Empezando</h2>
-<p>*Vue tiene dos maneras de ser utilizado:
-1 Composition Api
-2 Options Api</p>
-<h3 id="options-api">Options Api</h3>
-<ul>
-<li>Más antigua</li>
-<li>Mejor para empezar</li>
-<li>Mas legible</li>
-<li>Si el código crece, más difícil de mantener</li>
-<li>Organizas el código por el tipo de código (métodos, datos, &hellip;)
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>* &lt;script&gt;
-</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">export</span> <span style="color:#8b008b;font-weight:bold">default</span> {
-</span></span><span style="display:flex;"><span>data() {
-</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> {
-</span></span><span style="display:flex;"><span>contador: <span style="color:#b452cd">0</span>,
+	<h2 id="introducción">Introducción</h2>
+<p>Cuando se utiliza <strong>Shepherd</strong> para crear tours guiados en una aplicación <strong>Vue 3</strong>, no es recomendable simular clics sobre el DOM. En su lugar, lo correcto es <strong>controlar el estado interno de los componentes de forma reactiva</strong>.</p>
+<p>En este ejemplo se muestra cómo abrir programáticamente la primera unidad de una lista (como si el usuario hubiese hecho clic), manteniendo una arquitectura limpia y coherente con Vue.</p>
+<hr>
+<h2 id="el-problema">El problema</h2>
+<p>El estado que controla la apertura de una unidad vive dentro del componente hijo (<code>UnitItem</code>):</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> isOpen = ref(<span style="color:#8b008b;font-weight:bold">false</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Este estado <strong>no debe modificarse desde fuera</strong> manipulando el DOM, ya que se rompería el modelo reactivo de Vue.</p>
+<hr>
+<h2 id="exponer-acciones-desde-el-componente-hijo">Exponer acciones desde el componente hijo</h2>
+<p>Vue 3 permite exponer métodos de un componente usando <code>defineExpose</code>.<br>
+El componente <code>UnitItem</code> expone un método <code>open()</code> que modifica su estado interno:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> open = () =&gt; {
+</span></span><span style="display:flex;"><span>isOpen.value = <span style="color:#8b008b;font-weight:bold">true</span>;
 </span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span>},
-</span></span><span style="display:flex;"><span>methods: {
-</span></span><span style="display:flex;"><span>incrementar() {
-</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">this</span>.contador++;
-</span></span><span style="display:flex;"><span>},
-</span></span><span style="display:flex;"><span>},
-</span></span><span style="display:flex;"><span>mounted() {
-</span></span><span style="display:flex;"><span>console.log(<span style="color:#cd5555">&#34;Componente montado&#34;</span>);
-</span></span><span style="display:flex;"><span>},
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#a61717;background-color:#e3d2d2">/script&gt;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;template&gt;
-</span></span><span style="display:flex;"><span>  &lt;button <span style="color:#a61717;background-color:#e3d2d2">@</span>click=<span style="color:#cd5555">&#34;incrementar&#34;</span>&gt;Contador: {{ contador }}&lt;<span style="color:#a61717;background-color:#e3d2d2">/button&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#a61717;background-color:#e3d2d2">/template&gt;</span></span></span></code></pre></div></li>
-</ul>
-<h3 id="composition-api">Composition API</h3>
-<ul>
-<li>Usaré esta</li>
-<li>Más moderna, mas expresiva, menos legible &hellip;.</li>
-<li>Se organiza el código por funcionalidad o por lógica</li>
-<li>El código  es más limpio y más fácil de mantener</li>
-<li>Va todo en <!-- raw HTML omitted --> <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;script&gt;
-</span></span><span style="display:flex;"><span>export <span style="color:#8b008b;font-weight:bold">default</span> {
-</span></span><span style="display:flex;"><span>data() {
-</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> {
-</span></span><span style="display:flex;"><span>contador: <span style="color:#b452cd">0</span>,
+</span></span><span style="display:flex;"><span>defineExpose({
+</span></span><span style="display:flex;"><span>open,
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>De este modo, el componente mantiene el control de su propio estado y solo permite acciones explícitas desde el exterior.</p>
+<hr>
+<h2 id="referenciar-el-primer-componente-desde-el-padre">Referenciar el primer componente desde el padre</h2>
+<p>El componente padre (<code>UnitList</code>) crea un <code>ref</code> al <strong>primer <code>UnitItem</code></strong> renderizado:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> firstUnitRef = ref(<span style="color:#8b008b;font-weight:bold">null</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Y lo asigna de forma condicional en el template:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">UnitItem</span>
+</span></span><span style="display:flex;"><span>:<span style="color:#658b00">ref</span>=<span style="color:#cd5555">&#34;index === 0 ? firstUnitRef : undefined&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">:unit</span>=<span style="color:#cd5555">&#34;unit&#34;</span>
+</span></span><span style="display:flex;"><span>/&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Este <code>ref</code> apunta a la <strong>instancia del componente</strong>, no a un elemento del DOM.</p>
+<hr>
+<h2 id="exponer-una-acción-de-alto-nivel-desde-el-componente-padre">Exponer una acción de alto nivel desde el componente padre</h2>
+<p>Para mantener una arquitectura limpia, el componente padre expone una acción clara que encapsula la lógica:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">const</span> openFirstUnit = () =&gt; {
+</span></span><span style="display:flex;"><span>firstUnitRef.value?.open();
 </span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span>},
-</span></span><span style="display:flex;"><span>methods: {
-</span></span><span style="display:flex;"><span>incrementar() {
-</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">this</span>.contador++;
-</span></span><span style="display:flex;"><span>},
-</span></span><span style="display:flex;"><span>},
-</span></span><span style="display:flex;"><span>mounted() {
-</span></span><span style="display:flex;"><span>console.log(<span style="color:#cd5555">&#34;Componente montado&#34;</span>);
-</span></span><span style="display:flex;"><span>},
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span>&lt;/script&gt;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;template&gt;
-</span></span><span style="display:flex;"><span>  &lt;button @click=<span style="color:#cd5555">&#34;incrementar&#34;</span>&gt;Contador: {{ contador }}&lt;/button&gt;
-</span></span><span style="display:flex;"><span>&lt;/template&gt;</span></span></code></pre></div>
-<table>
-  <thead>
-      <tr>
-          <th>Concepto</th>
-          <th>Options API</th>
-          <th>Composition API</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Estilo</strong></td>
-          <td>Clásico, estructurado por secciones</td>
-          <td>Moderno, estructurado por lógica</td>
-      </tr>
-      <tr>
-          <td><strong>Reutilización de código</strong></td>
-          <td>Difícil (mixins)</td>
-          <td>Fácil (composables)</td>
-      </tr>
-      <tr>
-          <td><strong>Soporte en Vue 3</strong></td>
-          <td>Da soporte total (se puede usar)</td>
-          <td>Es el modo Recomendado</td>
-      </tr>
-      <tr>
-          <td><strong>Ideal para</strong></td>
-          <td>Proyectos pequeños o migraciones de Vue 2</td>
-          <td>Proyectos nuevos, Inertia, Vite</td>
-      </tr>
-      <tr>
-          <td><strong>Performance</strong></td>
-          <td>Similar</td>
-          <td>Similar (ligeramente mejor en algunos casos)</td>
-      </tr>
-  </tbody>
-</table>
-</li>
+</span></span><span style="display:flex;"><span>defineExpose({
+</span></span><span style="display:flex;"><span>openFirstUnit,
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Esto evita que componentes externos conozcan detalles internos de los hijos.</p>
+<hr>
+<h2 id="uso-desde-shepherd">Uso desde Shepherd</h2>
+<p>Desde un paso del tour de Shepherd se puede llamar directamente a esta acción:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>sidebarExercisesRef.value?.openFirstUnit();</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>El resultado es la apertura reactiva de la unidad, sin simular clics ni manipular el DOM.</p>
+<hr>
+
+
+<div class="pageinfo pageinfo-primary">
+<p><strong>Idea clave:</strong><br>
+Shepherd no debe interactuar directamente con el DOM. Su función es <strong>orquestar acciones</strong> sobre los componentes, no sustituir la lógica de Vue.</p>
+
+</div>
+
+<hr>
+<h2 id="modelo-mental-clave">Modelo mental clave</h2>
+<ul>
+<li>El <strong>estado</strong> vive en el componente hijo</li>
+<li>El <strong>control</strong> lo ejerce el componente padre</li>
+<li>Shepherd solo <strong>coordina acciones</strong>, no toca el DOM</li>
 </ul>
+<p>El patrón <strong>ref + defineExpose</strong> es la forma correcta y escalable de integrar tours guiados en Vue 3.</p>
 
   <div class="section-index">
     
@@ -619,7 +520,7 @@ Options Api Más antigua Mejor para empezar Mas legible Si el código crece, má
         
       </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
         <span class="td-footer__copyright">&copy;
-    2025
+    2026
     <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
       </div>
     </div>

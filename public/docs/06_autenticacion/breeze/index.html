@@ -25,20 +25,20 @@
   <meta property="og:site_name" content="Laravel: Framework de php">
   <meta property="og:title" content="Instalación">
   <meta property="og:description" content="Instalando breeze Referencia en la web https://laravel.com/docs/master/fortify
-Instalación 1 2 3 4 5 6 7 composer require laravel/breeze --dev php artisan breeze:install php artisan migrate npm install npm run dev * pendiente Falta explicar los conceptos de qué se instala en cada caso y la opción de iniciar el proceso con un start en la instalación del proyecto Usando docker para la bd Redirección una vez autenticado con Laravel Breeze En Laravel Breeze, la redirección después de autenticarse se gestiona en el controlador AuthenticatedSessionController. Este controlador define el comportamiento de inicio de sesión y la redirección predeterminada.">
+Instalación 1 2 3 4 5 6 7 composer require laravel/breeze --dev php artisan breeze:install php artisan migrate npm install npm run dev * Qué hacemos en este proceso de instalación composer require laravel/breeze --dev Este comando:">
   <meta property="og:locale" content="es">
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Instalación">
   <meta itemprop="description" content="Instalando breeze Referencia en la web https://laravel.com/docs/master/fortify
-Instalación 1 2 3 4 5 6 7 composer require laravel/breeze --dev php artisan breeze:install php artisan migrate npm install npm run dev * pendiente Falta explicar los conceptos de qué se instala en cada caso y la opción de iniciar el proceso con un start en la instalación del proyecto Usando docker para la bd Redirección una vez autenticado con Laravel Breeze En Laravel Breeze, la redirección después de autenticarse se gestiona en el controlador AuthenticatedSessionController. Este controlador define el comportamiento de inicio de sesión y la redirección predeterminada.">
+Instalación 1 2 3 4 5 6 7 composer require laravel/breeze --dev php artisan breeze:install php artisan migrate npm install npm run dev * Qué hacemos en este proceso de instalación composer require laravel/breeze --dev Este comando:">
   <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
   <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="480">
+  <meta itemprop="wordCount" content="1308">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Instalación">
   <meta name="twitter:description" content="Instalando breeze Referencia en la web https://laravel.com/docs/master/fortify
-Instalación 1 2 3 4 5 6 7 composer require laravel/breeze --dev php artisan breeze:install php artisan migrate npm install npm run dev * pendiente Falta explicar los conceptos de qué se instala en cada caso y la opción de iniciar el proceso con un start en la instalación del proyecto Usando docker para la bd Redirección una vez autenticado con Laravel Breeze En Laravel Breeze, la redirección después de autenticarse se gestiona en el controlador AuthenticatedSessionController. Este controlador define el comportamiento de inicio de sesión y la redirección predeterminada.">
+Instalación 1 2 3 4 5 6 7 composer require laravel/breeze --dev php artisan breeze:install php artisan migrate npm install npm run dev * Qué hacemos en este proceso de instalación composer require laravel/breeze --dev Este comando:">
 
 
 <link href="/laravel/scss/main.css" rel="stylesheet">
@@ -273,6 +273,10 @@ Instalación 1 2 3 4 5 6 7 composer require laravel/breeze --dev php artisan bre
   
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs1010_shepherd-li">
+  <input type="checkbox" id="m-laraveldocs1010_shepherd-check"/>
+  <label for="m-laraveldocs1010_shepherd-check"><a href="/laravel/docs/1010_shepherd/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs1010_shepherd"><span class="">Controlar componentes Vue desde Shepherd</span></a></label>
+  
 </li>
   </ul>
 </li>
@@ -291,6 +295,12 @@ Instalación 1 2 3 4 5 6 7 composer require laravel/breeze --dev php artisan bre
   <ul>
     <li>
       <ul>
+        <li></li>
+        <li><a href="#advertencia-sobre-tailwind-4-y-breeze">Advertencia sobre Tailwind 4 y Breeze</a></li>
+        <li><a href="#migrar-el-proyecto-a-tailwind-4-mínimo-y-limpio">Migrar el proyecto a Tailwind 4 (mínimo y limpio)</a></li>
+        <li><a href="#nota-sobre-estilos-raros-tras-la-migración">Nota sobre estilos “raros” tras la migración</a></li>
+        <li><a href="#limpieza-paso-a-paso-checklist-rápida">Limpieza paso a paso (checklist rápida)</a></li>
+        <li><a href="#opción-alternativa-iniciar-el-proyecto-directamente-con-breeze">Opción alternativa: iniciar el proyecto directamente con Breeze</a></li>
         <li><a href="#usando-docker-para-la-bd">Usando docker para la bd</a></li>
         <li><a href="#redirección-una-vez-autenticado-con-laravel-breeze">Redirección una vez autenticado con Laravel Breeze</a></li>
         <li><a href="#redirección-después-de-registro-con-laravel-breeze">Redirección después de registro con Laravel Breeze</a></li>
@@ -390,15 +400,226 @@ Instalación 1 2 3 4 5 6 7 composer require laravel/breeze --dev php artisan bre
 </div></p>
 </li>
 </ul>
+<h4 id="qué-hacemos-en-este-proceso-de-instalación">Qué hacemos en este proceso de instalación</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>    composer <span style="color:#8b008b;font-weight:bold">require</span> laravel/breeze --dev</span></span></code></pre></div>
+<p>Este comando:</p>
+<ul>
+<li>Descarga el paquete laravel/breeze como dependencia de desarrollo</li>
+<li>No crea aún ningún archivo de autenticación</li>
+<li>Añade al proyecto los comandos necesarios para generar el sistema de login</li>
+</ul>
+<p>En este punto, el proyecto sigue siendo funcionalmente igual; Breeze solo está disponible para ser instalado.</p>
+<hr>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>php artisan breeze:install</span></span></code></pre></div>
+<p>Este es el comando clave del proceso.<br>
+Al ejecutarlo, Laravel:</p>
+<ul>
+<li>Copia controladores de autenticación al proyecto</li>
+<li>Genera vistas Blade para login, registro, recuperación de contraseña, etc.</li>
+<li>Añade rutas de autenticación en el sistema de rutas</li>
+<li>Configura el uso de Tailwind y Alpine</li>
+<li>Publica componentes Blade reutilizables</li>
+</ul>
+<p>Durante la ejecución, Breeze puede preguntar por el stack a utilizar (Blade, React, Vue, API, etc.).<br>
+Si no se especifica nada, se instala el stack Blade por defecto.</p>
+<hr>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>php artisan migrate</span></span></code></pre></div>
+<p>Este comando:</p>
+<ul>
+<li>Ejecuta las migraciones de base de datos</li>
+<li>Crea, entre otras, la tabla users necesaria para la autenticación</li>
+<li>Deja el sistema preparado para registrar y autenticar usuarios reales</li>
+</ul>
+<p>Sin este paso, el login no funcionaría porque no existirían las tablas necesarias.</p>
+<hr>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>    npm install</span></span></code></pre></div>
+<p>Este comando:</p>
+<ul>
+<li>Instala las dependencias frontend definidas en package.json</li>
+<li>Incluye Tailwind CSS, Vite y otras herramientas necesarias</li>
+<li>Prepara el entorno para compilar los assets</li>
+</ul>
+<p>Es imprescindible tras instalar Breeze, ya que se añaden dependencias nuevas.</p>
+<hr>
+<h3 id="advertencia-sobre-tailwind-4-y-breeze">Advertencia sobre Tailwind 4 y Breeze</h3>
+<p>Laravel Breeze, <strong>por defecto</strong>, está preparado para funcionar con <strong>Tailwind CSS 3</strong>.<br>
+Aun así, es posible forzar el proyecto para usar <strong>Tailwind CSS 4</strong>, pero debes asumir que:</p>
+<ul>
+<li>No es un camino “oficial” en Breeze.</li>
+<li>Puede haber <strong>pequeños fallos visuales</strong> en algunas vistas (normalmente mínimos y fáciles de ajustar).</li>
+<li>El mayor riesgo es dejar el proyecto en un estado “híbrido” (Tailwind 4 + PostCSS antiguo), lo que rompe Vite.</li>
+</ul>
+<hr>
+<h4 id="qué-ocurre-al-instalar-breeze">Qué ocurre al instalar Breeze</h4>
+<p>Después de ejecutar <code>php artisan breeze:install</code> suelen ocurrir estos cambios:</p>
+<ol>
+<li>
+<p><strong>Se sobreescriben o regeneran rutas</strong><br>
+Breeze necesita añadir rutas de autenticación. Si tu <code>routes/web.php</code> estaba personalizado, revisa cambios y recupera tu contenido si fuese necesario.</p>
+</li>
+<li>
+<p><strong>Se instalan controladores, vistas y rutas de autenticación</strong><br>
+Se generan (o se añaden) controladores de autenticación, vistas Blade y rutas para:
+login, register, logout, forgot password, reset password, email verification, etc.</p>
+</li>
+<li>
+<p><strong>Se instala Tailwind 3 y se modifica el frontend</strong><br>
+Breeze añade dependencias y ficheros del stack frontend (Tailwind 3 por defecto).<br>
+Esto puede implicar que tu <code>resources/css/app.css</code> se reemplace o se ajuste para Tailwind 3.</p>
+</li>
+</ol>
+<hr>
+<h3 id="migrar-el-proyecto-a-tailwind-4-mínimo-y-limpio">Migrar el proyecto a Tailwind 4 (mínimo y limpio)</h3>
+<p>Objetivo: dejar el proyecto en un estado coherente con Tailwind 4:</p>
+<ul>
+<li>Tailwind 4</li>
+<li>Sin PostCSS</li>
+<li>Sin autoprefixer</li>
+<li>Vite usando el plugin <code>@tailwindcss/vite</code></li>
+<li>CSS usando <code>@import &quot;tailwindcss&quot;;</code></li>
+</ul>
+<hr>
+<h4 id="1-eliminar-postcss-del-proyecto">1) Eliminar PostCSS del proyecto</h4>
+<p>Borra el fichero de configuración de PostCSS (si existe):</p>
+<ul>
+<li><code>postcss.config.js</code></li>
+</ul>
+<p>Nota: Si este fichero existe, Vite intentará cargar PostCSS y fallará si no tienes <code>autoprefixer</code>.</p>
+<hr>
+<h4 id="2-ajustar-dependencias-packagejson">2) Ajustar dependencias (package.json)</h4>
+<p>Asegúrate de que NO existan estas dependencias en <code>devDependencies</code> del fichero 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    package.json
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">pendiente</h4>
+</span>
+</strong>. Puedes borrar directamente esas líneas:</p>
+<ul>
+<li><code>postcss</code></li>
+<li><code>autoprefixer</code></li>
+<li><code>tailwindcss</code> versión 3</li>
+</ul>
+<p>Instala Tailwind 4 y el plugin oficial para Vite:</p>
+<ul>
+<li><code>tailwindcss</code></li>
+<li><code>@tailwindcss/vite</code>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>- npm install -D tailwindcss@latest @tailwindcss/vite</span></span></code></pre></div></li>
+</ul>
+<ul>
+<li>
+<p>
 
-    Falta explicar los conceptos de qué se instala en cada caso y la opción de iniciar el proceso con un start en la instalación del proyecto
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
 
-</div>
+    tailwindcss@latest:
 
+
+</span>
+</strong>  Instala la versión más reciente de Tailwind (actualmente 4.x).</p>
+</li>
+<li>
+<p>
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    @tailwindcss/vite
+
+
+</span>
+</strong> Es imprescindible para Tailwind 4. Sustituye completamente a PostCSS con autoprefixer.</p>
+</li>
+<li>
+<p>
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    -D (&ndash;save-dev)
+
+
+</span>
+</strong> Tailwind es una dependencia de desarrollo. (En producción, ya se transpila al css</p>
+</li>
+</ul>
+<hr>
+<h4 id="3-limpiar-instalación-de-npm-y-reinstalar">3) Limpiar instalación de npm y reinstalar</h4>
+<p>Elimina dependencias instaladas y el lockfile, y reinstala:
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span> rm -rf node_modules package-lock.json
+</span></span><span style="display:flex;"><span> npm install</span></span></code></pre></div></p>
+<ul>
+<li>borrar <code>node_modules</code></li>
+<li>borrar <code>package-lock.json</code></li>
+<li>ejecutar <code>npm install</code></li>
+</ul>
+<p>Esto evita que queden restos de Tailwind 3 o PostCSS en caché.</p>
+<hr>
+<h4 id="4-configurar-vite-para-tailwind-4">4) Configurar Vite para Tailwind 4</h4>
+<p>En <code>vite.config.js</code> añade el plugin:</p>
+<ul>
+<li>importar <code>tailwindcss</code> desde <code>@tailwindcss/vite</code></li>
+<li>incluir <code>tailwindcss()</code> en <code>plugins</code></li>
+</ul>
+<p>Debe quedar (estructura):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>export <span style="color:#8b008b;font-weight:bold">default</span> defineConfig({
+</span></span><span style="display:flex;"><span>    plugins: [
+</span></span><span style="display:flex;"><span>        laravel({
+</span></span><span style="display:flex;"><span>            <span style="color:#228b22">// Lo que hubiera
+</span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>        }),
+</span></span><span style="display:flex;"><span>        tailwindcss(),
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></div>
+<hr>
+<h4 id="5-cambiar-resourcescssappcss-al-formato-tailwind-4">5) Cambiar <code>resources/css/app.css</code> al formato Tailwind 4</h4>
+<p>En Tailwind 4 NO se usan directivas clásicas <code>@tailwind ...;</code>.</p>
+<p>El contenido mínimo recomendado es:</p>
+<ul>
+<li><code>@import &quot;tailwindcss&quot;;</code></li>
+</ul>
+<hr>
+<h4 id="6-ejecutar-vite">6) Ejecutar Vite</h4>
+<p>Finalmente:</p>
+<ul>
+<li><code>npm run dev</code></li>
+</ul>
+<p>Si Vite arranca sin errores, Tailwind 4 está funcionando.</p>
+<hr>
+<h3 id="nota-sobre-estilos-raros-tras-la-migración">Nota sobre estilos “raros” tras la migración</h3>
+<p>Recuerda que estás usando tailwind en versión 4 y podría ser que alguna vista, algún componente tenga algún detall de estilo diferente en la versión 3:</p>
+<ul>
+<li>No es un fallo de Laravel.</li>
+<li>Es un cambio esperado por las diferencias entre Tailwind 3 y Tailwind 4.</li>
+<li>Normalmente se corrige ajustando clases concretas en las vistas de Breeze.</li>
+</ul>
+<hr>
+<h3 id="limpieza-paso-a-paso-checklist-rápida">Limpieza paso a paso (checklist rápida)</h3>
+<ul>
+<li>Borrar <code>postcss.config.js</code></li>
+<li>Quitar <code>postcss</code> y <code>autoprefixer</code> de <code>package.json</code></li>
+<li>Sustituir Tailwind 3 por Tailwind 4</li>
+<li><code>rm -rf node_modules package-lock.json</code></li>
+<li><code>npm install</code></li>
+<li>Configurar <code>vite.config.js</code> con <code>@tailwindcss/vite</code></li>
+<li>Cambiar <code>app.css</code> a <code>@import &quot;tailwindcss&quot;;</code></li>
+<li><code>npm run dev</code></li>
+</ul>
+<h3 id="opción-alternativa-iniciar-el-proyecto-directamente-con-breeze">Opción alternativa: iniciar el proyecto directamente con Breeze</h3>
+<p>Laravel permite crear un proyecto nuevo e instalar Breeze desde el inicio usando un parámetro</p>
+<p><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>laravel new proyecto --breeze</span></span></code></pre></div>
+Actualmente en el proceso de instalación es habitual que nos pregunte si queremos disponer de esta librería en nuestro proyecto.</p>
+<p>Con esta opción:</p>
+<ul>
+<li>Breeze se instala automáticamente durante la creación del proyecto</li>
+<li>Se generan directamente las vistas, controladores y rutas</li>
+<li>Aun así, será necesario ejecutar migrate y npm install / npm run dev</li>
+</ul>
+<p>Esta opción es útil cuando se sabe desde el principio que el proyecto necesitará autenticación básica.</p>
+<hr>
 <h3 id="usando-docker-para-la-bd">Usando docker para la bd</h3>
 <h3 id="redirección-una-vez-autenticado-con-laravel-breeze">Redirección una vez autenticado con Laravel Breeze</h3>
 <p>En Laravel Breeze, la redirección después de autenticarse se gestiona en el controlador <code>AuthenticatedSessionController</code>. Este controlador define el comportamiento de inicio de sesión y la redirección predeterminada.</p>
@@ -606,7 +827,7 @@ Instalación 1 2 3 4 5 6 7 composer require laravel/breeze --dev php artisan bre
         
       </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
         <span class="td-footer__copyright">&copy;
-    2025
+    2026
     <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
       </div>
     </div>
