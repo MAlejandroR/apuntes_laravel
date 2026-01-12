@@ -1,5 +1,5 @@
 ---
-title: "Extracción automática de cadenas de traducción"
+title: "Extracción de texto"
 date: 2026-01-12T08:00:00+02:00
 draft: false
 weight: 20
@@ -25,23 +25,24 @@ El objetivo es **recorrer recursivamente el proyecto** (Blade, PHP, JS, Vue) y g
 
 ---
 
-## Opción recomendada: laravel-json-translation-helper
+### Opción recomendada: laravel-json-translation-helper
 
 Este paquete permite **escanear automáticamente** el proyecto y generar/actualizar los archivos JSON de traducción.
 
-### Instalación
+#### Instalación
 
 {{< highlight bash >}}
 composer require subotkevic/laravel-json-translation-helper
 {{< /highlight >}}
 
-### Publicar configuración
+#### Publicar configuración
 
 {{< highlight bash >}}
 php artisan vendor:publish --provider="JsonTranslationHelper\TranslationHelperServiceProvider"
 {{< /highlight >}}
 
-### Configuración típica
+#### Configuración típica
+Se puede personalizar a ficheros {{<color>}}vue{{</color>}}, {{<color>}}jsx{{</color>}} y otros formatos
 
 Archivo `config/translation-helper.php`:
 
@@ -57,6 +58,7 @@ resource_path('js'),
         'php',
         'js',
         'vue',
+        'jsx'
     ],
 
     'translation_methods' => [

@@ -17,27 +17,35 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
-<title>Diagrama de flujo | Laravel: Framework de php</title>
-<meta name="description" content="Idea del Diagrama 1. Configuración Inicial Archivo de Configuración fortify.php Ruta: config/fortify.php Elementos configurables: features, views, guard, passwords, etc. username, email, lowercase_username, home, prefix, domain, middleware, limiters 2. Proceso de Autenticación Solicitudes de Autenticación Rutas de Fortify Registro /register Inicio de sesión /login Restablecimiento de contraseña /forgot-password, /reset-password Controladores de Fortify RegistersUsers, AuthenticatesUsers, ResetsPasswords, ConfirmsPasswords, VerifiesEmails, UpdatesPasswords, TwoFactorAuthenticatesUsers, LogoutUsers Eventos y Acciones Registro exitoso Inicio de sesión exitoso Restablecimiento de contraseña exitoso 3. Personalización Controladores Personalizados Sobrescribir los controladores de Fortify Ubicación: app/Http/Controllers/Auth Vistas Personalizadas Sobrescribir las vistas de Fortify Ubicación: resources/views/auth 4. Funcionalidades Adicionales Verificación de Dos Factores (2FA) Configuración en fortify.php Clases: TwoFactorAuthenticationController Verificación de Correo Electrónico Configuración en fortify.php Clases: EmailVerificationController 5. Interacción con Modelos User Model Métodos personalizados Relaciones con otras entidades 6. Diagrama General Componentes Principales Configuración Inicial Proceso de Autenticación Personalización Funcionalidades Adicionales Interacción con Modelos Detalles del Diagrama A. Configuración Inicial Archivo de Configuración fortify.php Diagrama detallando las configuraciones clave y su impacto. B. Proceso de Autenticación Solicitudes de Autenticación Flujo desde la solicitud del usuario hasta la respuesta del servidor. Incluye rutas, controladores y vistas. C. Personalización Controladores y Vistas Personalizadas Cómo sobrescribir y extender las funcionalidades de Fortify. D. Funcionalidades Adicionales 2FA y Verificación de Correo Flujo y clases involucradas. E. Interacción con Modelos User Model Métodos importantes y relaciones. Ejemplo de Esquema del Diagrama Nodo Central: Laravel Fortify Subnodos: Configuración Inicial Archivo fortify.php Proceso de Autenticación Rutas Controladores Eventos Personalización Controladores Personalizados Vistas Personalizadas Funcionalidades Adicionales 2FA Verificación de Correo Interacción con Modelos User Model Conexiones Conexiones entre nodos mostrando el flujo de datos. Anotaciones en cada conexión para describir el propósito y funcionalidad. Con esta estructura, podrás crear un diagrama en Draw.io que ilustre claramente cómo funciona Fortify, cómo se configura y cómo se puede personalizar para ajustarse a las necesidades específicas de tu aplicación Laravel.">
+<title>Extracción automática de cadenas de traducción | Laravel: Framework de php</title>
+<meta name="description" content="Extracción de cadenas de traducción en Laravel &#43; Vue En proyectos Laravel &#43; Vue, es habitual envolver los textos traducibles con el helper:
+{{ __(&#34;Texto a traducir&#34;) }} El objetivo es recorrer recursivamente el proyecto (Blade, PHP, JS, Vue) y generar un único fichero de traducción con el formato:
+{ &#34;Texto 1 a traducir&#34;: &#34;&#34;, &#34;Texto 2 a traducir&#34;: &#34;&#34; } Opción recomendada: laravel-json-translation-helper Este paquete permite escanear automáticamente el proyecto y generar/actualizar los archivos JSON de traducción.">
 
-<meta property="og:url" content="https://web.infenlaces.com/laravel/docs/06_autenticacion/fortify/diagrama/">
+<meta property="og:url" content="https://web.infenlaces.com/laravel/docs/05_multilenguaje/plugin_busqueda/">
   <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Diagrama de flujo">
-  <meta property="og:description" content="Idea del Diagrama 1. Configuración Inicial Archivo de Configuración fortify.php Ruta: config/fortify.php Elementos configurables: features, views, guard, passwords, etc. username, email, lowercase_username, home, prefix, domain, middleware, limiters 2. Proceso de Autenticación Solicitudes de Autenticación Rutas de Fortify Registro /register Inicio de sesión /login Restablecimiento de contraseña /forgot-password, /reset-password Controladores de Fortify RegistersUsers, AuthenticatesUsers, ResetsPasswords, ConfirmsPasswords, VerifiesEmails, UpdatesPasswords, TwoFactorAuthenticatesUsers, LogoutUsers Eventos y Acciones Registro exitoso Inicio de sesión exitoso Restablecimiento de contraseña exitoso 3. Personalización Controladores Personalizados Sobrescribir los controladores de Fortify Ubicación: app/Http/Controllers/Auth Vistas Personalizadas Sobrescribir las vistas de Fortify Ubicación: resources/views/auth 4. Funcionalidades Adicionales Verificación de Dos Factores (2FA) Configuración en fortify.php Clases: TwoFactorAuthenticationController Verificación de Correo Electrónico Configuración en fortify.php Clases: EmailVerificationController 5. Interacción con Modelos User Model Métodos personalizados Relaciones con otras entidades 6. Diagrama General Componentes Principales Configuración Inicial Proceso de Autenticación Personalización Funcionalidades Adicionales Interacción con Modelos Detalles del Diagrama A. Configuración Inicial Archivo de Configuración fortify.php Diagrama detallando las configuraciones clave y su impacto. B. Proceso de Autenticación Solicitudes de Autenticación Flujo desde la solicitud del usuario hasta la respuesta del servidor. Incluye rutas, controladores y vistas. C. Personalización Controladores y Vistas Personalizadas Cómo sobrescribir y extender las funcionalidades de Fortify. D. Funcionalidades Adicionales 2FA y Verificación de Correo Flujo y clases involucradas. E. Interacción con Modelos User Model Métodos importantes y relaciones. Ejemplo de Esquema del Diagrama Nodo Central: Laravel Fortify Subnodos: Configuración Inicial Archivo fortify.php Proceso de Autenticación Rutas Controladores Eventos Personalización Controladores Personalizados Vistas Personalizadas Funcionalidades Adicionales 2FA Verificación de Correo Interacción con Modelos User Model Conexiones Conexiones entre nodos mostrando el flujo de datos. Anotaciones en cada conexión para describir el propósito y funcionalidad. Con esta estructura, podrás crear un diagrama en Draw.io que ilustre claramente cómo funciona Fortify, cómo se configura y cómo se puede personalizar para ajustarse a las necesidades específicas de tu aplicación Laravel.">
+  <meta property="og:title" content="Extracción automática de cadenas de traducción">
+  <meta property="og:description" content="Extracción de cadenas de traducción en Laravel &#43; Vue En proyectos Laravel &#43; Vue, es habitual envolver los textos traducibles con el helper:
+{{ __(&#34;Texto a traducir&#34;) }} El objetivo es recorrer recursivamente el proyecto (Blade, PHP, JS, Vue) y generar un único fichero de traducción con el formato:
+{ &#34;Texto 1 a traducir&#34;: &#34;&#34;, &#34;Texto 2 a traducir&#34;: &#34;&#34; } Opción recomendada: laravel-json-translation-helper Este paquete permite escanear automáticamente el proyecto y generar/actualizar los archivos JSON de traducción.">
   <meta property="og:locale" content="es">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:published_time" content="2023-04-08T18:21:47+02:00">
-    <meta property="article:modified_time" content="2023-04-08T18:21:47+02:00">
+    <meta property="article:published_time" content="2026-01-12T08:00:00+02:00">
+    <meta property="article:modified_time" content="2026-01-12T08:00:00+02:00">
 
-  <meta itemprop="name" content="Diagrama de flujo">
-  <meta itemprop="description" content="Idea del Diagrama 1. Configuración Inicial Archivo de Configuración fortify.php Ruta: config/fortify.php Elementos configurables: features, views, guard, passwords, etc. username, email, lowercase_username, home, prefix, domain, middleware, limiters 2. Proceso de Autenticación Solicitudes de Autenticación Rutas de Fortify Registro /register Inicio de sesión /login Restablecimiento de contraseña /forgot-password, /reset-password Controladores de Fortify RegistersUsers, AuthenticatesUsers, ResetsPasswords, ConfirmsPasswords, VerifiesEmails, UpdatesPasswords, TwoFactorAuthenticatesUsers, LogoutUsers Eventos y Acciones Registro exitoso Inicio de sesión exitoso Restablecimiento de contraseña exitoso 3. Personalización Controladores Personalizados Sobrescribir los controladores de Fortify Ubicación: app/Http/Controllers/Auth Vistas Personalizadas Sobrescribir las vistas de Fortify Ubicación: resources/views/auth 4. Funcionalidades Adicionales Verificación de Dos Factores (2FA) Configuración en fortify.php Clases: TwoFactorAuthenticationController Verificación de Correo Electrónico Configuración en fortify.php Clases: EmailVerificationController 5. Interacción con Modelos User Model Métodos personalizados Relaciones con otras entidades 6. Diagrama General Componentes Principales Configuración Inicial Proceso de Autenticación Personalización Funcionalidades Adicionales Interacción con Modelos Detalles del Diagrama A. Configuración Inicial Archivo de Configuración fortify.php Diagrama detallando las configuraciones clave y su impacto. B. Proceso de Autenticación Solicitudes de Autenticación Flujo desde la solicitud del usuario hasta la respuesta del servidor. Incluye rutas, controladores y vistas. C. Personalización Controladores y Vistas Personalizadas Cómo sobrescribir y extender las funcionalidades de Fortify. D. Funcionalidades Adicionales 2FA y Verificación de Correo Flujo y clases involucradas. E. Interacción con Modelos User Model Métodos importantes y relaciones. Ejemplo de Esquema del Diagrama Nodo Central: Laravel Fortify Subnodos: Configuración Inicial Archivo fortify.php Proceso de Autenticación Rutas Controladores Eventos Personalización Controladores Personalizados Vistas Personalizadas Funcionalidades Adicionales 2FA Verificación de Correo Interacción con Modelos User Model Conexiones Conexiones entre nodos mostrando el flujo de datos. Anotaciones en cada conexión para describir el propósito y funcionalidad. Con esta estructura, podrás crear un diagrama en Draw.io que ilustre claramente cómo funciona Fortify, cómo se configura y cómo se puede personalizar para ajustarse a las necesidades específicas de tu aplicación Laravel.">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="307">
+  <meta itemprop="name" content="Extracción automática de cadenas de traducción">
+  <meta itemprop="description" content="Extracción de cadenas de traducción en Laravel &#43; Vue En proyectos Laravel &#43; Vue, es habitual envolver los textos traducibles con el helper:
+{{ __(&#34;Texto a traducir&#34;) }} El objetivo es recorrer recursivamente el proyecto (Blade, PHP, JS, Vue) y generar un único fichero de traducción con el formato:
+{ &#34;Texto 1 a traducir&#34;: &#34;&#34;, &#34;Texto 2 a traducir&#34;: &#34;&#34; } Opción recomendada: laravel-json-translation-helper Este paquete permite escanear automáticamente el proyecto y generar/actualizar los archivos JSON de traducción.">
+  <meta itemprop="datePublished" content="2026-01-12T08:00:00+02:00">
+  <meta itemprop="dateModified" content="2026-01-12T08:00:00+02:00">
+  <meta itemprop="wordCount" content="212">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Diagrama de flujo">
-  <meta name="twitter:description" content="Idea del Diagrama 1. Configuración Inicial Archivo de Configuración fortify.php Ruta: config/fortify.php Elementos configurables: features, views, guard, passwords, etc. username, email, lowercase_username, home, prefix, domain, middleware, limiters 2. Proceso de Autenticación Solicitudes de Autenticación Rutas de Fortify Registro /register Inicio de sesión /login Restablecimiento de contraseña /forgot-password, /reset-password Controladores de Fortify RegistersUsers, AuthenticatesUsers, ResetsPasswords, ConfirmsPasswords, VerifiesEmails, UpdatesPasswords, TwoFactorAuthenticatesUsers, LogoutUsers Eventos y Acciones Registro exitoso Inicio de sesión exitoso Restablecimiento de contraseña exitoso 3. Personalización Controladores Personalizados Sobrescribir los controladores de Fortify Ubicación: app/Http/Controllers/Auth Vistas Personalizadas Sobrescribir las vistas de Fortify Ubicación: resources/views/auth 4. Funcionalidades Adicionales Verificación de Dos Factores (2FA) Configuración en fortify.php Clases: TwoFactorAuthenticationController Verificación de Correo Electrónico Configuración en fortify.php Clases: EmailVerificationController 5. Interacción con Modelos User Model Métodos personalizados Relaciones con otras entidades 6. Diagrama General Componentes Principales Configuración Inicial Proceso de Autenticación Personalización Funcionalidades Adicionales Interacción con Modelos Detalles del Diagrama A. Configuración Inicial Archivo de Configuración fortify.php Diagrama detallando las configuraciones clave y su impacto. B. Proceso de Autenticación Solicitudes de Autenticación Flujo desde la solicitud del usuario hasta la respuesta del servidor. Incluye rutas, controladores y vistas. C. Personalización Controladores y Vistas Personalizadas Cómo sobrescribir y extender las funcionalidades de Fortify. D. Funcionalidades Adicionales 2FA y Verificación de Correo Flujo y clases involucradas. E. Interacción con Modelos User Model Métodos importantes y relaciones. Ejemplo de Esquema del Diagrama Nodo Central: Laravel Fortify Subnodos: Configuración Inicial Archivo fortify.php Proceso de Autenticación Rutas Controladores Eventos Personalización Controladores Personalizados Vistas Personalizadas Funcionalidades Adicionales 2FA Verificación de Correo Interacción con Modelos User Model Conexiones Conexiones entre nodos mostrando el flujo de datos. Anotaciones en cada conexión para describir el propósito y funcionalidad. Con esta estructura, podrás crear un diagrama en Draw.io que ilustre claramente cómo funciona Fortify, cómo se configura y cómo se puede personalizar para ajustarse a las necesidades específicas de tu aplicación Laravel.">
+  <meta name="twitter:title" content="Extracción automática de cadenas de traducción">
+  <meta name="twitter:description" content="Extracción de cadenas de traducción en Laravel &#43; Vue En proyectos Laravel &#43; Vue, es habitual envolver los textos traducibles con el helper:
+{{ __(&#34;Texto a traducir&#34;) }} El objetivo es recorrer recursivamente el proyecto (Blade, PHP, JS, Vue) y generar un único fichero de traducción con el formato:
+{ &#34;Texto 1 a traducir&#34;: &#34;&#34;, &#34;Texto 2 a traducir&#34;: &#34;&#34; } Opción recomendada: laravel-json-translation-helper Este paquete permite escanear automáticamente el proyecto y generar/actualizar los archivos JSON de traducción.">
 
 
 <link rel="preload" href="/laravel/scss/main.min.f08d3ee4c2260e45bc83dcd9b8fb5edb2d493ec4ff88d5536efe7bcddf062080.css" as="style"><link href="/laravel/scss/main.min.f08d3ee4c2260e45bc83dcd9b8fb5edb2d493ec4ff88d5536efe7bcddf062080.css" rel="stylesheet">
@@ -135,14 +143,14 @@
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs05_multilenguaje-li">
-  <input type="checkbox" id="m-laraveldocs05_multilenguaje-check"/>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs05_multilenguaje-li">
+  <input type="checkbox" id="m-laraveldocs05_multilenguaje-check" checked/>
   <label for="m-laraveldocs05_multilenguaje-check"><a href="/laravel/docs/05_multilenguaje/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs05_multilenguaje"><span class="">Multilenguaje</span></a></label>
   
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs05_multilenguajeplugin_busqueda-li">
-  <input type="checkbox" id="m-laraveldocs05_multilenguajeplugin_busqueda-check"/>
-  <label for="m-laraveldocs05_multilenguajeplugin_busqueda-check"><a href="/laravel/docs/05_multilenguaje/plugin_busqueda/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs05_multilenguajeplugin_busqueda"><i class="fa-solid fa-language"></i><span class="">Extracción automática de cadenas de traducción</span></a></label>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocs05_multilenguajeplugin_busqueda-li">
+  <input type="checkbox" id="m-laraveldocs05_multilenguajeplugin_busqueda-check" checked/>
+  <label for="m-laraveldocs05_multilenguajeplugin_busqueda-check"><a href="/laravel/docs/05_multilenguaje/plugin_busqueda/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__page" id="m-laraveldocs05_multilenguajeplugin_busqueda"><i class="fa-solid fa-language"></i><span class="td-sidebar-nav-active-item">Extracción automática de cadenas de traducción</span></a></label>
   
 </li>
   </ul>
@@ -150,8 +158,8 @@
   <input type="checkbox" id="m-laraveldocs60_collection-check"/>
   <label for="m-laraveldocs60_collection-check"><a href="/laravel/docs/60_collection/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs60_collection"><span class="">Collection en Laravel</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs06_autenticacion-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacion-check" checked/>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacion-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacion-check"/>
   <label for="m-laraveldocs06_autenticacion-check"><a href="/laravel/docs/06_autenticacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacion"><i class="fa-solid fa-sitemap"></i><span class="">Autenticación</span></a></label>
   
   <ul class="ul-2 foldable">
@@ -303,20 +311,17 @@
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#1-configuración-inicial">1. Configuración Inicial</a></li>
-    <li><a href="#2-proceso-de-autenticación">2. Proceso de Autenticación</a></li>
-    <li><a href="#3-personalización">3. Personalización</a></li>
-    <li><a href="#4-funcionalidades-adicionales">4. Funcionalidades Adicionales</a></li>
-    <li><a href="#5-interacción-con-modelos">5. Interacción con Modelos</a></li>
-    <li><a href="#6-diagrama-general">6. Diagrama General</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#a-configuración-inicial">A. Configuración Inicial</a></li>
-    <li><a href="#b-proceso-de-autenticación">B. Proceso de Autenticación</a></li>
-    <li><a href="#c-personalización">C. Personalización</a></li>
-    <li><a href="#d-funcionalidades-adicionales">D. Funcionalidades Adicionales</a></li>
-    <li><a href="#e-interacción-con-modelos">E. Interacción con Modelos</a></li>
+    <li><a href="#extracción-de-cadenas-de-traducción-en-laravel--vue">Extracción de cadenas de traducción en Laravel + Vue</a></li>
+    <li><a href="#opción-recomendada-laravel-json-translation-helper">Opción recomendada: laravel-json-translation-helper</a>
+      <ul>
+        <li><a href="#instalación">Instalación</a></li>
+        <li><a href="#publicar-configuración">Publicar configuración</a></li>
+        <li><a href="#configuración-típica">Configuración típica</a></li>
+        <li><a href="#ejecución-del-escaneo">Ejecución del escaneo</a></li>
+      </ul>
+    </li>
+    <li><a href="#resultado-generado">Resultado generado</a></li>
+    <li><a href="#conclusión">Conclusión</a></li>
   </ul>
 </nav>
       </div>
@@ -370,227 +375,87 @@
   <li class="breadcrumb-item">
     <a href="/laravel/docs/">Laravel</a></li>
   <li class="breadcrumb-item">
-    <a href="/laravel/docs/06_autenticacion/">Autenticación</a></li>
-  <li class="breadcrumb-item">
-    <a href="">Fortify y Jetstream</a></li>
+    <a href="/laravel/docs/05_multilenguaje/">Multilenguaje</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    Diagrama de flujo</li>
+    Extracción automática de cadenas de traducción</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>Diagrama de flujo</h1>
+	<h1>Extracción automática de cadenas de traducción</h1>
 	
 	<header class="article-meta">
 		
 </header>
-	<h1 id="idea-del-diagrama">Idea del Diagrama</h1>
-<h2 id="1-configuración-inicial">1. Configuración Inicial</h2>
+	<h2 id="extracción-de-cadenas-de-traducción-en-laravel--vue">Extracción de cadenas de traducción en Laravel + Vue</h2>
+<p>En proyectos <strong>Laravel + Vue</strong>, es habitual envolver los textos traducibles con el helper:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>{{ __(<span style="color:#cd5555">&#34;Texto a traducir&#34;</span>) }}</span></span></code></pre></div>
+<p>El objetivo es <strong>recorrer recursivamente el proyecto</strong> (Blade, PHP, JS, Vue) y generar un único fichero de traducción con el formato:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&#34;Texto 1 a traducir&#34;</span>: <span style="color:#cd5555">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&#34;Texto 2 a traducir&#34;</span>: <span style="color:#cd5555">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<hr>
+<h2 id="opción-recomendada-laravel-json-translation-helper">Opción recomendada: laravel-json-translation-helper</h2>
+<p>Este paquete permite <strong>escanear automáticamente</strong> el proyecto y generar/actualizar los archivos JSON de traducción.</p>
+<h3 id="instalación">Instalación</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require subotkevic/laravel-json-translation-helper</span></span></code></pre></div>
+<h3 id="publicar-configuración">Publicar configuración</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan vendor:publish --provider=<span style="color:#cd5555">&#34;JsonTranslationHelper\TranslationHelperServiceProvider&#34;</span></span></span></code></pre></div>
+<h3 id="configuración-típica">Configuración típica</h3>
+<p>Archivo <code>config/translation-helper.php</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> [
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;scan_directories&#39;</span> =&gt; [
+</span></span><span style="display:flex;"><span>app_path(),
+</span></span><span style="display:flex;"><span>resource_path(<span style="color:#cd5555">&#39;views&#39;</span>),
+</span></span><span style="display:flex;"><span>resource_path(<span style="color:#cd5555">&#39;js&#39;</span>),
+</span></span><span style="display:flex;"><span>],
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;file_extensions&#39;</span> =&gt; [
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#39;php&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#39;js&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#39;vue&#39;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;translation_methods&#39;</span> =&gt; [
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#39;__&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#39;lang&#39;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>];</span></span></code></pre></div>
+<h3 id="ejecución-del-escaneo">Ejecución del escaneo</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan translation:scan</span></span></code></pre></div>
+<p>Este comando:</p>
 <ul>
-<li><strong>Archivo de Configuración <code>fortify.php</code></strong>
-<ul>
-<li>Ruta: <code>config/fortify.php</code></li>
-<li>Elementos configurables:
-<ul>
-<li><code>features</code>,</li>
-<li><code>views</code>,</li>
-<li><code>guard</code>,</li>
-<li><code>passwords</code>, etc.</li>
-<li><code>username</code>,</li>
-<li><code>email</code>,</li>
-<li><code>lowercase_username</code>,</li>
-<li><code>home</code>,</li>
-<li><code>prefix</code>,</li>
-<li><code>domain</code>,</li>
-<li><code>middleware</code>,</li>
-<li><code>limiters</code></li>
+<li>Recorre los directorios configurados</li>
+<li>Detecta llamadas a <code>__()</code>, <code>lang()</code>, <code>@lang</code></li>
+<li>Añade automáticamente las claves faltantes al JSON</li>
+<li>Evita duplicados</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-proceso-de-autenticación">2. Proceso de Autenticación</h2>
-<ul>
-<li><strong>Solicitudes de Autenticación</strong>
-<ul>
-<li><strong>Rutas de Fortify</strong>
-<ul>
-<li>Registro
-<ul>
-<li><code>/register</code></li>
-</ul>
-</li>
-<li>Inicio de sesión
-<ul>
-<li><code>/login</code></li>
-</ul>
-</li>
-<li>Restablecimiento de contraseña
-<ul>
-<li><code>/forgot-password</code>,</li>
-<li><code>/reset-password</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Controladores de Fortify</strong>
-<ul>
-<li><code>RegistersUsers</code>,</li>
-<li><code>AuthenticatesUsers</code>,</li>
-<li><code>ResetsPasswords</code>,</li>
-<li><code>ConfirmsPasswords</code>,</li>
-<li><code>VerifiesEmails</code>,</li>
-<li><code>UpdatesPasswords</code>,</li>
-<li><code>TwoFactorAuthenticatesUsers</code>,</li>
-<li><code>LogoutUsers</code></li>
-<li><strong>Eventos y Acciones</strong>
-<ul>
-<li>Registro exitoso</li>
-<li>Inicio de sesión exitoso</li>
-<li>Restablecimiento de contraseña exitoso</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-personalización">3. Personalización</h2>
-<ul>
-<li><strong>Controladores Personalizados</strong>
-<ul>
-<li>Sobrescribir los controladores de Fortify</li>
-<li>Ubicación: <code>app/Http/Controllers/Auth</code></li>
-</ul>
-</li>
-<li><strong>Vistas Personalizadas</strong>
-<ul>
-<li>Sobrescribir las vistas de Fortify</li>
-<li>Ubicación: <code>resources/views/auth</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="4-funcionalidades-adicionales">4. Funcionalidades Adicionales</h2>
-<ul>
-<li><strong>Verificación de Dos Factores (2FA)</strong>
-<ul>
-<li>Configuración en <code>fortify.php</code></li>
-<li>Clases: <code>TwoFactorAuthenticationController</code></li>
-</ul>
-</li>
-<li><strong>Verificación de Correo Electrónico</strong>
-<ul>
-<li>Configuración en <code>fortify.php</code></li>
-<li>Clases: <code>EmailVerificationController</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="5-interacción-con-modelos">5. Interacción con Modelos</h2>
-<ul>
-<li><strong>User Model</strong>
-<ul>
-<li>Métodos personalizados</li>
-<li>Relaciones con otras entidades</li>
-</ul>
-</li>
-</ul>
-<h2 id="6-diagrama-general">6. Diagrama General</h2>
-<ul>
-<li><strong>Componentes Principales</strong>
-<ul>
-<li>Configuración Inicial</li>
-<li>Proceso de Autenticación</li>
-<li>Personalización</li>
-<li>Funcionalidades Adicionales</li>
-<li>Interacción con Modelos</li>
-</ul>
-</li>
-</ul>
-<h1 id="detalles-del-diagrama">Detalles del Diagrama</h1>
-<h2 id="a-configuración-inicial">A. Configuración Inicial</h2>
-<ul>
-<li><strong>Archivo de Configuración <code>fortify.php</code></strong>
-<ul>
-<li>Diagrama detallando las configuraciones clave y su impacto.</li>
-</ul>
-</li>
-</ul>
-<h2 id="b-proceso-de-autenticación">B. Proceso de Autenticación</h2>
-<ul>
-<li><strong>Solicitudes de Autenticación</strong>
-<ul>
-<li>Flujo desde la solicitud del usuario hasta la respuesta del servidor.</li>
-<li>Incluye rutas, controladores y vistas.</li>
-</ul>
-</li>
-</ul>
-<h2 id="c-personalización">C. Personalización</h2>
-<ul>
-<li><strong>Controladores y Vistas Personalizadas</strong>
-<ul>
-<li>Cómo sobrescribir y extender las funcionalidades de Fortify.</li>
-</ul>
-</li>
-</ul>
-<h2 id="d-funcionalidades-adicionales">D. Funcionalidades Adicionales</h2>
-<ul>
-<li><strong>2FA y Verificación de Correo</strong>
-<ul>
-<li>Flujo y clases involucradas.</li>
-</ul>
-</li>
-</ul>
-<h2 id="e-interacción-con-modelos">E. Interacción con Modelos</h2>
-<ul>
-<li><strong>User Model</strong>
-<ul>
-<li>Métodos importantes y relaciones.</li>
-</ul>
-</li>
-</ul>
-<h1 id="ejemplo-de-esquema-del-diagrama">Ejemplo de Esquema del Diagrama</h1>
-<ul>
-<li><strong>Nodo Central</strong>: Laravel Fortify</li>
-<li><strong>Subnodos</strong>:
-<ul>
-<li>Configuración Inicial
-<ul>
-<li>Archivo <code>fortify.php</code></li>
-</ul>
-</li>
-<li>Proceso de Autenticación
-<ul>
-<li>Rutas</li>
-<li>Controladores</li>
-<li>Eventos</li>
-</ul>
-</li>
-<li>Personalización
-<ul>
-<li>Controladores Personalizados</li>
-<li>Vistas Personalizadas</li>
-</ul>
-</li>
-<li>Funcionalidades Adicionales
-<ul>
-<li>2FA</li>
-<li>Verificación de Correo</li>
-</ul>
-</li>
-<li>Interacción con Modelos
-<ul>
-<li>User Model</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="conexiones">Conexiones</h1>
-<ul>
-<li>Conexiones entre nodos mostrando el flujo de datos.</li>
-<li>Anotaciones en cada conexión para describir el propósito y funcionalidad.</li>
-</ul>
-<p>Con esta estructura, podrás crear un diagrama en Draw.io que ilustre claramente cómo funciona Fortify, cómo se configura y cómo se puede personalizar para ajustarse a las necesidades específicas de tu aplicación Laravel.</p>
+<hr>
+<h2 id="resultado-generado">Resultado generado</h2>
+<p>Si en el proyecto existen textos como:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>{{ __(<span style="color:#cd5555">&#34;Enviar&#34;</span>) }}
+</span></span><span style="display:flex;"><span>{{ __(<span style="color:#cd5555">&#34;Cancelar&#34;</span>) }}</span></span></code></pre></div>
+<p>El archivo de traducción quedará así:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&#34;Enviar&#34;</span>: <span style="color:#cd5555">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&#34;Cancelar&#34;</span>: <span style="color:#cd5555">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<hr>
+<h2 id="conclusión">Conclusión</h2>
+<p>✔ Para la mayoría de proyectos Laravel + Vue, <strong><code>laravel-json-translation-helper</code> es la solución óptima</strong><br>
+✔ Soporta fichero de tipo 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    .vue, .js. .blade.php, ts, jsx, tsx
+
+
+</span>
+</strong><br>
+✔ Genera exactamente el formato <code>&quot;texto&quot;: &quot;&quot;</code> requerido</p>
+<p>Ideal para flujos de trabajo educativos y proyectos multi-idioma.</p>
 
 	
 </div>
