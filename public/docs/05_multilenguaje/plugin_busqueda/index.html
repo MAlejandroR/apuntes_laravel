@@ -17,14 +17,14 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
-<title>Extracción automática de cadenas de traducción | Laravel: Framework de php</title>
+<title>Extracción de texto | Laravel: Framework de php</title>
 <meta name="description" content="Extracción de cadenas de traducción en Laravel &#43; Vue En proyectos Laravel &#43; Vue, es habitual envolver los textos traducibles con el helper:
 {{ __(&#34;Texto a traducir&#34;) }} El objetivo es recorrer recursivamente el proyecto (Blade, PHP, JS, Vue) y generar un único fichero de traducción con el formato:
 { &#34;Texto 1 a traducir&#34;: &#34;&#34;, &#34;Texto 2 a traducir&#34;: &#34;&#34; } Opción recomendada: laravel-json-translation-helper Este paquete permite escanear automáticamente el proyecto y generar/actualizar los archivos JSON de traducción.">
 
 <meta property="og:url" content="https://web.infenlaces.com/laravel/docs/05_multilenguaje/plugin_busqueda/">
   <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Extracción automática de cadenas de traducción">
+  <meta property="og:title" content="Extracción de texto">
   <meta property="og:description" content="Extracción de cadenas de traducción en Laravel &#43; Vue En proyectos Laravel &#43; Vue, es habitual envolver los textos traducibles con el helper:
 {{ __(&#34;Texto a traducir&#34;) }} El objetivo es recorrer recursivamente el proyecto (Blade, PHP, JS, Vue) y generar un único fichero de traducción con el formato:
 { &#34;Texto 1 a traducir&#34;: &#34;&#34;, &#34;Texto 2 a traducir&#34;: &#34;&#34; } Opción recomendada: laravel-json-translation-helper Este paquete permite escanear automáticamente el proyecto y generar/actualizar los archivos JSON de traducción.">
@@ -34,15 +34,15 @@
     <meta property="article:published_time" content="2026-01-12T08:00:00+02:00">
     <meta property="article:modified_time" content="2026-01-12T08:00:00+02:00">
 
-  <meta itemprop="name" content="Extracción automática de cadenas de traducción">
+  <meta itemprop="name" content="Extracción de texto">
   <meta itemprop="description" content="Extracción de cadenas de traducción en Laravel &#43; Vue En proyectos Laravel &#43; Vue, es habitual envolver los textos traducibles con el helper:
 {{ __(&#34;Texto a traducir&#34;) }} El objetivo es recorrer recursivamente el proyecto (Blade, PHP, JS, Vue) y generar un único fichero de traducción con el formato:
 { &#34;Texto 1 a traducir&#34;: &#34;&#34;, &#34;Texto 2 a traducir&#34;: &#34;&#34; } Opción recomendada: laravel-json-translation-helper Este paquete permite escanear automáticamente el proyecto y generar/actualizar los archivos JSON de traducción.">
   <meta itemprop="datePublished" content="2026-01-12T08:00:00+02:00">
   <meta itemprop="dateModified" content="2026-01-12T08:00:00+02:00">
-  <meta itemprop="wordCount" content="212">
+  <meta itemprop="wordCount" content="224">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Extracción automática de cadenas de traducción">
+  <meta name="twitter:title" content="Extracción de texto">
   <meta name="twitter:description" content="Extracción de cadenas de traducción en Laravel &#43; Vue En proyectos Laravel &#43; Vue, es habitual envolver los textos traducibles con el helper:
 {{ __(&#34;Texto a traducir&#34;) }} El objetivo es recorrer recursivamente el proyecto (Blade, PHP, JS, Vue) y generar un único fichero de traducción con el formato:
 { &#34;Texto 1 a traducir&#34;: &#34;&#34;, &#34;Texto 2 a traducir&#34;: &#34;&#34; } Opción recomendada: laravel-json-translation-helper Este paquete permite escanear automáticamente el proyecto y generar/actualizar los archivos JSON de traducción.">
@@ -150,7 +150,7 @@
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocs05_multilenguajeplugin_busqueda-li">
   <input type="checkbox" id="m-laraveldocs05_multilenguajeplugin_busqueda-check" checked/>
-  <label for="m-laraveldocs05_multilenguajeplugin_busqueda-check"><a href="/laravel/docs/05_multilenguaje/plugin_busqueda/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__page" id="m-laraveldocs05_multilenguajeplugin_busqueda"><i class="fa-solid fa-language"></i><span class="td-sidebar-nav-active-item">Extracción automática de cadenas de traducción</span></a></label>
+  <label for="m-laraveldocs05_multilenguajeplugin_busqueda-check"><a href="/laravel/docs/05_multilenguaje/plugin_busqueda/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__page" id="m-laraveldocs05_multilenguajeplugin_busqueda"><i class="fa-solid fa-language"></i><span class="td-sidebar-nav-active-item">Extracción de texto</span></a></label>
   
 </li>
   </ul>
@@ -311,12 +311,9 @@
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#extracción-de-cadenas-de-traducción-en-laravel--vue">Extracción de cadenas de traducción en Laravel + Vue</a></li>
-    <li><a href="#opción-recomendada-laravel-json-translation-helper">Opción recomendada: laravel-json-translation-helper</a>
+    <li><a href="#extracción-de-cadenas-de-traducción-en-laravel--vue">Extracción de cadenas de traducción en Laravel + Vue</a>
       <ul>
-        <li><a href="#instalación">Instalación</a></li>
-        <li><a href="#publicar-configuración">Publicar configuración</a></li>
-        <li><a href="#configuración-típica">Configuración típica</a></li>
+        <li><a href="#opción-recomendada-laravel-json-translation-helper">Opción recomendada: laravel-json-translation-helper</a></li>
         <li><a href="#ejecución-del-escaneo">Ejecución del escaneo</a></li>
       </ul>
     </li>
@@ -377,12 +374,12 @@
   <li class="breadcrumb-item">
     <a href="/laravel/docs/05_multilenguaje/">Multilenguaje</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    Extracción automática de cadenas de traducción</li>
+    Extracción de texto</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>Extracción automática de cadenas de traducción</h1>
+	<h1>Extracción de texto</h1>
 	
 	<header class="article-meta">
 		
@@ -396,13 +393,32 @@
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&#34;Texto 2 a traducir&#34;</span>: <span style="color:#cd5555">&#34;&#34;</span>
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
 <hr>
-<h2 id="opción-recomendada-laravel-json-translation-helper">Opción recomendada: laravel-json-translation-helper</h2>
+<h3 id="opción-recomendada-laravel-json-translation-helper">Opción recomendada: laravel-json-translation-helper</h3>
 <p>Este paquete permite <strong>escanear automáticamente</strong> el proyecto y generar/actualizar los archivos JSON de traducción.</p>
-<h3 id="instalación">Instalación</h3>
+<h4 id="instalación">Instalación</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require subotkevic/laravel-json-translation-helper</span></span></code></pre></div>
-<h3 id="publicar-configuración">Publicar configuración</h3>
+<h4 id="publicar-configuración">Publicar configuración</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan vendor:publish --provider=<span style="color:#cd5555">&#34;JsonTranslationHelper\TranslationHelperServiceProvider&#34;</span></span></span></code></pre></div>
-<h3 id="configuración-típica">Configuración típica</h3>
+<h4 id="configuración-típica">Configuración típica</h4>
+<p>Se puede personalizar a ficheros 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    vue
+
+
+</span>
+</strong>, 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    jsx
+
+
+</span>
+</strong> y otros formatos</p>
 <p>Archivo <code>config/translation-helper.php</code>:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> [
 </span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;scan_directories&#39;</span> =&gt; [
@@ -415,6 +431,7 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#39;php&#39;</span>,
 </span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#39;js&#39;</span>,
 </span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#39;vue&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#39;jsx&#39;</span>
 </span></span><span style="display:flex;"><span>    ],
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;translation_methods&#39;</span> =&gt; [
