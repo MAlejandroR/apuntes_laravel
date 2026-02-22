@@ -1,0 +1,440 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel_certificado_2026/livereload.js?mindelay=10&amp;v=2&amp;port=35723&amp;path=laravel_certificado_2026/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:35723/laravel_certificado_2026/docs/pendiente/10_api/2.visiongeneral/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel_certificado_2026/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel_certificado_2026/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-192x192.png" sizes="192x192">
+
+<title>Controlador | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:35723/laravel_certificado_2026/docs/pendiente/10_api/2.visiongeneral/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Controlador">
+  <meta property="og:description" content="Ejecutar la migración Debemos de crear la base de datos y poderla cargar
+métodos de get Para ello escribimos el código de index y show con las respectivas rutas 1 2 http://localhost:8000/api/books =&gt; obtener todos los libros http://localhost:8000/api/books/1 =&gt; obtener el libro de id 1 Como lo que nos retorna es un Json, podemos instalar algún plugin para verlo de forma mas legible en el navegador, por ejemplo jsonview">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Controlador">
+  <meta itemprop="description" content="Ejecutar la migración Debemos de crear la base de datos y poderla cargar
+métodos de get Para ello escribimos el código de index y show con las respectivas rutas 1 2 http://localhost:8000/api/books =&gt; obtener todos los libros http://localhost:8000/api/books/1 =&gt; obtener el libro de id 1 Como lo que nos retorna es un Json, podemos instalar algún plugin para verlo de forma mas legible en el navegador, por ejemplo jsonview">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="378">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Controlador">
+  <meta name="twitter:description" content="Ejecutar la migración Debemos de crear la base de datos y poderla cargar
+métodos de get Para ello escribimos el código de index y show con las respectivas rutas 1 2 http://localhost:8000/api/books =&gt; obtener todos los libros http://localhost:8000/api/books/1 =&gt; obtener el libro de id 1 Como lo que nos retorna es un Json, podemos instalar algún plugin para verlo de forma mas legible en el navegador, por ejemplo jsonview">
+
+
+<link href="/laravel_certificado_2026/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel_certificado_2026/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel_certificado_2026/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel_certificado_2026/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laravel_certificado_2026docs-li">
+  <a href="/laravel_certificado_2026/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laravel_certificado_2026docs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs01_introduccic3b3n-check"/>
+  <label for="m-laravel_certificado_2026docs01_introduccic3b3n-check"><a href="/laravel_certificado_2026/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs02_instalacic3b3n-check"/>
+  <label for="m-laravel_certificado_2026docs02_instalacic3b3n-check"><a href="/laravel_certificado_2026/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs03_rutas-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs03_rutas-check"/>
+  <label for="m-laravel_certificado_2026docs03_rutas-check"><a href="/laravel_certificado_2026/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laravel_certificado_2026docs04_plantillas-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas-check"><a href="/laravel_certificado_2026/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas01_blade-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas01_blade-check"><a href="/laravel_certificado_2026/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-check"><a href="/laravel_certificado_2026/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas03_componentes-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas03_componentes-check"><a href="/laravel_certificado_2026/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ejecutar-la-migración">Ejecutar la migración</a></li>
+    <li><a href="#métodos-de-get">métodos de get</a></li>
+    <li><a href="#metodos-patch-delete-y-post">metodos PATCH DELETE y POST</a>
+      <ul>
+        <li><a href="#post">post</a></li>
+        <li><a href="#path">PATH</a></li>
+      </ul>
+    </li>
+    <li><a href="#delete">DELETE</a></li>
+  </ul>
+</nav>
+      </div>
+    
+            <div class="taxonomy taxonomy-terms-cloud taxo-categories">
+      <h5 class="taxonomy-title">Categories</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      <h5 class="taxonomy-title">Tags</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel_certificado_2026/docs/">Laravel</a></li>
+  <li class="breadcrumb-item">
+    <a href="">Pendiente de revisar e incorporar</a></li>
+  <li class="breadcrumb-item">
+    <a href="/laravel_certificado_2026/docs/pendiente/10_api/">Creando un api</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Controlador</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Controlador</h1>
+  
+	<header class="article-meta">
+		
+</header>
+	<h2 id="ejecutar-la-migración">Ejecutar la migración</h2>
+<p>Debemos de crear la base de datos y poderla cargar</p>
+<h2 id="métodos-de-get">métodos de get</h2>
+<p>Para ello escribimos el código de index y show con las respectivas rutas
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http://localhost:8000/api/books =&gt; obtener todos los libros
+</span></span><span style="display:flex;"><span>http://localhost:8000/api/books/1 =&gt; obtener el libro de id <span style="color:#b452cd">1</span></span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>Como lo que nos retorna es un Json, podemos instalar algún plugin para verlo de forma mas legible en el navegador, por ejemplo <strong><a href="https://chrome.google.com/webstore/detail/jsonview/gmegofmjomhknnokphhckolhcffdaihd?hl=es">jsonview</a></strong></p>
+<h2 id="metodos-patch-delete-y-post">metodos PATCH DELETE y POST</h2>
+<p>Ahora queremos probar estas otras rutas
+Para ello debemos de tener una herramienta que nos permita realizar llamadas de este tipo, con el navegador no podemos y estamos haciendo un api, no la parte de uso, sino de servicio
+Podemos instalar <strong><a href="https://www.postman.com/">postman</a></strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install snapd
+</span></span><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo snap install postman</span></span></code></pre></td></tr></table>
+</div>
+</div>
+*Podemos probar una solicitud por  <strong>post</strong> y hacer que el método <strong>store</strong> me retorne un texto, lo mismo con <strong>patch</strong> y con <strong>delete</strong>  y ver qué es</p>
+<h3 id="post">post</h3>
+<p>Vemos que con el post, en la parte del body del mensaje hay que aportar algún valor
+Para ello vamos al body y usamo el form-data para pasar valores</p>
+<p><figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 730px">
+<img class="card-img-top" src="/laravel_certificado_2026/docs/pendiente/10_api/2.visiongeneral/post_man1_hu_28d90cb05462e744.png" width="720" height="435">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+Pasar parámetros para el post
+
+</p>
+</figcaption>
+</figure>
+
+Escribmos el código del método <strong>store</strong> añadiendo un nuevo libro</p>
+<p>Podemos ver qué ocurre si ponemos otro parámetro o no pasamos ningún libro</p>
+<p>Para poder ver los errores debemos habilitar los hedear para en formato json aceptar los errores
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 786px">
+<img class="card-img-top" src="/laravel_certificado_2026/docs/pendiente/10_api/2.visiongeneral/post_header_hu_689581a7847c54fb.png" width="776" height="184">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+Añadir la opción de ver los errores en el navegador
+
+</p>
+</figcaption>
+</figure>
+</p>
+<p>Podemos establecer en el servidor el control del error indicando lo que queramos que se muestre si no aparece el error
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">store</span>(Request <span style="color:#00688b">$request</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$request</span>-&gt;<span style="color:#658b00">validate</span>([
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#39;titulo&#39;</span>=&gt;[<span style="color:#cd5555">&#39;required&#39;</span>]
+</span></span><span style="display:flex;"><span>        ]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$book</span> = <span style="color:#8b008b;font-weight:bold">new</span> Book();
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$book</span>-&gt;<span style="color:#658b00">titulo</span>=<span style="color:#00688b">$request</span>-&gt;<span style="color:#658b00">input</span>(<span style="color:#cd5555">&#39;titulo&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$book</span>-&gt;<span style="color:#658b00">save</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$book</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#228b22">//
+</span></span></span><span style="display:flex;"><span>    }</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h3 id="path">PATH</h3>
+<p>La actualización es muy similar al storage, con la diferencia que solo queremos actualizar, no agregar
+En el postman, para pasar los nuevos datos usamos
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 730px">
+<img class="card-img-top" src="/laravel_certificado_2026/docs/pendiente/10_api/2.visiongeneral/post_patch_form_endocode_hu_28d90cb05462e744.png" width="720" height="435">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+modo de pasar datos al método patch
+
+</p>
+</figcaption>
+</figure>
+
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">update</span>(Request <span style="color:#00688b">$request</span>, Book <span style="color:#00688b">$book</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$request</span>-&gt;<span style="color:#658b00">validate</span>([
+</span></span><span style="display:flex;"><span>                    <span style="color:#cd5555">&#39;titulo&#39;</span>=&gt;[<span style="color:#cd5555">&#39;required&#39;</span>]
+</span></span><span style="display:flex;"><span>        ]);
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$book</span>-&gt;<span style="color:#658b00">titulo</span>=<span style="color:#00688b">$request</span>-&gt;<span style="color:#658b00">input</span>(<span style="color:#cd5555">&#39;titulo&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$book</span>-&gt;<span style="color:#658b00">update</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$book</span>;
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h2 id="delete">DELETE</h2>
+<p>En este caso el método <strong>delete</strong> es muy sencillo. Podemos retornar un mensaje</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">destroy</span>(Book <span style="color:#00688b">$book</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$book</span>-&gt;<span style="color:#658b00">delete</span>();
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;Se ha borrado &#34;</span>.<span style="color:#00688b">$book</span>-&gt;<span style="color:#658b00">titulo</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+  <div class="section-index">
+    
+    
+    </div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel_certificado_2026/js/main.js"></script>
+<script defer src="/laravel_certificado_2026/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel_certificado_2026/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

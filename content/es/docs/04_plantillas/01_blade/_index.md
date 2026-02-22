@@ -6,10 +6,7 @@ weight: 10
 icon: fa-brands fa-html5
 ---
 ## Plantillas con Blade
-{{% pageinfo%}}
- ****
-## Blade
-****
+
 Una herramienta poderosa y flexible incluida en Laravel, que nos va a permitir {{<color_blue>}}escribir html e incluir php y visualizar datos del servidor{{</color_blue>}}
 {{<color_green>}}balde.php{{</color_green>}} de una forma elegante y descriptiva. (Esto facilita visualizar datos  
 
@@ -20,9 +17,7 @@ Cuando hagamos referencia a los ficheros blade, esta información __no hay que e
 return view('welcome');
 //Va a retornar el fichero ./resources/view/welcome.blade.php
 {{< / highlight >}}
-{{% /pageinfo%}}
 ### Contenido de un fichero blade
-{{% pageinfo%}}
   __Dentro de un fichero blade__ {{<color_green>}}(.blade.php){{</color_green>}}
 
 En él podemos  encontrar el siguiente tipo de __código o instrucciones__:
@@ -50,26 +45,20 @@ En él podemos  encontrar el siguiente tipo de __código o instrucciones__:
   @endif    
 @endsection
 {{< / highlight >}}
-{{% /pageinfo%}}
 
 ### Herencia: Creando un layout
-{{% pageinfo%}}
 
 #### Concepto
 En el desarrollo web con Laravel, {{<color_blue>}}la herencia en las plantillas Blade {{</color_blue>}} proporciona una forma eficiente de garantizar {{<color_blue>}}una estructura consistente en todas las páginas{{</color_blue>}}, fomentando un diseño corporativo uniforme.
-{{% /pageinfo%}}
-{{% pageinfo%}}
 #### Idea de su uso/funcionamiento
 Con este concepto {{<color_blue>}}se establece una página inicial o 'layout' que define los aspectos generales de la interfaz, dejando espacios designados para personalizaciones específicas{{</color_blue>}}
 Con ello, cada página individual {{<color_green>}}hereda de esta plantilla principal {{</color_green>}}, permitiendo inlcuir su propio contenido __(el de la página)__  sin perder la coherencia visual __(el de la plantilla)__.
 
 Este método facilita la gestión y mantenimiento del diseño, ya que cualquier cambio realizado en la plantilla principal se reflejará automáticamente en todas las páginas que heredan de ella. De este modo, la herencia en las plantillas Blade contribuye a una experiencia de desarrollo eficiente y a la creación de interfaces consistentes y atractivas.
-{{% /pageinfo%}}
 
 
 ### Comentarios blade
 
-{{% pageinfo%}}
 ****
 #### Insertando comentarios en fichero .blade.php
 ****
@@ -93,4 +82,3 @@ Dentro de un fichero {{<color_blue>}}Blade{{</color_blue>}}, podemos comentar de
 
  ***
  ![]()
-{{% /pageinfo%}}

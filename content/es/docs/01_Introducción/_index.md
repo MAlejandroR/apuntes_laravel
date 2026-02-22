@@ -24,10 +24,6 @@ Desarrollar un full stack (diseño, front, back, API's)
 A través de este viaje, no solo aprenderás a usar un framework, sino a adoptar una forma de trabajar que te hará una mejor desarrolladora.
 {{</finalidad>}}
 
-
-
-
-
 ## Laravel: un framework de php
 
 **![img.png](img.png)**
@@ -63,17 +59,47 @@ Laravel se ha ganado un lugar destacado en el desarrollo web por varias razones:
  
 {{<color_blue>}}Ecosistema y Comunidad:{{</color_blue>}} 
 > Laravel tiene un ecosistema rico, con herramientas como Laravel Forge, Laravel Vapor, y Nova, así como un sistema robusto de paquetes a través de Composer. Además, la vibrante comunidad en torno a Laravel ofrece un vasto recurso de conocimiento, tutoriales y soporte.
-> {{< imgproc img_2 Fill "900x1000" >}}
-  https://laravel.com/ (Ecosystem)
+> {{< imgproc ecosistema_laravel Fill "1274x791" >}}
+  https://laravel.com/ (Framework)
 {{< /imgproc >}}
 ****
 
 * {{<color_blue>}}MVC y Patrones de Diseño:{{</color_blue>}}
-> Laravel se adhiere al patrón Modelo-Vista-Controlador (MVC), promoviendo un desarrollo limpio y **separando la lógica de negocio de la presentación**.
-> Además, el uso de otros patrones de diseño y prácticas recomendadas está profundamente integrado en su arquitectura.
-![img_3.png](img_3.png)
-***
+> Laravel se adhiere al patrón Modelo-Vista-Controlador (MVC), promoviendo un desarrollo limpio y **separando la lógica de negocio de la presentación**. 
 
+![img_3.png](modelo_mvc_tradicional.png)
+
+
+* > Además, el uso de otros patrones de diseño y prácticas recomendadas está profundamente integrado en su arquitectura.
+* > Laravel se basa en MVC, pero su arquitectura real combina el patrón Front Controller, un contenedor IoC para la resolución automática de dependencias y un ciclo de petición HTTP extensible mediante middleware y eventos:
+
+> {{<color>}}1.Patrón Front Controller{{</color>}}
+
+Laravel implementa el patrón Front Controller, lo que significa que todas las peticiones HTTP son gestionadas por un único punto de entrada: public/index.php.
+
+Este archivo inicializa la aplicación y delega la petición al Kernel HTTP, que coordina el resto del ciclo de vida.
+
+> {{<color>}}2.Contenedor de dependencias (IoC Container){{</color>}}
+
+Laravel dispone de un contenedor de inversión de control (IoC) que se encarga de:
+* Instanciar clases automáticamente.
+* Resolver dependencias entre clases.
+* Inyectar dependencias en constructores o métodos.
+* Permitir el uso de interfaces y bindings.
+* Facilitar el testing y la sustitución de implementaciones.
+  
+> {{<color>}}3. Ciclo completo de petición HTTP extensible{{</color>}}
+
+El procesamiento de una petición en Laravel sigue un flujo estructurado y extensible:
+* La petición entra por index.php.
+* Es gestionada por el Kernel HTTP.
+* Atraviesa una tubería de Middleware.
+* El Router determina el controlador correspondiente.
+* El controlador coordina la lógica de aplicación.
+* Se genera una respuesta.
+* La respuesta vuelve a atravesar middleware antes de enviarse al cliente. 
+***
+![modelo_mvc_avanzado.png](modelo_mvc_avanzado.png)
 
 
 
@@ -99,8 +125,8 @@ Un framework es una forma de trabajar con una determinada tecnología , donde no
 * Desarrollador: Taylor Otwell
 * Licencia: Licencia MIT
 * Tipo de programa: Framework
-* Versión actual  11 (enero 2025)
-* Lanzamiento de próxima versión  Primer trimestre 2025 (esperándolo)
+* Versión actual  12 (febrero 2026)
+* Lanzamiento de próxima versión  Primer trimestre 2026 (en breve)
 * Versión de php 8.2
 {{< /alert >}}
 

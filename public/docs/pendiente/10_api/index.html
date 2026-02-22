@@ -1,0 +1,512 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel_certificado_2026/livereload.js?mindelay=10&amp;v=2&amp;port=35723&amp;path=laravel_certificado_2026/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:35723/laravel_certificado_2026/docs/pendiente/10_api/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel_certificado_2026/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel_certificado_2026/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-192x192.png" sizes="192x192">
+
+<title>Creando un api | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:35723/laravel_certificado_2026/docs/pendiente/10_api/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Creando un api">
+  <meta property="og:description" content="Creando una API Términos importantes que hay que conocer API REST VERBOS HTTP RECURSOS CÓDIGOS DE ESTADO API Una Interfez de programación de aplicaciones Son programas que permiten que otros programas se conecten con él para obtener recursos.
+Para ello establecen una interfaz para que puedan conectarse a él.
+Por un lado una aplicación solicita datos (request) , y la API se los devuelve (response) .">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Creando un api">
+  <meta itemprop="description" content="Creando una API Términos importantes que hay que conocer API REST VERBOS HTTP RECURSOS CÓDIGOS DE ESTADO API Una Interfez de programación de aplicaciones Son programas que permiten que otros programas se conecten con él para obtener recursos.
+Para ello establecen una interfaz para que puedan conectarse a él.
+Por un lado una aplicación solicita datos (request) , y la API se los devuelve (response) .">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="565">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Creando un api">
+  <meta name="twitter:description" content="Creando una API Términos importantes que hay que conocer API REST VERBOS HTTP RECURSOS CÓDIGOS DE ESTADO API Una Interfez de programación de aplicaciones Son programas que permiten que otros programas se conecten con él para obtener recursos.
+Para ello establecen una interfaz para que puedan conectarse a él.
+Por un lado una aplicación solicita datos (request) , y la API se los devuelve (response) .">
+
+
+<link href="/laravel_certificado_2026/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel_certificado_2026/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel_certificado_2026/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel_certificado_2026/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laravel_certificado_2026docs-li">
+  <a href="/laravel_certificado_2026/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laravel_certificado_2026docs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs01_introduccic3b3n-check"/>
+  <label for="m-laravel_certificado_2026docs01_introduccic3b3n-check"><a href="/laravel_certificado_2026/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs02_instalacic3b3n-check"/>
+  <label for="m-laravel_certificado_2026docs02_instalacic3b3n-check"><a href="/laravel_certificado_2026/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs03_rutas-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs03_rutas-check"/>
+  <label for="m-laravel_certificado_2026docs03_rutas-check"><a href="/laravel_certificado_2026/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laravel_certificado_2026docs04_plantillas-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas-check"><a href="/laravel_certificado_2026/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas01_blade-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas01_blade-check"><a href="/laravel_certificado_2026/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-check"><a href="/laravel_certificado_2026/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas03_componentes-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas03_componentes-check"><a href="/laravel_certificado_2026/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#api">API</a></li>
+    <li><a href="#rest">REST</a></li>
+    <li><a href="#verbos-http">Verbos HTTP</a>
+      <ul>
+        <li><a href="#resource">Resource</a></li>
+        <li><a href="#representación">Representación</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            <div class="taxonomy taxonomy-terms-cloud taxo-categories">
+      <h5 class="taxonomy-title">Categories</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      <h5 class="taxonomy-title">Tags</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel_certificado_2026/docs/">Laravel</a></li>
+  <li class="breadcrumb-item">
+    <a href="">Pendiente de revisar e incorporar</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Creando un api</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Creando un api</h1>
+  
+	<header class="article-meta">
+		
+</header>
+	<h1 id="creando-una-api">Creando una API</h1>
+
+
+<div class="pageinfo pageinfo-primary">
+<h3 id="términos-importantes-que-hay-que-conocer">Términos importantes que hay que conocer</h3>
+<ul>
+<li>API</li>
+<li>REST</li>
+<li>VERBOS HTTP</li>
+<li>RECURSOS</li>
+<li>CÓDIGOS DE ESTADO</li>
+</ul>
+<h4></h4>
+<hr>
+
+</div>
+
+<h2 id="api">API</h2>
+<p>Una 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Interfez de programación de aplicaciones
+
+</span>
+</strong>
+ <em><strong><strong>Son programas que permiten que otros programas se conecten con él para obtener recursos.</strong></strong></em></p>
+<p>Para ello establecen una 
+<span class="font-weight-bold text-primary">
+
+
+    interfaz
+
+</span>
+ para que puedan conectarse a él.</p>
+<p>Por un lado una aplicación solicita datos 
+<span class="font-weight-bold text-primary">
+
+
+    (request)
+
+</span>
+, y la API se los devuelve 
+<span class="font-weight-bold text-primary">
+
+
+    (response)
+
+</span>
+.</p>
+<p>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Application Programming Interface
+
+</span>
+</strong>
+
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 1810px">
+<img class="card-img-top" src="/laravel_certificado_2026/docs/pendiente/10_api/API_hu_8b6a70fa81bd9928.png" width="1800" height="1000">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+API Programa que recibe solicitudes y envía respuesta a otros programas
+
+</p>
+</figcaption>
+</figure>
+</p>
+<h2 id="rest">REST</h2>
+<p>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    REpresentational  State Transfer
+
+</span>
+</strong>
+(
+Transferencia de Estado representacional)</p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">REST</h4>
+
+    <!-- raw HTML omitted -->
+<pre><code>REST
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>en seis principios fundamentales
+</code></pre>
+<!-- raw HTML omitted -->
+
+
+</div>
+
+<p>Estos principios indican 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    cómo deben representarse los datos que se desean transferir
+
+</span>
+</strong>
+, proporcionando una guía para el desarrollo de sistemas web eficientes y bien estructurados.
+
+
+<div class="pageinfo pageinfo-primary">
+<h2 id="principios-que-definen-la-arquitectura-de-rest">PRINCIPIOS QUE DEFINEN LA ARQUITECTURA DE REST</h2>
+<hr>
+<!-- raw HTML omitted -->
+<pre><code>REST se basa en una serie de principios y restricciones que definen su arquitectura. A continuación, se resumen las seis guías o restricciones principales de REST:
+</code></pre>
+<!-- raw HTML omitted -->
+<hr>
+<h4 id="arquitectura-cliente-servidor">Arquitectura Cliente-Servidor:</h4>
+<ul>
+<li>La arquitectura cliente-servidor separa la interfaz de usuario y la lógica del usuario (cliente) de la lógica del servidor.</li>
+<li>Mejora la portabilidad del cliente y la escalabilidad del servidor, ya que cada parte puede evolucionar independientemente.</li>
+<li>O sea que el API y el CLIENTE son dos entes independientes</li>
+</ul>
+<h4 id="sin-estado-stateless">Sin Estado (Stateless):</h4>
+<ul>
+<li>Cada solicitud del cliente al servidor debe contener toda la información necesaria para entender y procesar la solicitud.</li>
+<li>El servidor no debe almacenar el estado del cliente entre solicitudes; cada solicitud desde un cliente se trata de forma independiente. (Ni cookies ni sesiones)</li>
+<li>El estado de la sesión del usuario se mantiene en el cliente (usando tokens)</li>
+</ul>
+<h4 id="cacheable-almacenamiento-en-caché">Cacheable (Almacenamiento en Caché):</h4>
+<ul>
+<li>Las respuestas del servidor deben indicar si se pueden almacenar en caché o no.</li>
+<li>La caché puede mejorar la eficiencia y la escalabilidad al reducir la necesidad de recuperar la misma información una y otra vez.</li>
+</ul>
+<h4 id="interfaz-uniforme">Interfaz Uniforme:</h4>
+<ul>
+<li>
+<p>Define una interfaz uniforme entre los componentes, lo que facilita la independencia y la evolución de cada componente.</p>
+</li>
+<li></li>
+<li>
+<p>La interfaz uniforme se compone de cuatro restricciones:</p>
+<ul>
+<li>Identificación de Recursos: Cada recurso (información o servicio) se identifica mediante un URI (Uniform Resource Identifier).</li>
+<li>Manipulación de Recursos a través de Representaciones: Los recursos pueden ser representados y manipulados en diferentes formatos, como JSON o XML.</li>
+<li>Mensajes Autodescriptivos: Cada mensaje incluye suficiente información para describir cómo procesar la solicitud.</li>
+<li>HATEOAS (Hypertext As The Engine Of Application State): La aplicación es conducida por hipermedios proporcionados dinámicamente a través de aplicaciones de navegadores, es decir
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></li>
+</ul>
+<p>el servidor debe de facilitar información que nos diga cómo navegar por la API, no solo facilitar datso</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h4 id="sistema-de-capas-layered-system">Sistema de Capas (Layered System):</h4>
+<ul>
+<li>La arquitectura se puede organizar en capas jerárquicas.</li>
+<li>Cada capa realiza una funcionalidad específica y solo interactúa directamente con las capas adyacentes.</li>
+</ul>
+<h4 id="codigo-bajo-demanda-code-on-demand-opcional">Codigo Bajo Demanda (Code on Demand) [opcional]:</h4>
+<ul>
+<li>Los clientes pueden descargar y ejecutar código (como applets o scripts) desde el servidor.</li>
+<li>Esta restricción es opcional y no se utiliza comúnmente en aplicaciones RESTful.</li>
+</ul>
+<p>Estas restricciones definen los principios clave de REST y proporcionan una guía para desarrollar sistemas web eficientes, escalables y bien estructurados.</p>
+
+</div>
+</p>
+<h2 id="verbos-http">Verbos HTTP</h2>
+<p>Si la API funciona con el protocolo HTTP, entonces establos hablando de una 
+<span class="font-weight-bold text-primary">
+
+
+    API RestFull
+
+</span>
+
+HTTP sabemos que es un protocolo para transferir texto a través de internet
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Recurso</h4>
+
+    <p>Un recurso es información que está en el servidor a la cual vamos a poder acceder a través de una url
+ej: http://localhost:8000/alumnos
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+<pre><code>alumnos es un recurso
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+</p>
+<h3 id="resource">Resource</h3>
+<h3 id="representación">Representación</h3>
+
+  <div class="section-index">
+    
+    
+    <hr class="panel-line">
+        <div class="entry">
+                <h5>
+                    <a href="/laravel_certificado_2026/docs/pendiente/10_api/1.instalacion/">01_Introducción y 20_rutas</a>
+                </h5>
+                <p></p>
+            </div>
+        <div class="entry">
+                <h5>
+                    <a href="/laravel_certificado_2026/docs/pendiente/10_api/2.visiongeneral/">Controlador</a>
+                </h5>
+                <p></p>
+            </div>
+        <div class="entry">
+                <h5>
+                    <a href="/laravel_certificado_2026/docs/pendiente/10_api/3.la-vista/">3.La Vista unitarios</a>
+                </h5>
+                <p></p>
+            </div>
+        <div class="entry">
+                <h5>
+                    <a href="/laravel_certificado_2026/docs/pendiente/10_api/4.-swagger/">swagger</a>
+                </h5>
+                <p></p>
+            </div>
+        </div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel_certificado_2026/js/main.js"></script>
+<script defer src="/laravel_certificado_2026/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel_certificado_2026/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

@@ -1,8 +1,8 @@
 ---
 title: "Controlador"
 date: 2023-04-08T18:21:47+02:00
-draft: false
-weight: 40
+draft: true
+weight: 50
 icon: fas fa-cogs
 ---
 ## Ejecutar la migración

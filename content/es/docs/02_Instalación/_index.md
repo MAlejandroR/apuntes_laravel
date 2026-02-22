@@ -9,9 +9,20 @@ icon: fa-solid fa-arrow-right
 Como ya hemos comentado {{<color_blue>}}Laravel{{</color_blue>}}, uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes.    
 Para comenzar un proyecto en Laravel, existen dos enfoques principales:
 
-* crear un proyecto con composer
-* Instalar un programa llamado {{<color_blue>}}laravel{{</color_blue>}} con el que crearemos proyectos.
-## Instalar composer
+* Crear un proyecto con {{<color>}}composer{{</color>}}
+* Instalar un programa llamado {{<color>}}laravel{{</color>}}. Este programa permitirá crear proyectos de laravel con toda la estructura de carpetas y ficheros necesarios.
+## Instalar  {{<color>}}[composer](https://getcomposer.org/){{</color>}}
+
+{{< web
+title="Composer documentación"
+url="https://getcomposer.org/"
+color="primary"
+img="composer.jpeg"
+badge="Oficial"
+badgeColor="success"
+>}}
+> {{</web>}}
+
 Lo primero que necesitamos es tener {{<color_green>}}composer{{</color_green>}} instalado en nuestro sistema
 
 
@@ -31,7 +42,7 @@ Una vez instalado lo podremos usar desde el terminal, independientemente del sis
 {{< / highlight >}}
   Entonces veremos una salida, si simplemente escribmos {{<color_blue>}}composer{{</color_blue>}} saldrán todas las opciones disponibles
   Una vez instalado en un terminal (CMD o PowerShell en windows) escribimos
-  ![img_1.png](img_1.png)
+  ![versión de composer](composer_version.png)
 
 ## Instalar el instalardor Laravel
 Laravel dispone de una utilidad, un ejecutable que nos va a permitir crear proyectos con la estructura de un proyecto laravel. En este punto es un {{< color >}} creador de proyectos de laravel {{< /color >}}
@@ -117,7 +128,6 @@ Si alguna extensión no la tuvieses, eso implica que habría que descargar el **
   https://windows.php.net/download
 # Poner el proyecto en ejecución
 
-En este proyecto usamos Laravel con Inertia.js (Vue) y Filament para la administración.  
 La base de datos se ejecuta en Docker, configurada mediante el archivo `.env`.
 
 En el archivo `package.json` tenemos scripts para facilitar el desarrollo local.  

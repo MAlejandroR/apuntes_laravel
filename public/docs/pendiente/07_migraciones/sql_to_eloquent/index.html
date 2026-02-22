@@ -1,0 +1,1540 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel_certificado_2026/livereload.js?mindelay=10&amp;v=2&amp;port=35723&amp;path=laravel_certificado_2026/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel_certificado_2026/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel_certificado_2026/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-192x192.png" sizes="192x192">
+
+<title>SQL vs Eloquent | Laravel: Framework de php</title>
+<meta name="description" content="Índice de contenidos - SQL vs Eloquent Navega por las secciones principales Sentencias SELECT Cláusula WHERE Cláusula GROUP BY y withCount Cláusula HAVING Cláusula ORDER BY Descripción breve En esta documentación se comparan las sentencias SQL básicas con sus equivalentes en Eloquent ORM de Laravel, mostrando sintaxis, uso y ejemplos prácticos para cada cláusula fundamental en consultas:">
+
+<meta property="og:url" content="http://localhost:35723/laravel_certificado_2026/docs/pendiente/07_migraciones/sql_to_eloquent/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="SQL vs Eloquent">
+  <meta property="og:description" content="Índice de contenidos - SQL vs Eloquent Navega por las secciones principales Sentencias SELECT Cláusula WHERE Cláusula GROUP BY y withCount Cláusula HAVING Cláusula ORDER BY Descripción breve En esta documentación se comparan las sentencias SQL básicas con sus equivalentes en Eloquent ORM de Laravel, mostrando sintaxis, uso y ejemplos prácticos para cada cláusula fundamental en consultas:">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:published_time" content="2023-04-08T18:21:47+02:00">
+    <meta property="article:modified_time" content="2023-04-08T18:21:47+02:00">
+
+  <meta itemprop="name" content="SQL vs Eloquent">
+  <meta itemprop="description" content="Índice de contenidos - SQL vs Eloquent Navega por las secciones principales Sentencias SELECT Cláusula WHERE Cláusula GROUP BY y withCount Cláusula HAVING Cláusula ORDER BY Descripción breve En esta documentación se comparan las sentencias SQL básicas con sus equivalentes en Eloquent ORM de Laravel, mostrando sintaxis, uso y ejemplos prácticos para cada cláusula fundamental en consultas:">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="1575">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SQL vs Eloquent">
+  <meta name="twitter:description" content="Índice de contenidos - SQL vs Eloquent Navega por las secciones principales Sentencias SELECT Cláusula WHERE Cláusula GROUP BY y withCount Cláusula HAVING Cláusula ORDER BY Descripción breve En esta documentación se comparan las sentencias SQL básicas con sus equivalentes en Eloquent ORM de Laravel, mostrando sintaxis, uso y ejemplos prácticos para cada cláusula fundamental en consultas:">
+
+
+<link href="/laravel_certificado_2026/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel_certificado_2026/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel_certificado_2026/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel_certificado_2026/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laravel_certificado_2026docs-li">
+  <a href="/laravel_certificado_2026/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laravel_certificado_2026docs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs01_introduccic3b3n-check"/>
+  <label for="m-laravel_certificado_2026docs01_introduccic3b3n-check"><a href="/laravel_certificado_2026/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs02_instalacic3b3n-check"/>
+  <label for="m-laravel_certificado_2026docs02_instalacic3b3n-check"><a href="/laravel_certificado_2026/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs03_rutas-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs03_rutas-check"/>
+  <label for="m-laravel_certificado_2026docs03_rutas-check"><a href="/laravel_certificado_2026/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laravel_certificado_2026docs04_plantillas-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas-check"><a href="/laravel_certificado_2026/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas01_blade-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas01_blade-check"><a href="/laravel_certificado_2026/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-check"><a href="/laravel_certificado_2026/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas03_componentes-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas03_componentes-check"><a href="/laravel_certificado_2026/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#descripción-breve">Descripción breve</a></li>
+    <li><a href="#cómo-usar-esta-guía">Cómo usar esta guía</a></li>
+    <li><a href="#enlaces-directos-a-secciones">Enlaces directos a secciones</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#comparativa-select">Comparativa SELECT</a></li>
+    <li><a href="#ejemplos">Ejemplos</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#comparativa-where">Comparativa WHERE</a></li>
+    <li><a href="#ejemplos-1">Ejemplos</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#comparativa-group-by-vs-withcount">Comparativa GROUP BY vs withCount</a></li>
+    <li><a href="#ejemplos-2">Ejemplos</a></li>
+    <li><a href="#hahahugoshortcode35s43hbhb">HAHAHUGOSHORTCODE35s43HBHB</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#comparativa-having">Comparativa HAVING</a></li>
+    <li><a href="#ejemplos-3">Ejemplos</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#comparativa-order-by">Comparativa ORDER BY</a></li>
+    <li><a href="#ejemplos-4">Ejemplos</a></li>
+  </ul>
+</nav>
+      </div>
+    
+            <div class="taxonomy taxonomy-terms-cloud taxo-categories">
+      <h5 class="taxonomy-title">Categories</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      <h5 class="taxonomy-title">Tags</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel_certificado_2026/docs/">Laravel</a></li>
+  <li class="breadcrumb-item">
+    <a href="">Pendiente de revisar e incorporar</a></li>
+  <li class="breadcrumb-item">
+    <a href="/laravel_certificado_2026/docs/pendiente/07_migraciones/">Migracioens</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    SQL vs Eloquent</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>SQL vs Eloquent</h1>
+	
+	<header class="article-meta">
+		
+</header>
+	<h1 id="índice-de-contenidos---sql-vs-eloquent">Índice de contenidos - SQL vs Eloquent</h1>
+<details>
+    <summary>Navega por las secciones principales</summary>
+    <div class="solution-content">
+        <ul>
+<li><a href="/laravel_certificado_2026/#sentencias-select">Sentencias SELECT</a></li>
+<li><a href="/laravel_certificado_2026/#cl%c3%a1usula-where">Cláusula WHERE</a></li>
+<li><a href="/laravel_certificado_2026/#cl%c3%a1usula-group-by-y-withcount">Cláusula GROUP BY y withCount</a></li>
+<li><a href="/laravel_certificado_2026/#cl%c3%a1usula-having">Cláusula HAVING</a></li>
+<li><a href="/laravel_certificado_2026/#cl%c3%a1usula-order-by">Cláusula ORDER BY</a></li>
+</ul>
+
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<hr>
+<h2 id="descripción-breve">Descripción breve</h2>
+<p>En esta documentación se comparan las sentencias SQL básicas con sus equivalentes en Eloquent ORM de Laravel, mostrando sintaxis, uso y ejemplos prácticos para cada cláusula fundamental en consultas:</p>
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    SELECT
+
+
+</span>
+</strong>: Proyecciones y selección de columnas.</li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    WHERE
+
+
+</span>
+</strong>: Filtrado de filas.</li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    GROUP BY
+
+
+</span>
+</strong> y 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    withCount
+
+
+</span>
+</strong>: Agrupación y conteo de relaciones.</li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    HAVING
+
+
+</span>
+</strong>: Filtros sobre grupos agregados.</li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    ORDER BY
+
+
+</span>
+</strong>: Ordenación de resultados.</li>
+</ul>
+<hr>
+<h2 id="cómo-usar-esta-guía">Cómo usar esta guía</h2>
+<p>Cada sección incluye:</p>
+<ul>
+<li>Explicación conceptual.</li>
+<li>Tabla comparativa SQL vs Eloquent.</li>
+<li>Ejemplos con código resaltado.</li>
+<li>Referencias oficiales para ampliar.</li>
+</ul>
+<hr>
+<h2 id="enlaces-directos-a-secciones">Enlaces directos a secciones</h2>
+<details>
+    <summary>Saltos rápidos</summary>
+    <div class="solution-content">
+        <ul>
+<li><a href="/laravel_certificado_2026/#sentencias-select">Sentencias SELECT</a></li>
+<li><a href="/laravel_certificado_2026/#cl%c3%a1usula-where">Cláusula WHERE</a></li>
+<li><a href="/laravel_certificado_2026/#cl%c3%a1usula-group-by-y-withcount">Cláusula GROUP BY y withCount</a></li>
+<li><a href="/laravel_certificado_2026/#cl%c3%a1usula-having">Cláusula HAVING</a></li>
+<li><a href="/laravel_certificado_2026/#cl%c3%a1usula-order-by">Cláusula ORDER BY</a></li>
+</ul>
+
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<h1 id="sentencias-select">Sentencias SELECT</h1>
+<p>En SQL, la sentencia 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    SELECT
+
+
+</span>
+</strong> representa una <strong>proyección</strong>: permite obtener ciertos campos, expresiones o agregaciones de una relación (tabla) o subconsulta.<br>
+En la cláusula pueden ir:</p>
+<ul>
+<li>Campos (columnas)</li>
+<li>Funciones SQL</li>
+<li>Valores o expresiones calculadas</li>
+</ul>
+<p>En <strong>Eloquent</strong> disponemos de diferentes métodos para realizar proyecciones, con diferencias importantes en el 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    tipo de resultado
+
+
+</span>
+</strong>:</p>
+<div class="definicion-concepto">
+  <div class="definicion-titulo">
+    
+    <i class="fas fa-info-circle" aria-hidden="true"></i>
+    
+    <strong>Métodos más habituales para SELECT en Eloquent</strong>
+  </div>
+  <div class="definicion-contenido">
+    
+- **`all()`** → Recupera **todos** los registros en una 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    colección de modelos hidratados
+
+
+</span>
+</strong>.
+- **`select()`** → Define columnas específicas a recuperar; admite expresiones (`DB::raw`).
+- **`addSelect()`** → Añade más columnas a un select existente.
+- **`distinct()`** → Equivalente a `SELECT DISTINCT`.
+- **`pluck()`** → Recupera una o dos columnas en una colección simple (sin hidratar modelo).
+- **`value()`** → Devuelve un único valor de una columna de la primera fila encontrada.
+- **Agregaciones**: `count()`, `max()`, `min()`, `avg()`, `sum()` → Devuelven valores numéricos agregados.
+- **`toBase()`** → Convierte el query builder Eloquent al query builder de base de datos (resultado sin hidratar modelos).
+  
+  </div>
+</div>
+<!-- raw HTML omitted -->
+<h2 id="comparativa-select">Comparativa SELECT</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Caso de uso</th>
+          <th>SQL</th>
+          <th>Eloquent</th>
+          <th>Tipo de resultado</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Todos los campos</td>
+          <td><code>SELECT * FROM users;</code></td>
+          <td><code>User::all();</code></td>
+          <td><code>Collection&lt;Model&gt;</code></td>
+      </tr>
+      <tr>
+          <td>Columnas específicas</td>
+          <td><code>SELECT name,email FROM users;</code></td>
+          <td><code>User::select('name','email')-&gt;get();</code></td>
+          <td><code>Collection&lt;Model&gt;</code></td>
+      </tr>
+      <tr>
+          <td>Añadir columnas extra</td>
+          <td>—</td>
+          <td><code>User::select('name')-&gt;addSelect('email')-&gt;get();</code></td>
+          <td><code>Collection&lt;Model&gt;</code></td>
+      </tr>
+      <tr>
+          <td>Solo valores únicos</td>
+          <td><code>SELECT DISTINCT name FROM users;</code></td>
+          <td><code>User::select('name')-&gt;distinct()-&gt;get();</code></td>
+          <td><code>Collection&lt;Model&gt;</code></td>
+      </tr>
+      <tr>
+          <td>Proyección de una columna</td>
+          <td><code>SELECT name FROM users;</code></td>
+          <td><code>User::pluck('name');</code></td>
+          <td><code>Collection&lt;scalar&gt;</code></td>
+      </tr>
+      <tr>
+          <td>Par clave–valor</td>
+          <td><code>SELECT id,name FROM users;</code></td>
+          <td><code>User::pluck('name','id');</code></td>
+          <td><code>Collection&lt;key,value&gt;</code></td>
+      </tr>
+      <tr>
+          <td>Un solo valor</td>
+          <td><code>SELECT email FROM users LIMIT 1;</code></td>
+          <td><code>User::value('email');</code></td>
+          <td><code>scalar</code></td>
+      </tr>
+      <tr>
+          <td>Agregaciones</td>
+          <td><code>SELECT COUNT(*) FROM users;</code></td>
+          <td><code>User::count();</code></td>
+          <td><code>int</code></td>
+      </tr>
+      <tr>
+          <td>Expresiones calculadas</td>
+          <td><code>SELECT price*quantity AS total FROM sales;</code></td>
+          <td><code>Sale::select(DB::raw('price*quantity as total'))-&gt;get();</code></td>
+          <td><code>Collection&lt;Model&gt;</code></td>
+      </tr>
+  </tbody>
+</table>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Nota</h4>
+
+    <p>En Eloquent,</p>
+<!-- raw HTML omitted -->
+<pre><code>get()
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>first()
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>find()
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+
+<!-- raw HTML omitted -->
+<h2 id="ejemplos">Ejemplos</h2>
+<details>
+    <summary>Ejemplo: Todos los usuarios</summary>
+    <div class="solution-content">
+        <p><strong>SQL</strong></p>
+<!-- raw HTML omitted -->
+<p><strong>Eloquent</strong></p>
+<!-- raw HTML omitted -->
+
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<details>
+    <summary>Ejemplo: Campos específicos</summary>
+    <div class="solution-content">
+        <p><strong>SQL</strong></p>
+<!-- raw HTML omitted -->
+<p><strong>Eloquent</strong></p>
+<!-- raw HTML omitted -->
+
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+
+
+
+
+<div style="border: 1px solid navy; border-radius: 5px; overflow: hidden;">
+    <div style="background-color: navy; color: white;
+    font-weight: bold; padding: 10px; display: flex; align-items: center;">
+        
+        <span style="margin-right: 8px;">
+            
+                <i class="fas fa-book"></i> 
+            
+        </span>
+        
+        <span>Referencias</span>
+    </div>
+
+    <h3 style="padding: 5px; font-weight: bold; color: navy;">Fuentes de Información</h3>
+
+    <hr style="border-color: lightblue; border-width: 3px"/>
+    
+    <div style="background-color: #e0f7fa; color: navy; padding: 10px;">
+        <ul>
+            
+            <li><ul>
+<li><a href="https://laravel.com/docs/eloquent">Documentación Laravel Eloquent ORM</a></li>
+</ul>
+</li>
+            
+            <li><ul>
+<li><a href="https://www.w3schools.com/sql/">Manual SQL W3Schools</a></li>
+</ul>
+</li>
+            
+            <li></li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+<h1 id="cláusula-where">Cláusula WHERE</h1>
+<p>En SQL, la cláusula 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    WHERE
+
+
+</span>
+</strong> se usa para <strong>filtrar filas</strong> según condiciones lógicas. Permite limitar el conjunto de resultados a solo aquellos registros que cumplen las condiciones.</p>
+<p>En Eloquent, la función equivalente se consigue con métodos encadenables que agregan filtros a la consulta, principalmente:</p>
+<ul>
+<li><code>where()</code></li>
+<li><code>orWhere()</code></li>
+<li><code>whereIn()</code></li>
+<li><code>whereNull()</code></li>
+<li><code>whereBetween()</code></li>
+<li>Otros métodos auxiliares para condiciones específicas:</li>
+<li><div class="definicion-concepto">
+  <div class="definicion-titulo">
+    
+    <i class="fas fa-info-circle" aria-hidden="true"></i>
+    
+    <strong>Métodos auxiliares de filtrado en Eloquent para condiciones específicas</strong>
+  </div>
+  <div class="definicion-contenido">
+    
+
+- **`whereNull($column)`** / **`whereNotNull($column)`**: Filtra filas con valor nulo o no nulo en la columna.
+- **`whereIn($column, array $values)`** / **`whereNotIn($column, array $values)`**: Filtra filas donde el valor está (o no está) dentro de un conjunto.
+- **`whereBetween($column, array $range)`** / **`whereNotBetween($column, array $range)`**: Filtra filas donde el valor está (o no está) dentro de un rango.
+- **`whereDate($column, $operator, $value)`**, **`whereMonth($column, $value)`**, **`whereYear($column, $value)`**: Filtrado basado en partes de fecha (fecha completa, mes o año).
+- **`whereColumn($first, $operator = null, $second = null)`**: Compara el valor de una columna con otra columna (no con un valor estático).
+- **`whereExists($callback)`**: Filtrado usando subconsultas con existencia de registros relacionados.
+- **`whereRaw($sql, $bindings = [])`**: Permite escribir condiciones WHERE personalizadas en SQL crudo, con o sin bindings.
+
+
+  </div>
+</div></li>
+</ul>
+<div class="definicion-concepto">
+  <div class="definicion-titulo">
+    
+    <i class="fas fa-info-circle" aria-hidden="true"></i>
+    
+    <strong>Métodos comunes para filtros en Eloquent</strong>
+  </div>
+  <div class="definicion-contenido">
+    
+- **`where($column, $operator = null, $value = null, $boolean = 'and')`**: Filtro básico con operador (por defecto '=').
+- **`orWhere()`**: Condición OR en lugar de AND.
+- **`whereIn($column, array $values)`**: Filtra si el valor está dentro de un conjunto.
+- **`whereNull($column)`** / **`whereNotNull($column)`**: Filtra valores nulos o no nulos.
+- **`whereBetween($column, array $range)`**: Filtra valores dentro de un rango.
+- **`whereDate()`, `whereMonth()`, `whereYear()`**: Filtrado por partes de fecha.  
+  
+  </div>
+</div>
+<!-- raw HTML omitted -->
+<h1 id="cláusula-where-1">Cláusula WHERE</h1>
+<p>En SQL, la cláusula 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    WHERE
+
+
+</span>
+</strong> se usa para <strong>filtrar filas</strong> según condiciones lógicas.<br>
+En Eloquent, usamos métodos encadenables para construir estas condiciones.</p>
+<div class="definicion-concepto">
+  <div class="definicion-titulo">
+    
+    <i class="fas fa-info-circle" aria-hidden="true"></i>
+    
+    <strong>Métodos comunes para filtros en Eloquent</strong>
+  </div>
+  <div class="definicion-contenido">
+    
+- **`where($column, $operator = null, $value = null, $boolean = 'and')`**: Filtro básico con operador (por defecto '=').
+- **`orWhere()`**: Condición OR en lugar de AND.  
+  
+  </div>
+</div>
+<div class="definicion-concepto">
+  <div class="definicion-titulo">
+    
+    <i class="fas fa-info-circle" aria-hidden="true"></i>
+    
+    <strong>Métodos auxiliares de filtrado en Eloquent para condiciones específicas</strong>
+  </div>
+  <div class="definicion-contenido">
+    
+- **`whereNull($column)`** / **`whereNotNull($column)`**: Filtra filas con valor nulo o no nulo en la columna.
+- **`whereIn($column, array $values)`** / **`whereNotIn($column, array $values)`**: Filtra filas donde el valor está (o no está) dentro de un conjunto.
+- **`whereBetween($column, array $range)`** / **`whereNotBetween($column, array $range)`**: Filtra filas donde el valor está (o no está) dentro de un rango.
+- **`whereDate($column, $operator, $value)`**, **`whereMonth($column, $value)`**, **`whereYear($column, $value)`**: Filtrado basado en partes de fecha (fecha completa, mes o año).
+- **`whereColumn($first, $operator = null, $second = null)`**: Compara el valor de una columna con otra columna.
+- **`whereExists($callback)`**: Filtrado usando subconsultas con existencia de registros relacionados.
+- **`whereRaw($sql, $bindings = [])`**: Permite escribir condiciones WHERE personalizadas en SQL crudo.  
+  
+  </div>
+</div>
+<!-- raw HTML omitted -->
+<h2 id="comparativa-where">Comparativa WHERE</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Caso de uso</th>
+          <th>SQL</th>
+          <th>Eloquent</th>
+          <th>Resultado</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Igualdad simple</td>
+          <td><code>SELECT * FROM users WHERE status = 'active';</code></td>
+          <td><code>User::where('status', 'active')-&gt;get();</code></td>
+          <td>Colección de modelos</td>
+      </tr>
+      <tr>
+          <td>Mayor que</td>
+          <td><code>SELECT * FROM orders WHERE total &gt; 100;</code></td>
+          <td><code>Order::where('total', '&gt;', 100)-&gt;get();</code></td>
+          <td>Colección</td>
+      </tr>
+      <tr>
+          <td>Condición OR</td>
+          <td><code>SELECT * FROM users WHERE status = 'active' OR role = 'admin';</code></td>
+          <td><code>User::where('status', 'active')-&gt;orWhere('role', 'admin')-&gt;get();</code></td>
+          <td>Colección</td>
+      </tr>
+      <tr>
+          <td>IN (conjunto)</td>
+          <td><code>SELECT * FROM users WHERE id IN (1,2,3);</code></td>
+          <td><code>User::whereIn('id', [1,2,3])-&gt;get();</code></td>
+          <td>Colección</td>
+      </tr>
+      <tr>
+          <td>Valor NULL</td>
+          <td><code>SELECT * FROM posts WHERE deleted_at IS NULL;</code></td>
+          <td><code>Post::whereNull('deleted_at')-&gt;get();</code></td>
+          <td>Colección</td>
+      </tr>
+      <tr>
+          <td>Rango entre valores</td>
+          <td><code>SELECT * FROM events WHERE date BETWEEN '2023-01-01' AND '2023-12-31';</code></td>
+          <td><code>Event::whereBetween('date', ['2023-01-01', '2023-12-31'])-&gt;get();</code></td>
+          <td>Colección</td>
+      </tr>
+  </tbody>
+</table>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Nota</h4>
+
+    Eloquent permite encadenar múltiples llamadas <code>where()</code>, que se concatenan con AND por defecto. Para condiciones complejas se usan funciones anónimas para agrupar filtros.
+
+</div>
+
+<!-- raw HTML omitted -->
+<h2 id="ejemplos-1">Ejemplos</h2>
+<details>
+    <summary>Ejemplo: Filtrar usuarios activos</summary>
+    <div class="solution-content">
+        <p><strong>SQL</strong></p>
+<!-- raw HTML omitted -->
+<p><strong>Eloquent</strong></p>
+<!-- raw HTML omitted -->
+
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<details>
+    <summary>Ejemplo: Filtrar pedidos mayores a 100 o urgentes</summary>
+    <div class="solution-content">
+        <p><strong>SQL</strong></p>
+<!-- raw HTML omitted -->
+<p><strong>Eloquent</strong></p>
+<!-- raw HTML omitted -->
+
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+
+
+
+
+<div style="border: 1px solid navy; border-radius: 5px; overflow: hidden;">
+    <div style="background-color: navy; color: white;
+    font-weight: bold; padding: 10px; display: flex; align-items: center;">
+        
+        <span style="margin-right: 8px;">
+            
+                <i class="fas fa-book"></i> 
+            
+        </span>
+        
+        <span>Referencias</span>
+    </div>
+
+    <h3 style="padding: 5px; font-weight: bold; color: navy;">Fuentes de Información</h3>
+
+    <hr style="border-color: lightblue; border-width: 3px"/>
+    
+    <div style="background-color: #e0f7fa; color: navy; padding: 10px;">
+        <ul>
+            
+            <li><ul>
+<li><a href="https://laravel.com/docs/eloquent#where-clauses">Laravel Query Builder - Where Clauses</a></li>
+</ul>
+</li>
+            
+            <li><ul>
+<li><a href="https://www.w3schools.com/sql/sql_where.asp">SQL WHERE Clause</a></li>
+</ul>
+</li>
+            
+            <li></li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+<h1 id="cláusula-group-by-y-método-withcount-en-eloquent">Cláusula GROUP BY y método withCount en Eloquent</h1>
+<p>En SQL, la cláusula 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    GROUP BY
+
+
+</span>
+</strong> permite <strong>agrupar filas</strong> según valores iguales en una o más columnas, para luego aplicar funciones de agregación sobre cada grupo.</p>
+<p>En Eloquent, se usa el método <code>groupBy()</code> para agrupar consultas manualmente, pero además existe un método muy potente llamado <strong><code>withCount()</code></strong> que facilita contar registros relacionados sin escribir explícitamente la consulta con <code>GROUP BY</code>.</p>
+<div class="definicion-concepto">
+  <div class="definicion-titulo">
+    
+    <i class="fas fa-info-circle" aria-hidden="true"></i>
+    
+    <strong>Métodos para agrupar y contar en Eloquent</strong>
+  </div>
+  <div class="definicion-contenido">
+    
+- **`groupBy($columns)`**: Agrupa los resultados según columnas específicas y suele usarse junto con funciones agregadas (`count()`, `sum()`, etc.).
+- **`withCount($relation)`**: Agrega automáticamente un contador del número de registros relacionados para cada modelo principal. Internamente genera una consulta con `GROUP BY` y `COUNT()`.  
+  
+  </div>
+</div>
+<!-- raw HTML omitted -->
+<h2 id="comparativa-group-by-vs-withcount">Comparativa GROUP BY vs withCount</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Caso de uso</th>
+          <th>SQL</th>
+          <th>Eloquent</th>
+          <th>Resultado</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Agrupar por columna y contar registros</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span>  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex; background-color:#d6d6c6"><span>SELECT status, COUNT(*) as total FROM users GROUP BY status;  </span></span></code></pre></td></tr></table>
+</div>
+</div></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span>  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex; background-color:#d6d6c6"><span>User::select(<span style="color:#cd5555">&#39;status&#39;</span>, DB::raw(<span style="color:#cd5555">&#39;COUNT(*) as total&#39;</span>))  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>-&gt;groupBy(<span style="color:#cd5555">&#39;status&#39;</span>)  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>-&gt;get();  </span></span></code></pre></td></tr></table>
+</div>
+</div></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Colección con cada grupo y conteo</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Contar registros relacionados (posts por usuario)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>No aplica directamente, se usa join manual</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span>  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex; background-color:#d6d6c6"><span>User::withCount(<span style="color:#cd5555">&#39;posts&#39;</span>)-&gt;get();  </span></span></code></pre></td></tr></table>
+</div>
+</div></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Colección de usuarios con atributo extra <code>posts_count</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Importante</h4>
+
+    <ul>
+<li><code>withCount</code> simplifica mucho obtener contadores de relaciones, evita escribir consultas con <code>JOIN</code> y <code>GROUP BY</code> manualmente.</li>
+<li>El resultado añade automáticamente un atributo con el sufijo <code>_count</code> al modelo.</li>
+</ul>
+
+
+</div>
+
+<!-- raw HTML omitted -->
+<h2 id="ejemplos-2">Ejemplos</h2>
+<details>
+    <summary>Ejemplo: Contar usuarios por estado con GROUP BY</summary>
+    <div class="solution-content">
+        <p><strong>SQL</strong></p>
+<!-- raw HTML omitted -->
+<p><strong>Eloquent</strong></p>
+<!-- raw HTML omitted -->
+
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<details>
+    <summary>Ejemplo: Contar posts por usuario con withCount</summary>
+    <div class="solution-content">
+        <p><strong>Eloquent</strong></p>
+<!-- raw HTML omitted -->
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+<h2 id="hahahugoshortcode35s43hbhb">
+
+
+
+<div style="border: 1px solid navy; border-radius: 5px; overflow: hidden;">
+    <div style="background-color: navy; color: white;
+    font-weight: bold; padding: 10px; display: flex; align-items: center;">
+        
+        <span style="margin-right: 8px;">
+            
+                <i class="fas fa-book"></i> 
+            
+        </span>
+        
+        <span>Referencias</span>
+    </div>
+
+    <h3 style="padding: 5px; font-weight: bold; color: navy;">Fuentes de Información</h3>
+
+    <hr style="border-color: lightblue; border-width: 3px"/>
+    
+    <div style="background-color: #e0f7fa; color: navy; padding: 10px;">
+        <ul>
+            
+            <li><ul>
+<li><a href="https://laravel.com/docs/eloquent#grouping">Laravel Query Builder - Group By</a></li>
+</ul>
+</li>
+            
+            <li><ul>
+<li><a href="https://laravel.com/docs/eloquent-relationships#counting-related-models">Laravel Eloquent - withCount</a></li>
+</ul>
+</li>
+            
+            <li><ul>
+<li><a href="https://www.w3schools.com/sql/sql_groupby.asp">SQL GROUP BY Clause</a></li>
+</ul>
+</li>
+            
+            <li></li>
+            
+            
+        </ul>
+    </div>
+</div>
+</h2>
+<h1 id="cláusula-having">Cláusula HAVING</h1>
+<p>En SQL, la cláusula 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    HAVING
+
+
+</span>
+</strong> se usa para <strong>filtrar grupos</strong> que resultan de una cláusula <code>GROUP BY</code>, aplicando condiciones sobre funciones de agregación (por ejemplo, contar, sumar, etc.).</p>
+<p>En Eloquent, la cláusula HAVING se puede implementar con el método <code>having()</code> o sus variantes (<code>havingRaw()</code>) para filtrar grupos después de aplicar agregaciones.</p>
+<div class="definicion-concepto">
+  <div class="definicion-titulo">
+    
+    <i class="fas fa-info-circle" aria-hidden="true"></i>
+    
+    <strong>Métodos HAVING en Eloquent</strong>
+  </div>
+  <div class="definicion-contenido">
+    
+- **`having($column, $operator = null, $value = null)`**: Filtro sobre una columna o alias de agregación después de agrupar.
+- **`havingRaw($sql, $bindings = [])`**: Permite escribir condiciones HAVING en SQL crudo.  
+  
+  </div>
+</div>
+<!-- raw HTML omitted -->
+<h2 id="comparativa-having">Comparativa HAVING</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Caso de uso</th>
+          <th>SQL</th>
+          <th>Eloquent</th>
+          <th>Resultado</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Filtrar grupos con conteo &gt; 10</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span>  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex; background-color:#d6d6c6"><span>SELECT status, COUNT(*) as total FROM users  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>GROUP BY status  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>HAVING COUNT(*) &gt; 10;  </span></span></code></pre></td></tr></table>
+</div>
+</div></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span>  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>User::select(<span style="color:#cd5555">&#39;status&#39;</span>, DB::raw(<span style="color:#cd5555">&#39;COUNT(*) as total&#39;</span>))  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex; background-color:#d6d6c6"><span>-&gt;groupBy(<span style="color:#cd5555">&#39;status&#39;</span>)  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>-&gt;having(<span style="color:#cd5555">&#39;total&#39;</span>, <span style="color:#cd5555">&#39;&gt;&#39;</span>, 10)  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>-&gt;get();  </span></span></code></pre></td></tr></table>
+</div>
+</div></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Colección con grupos filtrados</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<!-- raw HTML omitted -->
+<h2 id="ejemplos-3">Ejemplos</h2>
+<details>
+    <summary>Ejemplo: Filtrar estados con más de 10 usuarios</summary>
+    <div class="solution-content">
+        <p><strong>SQL</strong></p>
+<!-- raw HTML omitted -->
+<p><strong>Eloquent</strong></p>
+<!-- raw HTML omitted -->
+
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<hr>
+<h1 id="cláusula-order-by">Cláusula ORDER BY</h1>
+<p>En SQL, la cláusula 
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    ORDER BY
+
+
+</span>
+</strong> se usa para ordenar los resultados de la consulta por una o varias columnas, en orden ascendente (ASC) o descendente (DESC).</p>
+<p>En Eloquent, se usa el método <code>orderBy()</code> para ordenar los resultados.</p>
+<div class="definicion-concepto">
+  <div class="definicion-titulo">
+    
+    <i class="fas fa-info-circle" aria-hidden="true"></i>
+    
+    <strong>Métodos ORDER BY en Eloquent</strong>
+  </div>
+  <div class="definicion-contenido">
+    
+- **`orderBy($column, $direction = 'asc')`**: Ordena por la columna en dirección ascendente o descendente.
+- **`latest($column = 'created_at')`**: Ordena descendente por la columna especificada (usualmente fecha).
+- **`oldest($column = 'created_at')`**: Ordena ascendente por la columna especificada.  
+  
+  </div>
+</div>
+<!-- raw HTML omitted -->
+<h2 id="comparativa-order-by">Comparativa ORDER BY</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Caso de uso</th>
+          <th>SQL</th>
+          <th>Eloquent</th>
+          <th>Resultado</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Ordenar usuarios por nombre ascendente</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex; background-color:#d6d6c6"><span>  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>SELECT * FROM users ORDER BY name ASC;  </span></span></code></pre></td></tr></table>
+</div>
+</div></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex; background-color:#d6d6c6"><span>  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>User::orderBy(<span style="color:#cd5555">&#39;name&#39;</span>, <span style="color:#cd5555">&#39;asc&#39;</span>)-&gt;get();  </span></span></code></pre></td></tr></table>
+</div>
+</div></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Colección ordenada</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Ordenar pedidos por fecha descendente</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex; background-color:#d6d6c6"><span>  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>SELECT * FROM orders ORDER BY created_at DESC;  </span></span></code></pre></td></tr></table>
+</div>
+</div></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex; background-color:#d6d6c6"><span>  <span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>Order::latest()-&gt;get();  </span></span></code></pre></td></tr></table>
+</div>
+</div></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Colección ordenada</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<!-- raw HTML omitted -->
+<h2 id="ejemplos-4">Ejemplos</h2>
+<details>
+    <summary>Ejemplo: Usuarios ordenados por nombre</summary>
+    <div class="solution-content">
+        <p><strong>SQL</strong></p>
+<!-- raw HTML omitted -->
+<p><strong>Eloquent</strong></p>
+<!-- raw HTML omitted -->
+
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<details>
+    <summary>Ejemplo: Pedidos ordenados por fecha más reciente</summary>
+    <div class="solution-content">
+        <p><strong>SQL</strong></p>
+<!-- raw HTML omitted -->
+<p><strong>Eloquent</strong></p>
+<!-- raw HTML omitted -->
+
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+
+
+
+
+<div style="border: 1px solid navy; border-radius: 5px; overflow: hidden;">
+    <div style="background-color: navy; color: white;
+    font-weight: bold; padding: 10px; display: flex; align-items: center;">
+        
+        <span style="margin-right: 8px;">
+            
+                <i class="fas fa-book"></i> 
+            
+        </span>
+        
+        <span>Referencias</span>
+    </div>
+
+    <h3 style="padding: 5px; font-weight: bold; color: navy;">Fuentes de Información</h3>
+
+    <hr style="border-color: lightblue; border-width: 3px"/>
+    
+    <div style="background-color: #e0f7fa; color: navy; padding: 10px;">
+        <ul>
+            
+            <li><ul>
+<li><a href="https://laravel.com/docs/eloquent#ordering">Laravel Query Builder - Ordering</a></li>
+</ul>
+</li>
+            
+            <li><ul>
+<li><a href="https://www.w3schools.com/sql/sql_orderby.asp">SQL ORDER BY Clause</a></li>
+</ul>
+</li>
+            
+            <li></li>
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel_certificado_2026/js/main.js"></script>
+<script defer src="/laravel_certificado_2026/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel_certificado_2026/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

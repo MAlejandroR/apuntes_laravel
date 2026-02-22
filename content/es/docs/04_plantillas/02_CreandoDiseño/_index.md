@@ -18,7 +18,6 @@ Para crear los diseños se usan herramientas gráficas de prototipado, y para el
 {{% /pageinfo%}}
 
 ### Herramientas para el diseño
-{{% pageinfo%}}
 #### 
 Vamos a usar **Balsamiq** porque disponemos de licencia estudiante en el centro    
 Existen varias herramientas alternativas:    
@@ -34,7 +33,6 @@ Existen varias herramientas alternativas:
    - Figma es una herramienta de diseño colaborativo en línea que permite crear mockups, wireframes y prototipos. Tiene una versión gratuita con muchas funcionalidades.  
 5. **[Wireframe.cc](https://wireframe.cc/):**
    - Wireframe.cc es una herramienta simple y fácil de usar para crear wireframes rápidos y sencillos. Puedes comenzar a usarla directamente en el navegador.     
-{{% /pageinfo%}}
 
 ### Laravel como fullstack
 **Laravel es un poderoso framework de backend.**    
@@ -43,15 +41,15 @@ Con Laravel, es posible realizar {{<color_blue>}}desarrollos web full-stack{{</c
 Así, Laravel se convierte en **una solución integral** que permite implementar todas las facetas del desarrollo web, desde la lógica del servidor hasta la interfaz de usuario.
 
 
-{{< alert title="Recuerda" color="warning" >}}
-{{<color_green>}}Laravel {{</color_green>}}Permite integrar de {{<color_blue>}}forma agnóstica{{</color_blue>}} cualquier herramienta para el front.     
-
-Muchos paquetes traen integrado los framework {{<color_green>}}tailwind{{</color_green>}} y   {{<color_green>}}vue{{</color_green>}}
-{{< /alert >}}
+>{{%alert title="Recuerda" color="warning" %}}
+Laravel como full stack
+{{% /alert %}}
+>> {{<color>}}Laravel {{</color>}}Permite integrar de {{<color>}}forma agnóstica{{</color>}} cualquier herramienta para el front.
+ 
+>> En el proceso de instalación, se instala {{<color>}}tailwindcss{{</color>}} como framework del css, pero lo podemos cambiar
 
 
 ### Instalación de [Tailwind](https://tailwindcss.com/): framework de css
-{{% pageinfo%}}
 #### **Introducción**
 {{<color_green>}}Tailwind CSS{{</color_green>}}  es un poderoso framework de estilos de CSS que se puede utilizar de manera efectiva con Laravel.    
 
@@ -60,7 +58,7 @@ La  simplicidad y flexibilidad de {{<color_green>}}Tailwind{{</color_green>}} pe
 Muchos paquetes y recursos integrados en el ecosistema de Laravel incorporan Tailwind CSS como herramienta preferida para la estilización de componentes y diseños, por ese motivo lo vamos a utilizar en este curso.      
 ****
 #### **Instalación**
-{{% pageinfo color="info" %}}
+
 Para la instalación necesitamos herramientas para gestionar paquetes del cliente **node y npm**, y vamos a usar **vite** como herramienta de compilación (traspilación) de ficheros en el frontend
 *****
 ##### **Node y npm**
@@ -111,10 +109,7 @@ Su instalación es sencilla. Una vez instalado cerramos el terminal y al volverl
 
 *******
 Además, {{<color_green>}}compila componentes de Vue o React a JavaScript{{</color_green>}}, facilitando su ejecución en el navegador.
-{{% /pageinfo%}}
-{{% /pageinfo%}}
 ### Diseño del layout
-{{% pageinfo%}}
 #### Planteamos el siguiente layout general
 {{% imgproc Plantilla_detalle Fit "1900x1000" %}}
 
@@ -152,9 +147,7 @@ Además, {{<color_green>}}compila componentes de Vue o React a JavaScript{{</col
 </html>
 {{< / highlight >}}
 
-{{% /pageinfo%}}
 #### Diseño de la cabecera {{<color_blue>}}header{{</color_blue>}} 
-{{% pageinfo%}}
 {{% imgproc header Fit "4000x900" %}}
 
 {{% /imgproc %}}
@@ -176,7 +169,6 @@ Además, {{<color_green>}}compila componentes de Vue o React a JavaScript{{</col
         </div>
     </header>
 {{< / highlight >}}
-{{% /pageinfo%}}
 
 #### Diseño de la sección de menú:  {{<color_blue>}}nav{{</color_blue>}}
 

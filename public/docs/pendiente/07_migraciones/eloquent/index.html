@@ -1,0 +1,1163 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel_certificado_2026/livereload.js?mindelay=10&amp;v=2&amp;port=35723&amp;path=laravel_certificado_2026/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel_certificado_2026/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel_certificado_2026/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-192x192.png" sizes="192x192">
+
+<title>Eloquent | Laravel: Framework de php</title>
+<meta name="description" content="Eloquent ORM en Laravel Eloquent ORM en Laravel ofrece una variedad de métodos para interactuar con la base de datos de forma eficiente y elegante. Aquí tienes un resumen escueto de algunos de los métodos más comunes que puedes usar para consultas, inserciones, actualizaciones y borrados:
+Métodos para Consultas all(): Recupera una colección con todos los registros del modelo. Cada ítem es un objeto del modelo ya “hidratado” (con datos y métodos listos para usar). find($id): Encuentra un registro por su clave primaria. where(&#39;column&#39;, &#39;value&#39;): Aplica una condición SQL WHERE. whereNull(&#39;column&#39;): Filtra registros donde la columna es NULL. whereNotNull(&#39;column&#39;): Filtra registros donde la columna NO es NULL. orderBy(&#39;column&#39;, &#39;direction&#39;): Ordena los resultados. take($limit): Limita el número de resultados. get(): Ejecuta la consulta y devuelve una colección de modelos completamente hidratados (objetos Eloquent). Se aplica sobre un Query Builder. $users = User::where(&#39;active&#39;, 1)-&gt;get(); // Collection&lt;User&gt; Métodos para Inserciones y Actualizaciones save(): Guarda un nuevo modelo o actualiza un modelo existente. create($attributes): Crea un nuevo registro con los atributos proporcionados. update($attributes): Actualiza un modelo con los atributos proporcionados. Métodos para Borrados delete(): Elimina un modelo de la base de datos. destroy($ids): Elimina modelos por su clave primaria. softDeletes(): Hace un borrado suave (no elimina los registros de la base de datos, solo los marca como borrados). Métodos avanzados con relaciones has(&#39;relation&#39;): Filtra los registros que tienen al menos una relación. Family::has(&#39;cycles&#39;)-&gt;get(); whereHas(&#39;relation&#39;, function($query){ ... }): Igual que has(), pero permite añadir condiciones a la relación. Family::whereHas(&#39;cycles&#39;, function($q) { $q-&gt;where(&#39;year&#39;, 2025); })-&gt;get(); orWhereHas(&#39;relation&#39;, function($query){ ... }): Igual que whereHas(), pero combina la condición usando OR.">
+
+<meta property="og:url" content="http://localhost:35723/laravel_certificado_2026/docs/pendiente/07_migraciones/eloquent/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Eloquent">
+  <meta property="og:description" content="Eloquent ORM en Laravel Eloquent ORM en Laravel ofrece una variedad de métodos para interactuar con la base de datos de forma eficiente y elegante. Aquí tienes un resumen escueto de algunos de los métodos más comunes que puedes usar para consultas, inserciones, actualizaciones y borrados:
+Métodos para Consultas all(): Recupera una colección con todos los registros del modelo. Cada ítem es un objeto del modelo ya “hidratado” (con datos y métodos listos para usar). find($id): Encuentra un registro por su clave primaria. where(&#39;column&#39;, &#39;value&#39;): Aplica una condición SQL WHERE. whereNull(&#39;column&#39;): Filtra registros donde la columna es NULL. whereNotNull(&#39;column&#39;): Filtra registros donde la columna NO es NULL. orderBy(&#39;column&#39;, &#39;direction&#39;): Ordena los resultados. take($limit): Limita el número de resultados. get(): Ejecuta la consulta y devuelve una colección de modelos completamente hidratados (objetos Eloquent). Se aplica sobre un Query Builder. $users = User::where(&#39;active&#39;, 1)-&gt;get(); // Collection&lt;User&gt; Métodos para Inserciones y Actualizaciones save(): Guarda un nuevo modelo o actualiza un modelo existente. create($attributes): Crea un nuevo registro con los atributos proporcionados. update($attributes): Actualiza un modelo con los atributos proporcionados. Métodos para Borrados delete(): Elimina un modelo de la base de datos. destroy($ids): Elimina modelos por su clave primaria. softDeletes(): Hace un borrado suave (no elimina los registros de la base de datos, solo los marca como borrados). Métodos avanzados con relaciones has(&#39;relation&#39;): Filtra los registros que tienen al menos una relación. Family::has(&#39;cycles&#39;)-&gt;get(); whereHas(&#39;relation&#39;, function($query){ ... }): Igual que has(), pero permite añadir condiciones a la relación. Family::whereHas(&#39;cycles&#39;, function($q) { $q-&gt;where(&#39;year&#39;, 2025); })-&gt;get(); orWhereHas(&#39;relation&#39;, function($query){ ... }): Igual que whereHas(), pero combina la condición usando OR.">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:published_time" content="2023-04-08T18:21:47+02:00">
+    <meta property="article:modified_time" content="2023-04-08T18:21:47+02:00">
+
+  <meta itemprop="name" content="Eloquent">
+  <meta itemprop="description" content="Eloquent ORM en Laravel Eloquent ORM en Laravel ofrece una variedad de métodos para interactuar con la base de datos de forma eficiente y elegante. Aquí tienes un resumen escueto de algunos de los métodos más comunes que puedes usar para consultas, inserciones, actualizaciones y borrados:
+Métodos para Consultas all(): Recupera una colección con todos los registros del modelo. Cada ítem es un objeto del modelo ya “hidratado” (con datos y métodos listos para usar). find($id): Encuentra un registro por su clave primaria. where(&#39;column&#39;, &#39;value&#39;): Aplica una condición SQL WHERE. whereNull(&#39;column&#39;): Filtra registros donde la columna es NULL. whereNotNull(&#39;column&#39;): Filtra registros donde la columna NO es NULL. orderBy(&#39;column&#39;, &#39;direction&#39;): Ordena los resultados. take($limit): Limita el número de resultados. get(): Ejecuta la consulta y devuelve una colección de modelos completamente hidratados (objetos Eloquent). Se aplica sobre un Query Builder. $users = User::where(&#39;active&#39;, 1)-&gt;get(); // Collection&lt;User&gt; Métodos para Inserciones y Actualizaciones save(): Guarda un nuevo modelo o actualiza un modelo existente. create($attributes): Crea un nuevo registro con los atributos proporcionados. update($attributes): Actualiza un modelo con los atributos proporcionados. Métodos para Borrados delete(): Elimina un modelo de la base de datos. destroy($ids): Elimina modelos por su clave primaria. softDeletes(): Hace un borrado suave (no elimina los registros de la base de datos, solo los marca como borrados). Métodos avanzados con relaciones has(&#39;relation&#39;): Filtra los registros que tienen al menos una relación. Family::has(&#39;cycles&#39;)-&gt;get(); whereHas(&#39;relation&#39;, function($query){ ... }): Igual que has(), pero permite añadir condiciones a la relación. Family::whereHas(&#39;cycles&#39;, function($q) { $q-&gt;where(&#39;year&#39;, 2025); })-&gt;get(); orWhereHas(&#39;relation&#39;, function($query){ ... }): Igual que whereHas(), pero combina la condición usando OR.">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="2966">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Eloquent">
+  <meta name="twitter:description" content="Eloquent ORM en Laravel Eloquent ORM en Laravel ofrece una variedad de métodos para interactuar con la base de datos de forma eficiente y elegante. Aquí tienes un resumen escueto de algunos de los métodos más comunes que puedes usar para consultas, inserciones, actualizaciones y borrados:
+Métodos para Consultas all(): Recupera una colección con todos los registros del modelo. Cada ítem es un objeto del modelo ya “hidratado” (con datos y métodos listos para usar). find($id): Encuentra un registro por su clave primaria. where(&#39;column&#39;, &#39;value&#39;): Aplica una condición SQL WHERE. whereNull(&#39;column&#39;): Filtra registros donde la columna es NULL. whereNotNull(&#39;column&#39;): Filtra registros donde la columna NO es NULL. orderBy(&#39;column&#39;, &#39;direction&#39;): Ordena los resultados. take($limit): Limita el número de resultados. get(): Ejecuta la consulta y devuelve una colección de modelos completamente hidratados (objetos Eloquent). Se aplica sobre un Query Builder. $users = User::where(&#39;active&#39;, 1)-&gt;get(); // Collection&lt;User&gt; Métodos para Inserciones y Actualizaciones save(): Guarda un nuevo modelo o actualiza un modelo existente. create($attributes): Crea un nuevo registro con los atributos proporcionados. update($attributes): Actualiza un modelo con los atributos proporcionados. Métodos para Borrados delete(): Elimina un modelo de la base de datos. destroy($ids): Elimina modelos por su clave primaria. softDeletes(): Hace un borrado suave (no elimina los registros de la base de datos, solo los marca como borrados). Métodos avanzados con relaciones has(&#39;relation&#39;): Filtra los registros que tienen al menos una relación. Family::has(&#39;cycles&#39;)-&gt;get(); whereHas(&#39;relation&#39;, function($query){ ... }): Igual que has(), pero permite añadir condiciones a la relación. Family::whereHas(&#39;cycles&#39;, function($q) { $q-&gt;where(&#39;year&#39;, 2025); })-&gt;get(); orWhereHas(&#39;relation&#39;, function($query){ ... }): Igual que whereHas(), pero combina la condición usando OR.">
+
+
+<link href="/laravel_certificado_2026/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel_certificado_2026/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel_certificado_2026/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel_certificado_2026/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laravel_certificado_2026docs-li">
+  <a href="/laravel_certificado_2026/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laravel_certificado_2026docs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs01_introduccic3b3n-check"/>
+  <label for="m-laravel_certificado_2026docs01_introduccic3b3n-check"><a href="/laravel_certificado_2026/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs02_instalacic3b3n-check"/>
+  <label for="m-laravel_certificado_2026docs02_instalacic3b3n-check"><a href="/laravel_certificado_2026/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs03_rutas-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs03_rutas-check"/>
+  <label for="m-laravel_certificado_2026docs03_rutas-check"><a href="/laravel_certificado_2026/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laravel_certificado_2026docs04_plantillas-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas-check"><a href="/laravel_certificado_2026/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas01_blade-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas01_blade-check"><a href="/laravel_certificado_2026/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-check"><a href="/laravel_certificado_2026/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas03_componentes-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas03_componentes-check"><a href="/laravel_certificado_2026/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#métodos-para-consultas">Métodos para Consultas</a></li>
+    <li><a href="#métodos-para-inserciones-y-actualizaciones">Métodos para Inserciones y Actualizaciones</a></li>
+    <li><a href="#métodos-para-borrados">Métodos para Borrados</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#explicación-de-withcount">Explicación de <code>withCount</code></a>
+      <ul>
+        <li><a href="#alias-para-la-columna-con-el-conteo">Alias para la columna con el conteo</a></li>
+      </ul>
+    </li>
+    <li><a href="#-diferencia-entre-has-y-wherehas-en-eloquent">✅ Diferencia entre <code>has</code> y <code>whereHas</code> en Eloquent</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-ejemplo">✏ Ejemplo:</a></li>
+        <li><a href="#-tabla-resumen">📌 Tabla resumen:</a></li>
+      </ul>
+    </li>
+    <li><a href="#métodos-para-transformación-y-extracción-de-datos">Métodos para transformación y extracción de datos</a></li>
+    <li><a href="#métodos-para-consultas-1">Métodos para Consultas</a></li>
+    <li><a href="#métodos-para-inserciones-y-actualizaciones-1">Métodos para Inserciones y Actualizaciones</a></li>
+    <li><a href="#ejemplos">Ejemplos</a></li>
+    <li><a href="#otros-métodos-útiles">Otros Métodos Útiles</a></li>
+    <li><a href="#-campos-foráneos-y-claves-externas-en-laravel">🔗 Campos foráneos y claves externas en Laravel</a></li>
+    <li><a href="#-cuándo-pasar-el-nombre-de-la-tabla-a-constrained">🔗 ¿Cuándo pasar el nombre de la tabla a <code>constrained()</code>?</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#-métodos-para-definir-relaciones-entre-modelos-en-laravel">🛠️ Métodos para definir relaciones entre modelos en Laravel</a></li>
+    <li><a href="#-cómo-definir-una-relación-muchos-a-muchos">✅ Cómo definir una relación muchos a muchos</a></li>
+    <li><a href="#-tabla-pivote-nombre-y-convención">📌 Tabla pivote: nombre y convención</a></li>
+    <li><a href="#-cuándo-crear-la-tabla-pivote-explícitamente">🧱 Cuándo crear la tabla pivote explícitamente</a></li>
+    <li><a href="#-ejemplo-de-migración-de-tabla-pivote-con-columna-extra">📄 Ejemplo de migración de tabla pivote con columna extra</a></li>
+    <li><a href="#-acceder-a-los-campos-adicionales-de-la-tabla-pivote">🧩 Acceder a los campos adicionales de la tabla pivote</a></li>
+    <li><a href="#-diferencia-entre-hasmany-y-belongstomany">🤔 Diferencia entre <code>hasMany()</code> y <code>belongsToMany()</code></a></li>
+    <li><a href="#-resumen-visual">🧩 Resumen visual</a></li>
+  </ul>
+</nav>
+      </div>
+    
+            <div class="taxonomy taxonomy-terms-cloud taxo-categories">
+      <h5 class="taxonomy-title">Categories</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      <h5 class="taxonomy-title">Tags</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel_certificado_2026/docs/">Laravel</a></li>
+  <li class="breadcrumb-item">
+    <a href="">Pendiente de revisar e incorporar</a></li>
+  <li class="breadcrumb-item">
+    <a href="/laravel_certificado_2026/docs/pendiente/07_migraciones/">Migracioens</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Eloquent</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Eloquent</h1>
+	
+	<header class="article-meta">
+		
+</header>
+	<h1 id="eloquent-orm-en-laravel">Eloquent ORM en Laravel</h1>
+<p>Eloquent ORM en Laravel ofrece una variedad de métodos para interactuar con la base de datos de forma eficiente y elegante. Aquí tienes un resumen escueto de algunos de los métodos más comunes que puedes usar para consultas, inserciones, actualizaciones y borrados:</p>
+<h2 id="métodos-para-consultas">Métodos para Consultas</h2>
+<ul>
+<li><code>all()</code>: Recupera una <strong>colección</strong> con todos los registros del modelo. Cada ítem es un objeto del modelo ya “hidratado” (con datos y métodos listos para usar).</li>
+<li><code>find($id)</code>: Encuentra un registro por su clave primaria.</li>
+<li><code>where('column', 'value')</code>: Aplica una condición SQL WHERE.</li>
+<li><code>whereNull('column')</code>: Filtra registros donde la columna es NULL.</li>
+<li><code>whereNotNull('column')</code>: Filtra registros donde la columna NO es NULL.</li>
+<li><code>orderBy('column', 'direction')</code>: Ordena los resultados.</li>
+<li><code>take($limit)</code>: Limita el número de resultados.</li>
+<li><code>get()</code>: Ejecuta la consulta y devuelve una <strong>colección</strong> de modelos completamente hidratados (objetos Eloquent). Se aplica sobre un <strong>Query Builder</strong>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$users</span> = User::<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;active&#39;</span>, <span style="color:#b452cd">1</span>)-&gt;<span style="color:#658b00">get</span>(); <span style="color:#228b22">// Collection&lt;User&gt;
+</span></span></span></code></pre></div>
+<h2 id="métodos-para-inserciones-y-actualizaciones">Métodos para Inserciones y Actualizaciones</h2>
+<ul>
+<li><code>save()</code>: Guarda un nuevo modelo o actualiza un modelo existente.</li>
+<li><code>create($attributes)</code>: Crea un nuevo registro con los atributos proporcionados.</li>
+<li><code>update($attributes)</code>: Actualiza un modelo con los atributos proporcionados.</li>
+</ul>
+<h2 id="métodos-para-borrados">Métodos para Borrados</h2>
+<ul>
+<li><code>delete()</code>: Elimina un modelo de la base de datos.</li>
+<li><code>destroy($ids)</code>: Elimina modelos por su clave primaria.</li>
+<li><code>softDeletes()</code>: Hace un borrado suave (no elimina los registros de la base de datos, solo los marca como borrados).</li>
+</ul>
+<h1 id="métodos-avanzados-con-relaciones">Métodos avanzados con relaciones</h1>
+<ul>
+<li><code>has('relation')</code>: Filtra los registros que <strong>tienen al menos una</strong> relación.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Family::<span style="color:#658b00">has</span>(<span style="color:#cd5555">&#39;cycles&#39;</span>)-&gt;<span style="color:#658b00">get</span>();</span></span></code></pre></div>
+<ul>
+<li><code>whereHas('relation', function($query){ ... })</code>: Igual que <code>has()</code>, pero permite añadir condiciones a la relación.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Family::<span style="color:#658b00">whereHas</span>(<span style="color:#cd5555">&#39;cycles&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span>(<span style="color:#00688b">$q</span>) {
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$q</span>-&gt;<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;year&#39;</span>, <span style="color:#b452cd">2025</span>);
+</span></span><span style="display:flex;"><span>})-&gt;<span style="color:#658b00">get</span>();</span></span></code></pre></div>
+<ul>
+<li>
+<p><code>orWhereHas('relation', function($query){ ... })</code>: Igual que <code>whereHas()</code>, pero combina la condición usando <strong>OR</strong>.</p>
+</li>
+<li>
+<p><code>doesntHave('relation')</code>: Filtra los registros que <strong>no tienen</strong> la relación.</p>
+</li>
+<li>
+<p><code>whereDoesntHave('relation', function($query){ ... })</code>: Filtra los registros cuya relación <strong>no cumple</strong> la condición especificada.</p>
+</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>💡 Importante:</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Todos estos métodos (has, whereHas, orWhereHas, doesntHave, whereDoesntHave) devuelven un devuelven un <strong>Query Builder</strong> y <strong>no ejecutan la consulta</strong>.
+Para obtener la colección de resultados, hay que ejecutar la consulta con métodos como:</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>get() → colección de modelos.</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>first() → primer modelo o null.</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>count() → número de resultados💡 Tanto <code>has</code> como <code>whereHas</code>, <code>orWhereHas</code>, <code>doesntHave</code> y <code>whereDoesntHave</code></li>
+</ul>
+</blockquote>
+</blockquote>
+<ul>
+<li><code>with('relation')</code>: Carga (eager loading) la relación para evitar consultas N+1.</li>
+<li><code>withCount('relation')</code>: Añade una columna extra con el número de elementos de la relación.</li>
+<li><code>role('nombre_rol')</code>: Añade a la consulta un filtro para obtener solo los modelos que tengan asignado el rol indicado. Devuelve un query builder (no una colección) sobre el que se pueden encadenar otros métodos como get(), first(), count(), etc.</li>
+</ul>
+<p>💡 Ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>User::<span style="color:#658b00">role</span>(<span style="color:#cd5555">&#39;teacher&#39;</span>)-&gt;<span style="color:#658b00">get</span>(); <span style="color:#228b22">// Colección de usuarios con el rol &#34;teacher&#34;
+</span></span></span><span style="display:flex;"><span>User::<span style="color:#658b00">role</span>(<span style="color:#cd5555">&#39;student&#39;</span>)-&gt;<span style="color:#658b00">count</span>(); <span style="color:#228b22">// Número de usuarios con el rol &#34;student&#34;
+</span></span></span></code></pre></div>
+<blockquote>
+<p>como el objeto que retorna es un query builder, se puede ver el código sql con el método toSql()</p>
+</blockquote>
+<h1 id="otros-métodos-importantes-e-interesantes-para-usar-en-eloquent">Otros métodos importantes e interesantes para usar en Eloquent</h1>
+<p>Además del método <code>role()</code> que vimos antes, Eloquent tiene otros métodos muy útiles para trabajar con consultas y modelos:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Método</th>
+          <th>Descripción</th>
+          <th>Retorno / Uso</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>toSql()</code></td>
+          <td>Devuelve la consulta SQL generada por el query builder</td>
+          <td>Cadena (string) con la consulta SQL</td>
+      </tr>
+      <tr>
+          <td><code>get()</code></td>
+          <td>Ejecuta la consulta y devuelve una colección de modelos</td>
+          <td><code>Collection</code> de modelos</td>
+      </tr>
+      <tr>
+          <td><code>first()</code></td>
+          <td>Devuelve el primer resultado o <code>null</code></td>
+          <td>Modelo o <code>null</code></td>
+      </tr>
+      <tr>
+          <td><code>pluck('campo')</code></td>
+          <td>Obtiene una colección con los valores de un campo específico</td>
+          <td><code>Collection</code> con valores simples</td>
+      </tr>
+      <tr>
+          <td><code>count()</code></td>
+          <td>Devuelve el número total de registros</td>
+          <td>Entero (int)</td>
+      </tr>
+      <tr>
+          <td><code>paginate(n)</code></td>
+          <td>Ejecuta la consulta paginada con <code>n</code> resultados por página</td>
+          <td><code>LengthAwarePaginator</code></td>
+      </tr>
+      <tr>
+          <td><code>where()</code></td>
+          <td>Añade condiciones a la consulta</td>
+          <td>Query Builder para encadenar más métodos</td>
+      </tr>
+      <tr>
+          <td><code>with('relacion')</code></td>
+          <td>Carga relaciones para evitar consultas N+1</td>
+          <td>Query Builder con eager loading</td>
+      </tr>
+      <tr>
+          <td>`orderBy(&lsquo;campo&rsquo;, &lsquo;asc</td>
+          <td>desc&rsquo;)`</td>
+          <td>Ordena los resultados</td>
+      </tr>
+      <tr>
+          <td><code>exists()</code></td>
+          <td>Comprueba si existen registros que cumplen la consulta</td>
+          <td>Booleano (<code>true</code> o <code>false</code>)</td>
+      </tr>
+      <tr>
+          <td><code>select('campos')</code></td>
+          <td>Especifica los campos que se quieren recuperar en la consulta</td>
+          <td>Query Builder (permite encadenar más métodos)</td>
+      </tr>
+      <tr>
+          <td><code>addSelect('campos')</code></td>
+          <td>Añade más campos a la selección sin eliminar los anteriores</td>
+          <td>Query Builder</td>
+      </tr>
+      <tr>
+          <td><code>distinct()</code></td>
+          <td>Devuelve solo resultados únicos (sin duplicados)</td>
+          <td>Query Builder</td>
+      </tr>
+      <tr>
+          <td><code>groupBy('campo')</code></td>
+          <td>Agrupa resultados según un campo</td>
+          <td>Query Builder</td>
+      </tr>
+      <tr>
+          <td><code>having()</code></td>
+          <td>Condición para grupos después de un <code>groupBy()</code></td>
+          <td>Query Builder</td>
+      </tr>
+      <tr>
+          <td><code>limit(n)</code></td>
+          <td>Limita el número de resultados devueltos</td>
+          <td>Query Builder</td>
+      </tr>
+      <tr>
+          <td><code>offset(n)</code></td>
+          <td>Desplaza el inicio de los resultados (para paginación manual)</td>
+          <td>Query Builder</td>
+      </tr>
+      <tr>
+          <td><code>selectRaw('expresión SQL')</code></td>
+          <td>Permite usar expresiones SQL en el select</td>
+          <td>Query Builder</td>
+      </tr>
+      <tr>
+          <td>`orderBy(&lsquo;campo&rsquo;, &lsquo;asc</td>
+          <td>desc&rsquo;)`</td>
+          <td>Ordena resultados</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="explicación-de-withcount">Explicación de <code>withCount</code></h2>
+<ul>
+<li>El método <code>withCount</code> se usa para obtener el <strong>número de registros relacionados</strong> de forma eficiente, sin cargar toda la relación.</li>
+<li>El parámetro que recibe debe ser el <strong>nombre del método de relación definido en el modelo</strong>, no el nombre de la tabla en la base de datos.</li>
+<li>Por ejemplo, si en el modelo <code>Cycle</code> tienes un método llamado <code>enrollments()</code> que define la relación con las inscripciones, usarás:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Cycle::<span style="color:#658b00">withCount</span>(<span style="color:#cd5555">&#39;enrollments&#39;</span>)-&gt;<span style="color:#658b00">get</span>();</span></span></code></pre></div>
+<ul>
+<li>Esto añadirá automáticamente un atributo <code>enrollments_count</code> a cada instancia de <code>Cycle</code> con el número de inscripciones relacionadas.</li>
+</ul>
+<h3 id="alias-para-la-columna-con-el-conteo">Alias para la columna con el conteo</h3>
+<ul>
+<li>Si quieres cambiar el nombre de la columna generada por el conteo, puedes usar un alias con la sintaxis <code>as</code>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Cycle::<span style="color:#658b00">withCount</span>(<span style="color:#cd5555">&#39;enrollments as total_alumnos&#39;</span>)-&gt;<span style="color:#658b00">get</span>();</span></span></code></pre></div>
+<ul>
+<li>Esto añadirá un atributo llamado <code>total_alumnos</code> en lugar de <code>enrollments_count</code>.</li>
+</ul>
+<hr>
+<h2 id="-diferencia-entre-has-y-wherehas-en-eloquent">✅ Diferencia entre <code>has</code> y <code>whereHas</code> en Eloquent</h2>
+<ul>
+<li>
+<p><code>has('relacion')</code><br>
+Devuelve modelos que <strong>tienen al menos un registro relacionado</strong>.<br>
+Solo comprueba la existencia.</p>
+</li>
+<li>
+<p><code>whereHas('relacion')</code><br>
+Funciona igual que <code>has</code>, pero <strong>permite añadir condiciones</strong> en un callback.</p>
+</li>
+</ul>
+<p>Si no añades condiciones, ambos devuelven exactamente el mismo resultado.</p>
+<hr>
+<h1 id="diferencia-entre-select-y-pluck-en-eloquent">Diferencia entre <code>select()</code> y <code>pluck()</code> en Eloquent</h1>
+<table>
+  <thead>
+      <tr>
+          <th>Método</th>
+          <th>Qué hace</th>
+          <th>Resultado</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>select()</code></td>
+          <td>Especifica los campos que quieres recuperar en la consulta SQL</td>
+          <td>Devuelve una colección de modelos con solo esos campos cargados (Collection de modelos)</td>
+      </tr>
+      <tr>
+          <td><code>pluck()</code></td>
+          <td>Obtiene directamente los valores de un campo específico</td>
+          <td>Devuelve una colección simple con los valores del campo seleccionado (Collection de valores)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="-ejemplo">✏ Ejemplo:</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Family::<span style="color:#658b00">has</span>(<span style="color:#cd5555">&#39;specializations.users&#39;</span>)-&gt;<span style="color:#658b00">pluck</span>(<span style="color:#cd5555">&#39;name&#39;</span>);
+</span></span><span style="display:flex;"><span>Family::<span style="color:#658b00">whereHas</span>(<span style="color:#cd5555">&#39;specializations.users&#39;</span>)-&gt;<span style="color:#658b00">pluck</span>(<span style="color:#cd5555">&#39;name&#39;</span>);</span></span></code></pre></div>
+<p>Ambos devuelven las familias que tienen al menos un usuario a través de sus especializaciones.</p>
+<hr>
+<h3 id="-tabla-resumen">📌 Tabla resumen:</h3>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th><code>has()</code></th>
+          <th><code>whereHas()</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Comprobar existencia</td>
+          <td>✔</td>
+          <td>✔</td>
+      </tr>
+      <tr>
+          <td>Añadir condiciones</td>
+          <td>✖</td>
+          <td>✔</td>
+      </tr>
+      <tr>
+          <td>Sin condiciones</td>
+          <td>Mismo resultado</td>
+          <td>Mismo resultado</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p>✅ <strong>Tip:</strong><br>
+Usa <code>has</code> si solo necesitas saber si existen registros relacionados.<br>
+Usa <code>whereHas</code> si además necesitas filtrar los registros relacionados por alguna condición.</p>
+<h2 id="métodos-para-transformación-y-extracción-de-datos">Métodos para transformación y extracción de datos</h2>
+<ul>
+<li><code>pluck('column')</code>: Obtiene directamente los valores de una columna como colección.</li>
+<li><code>value('column')</code>: Obtiene el valor de la columna en el primer registro.</li>
+<li><code>toArray()</code>: Convierte el resultado a array.</li>
+<li><code>toJson()</code>: Convierte el resultado a JSON.</li>
+<li><code>chunk($cantidad, $callback)</code>: Procesa los resultados por partes.</li>
+<li><code>dd()</code>: Dump &amp; Die, muestra el contenido y detiene la ejecución.</li>
+<li><code>dump()</code>: Igual que dd pero sin detener la ejecución.</li>
+</ul>
+<h2 id="métodos-para-consultas-1">Métodos para Consultas</h2>
+<ul>
+<li><code>all()</code>: Recupera todas las filas de la tabla.</li>
+<li><code>find($id)</code>: Encuentra un registro por su clave primaria.</li>
+<li><code>where('column', 'value')</code>: Aplica una condición SQL WHERE.</li>
+<li><code>whereNull('column')</code>: Filtra registros donde la columna es NULL.</li>
+<li><code>whereNotNull('column')</code>: Filtra registros donde la columna NO es NULL.</li>
+<li><code>orderBy('column', 'direction')</code>: Ordena los resultados.</li>
+<li><code>take($limit)</code>: Limita el número de resultados.</li>
+<li><code>get()</code>: Obtiene los resultados de una consulta.</li>
+</ul>
+<h2 id="métodos-para-inserciones-y-actualizaciones-1">Métodos para Inserciones y Actualizaciones</h2>
+<ul>
+<li><code>save()</code>: Guarda un nuevo modelo o actualiza un modelo existente.</li>
+<li><code>create($attributes)</code>: Crea un nuevo registro con los atributos proporcionados.</li>
+<li><code>update($attributes)</code>: Actualiza un modelo con los atributos proporcionados.</li>
+</ul>
+<h2 id="ejemplos">Ejemplos</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>User::<span style="color:#658b00">pluck</span>(<span style="color:#cd5555">&#39;email&#39;</span>);</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>User::<span style="color:#658b00">whereHas</span>(<span style="color:#cd5555">&#39;roles&#39;</span>, fn(<span style="color:#00688b">$q</span>) =&gt; <span style="color:#00688b">$q</span>-&gt;<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;name&#39;</span>, <span style="color:#cd5555">&#39;admin&#39;</span>))-&gt;<span style="color:#658b00">exists</span>();</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>User::<span style="color:#658b00">count</span>();</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>User::<span style="color:#658b00">with</span>(<span style="color:#cd5555">&#39;specialization.family&#39;</span>)-&gt;<span style="color:#658b00">get</span>();</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>User::<span style="color:#658b00">chunk</span>(<span style="color:#b452cd">100</span>, <span style="color:#8b008b;font-weight:bold">function</span>(<span style="color:#00688b">$users</span>) {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">foreach</span> (<span style="color:#00688b">$users</span> <span style="color:#8b008b;font-weight:bold">as</span> <span style="color:#00688b">$user</span>) {
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// procesar
+</span></span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$totalSalaries</span> = User::<span style="color:#658b00">sum</span>(<span style="color:#cd5555">&#39;salary&#39;</span>);</span></span></code></pre></div>
+<h2 id="otros-métodos-útiles">Otros Métodos Útiles</h2>
+<ul>
+<li><code>firstOrCreate($attributes)</code>: Obtiene el primer registro encontrado o crea uno nuevo.</li>
+<li><code>findOrFail($id)</code>: Encuentra un registro por su clave primaria o falla.</li>
+<li><code>whereHas('relation', $callback)</code>: Aplica condiciones a las consultas de relaciones.</li>
+</ul>
+<p>Este resumen proporciona una vista rápida de los métodos más usados en Eloquent para realizar operaciones comunes de base de datos en Laravel. Estos métodos facilitan la realización de consultas, inserciones, actualizaciones y borrados, así como el manejo de relaciones entre modelos, de una manera más legible y menos propensa a errores en comparación con las consultas SQL crudas.</p>
+<h2 id="-campos-foráneos-y-claves-externas-en-laravel">🔗 Campos foráneos y claves externas en Laravel</h2>
+<p>En migraciones de Laravel, podemos crear claves foráneas (foreign keys) de dos formas:</p>
+<ul>
+<li>Usando <code>constrained()</code>:</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">foreignId</span>(<span style="color:#cd5555">&#39;specialization_id&#39;</span>)
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">nullable</span>()
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">constrained</span>(<span style="color:#cd5555">&#39;specializations&#39;</span>)
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">onDelete</span>(<span style="color:#cd5555">&#39;cascade&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>✅ Esto:</p>
+<ul>
+<li>Crea la columna <code>specialization_id</code> como nullable.</li>
+<li>Crea la foreign key que referencia a <code>specializations(id)</code>.</li>
+<li>Aplica &ldquo;on delete cascade&rdquo; para borrar en cascada.</li>
+</ul>
+<p>⚠ <strong>Importante:</strong> el método <code>nullable()</code> debe ir <em>antes</em> de <code>constrained()</code>.<br>
+Si escribes <code>-&gt;constrained()-&gt;nullable()</code>, el campo se crea como NOT NULL.</p>
+<hr>
+<ul>
+<li>Sin usar <code>constrained()</code>:</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">foreignId</span>(<span style="color:#cd5555">&#39;specialization_id&#39;</span>)-&gt;<span style="color:#658b00">nullable</span>();
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">foreign</span>(<span style="color:#cd5555">&#39;specialization_id&#39;</span>)
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">references</span>(<span style="color:#cd5555">&#39;id&#39;</span>)
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">on</span>(<span style="color:#cd5555">&#39;specializations&#39;</span>)
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">onDelete</span>(<span style="color:#cd5555">&#39;cascade&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>✅ Esto:</p>
+<ul>
+<li>Separa la definición de la columna y la clave foránea.</li>
+<li>Permite más control (por ejemplo, si usamos nombres de columnas o tablas diferentes).</li>
+</ul>
+<hr>
+<p>✅ <strong>Resumen rápido</strong>:</p>
+<ul>
+<li><code>constrained()</code> → crea la foreign key automáticamente.</li>
+<li><code>nullable()</code> debe ir antes de <code>constrained()</code>.</li>
+<li><code>onDelete('cascade')</code> solo funciona si existe la foreign key.</li>
+<li>Si no usas <code>constrained()</code>, debes crear la foreign key manualmente con <code>foreign()</code>.</li>
+</ul>
+<h2 id="-cuándo-pasar-el-nombre-de-la-tabla-a-constrained">🔗 ¿Cuándo pasar el nombre de la tabla a <code>constrained()</code>?</h2>
+<ul>
+<li>Si usas una clave foránea que sigue la convención:
+<ul>
+<li>Nombre de columna: <code>specialization_id</code></li>
+<li>Nombre de tabla: <code>specializations</code></li>
+</ul>
+</li>
+</ul>
+<p>Puedes usar directamente:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">foreignId</span>(<span style="color:#cd5555">&#39;specialization_id&#39;</span>)
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">nullable</span>()
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">constrained</span>()
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">onDelete</span>(<span style="color:#cd5555">&#39;cascade&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Laravel deduce automáticamente que la clave apunta a la tabla <code>specializations</code>.</p>
+<hr>
+<ul>
+<li>Si la tabla tiene un nombre distinto, o la columna no sigue la convención:
+Debes pasar el nombre de la tabla como parámetro:</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">foreignId</span>(<span style="color:#cd5555">&#39;spec_id&#39;</span>)
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">nullable</span>()
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">constrained</span>(<span style="color:#cd5555">&#39;specializations&#39;</span>)
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">onDelete</span>(<span style="color:#cd5555">&#39;cascade&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>Cuando se usa el método constrained() en Laravel, si no le pasas ningún parámetro, por defecto Laravel asume que la tabla relacionada es el plural del nombre de la columna sin el sufijo _id.</p>
+</blockquote>
+<h1 id="-relaciones-muchos-a-muchos-mn-en-laravel">🧩 Relaciones muchos a muchos (M:N) en Laravel</h1>
+<p>En Eloquent, las relaciones muchos a muchos permiten que los registros de un modelo estén relacionados con muchos registros de otro modelo, y viceversa.<br>
+Por ejemplo: un usuario puede estar matriculado en varios ciclos, y un ciclo puede tener muchos usuarios.</p>
+<hr>
+<h2 id="-métodos-para-definir-relaciones-entre-modelos-en-laravel">🛠️ Métodos para definir relaciones entre modelos en Laravel</h2>
+<p>Estos métodos se incluyen en los modelos:</p>
+<ul>
+<li>
+<p><code>hasMany(Model::class, 'foreign_key')</code><br>
+Relación <strong>uno a muchos</strong>.<br>
+Ejemplo: una familia tiene muchas especializaciones.</p>
+</li>
+<li>
+<p><code>belongsTo(Model::class, 'foreign_key')</code><br>
+Relación <strong>muchos a uno</strong>.<br>
+Se usa cuando el modelo actual tiene la clave foránea.<br>
+Ejemplo: un usuario pertenece a una especialización.</p>
+</li>
+<li>
+<p><code>hasOne(Model::class, 'foreign_key')</code><br>
+Relación <strong>uno a uno</strong>.<br>
+Se usa cuando el modelo actual NO tiene la clave foránea.</p>
+</li>
+<li>
+<p><code>belongsToMany(Model::class)</code><br>
+Relación <strong>muchos a muchos</strong>, usando una tabla pivote.<br>
+Ejemplo: un usuario está matriculado en muchos ciclos, y un ciclo tiene muchos usuarios.</p>
+</li>
+</ul>
+<hr>
+<h2 id="-cómo-definir-una-relación-muchos-a-muchos">✅ Cómo definir una relación muchos a muchos</h2>
+<p>Se definen con <code>belongsToMany</code> en ambos modelos implicados:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#228b22">// En User.php
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">cycles</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">belongsToMany</span>(Cycle::<span style="color:#658b00">class</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// En Cycle.php
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">users</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">belongsToMany</span>(User::<span style="color:#658b00">class</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="-tabla-pivote-nombre-y-convención">📌 Tabla pivote: nombre y convención</h2>
+<p>Laravel espera que la tabla pivote se llame con los <strong>nombres de los modelos en singular y en orden alfabético</strong>.<br>
+Esto significa que debes tomar los nombres de los modelos, ponerlos en <strong>singular</strong>, ordenarlos <strong>alfabéticamente</strong> y unirlos con guion bajo (<code>_</code>).</p>
+<p>📘 Por ejemplo, para los modelos <code>User</code> y <code>Cycle</code>:</p>
+<ul>
+<li>🔤 Orden alfabético: <code>Cycle</code>, <code>User</code></li>
+<li>🧩 Nombre correcto de la tabla pivote: <code>cycle_user</code></li>
+</ul>
+<p>✅ Correcto:</p>
+<ul>
+<li><code>cycle_user</code></li>
+</ul>
+<p>⛔️ Incorrecto:</p>
+<ul>
+<li><code>user_cycle</code> (no respeta el orden alfabético)</li>
+<li><code>users_cycles</code> (en plural)</li>
+<li><code>cycleusers</code> (sin guion bajo)</li>
+</ul>
+<p>👉 Laravel utilizará este nombre por convención si no se especifica otro en la relación. Si tu tabla tiene un nombre diferente, deberás indicarlo manualmente:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">belongsToMany</span>(Cycle::<span style="color:#658b00">class</span>, <span style="color:#cd5555">&#39;nombre_personalizado&#39;</span>);</span></span></code></pre></div>
+<h2 id="-cuándo-crear-la-tabla-pivote-explícitamente">🧱 Cuándo crear la tabla pivote explícitamente</h2>
+<p>Debes <strong>crear manualmente la tabla pivote</strong> si:</p>
+<ul>
+<li>Quieres añadir <strong>atributos extra</strong> a la relación (por ejemplo, <code>year</code> de matrícula).</li>
+<li>Quieres usar <code>withPivot()</code> para acceder a esos atributos.</li>
+<li>Quieres usar un modelo intermedio (por ejemplo, <code>Enrollment</code>).</li>
+</ul>
+<hr>
+<h2 id="-ejemplo-de-migración-de-tabla-pivote-con-columna-extra">📄 Ejemplo de migración de tabla pivote con columna extra</h2>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Schema::<span style="color:#658b00">create</span>(<span style="color:#cd5555">&#39;cycle_user&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span> (Blueprint <span style="color:#00688b">$table</span>) {
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">id</span>();
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">foreignId</span>(<span style="color:#cd5555">&#39;user_id&#39;</span>)-&gt;<span style="color:#658b00">constrained</span>()-&gt;<span style="color:#658b00">onDelete</span>(<span style="color:#cd5555">&#39;cascade&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">foreignId</span>(<span style="color:#cd5555">&#39;cycle_id&#39;</span>)-&gt;<span style="color:#658b00">constrained</span>()-&gt;<span style="color:#658b00">onDelete</span>(<span style="color:#cd5555">&#39;cascade&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">year</span>(<span style="color:#cd5555">&#39;year&#39;</span>); <span style="color:#228b22">// ➕ Atributo adicional
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">timestamps</span>();
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="-acceder-a-los-campos-adicionales-de-la-tabla-pivote">🧩 Acceder a los campos adicionales de la tabla pivote</h2>
+<p>Usando <code>pivot</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$user</span> = User::<span style="color:#658b00">find</span>(<span style="color:#b452cd">1</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">foreach</span> (<span style="color:#00688b">$user</span>-&gt;<span style="color:#658b00">cycles</span> <span style="color:#8b008b;font-weight:bold">as</span> <span style="color:#00688b">$cycle</span>) {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$cycle</span>-&gt;<span style="color:#658b00">pivot</span>-&gt;<span style="color:#658b00">year</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Para que funcione correctamente, debes indicarlo en el modelo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#228b22">// En User.php
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">cycles</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">belongsToMany</span>(Cycle::<span style="color:#658b00">class</span>)-&gt;<span style="color:#658b00">withPivot</span>(<span style="color:#cd5555">&#39;year&#39;</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<hr>
+<h2 id="-diferencia-entre-hasmany-y-belongstomany">🤔 Diferencia entre <code>hasMany()</code> y <code>belongsToMany()</code></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Relación</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>hasMany()</code></td>
+          <td>Uno a muchos. El modelo actual tiene muchos del otro modelo.</td>
+      </tr>
+      <tr>
+          <td><code>belongsToMany()</code></td>
+          <td>Muchos a muchos. Hay una <strong>tabla intermedia</strong> y la relación va en ambos lados.</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Ejemplo práctico</strong>:</p>
+<ul>
+<li>Una <strong>familia</strong> tiene muchas <strong>especializaciones</strong> → <code>hasMany()</code></li>
+<li>Un <strong>usuario</strong> está en muchos <strong>ciclos</strong>, y cada <strong>ciclo</strong> tiene muchos <strong>usuarios</strong> → <code>belongsToMany()</code></li>
+</ul>
+<hr>
+<h2 id="-resumen-visual">🧩 Resumen visual</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#228b22">// Uno a muchos:
+</span></span></span><span style="display:flex;"><span>Family          ---&lt;     Specialization
+</span></span><span style="display:flex;"><span>hasMany()             belongsTo()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// Muchos a muchos:
+</span></span></span><span style="display:flex;"><span>User           &gt;---&lt;     Cycle
+</span></span><span style="display:flex;"><span>belongsToMany()    belongsToMany()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// Uno a uno:
+</span></span></span><span style="display:flex;"><span>User          ---       Profile
+</span></span><span style="display:flex;"><span>hasOne()           belongsTo()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">## ✏ Métodos útiles
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- <span style="color:#cd5555">`attach($id, [&#39;extra&#39;])`</span>: Relaciona un registro y añade datos extra.
+</span></span><span style="display:flex;"><span>- <span style="color:#cd5555">`detach($id)`</span>: Quita la relación.
+</span></span><span style="display:flex;"><span>- <span style="color:#cd5555">`sync([id1, id2])`</span>: Sincroniza relaciones.
+</span></span><span style="display:flex;"><span>- <span style="color:#cd5555">`updateExistingPivot($id, [&#39;extra&#39;])`</span>: Actualiza datos de la tabla pivote.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>✅ **Resumen rápido**:
+</span></span><span style="display:flex;"><span>- Relación muchos a muchos → <span style="color:#cd5555">`belongsToMany`</span>.
+</span></span><span style="display:flex;"><span>- Tabla pivote automática (ejemplo: <span style="color:#cd5555">`cycle_user`</span>).
+</span></span><span style="display:flex;"><span>- Si necesitas columnas extra → crear migración y (opcional) modelo Pivot.
+</span></span><span style="display:flex;"><span>- Acceder a las columnas extra → <span style="color:#cd5555">`$model-&gt;pivot-&gt;campo`</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">## 📊 Tabla resumen
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>|                          | Sin datos extra                        | Con datos extra en pivote                |
+</span></span><span style="display:flex;"><span>|------------------------|----------------------------------------|------------------------------------------|
+</span></span><span style="display:flex;"><span>| Migración              | Laravel la crea si usas <span style="color:#cd5555">`belongsToMany`</span>| Necesitas crearla manualmente            |
+</span></span><span style="display:flex;"><span>| Modelo pivote          | No necesario                          | Recomendado (<span style="color:#cd5555">`CycleUser`</span>)                |
+</span></span><span style="display:flex;"><span>| Acceso a datos pivote  | <span style="color:#cd5555">`$model-&gt;relation`</span>                    | <span style="color:#cd5555">`$model-&gt;relation`</span> + <span style="color:#cd5555">`$model-&gt;pivot-&gt;campo`</span> |
+</span></span><span style="display:flex;"><span>| Métodos                | <span style="color:#cd5555">`attach()`</span>, <span style="color:#cd5555">`detach()`</span>, <span style="color:#cd5555">`sync()`</span>      | Igual, pero pasando datos extra en <span style="color:#8b008b;font-weight:bold">array</span> |
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">## ✏ Ejemplo visual
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Un **usuario** puede estar matriculado en varios **ciclos**:
+</span></span><span style="display:flex;"><span>- Ciclo A (año <span style="color:#b452cd">2023</span>)
+</span></span><span style="display:flex;"><span>- Ciclo B (año <span style="color:#b452cd">2024</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>En la tabla pivote <span style="color:#cd5555">`cycle_user`</span> guardamos:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>| user_id | cycle_id | year |
+</span></span><span style="display:flex;"><span>|--------|----------|------|
+</span></span><span style="display:flex;"><span>| <span style="color:#b452cd">1</span>      | <span style="color:#b452cd">5</span>        | <span style="color:#b452cd">2023</span> |
+</span></span><span style="display:flex;"><span>| <span style="color:#b452cd">1</span>      | <span style="color:#b452cd">6</span>        | <span style="color:#b452cd">2024</span> |
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">## 🔧 Ejemplo en código
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#228b22">// Obtener los ciclos de un usuario y mostrar el año de matriculación
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$user</span> = User::<span style="color:#658b00">find</span>(<span style="color:#b452cd">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">foreach</span> (<span style="color:#00688b">$user</span>-&gt;<span style="color:#658b00">cycles</span> <span style="color:#8b008b;font-weight:bold">as</span> <span style="color:#00688b">$cycle</span>) {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$cycle</span>-&gt;<span style="color:#658b00">name</span> . <span style="color:#cd5555">&#39; - Año: &#39;</span> . <span style="color:#00688b">$cycle</span>-&gt;<span style="color:#658b00">pivot</span>-&gt;<span style="color:#658b00">year</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">## 📐 Diagrama (en texto)
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">```text
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">User                Cycle
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"> |                    |
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"> | &lt;--- cycle_user --&gt;|
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"> |                    |
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">## Obteniendo sentencia SQL a partir de Eloquent o Builder Class
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">En Laravel es habitual querer ver la **sentencia SQL** que genera una consulta Eloquent o un Query Builder.  
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">Ten en cuenta que `</span>toSql()<span style="color:#cd5555">` devuelve la consulta con **placeholders** (`</span>?<span style="color:#cd5555">`) — los valores reales están en `</span>getBindings()<span style="color:#cd5555">`.
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">---
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">### 1) Diferencia esencial
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">- `</span>all()<span style="color:#cd5555">` y `</span>get()<span style="color:#cd5555">` **ejecutan** la consulta y devuelven una `</span>Collection<span style="color:#cd5555">`.  
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">- `</span>toSql()<span style="color:#cd5555">` **no ejecuta** la consulta: solo funciona sobre un Query Builder y devuelve la cadena SQL con `</span>?<span style="color:#cd5555">`.
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#228b22">// Incorrecto: ya es una Collection
+</span></span></span><span style="display:flex;"><span>User::<span style="color:#658b00">all</span>()-&gt;<span style="color:#658b00">toSql</span>(); <span style="color:#228b22">// ❌ No funciona
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// Correcto: obtenemos la SQL sin ejecutar
+</span></span></span><span style="display:flex;"><span>User::<span style="color:#658b00">query</span>()-&gt;<span style="color:#658b00">toSql</span>(); <span style="color:#228b22">// ✅ &#34;select * from `users`&#34;
+</span></span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">---
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">### 2) Ejemplo con bindings (valores)
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$query</span> = User::<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;email&#39;</span>, <span style="color:#cd5555">&#39;like&#39;</span>, <span style="color:#cd5555">&#39;%@gmail.com%&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$sql</span> = <span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">toSql</span>();          <span style="color:#228b22">// &#34;select * from `users` where `email` like ?&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$bindings</span> = <span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">getBindings</span>(); <span style="color:#228b22">// [&#34;%@gmail.com%&#34;]
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dd(<span style="color:#00688b">$sql</span>, <span style="color:#00688b">$bindings</span>);</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">---
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">### 3) Ejemplo con scope (p.ej. Spatie `</span>role()<span style="color:#cd5555">`)
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">Las macros/scopes devuelven un Builder, así que `</span>toSql()<span style="color:#cd5555">` funciona:
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#228b22">// Devuelve la SQL (con subconsultas si aplica) y los bindings
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$query</span> = User::<span style="color:#658b00">role</span>(<span style="color:#cd5555">&#39;student&#39;</span>);
+</span></span><span style="display:flex;"><span>dd(<span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">toSql</span>(), <span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">getBindings</span>());</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">---
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">### 4) Ejemplo con joins / group by / agregados
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Support\Facades\DB;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$query</span> = DB::<span style="color:#658b00">table</span>(<span style="color:#cd5555">&#39;users&#39;</span>)
+</span></span><span style="display:flex;"><span>    -&gt;<span style="color:#658b00">join</span>(<span style="color:#cd5555">&#39;enrollments&#39;</span>, <span style="color:#cd5555">&#39;users.id&#39;</span>, <span style="color:#cd5555">&#39;=&#39;</span>, <span style="color:#cd5555">&#39;enrollments.user_id&#39;</span>)
+</span></span><span style="display:flex;"><span>    -&gt;<span style="color:#658b00">join</span>(<span style="color:#cd5555">&#39;cycles&#39;</span>, <span style="color:#cd5555">&#39;cycles.id&#39;</span>, <span style="color:#cd5555">&#39;=&#39;</span>, <span style="color:#cd5555">&#39;enrollments.cycle_id&#39;</span>)
+</span></span><span style="display:flex;"><span>    -&gt;<span style="color:#658b00">select</span>(<span style="color:#cd5555">&#39;cycles.name&#39;</span>, DB::<span style="color:#658b00">raw</span>(<span style="color:#cd5555">&#39;count(users.id) as total_students&#39;</span>))
+</span></span><span style="display:flex;"><span>    -&gt;<span style="color:#658b00">groupBy</span>(<span style="color:#cd5555">&#39;cycles.name&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dd(<span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">toSql</span>(), <span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">getBindings</span>());</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">---
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">### 5) `</span>withCount()<span style="color:#cd5555">` y subqueries (ejemplo práctico para tus ciclos)
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">Si quieres ver la SQL generada por un `</span>withCount()<span style="color:#cd5555">` con condiciones:
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$year</span> = <span style="color:#b452cd">2025</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$query</span> = \App\Models\Cycle::<span style="color:#658b00">withCount</span>([
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;users as students_count&#39;</span> =&gt; <span style="color:#8b008b;font-weight:bold">function</span> (<span style="color:#00688b">$q</span>) <span style="color:#8b008b;font-weight:bold">use</span> (<span style="color:#00688b">$year</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$q</span>-&gt;<span style="color:#658b00">whereHas</span>(<span style="color:#cd5555">&#39;roles&#39;</span>, fn(<span style="color:#00688b">$r</span>) =&gt; <span style="color:#00688b">$r</span>-&gt;<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;name&#39;</span>, <span style="color:#cd5555">&#39;student&#39;</span>))
+</span></span><span style="display:flex;"><span>          -&gt;<span style="color:#658b00">wherePivot</span>(<span style="color:#cd5555">&#39;year&#39;</span>, <span style="color:#00688b">$year</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// Ver la SQL del builder principal (incluye subqueries en SELECT)
+</span></span></span><span style="display:flex;"><span>dd(<span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">toSql</span>(), <span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">getBindings</span>());</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">---
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">### 6) Ver la SQL con los valores interpolados (para depuración)
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">Laravel devuelve `</span>?<span style="color:#cd5555">` en la SQL; para ver la consulta con los valores insertados puedes interpolarlos **con cuidado**:
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">#### Opción A — helper `</span>str_replace_array<span style="color:#cd5555">` (Laravel)
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$sqlWithBindings</span> = str_replace_array(<span style="color:#cd5555">&#39;?&#39;</span>, <span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">getBindings</span>(), <span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">toSql</span>());
+</span></span><span style="display:flex;"><span>dd(<span style="color:#00688b">$sqlWithBindings</span>);</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">&gt; ⚠️ `</span>str_replace_array<span style="color:#cd5555">` reemplaza `</span>?<span style="color:#cd5555">` por los bindings en orden. Si los bindings requieren comillas o escape, tendrás que añadirlas.
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">#### Opción B — función segura usando reemplazos uno a uno
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">interpolateQuery</span>(<span style="color:#00688b">$query</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$sql</span> = <span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">toSql</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">foreach</span> (<span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">getBindings</span>() <span style="color:#8b008b;font-weight:bold">as</span> <span style="color:#00688b">$binding</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$value</span> = is_numeric(<span style="color:#00688b">$binding</span>) ? <span style="color:#00688b">$binding</span> : <span style="color:#cd5555">&#34;&#39;&#34;</span>.addslashes(<span style="color:#00688b">$binding</span>).<span style="color:#cd5555">&#34;&#39;&#34;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$sql</span> = preg_replace(<span style="color:#cd5555">&#39;/\?/&#39;</span>, <span style="color:#00688b">$value</span>, <span style="color:#00688b">$sql</span>, <span style="color:#b452cd">1</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$sql</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$prettySql</span> = interpolateQuery(<span style="color:#00688b">$query</span>);
+</span></span><span style="display:flex;"><span>dd(<span style="color:#00688b">$prettySql</span>);</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">&gt; Nota: esto es para depuración. No uses interpolación para ejecutar consultas (riesgo SQL injection si manipulas manualmente).
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">---
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">### 7) Escuchar y registrar todas las consultas (útil en runtime)
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">#### Usando `</span>DB::<span style="color:#658b00">listen</span>()<span style="color:#cd5555">` — ideal para logging o debugging en runtime:
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>\DB::<span style="color:#658b00">listen</span>(<span style="color:#8b008b;font-weight:bold">function</span> (<span style="color:#00688b">$query</span>) {
+</span></span><span style="display:flex;"><span>    \Log::<span style="color:#658b00">info</span>(<span style="color:#cd5555">&#39;SQL: &#39;</span>.<span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">sql</span>, <span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">bindings</span>);
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">#### Usando Query Log temporal:
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>\DB::<span style="color:#658b00">enableQueryLog</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// Ejecuta tus consultas aquí
+</span></span></span><span style="display:flex;"><span>User::<span style="color:#658b00">role</span>(<span style="color:#cd5555">&#39;student&#39;</span>)-&gt;<span style="color:#658b00">get</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$log</span> = \DB::<span style="color:#658b00">getQueryLog</span>();
+</span></span><span style="display:flex;"><span>dd(<span style="color:#00688b">$log</span>);</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">---
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">### 8) Ejemplos en Tinker
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#228b22"># En Tinker
+</span></span></span><span style="display:flex;"><span>&gt;&gt;&gt; User::<span style="color:#658b00">query</span>()-&gt;<span style="color:#658b00">toSql</span>();
+</span></span><span style="display:flex;"><span>=&gt; <span style="color:#cd5555">&#34;select * from `users`&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; <span style="color:#00688b">$q</span> = User::<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;id&#39;</span>, <span style="color:#cd5555">&#39;&gt;&#39;</span>, <span style="color:#b452cd">10</span>);
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; <span style="color:#00688b">$q</span>-&gt;<span style="color:#658b00">toSql</span>();
+</span></span><span style="display:flex;"><span>=&gt; <span style="color:#cd5555">&#34;select * from `users` where `id` &gt; ?&#34;</span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; <span style="color:#00688b">$q</span>-&gt;<span style="color:#658b00">getBindings</span>();
+</span></span><span style="display:flex;"><span>=&gt; [<span style="color:#b452cd">10</span>]</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">---
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">### 9) Consejos y buenas prácticas
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">- Usa `</span>toSql()<span style="color:#cd5555">` **antes** de ejecutar la consulta.  
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">- Para ver valores reales, combina `</span>toSql()<span style="color:#cd5555">` + `</span>getBindings()<span style="color:#cd5555">` o usa una función de interpolación solo para **depuración**.  
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">- Para debugging en desarrollo, `</span>DB::<span style="color:#658b00">listen</span>()<span style="color:#cd5555">` o Laravel Telescope/Debugbar son soluciones más potentes.  
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">- Evita interpolar manualmente consultas para volver a ejecutarlas (riesgo de seguridad).  
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">- `</span>toSql()<span style="color:#cd5555">` no muestra cambios hechos por middlewares o por el driver (p.ej. fechas automáticas), pero es suficiente para entender la estructura de la consulta generada por Eloquent/Builder.
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">---
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">### Ejemplos
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">#### Usando Query Builder
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$query</span> = DB::<span style="color:#658b00">table</span>(<span style="color:#cd5555">&#39;users&#39;</span>)-&gt;<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;active&#39;</span>, <span style="color:#b452cd">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$sql</span> = <span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">toSql</span>(); 
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// SELECT * FROM `users` WHERE `active` = ?
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$bindings</span> = <span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">getBindings</span>(); 
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// [1]
+</span></span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">#### Usando Eloquent
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$query</span> = User::<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;active&#39;</span>, <span style="color:#b452cd">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$sql</span> = <span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">toSql</span>(); 
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// SELECT * FROM `users` WHERE `active` = ?
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$bindings</span> = <span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">getBindings</span>(); 
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// [1]
+</span></span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">#### Convertir a SQL + valores enlazados (debug rápido)
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">Puedes combinar `</span>toSql()<span style="color:#cd5555">` y `</span>getBindings()<span style="color:#cd5555">` para imprimir la consulta completa:
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555"><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$query</span> = User::<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;active&#39;</span>, <span style="color:#b452cd">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$sql</span> = vsprintf(str_replace(<span style="color:#cd5555">&#39;?&#39;</span>, <span style="color:#cd5555">&#34;&#39;%s&#39;&#34;</span>, <span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">toSql</span>()), <span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">getBindings</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$sql</span>;
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// SELECT * FROM `users` WHERE `active` = &#39;1&#39;
+</span></span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">#### Por qué `</span>User::<span style="color:#658b00">all</span>()-&gt;<span style="color:#658b00">toSql</span>()<span style="color:#cd5555">` no funciona
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">El método `</span>all()<span style="color:#a61717;background-color:#e3d2d2">`</span> ejecuta la consulta inmediatamente y devuelve una colección de resultados, por lo que ya no es una instancia de *builder*.  
+</span></span><span style="display:flex;"><span>Para obtener la SQL antes de ejecutar, usa:
+</span></span><span style="display:flex;"><span><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>User::<span style="color:#658b00">query</span>()-&gt;<span style="color:#658b00">toSql</span>();</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>o bien:
+</span></span><span style="display:flex;"><span><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>User::<span style="color:#658b00">select</span>(<span style="color:#cd5555">&#39;*&#39;</span>)-&gt;<span style="color:#658b00">toSql</span>();</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">### One-liner para ver SQL de cualquier consulta Eloquent
+</span></span></span><span style="display:flex;"><span><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>dd(User::<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;active&#39;</span>, <span style="color:#b452cd">1</span>)-&gt;<span style="color:#658b00">toSql</span>(), User::<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;active&#39;</span>, <span style="color:#b452cd">1</span>)-&gt;<span style="color:#658b00">getBindings</span>());</span></span></code></pre></div>
+</span></span></code></pre></div>
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel_certificado_2026/js/main.js"></script>
+<script defer src="/laravel_certificado_2026/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel_certificado_2026/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

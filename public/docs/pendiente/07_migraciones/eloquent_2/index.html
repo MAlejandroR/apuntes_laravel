@@ -1,0 +1,476 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel_certificado_2026/livereload.js?mindelay=10&amp;v=2&amp;port=35723&amp;path=laravel_certificado_2026/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel_certificado_2026/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel_certificado_2026/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-192x192.png" sizes="192x192">
+
+<title>Eloquent | Laravel: Framework de php</title>
+<meta name="description" content="Eloquent ORM en Laravel Eloquent ORM en Laravel ofrece una variedad de métodos para interactuar con la base de datos de forma eficiente, expresiva y orientada a objetos.
+Permite construir consultas SQL, ejecutarlas, y trabajar con los resultados como objetos PHP (modelos y colecciones).
+Idea fundamental de Eloquent (clave para entenderlo) Mientras encadenas métodos, Eloquent NO ejecuta la consulta.
+Solo estás construyendo una consulta SQL.
+La consulta solo se ejecuta cuando llamas a un método terminal.">
+
+<meta property="og:url" content="http://localhost:35723/laravel_certificado_2026/docs/pendiente/07_migraciones/eloquent_2/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Eloquent">
+  <meta property="og:description" content="Eloquent ORM en Laravel Eloquent ORM en Laravel ofrece una variedad de métodos para interactuar con la base de datos de forma eficiente, expresiva y orientada a objetos.
+Permite construir consultas SQL, ejecutarlas, y trabajar con los resultados como objetos PHP (modelos y colecciones).
+Idea fundamental de Eloquent (clave para entenderlo) Mientras encadenas métodos, Eloquent NO ejecuta la consulta.
+Solo estás construyendo una consulta SQL.
+La consulta solo se ejecuta cuando llamas a un método terminal.">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:published_time" content="2023-04-08T18:21:47+02:00">
+    <meta property="article:modified_time" content="2023-04-08T18:21:47+02:00">
+
+  <meta itemprop="name" content="Eloquent">
+  <meta itemprop="description" content="Eloquent ORM en Laravel Eloquent ORM en Laravel ofrece una variedad de métodos para interactuar con la base de datos de forma eficiente, expresiva y orientada a objetos.
+Permite construir consultas SQL, ejecutarlas, y trabajar con los resultados como objetos PHP (modelos y colecciones).
+Idea fundamental de Eloquent (clave para entenderlo) Mientras encadenas métodos, Eloquent NO ejecuta la consulta.
+Solo estás construyendo una consulta SQL.
+La consulta solo se ejecuta cuando llamas a un método terminal.">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="420">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Eloquent">
+  <meta name="twitter:description" content="Eloquent ORM en Laravel Eloquent ORM en Laravel ofrece una variedad de métodos para interactuar con la base de datos de forma eficiente, expresiva y orientada a objetos.
+Permite construir consultas SQL, ejecutarlas, y trabajar con los resultados como objetos PHP (modelos y colecciones).
+Idea fundamental de Eloquent (clave para entenderlo) Mientras encadenas métodos, Eloquent NO ejecuta la consulta.
+Solo estás construyendo una consulta SQL.
+La consulta solo se ejecuta cuando llamas a un método terminal.">
+
+
+<link href="/laravel_certificado_2026/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel_certificado_2026/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel_certificado_2026/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel_certificado_2026/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laravel_certificado_2026docs-li">
+  <a href="/laravel_certificado_2026/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laravel_certificado_2026docs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs01_introduccic3b3n-check"/>
+  <label for="m-laravel_certificado_2026docs01_introduccic3b3n-check"><a href="/laravel_certificado_2026/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs02_instalacic3b3n-check"/>
+  <label for="m-laravel_certificado_2026docs02_instalacic3b3n-check"><a href="/laravel_certificado_2026/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs03_rutas-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs03_rutas-check"/>
+  <label for="m-laravel_certificado_2026docs03_rutas-check"><a href="/laravel_certificado_2026/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laravel_certificado_2026docs04_plantillas-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas-check"><a href="/laravel_certificado_2026/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas01_blade-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas01_blade-check"><a href="/laravel_certificado_2026/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-check"><a href="/laravel_certificado_2026/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas03_componentes-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas03_componentes-check"><a href="/laravel_certificado_2026/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#eloquent-orm-en-laravel">Eloquent ORM en Laravel</a>
+      <ul>
+        <li><a href="#idea-fundamental-de-eloquent-clave-para-entenderlo">Idea fundamental de Eloquent (clave para entenderlo)</a></li>
+        <li><a href="#qué-puede-devolver-eloquent-esquema-conceptual">Qué puede devolver Eloquent (esquema conceptual)</a></li>
+        <li><a href="#1-query-builder-consulta-pendiente">1️ Query Builder (consulta pendiente)</a></li>
+        <li><a href="#2-métodos-terminales-ejecutan-la-consulta">2️ Métodos TERMINALES (ejecutan la consulta)</a></li>
+        <li><a href="#-métodos-que-ya-ejecutan-la-consulta-sin--get">️ Métodos que YA ejecutan la consulta (sin -&gt;get)</a></li>
+      </ul>
+    </li>
+    <li><a href="#errores-típicos">Errores típicos</a></li>
+    <li><a href="#tabla-resumen">Tabla resumen</a></li>
+    <li><a href="#query-builder-vs-collection">Query Builder vs Collection</a>
+      <ul>
+        <li><a href="#query-builder">Query Builder</a></li>
+        <li><a href="#collection">Collection</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            <div class="taxonomy taxonomy-terms-cloud taxo-categories">
+      <h5 class="taxonomy-title">Categories</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      <h5 class="taxonomy-title">Tags</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel_certificado_2026/docs/">Laravel</a></li>
+  <li class="breadcrumb-item">
+    <a href="">Pendiente de revisar e incorporar</a></li>
+  <li class="breadcrumb-item">
+    <a href="/laravel_certificado_2026/docs/pendiente/07_migraciones/">Migracioens</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Eloquent</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Eloquent</h1>
+	
+	<header class="article-meta">
+		
+</header>
+	<h2 id="eloquent-orm-en-laravel">Eloquent ORM en Laravel</h2>
+<p>Eloquent ORM en Laravel ofrece una variedad de métodos para interactuar con la base de datos
+de forma eficiente, expresiva y orientada a objetos.<br>
+Permite <strong>construir consultas SQL</strong>, <strong>ejecutarlas</strong>, y <strong>trabajar con los resultados</strong>
+como objetos PHP (modelos y colecciones).</p>
+<hr>
+<h3 id="idea-fundamental-de-eloquent-clave-para-entenderlo">Idea fundamental de Eloquent (clave para entenderlo)</h3>
+<p>Mientras <strong>encadenas métodos</strong>, Eloquent <strong>NO ejecuta la consulta</strong>.<br>
+Solo estás <strong>construyendo una consulta SQL</strong>.</p>
+<p>La consulta <strong>solo se ejecuta</strong> cuando llamas a un <strong>método terminal</strong>.</p>
+<p>El objeto intermedio que representa una consulta sin ejecutar es el:</p>
+<p><strong>Query Builder</strong></p>
+<hr>
+<h3 id="qué-puede-devolver-eloquent-esquema-conceptual">Qué puede devolver Eloquent (esquema conceptual)</h3>
+<p>Eloquent <strong>solo puede devolver tres tipos de cosas</strong>:</p>
+<ol>
+<li><strong>Query Builder</strong> → consulta sin ejecutar</li>
+<li><strong>Model</strong> → una fila (un registro)</li>
+<li><strong>Collection</strong> → varias filas (colección de modelos)</li>
+</ol>
+<p>👉 Si distingues claramente estos tres tipos, desaparece la confusión al usar Eloquent.</p>
+<hr>
+<h3 id="1-query-builder-consulta-pendiente">1️ Query Builder (consulta pendiente)</h3>
+<p>Un <strong>Query Builder</strong> representa una consulta SQL <strong>todavía no ejecutada</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$query</span> = Alumno::<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;activo&#39;</span>, <span style="color:#8b008b;font-weight:bold">true</span>);</span></span></code></pre></div>
+<p>En este punto:</p>
+<ul>
+<li>No hay datos</li>
+<li>No se ha ejecutado SQL</li>
+<li>✔ Solo se ha construido la consulta</li>
+</ul>
+<p>Tipo conceptual:</p>
+<p>Puedes seguir encadenando métodos:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$query</span>-&gt;<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;edad&#39;</span>, <span style="color:#cd5555">&#39;&gt;&#39;</span>, <span style="color:#b452cd">18</span>)-&gt;<span style="color:#658b00">orderBy</span>(<span style="color:#cd5555">&#39;nombre&#39;</span>);</span></span></code></pre></div>
+<p>En esta sentencia, ️ Aún no hay resultados.</p>
+<hr>
+<h3 id="2-métodos-terminales-ejecutan-la-consulta">2️ Métodos TERMINALES (ejecutan la consulta)</h3>
+<p>Los <strong>métodos terminales</strong>, por llamarlos de alguna forma, son los que  
+
+<strong>
+<span class="font-weight-bold text-primary fs-1.5">
+
+    ejecutan la consulta y devuelven datos reales
+
+
+</span>
+</strong>.</p>
+<h4 id="devuelven-collection">Devuelven <strong>Collection</strong></h4>
+<ul>
+<li><code>get()</code></li>
+<li><code>all()</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$users</span> = User::<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;active&#39;</span>, <span style="color:#b452cd">1</span>)-&gt;<span style="color:#658b00">get</span>(); <span style="color:#228b22">// Collection&lt;User&gt;
+</span></span></span></code></pre></div>
+<p>Resultado:</p>
+<hr>
+<h4 id="devuelven-model-o-null">Devuelven <strong>Model o null</strong></h4>
+<ul>
+<li><code>first()</code></li>
+<li><code>find($id)</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$user</span> = User::<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;active&#39;</span>, <span style="color:#b452cd">1</span>)-&gt;<span style="color:#658b00">first</span>();</span></span></code></pre></div>
+<hr>
+<h4 id="devuelven-model-o-404">Devuelven <strong>Model o 404</strong></h4>
+<ul>
+<li><code>firstOrFail()</code></li>
+<li><code>findOrFail()</code></li>
+</ul>
+<p>Laravel lanza automáticamente una <strong>404</strong> si no existe el registro.</p>
+<hr>
+<h4 id="devuelven-valores-simples">Devuelven <strong>valores simples</strong></h4>
+<ul>
+<li><code>count()</code> → int</li>
+<li><code>exists()</code> → bool</li>
+<li><code>sum('campo')</code></li>
+<li><code>value('campo')</code></li>
+<li><code>pluck('campo')</code> → Collection de valores simples</li>
+</ul>
+<hr>
+<h3 id="-métodos-que-ya-ejecutan-la-consulta-sin--get">️ Métodos que YA ejecutan la consulta (sin -&gt;get)</h3>
+<p>Algunos métodos <strong>no devuelven Query Builder</strong>, sino resultados directamente.</p>
+<h4 id="find-no-devuelve-builder"><code>find()</code> no devuelve Builder</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Alumno::<span style="color:#658b00">find</span>(<span style="color:#b452cd">5</span>);</span></span></code></pre></div>
+<p>Ejecuta la consulta<br>
+Devuelve <code>Alumno|null</code><br>
+No se puede encadenar <code>-&gt;get()</code>, ya que el método está retornando el resultado de la consulta</p>
+<hr>
+<h4 id="all-tampoco-devuelve-builder"><code>all()</code> tampoco devuelve Builder</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Alumno::<span style="color:#658b00">all</span>();</span></span></code></pre></div>
+<p>Devuelve directamente una <code>Collection&lt;Alumno&gt;</code></p>
+<hr>
+<h2 id="errores-típicos">Errores típicos</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Alumno::<span style="color:#658b00">find</span>(<span style="color:#b452cd">5</span>)-&gt;<span style="color:#658b00">get</span>(); <span style="color:#228b22">// MAL
+</span></span></span></code></pre></div>
+<p><code>find()</code> ya ejecutó la consulta.<br>
+Devuelve un modelo, no una consulta.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Alumno::<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;activo&#39;</span>, <span style="color:#8b008b;font-weight:bold">true</span>)-&gt;<span style="color:#658b00">find</span>(<span style="color:#b452cd">5</span>); <span style="color:#228b22">// MAL
+</span></span></span></code></pre></div>
+<p><code>find()</code> ignora el builder previo y busca directamente por ID.</p>
+<hr>
+<h2 id="tabla-resumen">Tabla resumen</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Código</th>
+          <th>Qué devuelve</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Model::where(...)</code></td>
+          <td>Query Builder</td>
+      </tr>
+      <tr>
+          <td><code>-&gt;get()</code></td>
+          <td>Collection</td>
+      </tr>
+      <tr>
+          <td><code>-&gt;first()</code></td>
+          <td>Model o null</td>
+      </tr>
+      <tr>
+          <td><code>-&gt;find(id)</code></td>
+          <td>Model o null</td>
+      </tr>
+      <tr>
+          <td><code>-&gt;all()</code></td>
+          <td>Collection</td>
+      </tr>
+      <tr>
+          <td><code>-&gt;count()</code></td>
+          <td>int</td>
+      </tr>
+      <tr>
+          <td><code>-&gt;pluck()</code></td>
+          <td>Collection</td>
+      </tr>
+      <tr>
+          <td><code>-&gt;exists()</code></td>
+          <td>bool</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="query-builder-vs-collection">Query Builder vs Collection</h2>
+<h3 id="query-builder">Query Builder</h3>
+<ul>
+<li>No tiene datos</li>
+<li>Representa SQL</li>
+<li>Vive antes de ejecutar</li>
+<li>Permite <code>toSql()</code></li>
+</ul>
+<hr>
+<h3 id="collection">Collection</h3>
+<ul>
+<li>Tiene datos en memoria</li>
+<li>Se trabaja en PHP</li>
+<li>Métodos como <code>map()</code>, <code>filter()</code>, <code>each()</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$alumnos</span> = Alumno::<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#39;activo&#39;</span>, <span style="color:#8b008b;font-weight:bold">true</span>)-&gt;<span style="color:#658b00">get</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$mayores</span> = <span style="color:#00688b">$alumnos</span>-&gt;<span style="color:#658b00">filter</span>(fn (<span style="color:#00688b">$a</span>) =&gt; <span style="color:#00688b">$a</span>-&gt;<span style="color:#658b00">edad</span> &gt;= <span style="color:#b452cd">18</span>);</span></span></code></pre></div>
+<hr>
+
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel_certificado_2026/js/main.js"></script>
+<script defer src="/laravel_certificado_2026/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel_certificado_2026/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

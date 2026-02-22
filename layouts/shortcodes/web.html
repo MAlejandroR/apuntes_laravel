@@ -1,0 +1,63 @@
+{{ $title := .Get "title" | default "Referencia Web" }}
+{{ $url := .Get "url" }}
+{{ $img := .Get "img" }}
+{{ $color := .Get "color" | default "secondary" }}
+{{ $badge := .Get "badge" }}
+{{ $badgeColor := .Get "badgeColor" | default "secondary" }}
+
+{{/* Extraer dominio automáticamente */}}
+{{ $parsed := urls.Parse $url }}
+{{ $domain := $parsed.Host }}
+
+<div class="card border border-{{ $color }} shadow-sm my-4">
+    <div class="card-body">
+
+        <div class="d-flex align-items-center gap-3">
+
+            {{/* Imagen o favicon automático */}}
+            <div>
+                {{ if $img }}
+                <img src="{{ $img }}"
+                     alt="{{ $title }}"
+                     style="width:60px; height:60px; object-fit:contain;"
+                     class="rounded">
+              {{ end }}
+            </div>
+
+            <div class="flex-grow-1">
+
+                <h5 class="mb-1">
+                    <a href="{{ $url }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="text-decoration-none text-{{ $color }}">
+                        {{ $title }}
+                    </a>
+
+                    {{ if $badge }}
+                    <span class="badge bg-{{ $badgeColor }} ms-2">
+                            {{ $badge }}
+                        </span>
+                    {{ end }}
+                </h5>
+
+                <small class="text-muted">
+                    🌐 {{ $domain }}
+                </small>
+
+            </div>
+
+        </div>
+
+        {{ if .Inner }}
+        <div class="mt-3">
+            {{ if eq .Page.File.Ext "md" }}
+            {{ .Inner | markdownify }}
+            {{ else }}
+            {{ .Inner | htmlUnescape | safeHTML }}
+            {{ end }}
+        </div>
+        {{ end }}
+
+    </div>
+</div>

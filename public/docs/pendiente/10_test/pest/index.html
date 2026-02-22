@@ -1,0 +1,658 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel_certificado_2026/livereload.js?mindelay=10&amp;v=2&amp;port=35723&amp;path=laravel_certificado_2026/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel_certificado_2026/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel_certificado_2026/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-192x192.png" sizes="192x192">
+
+<title>Pest | Laravel: Framework de php</title>
+<meta name="description" content=" Pest Pest es un framework de testing para PHP que utiliza PHPUnit por debajo, pero ofrece una sintaxis mucho más simple y expresiva. 🧪 Cheatsheet de tests con Pest en Laravel Esta chuleta resume cómo usar it, beforeEach, Mockery, $this-&gt;get, $this-&gt;assertDatabaseHas, y más en Pest &#43; Laravel.
+Instalar pest en el proyecto composer require pestphp/pest --dev --with-all-dependencies Instalar el plugin de pest para php composer require pestphp/pest-plugin-laravel --dev Crear un test: ·Esto creará un test llamado UserCourseContentServiceTest php artisan pest:test UserCourseContentServiceTest ✅ Estructura básica de un archivo de test 1 2 3 4 5 6 7 8 9 &lt;?php uses(Tests\TestCase::class); use App\Models\User; use Illuminate\Support\Facades\Auth; use Laravel\Socialite\Facades\Socialite; use Laravel\Socialite\Contracts\User as SocialUserContract; use Spatie\Permission\Models\Role; use Mockery; 🔁 Reutilizar código con beforeEach Se ejecuta antes de cada test. Puedes usar $this-&gt; para compartir variables entre los bloques it. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 beforeEach(function () { $this-&gt;googleUser = Mockery::mock(SocialUserContract::class); $this-&gt;googleUser-&gt;shouldReceive(&#39;getEmail&#39;)-&gt;andReturn(&#39;student@gmail.com&#39;); $this-&gt;googleUser-&gt;shouldReceive(&#39;getName&#39;)-&gt;andReturn(&#39;Estudiante&#39;); $provider = Mockery::mock(\Laravel\Socialite\Contracts\Provider::class); $provider-&gt;shouldReceive(&#39;stateless&#39;)-&gt;andReturnSelf(); $provider-&gt;shouldReceive(&#39;user&#39;)-&gt;andReturn($this-&gt;googleUser); Socialite::shouldReceive(&#39;driver&#39;) -&gt;with(&#39;google&#39;) -&gt;andReturn($provider); Role::findOrCreate(&#39;student&#39;); }); ✅ Crear un test con it(...) Cada test debe tener su descripción clara. Usa $this-&gt;get() para simular una petición HTTP. Usa $this-&gt;assertDatabaseHas() para comprobar la base de datos. 1 2 3 4 5 6 7 8 it(&#39;crea un nuevo usuario estudiante con Google&#39;, function () { $this-&gt;get(&#39;/auth/google/callback&#39;); $this-&gt;assertDatabaseHas(&#39;users&#39;, [ &#39;email&#39; =&gt; &#39;student@gmail.com&#39;, &#39;name&#39; =&gt; &#39;Estudiante&#39;, ]); }); 📧 Mock de servicios personalizados (por ejemplo OTP) 1 2 3 $otpMock = Mockery::mock(\App\Services\OtpService::class); $otpMock-&gt;shouldReceive(&#39;sendOtp&#39;)-&gt;once(); app()-&gt;instance(\App\Services\OtpService::class, $otpMock); 🧪 Validar si el usuario está logueado 1 2 expect(Auth::check())-&gt;toBeTrue(); expect(Auth::user()-&gt;email)-&gt;toBe(&#39;student@gmail.com&#39;); 🔀 Llamar directamente a un controlador en tests Útil si quieres evitar depender de rutas.">
+
+<meta property="og:url" content="http://localhost:35723/laravel_certificado_2026/docs/pendiente/10_test/pest/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Pest">
+  <meta property="og:description" content="Pest Pest es un framework de testing para PHP que utiliza PHPUnit por debajo, pero ofrece una sintaxis mucho más simple y expresiva. 🧪 Cheatsheet de tests con Pest en Laravel Esta chuleta resume cómo usar it, beforeEach, Mockery, $this-&gt;get, $this-&gt;assertDatabaseHas, y más en Pest &#43; Laravel.
+Instalar pest en el proyecto composer require pestphp/pest --dev --with-all-dependencies Instalar el plugin de pest para php composer require pestphp/pest-plugin-laravel --dev Crear un test: ·Esto creará un test llamado UserCourseContentServiceTest php artisan pest:test UserCourseContentServiceTest ✅ Estructura básica de un archivo de test 1 2 3 4 5 6 7 8 9 &lt;?php uses(Tests\TestCase::class); use App\Models\User; use Illuminate\Support\Facades\Auth; use Laravel\Socialite\Facades\Socialite; use Laravel\Socialite\Contracts\User as SocialUserContract; use Spatie\Permission\Models\Role; use Mockery; 🔁 Reutilizar código con beforeEach Se ejecuta antes de cada test. Puedes usar $this-&gt; para compartir variables entre los bloques it. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 beforeEach(function () { $this-&gt;googleUser = Mockery::mock(SocialUserContract::class); $this-&gt;googleUser-&gt;shouldReceive(&#39;getEmail&#39;)-&gt;andReturn(&#39;student@gmail.com&#39;); $this-&gt;googleUser-&gt;shouldReceive(&#39;getName&#39;)-&gt;andReturn(&#39;Estudiante&#39;); $provider = Mockery::mock(\Laravel\Socialite\Contracts\Provider::class); $provider-&gt;shouldReceive(&#39;stateless&#39;)-&gt;andReturnSelf(); $provider-&gt;shouldReceive(&#39;user&#39;)-&gt;andReturn($this-&gt;googleUser); Socialite::shouldReceive(&#39;driver&#39;) -&gt;with(&#39;google&#39;) -&gt;andReturn($provider); Role::findOrCreate(&#39;student&#39;); }); ✅ Crear un test con it(...) Cada test debe tener su descripción clara. Usa $this-&gt;get() para simular una petición HTTP. Usa $this-&gt;assertDatabaseHas() para comprobar la base de datos. 1 2 3 4 5 6 7 8 it(&#39;crea un nuevo usuario estudiante con Google&#39;, function () { $this-&gt;get(&#39;/auth/google/callback&#39;); $this-&gt;assertDatabaseHas(&#39;users&#39;, [ &#39;email&#39; =&gt; &#39;student@gmail.com&#39;, &#39;name&#39; =&gt; &#39;Estudiante&#39;, ]); }); 📧 Mock de servicios personalizados (por ejemplo OTP) 1 2 3 $otpMock = Mockery::mock(\App\Services\OtpService::class); $otpMock-&gt;shouldReceive(&#39;sendOtp&#39;)-&gt;once(); app()-&gt;instance(\App\Services\OtpService::class, $otpMock); 🧪 Validar si el usuario está logueado 1 2 expect(Auth::check())-&gt;toBeTrue(); expect(Auth::user()-&gt;email)-&gt;toBe(&#39;student@gmail.com&#39;); 🔀 Llamar directamente a un controlador en tests Útil si quieres evitar depender de rutas.">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:published_time" content="2023-04-08T18:21:47+02:00">
+    <meta property="article:modified_time" content="2023-04-08T18:21:47+02:00">
+
+  <meta itemprop="name" content="Pest">
+  <meta itemprop="description" content="Pest Pest es un framework de testing para PHP que utiliza PHPUnit por debajo, pero ofrece una sintaxis mucho más simple y expresiva. 🧪 Cheatsheet de tests con Pest en Laravel Esta chuleta resume cómo usar it, beforeEach, Mockery, $this-&gt;get, $this-&gt;assertDatabaseHas, y más en Pest &#43; Laravel.
+Instalar pest en el proyecto composer require pestphp/pest --dev --with-all-dependencies Instalar el plugin de pest para php composer require pestphp/pest-plugin-laravel --dev Crear un test: ·Esto creará un test llamado UserCourseContentServiceTest php artisan pest:test UserCourseContentServiceTest ✅ Estructura básica de un archivo de test 1 2 3 4 5 6 7 8 9 &lt;?php uses(Tests\TestCase::class); use App\Models\User; use Illuminate\Support\Facades\Auth; use Laravel\Socialite\Facades\Socialite; use Laravel\Socialite\Contracts\User as SocialUserContract; use Spatie\Permission\Models\Role; use Mockery; 🔁 Reutilizar código con beforeEach Se ejecuta antes de cada test. Puedes usar $this-&gt; para compartir variables entre los bloques it. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 beforeEach(function () { $this-&gt;googleUser = Mockery::mock(SocialUserContract::class); $this-&gt;googleUser-&gt;shouldReceive(&#39;getEmail&#39;)-&gt;andReturn(&#39;student@gmail.com&#39;); $this-&gt;googleUser-&gt;shouldReceive(&#39;getName&#39;)-&gt;andReturn(&#39;Estudiante&#39;); $provider = Mockery::mock(\Laravel\Socialite\Contracts\Provider::class); $provider-&gt;shouldReceive(&#39;stateless&#39;)-&gt;andReturnSelf(); $provider-&gt;shouldReceive(&#39;user&#39;)-&gt;andReturn($this-&gt;googleUser); Socialite::shouldReceive(&#39;driver&#39;) -&gt;with(&#39;google&#39;) -&gt;andReturn($provider); Role::findOrCreate(&#39;student&#39;); }); ✅ Crear un test con it(...) Cada test debe tener su descripción clara. Usa $this-&gt;get() para simular una petición HTTP. Usa $this-&gt;assertDatabaseHas() para comprobar la base de datos. 1 2 3 4 5 6 7 8 it(&#39;crea un nuevo usuario estudiante con Google&#39;, function () { $this-&gt;get(&#39;/auth/google/callback&#39;); $this-&gt;assertDatabaseHas(&#39;users&#39;, [ &#39;email&#39; =&gt; &#39;student@gmail.com&#39;, &#39;name&#39; =&gt; &#39;Estudiante&#39;, ]); }); 📧 Mock de servicios personalizados (por ejemplo OTP) 1 2 3 $otpMock = Mockery::mock(\App\Services\OtpService::class); $otpMock-&gt;shouldReceive(&#39;sendOtp&#39;)-&gt;once(); app()-&gt;instance(\App\Services\OtpService::class, $otpMock); 🧪 Validar si el usuario está logueado 1 2 expect(Auth::check())-&gt;toBeTrue(); expect(Auth::user()-&gt;email)-&gt;toBe(&#39;student@gmail.com&#39;); 🔀 Llamar directamente a un controlador en tests Útil si quieres evitar depender de rutas.">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="638">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pest">
+  <meta name="twitter:description" content="Pest Pest es un framework de testing para PHP que utiliza PHPUnit por debajo, pero ofrece una sintaxis mucho más simple y expresiva. 🧪 Cheatsheet de tests con Pest en Laravel Esta chuleta resume cómo usar it, beforeEach, Mockery, $this-&gt;get, $this-&gt;assertDatabaseHas, y más en Pest &#43; Laravel.
+Instalar pest en el proyecto composer require pestphp/pest --dev --with-all-dependencies Instalar el plugin de pest para php composer require pestphp/pest-plugin-laravel --dev Crear un test: ·Esto creará un test llamado UserCourseContentServiceTest php artisan pest:test UserCourseContentServiceTest ✅ Estructura básica de un archivo de test 1 2 3 4 5 6 7 8 9 &lt;?php uses(Tests\TestCase::class); use App\Models\User; use Illuminate\Support\Facades\Auth; use Laravel\Socialite\Facades\Socialite; use Laravel\Socialite\Contracts\User as SocialUserContract; use Spatie\Permission\Models\Role; use Mockery; 🔁 Reutilizar código con beforeEach Se ejecuta antes de cada test. Puedes usar $this-&gt; para compartir variables entre los bloques it. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 beforeEach(function () { $this-&gt;googleUser = Mockery::mock(SocialUserContract::class); $this-&gt;googleUser-&gt;shouldReceive(&#39;getEmail&#39;)-&gt;andReturn(&#39;student@gmail.com&#39;); $this-&gt;googleUser-&gt;shouldReceive(&#39;getName&#39;)-&gt;andReturn(&#39;Estudiante&#39;); $provider = Mockery::mock(\Laravel\Socialite\Contracts\Provider::class); $provider-&gt;shouldReceive(&#39;stateless&#39;)-&gt;andReturnSelf(); $provider-&gt;shouldReceive(&#39;user&#39;)-&gt;andReturn($this-&gt;googleUser); Socialite::shouldReceive(&#39;driver&#39;) -&gt;with(&#39;google&#39;) -&gt;andReturn($provider); Role::findOrCreate(&#39;student&#39;); }); ✅ Crear un test con it(...) Cada test debe tener su descripción clara. Usa $this-&gt;get() para simular una petición HTTP. Usa $this-&gt;assertDatabaseHas() para comprobar la base de datos. 1 2 3 4 5 6 7 8 it(&#39;crea un nuevo usuario estudiante con Google&#39;, function () { $this-&gt;get(&#39;/auth/google/callback&#39;); $this-&gt;assertDatabaseHas(&#39;users&#39;, [ &#39;email&#39; =&gt; &#39;student@gmail.com&#39;, &#39;name&#39; =&gt; &#39;Estudiante&#39;, ]); }); 📧 Mock de servicios personalizados (por ejemplo OTP) 1 2 3 $otpMock = Mockery::mock(\App\Services\OtpService::class); $otpMock-&gt;shouldReceive(&#39;sendOtp&#39;)-&gt;once(); app()-&gt;instance(\App\Services\OtpService::class, $otpMock); 🧪 Validar si el usuario está logueado 1 2 expect(Auth::check())-&gt;toBeTrue(); expect(Auth::user()-&gt;email)-&gt;toBe(&#39;student@gmail.com&#39;); 🔀 Llamar directamente a un controlador en tests Útil si quieres evitar depender de rutas.">
+
+
+<link href="/laravel_certificado_2026/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel_certificado_2026/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel_certificado_2026/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel_certificado_2026/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laravel_certificado_2026docs-li">
+  <a href="/laravel_certificado_2026/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laravel_certificado_2026docs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs01_introduccic3b3n-check"/>
+  <label for="m-laravel_certificado_2026docs01_introduccic3b3n-check"><a href="/laravel_certificado_2026/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs02_instalacic3b3n-check"/>
+  <label for="m-laravel_certificado_2026docs02_instalacic3b3n-check"><a href="/laravel_certificado_2026/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs03_rutas-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs03_rutas-check"/>
+  <label for="m-laravel_certificado_2026docs03_rutas-check"><a href="/laravel_certificado_2026/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laravel_certificado_2026docs04_plantillas-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas-check"><a href="/laravel_certificado_2026/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas01_blade-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas01_blade-check"><a href="/laravel_certificado_2026/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-check"><a href="/laravel_certificado_2026/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas03_componentes-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas03_componentes-check"><a href="/laravel_certificado_2026/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#instalar-pest-en-el-proyecto">Instalar pest en el proyecto</a></li>
+    <li><a href="#-estructura-básica-de-un-archivo-de-test">✅ Estructura básica de un archivo de test</a></li>
+    <li><a href="#-reutilizar-código-con-beforeeach">🔁 Reutilizar código con <code>beforeEach</code></a></li>
+    <li><a href="#-crear-un-test-con-it">✅ Crear un test con <code>it(...)</code></a></li>
+    <li><a href="#-mock-de-servicios-personalizados-por-ejemplo-otp">📧 Mock de servicios personalizados (por ejemplo OTP)</a></li>
+    <li><a href="#-validar-si-el-usuario-está-logueado">🧪 Validar si el usuario está logueado</a></li>
+    <li><a href="#-llamar-directamente-a-un-controlador-en-tests">🔀 Llamar directamente a un controlador en tests</a></li>
+    <li><a href="#-comprobar-redirecciones-con-inertia-o-rutas">✅ Comprobar redirecciones con Inertia o rutas</a></li>
+    <li><a href="#-errores-comunes-y-cómo-solucionarlos">⚠️ Errores comunes y cómo solucionarlos</a></li>
+    <li><a href="#-limpieza-final-de-mocks-opcional">🧹 Limpieza final de mocks (opcional)</a></li>
+    <li><a href="#-tip-final">💡 Tip final</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#-qué-usamos">🧪 ¿Qué usamos?</a></li>
+    <li><a href="#-métodos-más-comunes">📌 Métodos más comunes</a></li>
+    <li><a href="#-ejemplos-prácticos">✔️ Ejemplos prácticos</a>
+      <ul>
+        <li><a href="#-verificar-que-el-usuario-existe">✅ Verificar que el usuario existe</a></li>
+        <li><a href="#-verificar-que-el-usuario-no-existe">❌ Verificar que el usuario NO existe</a></li>
+        <li><a href="#-verificar-eliminación-soft-soft-deletes">💀 Verificar eliminación soft (soft deletes)</a></li>
+        <li><a href="#-verificar-cuántas-filas-hay">🔢 Verificar cuántas filas hay</a></li>
+      </ul>
+    </li>
+    <li><a href="#-tip-extra-usar-artisan-migratefresh---seed-antes-de-testear">👀 Tip extra: usar <code>artisan migrate:fresh --seed</code> antes de testear</a></li>
+    <li><a href="#-recomendación">💡 Recomendación</a></li>
+    <li><a href="#-más-info">📚 Más info</a></li>
+  </ul>
+</nav>
+      </div>
+    
+            <div class="taxonomy taxonomy-terms-cloud taxo-categories">
+      <h5 class="taxonomy-title">Categories</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      <h5 class="taxonomy-title">Tags</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel_certificado_2026/docs/">Laravel</a></li>
+  <li class="breadcrumb-item">
+    <a href="">Pendiente de revisar e incorporar</a></li>
+  <li class="breadcrumb-item">
+    <a href="">10_Test unitarios</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Pest</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Pest</h1>
+	
+	<header class="article-meta">
+		
+</header>
+	<div class="definicion-concepto">
+  <div class="definicion-titulo">
+    
+    <i class="fas fa-info-circle" aria-hidden="true"></i>
+    
+    <strong>Pest</strong>
+  </div>
+  <div class="definicion-contenido">
+    
+Pest es un framework de testing para PHP que utiliza PHPUnit por debajo, pero ofrece una sintaxis mucho más simple y expresiva.
+
+  </div>
+</div>
+<!-- raw HTML omitted -->
+<h1 id="-cheatsheet-de-tests-con-pest-en-laravel">🧪 Cheatsheet de tests con Pest en Laravel</h1>
+<p>Esta chuleta resume cómo usar <code>it</code>, <code>beforeEach</code>, <code>Mockery</code>, <code>$this-&gt;get</code>, <code>$this-&gt;assertDatabaseHas</code>, y más en Pest + Laravel.</p>
+<hr>
+<h2 id="instalar-pest-en-el-proyecto">Instalar pest en el proyecto</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require pestphp/pest --dev --with-all-dependencies</span></span></code></pre></div>
+<ul>
+<li>Instalar el plugin de pest para php
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span> composer <span style="color:#8b008b;font-weight:bold">require</span> pestphp/pest-plugin-laravel --dev</span></span></code></pre></div></li>
+<li>Crear un test:
+·Esto creará un test llamado UserCourseContentServiceTest
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span> php artisan pest:test UserCourseContentServiceTest</span></span></code></pre></div></li>
+</ul>
+<h2 id="-estructura-básica-de-un-archivo-de-test">✅ Estructura básica de un archivo de test</h2>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?php
+</span></span><span style="display:flex;"><span>uses(Tests\TestCase::<span style="color:#658b00">class</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> App\Models\User;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Support\Facades\Auth;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Laravel\Socialite\Facades\Socialite;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Laravel\Socialite\Contracts\User <span style="color:#8b008b;font-weight:bold">as</span> SocialUserContract;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Spatie\Permission\Models\Role;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Mockery;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="-reutilizar-código-con-beforeeach">🔁 Reutilizar código con <code>beforeEach</code></h2>
+<ul>
+<li>Se ejecuta <strong>antes de cada test</strong>.</li>
+<li>Puedes usar <code>$this-&gt;</code> para compartir variables entre los bloques <code>it</code>.</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>beforeEach(<span style="color:#8b008b;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">googleUser</span> = Mockery::<span style="color:#658b00">mock</span>(SocialUserContract::<span style="color:#658b00">class</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">googleUser</span>-&gt;<span style="color:#658b00">shouldReceive</span>(<span style="color:#cd5555">&#39;getEmail&#39;</span>)-&gt;<span style="color:#658b00">andReturn</span>(<span style="color:#cd5555">&#39;student@gmail.com&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">googleUser</span>-&gt;<span style="color:#658b00">shouldReceive</span>(<span style="color:#cd5555">&#39;getName&#39;</span>)-&gt;<span style="color:#658b00">andReturn</span>(<span style="color:#cd5555">&#39;Estudiante&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$provider</span> = Mockery::<span style="color:#658b00">mock</span>(\Laravel\Socialite\Contracts\Provider::<span style="color:#658b00">class</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$provider</span>-&gt;<span style="color:#658b00">shouldReceive</span>(<span style="color:#cd5555">&#39;stateless&#39;</span>)-&gt;<span style="color:#658b00">andReturnSelf</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$provider</span>-&gt;<span style="color:#658b00">shouldReceive</span>(<span style="color:#cd5555">&#39;user&#39;</span>)-&gt;<span style="color:#658b00">andReturn</span>(<span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">googleUser</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Socialite::<span style="color:#658b00">shouldReceive</span>(<span style="color:#cd5555">&#39;driver&#39;</span>)
+</span></span><span style="display:flex;"><span>        -&gt;<span style="color:#658b00">with</span>(<span style="color:#cd5555">&#39;google&#39;</span>)
+</span></span><span style="display:flex;"><span>        -&gt;<span style="color:#658b00">andReturn</span>(<span style="color:#00688b">$provider</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Role::<span style="color:#658b00">findOrCreate</span>(<span style="color:#cd5555">&#39;student&#39;</span>);
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="-crear-un-test-con-it">✅ Crear un test con <code>it(...)</code></h2>
+<ul>
+<li>Cada test debe tener su descripción clara.</li>
+<li>Usa <code>$this-&gt;get()</code> para simular una petición HTTP.</li>
+<li>Usa <code>$this-&gt;assertDatabaseHas()</code> para comprobar la base de datos.</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>it(<span style="color:#cd5555">&#39;crea un nuevo usuario estudiante con Google&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;/auth/google/callback&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">assertDatabaseHas</span>(<span style="color:#cd5555">&#39;users&#39;</span>, [
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#39;email&#39;</span> =&gt; <span style="color:#cd5555">&#39;student@gmail.com&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#39;name&#39;</span>  =&gt; <span style="color:#cd5555">&#39;Estudiante&#39;</span>,
+</span></span><span style="display:flex;"><span>    ]);
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="-mock-de-servicios-personalizados-por-ejemplo-otp">📧 Mock de servicios personalizados (por ejemplo OTP)</h2>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$otpMock</span> = Mockery::<span style="color:#658b00">mock</span>(\App\Services\OtpService::<span style="color:#658b00">class</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$otpMock</span>-&gt;<span style="color:#658b00">shouldReceive</span>(<span style="color:#cd5555">&#39;sendOtp&#39;</span>)-&gt;<span style="color:#658b00">once</span>();
+</span></span><span style="display:flex;"><span>app()-&gt;<span style="color:#658b00">instance</span>(\App\Services\OtpService::<span style="color:#658b00">class</span>, <span style="color:#00688b">$otpMock</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="-validar-si-el-usuario-está-logueado">🧪 Validar si el usuario está logueado</h2>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>expect(Auth::<span style="color:#658b00">check</span>())-&gt;<span style="color:#658b00">toBeTrue</span>();
+</span></span><span style="display:flex;"><span>expect(Auth::<span style="color:#658b00">user</span>()-&gt;<span style="color:#658b00">email</span>)-&gt;<span style="color:#658b00">toBe</span>(<span style="color:#cd5555">&#39;student@gmail.com&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="-llamar-directamente-a-un-controlador-en-tests">🔀 Llamar directamente a un controlador en tests</h2>
+<p>Útil si quieres evitar depender de rutas.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$response</span> = app(\App\Http\Controllers\HandlerProviderCallback::<span style="color:#658b00">class</span>)-&gt;<span style="color:#658b00">__invoke</span>(<span style="color:#cd5555">&#39;google&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="-comprobar-redirecciones-con-inertia-o-rutas">✅ Comprobar redirecciones con Inertia o rutas</h2>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>expect(<span style="color:#00688b">$response</span>-&gt;<span style="color:#658b00">getTargetUrl</span>())-&gt;<span style="color:#658b00">toBe</span>(<span style="color:#cd5555">&#39;/student&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="-errores-comunes-y-cómo-solucionarlos">⚠️ Errores comunes y cómo solucionarlos</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Error</th>
+          <th>Causa posible</th>
+          <th>Solución</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Target class [config] does not exist.</code></td>
+          <td><code>beforeAll()</code> ejecutando código demasiado pronto</td>
+          <td>Usar <code>beforeEach()</code> en lugar de <code>beforeAll()</code></td>
+      </tr>
+      <tr>
+          <td><code>Unsupported cipher or incorrect key length.</code></td>
+          <td>Falta o clave inválida en <code>.env.testing</code></td>
+          <td><code>php artisan key:generate --env=testing</code></td>
+      </tr>
+      <tr>
+          <td><code>Route not found</code></td>
+          <td>Estás usando una URL que no existe</td>
+          <td>Revisa tus rutas en <code>routes/web.php</code></td>
+      </tr>
+      <tr>
+          <td><code>Database assertion failed (table is empty)</code></td>
+          <td>No se ejecutó bien el controlador o la ruta</td>
+          <td>Asegúrate de usar la URL correcta o llama al controlador directamente</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-limpieza-final-de-mocks-opcional">🧹 Limpieza final de mocks (opcional)</h2>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>afterEach(<span style="color:#8b008b;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span>    Mockery::<span style="color:#658b00">close</span>();
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="-tip-final">💡 Tip final</h2>
+<p>Cuando no sabes si un test llega a ejecutarse o qué valores está usando:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>dump(<span style="color:#00688b">$variable</span>); <span style="color:#228b22">// para ver el contenido
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<p>¡Y eso es todo! 🎉</p>
+<h1 id="-cheatsheet-validaciones-en-la-base-de-datos-con-pest--phpunit">✅ Cheatsheet: Validaciones en la Base de Datos con Pest / PHPUnit</h1>
+<hr>
+<h2 id="-qué-usamos">🧪 ¿Qué usamos?</h2>
+<p>Laravel (con PHPUnit y Pest) nos da helpers especiales para comprobar si hay registros en la base de datos.<br>
+<strong>NO se usa expect() para esto.</strong></p>
+<hr>
+<h2 id="-métodos-más-comunes">📌 Métodos más comunes</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Método</th>
+          <th>¿Qué hace?</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>$this-&gt;assertDatabaseHas()</code></td>
+          <td>Verifica que un registro <strong>existe</strong> en la base de datos</td>
+      </tr>
+      <tr>
+          <td><code>$this-&gt;assertDatabaseMissing()</code></td>
+          <td>Verifica que un registro <strong>NO existe</strong> en la base de datos</td>
+      </tr>
+      <tr>
+          <td><code>$this-&gt;assertSoftDeleted()</code></td>
+          <td>Verifica que el modelo ha sido eliminado de forma &ldquo;soft&rdquo;</td>
+      </tr>
+      <tr>
+          <td><code>$this-&gt;assertDatabaseCount()</code></td>
+          <td>Verifica el número de filas en una tabla (Laravel 9+)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-ejemplos-prácticos">✔️ Ejemplos prácticos</h2>
+<h3 id="-verificar-que-el-usuario-existe">✅ Verificar que el usuario existe</h3>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$user</span> = User::<span style="color:#658b00">factory</span>()-&gt;<span style="color:#658b00">create</span>([
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;email&#39;</span> =&gt; <span style="color:#cd5555">&#39;manuel@gmail.com&#39;</span>
+</span></span><span style="display:flex;"><span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">assertDatabaseHas</span>(<span style="color:#cd5555">&#39;users&#39;</span>, [
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;email&#39;</span> =&gt; <span style="color:#cd5555">&#39;manuel@gmail.com&#39;</span>,
+</span></span><span style="display:flex;"><span>]);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h3 id="-verificar-que-el-usuario-no-existe">❌ Verificar que el usuario NO existe</h3>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">assertDatabaseMissing</span>(<span style="color:#cd5555">&#39;users&#39;</span>, [
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;email&#39;</span> =&gt; <span style="color:#cd5555">&#39;otro@gmail.com&#39;</span>,
+</span></span><span style="display:flex;"><span>]);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h3 id="-verificar-eliminación-soft-soft-deletes">💀 Verificar eliminación soft (soft deletes)</h3>
+<p>Si tu modelo usa <code>use SoftDeletes;</code>, puedes hacer:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$user</span> = User::<span style="color:#658b00">factory</span>()-&gt;<span style="color:#658b00">create</span>();
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$user</span>-&gt;<span style="color:#658b00">delete</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">assertSoftDeleted</span>(<span style="color:#cd5555">&#39;users&#39;</span>, [
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;id&#39;</span> =&gt; <span style="color:#00688b">$user</span>-&gt;<span style="color:#658b00">id</span>,
+</span></span><span style="display:flex;"><span>]);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h3 id="-verificar-cuántas-filas-hay">🔢 Verificar cuántas filas hay</h3>
+<p>(Laravel 9+)</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">assertDatabaseCount</span>(<span style="color:#cd5555">&#39;users&#39;</span>, <span style="color:#b452cd">5</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="-tip-extra-usar-artisan-migratefresh---seed-antes-de-testear">👀 Tip extra: usar <code>artisan migrate:fresh --seed</code> antes de testear</h2>
+<p>Para empezar con una base limpia:</p>
+<pre><code>php artisan migrate:fresh --seed
+</code></pre>
+<hr>
+<h2 id="-recomendación">💡 Recomendación</h2>
+<p>Usa estas validaciones dentro de tests de tipo <code>Feature</code> donde estés probando comportamiento completo (como un login, un registro o un formulario).</p>
+<hr>
+<h2 id="-más-info">📚 Más info</h2>
+<ul>
+<li>Laravel docs: <a href="https://laravel.com/docs/testing#available-assertions">https://laravel.com/docs/testing#available-assertions</a></li>
+<li>Pest docs: <a href="https://pestphp.com/docs/database-testing">https://pestphp.com/docs/database-testing</a></li>
+</ul>
+<hr>
+
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel_certificado_2026/js/main.js"></script>
+<script defer src="/laravel_certificado_2026/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel_certificado_2026/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

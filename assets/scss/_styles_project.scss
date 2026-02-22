@@ -1,40 +1,163 @@
+//@import "icons";
+//.small-bold-text {
+//  font-size: 0.70em !important;  /* Ajusta el tamaño para que sea pequeño */
+//  font-weight: 400 !important ;  /* Hace el texto en negrita */
+//  color: #800080   !important ;        /* Color de texto; puedes ajustarlo según el diseño */
+//}
+//.cover-title-background {
+//  display: inline-block;
+//  background-color: rgba(0, 50, 0, 0.2); /* Fondo negro con 60% de transparencia */
+//  color: #ffffff; /* Texto en blanco para un buen contraste */
+//  padding: 10px 15px; /* Espaciado interno para que no esté pegado al texto */
+//  border-radius: 5px; /* Bordes redondeados para estilo */
+//  text-align: center;
+//  font-size: 3em;
+//  font-weight: bold;
+//}
+//// Tamaño para el logo
+//.navbar-brand img {
+//  width: 120px; /* Cambia este valor para ajustar el ancho */
+//  height: auto; /* Mantiene la proporción del logo */
+//}
+//.iframe-container {
+//  zoom: 1.5; /* Aumenta el tamaño del contenido */
+//  transform-origin: 0 0;
+//  overflow: auto;
+//}
+//
+//.sidebar .nav .nav-link {
+//  font-size: 10px; /* Ajusta el tamaño según lo que necesites */
+//}
+//// Tamaño para el logo
+//.navbar-brand img {
+//  width: 120px; /* Cambia este valor para ajustar el ancho */
+//  height: auto; /* Mantiene la proporción del logo */
+//}
+//.iframe-container {
+//  zoom: 1.5; /* Aumenta el tamaño del contenido */
+//  transform-origin: 0 0;
+//  overflow: auto;
+//  }
+//.card {
+//  transition: all 0.3s ease;
+//}
+//
+//.card:hover {
+//  transform: translateY(-6px);
+//  box-shadow: 0 1rem 2rem rgba(0,0,0,.15);
+//}
+//
+//.td-cover-block::before {
+//  background: rgba(0, 0, 0, 0.65) !important;
+//}
+//.navbar.bg-primary {
+//  background-color: transparent;
+//  background-image: linear-gradient(
+//                  90deg,
+//                  #cc4726,
+//                  #f05340
+//  );
+//}
+//.navbar-brand {
+//  background: transparent !important;
+//}
+////.td-navbar {
+////  background-image: linear-gradient(
+////                  90deg,
+////                  #cc4726,
+////                  #f05340
+////  );
+////  background-color: unset;
+////}
+//.navbar.td-navbar {
+//  background: linear-gradient(
+//                  90deg,
+//                  #cc4726,
+//                  #f05340
+//  ) !important;
+//}
 @import "icons";
-.small-bold-text {
-  font-size: 0.70em !important;  /* Ajusta el tamaño para que sea pequeño */
-  font-weight: 400 !important ;  /* Hace el texto en negrita */
-  color: #800080   !important ;        /* Color de texto; puedes ajustarlo según el diseño */
-}
-.cover-title-background {
-  display: inline-block;
-  background-color: rgba(0, 50, 0, 0.2); /* Fondo negro con 60% de transparencia */
-  color: #ffffff; /* Texto en blanco para un buen contraste */
-  padding: 10px 15px; /* Espaciado interno para que no esté pegado al texto */
-  border-radius: 5px; /* Bordes redondeados para estilo */
-  text-align: center;
-  font-size: 3em;
-  font-weight: bold;
-}
-// Tamaño para el logo
-.navbar-brand img {
-  width: 120px; /* Cambia este valor para ajustar el ancho */
-  height: auto; /* Mantiene la proporción del logo */
-}
-.iframe-container {
-  zoom: 1.5; /* Aumenta el tamaño del contenido */
-  transform-origin: 0 0;
-  overflow: auto;
+
+/* ==============================
+   NAVBAR
+================================ */
+
+.navbar.bg-primary {
+  background-color: #f05340 !important;
 }
 
-.sidebar .nav .nav-link {
-  font-size: 10px; /* Ajusta el tamaño según lo que necesites */
-}
-// Tamaño para el logo
 .navbar-brand img {
-  width: 120px; /* Cambia este valor para ajustar el ancho */
-  height: auto; /* Mantiene la proporción del logo */
+  width: 120px;
+  height: auto;
+  background: transparent;
 }
-.iframe-container {
-  zoom: 1.5; /* Aumenta el tamaño del contenido */
-  transform-origin: 0 0;
-  overflow: auto;
-  }
+
+/* ==============================
+   SIDEBAR
+================================ */
+
+.td-sidebar {
+  background-color: #ffffff;
+  border-right: 1px solid #eee;
+}
+
+.td-sidebar-nav a {
+  font-size: 0.95rem;
+  color: #444;
+  transition: all 0.2s ease;
+}
+
+.td-sidebar-nav a:hover {
+  color: #f05340;
+  background-color: rgba(240, 83, 64, 0.05);
+  border-radius: 6px;
+}
+
+.td-sidebar-nav__section .active > a,
+.td-sidebar-nav__section .show > a {
+  color: #f05340;
+  font-weight: 600;
+  background-color: rgba(240, 83, 64, 0.1);
+  border-left: 3px solid #f05340;
+  padding-left: 10px;
+}
+
+/* ==============================
+   HERO
+================================ */
+
+.td-cover-block::before {
+  background: rgba(0, 0, 0, 0.65) !important;
+}
+
+/* ==============================
+   CARDS
+================================ */
+
+.card {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.12);
+}
+
+/* ==============================
+   FOOTER
+================================ */
+
+.td-footer {
+  background-color: #f05340;
+  color: white;
+}
+
+.td-footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+.td-footer a:hover {
+  opacity: 0.8;
+}

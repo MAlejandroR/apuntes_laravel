@@ -1,4 +1,5 @@
-baseURL = 'https://web.infenlaces.com/laravel/'
+#baseURL = 'https://web.infenlaces.com/laravel/'
+baseURL = 'https://web.infenlaces.com/laravel_certificado_2026/'
 #baseURL = 'http://localhost'
 languageCode = 'es-es'
 title = 'Laravel'
