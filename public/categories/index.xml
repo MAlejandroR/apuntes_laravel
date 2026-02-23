@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Laravel: Framework de php</title>
-    <link>http://localhost:35723/laravel_certificado_2026/categories/</link>
+    <link>http://localhost:1313/laravel_certificado_2026/categories/</link>
     <description>Recent content in Categories on Laravel: Framework de php</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sun, 21 Sep 2025 08:32:21 +0200</lastBuildDate>
-    <atom:link href="http://localhost:35723/laravel_certificado_2026/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/laravel_certificado_2026/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Filament</title>
-      <link>http://localhost:35723/laravel_certificado_2026/categories/filament/</link>
+      <link>http://localhost:1313/laravel_certificado_2026/categories/filament/</link>
       <pubDate>Sun, 21 Sep 2025 08:32:21 +0200</pubDate>
-      <guid>http://localhost:35723/laravel_certificado_2026/categories/filament/</guid>
+      <guid>http://localhost:1313/laravel_certificado_2026/categories/filament/</guid>
       <description></description>
     </item>
     <item>
       <title>Laravel</title>
-      <link>http://localhost:35723/laravel_certificado_2026/categories/laravel/</link>
+      <link>http://localhost:1313/laravel_certificado_2026/categories/laravel/</link>
       <pubDate>Sun, 21 Sep 2025 08:32:21 +0200</pubDate>
-      <guid>http://localhost:35723/laravel_certificado_2026/categories/laravel/</guid>
+      <guid>http://localhost:1313/laravel_certificado_2026/categories/laravel/</guid>
       <description></description>
     </item>
     <item>
       <title>Páginas</title>
-      <link>http://localhost:35723/laravel_certificado_2026/categories/p%C3%A1ginas/</link>
+      <link>http://localhost:1313/laravel_certificado_2026/categories/p%C3%A1ginas/</link>
       <pubDate>Sun, 21 Sep 2025 08:32:21 +0200</pubDate>
-      <guid>http://localhost:35723/laravel_certificado_2026/categories/p%C3%A1ginas/</guid>
+      <guid>http://localhost:1313/laravel_certificado_2026/categories/p%C3%A1ginas/</guid>
       <description></description>
     </item>
     <item>
       <title>Panel</title>
-      <link>http://localhost:35723/laravel_certificado_2026/categories/panel/</link>
+      <link>http://localhost:1313/laravel_certificado_2026/categories/panel/</link>
       <pubDate>Sun, 21 Sep 2025 08:32:21 +0200</pubDate>
-      <guid>http://localhost:35723/laravel_certificado_2026/categories/panel/</guid>
+      <guid>http://localhost:1313/laravel_certificado_2026/categories/panel/</guid>
       <description></description>
     </item>
     <item>
       <title>Archivos</title>
-      <link>http://localhost:35723/laravel_certificado_2026/categories/archivos/</link>
+      <link>http://localhost:1313/laravel_certificado_2026/categories/archivos/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:35723/laravel_certificado_2026/categories/archivos/</guid>
+      <guid>http://localhost:1313/laravel_certificado_2026/categories/archivos/</guid>
       <description></description>
     </item>
     <item>
       <title>Auth</title>
-      <link>http://localhost:35723/laravel_certificado_2026/categories/auth/</link>
+      <link>http://localhost:1313/laravel_certificado_2026/categories/auth/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:35723/laravel_certificado_2026/categories/auth/</guid>
+      <guid>http://localhost:1313/laravel_certificado_2026/categories/auth/</guid>
       <description></description>
     </item>
     <item>
       <title>Facades</title>
-      <link>http://localhost:35723/laravel_certificado_2026/categories/facades/</link>
+      <link>http://localhost:1313/laravel_certificado_2026/categories/facades/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:35723/laravel_certificado_2026/categories/facades/</guid>
+      <guid>http://localhost:1313/laravel_certificado_2026/categories/facades/</guid>
       <description></description>
     </item>
     <item>
       <title>Fortity</title>
-      <link>http://localhost:35723/laravel_certificado_2026/categories/fortity/</link>
+      <link>http://localhost:1313/laravel_certificado_2026/categories/fortity/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:35723/laravel_certificado_2026/categories/fortity/</guid>
+      <guid>http://localhost:1313/laravel_certificado_2026/categories/fortity/</guid>
       <description></description>
     </item>
     <item>
       <title>Widgets</title>
-      <link>http://localhost:35723/laravel_certificado_2026/categories/widgets/</link>
+      <link>http://localhost:1313/laravel_certificado_2026/categories/widgets/</link>
       <pubDate>Mon, 26 Aug 2024 18:45:00 +0200</pubDate>
-      <guid>http://localhost:35723/laravel_certificado_2026/categories/widgets/</guid>
+      <guid>http://localhost:1313/laravel_certificado_2026/categories/widgets/</guid>
       <description></description>
     </item>
     <item>
       <title>Optimización</title>
-      <link>http://localhost:35723/laravel_certificado_2026/categories/optimizaci%C3%B3n/</link>
+      <link>http://localhost:1313/laravel_certificado_2026/categories/optimizaci%C3%B3n/</link>
       <pubDate>Thu, 08 Aug 2024 18:27:00 +0200</pubDate>
-      <guid>http://localhost:35723/laravel_certificado_2026/categories/optimizaci%C3%B3n/</guid>
+      <guid>http://localhost:1313/laravel_certificado_2026/categories/optimizaci%C3%B3n/</guid>
       <description></description>
     </item>
   </channel>

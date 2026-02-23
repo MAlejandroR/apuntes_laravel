@@ -42,7 +42,7 @@ Lo podemos ver como una  **una metodología**,  ****una forma de pensar en el de
 Laravel se ha ganado un lugar destacado en el desarrollo web por varias razones:   
 
 
-* {{<color_blue>}}Estructura de Carpetas Organizada:{{</color_blue>}}   
+* {{<color>}}Estructura de Carpetas Organizada:{{</color>}}   
   
  >Laravel ofrece una **estructura de carpetas y ficheros del proyecto**  bien definida.    
  > Esto  **facilita el mantenimiento** del código y la colaboración entre desarrolladores.    
@@ -52,19 +52,20 @@ Laravel se ha ganado un lugar destacado en el desarrollo web por varias razones:
  Proyecto de laravel creado con phpstorm 
  {{< /imgproc >}}
  
-* {{<color_blue>}}Conjunto de Librerías y Herramientas:{{</color_blue>}} >
+* {{<color>}}Conjunto de Librerías y Herramientas:{{</color>}} >
  
 > Viene cargado con {{< color >}} bibliotecas y herramientas {{< /color >}} que resuelven muchos problemas comunes en el desarrollo web, como _autenticación, enrutamiento, manejo de sesiones y protección contra vulnerabilidades_. 
 > Esto nos permite centrarnos en las características únicas de nuestra aplicación (programa tus aplicaciones, no tus herramientas).
  
-{{<color_blue>}}Ecosistema y Comunidad:{{</color_blue>}} 
+{{<color>}}Ecosistema y Comunidad:{{</color>}} 
 > Laravel tiene un ecosistema rico, con herramientas como Laravel Forge, Laravel Vapor, y Nova, así como un sistema robusto de paquetes a través de Composer. Además, la vibrante comunidad en torno a Laravel ofrece un vasto recurso de conocimiento, tutoriales y soporte.
 > {{< imgproc ecosistema_laravel Fill "1274x791" >}}
   https://laravel.com/ (Framework)
 {{< /imgproc >}}
 ****
 
-* {{<color_blue>}}MVC y Patrones de Diseño:{{</color_blue>}}
+* {{<color>}}MVC y Patrones de Diseño:{{</color>}}
+* {{<color>}}MVC y Patrones de Diseño:{{</color>}}
 > Laravel se adhiere al patrón Modelo-Vista-Controlador (MVC), promoviendo un desarrollo limpio y **separando la lógica de negocio de la presentación**. 
 
 ![img_3.png](modelo_mvc_tradicional.png)
@@ -88,7 +89,7 @@ Laravel dispone de un contenedor de inversión de control (IoC) que se encarga d
 * Permitir el uso de interfaces y bindings.
 * Facilitar el testing y la sustitución de implementaciones.
   
-> {{<color>}}3. Ciclo completo de petición HTTP extensible{{</color>}}
+> {{<color>}}3.Ciclo completo de petición HTTP extensible{{</color>}}
 
 El procesamiento de una petición en Laravel sigue un flujo estructurado y extensible:
 * La petición entra por index.php.

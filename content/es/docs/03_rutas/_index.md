@@ -83,11 +83,11 @@ Con el routing, vamos a especificar los diferentes recursos que nuestra aplicaci
 /routes/web.php
 ```
 
-{{< definicion title="Una ruta en Laravel" icon="" >}}
-Una ruta en Laravel es la definición de una **URL** de solicitud web que accede a una página o recurso particular de la aplicación, y la acción correspondiente a esta solicitud.
+{{< definicion title="Rutas en Laravel " icon="" url="https://laravel.com/docs/master/routing" >}}
+Una ruta en Laravel es la definición de una {{<color>}}URL{{</color>}} de solicitud web que accede a una ágina o recurso particular de la aplicación, y la acción correspondiente a esta solicitud.
 {{< /definicion >}}
 
-* En la versión 11 de Laravel, el archivo principal de rutas es **routes/web.php**. Las rutas de API o canales se gestionan de forma diferente y ya no están definidas en ficheros separados como **api.php** o **channels.php**.
+* En la versión 12 de Laravel, el archivo principal de rutas es **routes/web.php**. Las rutas de API o canales se gestionan de forma diferente y  están en los ficheros separados como **api.php** o **channels.php**.
 
 ### Contenido de web.php 
 
@@ -106,7 +106,7 @@ Una ruta en Laravel es la definición de una **URL** de solicitud web que accede
 {{< /imgproc >}}
 * Hay diferentes maneras de especificar estas rutas en el fichero **web.php**, como veremos a continuación.
 
-= Levantando el servidor =
+### Levantando el servidor 
 
 * Antes de probar las rutas, debemos poner nuestro servidor en funcionamiento. Para ello, cada proyecto tiene un pequeño servidor interno que nos permite probar en local sin necesidad de depender de Apache.
 
@@ -149,11 +149,13 @@ Para ello se usa la clase **Router**. Más información:
 
 Usamos lo que en Laravel se conoce como **Facade**.
 
-{{< definicion title="Facade" icon="" >}}
-* Una **Facade** es una interfaz estática de una clase del Service Container.
-* Cuando usamos una Facade, se produce lo que se llama **inyección de dependencias**.
-	- Esto implica que se importarán todas las clases necesarias para su ejecución de manera implícita.
-	  {{< /definicion >}}
+{{< definicion title="Facade" icon="" url="https://laravel.com/docs/master/facades#main-content">}}
+Una {{<color>}}Facade{{</color>}} es una interfaz estática de una clase del Service Container.
+<br />
+Cuando usamos una {{<color>}}Facade{{</color>}}, se produce lo que se llama {{<color>}}inyección de dependencias{{</color>}}.
+<br />
+Esto implica que se importarán todas las clases necesarias para su ejecución de manera implícita.
+{{< /definicion >}}
 
 De esta forma no tendremos que instanciar un objeto de la clase **Router**. La clase cuenta con una serie de métodos para especificar las rutas según el tipo de solicitud HTTP que se hace al servidor.
 
@@ -248,7 +250,7 @@ return view('prueba');
 Route::view('ruta', 'vista');
 {{< /highlight >}}
 
-== Práctica: rutas básicas ==
+### Práctica: rutas básicas 
 
 {{< desplegable title="Instrucciones de práctica" >}}
 * Haz un sitio con 5 URL básicas en un directorio llamado **rutas_basicas** en **resources/views**. Ademas del **home**:
@@ -264,7 +266,7 @@ Route::view('ruta', 'vista');
 
 {{% line %}}
 
-== Routing parametrizado ==
+## Routing parametrizado 
 
 {{% line %}}
 
@@ -288,7 +290,7 @@ return "<h1>Categoria: $categoria, Noticia: $id</h1>";
 });
 {{< /highlight >}}
 
-== Parámetros con valores por defecto ==
+### Parámetros con valores por defecto
 
 * Si un parámetro no es obligatorio, podemos asignarle un valor por defecto:
 
@@ -298,7 +300,7 @@ return "<h2>Hola, $nombre</h2>";
 });
 {{< /highlight >}}
 
-== Práctica: rutas parametrizadas ==
+###Práctica: rutas parametrizadas
 
 {{< desplegable title="Instrucciones de práctica" >}}
 * Crea una ruta que reciba dos parámetros:
@@ -309,7 +311,7 @@ return "<h2>Hola, $nombre</h2>";
 * Crea una vista llamada **detalle.blade.php** que muestre la información en formato HTML.
   {{< /desplegable >}}
 
-== Restricciones y validación de parámetros ==
+### Restricciones y validación de parámetros 
 
 {{% line %}}
 
@@ -343,7 +345,7 @@ return "<h2>Producto ID: $id</h2>";
 })->whereNumber('id');
 {{< /highlight >}}
 
-== Parámetros opcionales con validación ==
+### Parámetros opcionales con validación 
 
 * Es posible combinar parámetros opcionales con restricciones:
 
@@ -353,7 +355,7 @@ return "<h2>Perfil de: $name</h2>";
 })->whereAlpha('name');
 {{< /highlight >}}
 
-== Práctica: restricciones y validación ==
+### Práctica: restricciones y validación 
 
 {{< desplegable title="Instrucciones de práctica" >}}
 * Crea rutas con restricciones de tipo:
@@ -362,7 +364,8 @@ return "<h2>Perfil de: $name</h2>";
 	- Una ruta opcional para perfiles que acepte solo nombres alfabéticos.
 * Implementa vistas para cada ruta mostrando la información correspondiente.
   {{< /desplegable >}}
-  == Nomenclatura de rutas ==
+  
+## Nomenclatura de rutas 
 
 {{% line %}}
 
@@ -393,7 +396,7 @@ $url = route('profile'); // Genera la URL de la ruta 'profile'
 return redirect()->route('home');
 {{< /highlight >}}
 
-== Práctica: nomenclatura de rutas ==
+### Práctica: nomenclatura de rutas 
 
 {{< desplegable title="Instrucciones de práctica" >}}
 * Crea tres rutas nombradas: inicio, contacto, y servicios.

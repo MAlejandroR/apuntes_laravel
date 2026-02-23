@@ -20,7 +20,7 @@ Estos componentes son archivos **.blade.php** que residen en la carpeta **resour
 {{< /alert >}}
 
 
-Al crear un layout, este se convierte en una composición de estos ficheros individuales. Cada componente representa {{<color_green>}}una parte del layout{{</color_green>}}, como:  **una cabecera, pie de página, sección principal o barra de navegación** como podemos ver en la siguiente imagen:
+Al crear un layout, este se convierte en una composición de estos ficheros individuales. Cada componente representa {{<color>}}una parte del layout{{</color>}}, como:  **una cabecera, pie de página, sección principal o barra de navegación** como podemos ver en la siguiente imagen:
 
 {{< imgproc componentes_laravel_general Fit "2000x1000" >}}
 
@@ -30,11 +30,11 @@ Al crear un layout, este se convierte en una composición de estos ficheros indi
 
 Tenemos dos formas de crear un componente:
 * {{< color >}} Componente anónimo {{< /color >}}. Crear el fichero directamente en la carpeta correspondiente
-* {{< color >}} Componentes basados en clases {{< /color >}}. A través de {{<color_green>}}una clase usando Artisan****{{</color_green>}}
+* {{< color >}} Componentes basados en clases {{< /color >}}. A través de {{<color>}}una clase usando Artisan****{{</color>}}
 * 
 #### Creando el componentes directamente
 Simplemente creamos el fichero desde nuestro EDI.    
-En nuestro caso creamos los ficheros {{<color_blue>}}header.blade,php, main.blade.php, nav.blade.php {{</color_blue>}} y {{<color_blue>}} footer.blade.php{{</color_blue>}}.     
+En nuestro caso creamos los ficheros {{<color>}}header.blade,php, main.blade.php, nav.blade.php {{</color>}} y {{<color>}} footer.blade.php{{</color>}}.     
 
 Como son parte del layout, podríamos crearlo dentro de una carpeta llamada layout, por cuestiones organizativas:
 {{< imgproc creacion_componentes_layout_1 Fit "700x700" >}}
@@ -51,11 +51,11 @@ php artisan make:Component nombre_componente
 {{< / highlight >}}
 #### Crear componente directo Vs con Artisan
 ##### **Artisan**
-Usar {{<color_green>}}Artisan para crear componentes{{</color_green>}} tiene ventajas:
+Usar {{<color>}}Artisan para crear componentes{{</color>}} tiene ventajas:
 
-- {{<color_blue>}}Estructura Consistente{{</color_blue>}}: Artisan genera automáticamente la estructura de archivos necesaria, asegurando consistencia en todo el proyecto.
-- {{<color_blue>}}Rapidez {{</color_green>}} y {{<color_green>}} Conveniencia{{</color_blue>}}: Es rápido y evita la posibilidad de errores al crear los archivos manualmente.
-  - {{<color_blue>}}Comandos Claros{{</color_blue>}}: Los comandos de Artisan son claros y documentados, lo que facilita su uso y aprendizaje.
+- {{<color>}}Estructura Consistente{{</color>}}: Artisan genera automáticamente la estructura de archivos necesaria, asegurando consistencia en todo el proyecto.
+- {{<color>}}Rapidez {{</color>}} y {{<color>}} Conveniencia{{</color>}}: Es rápido y evita la posibilidad de errores al crear los archivos manualmente.
+  - {{<color>}}Comandos Claros{{</color>}}: Los comandos de Artisan son claros y documentados, lo que facilita su uso y aprendizaje.
   {{< highlight php "linenos=table, hl_lines=1" >}}
     php artisan make:component NombreDelComponente
   {{< / highlight >}}
@@ -63,20 +63,19 @@ Si queremos crear el componente en una carpeta concreta lo podemos hacer especif
 {{< highlight php "linenos=table, hl_lines=1" >}}
     php artisan make:component directorio/.../NombreDelComponente
 {{< / highlight >}}
-  - Esto crea un nuevo componente en {{<color_blue>}}resources/views/components{{</color_blue>}} y un archivo de clase correspondiente en {{<color_blue>}}app/View/Components{{</color_blue>}}.
+  - Esto crea un nuevo componente en {{<color>}}resources/views/components{{</color>}} y un archivo de clase correspondiente en {{<color>}}app/View/Components{{</color>}}.
 ##### **Crear Componentes Manualmente**
-{{<color_green>}}Crear componentes manualmente{{</color_green>}} también buena que te da más control en la estructura y organización de carpetas:
+{{<color>}}Crear componentes manualmente{{</color>}} también buena que te da más control en la estructura y organización de carpetas:
 
-- {{<color_blue>}}Flexibilidad{{</color_blue>}}: Tienes control total sobre la estructura y organización de tus archivos.
-- {{<color_blue>}}Simplicidad{{</color_blue>}}: Para proyectos más pequeños o si prefieres un enfoque más "manual", este método puede ser más directo.
-{{% pageinfo%}}
+- {{<color>}}Flexibilidad{{</color>}}: Tienes control total sobre la estructura y organización de tus archivos.
+- {{<color>}}Simplicidad{{</color>}}: Para proyectos más pequeños o si prefieres un enfoque más "manual", este método puede ser más directo.
 #### 
 - Para crear un componente manualmente:
 
-1. Crea un archivo Blade en {{<color_blue>}}resources/views/components{{</color_blue>}}.
-1. Opcionalmente, crea una clase de componente en {{<color_blue>}}app/View/Components{{</color_blue>}}.
+1. Crea un archivo Blade en {{<color>}}resources/views/components{{</color>}}.
+1. Opcionalmente, crea una clase de componente en {{<color>}}app/View/Components{{</color>}}.
 
-{{% /pageinfo%}}
+
 {{< alert title="Conclusión personal" color="warning" >}}
 - Proyectos Grandes o en Equipos:
 > Usar Artisan es generalmente más recomendado, ya que asegura una estructura coherente y reduce el riesgo de errores.
@@ -91,12 +90,12 @@ Para usar un componente en tus vistas Blade, lo referencias como un elemento HTM
 <x-miComponente />
 ```
 {{< alert title="x-nombre" color="warning" >}}
-Cuando referenciamos un elemento con {{<color_blue>}}<x-...>{{</color_blue>}} laravel buscará el fichero en la carpeta {{<color_blue>}}resources/views/components{{</color_blue>}}
+Cuando referenciamos un elemento con {{<color>}}<x-...>{{</color>}} laravel buscará el fichero en la carpeta {{<color>}}resources/views/components{{</color>}}
 {{< /alert >}}
 {{< alert title="x-capeta.sub.nombre" color="warning" >}}
 Si el componentes estuvier en subcarpetas, lo podemos especicar con puntos.
 
-De esta forma {{<color_blue>}}x-capeta.sub.componentes{{</color_blue>}} implicará la ubicaicón en {{<color_blue>}}resources/views/components/carpeta/sub/nombre.blade.php{{</color_blue>}} 
+De esta forma {{<color>}}x-capeta.sub.componentes{{</color>}} implicará la ubicaicón en {{<color>}}resources/views/components/carpeta/sub/nombre.blade.php{{</color>}} 
 {{< /alert >}}
 
 ## Nuestro ejemplo
@@ -113,19 +112,19 @@ php artisan make:component layout/Footer
 {{< / highlight >}}
 La imagen muestra el resultado generado
 {{< imgproc img Fill "600x700" >}}
-{{<color_green>}}Creción de componentes con artisan{{</color_green>}}
+{{<color>}}Creción de componentes con artisan{{</color>}}
 {{< /imgproc >}}
 
 ## Variables en Componentes 
 
-Los componentes de Blade  {{<color_green>}} ofrecen acceso a varias variables y objetos especiales{{</color_green>}} que facilitan la construcción de interfaces dinámicas y reutilizables. Los más usados
+Los componentes de Blade  {{<color>}} ofrecen acceso a varias variables y objetos especiales{{</color>}} que facilitan la construcción de interfaces dinámicas y reutilizables. Los más usados
 - $slot
 - $attributes
 - $errors
 
-{{% pageinfo%}}
+
 ### $slot
-{{<color_green>}} Contiene el contenido que se pasa al componente desde donde se llama.{{</color_green>}}
+{{<color>}} Contiene el contenido que se pasa al componente desde donde se llama.{{</color>}}
 ****
 >Fichero layout
 
@@ -135,7 +134,7 @@ Los componentes de Blade  {{<color_green>}} ofrecen acceso a varias variables y 
 </x-layout.main>
 {{< / highlight >}}
 
-> Fichero del componente {{<color_blue>}}main.blade.php{{</color_blue>}}
+> Fichero del componente {{<color>}}main.blade.php{{</color>}}
 {{< highlight php "hl_lines=5" >}}
  <header class="hidden lg:flex h-15v bg-header flex flex-row justify-center items-center">
     <img class="w-1/5 max-h-full w-auto  p-5 " src="{{asset("images/logos/logo.png")}}" alt="logo nett">
@@ -148,21 +147,18 @@ Los componentes de Blade  {{<color_green>}} ofrecen acceso a varias variables y 
 </header>
 {{< / highlight >}}
 
-{{% /pageinfo%}}
-
-{{% pageinfo%}}
 ### $atributes
 
-{{<color_green>}} Permite acceder a atributos adicionales pasados al componente.{{</color_green>}}
-La variable {{<color_blue>}}$attributes{{</color_blue>}} en los componentes de Blade de Laravel {{<color_green>}}es una instancia de Illuminate\View\ComponentAttributeBag{{</color_green>}}
+{{<color>}} Permite acceder a atributos adicionales pasados al componente.{{</color>}}
+La variable {{<color>}}$attributes{{</color>}} en los componentes de Blade de Laravel {{<color>}}es una instancia de Illuminate\View\ComponentAttributeBag{{</color>}}
 
 Proporciona varios métodos útiles para manipular los atributos que se pasan a un componente  
-{{<color_green>}}Uno de los métodos más útiles es merge(){{</color_green>}}:
+{{<color>}}Uno de los métodos más útiles es merge(){{</color>}}:
 {{< alert title="merge()" color="warning" >}}
 Fusiona los atributos predeterminados del componente con los atributos adicionales proporcionados en la vista.
 {{< /alert >}}
 
-{{<color_green>}}El método merge(){{</color_green>}} se usa comúnmente para combinar clases CSS y otros atributos. Esto es especialmente útil cuando deseas que tu componente tenga algunas clases CSS por defecto, pero también quieres permitir que se añadan clases adicionales desde fuera del componente.
+{{<color>}}El método merge(){{</color>}} se usa comúnmente para combinar clases CSS y otros atributos. Esto es especialmente útil cuando deseas que tu componente tenga algunas clases CSS por defecto, pero también quieres permitir que se añadan clases adicionales desde fuera del componente.
 
 Supongamos el siguiente ejemplo donde tenemos un  componente boton.blade.php:    
 Aquí, btn btn-default son las clases predeterminadas para todos los botones.
@@ -194,7 +190,6 @@ Laravel fusionará las clases, resultando en un botón que tiene class="btn btn-
  
 * `first()`: Devuelve el primer valor de los atributos especificados.    
 
-{{% /pageinfo%}}
 
 
 ### Pasando atributos a un componentes 
@@ -215,13 +210,13 @@ Si lo establecemos, Laravel proporciona una conversión automática entre la not
 - **Kebab-Case**: Usada al pasar atributos al componente. Ejemplo: `mi-atributo`.
 - **CamelCase**: Usada dentro del componente para referenciar estos atributos. Ejemplo: `miAtributo`.
 
-{{<color_green>}}Cuando invocas un componente y pasas un atributo, usas kebab-case:{{</color_green>}}
+{{<color>}}Cuando invocas un componente y pasas un atributo, usas kebab-case:{{</color>}}
 
 ```blade
 <x-miComponente mi-atributo="valor" />
 ```
 
-{{<color_green>}}Dentro del archivo del componente, Laravel convierte automáticamente mi-atributo a miAtributo:{{</color_green>}}
+{{<color>}}Dentro del archivo del componente, Laravel convierte automáticamente mi-atributo a miAtributo:{{</color>}}
 
 ````blade
 <!-- miComponente.blade.php -->

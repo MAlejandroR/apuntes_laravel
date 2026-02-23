@@ -1,13 +1,24 @@
+{{ $sc:=.}}
 <div class="definicion-concepto">
-  <div class="definicion-titulo">
-    {{ with .Get "icon" }}
-    <i class="{{ . }}" aria-hidden="true"></i>
-    {{ else }}
-    <i class="fas fa-info-circle" aria-hidden="true"></i>
+    <div class="definicion-titulo">
+        {{ with .Get "icon" }}
+        <i class="{{ . }}" aria-hidden="true"></i>
+        {{ else }}
+        <i class="fas fa-info-circle" aria-hidden="true"></i>
+        {{ end }}
+        <strong>{{ .Get "title" }}</strong>
+    </div>
+
+    <div class="definicion-contenido">
+        {{ .Inner }}
+    </div>
+
+    {{ with .Get "url" }}
+    <div class="definicion-url">
+        <a href="{{ . }}" target="_blank" rel="noopener">
+            Fuente oficial de <strong>{{$sc.Get "title" }}</strong>
+            <i class="fas fa-globe"></i>
+        </a>
+    </div>
     {{ end }}
-    <strong>{{ .Get "title" }}</strong>
-  </div>
-  <div class="definicion-contenido">
-    {{ .Inner }}
-  </div>
 </div>

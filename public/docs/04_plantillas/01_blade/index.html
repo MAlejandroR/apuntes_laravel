@@ -1,9 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel_certificado_2026/livereload.js?mindelay=10&amp;v=2&amp;port=35723&amp;path=laravel_certificado_2026/livereload" data-no-instant defer></script>
+  <head><script src="/laravel_certificado_2026/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel_certificado_2026/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:35723/laravel_certificado_2026/docs/04_plantillas/01_blade/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel_certificado_2026/docs/04_plantillas/01_blade/index.xml">
 <meta name="robots" content="noindex, nofollow">
 
 
@@ -21,7 +21,7 @@
 <title>Plantillas en laravel | Laravel: Framework de php</title>
 <meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
 
-<meta property="og:url" content="http://localhost:35723/laravel_certificado_2026/docs/04_plantillas/01_blade/">
+<meta property="og:url" content="http://localhost:1313/laravel_certificado_2026/docs/04_plantillas/01_blade/">
   <meta property="og:site_name" content="Laravel: Framework de php">
   <meta property="og:title" content="Plantillas en laravel">
   <meta property="og:description" content="Plantillas con Blade Una herramienta poderosa y flexible incluida en Laravel, que nos va a permitir escribir html e incluir php y visualizar datos del servidor balde.php de una forma elegante y descriptiva. (Esto facilita visualizar datos
@@ -36,7 +36,7 @@ Los ficheros blade, tienen extensión blade.php y estarán ubicados en la carpet
 Cuando hagamos referencia a los ficheros blade, esta información no hay que especificar, ni su ubicación, ni su extensión, como podemos ver en el siguiente ejemplo">
   <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
   <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="627">
+  <meta itemprop="wordCount" content="785">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Plantillas en laravel">
   <meta name="twitter:description" content="Plantillas con Blade Una herramienta poderosa y flexible incluida en Laravel, que nos va a permitir escribir html e incluir php y visualizar datos del servidor balde.php de una forma elegante y descriptiva. (Esto facilita visualizar datos
@@ -133,6 +133,21 @@ Cuando hagamos referencia a los ficheros blade, esta información no hay que esp
   <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas03_componentes-check"/>
   <label for="m-laravel_certificado_2026docs04_plantillas03_componentes-check"><a href="/laravel_certificado_2026/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
   
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas04_ejemplo-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas04_ejemplo-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas04_ejemplo-check"><a href="/laravel_certificado_2026/docs/04_plantillas/04_ejemplo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas04_ejemplo"><i class="fa-solid fa-diagram-project"></i><span class="">Ejemplo de nuestro proyecto </span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laravel_certificado_2026docs06_autenticacion-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs06_autenticacion-check"/>
+  <label for="m-laravel_certificado_2026docs06_autenticacion-check"><a href="/laravel_certificado_2026/docs/06_autenticacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs06_autenticacion"><i class="fa-solid fa-sitemap"></i><span class="">Autenticación</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs06_autenticacionbreeze-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs06_autenticacionbreeze-check"/>
+  <label for="m-laravel_certificado_2026docs06_autenticacionbreeze-check"><a href="/laravel_certificado_2026/docs/06_autenticacion/breeze/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs06_autenticacionbreeze"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
+  
 </li>
   </ul>
 </li>
@@ -155,6 +170,16 @@ Cuando hagamos referencia a los ficheros blade, esta información no hay que esp
       <ul>
         <li><a href="#contenido-de-un-fichero-blade">Contenido de un fichero blade</a></li>
         <li><a href="#herencia-creando-un-layout">Herencia: Creando un layout</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#concepto-1">Concepto</a></li>
+    <li><a href="#idea-de-uso-y-funcionamiento">Idea de uso y funcionamiento</a></li>
+    <li><a href="#ventajas-frente-al-enfoque-clásico-con-extends">Ventajas frente al enfoque clásico con <code>@extends</code></a></li>
+    <li><a href="#conclusión">Conclusión</a>
+      <ul>
         <li><a href="#comentarios-blade">Comentarios blade</a></li>
       </ul>
     </li>
@@ -165,38 +190,38 @@ Cuando hagamos referencia a los ficheros blade, esta información no hay que esp
             <div class="taxonomy taxonomy-terms-cloud taxo-categories">
       <h5 class="taxonomy-title">Categories</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
   <div class="taxonomy taxonomy-terms-cloud taxo-tags">
       <h5 class="taxonomy-title">Tags</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
   
@@ -225,39 +250,44 @@ Cuando hagamos referencia a los ficheros blade, esta información no hay que esp
 </header>
 	<h2 id="plantillas-con-blade">Plantillas con Blade</h2>
 <p>Una herramienta poderosa y flexible incluida en Laravel, que nos va a permitir 
-<span class="font-weight-bold text-primary">
 
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
     escribir html e incluir php y visualizar datos del servidor
 
+
 </span>
+</strong>
 
 
 <strong>
-<span class="font-weight-bold text-primary">
+<span class="font-weight-bold text-accent fs-1.5">
 
     balde.php
 
+
 </span>
-</strong>
- de una forma elegante y descriptiva. (Esto facilita visualizar datos</p>
+</strong> de una forma elegante y descriptiva. (Esto facilita visualizar datos</p>
 <p>Los ficheros blade, tienen extensión  
+
 <strong>
-<span class="font-weight-bold text-primary">
+<span class="font-weight-bold text-accent fs-1.5">
 
     blade.php
 
+
 </span>
-</strong>
- y estarán ubicados en la carpeta 
+</strong> y estarán ubicados en la carpeta 
+
 <strong>
-<span class="font-weight-bold text-primary">
+<span class="font-weight-bold text-accent fs-1.5">
 
     ./resources/view
 
+
 </span>
-</strong>
-.<br>
+</strong>.<br>
 Cuando hagamos referencia a los ficheros blade, esta información <strong>no hay que especificar</strong>, ni su <strong>ubicación</strong>, ni su <strong>extensión</strong>, como podemos ver en el siguiente ejemplo</p>
 <hr>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
@@ -273,24 +303,27 @@ Cuando hagamos referencia a los ficheros blade, esta información <strong>no hay
 </div>
 <h3 id="contenido-de-un-fichero-blade">Contenido de un fichero blade</h3>
 <p><strong>Dentro de un fichero blade</strong> 
+
 <strong>
-<span class="font-weight-bold text-primary">
+<span class="font-weight-bold text-accent fs-1.5">
 
     (.blade.php)
 
+
 </span>
-</strong>
-</p>
+</strong></p>
 <p>En él podemos  encontrar el siguiente tipo de <strong>código o instrucciones</strong>:</p>
 <ul>
 <li>
-<span class="font-weight-bold text-primary">
 
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
     Código html y js
 
+
 </span>
-</li>
+</strong></li>
 </ul>
 <blockquote>
 <blockquote>
@@ -299,111 +332,164 @@ Cuando hagamos referencia a los ficheros blade, esta información <strong>no hay
 </blockquote>
 <ul>
 <li>
-<span class="font-weight-bold text-primary">
 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
     {{}} Doble braquets
 
-</span>
-</li>
-</ul>
-<blockquote>
-<blockquote>
-<p>Para mostrar el contenido de variables PHP.   <br>
-Blade automáticamente escapa el HTML en las variables para evitar ataques XSS.     <br>
-También para comentar, en lugar de <strong>&lt;!- - Comentario html - -&gt;</strong>, podemos usar  <strong>{{- - Comentario html - -}}</strong></p>
-</blockquote>
-</blockquote>
-<ul>
-<li>
-<span class="font-weight-bold text-primary">
-
-
-    @
-
-</span>
-</li>
-</ul>
-<blockquote>
-<blockquote>
-<p>para utilizar directivas/estructuras de control propias de laravel, como como condicionales y bucles. Por ejemplo, @if, @foreach, @switch, entre otras.
-También acciones propias de laravel con sus directivas, como heredar de una plantilla o incluir en una determinada sección un código html como veremos a continuación en las herecias</p>
-</blockquote>
-</blockquote>
-<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>{{--Especificamos que heredamos la estructura de esta página--}}
-</span></span><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#a61717;background-color:#e3d2d2">@</span><span style="color:#8b008b;font-weight:bold">extends</span>(<span style="color:#cd5555">&#34;layouts.layout&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>{{--    Especificamos que aportamos contenido específico para una sección--}}
-</span></span><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#a61717;background-color:#e3d2d2">@</span>section (<span style="color:#cd5555">&#34;contenido&#34;</span>)
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>  &lt;h1&gt;About us&lt;<span style="color:#a61717;background-color:#e3d2d2">/h1&gt; {{--Código html normal--}}</span>
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>  <span style="color:#a61717;background-color:#e3d2d2">@</span><span style="color:#8b008b;font-weight:bold">if</span>($user) {{--Directiva de tipo <span style="color:#8b008b;font-weight:bold">if</span> (se sustituirá por código php)--}}
-</span></span><span style="display:flex;"><span>    &lt;h1&gt;Estás autenticado&lt;<span style="color:#a61717;background-color:#e3d2d2">/h1&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a61717;background-color:#e3d2d2">@</span>endif    
-</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">@</span>endsection</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<h3 id="herencia-creando-un-layout">Herencia: Creando un layout</h3>
-<h4 id="concepto">Concepto</h4>
-<p>En el desarrollo web con Laravel, 
-<span class="font-weight-bold text-primary">
-
-
-    la herencia en las plantillas Blade
-
-</span>
- proporciona una forma eficiente de garantizar 
-<span class="font-weight-bold text-primary">
-
-
-    una estructura consistente en todas las páginas
-
-</span>
-, fomentando un diseño corporativo uniforme.</p>
-<h4 id="idea-de-su-usofuncionamiento">Idea de su uso/funcionamiento</h4>
-<p>Con este concepto 
-<span class="font-weight-bold text-primary">
-
-
-    se establece una página inicial o &rsquo;layout&rsquo; que define los aspectos generales de la interfaz, dejando espacios designados para personalizaciones específicas
-
-</span>
-
-Con ello, cada página individual 
-<strong>
-<span class="font-weight-bold text-primary">
-
-    hereda de esta plantilla principal
 
 </span>
 </strong>
-, permitiendo inlcuir su propio contenido <strong>(el de la página)</strong>  sin perder la coherencia visual <strong>(el de la plantilla)</strong>.</p>
-<p>Este método facilita la gestión y mantenimiento del diseño, ya que cualquier cambio realizado en la plantilla principal se reflejará automáticamente en todas las páginas que heredan de ella. De este modo, la herencia en las plantillas Blade contribuye a una experiencia de desarrollo eficiente y a la creación de interfaces consistentes y atractivas.</p>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>Para mostrar el contenido de variables PHP o lo que retornara una expresión o función
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  {{date(d-m-Y}} =&gt; Mostrará el resultado de la función 
+</span></span><span style="display:flex;"><span>  {{ <span style="color:#00688b">$variable</span> }}  =&gt; Se mostrará el valor de la varialbe</span></span></code></pre></div></p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>No se puede  incluir código php
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  {{<span style="color:#00688b">$a</span> = <span style="color:#b452cd">5</span>}} =&gt; Esto no se puede hacer</span></span></code></pre></div></p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>Blade automáticamente escapa el HTML en las variables para evitar ataques XSS.</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>También para comentar, en lugar de <strong>&lt;!- - Comentario html - -&gt;</strong>, podemos usar  <strong>{{- - Comentario html - -}}</strong></p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    @
+
+
+</span>
+</strong>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>para utilizar directivas/estructuras de control propias de laravel, como como condicionales y bucles.</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>Por ejemplo, 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    @if, @foreach, @switch
+
+
+</span>
+</strong>, @auth &ndash; @endauth, @guest - @endguest entre otras.</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>Otro ejemplo es incluir código php con la diretiva @php
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  @php
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$a</span> = <span style="color:#b452cd">5</span> <span style="color:#228b22">//Aquí creamos la variable $a y la podremos usar  
+</span></span></span><span style="display:flex;"><span>  @endphp 
+</span></span></code></pre></div></p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h3 id="herencia-creando-un-layout">Herencia: Creando un layout</h3>
+<h4 id="concepto">Concepto</h4>
+<p>En el desarrollo web con Laravel, 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    la herencia en las plantillas Blade
+
+
+</span>
+</strong> proporciona una forma eficiente de garantizar 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    una estructura consistente en todas las páginas
+
+
+</span>
+</strong>, fomentando un diseño corporativo uniforme.</p>
+<h4 id="idea-de-su-usofuncionamiento">Idea de su uso/funcionamiento</h4>
+<h1 id="herencia-mediante-componentes-blade">Herencia mediante Componentes Blade</h1>
+<h2 id="concepto-1">Concepto</h2>
+<p>En el desarrollo web con Laravel, la reutilización de estructuras comunes se realiza actualmente mediante <strong>componentes Blade</strong>, que permiten definir una estructura base reutilizable para todas las páginas.</p>
+<p>En lugar de utilizar las directivas <code>@extends</code> y <code>@yield</code>, se crea un componente de layout (por ejemplo <code>&lt;x-layout&gt;</code>) que encapsula la estructura general de la interfaz: cabecera, navegación, pie de página, estilos y scripts.</p>
+<p>Este componente actúa como contenedor común sobre el que se insertan los contenidos específicos de cada vista.</p>
+<hr>
+<h2 id="idea-de-uso-y-funcionamiento">Idea de uso y funcionamiento</h2>
+<p>Con este enfoque se define un <strong>componente principal</strong> que representa el diseño corporativo general de la aplicación.</p>
+<p>Cada página no hereda formalmente mediante directivas, sino que <strong>compone su contenido dentro del componente</strong>.</p>
+<p>El funcionamiento es el siguiente:</p>
+<ul>
+<li>El layout define la estructura global.</li>
+<li>Las páginas insertan su contenido en el <code>{{ $slot }}</code>.</li>
+<li>Opcionalmente pueden definirse <em>slots nombrados</em> como <code>title</code>, <code>header</code>, <code>description</code>, etc.</li>
+</ul>
+<p>De este modo:</p>
+<ul>
+<li>Se mantiene coherencia visual en toda la aplicación.</li>
+<li>Se separa claramente la estructura global del contenido específico.</li>
+<li>Se adopta un enfoque basado en composición, más cercano al modelo de trabajo de frameworks como React o Vue.</li>
+</ul>
+<hr>
+<h2 id="ventajas-frente-al-enfoque-clásico-con-extends">Ventajas frente al enfoque clásico con <code>@extends</code></h2>
+<ul>
+<li>Arquitectura más moderna y alineada con componentes.</li>
+<li>Mejor encapsulación del diseño.</li>
+<li>Mayor reutilización.</li>
+<li>Modelo mental más coherente para estudiantes que trabajan también con frontend basado en componentes.</li>
+</ul>
+<hr>
+<h2 id="conclusión">Conclusión</h2>
+<p>El uso de componentes Blade para estructurar layouts permite mantener la coherencia visual de la aplicación y facilita el mantenimiento.</p>
+<p>Cualquier modificación en el componente principal se reflejará automáticamente en todas las vistas que lo utilicen, garantizando consistencia, modularidad y escalabilidad en el diseño.</p>
 <h3 id="comentarios-blade">Comentarios blade</h3>
 <hr>
 <h4 id="insertando-comentarios-en-fichero-bladephp">Insertando comentarios en fichero .blade.php</h4>
 <hr>
 <p>Dentro de un fichero 
-<span class="font-weight-bold text-primary">
 
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
     Blade
 
+
 </span>
-, podemos comentar de dos maneras</p>
+</strong>, podemos comentar de dos maneras</p>
 <ol>
 <li>Comentarios HTML (<code>&lt;!-- Comentarios --&gt;</code>)</li>
 <li>Comentarios Blade (<code>{{-- Comentarios --}}</code>)</li>

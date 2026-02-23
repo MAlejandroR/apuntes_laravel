@@ -1,9 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel_certificado_2026/livereload.js?mindelay=10&amp;v=2&amp;port=35723&amp;path=laravel_certificado_2026/livereload" data-no-instant defer></script>
+  <head><script src="/laravel_certificado_2026/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel_certificado_2026/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:35723/laravel_certificado_2026/docs/04_plantillas/03_componentes/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel_certificado_2026/docs/04_plantillas/03_componentes/index.xml">
 <meta name="robots" content="noindex, nofollow">
 
 
@@ -21,7 +21,7 @@
 <title>Componentes  | Laravel: Framework de php</title>
 <meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
 
-<meta property="og:url" content="http://localhost:35723/laravel_certificado_2026/docs/04_plantillas/03_componentes/">
+<meta property="og:url" content="http://localhost:1313/laravel_certificado_2026/docs/04_plantillas/03_componentes/">
   <meta property="og:site_name" content="Laravel: Framework de php">
   <meta property="og:title" content="Componentes ">
   <meta property="og:description" content="Introducción a los Componentes de Blade en Laravel ¿Qué son los Componentes de Blade? Los componentes de Blade en Laravel son una poderosa herramienta para reutilizar código HTML y PHP en tus vistas.
@@ -34,7 +34,7 @@ Estos componentes son archivos .blade.php que residen en la carpeta resources/vi
 Estos componentes son archivos .blade.php que residen en la carpeta resources/views/components. Si la carpeta no existe, puedes crearla manualmente. El hecho de que cada componente sea un archivo .blade.php independiente, facilita su reutilización y mantenimiento.">
   <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
   <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="852">
+  <meta itemprop="wordCount" content="998">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Componentes ">
   <meta name="twitter:description" content="Introducción a los Componentes de Blade en Laravel ¿Qué son los Componentes de Blade? Los componentes de Blade en Laravel son una poderosa herramienta para reutilizar código HTML y PHP en tus vistas.
@@ -130,6 +130,10 @@ Estos componentes son archivos .blade.php que residen en la carpeta resources/vi
   <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas03_componentes-check" checked/>
   <label for="m-laravel_certificado_2026docs04_plantillas03_componentes-check"><a href="/laravel_certificado_2026/docs/04_plantillas/03_componentes/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="td-sidebar-nav-active-item">Componentes </span></a></label>
   
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas04_ejemplo-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas04_ejemplo-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas04_ejemplo-check"><a href="/laravel_certificado_2026/docs/04_plantillas/04_ejemplo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas04_ejemplo"><i class="fa-solid fa-diagram-project"></i><span class="">Ejemplo de nuestro proyecto </span></a></label>
+  
 </li>
   </ul>
 </li>
@@ -158,6 +162,8 @@ Estos componentes son archivos .blade.php que residen en la carpeta resources/vi
     <li><a href="#nuestro-ejemplo">Nuestro ejemplo</a></li>
     <li><a href="#variables-en-componentes">Variables en Componentes</a>
       <ul>
+        <li><a href="#slot">$slot</a></li>
+        <li><a href="#atributes">$atributes</a></li>
         <li><a href="#pasando-atributos-a-un-componentes">Pasando atributos a un componentes</a></li>
       </ul>
     </li>
@@ -169,38 +175,38 @@ Estos componentes son archivos .blade.php que residen en la carpeta resources/vi
             <div class="taxonomy taxonomy-terms-cloud taxo-categories">
       <h5 class="taxonomy-title">Categories</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
   <div class="taxonomy taxonomy-terms-cloud taxo-tags">
       <h5 class="taxonomy-title">Tags</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:35723/laravel_certificado_2026/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
   
@@ -232,7 +238,7 @@ Estos componentes son archivos .blade.php que residen en la carpeta resources/vi
 <p>
 
 <strong>
-<span class="font-weight-bold text-primary fs-1.5">
+<span class="font-weight-bold text-accent fs-1.5">
 
     Los componentes de Blade
 
@@ -250,14 +256,15 @@ Estos componentes son archivos .blade.php que residen en la carpeta resources/vi
 </div>
 
 <p>Al crear un layout, este se convierte en una composición de estos ficheros individuales. Cada componente representa 
+
 <strong>
-<span class="font-weight-bold text-primary">
+<span class="font-weight-bold text-accent fs-1.5">
 
     una parte del layout
 
+
 </span>
-</strong>
-, como:  <strong>una cabecera, pie de página, sección principal o barra de navegación</strong> como podemos ver en la siguiente imagen:</p>
+</strong>, como:  <strong>una cabecera, pie de página, sección principal o barra de navegación</strong> como podemos ver en la siguiente imagen:</p>
 <figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 1443px">
 <img class="card-img-top" src="/laravel_certificado_2026/docs/04_plantillas/03_componentes/componentes_laravel_general_hu_c142852b2095e8a1.png" width="1433" height="606">
 <figcaption class="card-body px-0 pt-2 pb-0">
@@ -276,7 +283,7 @@ Estos componentes son archivos .blade.php que residen en la carpeta resources/vi
 <li>
 
 <strong>
-<span class="font-weight-bold text-primary fs-1.5">
+<span class="font-weight-bold text-accent fs-1.5">
 
     Componente anónimo
 
@@ -286,40 +293,45 @@ Estos componentes son archivos .blade.php que residen en la carpeta resources/vi
 <li>
 
 <strong>
-<span class="font-weight-bold text-primary fs-1.5">
+<span class="font-weight-bold text-accent fs-1.5">
 
     Componentes basados en clases
 
 
 </span>
 </strong>. A través de 
+
 <strong>
-<span class="font-weight-bold text-primary">
+<span class="font-weight-bold text-accent fs-1.5">
 
     una clase usando Artisan****
 
+
 </span>
-</strong>
-</li>
+</strong></li>
 <li></li>
 </ul>
 <h4 id="creando-el-componentes-directamente">Creando el componentes directamente</h4>
 <p>Simplemente creamos el fichero desde nuestro EDI. <br>
 En nuestro caso creamos los ficheros 
-<span class="font-weight-bold text-primary">
 
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
     header.blade,php, main.blade.php, nav.blade.php
 
-</span>
- y 
-<span class="font-weight-bold text-primary">
 
+</span>
+</strong> y 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
     footer.blade.php
 
+
 </span>
-.</p>
+</strong>.</p>
 <p>Como son parte del layout, podríamos crearlo dentro de una carpeta llamada layout, por cuestiones organizativas:
 <figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 249px">
 <img class="card-img-top" src="/laravel_certificado_2026/docs/04_plantillas/03_componentes/creacion_componentes_layout_1_hu_1c4e130fa7d3356.png" width="239" height="227">
@@ -348,48 +360,56 @@ Vamos a hacerlo para nuestro ejemplo:
 <h4 id="crear-componente-directo-vs-con-artisan">Crear componente directo Vs con Artisan</h4>
 <h5 id="artisan"><strong>Artisan</strong></h5>
 <p>Usar 
+
 <strong>
-<span class="font-weight-bold text-primary">
+<span class="font-weight-bold text-accent fs-1.5">
 
     Artisan para crear componentes
 
+
 </span>
-</strong>
- tiene ventajas:</p>
+</strong> tiene ventajas:</p>
 <ul>
 <li>
-<span class="font-weight-bold text-primary">
 
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
     Estructura Consistente
 
-</span>
-: Artisan genera automáticamente la estructura de archivos necesaria, asegurando consistencia en todo el proyecto.</li>
-<li>
-<span class="font-weight-bold text-primary">
 
+</span>
+</strong>: Artisan genera automáticamente la estructura de archivos necesaria, asegurando consistencia en todo el proyecto.</li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
     Rapidez
 
+
 </span>
- y 
+</strong> y 
+
 <strong>
-<span class="font-weight-bold text-primary">
+<span class="font-weight-bold text-accent fs-1.5">
 
     Conveniencia
 
+
 </span>
-</strong>
-: Es rápido y evita la posibilidad de errores al crear los archivos manualmente.
+</strong>: Es rápido y evita la posibilidad de errores al crear los archivos manualmente.
 <ul>
 <li>
-<span class="font-weight-bold text-primary">
 
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
     Comandos Claros
 
+
 </span>
-: Los comandos de Artisan son claros y documentados, lo que facilita su uso y aprendizaje.
+</strong>: Los comandos de Artisan son claros y documentados, lo que facilita su uso y aprendizaje.
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -408,71 +428,86 @@ Si queremos crear el componente en una carpeta concreta lo podemos hacer especif
 </div>
 </div></li>
 <li>Esto crea un nuevo componente en 
-<span class="font-weight-bold text-primary">
 
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
     resources/views/components
 
-</span>
- y un archivo de clase correspondiente en 
-<span class="font-weight-bold text-primary">
 
+</span>
+</strong> y un archivo de clase correspondiente en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
     app/View/Components
 
+
 </span>
-.</li>
+</strong>.</li>
 </ul>
 </li>
 </ul>
 <h5 id="crear-componentes-manualmente"><strong>Crear Componentes Manualmente</strong></h5>
 <p>
+
 <strong>
-<span class="font-weight-bold text-primary">
+<span class="font-weight-bold text-accent fs-1.5">
 
     Crear componentes manualmente
 
+
 </span>
-</strong>
- también buena que te da más control en la estructura y organización de carpetas:</p>
+</strong> también buena que te da más control en la estructura y organización de carpetas:</p>
 <ul>
 <li>
-<span class="font-weight-bold text-primary">
 
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
     Flexibilidad
 
-</span>
-: Tienes control total sobre la estructura y organización de tus archivos.</li>
-<li>
-<span class="font-weight-bold text-primary">
 
+</span>
+</strong>: Tienes control total sobre la estructura y organización de tus archivos.</li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
     Simplicidad
 
+
 </span>
-: Para proyectos más pequeños o si prefieres un enfoque más &ldquo;manual&rdquo;, este método puede ser más directo.
-
-
-<div class="pageinfo pageinfo-primary">
+</strong>: Para proyectos más pequeños o si prefieres un enfoque más &ldquo;manual&rdquo;, este método puede ser más directo.</li>
+</ul>
 <h4></h4>
 <ul>
 <li>Para crear un componente manualmente:</li>
 </ul>
 <ol>
-<li>
-<p>Crea un archivo Blade en
-<!-- raw HTML omitted --></p>
-<p>resources/views/components</p>
-</li>
+<li>Crea un archivo Blade en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    resources/views/components
+
+
+</span>
+</strong>.</li>
+<li>Opcionalmente, crea una clase de componente en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    app/View/Components
+
+
+</span>
+</strong>.</li>
 </ol>
-<!-- raw HTML omitted -->
-<pre><code>app/View/Components
-</code></pre>
-<!-- raw HTML omitted -->
-
-</div>
-
 
 
 <div class="alert alert-warning" role="alert">
@@ -493,8 +528,7 @@ Si queremos crear el componente en una carpeta concreta lo podemos hacer especif
 
 
 </div>
-</li>
-</ul>
+
 <h3 id="referenciar-un-componente">Referenciar un Componente</h3>
 <p>Para usar un componente en tus vistas Blade, lo referencias como un elemento HTML, pero con una sintaxis especial que incluye un prefijo <code>x-</code>::</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">x-miComponente</span> /&gt;
@@ -503,10 +537,11 @@ Si queremos crear el componente en una carpeta concreta lo podemos hacer especif
 <div class="alert alert-warning" role="alert">
 <h4 class="alert-heading">x-nombre</h4>
 
-    <p>Cuando referenciamos un elemento con
-<!-- raw HTML omitted --></p>
+    <p>Cuando referenciamos un elemento con</p>
+<!-- raw HTML omitted -->
 <pre><code>&amp;lt;x-&amp;hellip;&amp;gt;
 </code></pre>
+<!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <pre><code>resources/views/components
 </code></pre>
@@ -520,10 +555,11 @@ Si queremos crear el componente en una carpeta concreta lo podemos hacer especif
 <h4 class="alert-heading">x-capeta.sub.nombre</h4>
 
     <p>Si el componentes estuvier en subcarpetas, lo podemos especicar con puntos.</p>
-<p>De esta forma
-<!-- raw HTML omitted --></p>
+<p>De esta forma</p>
+<!-- raw HTML omitted -->
 <pre><code>x-capeta.sub.componentes
 </code></pre>
+<!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <pre><code>resources/views/components/carpeta/sub/nombre.blade.php
 </code></pre>
@@ -555,14 +591,15 @@ La imagen muestra el resultado generado
 
 
 
+
 <strong>
-<span class="font-weight-bold text-primary">
+<span class="font-weight-bold text-accent fs-1.5">
 
     Creción de componentes con artisan
 
+
 </span>
 </strong>
-
 
 </p>
 </figcaption>
@@ -570,77 +607,144 @@ La imagen muestra el resultado generado
 </p>
 <h2 id="variables-en-componentes">Variables en Componentes</h2>
 <p>Los componentes de Blade  
+
 <strong>
-<span class="font-weight-bold text-primary">
+<span class="font-weight-bold text-accent fs-1.5">
 
     ofrecen acceso a varias variables y objetos especiales
 
+
 </span>
-</strong>
- que facilitan la construcción de interfaces dinámicas y reutilizables. Los más usados</p>
+</strong> que facilitan la construcción de interfaces dinámicas y reutilizables. Los más usados</p>
 <ul>
 <li>$slot</li>
 <li>$attributes</li>
 <li>$errors</li>
 </ul>
-
-
-<div class="pageinfo pageinfo-primary">
 <h3 id="slot">$slot</h3>
-<!-- raw HTML omitted -->
-<pre><code>Contiene el contenido que se pasa al componente desde donde se llama.
-</code></pre>
-<!-- raw HTML omitted -->
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Contiene el contenido que se pasa al componente desde donde se llama.
+
+
+</span>
+</strong>
 <hr>
 <blockquote>
 <p>Fichero layout</p>
 </blockquote>
-<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">x-layout.main</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>&lt;<span style="color:#8b008b;font-weight:bold">h1</span>&gt; Este es un contendio para el componente, lo recibirá como $slot&lt;/<span style="color:#8b008b;font-weight:bold">h1</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">x-layout.main</span>&gt;</span></span></code></pre></div>
 <blockquote>
-<p>Fichero del componente
-<!-- raw HTML omitted --></p>
+<p>Fichero del componente 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    main.blade.php
+
+
+</span>
+</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex;"><span> &lt;header class=<span style="color:#cd5555">&#34;hidden lg:flex h-15v bg-header flex flex-row justify-center items-center&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;img class=<span style="color:#cd5555">&#34;w-1/5 max-h-full w-auto  p-5 &#34;</span> src=<span style="color:#cd5555">&#34;{{asset(&#34;</span>images/logos/logo.png<span style="color:#cd5555">&#34;)}}&#34;</span> alt=<span style="color:#cd5555">&#34;logo nett&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;div class=<span style="color:#cd5555">&#34;w-3/5 flex justify-center items-center&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;h1 class=<span style="color:#cd5555">&#34;text-3xl text-white h-auto max-w-full truncate &#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>          {{<span style="color:#00688b">$slot</span>}}
+</span></span><span style="display:flex;"><span>        &lt;/h1&gt;
+</span></span><span style="display:flex;"><span>    &lt;/div&gt;
+</span></span><span style="display:flex;"><span>&lt;!-- ...  --&gt;
+</span></span><span style="display:flex;"><span>&lt;/header&gt;</span></span></code></pre></div></p>
 </blockquote>
-<pre><code>main.blade.php
-</code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<h3 id="atributes">$atributes</h3>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Permite acceder a atributos adicionales pasados al componente.
+
+
+</span>
+</strong>
+La variable 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    $attributes
+
+
+</span>
+</strong> en los componentes de Blade de Laravel 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    es una instancia de Illuminate\View\ComponentAttributeBag
+
+
+</span>
+</strong></p>
+<p>Proporciona varios métodos útiles para manipular los atributos que se pasan a un componente<br>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Uno de los métodos más útiles es merge()
+
+
+</span>
+</strong>:
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">merge()</h4>
+
+    Fusiona los atributos predeterminados del componente con los atributos adicionales proporcionados en la vista.
 
 </div>
+</p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    El método merge()
 
 
-
-<div class="pageinfo pageinfo-primary">
-<h3 id="atributes">$atributes</h3>
-<!-- raw HTML omitted -->
-<pre><code>Permite acceder a atributos adicionales pasados al componente.
-</code></pre>
-<!-- raw HTML omitted -->
-<p>La variable
-<!-- raw HTML omitted --></p>
-<pre><code>$attributes
-</code></pre>
-<!-- raw HTML omitted -->
-<pre><code>es una instancia de Illuminate\View\ComponentAttributeBag
-</code></pre>
-<!-- raw HTML omitted -->
-<p>Proporciona varios métodos útiles para manipular los atributos que se pasan a un componente</p>
-<!-- raw HTML omitted -->
-<pre><code>Uno de los métodos más útiles es merge()
-</code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre><code>Fusiona los atributos predeterminados del componente con los atributos adicionales proporcionados en la vista.
-</code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre><code>El método merge()
-</code></pre>
-<!-- raw HTML omitted -->
+</span>
+</strong> se usa comúnmente para combinar clases CSS y otros atributos. Esto es especialmente útil cuando deseas que tu componente tenga algunas clases CSS por defecto, pero también quieres permitir que se añadan clases adicionales desde fuera del componente.</p>
 <p>Supongamos el siguiente ejemplo donde tenemos un  componente boton.blade.php: <br>
-Aquí, btn btn-default son las clases predeterminadas para todos los botones.</p>
-<!-- raw HTML omitted -->
+Aquí, btn btn-default son las clases predeterminadas para todos los botones.
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>&lt;button {{ <span style="color:#00688b">$attributes</span>-&gt;<span style="color:#658b00">merge</span>([<span style="color:#cd5555">&#39;class&#39;</span> =&gt; <span style="color:#cd5555">&#39;btn btn-default&#39;</span>]) }}&gt;
+</span></span><span style="display:flex;"><span>{{ <span style="color:#00688b">$slot</span> }}
+</span></span><span style="display:flex;"><span>&lt;/button&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Cuando usas el componente y pasas clases adicionales:</p>
 <p>Laravel fusionará las clases, resultando en un botón que tiene class=&ldquo;btn btn-default btn-large&rdquo;.</p>
-<!-- raw HTML omitted -->
+<p><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>&lt;x-boton class=<span style="color:#cd5555">&#34;btn-large&#34;</span>&gt;Click Aquí&lt;/x-boton&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Laravel fusionará las clases, resultando en un botón que tiene class=&ldquo;btn btn-default btn-large&rdquo;.</p>
 <hr>
 <h4 id="otros-métodos-de-attributes">Otros Métodos de $attributes</h4>
 <ul>
@@ -657,9 +761,6 @@ Aquí, btn btn-default son las clases predeterminadas para todos los botones.</p
 <p><code>first()</code>: Devuelve el primer valor de los atributos especificados.</p>
 </li>
 </ul>
-
-</div>
-
 <h3 id="pasando-atributos-a-un-componentes">Pasando atributos a un componentes</h3>
 <p>Para pasar atributos a un componente, usamos una sintaxis similar a la de las etiquetas HTML:</p>
 <pre tabindex="0"><code class="language-blade" data-lang="blade">&lt;x-miComponente atributo=&#34;valor&#34; /&gt;
@@ -671,24 +772,26 @@ Aquí, btn btn-default son las clases predeterminadas para todos los botones.</p
 <li><strong>CamelCase</strong>: Usada dentro del componente para referenciar estos atributos. Ejemplo: <code>miAtributo</code>.</li>
 </ul>
 
+
 <strong>
-<span class="font-weight-bold text-primary">
+<span class="font-weight-bold text-accent fs-1.5">
 
     Cuando invocas un componente y pasas un atributo, usas kebab-case:
 
+
 </span>
 </strong>
-
 <pre tabindex="0"><code class="language-blade" data-lang="blade">&lt;x-miComponente mi-atributo=&#34;valor&#34; /&gt;
 </code></pre>
+
 <strong>
-<span class="font-weight-bold text-primary">
+<span class="font-weight-bold text-accent fs-1.5">
 
     Dentro del archivo del componente, Laravel convierte automáticamente mi-atributo a miAtributo:
 
+
 </span>
 </strong>
-
 <pre tabindex="0"><code class="language-blade" data-lang="blade">&lt;!-- miComponente.blade.php --&gt;
 &lt;div&gt;
     {{ $miAtributo }} &lt;!-- Accede al valor de &#39;mi-atributo&#39; --&gt;

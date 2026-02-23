@@ -161,3 +161,37 @@
 .td-footer a:hover {
   opacity: 0.8;
 }
+.text-accent { color: #4c1d95 !important; }
+.text-accent { color: #4c1d95 !important; }
+
+
+
+/*==================================
+shortcode definition
+==================================*/
+.definicion-concepto {
+  border-left: 5px solid #4c1d95;
+  background-color: #f9f7ff;
+  padding: 1rem 1.25rem;
+  margin: 1.2rem 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.definicion-titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #4c1d95;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.definicion-titulo i {
+  font-size: 1rem;
+}
+
+.definicion-contenido {
+  color: #1f2937;
+  line-height: 1.6;
+}

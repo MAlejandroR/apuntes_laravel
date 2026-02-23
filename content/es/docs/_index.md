@@ -45,7 +45,7 @@ Laravel News: . Laravel News https://laravel-news.com/
 >>Para buscar paquetes de Laravel y proyectos de código abierto. GitHub  Packagist
 {{</referencias>}}
 
-### Temario sencicial
+### Temario 
 Este esquema muestra cómo vamos a abordar los aspectos de laravel
 
 {{% line %}}

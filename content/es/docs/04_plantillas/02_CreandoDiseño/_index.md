@@ -7,7 +7,6 @@ icon: fa-solid fa-layer-group
 ---
 
 ## Creando un diseño
-{{% pageinfo %}}
  ****
 #### Proceso de diseño
 ****
@@ -15,7 +14,6 @@ Diseñar es un aspecto fundamentan antes de crear las páginas
 Para crear un proyecto debemos crear previaemnte **los mockups** o **Prototipados de pantallas**    
 Posteriormente hemos de crear las páginas usando los estilos adecuados para conseguir los diseños previamente prototipados, esto implicará usar **html y css**
 Para crear los diseños se usan herramientas gráficas de prototipado, y para el css normalmente usaremos algún fremework tipo **Bootstrap** o **tailwindcss**
-{{% /pageinfo%}}
 
 ### Herramientas para el diseño
 #### 

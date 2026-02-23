@@ -1,0 +1,793 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel_certificado_2026/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel_certificado_2026/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel_certificado_2026/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel_certificado_2026/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel_certificado_2026/favicons/android-192x192.png" sizes="192x192">
+
+<title>Personalizar controladores | Laravel: Framework de php</title>
+<meta name="description" content="Personalización del Proceso de Autenticación en Laravel Fortify Personalizar los controladores para autenticación con fortify Al instalar Laravel Fortify , los controladores que manejan el proceso de login, registro y otras acciones de autenticación no se encuentran de forma explícita en el directorio Http\Controllers de tu aplicación.
+Estos Controladores están ubicados en vendor/laravel/fortify/src/Http/Controllers :
+Estos Controladores están ubicados en vendor/laravel/fortify/src/Http/Controllers: Loguearse AuthenticatedSessionController : Maneja el inicio de sesión y cierre de sesión. RegisteredUserController : Maneja el registro de nuevos usuarios. Confirmación, reseteo de password ConfirmablePasswordController : Maneja la confirmación de contraseñas antes de realizar ciertas acciones. ConfirmedPasswordStatusController : Proporciona el estado de la confirmación de la contraseña. ConfirmedTwoFactorAuthenticationController : Maneja la confirmación de autenticación de dos factores. NewPasswordController : Maneja el restablecimiento de contraseñas. PasswordController : Maneja la actualización de contraseñas. PasswordResetLinkController : Maneja el envío de enlaces para restablecer contraseñas. Verificar por email EmailVerificationNotificationController : Maneja el envío de notificaciones de verificación de correo electrónico. EmailVerificationPromptController : Muestra la solicitud de verificación de correo electrónico. VerifyEmailController : Maneja la verificación de direcciones de correo electrónico. Gestión de perfil ProfileInformationController : Maneja la actualización de la información del perfil del usuario. RecoveryCodeController : Maneja los códigos de recuperación para la autenticación de dos factores. 2FA TwoFactorAuthenticatedSessionController : Maneja la autenticación de sesiones con dos factores. TwoFactorAuthenticationController : Maneja la activación y desactivación de la autenticación de dos factores. TwoFactorQrCodeController : Muestra el código QR para la autenticación de dos factores. TwoFactorSecretKeyController : Maneja las claves secretas para la autenticación de dos factores. Al instalar fortify los controladores que manejan el proceso de login, register y demás acciones de este paquete, no se exponen de forma explícita en el directorio http.">
+
+<meta property="og:url" content="http://localhost:1313/laravel_certificado_2026/docs/06_autenticacion/fortify/peronsalizar_controladores/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Personalizar controladores">
+  <meta property="og:description" content="Personalización del Proceso de Autenticación en Laravel Fortify Personalizar los controladores para autenticación con fortify Al instalar Laravel Fortify , los controladores que manejan el proceso de login, registro y otras acciones de autenticación no se encuentran de forma explícita en el directorio Http\Controllers de tu aplicación.
+Estos Controladores están ubicados en vendor/laravel/fortify/src/Http/Controllers :
+Estos Controladores están ubicados en vendor/laravel/fortify/src/Http/Controllers: Loguearse AuthenticatedSessionController : Maneja el inicio de sesión y cierre de sesión. RegisteredUserController : Maneja el registro de nuevos usuarios. Confirmación, reseteo de password ConfirmablePasswordController : Maneja la confirmación de contraseñas antes de realizar ciertas acciones. ConfirmedPasswordStatusController : Proporciona el estado de la confirmación de la contraseña. ConfirmedTwoFactorAuthenticationController : Maneja la confirmación de autenticación de dos factores. NewPasswordController : Maneja el restablecimiento de contraseñas. PasswordController : Maneja la actualización de contraseñas. PasswordResetLinkController : Maneja el envío de enlaces para restablecer contraseñas. Verificar por email EmailVerificationNotificationController : Maneja el envío de notificaciones de verificación de correo electrónico. EmailVerificationPromptController : Muestra la solicitud de verificación de correo electrónico. VerifyEmailController : Maneja la verificación de direcciones de correo electrónico. Gestión de perfil ProfileInformationController : Maneja la actualización de la información del perfil del usuario. RecoveryCodeController : Maneja los códigos de recuperación para la autenticación de dos factores. 2FA TwoFactorAuthenticatedSessionController : Maneja la autenticación de sesiones con dos factores. TwoFactorAuthenticationController : Maneja la activación y desactivación de la autenticación de dos factores. TwoFactorQrCodeController : Muestra el código QR para la autenticación de dos factores. TwoFactorSecretKeyController : Maneja las claves secretas para la autenticación de dos factores. Al instalar fortify los controladores que manejan el proceso de login, register y demás acciones de este paquete, no se exponen de forma explícita en el directorio http.">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:published_time" content="2023-04-08T18:21:47+02:00">
+    <meta property="article:modified_time" content="2023-04-08T18:21:47+02:00">
+
+  <meta itemprop="name" content="Personalizar controladores">
+  <meta itemprop="description" content="Personalización del Proceso de Autenticación en Laravel Fortify Personalizar los controladores para autenticación con fortify Al instalar Laravel Fortify , los controladores que manejan el proceso de login, registro y otras acciones de autenticación no se encuentran de forma explícita en el directorio Http\Controllers de tu aplicación.
+Estos Controladores están ubicados en vendor/laravel/fortify/src/Http/Controllers :
+Estos Controladores están ubicados en vendor/laravel/fortify/src/Http/Controllers: Loguearse AuthenticatedSessionController : Maneja el inicio de sesión y cierre de sesión. RegisteredUserController : Maneja el registro de nuevos usuarios. Confirmación, reseteo de password ConfirmablePasswordController : Maneja la confirmación de contraseñas antes de realizar ciertas acciones. ConfirmedPasswordStatusController : Proporciona el estado de la confirmación de la contraseña. ConfirmedTwoFactorAuthenticationController : Maneja la confirmación de autenticación de dos factores. NewPasswordController : Maneja el restablecimiento de contraseñas. PasswordController : Maneja la actualización de contraseñas. PasswordResetLinkController : Maneja el envío de enlaces para restablecer contraseñas. Verificar por email EmailVerificationNotificationController : Maneja el envío de notificaciones de verificación de correo electrónico. EmailVerificationPromptController : Muestra la solicitud de verificación de correo electrónico. VerifyEmailController : Maneja la verificación de direcciones de correo electrónico. Gestión de perfil ProfileInformationController : Maneja la actualización de la información del perfil del usuario. RecoveryCodeController : Maneja los códigos de recuperación para la autenticación de dos factores. 2FA TwoFactorAuthenticatedSessionController : Maneja la autenticación de sesiones con dos factores. TwoFactorAuthenticationController : Maneja la activación y desactivación de la autenticación de dos factores. TwoFactorQrCodeController : Muestra el código QR para la autenticación de dos factores. TwoFactorSecretKeyController : Maneja las claves secretas para la autenticación de dos factores. Al instalar fortify los controladores que manejan el proceso de login, register y demás acciones de este paquete, no se exponen de forma explícita en el directorio http.">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="1205">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Personalizar controladores">
+  <meta name="twitter:description" content="Personalización del Proceso de Autenticación en Laravel Fortify Personalizar los controladores para autenticación con fortify Al instalar Laravel Fortify , los controladores que manejan el proceso de login, registro y otras acciones de autenticación no se encuentran de forma explícita en el directorio Http\Controllers de tu aplicación.
+Estos Controladores están ubicados en vendor/laravel/fortify/src/Http/Controllers :
+Estos Controladores están ubicados en vendor/laravel/fortify/src/Http/Controllers: Loguearse AuthenticatedSessionController : Maneja el inicio de sesión y cierre de sesión. RegisteredUserController : Maneja el registro de nuevos usuarios. Confirmación, reseteo de password ConfirmablePasswordController : Maneja la confirmación de contraseñas antes de realizar ciertas acciones. ConfirmedPasswordStatusController : Proporciona el estado de la confirmación de la contraseña. ConfirmedTwoFactorAuthenticationController : Maneja la confirmación de autenticación de dos factores. NewPasswordController : Maneja el restablecimiento de contraseñas. PasswordController : Maneja la actualización de contraseñas. PasswordResetLinkController : Maneja el envío de enlaces para restablecer contraseñas. Verificar por email EmailVerificationNotificationController : Maneja el envío de notificaciones de verificación de correo electrónico. EmailVerificationPromptController : Muestra la solicitud de verificación de correo electrónico. VerifyEmailController : Maneja la verificación de direcciones de correo electrónico. Gestión de perfil ProfileInformationController : Maneja la actualización de la información del perfil del usuario. RecoveryCodeController : Maneja los códigos de recuperación para la autenticación de dos factores. 2FA TwoFactorAuthenticatedSessionController : Maneja la autenticación de sesiones con dos factores. TwoFactorAuthenticationController : Maneja la activación y desactivación de la autenticación de dos factores. TwoFactorQrCodeController : Muestra el código QR para la autenticación de dos factores. TwoFactorSecretKeyController : Maneja las claves secretas para la autenticación de dos factores. Al instalar fortify los controladores que manejan el proceso de login, register y demás acciones de este paquete, no se exponen de forma explícita en el directorio http.">
+
+
+<link href="/laravel_certificado_2026/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel_certificado_2026/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel_certificado_2026/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel_certificado_2026/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel_certificado_2026/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laravel_certificado_2026docs-li">
+  <a href="/laravel_certificado_2026/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laravel_certificado_2026docs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs01_introduccic3b3n-check"/>
+  <label for="m-laravel_certificado_2026docs01_introduccic3b3n-check"><a href="/laravel_certificado_2026/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs02_instalacic3b3n-check"/>
+  <label for="m-laravel_certificado_2026docs02_instalacic3b3n-check"><a href="/laravel_certificado_2026/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs03_rutas-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs03_rutas-check"/>
+  <label for="m-laravel_certificado_2026docs03_rutas-check"><a href="/laravel_certificado_2026/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laravel_certificado_2026docs04_plantillas-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas-check"><a href="/laravel_certificado_2026/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas01_blade-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas01_blade-check"><a href="/laravel_certificado_2026/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o-check"><a href="/laravel_certificado_2026/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas03_componentes-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas03_componentes-check"><a href="/laravel_certificado_2026/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs04_plantillas04_ejemplo-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs04_plantillas04_ejemplo-check"/>
+  <label for="m-laravel_certificado_2026docs04_plantillas04_ejemplo-check"><a href="/laravel_certificado_2026/docs/04_plantillas/04_ejemplo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs04_plantillas04_ejemplo"><i class="fa-solid fa-diagram-project"></i><span class="">Ejemplo de nuestro proyecto </span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laravel_certificado_2026docs06_autenticacion-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs06_autenticacion-check" checked/>
+  <label for="m-laravel_certificado_2026docs06_autenticacion-check"><a href="/laravel_certificado_2026/docs/06_autenticacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs06_autenticacion"><i class="fa-solid fa-sitemap"></i><span class="">Autenticación</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laravel_certificado_2026docs06_autenticacionbreeze-li">
+  <input type="checkbox" id="m-laravel_certificado_2026docs06_autenticacionbreeze-check"/>
+  <label for="m-laravel_certificado_2026docs06_autenticacionbreeze-check"><a href="/laravel_certificado_2026/docs/06_autenticacion/breeze/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laravel_certificado_2026docs06_autenticacionbreeze"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#estos-controladores-están-ubicados-en-vendorlaravelfortifysrchttpcontrollers">Estos Controladores están ubicados en <code>vendor/laravel/fortify/src/Http/Controllers</code>:</a>
+      <ul>
+        <li><a href="#loguearse">Loguearse</a></li>
+        <li><a href="#confirmación-reseteo-de-password">Confirmación, reseteo de password</a></li>
+        <li><a href="#verificar-por-email">Verificar por email</a></li>
+        <li><a href="#gestión-de-perfil">Gestión de perfil</a></li>
+        <li><a href="#2fa">2FA</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            <div class="taxonomy taxonomy-terms-cloud taxo-categories">
+      <h5 class="taxonomy-title">Categories</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      <h5 class="taxonomy-title">Tags</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel_certificado_2026/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel_certificado_2026/docs/">Laravel</a></li>
+  <li class="breadcrumb-item">
+    <a href="/laravel_certificado_2026/docs/06_autenticacion/">Autenticación</a></li>
+  <li class="breadcrumb-item">
+    <a href="">Fortify y Jetstream</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Personalizar controladores</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Personalizar controladores</h1>
+	
+	<header class="article-meta">
+		
+</header>
+	<h1 id="personalización-del-proceso-de-autenticación-en-laravel-fortify">Personalización del Proceso de Autenticación en Laravel Fortify</h1>
+<h1 id="personalizar-los--controladores-para-autenticación-con-fortify">Personalizar los  controladores para autenticación con fortify</h1>
+<p>Al instalar <strong>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Laravel Fortify
+
+</span>
+</strong>
+</strong>, los controladores que manejan el proceso de <em>
+<span class="font-weight-bold text-primary">
+
+
+    login, registro y otras acciones de autenticación
+
+</span>
+</em> no se encuentran de forma explícita en el directorio 
+<span class="font-weight-bold text-primary">
+
+
+    Http\Controllers
+
+</span>
+ de tu aplicación.</p>
+<p>Estos <strong>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Controladores
+
+</span>
+</strong>
+</strong> están ubicados en <strong>
+<span class="font-weight-bold text-primary">
+
+
+    vendor/laravel/fortify/src/Http/Controllers
+
+</span>
+</strong> :</p>
+<h2 id="estos-controladores-están-ubicados-en-vendorlaravelfortifysrchttpcontrollers">Estos Controladores están ubicados en <code>vendor/laravel/fortify/src/Http/Controllers</code>:</h2>
+<h3 id="loguearse">Loguearse</h3>
+<ul>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    AuthenticatedSessionController
+
+</span>
+</strong>
+: Maneja el inicio de sesión y cierre de sesión.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    RegisteredUserController
+
+</span>
+</strong>
+: Maneja el registro de nuevos usuarios.</li>
+</ul>
+<h3 id="confirmación-reseteo-de-password">Confirmación, reseteo de password</h3>
+<ul>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    ConfirmablePasswordController
+
+</span>
+</strong>
+: Maneja la confirmación de contraseñas antes de realizar ciertas acciones.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    ConfirmedPasswordStatusController
+
+</span>
+</strong>
+: Proporciona el estado de la confirmación de la contraseña.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    ConfirmedTwoFactorAuthenticationController
+
+</span>
+</strong>
+: Maneja la confirmación de autenticación de dos factores.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    NewPasswordController
+
+</span>
+</strong>
+: Maneja el restablecimiento de contraseñas.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    PasswordController
+
+</span>
+</strong>
+: Maneja la actualización de contraseñas.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    PasswordResetLinkController
+
+</span>
+</strong>
+: Maneja el envío de enlaces para restablecer contraseñas.</li>
+</ul>
+<h3 id="verificar-por-email">Verificar por email</h3>
+<ul>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    EmailVerificationNotificationController
+
+</span>
+</strong>
+: Maneja el envío de notificaciones de verificación de correo electrónico.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    EmailVerificationPromptController
+
+</span>
+</strong>
+: Muestra la solicitud de verificación de correo electrónico.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    VerifyEmailController
+
+</span>
+</strong>
+: Maneja la verificación de direcciones de correo electrónico.</li>
+</ul>
+<h3 id="gestión-de-perfil">Gestión de perfil</h3>
+<ul>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    ProfileInformationController
+
+</span>
+</strong>
+: Maneja la actualización de la información del perfil del usuario.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    RecoveryCodeController
+
+</span>
+</strong>
+: Maneja los códigos de recuperación para la autenticación de dos factores.</li>
+</ul>
+<h3 id="2fa">2FA</h3>
+<ul>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    TwoFactorAuthenticatedSessionController
+
+</span>
+</strong>
+: Maneja la autenticación de sesiones con dos factores.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    TwoFactorAuthenticationController
+
+</span>
+</strong>
+: Maneja la activación y desactivación de la autenticación de dos factores.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    TwoFactorQrCodeController
+
+</span>
+</strong>
+: Muestra el código QR para la autenticación de dos factores.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    TwoFactorSecretKeyController
+
+</span>
+</strong>
+: Maneja las claves secretas para la autenticación de dos factores.</li>
+</ul>
+<p>Al instalar fortify los controladores que manejan el proceso de login, register y demás acciones de este paquete, no se exponen de forma explícita en el directorio <strong>http</strong>.</p>
+<p>Además si instalamos Jetstream, tenemos disponibles las sigueintes fucnionalidades</p>
+<h1 id="chatgpt">chatgpt</h1>
+<p>Para personalizar la lógica del login en Laravel Fortify, hay dos enfoques principales:</p>
+<p>Modificar las Acciones Usadas por Fortify:
+Laravel Fortify permite definir acciones personalizadas para manejar la lógica de autenticación. Puedes sobrescribir las acciones predeterminadas en config/fortify.php.</p>
+<p>Sobrescribir los Controladores Usados por Fortify:
+Aunque Fortify no expone explícitamente los controladores de autenticación como en una configuración tradicional de Laravel, puedes crear tus propios controladores y configurarlos para manejar las rutas de Fortify.</p>
+<p>Opción 1: Modificar las Acciones Usadas por Fortify
+Fortify permite definir acciones personalizadas para manejar tareas específicas como la creación de usuarios, el restablecimiento de contraseñas, etc. Puedes definir estas acciones en config/fortify.php.</p>
+<p>Ejemplo:
+Crear la Acción Personalizada:
+Crea una clase de acción personalizada en App\Actions\Fortify.</p>
+<p>php
+Copiar código
+namespace App\Actions\Fortify;</p>
+<p>use Illuminate\Support\Facades\Validator;
+use Laravel\Fortify\Contracts\CreatesNewUsers;</p>
+<p>class CreateNewUser implements CreatesNewUsers
+{
+public function create(array $input)
+{
+Validator::make($input, [
+&rsquo;name&rsquo; =&gt; [&lsquo;required&rsquo;, &lsquo;string&rsquo;, &lsquo;max:255&rsquo;],
+&rsquo;email&rsquo; =&gt; [&lsquo;required&rsquo;, &lsquo;string&rsquo;, &rsquo;email&rsquo;, &lsquo;max:255&rsquo;, &lsquo;unique:users&rsquo;],
+&lsquo;password&rsquo; =&gt; [&lsquo;required&rsquo;, &lsquo;string&rsquo;, &lsquo;min:8&rsquo;, &lsquo;confirmed&rsquo;],
+])-&gt;validate();</p>
+<pre><code>    return User::create([
+        'name' =&gt; $input['name'],
+        'email' =&gt; $input['email'],
+        'password' =&gt; Hash::make($input['password']),
+    ]);
+}
+</code></pre>
+<p>}
+Configurar la Acción Personalizada en Fortify:
+Modifica config/fortify.php para usar tu acción personalizada.</p>
+<p>php
+Copiar código
+use App\Actions\Fortify\CreateNewUser;</p>
+<p>return [
+&lsquo;guard&rsquo; =&gt; &lsquo;web&rsquo;,
+&lsquo;passwords&rsquo; =&gt; &lsquo;users&rsquo;,</p>
+<pre><code>'username' =&gt; 'email',
+'email' =&gt; 'email',
+
+'features' =&gt; [
+    Features::registration(),
+    Features::resetPasswords(),
+    Features::emailVerification(),
+    Features::updateProfileInformation(),
+    Features::updatePasswords(),
+    Features::twoFactorAuthentication([
+        'confirm' =&gt; true,
+        'confirmPassword' =&gt; true,
+    ]),
+],
+
+'actions' =&gt; [
+    'register' =&gt; CreateNewUser::class,
+],
+</code></pre>
+<p>];
+Opción 2: Sobrescribir los Controladores Usados por Fortify
+Para personalizar completamente los controladores de Fortify, puedes crear tus propios controladores y configurarlos en las rutas de Fortify. Esto te da control total sobre la lógica de autenticación.</p>
+<p>Ejemplo:
+Crear el Controlador Personalizado:
+Crea un controlador personalizado en App\Http\Controllers\Auth.</p>
+<p>php
+Copiar código
+namespace App\Http\Controllers\Auth;</p>
+<p>use App\Http\Controllers\Controller;
+use Illuminate\Contracts\Auth\StatefulGuard;
+use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Laravel\Fortify\Contracts\LoginResponse;
+use Laravel\Fortify\Contracts\LoginViewResponse;
+use Laravel\Fortify\Contracts\LogoutResponse;
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController as BaseAuthenticatedSessionController;
+use Laravel\Fortify\Http\Requests\LoginRequest;</p>
+<p>class CustomAuthenticatedSessionController extends BaseAuthenticatedSessionController
+{
+protected $guard;</p>
+<pre><code>public function __construct(StatefulGuard $guard)
+{
+    $this-&gt;guard = $guard;
+}
+
+public function create(Request $request): LoginViewResponse
+{
+    return Inertia::render('Auth/Login');
+}
+
+public function store(LoginRequest $request)
+{
+    return $this-&gt;loginPipeline($request)-&gt;then(function ($request) {
+        return app(LoginResponse::class);
+    });
+}
+
+public function destroy(Request $request): LogoutResponse
+{
+    $this-&gt;guard-&gt;logout();
+
+    if ($request-&gt;hasSession()) {
+        $request-&gt;session()-&gt;invalidate();
+        $request-&gt;session()-&gt;regenerateToken();
+    }
+
+    return app(LogoutResponse::class);
+}
+</code></pre>
+<p>}
+Configurar las Rutas para Usar tu Controlador Personalizado:
+Configura las rutas de Fortify para usar tu controlador personalizado en routes/web.php o en un archivo de rutas específico.</p>
+<p>php
+Copiar código
+use App\Http\Controllers\Auth\CustomAuthenticatedSessionController;</p>
+<p>Fortify::loginView([CustomAuthenticatedSessionController::class, &lsquo;create&rsquo;]);
+Route::post(&rsquo;/login&rsquo;, [CustomAuthenticatedSessionController::class, &lsquo;store&rsquo;]);
+Route::post(&rsquo;/logout&rsquo;, [CustomAuthenticatedSessionController::class, &lsquo;destroy&rsquo;])-&gt;name(&rsquo;logout&rsquo;);
+Resumen
+Modificación de Acciones: Útil para personalizar tareas específicas sin cambiar la estructura general de los controladores.
+Sobrescribir Controladores: Útil para tener control total sobre la lógica de autenticación y las rutas asociadas.
+Ambas opciones son válidas y puedes elegir la que mejor se adapte a tus necesidades de personalización en Laravel Fortify.</p>
+<p>Si no establezco esa ruta de login, dónde se asocia el controlador a la ruta login ?
+ChatGPT
+En Laravel Fortify, las rutas de autenticación, incluyendo la ruta de login, se configuran automáticamente y se asocian a controladores predeterminados mediante el proveedor de servicios de Fortify. No necesitas definir explícitamente estas rutas a menos que desees personalizarlas.</p>
+<p>Asociación Automática de Rutas en Fortify
+Laravel Fortify asocia las rutas a los controladores predeterminados utilizando el servicio de rutas que se configura en el proveedor de servicios de Fortify (FortifyServiceProvider). Aquí es donde Fortify define y registra las rutas predeterminadas para login, registro, restablecimiento de contraseñas, etc.</p>
+<p>Registro de Rutas en FortifyServiceProvider
+El archivo vendor/laravel/fortify/src/FortifyServiceProvider.php es donde se realiza la magia. Aquí es donde Fortify configura las rutas predeterminadas.</p>
+<p>php
+Copiar código
+public function register()
+{
+$this-&gt;registerRoutes();
+}</p>
+<p>protected function registerRoutes()
+{
+if (Fortify::$registersRoutes) {
+Route::group([
+&rsquo;namespace&rsquo; =&gt; &lsquo;Laravel\Fortify\Http\Controllers&rsquo;,
+&lsquo;domain&rsquo; =&gt; config(&lsquo;fortify.domain&rsquo;, null),
+&lsquo;prefix&rsquo; =&gt; config(&lsquo;fortify.prefix&rsquo;),
+&lsquo;middleware&rsquo; =&gt; config(&lsquo;fortify.middleware&rsquo;, [&lsquo;web&rsquo;]),
+], function () {
+$this-&gt;loadRoutesFrom(<strong>DIR</strong>.&rsquo;/../routes/routes.php&rsquo;);
+});
+}
+}
+El archivo de rutas que se carga es vendor/laravel/fortify/routes/routes.php.</p>
+<p>Rutas Definidas en Fortify
+Dentro de routes/routes.php, Fortify define las rutas predeterminadas:</p>
+<p>php
+Copiar código
+Route::group([&lsquo;middleware&rsquo; =&gt; config(&lsquo;fortify.middleware&rsquo;, [&lsquo;web&rsquo;])], function () {
+// Authentication&hellip;
+Route::get(&rsquo;/login&rsquo;, &lsquo;AuthenticatedSessionController@create&rsquo;)
+-&gt;middleware([&lsquo;guest:&rsquo;.config(&lsquo;fortify.guard&rsquo;)])
+-&gt;name(&rsquo;login&rsquo;);</p>
+<pre><code>Route::post('/login', 'AuthenticatedSessionController@store')
+    -&gt;middleware(['guest:'.config('fortify.guard')]);
+
+Route::post('/logout', 'AuthenticatedSessionController@destroy')
+    -&gt;name('logout');
+
+// Registration...
+Route::get('/register', 'RegisteredUserController@create')
+    -&gt;middleware(['guest:'.config('fortify.guard')])
+    -&gt;name('register');
+
+Route::post('/register', 'RegisteredUserController@store')
+    -&gt;middleware(['guest:'.config('fortify.guard')]);
+
+// Password Reset...
+Route::get('/forgot-password', 'PasswordResetLinkController@create')
+    -&gt;middleware(['guest:'.config('fortify.guard')])
+    -&gt;name('password.request');
+
+Route::post('/forgot-password', 'PasswordResetLinkController@store')
+    -&gt;middleware(['guest:'.config('fortify.guard')])
+    -&gt;name('password.email');
+
+Route::get('/reset-password/{token}', 'NewPasswordController@create')
+    -&gt;middleware(['guest:'.config('fortify.guard')])
+    -&gt;name('password.reset');
+
+Route::post('/reset-password', 'NewPasswordController@store')
+    -&gt;middleware(['guest:'.config('fortify.guard')])
+    -&gt;name('password.update');
+    
+// Email Verification...
+Route::get('/email/verify', 'EmailVerificationPromptController@show')
+    -&gt;middleware(['auth:'.config('fortify.guard')])
+    -&gt;name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', 'VerifyEmailController@__invoke')
+    -&gt;middleware(['auth:'.config('fortify.guard'), 'signed', 'throttle:6,1'])
+    -&gt;name('verification.verify');
+
+Route::post('/email/verification-notification', 'EmailVerificationNotificationController@store')
+    -&gt;middleware(['auth:'.config('fortify.guard'), 'throttle:6,1'])
+    -&gt;name('verification.send');
+
+// Profile Information...
+Route::put('/user/profile-information', 'ProfileInformationController@update')
+    -&gt;middleware(['auth:'.config('fortify.guard')])
+    -&gt;name('user-profile-information.update');
+
+// Passwords...
+Route::put('/user/password', 'PasswordController@update')
+    -&gt;middleware(['auth:'.config('fortify.guard')])
+    -&gt;name('user-password.update');
+
+// Two Factor Authentication...
+Route::post('/user/two-factor-authentication', 'TwoFactorAuthenticationController@store')
+    -&gt;middleware(['auth:'.config('fortify.guard')]);
+
+Route::delete('/user/two-factor-authentication', 'TwoFactorAuthenticationController@destroy')
+    -&gt;middleware(['auth:'.config('fortify.guard')]);
+
+Route::get('/user/two-factor-qr-code', 'TwoFactorQrCodeController@show')
+    -&gt;middleware(['auth:'.config('fortify.guard')]);
+
+Route::get('/user/two-factor-secret', 'TwoFactorSecretController@show')
+    -&gt;middleware(['auth:'.config('fortify.guard')]);
+
+Route::get('/user/two-factor-recovery-codes', 'RecoveryCodeController@index')
+    -&gt;middleware(['auth:'.config('fortify.guard')]);
+
+Route::post('/user/two-factor-recovery-codes', 'RecoveryCodeController@store')
+    -&gt;middleware(['auth:'.config('fortify.guard')]);
+</code></pre>
+<p>});
+Personalización del Controlador
+Para personalizar el proceso de login sin redefinir todas las rutas, puedes sobrescribir las acciones de Fortify como se mencionó anteriormente, o puedes extender el controlador predeterminado de Fortify.</p>
+<p>Ejemplo de Extensión del Controlador
+Crea el Controlador Personalizado:</p>
+<p>php
+Copiar código
+namespace App\Http\Controllers\Auth;</p>
+<p>use App\Http\Controllers\Controller;
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;</p>
+<p>class CustomAuthenticatedSessionController extends AuthenticatedSessionController
+{
+// Sobrescribe los métodos que necesitas personalizar
+public function create()
+{
+// Tu lógica personalizada
+return view(&lsquo;auth.login&rsquo;);
+}
+}
+Configura Fortify para Usar tu Controlador:</p>
+<p>Modifica las rutas en routes/web.php para usar tu controlador personalizado.</p>
+<p>php
+Copiar código
+use App\Http\Controllers\Auth\CustomAuthenticatedSessionController;</p>
+<p>Route::get(&rsquo;/login&rsquo;, [CustomAuthenticatedSessionController::class, &lsquo;create&rsquo;])
+-&gt;middleware([&lsquo;guest&rsquo;])
+-&gt;name(&rsquo;login&rsquo;);</p>
+<p>Route::post(&rsquo;/login&rsquo;, [CustomAuthenticatedSessionController::class, &lsquo;store&rsquo;])
+-&gt;middleware([&lsquo;guest&rsquo;]);</p>
+<p>Route::post(&rsquo;/logout&rsquo;, [CustomAuthenticatedSessionController::class, &lsquo;destroy&rsquo;])
+-&gt;name(&rsquo;logout&rsquo;);
+Resumen
+Fortify registra automáticamente las rutas y las asocia a sus controladores predeterminados. Si deseas personalizar la lógica de login, puedes:</p>
+<p>Sobrescribir las acciones de Fortify en config/fortify.php.
+Crear controladores personalizados y configurar las rutas para usarlos.
+La segunda opción requiere que definas explícitamente las rutas para usar tu controlador personalizado, mientras que la primera opción permite personalizar la lógica específica sin cambiar las rutas.</p>
+<hr>
+
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel_certificado_2026/js/main.js"></script>
+<script defer src="/laravel_certificado_2026/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel_certificado_2026/js/tabpane-persist.js'></script>
+
+  </body>
+</html>
