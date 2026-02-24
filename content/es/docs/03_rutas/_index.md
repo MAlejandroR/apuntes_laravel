@@ -404,3 +404,109 @@ return redirect()->route('home');
 * Utiliza el helper `route` para generar enlaces a estas rutas desde una página principal.
 * Redirige a la ruta "inicio" desde otra ruta usando el método `redirect`.
   {{< /desplegable >}}
+
+## Route::fallback() en Laravel
+
+### ¿Qué es?
+
+`Route::fallback()` define una **ruta de respaldo** que se ejecuta cuando ninguna otra ruta coincide con la petición actual.
+
+En otras palabras:
+
+> Se ejecuta cuando el usuario accede a una URL que no existe en el sistema de rutas.
+
+Es una forma controlada de gestionar el error 404 desde el propio archivo `web.php`.
+
+{{<color>}}Debe colocarse siempre al final del fichero de rutas.{{</color>}}, Laravel busca las coincidencias de rutas en orden; si se coloca al principio o en medio, `fallback()` actuaría como comprobación para cualquier ruta y no llegaría a analizar las que estén definidas después.
+---
+
+{{<color>}}Ejemplo básico{{</color>}}
+
+{{< highlight php >}}
+Route::fallback(function () {
+
+    $url = request()->url();     // URL completa
+    $path = request()->path();   // Solo el path
+
+    return "<h1>La ruta {$path} no existe</h1>";
+});
+{{< /highlight >}}
+
+---
+
+###  Obtener información de la petición
+
+Dentro del `fallback()` puedes usar el helper `request()`.
+
+{{<color>}}URL completa{{</color>}}
+
+{{< highlight php >}}
+$url = request()->url();
+{{< /highlight >}}
+
+Ejemplo resultado:
+
+http://misitio.test/ruta-inexistente
+
+---
+
+#### Solo el path
+
+{{< highlight php >}}
+$path = request()->path();
+{{< /highlight >}}
+
+Ejemplo resultado:
+
+ruta-inexistente
+
+---
+
+### Obtener el nombre de la ruta
+
+Si quieres obtener el nombre de la ruta actual:
+
+{{< highlight php >}}
+$routeName = request()->route()?->getName();
+{{< /highlight >}}
+
+Sin embargo, en un `fallback()` normalmente no existirá nombre de ruta,
+porque precisamente no ha coincidido ninguna.
+
+Por eso es recomendable usar:
+
+{{< highlight php >}}
+$routeName = optional(request()->route())->getName();
+{{< /highlight >}}
+
+Si no existe ruta, devolverá `null`.
+
+---
+
+{{<color>}}Ejemplo más completo{{</color>}}
+
+{{< highlight php >}}
+Route::fallback(function () {
+
+    $url = request()->url();
+    $path = request()->path();
+    $routeName = optional(request()->route())->getName();
+
+    return response()->view('errors.custom404', [
+        'url' => $url,
+        'path' => $path,
+        'routeName' => $routeName
+    ], 404);
+});
+{{< /highlight >}}
+
+---
+
+{{<color>}} Resumen conceptual{{</color>}}
+- `Route::fallback()` → Captura cualquier URL no definida.
+- `request()->url()` → Devuelve la URL completa.
+- `request()->path()` → Devuelve solo la ruta.
+- `request()->route()?->getName()` → Devuelve el nombre de la ruta si existe.
+- Es recomendable devolver código HTTP 404 y usar una vista personalizada.
+
+Es una herramienta muy útil para controlar errores de navegación de forma elegante dentro del sistema de rutas de Laravel.

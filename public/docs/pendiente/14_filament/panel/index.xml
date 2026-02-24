@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Panel  on Laravel: Framework de php</title>
-    <link>http://localhost:1313/laravel/docs/pendiente/14_filament/panel/</link>
+    <link>https://web.infenlaces.com/laravel/docs/pendiente/14_filament/panel/</link>
     <description>Recent content in Panel  on Laravel: Framework de php</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 08 Aug 2024 18:23:50 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/laravel/docs/pendiente/14_filament/panel/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://web.infenlaces.com/laravel/docs/pendiente/14_filament/panel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Navegación</title>
-      <link>http://localhost:1313/laravel/docs/pendiente/14_filament/panel/panel/</link>
+      <link>https://web.infenlaces.com/laravel/docs/pendiente/14_filament/panel/panel/</link>
       <pubDate>Thu, 08 Aug 2024 18:23:50 +0200</pubDate>
-      <guid>http://localhost:1313/laravel/docs/pendiente/14_filament/panel/panel/</guid>
+      <guid>https://web.infenlaces.com/laravel/docs/pendiente/14_filament/panel/panel/</guid>
       <description>&lt;h1 id=&#34;navegación-en-el-panel&#34;&gt;Navegación en el panel&lt;/h1&gt;&#xA;&lt;p&gt;En el panel de administración de Filament, la &lt;strong&gt;navegación&lt;/strong&gt; es el conjunto de menús y botones que nos permiten acceder a los &lt;strong&gt;recursos&lt;/strong&gt;, &lt;strong&gt;páginas&lt;/strong&gt; o &lt;strong&gt;clústeres&lt;/strong&gt; que hemos creado.&lt;/p&gt;&#xA;&lt;p&gt;Filament nos permite &lt;strong&gt;organizar y personalizar&lt;/strong&gt; cómo se muestran estos elementos en el panel.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;agrupar-recursos-con-navigationgroup&#34;&gt;Agrupar recursos con $navigationGroup&lt;/h2&gt;&#xA;&lt;p&gt;La forma más sencilla de agrupar recursos es mediante el atributo:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;protected&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;static&lt;/span&gt; ?string &lt;span style=&#34;color:#00688b&#34;&gt;$navigationGroup&lt;/span&gt; = &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;Usuarios&amp;#39;&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;O bien, con un método dinámico que incluso se puede traducir:&lt;/p&gt;</description>
     </item>
   </channel>
