@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/en/categories/</loc>
+    <loc>http://localhost:1313/laravel/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://web.infenlaces.com/laravel_certificado_2026/categories/"
+                href="http://localhost:1313/laravel/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://web.infenlaces.com/laravel_certificado_2026/fr/categories/"
+                href="http://localhost:1313/laravel/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://web.infenlaces.com/laravel_certificado_2026/en/categories/"
+                href="http://localhost:1313/laravel/en/categories/"
                 />
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/en/</loc>
+    <loc>http://localhost:1313/laravel/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://web.infenlaces.com/laravel_certificado_2026/"
+                href="http://localhost:1313/laravel/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://web.infenlaces.com/laravel_certificado_2026/fr/"
+                href="http://localhost:1313/laravel/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://web.infenlaces.com/laravel_certificado_2026/en/"
+                href="http://localhost:1313/laravel/en/"
                 />
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/en/tags/</loc>
+    <loc>http://localhost:1313/laravel/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://web.infenlaces.com/laravel_certificado_2026/tags/"
+                href="http://localhost:1313/laravel/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://web.infenlaces.com/laravel_certificado_2026/fr/tags/"
+                href="http://localhost:1313/laravel/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://web.infenlaces.com/laravel_certificado_2026/en/tags/"
+                href="http://localhost:1313/laravel/en/tags/"
                 />
   </url>
 </urlset>

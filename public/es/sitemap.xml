@@ -2,339 +2,369 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/14_filament/page/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/14_filament/page/</loc>
     <lastmod>2025-09-21T08:32:21+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/14_filament/widget/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/14_filament/widget/</loc>
     <lastmod>2024-08-26T18:45:00+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/14_filament/panel/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/14_filament/panel/</loc>
     <lastmod>2024-08-08T18:23:50+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/10_api/1.instalacion/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/10_api/1.instalacion/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/100_anexos/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/100_anexos/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/06_autenticacion/fortify/02_page_role_autenticated/</loc>
+    <loc>http://localhost:1313/laravel/docs/06_autenticacion/vistas-y-controladores/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/06_autenticacion/fortify/02_page_role_autenticated/</loc>
+    <loc>http://localhost:1313/laravel/docs/06_autenticacion/fortify/02_page_role_autenticated/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/07_migraciones/eloquent/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/06_autenticacion/fortify/02_page_role_autenticated/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/07_migraciones/eloquent_2/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/07_migraciones/eloquent/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/999_cheatseet/helper/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/07_migraciones/eloquent_2/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/06_autenticacion/breeze/</loc>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/helper/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/06_autenticacion/fortify/01_instalacion/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/helper/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/06_autenticacion/breeze/</loc>
+    <loc>http://localhost:1313/laravel/docs/06_autenticacion/breeze/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/06_autenticacion/fortify/01_instalacion/</loc>
+    <loc>http://localhost:1313/laravel/docs/06_autenticacion/fortify/01_instalacion/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/01_introducci%C3%B3n/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/06_autenticacion/breeze/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/08_crud/03_el-controlador/01_listado/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/06_autenticacion/fortify/01_instalacion/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/04_plantillas/01_blade/</loc>
+    <loc>http://localhost:1313/laravel/docs/01_introducci%C3%B3n/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/999_cheatseet/helper/10_vistas/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/08_crud/03_el-controlador/01_listado/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/05_multilenguaje/plugin_busqueda/</loc>
+    <loc>http://localhost:1313/laravel/docs/04_plantillas/01_blade/</loc>
+    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/helper/10_vistas/</loc>
+    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/helper/10_vistas/</loc>
+    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/docs/pendiente/05_multilenguaje/plugin_busqueda/</loc>
     <lastmod>2026-01-12T08:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/</loc>
+    <loc>http://localhost:1313/laravel/docs/</loc>
     <lastmod>2026-01-12T08:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/100_anexos/model_binding/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/100_anexos/model_binding/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/10_api/2.visiongeneral/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/10_api/2.visiongeneral/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/08_crud/03_el-controlador/02_crearalumno/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/08_crud/03_el-controlador/02_crearalumno/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/04_plantillas/02_creandodise%C3%B1o/</loc>
+    <loc>http://localhost:1313/laravel/docs/04_plantillas/02_creandodise%C3%B1o/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/02_instalaci%C3%B3n/</loc>
+    <loc>http://localhost:1313/laravel/docs/02_instalaci%C3%B3n/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/999_cheatseet/04_despliegue/rutas/</loc>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/04_despliegue/rutas/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/999_cheatseet/helper/20_rutas/</loc>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/helper/20_rutas/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/07_migraciones/sql_to_eloquent/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/04_despliegue/rutas/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/999_cheatseet/04_despliegue/vistas/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/helper/20_rutas/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/999_cheatseet/helper/30_request/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/07_migraciones/sql_to_eloquent/</loc>
+    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/04_despliegue/vistas/</loc>
+    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/04_despliegue/vistas/</loc>
+    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/helper/30_request/</loc>
     <lastmod>2023-08-13T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/10_api/3.la-vista/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/helper/30_request/</loc>
+    <lastmod>2023-08-13T18:21:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/docs/pendiente/10_api/3.la-vista/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/999_cheatseet/artisan/</loc>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/artisan/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/04_plantillas/03_componentes/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/artisan/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/999_cheatseet/blade/</loc>
+    <loc>http://localhost:1313/laravel/docs/04_plantillas/03_componentes/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/04_plantillas/04_ejemplo/</loc>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/blade/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/08_crud/03_el-controlador/03_modificar/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/blade/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/10_test/pest/</loc>
+    <loc>http://localhost:1313/laravel/docs/04_plantillas/04_ejemplo/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/03_rutas/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/08_crud/03_el-controlador/03_modificar/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/08_crud/03_el-controlador/04_borrar/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/10_test/pest/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/999_cheatseet/carbon/</loc>
+    <loc>http://localhost:1313/laravel/docs/03_rutas/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/999_cheatseet/04_despliegue/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/08_crud/03_el-controlador/04_borrar/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/999_cheatseet/07_database/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/carbon/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/04_plantillas/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/04_despliegue/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/999_cheatseet/05_filefacade/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/07_database/</loc>
+    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/docs/04_plantillas/</loc>
+    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/05_filefacade/</loc>
     <lastmod>2025-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/60_collection/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/60_collection/</loc>
     <lastmod>2025-07-24T12:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/999_cheatseet/06_authfortity/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/06_authfortity/</loc>
     <lastmod>2025-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/06_autenticacion/</loc>
+    <loc>http://localhost:1313/laravel/docs/06_autenticacion/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/06_autenticacion/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/06_autenticacion/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/06_autenticacion/fortify/diagrama/</loc>
+    <loc>http://localhost:1313/laravel/docs/06_autenticacion/fortify/diagrama/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/06_autenticacion/fortify/diagrama/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/06_autenticacion/fortify/diagrama/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/06_autenticacion/fortify/peronsalizar_controladores/</loc>
+    <loc>http://localhost:1313/laravel/docs/06_autenticacion/fortify/peronsalizar_controladores/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/06_autenticacion/fortify/peronsalizar_controladores/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/06_autenticacion/fortify/peronsalizar_controladores/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/70_laravel_idea/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/70_laravel_idea/</loc>
     <lastmod>2025-07-27T12:30:00+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/07_migraciones/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/07_migraciones/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/08_crud/01_la-tabla/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/08_crud/01_la-tabla/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/100_anexos/bootstrap/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/100_anexos/bootstrap/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/10_api/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/10_api/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/11_roles/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/11_roles/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/31_optimizacion_carga/02_lazy/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/31_optimizacion_carga/02_lazy/</loc>
     <lastmod>2024-08-08T18:24:10+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/31_optimizacion_carga/03_tiempos/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/31_optimizacion_carga/03_tiempos/</loc>
     <lastmod>2024-08-08T18:24:10+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/31_optimizacion_carga/04_props_pesadas/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/31_optimizacion_carga/04_props_pesadas/</loc>
     <lastmod>2024-08-08T18:26:00+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/31_optimizacion_carga/05_carga_datos_axios/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/31_optimizacion_carga/05_carga_datos_axios/</loc>
     <lastmod>2024-08-08T18:27:00+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/999_cheatseet/</loc>
+    <loc>http://localhost:1313/laravel/docs/999_cheatseet/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/1010_shepherd/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/</loc>
+    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/docs/pendiente/1010_shepherd/</loc>
     <lastmod>2025-01-05T10:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/</loc>
+    <loc>http://localhost:1313/laravel/</loc>
     <lastmod>2026-01-12T08:00:00+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://web.infenlaces.com/laravel_certificado_2026/fr/"
+                href="http://localhost:1313/laravel/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://web.infenlaces.com/laravel_certificado_2026/en/"
+                href="http://localhost:1313/laravel/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://web.infenlaces.com/laravel_certificado_2026/"
+                href="http://localhost:1313/laravel/"
                 />
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/categories/</loc>
-    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://web.infenlaces.com/laravel_certificado_2026/fr/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://web.infenlaces.com/laravel_certificado_2026/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://web.infenlaces.com/laravel_certificado_2026/categories/"
-                />
-  </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/dashboard/</loc>
-    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
-  </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/categories/filament/</loc>
-    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
-  </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/filament/</loc>
-    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
-  </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/herramientas/</loc>
-    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
-  </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/categories/laravel/</loc>
-    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
-  </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/laravel/</loc>
-    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
-  </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/categories/p%C3%A1ginas/</loc>
-    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
-  </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/p%C3%A1ginas/</loc>
-    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
-  </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/categories/panel/</loc>
-    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
-  </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/panel/</loc>
-    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
-  </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/</loc>
+    <loc>http://localhost:1313/laravel/categories/</loc>
     <lastmod>2025-09-21T08:32:21+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://web.infenlaces.com/laravel_certificado_2026/en/tags/"
+                href="http://localhost:1313/laravel/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://web.infenlaces.com/laravel_certificado_2026/fr/tags/"
+                href="http://localhost:1313/laravel/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://web.infenlaces.com/laravel_certificado_2026/tags/"
+                href="http://localhost:1313/laravel/categories/"
                 />
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/10_api/4.-swagger/</loc>
+    <loc>http://localhost:1313/laravel/tags/dashboard/</loc>
+    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/categories/filament/</loc>
+    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/tags/filament/</loc>
+    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/tags/herramientas/</loc>
+    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/categories/laravel/</loc>
+    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/tags/laravel/</loc>
+    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/categories/p%C3%A1ginas/</loc>
+    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/tags/p%C3%A1ginas/</loc>
+    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/categories/panel/</loc>
+    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/tags/panel/</loc>
+    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/tags/</loc>
+    <lastmod>2025-09-21T08:32:21+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/laravel/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="http://localhost:1313/laravel/fr/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/laravel/tags/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/laravel/docs/pendiente/10_api/4.-swagger/</loc>
     <lastmod>2025-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/categories/archivos/</loc>
+    <loc>http://localhost:1313/laravel/categories/archivos/</loc>
     <lastmod>2025-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/categories/auth/</loc>
+    <loc>http://localhost:1313/laravel/categories/auth/</loc>
     <lastmod>2025-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/auth/</loc>
+    <loc>http://localhost:1313/laravel/tags/auth/</loc>
     <lastmod>2025-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/categories/facades/</loc>
+    <loc>http://localhost:1313/laravel/categories/facades/</loc>
     <lastmod>2025-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/facades/</loc>
+    <loc>http://localhost:1313/laravel/tags/facades/</loc>
     <lastmod>2025-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/file/</loc>
+    <loc>http://localhost:1313/laravel/tags/file/</loc>
     <lastmod>2025-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/categories/fortity/</loc>
+    <loc>http://localhost:1313/laravel/categories/fortity/</loc>
     <lastmod>2025-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/fortity/</loc>
+    <loc>http://localhost:1313/laravel/tags/fortity/</loc>
     <lastmod>2025-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/categories/widgets/</loc>
+    <loc>http://localhost:1313/laravel/categories/widgets/</loc>
     <lastmod>2024-08-26T18:45:00+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/widgets/</loc>
+    <loc>http://localhost:1313/laravel/tags/widgets/</loc>
     <lastmod>2024-08-26T18:45:00+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/axios/</loc>
+    <loc>http://localhost:1313/laravel/tags/axios/</loc>
     <lastmod>2024-08-08T18:27:00+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/inertia/</loc>
+    <loc>http://localhost:1313/laravel/tags/inertia/</loc>
     <lastmod>2024-08-08T18:27:00+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/categories/optimizaci%C3%B3n/</loc>
+    <loc>http://localhost:1313/laravel/categories/optimizaci%C3%B3n/</loc>
     <lastmod>2024-08-08T18:27:00+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/vue/</loc>
+    <loc>http://localhost:1313/laravel/tags/vue/</loc>
     <lastmod>2024-08-08T18:27:00+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/performance/</loc>
+    <loc>http://localhost:1313/laravel/tags/performance/</loc>
     <lastmod>2024-08-08T18:26:00+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/laravel/</loc>
+    <loc>http://localhost:1313/laravel/tags/laravel/</loc>
     <lastmod>2024-08-08T18:23:50+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/docs/pendiente/14_filament/panel/panel/</loc>
+    <loc>http://localhost:1313/laravel/docs/pendiente/14_filament/panel/panel/</loc>
     <lastmod>2024-08-08T18:23:50+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/tags/navegaci%C3%B3n/</loc>
+    <loc>http://localhost:1313/laravel/tags/navegaci%C3%B3n/</loc>
     <lastmod>2024-08-08T18:23:50+02:00</lastmod>
   </url><url>
-    <loc>https://web.infenlaces.com/laravel_certificado_2026/search/</loc>
+    <loc>http://localhost:1313/laravel/search/</loc>
   </url>
 </urlset>

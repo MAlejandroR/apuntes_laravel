@@ -1,0 +1,424 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/999_cheatseet/04_despliegue/vistas/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Vistas | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/999_cheatseet/04_despliegue/vistas/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Vistas">
+  <meta property="og:description" content="Helpers de Vistas en Laravel ¿Qué son los Helpers de Vistas? Los helpers de vistas en Laravel son funciones que facilitan el manejo y la renderización de las vistas. Estos helpers permiten una interacción más simple y eficiente con las plantillas Blade del framework.
+Cómo helper de vistas, tenemos la función view() de Laravel.
+Este helper retorna una instancia de una vista .
+Esta función no solo carga y retorna la vista especificada, sino que también permite el encadenamiento de métodos adicionales disponibles en la instancia del objeto de la vista .">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Vistas">
+  <meta itemprop="description" content="Helpers de Vistas en Laravel ¿Qué son los Helpers de Vistas? Los helpers de vistas en Laravel son funciones que facilitan el manejo y la renderización de las vistas. Estos helpers permiten una interacción más simple y eficiente con las plantillas Blade del framework.
+Cómo helper de vistas, tenemos la función view() de Laravel.
+Este helper retorna una instancia de una vista .
+Esta función no solo carga y retorna la vista especificada, sino que también permite el encadenamiento de métodos adicionales disponibles en la instancia del objeto de la vista .">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="273">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Vistas">
+  <meta name="twitter:description" content="Helpers de Vistas en Laravel ¿Qué son los Helpers de Vistas? Los helpers de vistas en Laravel son funciones que facilitan el manejo y la renderización de las vistas. Estos helpers permiten una interacción más simple y eficiente con las plantillas Blade del framework.
+Cómo helper de vistas, tenemos la función view() de Laravel.
+Este helper retorna una instancia de una vista .
+Esta función no solo carga y retorna la vista especificada, sino que también permite el encadenamiento de métodos adicionales disponibles en la instancia del objeto de la vista .">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs-li">
+  <a href="/laravel/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laraveldocs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs01_introduccic3b3n-check"/>
+  <label for="m-laraveldocs01_introduccic3b3n-check"><a href="/laravel/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs02_instalacic3b3n-check"/>
+  <label for="m-laraveldocs02_instalacic3b3n-check"><a href="/laravel/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs03_rutas-li">
+  <input type="checkbox" id="m-laraveldocs03_rutas-check"/>
+  <label for="m-laraveldocs03_rutas-check"><a href="/laravel/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs04_plantillas-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas-check"/>
+  <label for="m-laraveldocs04_plantillas-check"><a href="/laravel/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas01_blade-check"/>
+  <label for="m-laraveldocs04_plantillas01_blade-check"><a href="/laravel/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laraveldocs04_plantillas02_creandodisec3b1o-check"><a href="/laravel/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas03_componentes-check"/>
+  <label for="m-laraveldocs04_plantillas03_componentes-check"><a href="/laravel/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas04_ejemplo-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas04_ejemplo-check"/>
+  <label for="m-laraveldocs04_plantillas04_ejemplo-check"><a href="/laravel/docs/04_plantillas/04_ejemplo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas04_ejemplo"><i class="fa-solid fa-diagram-project"></i><span class="">Ejemplo de nuestro proyecto </span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacion-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacion-check"/>
+  <label for="m-laraveldocs06_autenticacion-check"><a href="/laravel/docs/06_autenticacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacion"><i class="fa-solid fa-sitemap"></i><span class="">Autenticación</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionvistas-y-controladores-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionvistas-y-controladores-check"/>
+  <label for="m-laraveldocs06_autenticacionvistas-y-controladores-check"><a href="/laravel/docs/06_autenticacion/vistas-y-controladores/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionvistas-y-controladores"><i class="fa-solid fa-user-lock"></i><span class="">auth: Vistas y Controladores</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionbreeze-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionbreeze-check"/>
+  <label for="m-laraveldocs06_autenticacionbreeze-check"><a href="/laravel/docs/06_autenticacion/breeze/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionbreeze"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs999_cheatseet-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet-check" checked/>
+  <label for="m-laraveldocs999_cheatseet-check"><a href="/laravel/docs/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet"><span class="">Cheat Sheet</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseethelper-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper-check"/>
+  <label for="m-laraveldocs999_cheatseethelper-check"><a href="/laravel/docs/999_cheatseet/helper/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper"><span class="">Helper en Laravel</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper10_vistas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper10_vistas-check"/>
+  <label for="m-laraveldocs999_cheatseethelper10_vistas-check"><a href="/laravel/docs/999_cheatseet/helper/10_vistas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper10_vistas"><span class="">Vistas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper20_rutas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper20_rutas-check"/>
+  <label for="m-laraveldocs999_cheatseethelper20_rutas-check"><a href="/laravel/docs/999_cheatseet/helper/20_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper20_rutas"><span class="">Rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper30_request-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper30_request-check"/>
+  <label for="m-laraveldocs999_cheatseethelper30_request-check"><a href="/laravel/docs/999_cheatseet/helper/30_request/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper30_request"><span class="">Request en Laravel</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetartisan-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetartisan-check"/>
+  <label for="m-laraveldocs999_cheatseetartisan-check"><a href="/laravel/docs/999_cheatseet/artisan/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetartisan"><span class="">Artisan (CLI)</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetblade-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetblade-check"/>
+  <label for="m-laraveldocs999_cheatseetblade-check"><a href="/laravel/docs/999_cheatseet/blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetblade"><span class="">Directivas Blade</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#qué-son-los-helpers-de-vistas">¿Qué son los Helpers de Vistas?</a></li>
+    <li><a href="#principales-helpers-de-vistas">Principales Helpers de Vistas</a>
+      <ul>
+        <li><a href="#view"><strong><code>view()</code></strong></a></li>
+        <li><a href="#view-make"><strong><code>view()-&gt;make()</code></strong></a></li>
+        <li><a href="#view-exists"><strong><code>view()-&gt;exists()</code></strong></a></li>
+        <li><a href="#view-first"><strong><code>view()-&gt;first()</code></strong></a></li>
+        <li><a href="#view-share"><strong><code>view()-&gt;share()</code></strong></a></li>
+        <li><a href="#view-composer"><strong><code>view()-&gt;composer()</code></strong></a></li>
+        <li><a href="#view-creator"><strong><code>view()-&gt;creator()</code></strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            <div class="taxonomy taxonomy-terms-cloud taxo-categories">
+      <h5 class="taxonomy-title">Categories</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      <h5 class="taxonomy-title">Tags</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel/docs/">Laravel</a></li>
+  <li class="breadcrumb-item">
+    <a href="/laravel/docs/999_cheatseet/">Cheat Sheet</a></li>
+  <li class="breadcrumb-item">
+    <a href="">Desplegar en hosgint</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Vistas</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Vistas</h1>
+  
+	<header class="article-meta">
+		
+</header>
+	<h1 id="helpers-de-vistas-en-laravel">Helpers de Vistas en Laravel</h1>
+<h2 id="qué-son-los-helpers-de-vistas">¿Qué son los Helpers de Vistas?</h2>
+<p>Los helpers de vistas en Laravel son funciones que facilitan el manejo y la renderización de las vistas. Estos helpers permiten una interacción más simple y eficiente con las plantillas Blade del framework.</p>
+<p>Cómo helper de vistas, tenemos  la función 
+<span class="font-weight-bold text-primary">
+
+
+    view()
+
+</span>
+ de Laravel.</p>
+<p>Este helper 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    retorna una instancia de una vista
+
+</span>
+</strong>
+.</p>
+<p>Esta función no solo carga y retorna la vista especificada, sino que también permite 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    el encadenamiento de métodos adicionales disponibles en la instancia del objeto de la vista
+
+</span>
+</strong>
+.</p>
+<p>Esto facilita <strong>la manipulación y personalización de la vista</strong> antes de que se envíe al navegador.</p>
+<h2 id="principales-helpers-de-vistas">Principales Helpers de Vistas</h2>
+<h3 id="view"><strong><code>view()</code></strong></h3>
+<ul>
+<li>Genera una nueva vista.</li>
+<li>Ejemplo: <code>view('welcome', ['data' =&gt; $data])</code> carga la vista <code>welcome</code> con datos.</li>
+</ul>
+<h3 id="view-make"><strong><code>view()-&gt;make()</code></strong></h3>
+<ul>
+<li>Similar a <code>view()</code>, pero con una sintaxis alternativa.</li>
+<li>Ejemplo: <code>view()-&gt;make('welcome', ['data' =&gt; $data])</code>.</li>
+</ul>
+<h3 id="view-exists"><strong><code>view()-&gt;exists()</code></strong></h3>
+<ul>
+<li>Comprueba si una vista existe.</li>
+<li>Ejemplo: <code>view()-&gt;exists('welcome')</code> devuelve <code>true</code> si la vista <code>welcome</code> existe.</li>
+</ul>
+<h3 id="view-first"><strong><code>view()-&gt;first()</code></strong></h3>
+<ul>
+<li>Intenta renderizar la primera vista existente de una lista.</li>
+<li>Ejemplo: <code>view()-&gt;first(['custom', 'default'])</code> carga la primera vista que exista entre <code>custom</code> y <code>default</code>.</li>
+</ul>
+<h3 id="view-share"><strong><code>view()-&gt;share()</code></strong></h3>
+<ul>
+<li>Comparte una variable en todas las vistas.</li>
+<li>Ejemplo: <code>view()-&gt;share('key', 'value')</code> hace que <code>key</code> esté disponible globalmente en todas las vistas.</li>
+</ul>
+<h3 id="view-composer"><strong><code>view()-&gt;composer()</code></strong></h3>
+<ul>
+<li>Asigna datos a una vista cada vez que se carga.</li>
+<li>Ejemplo: <code>view()-&gt;composer('welcome', function ($view) { ... })</code>.</li>
+</ul>
+<h3 id="view-creator"><strong><code>view()-&gt;creator()</code></strong></h3>
+<ul>
+<li>Similar a <code>view()-&gt;composer()</code>, pero se ejecuta cuando la vista se crea.</li>
+<li>Ejemplo: <code>view()-&gt;creator('welcome', function ($view) { ... })</code>.</li>
+</ul>
+<p>Estos helpers son fundamentales para la gestión de vistas en Laravel, permitiendo un flujo de trabajo más ágil y una mayor flexibilidad en la renderización y el manejo de datos en las vistas.</p>
+<ul>
+<li>Ejemplo: <code>url()-&gt;previous()</code></li>
+</ul>
+
+  <div class="section-index">
+    
+    
+    </div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

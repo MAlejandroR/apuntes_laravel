@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ejemplo de nuestro proyecto  on Laravel: Framework de php</title>
-    <link>https://web.infenlaces.com/laravel_certificado_2026/docs/04_plantillas/04_ejemplo/</link>
+    <link>http://localhost:1313/laravel/docs/04_plantillas/04_ejemplo/</link>
     <description>Recent content in Ejemplo de nuestro proyecto  on Laravel: Framework de php</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://web.infenlaces.com/laravel_certificado_2026/docs/04_plantillas/04_ejemplo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/laravel/docs/04_plantillas/04_ejemplo/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
