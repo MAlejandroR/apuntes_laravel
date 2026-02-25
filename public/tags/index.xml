@@ -2,129 +2,129 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Laravel: Framework de php</title>
-    <link>https://web.infenlaces.com/laravel/tags/</link>
+    <link>http://localhost:1313/laravel/tags/</link>
     <description>Recent content in Tags on Laravel: Framework de php</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sun, 21 Sep 2025 08:32:21 +0200</lastBuildDate>
-    <atom:link href="https://web.infenlaces.com/laravel/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/laravel/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dashboard</title>
-      <link>https://web.infenlaces.com/laravel/tags/dashboard/</link>
+      <link>http://localhost:1313/laravel/tags/dashboard/</link>
       <pubDate>Sun, 21 Sep 2025 08:32:21 +0200</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/dashboard/</guid>
+      <guid>http://localhost:1313/laravel/tags/dashboard/</guid>
       <description></description>
     </item>
     <item>
       <title>Filament</title>
-      <link>https://web.infenlaces.com/laravel/tags/filament/</link>
+      <link>http://localhost:1313/laravel/tags/filament/</link>
       <pubDate>Sun, 21 Sep 2025 08:32:21 +0200</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/filament/</guid>
+      <guid>http://localhost:1313/laravel/tags/filament/</guid>
       <description></description>
     </item>
     <item>
       <title>Herramientas</title>
-      <link>https://web.infenlaces.com/laravel/tags/herramientas/</link>
+      <link>http://localhost:1313/laravel/tags/herramientas/</link>
       <pubDate>Sun, 21 Sep 2025 08:32:21 +0200</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/herramientas/</guid>
+      <guid>http://localhost:1313/laravel/tags/herramientas/</guid>
       <description></description>
     </item>
     <item>
       <title>Laravel</title>
-      <link>https://web.infenlaces.com/laravel/tags/laravel/</link>
+      <link>http://localhost:1313/laravel/tags/laravel/</link>
       <pubDate>Sun, 21 Sep 2025 08:32:21 +0200</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/laravel/</guid>
+      <guid>http://localhost:1313/laravel/tags/laravel/</guid>
       <description></description>
     </item>
     <item>
       <title>Páginas</title>
-      <link>https://web.infenlaces.com/laravel/tags/p%C3%A1ginas/</link>
+      <link>http://localhost:1313/laravel/tags/p%C3%A1ginas/</link>
       <pubDate>Sun, 21 Sep 2025 08:32:21 +0200</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/p%C3%A1ginas/</guid>
+      <guid>http://localhost:1313/laravel/tags/p%C3%A1ginas/</guid>
       <description></description>
     </item>
     <item>
       <title>Panel</title>
-      <link>https://web.infenlaces.com/laravel/tags/panel/</link>
+      <link>http://localhost:1313/laravel/tags/panel/</link>
       <pubDate>Sun, 21 Sep 2025 08:32:21 +0200</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/panel/</guid>
+      <guid>http://localhost:1313/laravel/tags/panel/</guid>
       <description></description>
     </item>
     <item>
       <title>Auth</title>
-      <link>https://web.infenlaces.com/laravel/tags/auth/</link>
+      <link>http://localhost:1313/laravel/tags/auth/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/auth/</guid>
+      <guid>http://localhost:1313/laravel/tags/auth/</guid>
       <description></description>
     </item>
     <item>
       <title>Facades</title>
-      <link>https://web.infenlaces.com/laravel/tags/facades/</link>
+      <link>http://localhost:1313/laravel/tags/facades/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/facades/</guid>
+      <guid>http://localhost:1313/laravel/tags/facades/</guid>
       <description></description>
     </item>
     <item>
       <title>File</title>
-      <link>https://web.infenlaces.com/laravel/tags/file/</link>
+      <link>http://localhost:1313/laravel/tags/file/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/file/</guid>
+      <guid>http://localhost:1313/laravel/tags/file/</guid>
       <description></description>
     </item>
     <item>
       <title>Fortity</title>
-      <link>https://web.infenlaces.com/laravel/tags/fortity/</link>
+      <link>http://localhost:1313/laravel/tags/fortity/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/fortity/</guid>
+      <guid>http://localhost:1313/laravel/tags/fortity/</guid>
       <description></description>
     </item>
     <item>
       <title>Widgets</title>
-      <link>https://web.infenlaces.com/laravel/tags/widgets/</link>
+      <link>http://localhost:1313/laravel/tags/widgets/</link>
       <pubDate>Mon, 26 Aug 2024 18:45:00 +0200</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/widgets/</guid>
+      <guid>http://localhost:1313/laravel/tags/widgets/</guid>
       <description></description>
     </item>
     <item>
       <title>Axios</title>
-      <link>https://web.infenlaces.com/laravel/tags/axios/</link>
+      <link>http://localhost:1313/laravel/tags/axios/</link>
       <pubDate>Thu, 08 Aug 2024 18:27:00 +0200</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/axios/</guid>
+      <guid>http://localhost:1313/laravel/tags/axios/</guid>
       <description></description>
     </item>
     <item>
       <title>Inertia</title>
-      <link>https://web.infenlaces.com/laravel/tags/inertia/</link>
+      <link>http://localhost:1313/laravel/tags/inertia/</link>
       <pubDate>Thu, 08 Aug 2024 18:27:00 +0200</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/inertia/</guid>
+      <guid>http://localhost:1313/laravel/tags/inertia/</guid>
       <description></description>
     </item>
     <item>
       <title>Vue</title>
-      <link>https://web.infenlaces.com/laravel/tags/vue/</link>
+      <link>http://localhost:1313/laravel/tags/vue/</link>
       <pubDate>Thu, 08 Aug 2024 18:27:00 +0200</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/vue/</guid>
+      <guid>http://localhost:1313/laravel/tags/vue/</guid>
       <description></description>
     </item>
     <item>
       <title>Performance</title>
-      <link>https://web.infenlaces.com/laravel/tags/performance/</link>
+      <link>http://localhost:1313/laravel/tags/performance/</link>
       <pubDate>Thu, 08 Aug 2024 18:26:00 +0200</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/performance/</guid>
+      <guid>http://localhost:1313/laravel/tags/performance/</guid>
       <description></description>
     </item>
     <item>
       <title>Laravel&#39;</title>
-      <link>https://web.infenlaces.com/laravel/tags/laravel/</link>
+      <link>http://localhost:1313/laravel/tags/laravel/</link>
       <pubDate>Thu, 08 Aug 2024 18:23:50 +0200</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/laravel/</guid>
+      <guid>http://localhost:1313/laravel/tags/laravel/</guid>
       <description></description>
     </item>
     <item>
       <title>Navegación</title>
-      <link>https://web.infenlaces.com/laravel/tags/navegaci%C3%B3n/</link>
+      <link>http://localhost:1313/laravel/tags/navegaci%C3%B3n/</link>
       <pubDate>Thu, 08 Aug 2024 18:23:50 +0200</pubDate>
-      <guid>https://web.infenlaces.com/laravel/tags/navegaci%C3%B3n/</guid>
+      <guid>http://localhost:1313/laravel/tags/navegaci%C3%B3n/</guid>
       <description></description>
     </item>
   </channel>

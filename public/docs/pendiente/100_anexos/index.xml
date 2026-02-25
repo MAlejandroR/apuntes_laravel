@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Anexos on Laravel: Framework de php</title>
-    <link>https://web.infenlaces.com/laravel/docs/pendiente/100_anexos/</link>
+    <link>http://localhost:1313/laravel/docs/pendiente/100_anexos/</link>
     <description>Recent content in Anexos on Laravel: Framework de php</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sat, 08 Apr 2023 18:21:47 +0200</lastBuildDate>
-    <atom:link href="https://web.infenlaces.com/laravel/docs/pendiente/100_anexos/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/laravel/docs/pendiente/100_anexos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Anexos</title>
-      <link>https://web.infenlaces.com/laravel/docs/pendiente/100_anexos/model_binding/</link>
+      <link>http://localhost:1313/laravel/docs/pendiente/100_anexos/model_binding/</link>
       <pubDate>Sat, 08 Apr 2023 18:21:47 +0200</pubDate>
-      <guid>https://web.infenlaces.com/laravel/docs/pendiente/100_anexos/model_binding/</guid>
+      <guid>http://localhost:1313/laravel/docs/pendiente/100_anexos/model_binding/</guid>
       <description>&lt;h1 id=&#34;route-model-binding--summary&#34;&gt;Route Model Binding — Summary&lt;/h1&gt;&#xA;&lt;h2 id=&#34;qué-es&#34;&gt;¿Qué es?&lt;/h2&gt;&#xA;&lt;p&gt;El &lt;strong&gt;Route Model Binding&lt;/strong&gt; es un mecanismo de Laravel que transforma automáticamente&#xA;un parámetro de una ruta en una &lt;strong&gt;instancia de un modelo Eloquent&lt;/strong&gt; antes de que&#xA;el controlador sea ejecutado.&lt;/p&gt;&#xA;&lt;p&gt;Ejemplo conceptual:&#xA;&lt;code&gt;/alumnos/5&lt;/code&gt; → &lt;code&gt;Alumno::findOrFail(5)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;binding-implícito&#34;&gt;Binding implícito&lt;/h2&gt;&#xA;&lt;p&gt;Laravel lo aplica automáticamente si:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;El nombre del parámetro de la ruta coincide con el argumento&lt;/li&gt;&#xA;&lt;li&gt;El argumento del controlador está tipado con el modelo&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Route::&lt;span style=&#34;color:#658b00&#34;&gt;get&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;/alumnos/{alumno}&amp;#39;&lt;/span&gt;, [AlumnoController::&lt;span style=&#34;color:#658b00&#34;&gt;class&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;show&amp;#39;&lt;/span&gt;]);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;show&lt;/span&gt;(Alumno &lt;span style=&#34;color:#00688b&#34;&gt;$alumno&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// $alumno es una instancia de Alumno&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;Si el modelo no existe → &lt;strong&gt;404 automático&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>

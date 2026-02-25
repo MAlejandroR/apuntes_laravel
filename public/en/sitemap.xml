@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://web.infenlaces.com/laravel/en/categories/</loc>
+    <loc>http://localhost:1313/laravel/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://web.infenlaces.com/laravel/categories/"
+                href="http://localhost:1313/laravel/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://web.infenlaces.com/laravel/fr/categories/"
+                href="http://localhost:1313/laravel/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://web.infenlaces.com/laravel/en/categories/"
+                href="http://localhost:1313/laravel/en/categories/"
                 />
   </url><url>
-    <loc>https://web.infenlaces.com/laravel/en/</loc>
+    <loc>http://localhost:1313/laravel/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://web.infenlaces.com/laravel/"
+                href="http://localhost:1313/laravel/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://web.infenlaces.com/laravel/fr/"
+                href="http://localhost:1313/laravel/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://web.infenlaces.com/laravel/en/"
+                href="http://localhost:1313/laravel/en/"
                 />
   </url><url>
-    <loc>https://web.infenlaces.com/laravel/en/tags/</loc>
+    <loc>http://localhost:1313/laravel/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://web.infenlaces.com/laravel/tags/"
+                href="http://localhost:1313/laravel/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://web.infenlaces.com/laravel/fr/tags/"
+                href="http://localhost:1313/laravel/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://web.infenlaces.com/laravel/en/tags/"
+                href="http://localhost:1313/laravel/en/tags/"
                 />
   </url>
 </urlset>

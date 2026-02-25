@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>01_Introducción y 20_rutas on Laravel: Framework de php</title>
-    <link>https://web.infenlaces.com/laravel/docs/pendiente/10_api/1.instalacion/</link>
+    <link>http://localhost:1313/laravel/docs/pendiente/10_api/1.instalacion/</link>
     <description>Recent content in 01_Introducción y 20_rutas on Laravel: Framework de php</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://web.infenlaces.com/laravel/docs/pendiente/10_api/1.instalacion/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/laravel/docs/pendiente/10_api/1.instalacion/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
