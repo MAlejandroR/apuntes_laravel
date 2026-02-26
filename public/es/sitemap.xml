@@ -194,6 +194,9 @@
     <loc>http://localhost:1313/laravel/docs/pendiente/07_migraciones/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/laravel/docs/07_multilenguaje/</loc>
+    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/laravel/docs/pendiente/08_crud/01_la-tabla/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
@@ -249,13 +252,13 @@
     <lastmod>2025-09-21T08:32:21+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/laravel/fr/categories/"
+                hreflang="en"
+                href="http://localhost:1313/laravel/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/laravel/en/categories/"
+                hreflang="fr"
+                href="http://localhost:1313/laravel/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"

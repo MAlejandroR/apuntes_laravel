@@ -7,28 +7,47 @@ weight: 70
 
 # Selector de idioma en Laravel 12 con Alpine.js
 
-En este apartado se explica **paso a paso** cómo implementar un **selector de idiomas desplegable** usando **Alpine.js**, con **persistencia del idioma en sesión** mediante un **middleware en Laravel 12**.
+En este apartado se explica **paso a paso** cómo implementar:
+* Un **selector de idiomas desplegable** ,
+* Cambio en un **controlador**,
+* Con **persistencia del idioma en sesión** 
+* mediante un **middleware en Laravel4**.
+Necesitaremos un poco de js para ante el cambio den el botón de cambio de idioma se llame al controlador
+
+* La siguiente imagen muestra el flujo de trabajo de nuestro objetivo:
+
+![flujo_cambio_idioma.png](flujo_cambio_idioma.png)
 
 ---
 
 ## 1. Instalación del paquete de idiomas
 
 Laravel incluye el sistema de localización, pero **no incluye traducciones**.  
-El paquete recomendado actualmente es `laravel-lang/lang`.
+El paquete recomendado actualmente es `laravel-lang/common`.
 
 ### Instalación
+Este paquete requiere la librería php-math que no suele estar instalada, Es este un paquete de matemáticas que se necesita para publicar idiomas
 
 {{< highlight bash "linenos=table" >}}
-composer require laravel-lang/lang
+sudo apt install php-math
+{{< /highlight>}}
+
+Ahora ya instalamos el paquete de idiomas
+
+{{< highlight php tabla_alumnos "linenos=table, hl_lines=" >}}
+
+composer require laravel-lang/common
 {{< /highlight >}}
 
 ### Añadir idiomas
-
-Ejemplo: español e inglés.
+Una vez instalado es sencillo añadir idiomas.
+Lo único que hay que conocer es el identificador del idiomam llamado código de idioma según SIO 639-1m que identifica el idioma de manera normalizada usando **2 letras**
+Ejemplo: españo, inglés y francés.
 
 {{< highlight bash "linenos=table" >}}
 php artisan lang:add es
 php artisan lang:add en
+php artisan lang:add fr
 {{< /highlight >}}
 
 Esto genera la estructura:
@@ -36,6 +55,11 @@ Esto genera la estructura:
 lang/
 - en/
 - es/
+- fr/
+- es.json
+- en.json
+- fr.json
+
 
 con archivos como `auth.php`, `validation.php`, etc.
 
@@ -54,7 +78,50 @@ Archivo `config/app.php`:
 - `locale`: idioma por defecto
 - `fallback_locale`: idioma de respaldo
 
----
+Estas variables las tenemos disponibles en el fichero de configuración **.ENV**
+{{< highlight php tabla_alumnos "linenos=table, hl_lines=" >}}
+APP_LOCALE=en
+APP_FALLBACK_LOCALE=en
+{{< /highlight>}}
+- ---
+## Acciones en nuestra aplicación
+Para realizar una adaptación de esta nueva funcionalidad en nuestra aplicción, necesitamos seguir un proceso de acciones
+### La parte de la vista
+Aquí debemos de realizar dos acciones:
+1. Añadir un elemento gráfico que nos permita seleccionar el idioma
+2. Recoger el evento para llamar al controlador del servidor
+3. Realizar un wrapper de todos  los textos que queramos traducir en nuestra página html
+* {{<color>}}Añadiendo el elemento html{{</color>}}
+* {{<color>}}Recoger el evento{{</color>}}
+* {{<color>}}Wrapper con la función __  o trans {{</color>}}
+### Actulizar los ficheros de idiomas
+*Vamos a crear un fichero de configuración para generalizar y poder incorporar más idiomas con facilidad
+* Creamos este fichero en la carpeta {{<color>}}config{{</color>}}
+{{< highlight php tabla_alumnos "linenos=table, hl_lines=" >}}
+ <?php
+    return [
+        "es" => [
+            "name" => "Español",
+            "flag" => "🇪🇸"
+        ],
+        "fr" => [
+            "name" => "France",
+            "flag" => "🇫🇷"
+        ],
+        "en" => [
+            "name" => "English",
+            "flag" => "🇬🇧"
+        ]
+    ];
+{{< /highlight>}}
+* Este ficheor se lee en cuanlquier momento en nuestro código con el helper {{<color>}}config("nombre_fichero"){{</color>}}
+
+*Ahora en nuestro componenete **header** añadimos un elemento select de html
+
+
+### La parte del controlador
+### Creando un middleware 
+
 
 ## 3. Middleware para establecer el idioma
 

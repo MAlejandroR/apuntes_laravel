@@ -24,27 +24,33 @@
 <meta property="og:url" content="http://localhost:1313/laravel/docs/07_multilenguaje/">
   <meta property="og:site_name" content="Laravel: Framework de php">
   <meta property="og:title" content="Multilenguaje">
-  <meta property="og:description" content="Selector de idioma en Laravel 12 con Alpine.js En este apartado se explica paso a paso cómo implementar un selector de idiomas desplegable usando Alpine.js, con persistencia del idioma en sesión mediante un middleware en Laravel 12.
-1. Instalación del paquete de idiomas Laravel incluye el sistema de localización, pero no incluye traducciones.
-El paquete recomendado actualmente es laravel-lang/lang.
-Instalación 1 composer require laravel-lang/lang Añadir idiomas Ejemplo: español e inglés.">
+  <meta property="og:description" content="Selector de idioma en Laravel 12 con Alpine.js En este apartado se explica paso a paso cómo implementar:
+Un selector de idiomas desplegable ,
+Cambio en un controlador,
+Con persistencia del idioma en sesión
+mediante un middleware en Laravel4. Necesitaremos un poco de js para ante el cambio den el botón de cambio de idioma se llame al controlador
+La siguiente imagen muestra el flujo de trabajo de nuestro objetivo:">
   <meta property="og:locale" content="es">
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Multilenguaje">
-  <meta itemprop="description" content="Selector de idioma en Laravel 12 con Alpine.js En este apartado se explica paso a paso cómo implementar un selector de idiomas desplegable usando Alpine.js, con persistencia del idioma en sesión mediante un middleware en Laravel 12.
-1. Instalación del paquete de idiomas Laravel incluye el sistema de localización, pero no incluye traducciones.
-El paquete recomendado actualmente es laravel-lang/lang.
-Instalación 1 composer require laravel-lang/lang Añadir idiomas Ejemplo: español e inglés.">
+  <meta itemprop="description" content="Selector de idioma en Laravel 12 con Alpine.js En este apartado se explica paso a paso cómo implementar:
+Un selector de idiomas desplegable ,
+Cambio en un controlador,
+Con persistencia del idioma en sesión
+mediante un middleware en Laravel4. Necesitaremos un poco de js para ante el cambio den el botón de cambio de idioma se llame al controlador
+La siguiente imagen muestra el flujo de trabajo de nuestro objetivo:">
   <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
   <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="598">
+  <meta itemprop="wordCount" content="896">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Multilenguaje">
-  <meta name="twitter:description" content="Selector de idioma en Laravel 12 con Alpine.js En este apartado se explica paso a paso cómo implementar un selector de idiomas desplegable usando Alpine.js, con persistencia del idioma en sesión mediante un middleware en Laravel 12.
-1. Instalación del paquete de idiomas Laravel incluye el sistema de localización, pero no incluye traducciones.
-El paquete recomendado actualmente es laravel-lang/lang.
-Instalación 1 composer require laravel-lang/lang Añadir idiomas Ejemplo: español e inglés.">
+  <meta name="twitter:description" content="Selector de idioma en Laravel 12 con Alpine.js En este apartado se explica paso a paso cómo implementar:
+Un selector de idiomas desplegable ,
+Cambio en un controlador,
+Con persistencia del idioma en sesión
+mediante un middleware en Laravel4. Necesitaremos un poco de js para ante el cambio den el botón de cambio de idioma se llame al controlador
+La siguiente imagen muestra el flujo de trabajo de nuestro objetivo:">
 
 
 <link href="/laravel/scss/main.css" rel="stylesheet">
@@ -225,6 +231,14 @@ Instalación 1 composer require laravel-lang/lang Añadir idiomas Ejemplo: espa�
       </ul>
     </li>
     <li><a href="#2-configuración-básica-de-localización">2. Configuración básica de localización</a></li>
+    <li><a href="#acciones-en-nuestra-aplicación">Acciones en nuestra aplicación</a>
+      <ul>
+        <li><a href="#la-parte-de-la-vista">La parte de la vista</a></li>
+        <li><a href="#actulizar-los-ficheros-de-idiomas">Actulizar los ficheros de idiomas</a></li>
+        <li><a href="#la-parte-del-controlador">La parte del controlador</a></li>
+        <li><a href="#creando-un-middleware">Creando un middleware</a></li>
+      </ul>
+    </li>
     <li><a href="#3-middleware-para-establecer-el-idioma">3. Middleware para establecer el idioma</a>
       <ul>
         <li><a href="#31-crear-el-middleware">3.1 Crear el middleware</a></li>
@@ -308,30 +322,56 @@ Instalación 1 composer require laravel-lang/lang Añadir idiomas Ejemplo: espa�
 		
 </header>
 	<h1 id="selector-de-idioma-en-laravel-12-con-alpinejs">Selector de idioma en Laravel 12 con Alpine.js</h1>
-<p>En este apartado se explica <strong>paso a paso</strong> cómo implementar un <strong>selector de idiomas desplegable</strong> usando <strong>Alpine.js</strong>, con <strong>persistencia del idioma en sesión</strong> mediante un <strong>middleware en Laravel 12</strong>.</p>
+<p>En este apartado se explica <strong>paso a paso</strong> cómo implementar:</p>
+<ul>
+<li>
+<p>Un <strong>selector de idiomas desplegable</strong> ,</p>
+</li>
+<li>
+<p>Cambio en un <strong>controlador</strong>,</p>
+</li>
+<li>
+<p>Con <strong>persistencia del idioma en sesión</strong></p>
+</li>
+<li>
+<p>mediante un <strong>middleware en Laravel4</strong>.
+Necesitaremos un poco de js para ante el cambio den el botón de cambio de idioma se llame al controlador</p>
+</li>
+<li>
+<p>La siguiente imagen muestra el flujo de trabajo de nuestro objetivo:</p>
+</li>
+</ul>
+<p><img src="/laravel/docs/07_multilenguaje/flujo_cambio_idioma.png" alt="flujo_cambio_idioma.png"></p>
 <hr>
 <h2 id="1-instalación-del-paquete-de-idiomas">1. Instalación del paquete de idiomas</h2>
 <p>Laravel incluye el sistema de localización, pero <strong>no incluye traducciones</strong>.<br>
-El paquete recomendado actualmente es <code>laravel-lang/lang</code>.</p>
+El paquete recomendado actualmente es <code>laravel-lang/common</code>.</p>
 <h3 id="instalación">Instalación</h3>
+<p>Este paquete requiere la librería php-math que no suele estar instalada, Es este un paquete de matemáticas que se necesita para publicar idiomas</p>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require laravel-lang/lang</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install php-math</span></span></code></pre></td></tr></table>
 </div>
 </div>
+<p>Ahora ya instalamos el paquete de idiomas</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>composer <span style="color:#8b008b;font-weight:bold">require</span> laravel-lang/common</span></span></code></pre></div>
 <h3 id="añadir-idiomas">Añadir idiomas</h3>
-<p>Ejemplo: español e inglés.</p>
+<p>Una vez instalado es sencillo añadir idiomas.
+Lo único que hay que conocer es el identificador del idiomam llamado código de idioma según SIO 639-1m que identifica el idioma de manera normalizada usando <strong>2 letras</strong>
+Ejemplo: españo, inglés y francés.</p>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan lang:add es
-</span></span><span style="display:flex;"><span>php artisan lang:add en</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>php artisan lang:add en
+</span></span><span style="display:flex;"><span>php artisan lang:add fr</span></span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Esto genera la estructura:</p>
@@ -339,6 +379,10 @@ El paquete recomendado actualmente es <code>laravel-lang/lang</code>.</p>
 <ul>
 <li>en/</li>
 <li>es/</li>
+<li>fr/</li>
+<li>es.json</li>
+<li>en.json</li>
+<li>fr.json</li>
 </ul>
 <p>con archivos como <code>auth.php</code>, <code>validation.php</code>, etc.</p>
 <hr>
@@ -360,7 +404,93 @@ El paquete recomendado actualmente es <code>laravel-lang/lang</code>.</p>
 <li><code>locale</code>: idioma por defecto</li>
 <li><code>fallback_locale</code>: idioma de respaldo</li>
 </ul>
+<p>Estas variables las tenemos disponibles en el fichero de configuración <strong>.ENV</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>APP_LOCALE=en
+</span></span><span style="display:flex;"><span>APP_FALLBACK_LOCALE=en</span></span></code></pre></div></p>
 <hr>
+<h2 id="acciones-en-nuestra-aplicación">Acciones en nuestra aplicación</h2>
+<p>Para realizar una adaptación de esta nueva funcionalidad en nuestra aplicción, necesitamos seguir un proceso de acciones</p>
+<h3 id="la-parte-de-la-vista">La parte de la vista</h3>
+<p>Aquí debemos de realizar dos acciones:</p>
+<ol>
+<li>Añadir un elemento gráfico que nos permita seleccionar el idioma</li>
+<li>Recoger el evento para llamar al controlador del servidor</li>
+<li>Realizar un wrapper de todos  los textos que queramos traducir en nuestra página html</li>
+</ol>
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Añadiendo el elemento html
+
+
+</span>
+</strong></li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Recoger el evento
+
+
+</span>
+</strong></li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Wrapper con la función __  o trans
+
+
+</span>
+</strong></li>
+</ul>
+<h3 id="actulizar-los-ficheros-de-idiomas">Actulizar los ficheros de idiomas</h3>
+<p>*Vamos a crear un fichero de configuración para generalizar y poder incorporar más idiomas con facilidad</p>
+<ul>
+<li>Creamos este fichero en la carpeta 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    config
+
+
+</span>
+</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span> &lt;?php
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#34;es&#34;</span> =&gt; [
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#34;name&#34;</span> =&gt; <span style="color:#cd5555">&#34;Español&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#34;flag&#34;</span> =&gt; <span style="color:#cd5555">&#34;🇪🇸&#34;</span>
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#34;fr&#34;</span> =&gt; [
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#34;name&#34;</span> =&gt; <span style="color:#cd5555">&#34;France&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#34;flag&#34;</span> =&gt; <span style="color:#cd5555">&#34;🇫🇷&#34;</span>
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#34;en&#34;</span> =&gt; [
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#34;name&#34;</span> =&gt; <span style="color:#cd5555">&#34;English&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#34;flag&#34;</span> =&gt; <span style="color:#cd5555">&#34;🇬🇧&#34;</span>
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>    ];</span></span></code></pre></div></li>
+<li>Este ficheor se lee en cuanlquier momento en nuestro código con el helper 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    config(&ldquo;nombre_fichero&rdquo;)
+
+
+</span>
+</strong></li>
+</ul>
+<p>*Ahora en nuestro componenete <strong>header</strong> añadimos un elemento select de html</p>
+<h3 id="la-parte-del-controlador">La parte del controlador</h3>
+<h3 id="creando-un-middleware">Creando un middleware</h3>
 <h2 id="3-middleware-para-establecer-el-idioma">3. Middleware para establecer el idioma</h2>
 <p>El idioma se almacenará en <strong>sesión</strong>, y un middleware se encargará de aplicarlo en cada request.</p>
 <hr>
