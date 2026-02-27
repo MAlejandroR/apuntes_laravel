@@ -1,6 +1,6 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=43215&amp;path=laravel/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
@@ -21,7 +21,7 @@
 <meta name="description" content=" Pest Pest es un framework de testing para PHP que utiliza PHPUnit por debajo, pero ofrece una sintaxis mucho más simple y expresiva. 🧪 Cheatsheet de tests con Pest en Laravel Esta chuleta resume cómo usar it, beforeEach, Mockery, $this-&gt;get, $this-&gt;assertDatabaseHas, y más en Pest &#43; Laravel.
 Instalar pest en el proyecto composer require pestphp/pest --dev --with-all-dependencies Instalar el plugin de pest para php composer require pestphp/pest-plugin-laravel --dev Crear un test: ·Esto creará un test llamado UserCourseContentServiceTest php artisan pest:test UserCourseContentServiceTest ✅ Estructura básica de un archivo de test 1 2 3 4 5 6 7 8 9 &lt;?php uses(Tests\TestCase::class); use App\Models\User; use Illuminate\Support\Facades\Auth; use Laravel\Socialite\Facades\Socialite; use Laravel\Socialite\Contracts\User as SocialUserContract; use Spatie\Permission\Models\Role; use Mockery; 🔁 Reutilizar código con beforeEach Se ejecuta antes de cada test. Puedes usar $this-&gt; para compartir variables entre los bloques it. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 beforeEach(function () { $this-&gt;googleUser = Mockery::mock(SocialUserContract::class); $this-&gt;googleUser-&gt;shouldReceive(&#39;getEmail&#39;)-&gt;andReturn(&#39;student@gmail.com&#39;); $this-&gt;googleUser-&gt;shouldReceive(&#39;getName&#39;)-&gt;andReturn(&#39;Estudiante&#39;); $provider = Mockery::mock(\Laravel\Socialite\Contracts\Provider::class); $provider-&gt;shouldReceive(&#39;stateless&#39;)-&gt;andReturnSelf(); $provider-&gt;shouldReceive(&#39;user&#39;)-&gt;andReturn($this-&gt;googleUser); Socialite::shouldReceive(&#39;driver&#39;) -&gt;with(&#39;google&#39;) -&gt;andReturn($provider); Role::findOrCreate(&#39;student&#39;); }); ✅ Crear un test con it(...) Cada test debe tener su descripción clara. Usa $this-&gt;get() para simular una petición HTTP. Usa $this-&gt;assertDatabaseHas() para comprobar la base de datos. 1 2 3 4 5 6 7 8 it(&#39;crea un nuevo usuario estudiante con Google&#39;, function () { $this-&gt;get(&#39;/auth/google/callback&#39;); $this-&gt;assertDatabaseHas(&#39;users&#39;, [ &#39;email&#39; =&gt; &#39;student@gmail.com&#39;, &#39;name&#39; =&gt; &#39;Estudiante&#39;, ]); }); 📧 Mock de servicios personalizados (por ejemplo OTP) 1 2 3 $otpMock = Mockery::mock(\App\Services\OtpService::class); $otpMock-&gt;shouldReceive(&#39;sendOtp&#39;)-&gt;once(); app()-&gt;instance(\App\Services\OtpService::class, $otpMock); 🧪 Validar si el usuario está logueado 1 2 expect(Auth::check())-&gt;toBeTrue(); expect(Auth::user()-&gt;email)-&gt;toBe(&#39;student@gmail.com&#39;); 🔀 Llamar directamente a un controlador en tests Útil si quieres evitar depender de rutas.">
 
-<meta property="og:url" content="http://localhost:1313/laravel/docs/pendiente/10_test/pest/">
+<meta property="og:url" content="http://localhost:43215/laravel/docs/pendiente/10_test/pest/">
   <meta property="og:site_name" content="Laravel: Framework de php">
   <meta property="og:title" content="Pest">
   <meta property="og:description" content="Pest Pest es un framework de testing para PHP que utiliza PHPUnit por debajo, pero ofrece una sintaxis mucho más simple y expresiva. 🧪 Cheatsheet de tests con Pest en Laravel Esta chuleta resume cómo usar it, beforeEach, Mockery, $this-&gt;get, $this-&gt;assertDatabaseHas, y más en Pest &#43; Laravel.
@@ -133,9 +133,13 @@ Instalar pest en el proyecto composer require pestphp/pest --dev --with-all-depe
   <input type="checkbox" id="m-laraveldocs04_plantillas03_componentes-check"/>
   <label for="m-laraveldocs04_plantillas03_componentes-check"><a href="/laravel/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas04_ejemplo-li">
-  <input type="checkbox" id="m-laraveldocs04_plantillas04_ejemplo-check"/>
-  <label for="m-laraveldocs04_plantillas04_ejemplo-check"><a href="/laravel/docs/04_plantillas/04_ejemplo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas04_ejemplo"><i class="fa-solid fa-diagram-project"></i><span class="">Ejemplo de nuestro proyecto </span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas05_ejemplo-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas05_ejemplo-check"/>
+  <label for="m-laraveldocs04_plantillas05_ejemplo-check"><a href="/laravel/docs/04_plantillas/05_ejemplo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas05_ejemplo"><i class="fa-solid fa-diagram-project"></i><span class="">Ejemplo de nuestro proyecto </span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas04_responsivo-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas04_responsivo-check"/>
+  <label for="m-laraveldocs04_plantillas04_responsivo-check"><a href="/laravel/docs/04_plantillas/04_responsivo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas04_responsivo"><i class="fa-solid fa-mobile-screen-button"></i><span class="">Diseño responsivo</span></a></label>
   
 </li>
   </ul>
@@ -249,38 +253,38 @@ Instalar pest en el proyecto composer require pestphp/pest --dev --with-all-depe
             <div class="taxonomy taxonomy-terms-cloud taxo-categories">
       <h5 class="taxonomy-title">Categories</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
   <div class="taxonomy taxonomy-terms-cloud taxo-tags">
       <h5 class="taxonomy-title">Tags</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:43215/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
   
