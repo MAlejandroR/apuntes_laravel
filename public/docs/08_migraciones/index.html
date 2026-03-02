@@ -1,0 +1,1215 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/08_migraciones/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Migraciones | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/08_migraciones/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Migraciones">
+  <meta property="og:description" content="1. Introducción En proyectos reales, En el desarrollo de una aplicación, suele ocurrir que el esquema de base de datos cambia continuamente: se añaden campos, se refactorizan tablas, se crean relaciones, se aplican restricciones, etc. Hacer estos cambios a mano en phpMyAdmin (o en un SQL suelto) suele romper la trazabilidad, dificulta el trabajo en equipo y hace frágiles los despliegues entre entornos (local, preproducción, producción).
+Es cierto que una vez desarrollada la aplicación, la base de datos sigue siendo un elemento crítico, pero menos frecuentes, presentando pocos cambios (es algo ideal…).">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Migraciones">
+  <meta itemprop="description" content="1. Introducción En proyectos reales, En el desarrollo de una aplicación, suele ocurrir que el esquema de base de datos cambia continuamente: se añaden campos, se refactorizan tablas, se crean relaciones, se aplican restricciones, etc. Hacer estos cambios a mano en phpMyAdmin (o en un SQL suelto) suele romper la trazabilidad, dificulta el trabajo en equipo y hace frágiles los despliegues entre entornos (local, preproducción, producción).
+Es cierto que una vez desarrollada la aplicación, la base de datos sigue siendo un elemento crítico, pero menos frecuentes, presentando pocos cambios (es algo ideal…).">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="1334">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Migraciones">
+  <meta name="twitter:description" content="1. Introducción En proyectos reales, En el desarrollo de una aplicación, suele ocurrir que el esquema de base de datos cambia continuamente: se añaden campos, se refactorizan tablas, se crean relaciones, se aplican restricciones, etc. Hacer estos cambios a mano en phpMyAdmin (o en un SQL suelto) suele romper la trazabilidad, dificulta el trabajo en equipo y hace frágiles los despliegues entre entornos (local, preproducción, producción).
+Es cierto que una vez desarrollada la aplicación, la base de datos sigue siendo un elemento crítico, pero menos frecuentes, presentando pocos cambios (es algo ideal…).">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs-li">
+  <a href="/laravel/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laraveldocs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs01_introduccic3b3n-check"/>
+  <label for="m-laraveldocs01_introduccic3b3n-check"><a href="/laravel/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs02_instalacic3b3n-check"/>
+  <label for="m-laraveldocs02_instalacic3b3n-check"><a href="/laravel/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs03_rutas-li">
+  <input type="checkbox" id="m-laraveldocs03_rutas-check"/>
+  <label for="m-laraveldocs03_rutas-check"><a href="/laravel/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs04_plantillas-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas-check"/>
+  <label for="m-laraveldocs04_plantillas-check"><a href="/laravel/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas01_blade-check"/>
+  <label for="m-laraveldocs04_plantillas01_blade-check"><a href="/laravel/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laraveldocs04_plantillas02_creandodisec3b1o-check"><a href="/laravel/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas03_componentes-check"/>
+  <label for="m-laraveldocs04_plantillas03_componentes-check"><a href="/laravel/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas05_ejemplo-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas05_ejemplo-check"/>
+  <label for="m-laraveldocs04_plantillas05_ejemplo-check"><a href="/laravel/docs/04_plantillas/05_ejemplo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas05_ejemplo"><i class="fa-solid fa-diagram-project"></i><span class="">Ejemplo de nuestro proyecto </span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas04_responsivo-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas04_responsivo-check"/>
+  <label for="m-laraveldocs04_plantillas04_responsivo-check"><a href="/laravel/docs/04_plantillas/04_responsivo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas04_responsivo"><i class="fa-solid fa-mobile-screen-button"></i><span class="">Diseño responsivo</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacion-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacion-check"/>
+  <label for="m-laraveldocs06_autenticacion-check"><a href="/laravel/docs/06_autenticacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacion"><i class="fa-solid fa-sitemap"></i><span class="">Autenticación</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionbreeze-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionbreeze-check"/>
+  <label for="m-laraveldocs06_autenticacionbreeze-check"><a href="/laravel/docs/06_autenticacion/breeze/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionbreeze"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionvistas-y-controladores-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionvistas-y-controladores-check"/>
+  <label for="m-laraveldocs06_autenticacionvistas-y-controladores-check"><a href="/laravel/docs/06_autenticacion/vistas-y-controladores/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionvistas-y-controladores"><i class="fa-solid fa-user-lock"></i><span class="">auth: Vistas y Controladores</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs07_multilenguaje-li">
+  <input type="checkbox" id="m-laraveldocs07_multilenguaje-check"/>
+  <label for="m-laraveldocs07_multilenguaje-check"><a href="/laravel/docs/07_multilenguaje/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs07_multilenguaje"><span class="">Multilenguaje</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs07_multilenguajeplugin_busqueda-li">
+  <input type="checkbox" id="m-laraveldocs07_multilenguajeplugin_busqueda-check"/>
+  <label for="m-laraveldocs07_multilenguajeplugin_busqueda-check"><a href="/laravel/docs/07_multilenguaje/plugin_busqueda/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs07_multilenguajeplugin_busqueda"><i class="fa-solid fa-language"></i><span class="">Extracción de texto</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs08_migraciones-li">
+  <input type="checkbox" id="m-laraveldocs08_migraciones-check" checked/>
+  <label for="m-laraveldocs08_migraciones-check"><a href="/laravel/docs/08_migraciones/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laraveldocs08_migraciones"><i class="fa-solid fa-database"></i><span class="td-sidebar-nav-active-item">Migraciones</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs08_migracionesfactory_seeder-li">
+  <input type="checkbox" id="m-laraveldocs08_migracionesfactory_seeder-check"/>
+  <label for="m-laraveldocs08_migracionesfactory_seeder-check"><a href="/laravel/docs/08_migraciones/factory_seeder/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs08_migracionesfactory_seeder"><i class="fa-solid fa-seedling"></i><span class="">Seeders en Laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs08_migraciones_index_oldc3a7-li">
+  <input type="checkbox" id="m-laraveldocs08_migraciones_index_oldc3a7-check"/>
+  <label for="m-laraveldocs08_migraciones_index_oldc3a7-check"><a href="/laravel/docs/08_migraciones/_index_old%C3%A7/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs08_migraciones_index_oldc3a7"><span class=""></span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet-check"/>
+  <label for="m-laraveldocs999_cheatseet-check"><a href="/laravel/docs/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet"><span class="">Cheat Sheet</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseethelper-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper-check"/>
+  <label for="m-laraveldocs999_cheatseethelper-check"><a href="/laravel/docs/999_cheatseet/helper/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper"><span class="">Helper en Laravel</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper10_vistas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper10_vistas-check"/>
+  <label for="m-laraveldocs999_cheatseethelper10_vistas-check"><a href="/laravel/docs/999_cheatseet/helper/10_vistas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper10_vistas"><span class="">Vistas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper20_rutas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper20_rutas-check"/>
+  <label for="m-laraveldocs999_cheatseethelper20_rutas-check"><a href="/laravel/docs/999_cheatseet/helper/20_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper20_rutas"><span class="">Rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper30_request-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper30_request-check"/>
+  <label for="m-laraveldocs999_cheatseethelper30_request-check"><a href="/laravel/docs/999_cheatseet/helper/30_request/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper30_request"><span class="">Request en Laravel</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetartisan-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetartisan-check"/>
+  <label for="m-laraveldocs999_cheatseetartisan-check"><a href="/laravel/docs/999_cheatseet/artisan/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetartisan"><span class="">Artisan (CLI)</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetblade-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetblade-check"/>
+  <label for="m-laraveldocs999_cheatseetblade-check"><a href="/laravel/docs/999_cheatseet/blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetblade"><span class="">Directivas Blade</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-introducción">1. Introducción</a>
+      <ul>
+        <li><a href="#las-migraciones">Las migraciones</a></li>
+      </ul>
+    </li>
+    <li><a href="#referencias">referencias</a></li>
+  </ul>
+</nav>
+      </div>
+    
+            <div class="taxonomy taxonomy-terms-cloud taxo-categories">
+      <h5 class="taxonomy-title">Categories</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      <h5 class="taxonomy-title">Tags</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel/docs/">Laravel</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Migraciones</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Migraciones</h1>
+  
+	<header class="article-meta">
+		
+</header>
+	<h2 id="1-introducción">1. Introducción</h2>
+<p>En proyectos reales, En el desarrollo de una aplicación, suele ocurrir que el esquema de base de datos cambia continuamente: se añaden campos, se refactorizan tablas, se crean relaciones, se aplican restricciones, etc. Hacer estos cambios <em><strong>a mano</strong></em> en phpMyAdmin (o en un SQL suelto) suele romper la trazabilidad, dificulta el trabajo en equipo y hace frágiles los despliegues entre entornos (local, preproducción, producción).</p>
+<p>Es cierto que una vez desarrollada la aplicación, la base de datos sigue siendo un elemento crítico, pero menos frecuentes, presentando pocos cambios (es algo ideal&hellip;).</p>
+<p>Laravel resuelve esto con <strong>migraciones</strong>: una forma <strong>versionada</strong>, <strong>repetible</strong> y <strong>automatizable</strong> de definir la estructura de la base de datos como código. En un equipo, todos comparten el mismo histórico de cambios, y el proyecto puede “levantar” la base de datos desde cero de forma consistente.</p>
+<p>A su vez, laravel nos va a ofrecer la posibilidad de poblar de forma automatizada las tablas de la base de datos, constituyendo un entorno ideal para poder probar nuestra aplicación según la vamos desarrollando.</p>
+<p>Estos datos serán datos fictícios o datos faker, y constituirán un entorno ideal para poder probar nuestra aplicación.</p>
+
+
+
+<hr style="border-color: red; border-width: 3px;"/>
+
+
+
+
+
+
+<div style="border: 1px solid darkgreen; border-radius: 5px; overflow: hidden;">
+    <div style="background-color:darkgreen; color:white;
+    font-weight:bold; padding:10px; display: flex; align-items: center;">
+        
+        <span style="margin-right: 8px;">
+            
+                <i class="fas fa-check-circle"></i> 
+            
+        </span>
+        
+        <span>Objetivos</span>
+    </div>
+
+    <h3 style="padding: 5px; font-weight:bold">Qué veremos aquí</h3>
+
+    <hr style="border-color:seagreen; border-width:3px"/>
+    
+    <div style="background-color:#d0f0d0; color:darkgreen; padding: 10px;">
+        <ul>
+            
+            
+            <li>- Identificar qué problema resuelven las migraciones en un proyecto web profesional.</li>
+            
+            <li>- Crear migraciones desde consola y localizar su archivo en el proyecto.</li>
+            
+            <li>- Aplicar, deshacer y rehacer migraciones usando comandos de Artisan.</li>
+            
+            <li>- Modelar columnas, índices y claves foráneas con el Schema Builder.</li>
+            
+            <li>- Diseñar migraciones seguras (reversibles) y mantenibles en equipo.</li>
+            
+            <li>- Detectar errores comunes en migraciones y aplicar buenas prácticas.</li>
+            
+            
+            
+            
+        </ul>
+    </div>
+    
+
+
+</div>
+
+
+
+
+<hr style="border-color: red; border-width: 3px;"/>
+
+
+<div class="definicion-concepto">
+    <div class="definicion-titulo">
+        
+        <i class="fas fa-info-circle" aria-hidden="true"></i>
+        
+        <strong>Migración</strong>
+    </div>
+
+    <div class="definicion-contenido">
+        <p>Es un fichero PHP (una clase) que permite <strong>crear/modificar/eliminar tablas</strong> en nuestra aplicación (podríamos decir que es el principal uso que le vamos a dar).</p>
+<p>Además, permite mantener un <strong>versionado del esquema de la base de datos</strong>, lo que hace posible replicarlo exactamente en cualquier entorno (desarrollo, pruebas o producción, o cuando se clone el proyecto) simplemente ejecutando un comando.</p>
+
+    </div>
+
+    
+    <div class="definicion-url">
+        <a href="https://laravel.com/docs/12.x/migrations" target="_blank" rel="noopener">
+            Fuente oficial de <strong>Migración</strong>
+            <i class="fas fa-globe"></i>
+        </a>
+    </div>
+    
+</div>
+
+
+<div class="definicion-concepto">
+    <div class="definicion-titulo">
+        
+        <i class="fas fa-info-circle" aria-hidden="true"></i>
+        
+        <strong>Schema Builder</strong>
+    </div>
+
+    <div class="definicion-contenido">
+        <p><strong>Schema Builder</strong> es la API de Laravel que permite definir <strong>tablas, columnas, índices y restricciones</strong> de forma expresiva, sin necesidad de escribir SQL manualmente.</p>
+<p>Se utiliza dentro de las migraciones para estructurar la base de datos mediante métodos como <strong>create, table, string, integer, foreignId,</strong> etc.</p>
+<p>Cuando hablamos aquí de API, estamos indicando un conjunto de métodos públicos disponibles en Schema y Blueprint, que podemos usar directamente. Son intuitivos y no necesitamos conocer su implementación. Es una librería de utilidades que tenemos disponibles:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#228b22">## Ejemplos de métodos disponibles
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Support\Facades\Schema;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Schema::<span style="color:#658b00">create</span>()
+</span></span><span style="display:flex;"><span>    Schema::<span style="color:#658b00">table</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">integer</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">foreignId</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">timestamps</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">unique</span>()
+</span></span></code></pre></div>
+    </div>
+
+    
+    <div class="definicion-url">
+        <a href="https://laravel.com/docs/12.x/migrations#creating-columns" target="_blank" rel="noopener">
+            Fuente oficial de <strong>Schema Builder</strong>
+            <i class="fas fa-globe"></i>
+        </a>
+    </div>
+    
+</div>
+
+
+<div class="definicion-concepto">
+    <div class="definicion-titulo">
+        
+        <i class="fas fa-info-circle" aria-hidden="true"></i>
+        
+        <strong>Blueprint</strong>
+    </div>
+
+    <div class="definicion-contenido">
+        <p>Es el objeto que representa el <strong>diseño de una tabla</strong> durante la ejecución de una migración.</p>
+<p>Su uso es implícito, ya que Laravel <strong>lo inyecta</strong>, cuando usamos los métodos  dentro de Schema::create() o Schema::table(). Permite permite <strong>definir columnas, índices y claves foráneas</strong> utilizando una <strong>sintaxis fluida y orientada a objetos</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Database\Schema\Blueprint;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Support\Facades\Schema;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">new</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">extends</span> Migration
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     * Run the migrations.
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">up</span>(): void
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Schema::<span style="color:#658b00">create</span>(<span style="color:#cd5555">&#39;student&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span> (Blueprint <span style="color:#00688b">$table</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">id</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;name&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;email&#39;</span>)-&gt;<span style="color:#658b00">unique</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;password&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;address&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">timestamps</span>();
+</span></span><span style="display:flex;"><span>        });
+</span></span></code></pre></div>
+    </div>
+
+    
+    <div class="definicion-url">
+        <a href="https://laravel.com/docs/12.x/migrations#creating-columns" target="_blank" rel="noopener">
+            Fuente oficial de <strong>Blueprint</strong>
+            <i class="fas fa-globe"></i>
+        </a>
+    </div>
+    
+</div>
+
+
+<div class="definicion-concepto">
+    <div class="definicion-titulo">
+        
+        <i class="fas fa-info-circle" aria-hidden="true"></i>
+        
+        <strong>up() / down()</strong>
+    </div>
+
+    <div class="definicion-contenido">
+        <!-- raw HTML omitted -->
+<pre><code>up() / down()
+</code></pre>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>up()</strong>: <em>Crea elementos</em>: contiene las instrucciones para aplicar el cambio (crear tabla, añadir columnas, modificar estructura).</li>
+<li><strong>down()</strong>: <em>Elimina</em>: revierte los cambios realizados en up() (eliminar tabla, eliminar columnas, etc.).</li>
+</ul>
+<p>Esto permite que los cambios en la base de datos sean <strong>reversibles y controlados</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">up</span>(): void
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Schema::<span style="color:#658b00">create</span>(<span style="color:#cd5555">&#39;student&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span> (Blueprint <span style="color:#00688b">$table</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">id</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;name&#39;</span>);
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">down</span>(): void
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Schema::<span style="color:#658b00">dropIfExists</span>(<span style="color:#cd5555">&#39;student&#39;</span>);
+</span></span><span style="display:flex;"><span>   }
+</span></span></code></pre></div>
+    </div>
+
+    
+    <div class="definicion-url">
+        <a href="https://laravel.com/docs/12.x/migrations#structure" target="_blank" rel="noopener">
+            Fuente oficial de <strong>up() / down()</strong>
+            <i class="fas fa-globe"></i>
+        </a>
+    </div>
+    
+</div>
+
+
+<div class="definicion-concepto">
+    <div class="definicion-titulo">
+        
+        <i class="fas fa-info-circle" aria-hidden="true"></i>
+        
+        <strong>migrate / rollback / refresh</strong>
+    </div>
+
+    <div class="definicion-contenido">
+        <p><em><strong>migrate / rollback / refresh</strong></em> son operaciones habituales ejecutadas desde Artisan:</p>
+<ul>
+<li><strong>migrate</strong>: aplica las migraciones pendientes y crea las tablas definidas.</li>
+<li><strong>rollback</strong>: revierte el último lote de migraciones ejecutadas.</li>
+<li><strong>refresh</strong>: revierte todas las migraciones y las vuelve a ejecutar desde cero (muy útil en desarrollo).</li>
+</ul>
+<p>Estas operaciones permiten gestionar la evolución del esquema de la base de datos de forma controlada.</p>
+
+    </div>
+
+    
+    <div class="definicion-url">
+        <a href="https://laravel.com/docs/12.x/migrations#running-migrations" target="_blank" rel="noopener">
+            Fuente oficial de <strong>migrate / rollback / refresh</strong>
+            <i class="fas fa-globe"></i>
+        </a>
+    </div>
+    
+</div>
+
+
+
+
+<hr style="border-color: red; border-width: 3px;"/>
+
+<h3 id="las-migraciones">Las migraciones</h3>
+<p>Las migraciones se guardan en: 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    database/migrations
+
+
+</span>
+</strong></p>
+<p>Laravel registra qué migraciones se han ejecutado en una tabla interna llamada 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    migrations
+
+
+</span>
+</strong></p>
+<p>Aunque es algo que no vamos a usar, es interesante saber que  el proyecto guarda el <strong><em>histórico</em></strong> de cambios en Git y la base de datos guarda el “estado aplicado” en la tabla migrations. Podríamos deshacer los 3 ultimos cambios por ejemplo o el último o deshacer todo, como veremos a continuación</p>
+<hr>
+<h4 id="acciones-concretas">Acciones concretas</h4>
+<ol>
+<li>Crear migración (nombra el cambio)</li>
+<li>Programar up() y down() (reversible)</li>
+<li>Ejecutar migrate (aplica en tu DB local)</li>
+<li>Subir cambios a Git</li>
+<li>En otro entorno (otro compañero / servidor), ejecutar migrate y obtener el mismo esquema</li>
+</ol>
+<hr>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    1.- Crear migraciones desde consola (Artisan)
+
+
+</span>
+</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>    php artisan make:migration create_students_table</span></span></code></pre></div>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    2.- Modificar una tabla existente
+
+
+</span>
+</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>php artisan make:migration add_phone_to_students_table</span></span></code></pre></div></p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    3.-Crear migración y modelo a la vez (opcional, pero común)
+
+
+</span>
+</strong>
+Aunque no hemos visto qué es un modelo, lo vamos a necesitar para interactuar con la base de datos desde nuestra aplicación
+Lo estudiamos en el tema de modelos
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>php artisan make:model Student -m</span></span></code></pre></div></p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Convención de nombres
+
+
+</span>
+</strong>:</p>
+<ul>
+<li>create_x_table para crear</li>
+<li>add_y_to_x_table para añadir</li>
+<li>remove_y_from_x_table para eliminar</li>
+<li>update_x_table o change_y_in_x_table para cambios complejos</li>
+</ul>
+<hr>
+<h4 id="estructura-de-una-migración">Estructura de una migración</h4>
+<p>Una migración típica tiene esta forma:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?php
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Database\Migrations\Migration;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Database\Schema\Blueprint;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Support\Facades\Schema;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">new</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">extends</span> Migration
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">up</span>(): void
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Schema::<span style="color:#658b00">create</span>(<span style="color:#cd5555">&#39;students&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span> (Blueprint <span style="color:#00688b">$table</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">id</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;name&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;email&#39;</span>)-&gt;<span style="color:#658b00">unique</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">timestamps</span>();
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">down</span>(): void
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Schema::<span style="color:#658b00">dropIfExists</span>(<span style="color:#cd5555">&#39;students&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Puntos importantes
+
+
+</span>
+</strong>:</p>
+<ul>
+<li>Schema::create define una tabla desde cero</li>
+<li>Blueprint $table define columnas, índices, etc.</li>
+<li>down() revierte de forma segura con dropIfExists</li>
+<li>up() Ejecuta la migración creando los elementos especificados (crear o modificar)</li>
+</ul>
+<hr>
+<h4 id="ejecutar-migraciones">Ejecutar migraciones</h4>
+<p>Las principales acciones que vamos a realizar con las migraciones son las siguientes</p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Ejecutar todas las migraciones pendientes
+
+
+</span>
+</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>php artisan migrate</span></span></code></pre></div></p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Consultar el estado de las migraciones
+
+
+</span>
+</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan migrate:status</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Deshacer última acción (última migración  ejecutado)
+
+
+</span>
+</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan migrate:rollback</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Deshacer las últimas N migraciones ejecutadas
+
+
+</span>
+</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan migrate:rollback --step=<span style="color:#b452cd">3</span></span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Reiniciar el esquema completo (rollback total + migrate)
+
+
+</span>
+</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan migrate:refresh</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Borrar todas las tablas y volverlo a crear (muy usado en desarrollo)
+
+
+</span>
+</strong>
+Esta acción la haremos con mucha frecuencia
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan migrate:fresh</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Borrar todo y además ejecutar los seeders
+
+
+</span>
+</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan migrate:fresh --seed</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Criterio profesional
+
+
+</span>
+</strong>:</p>
+<ul>
+<li>fresh es ideal para desarrollo local cuando puedes perder datos</li>
+<li>en producción casi siempre se usa migrate (nunca fresh)</li>
+</ul>
+<hr>
+<h4 id="46-tipos-de-columnas-más-habituales-laravel-12">4.6. Tipos de columnas más habituales (Laravel 12)</h4>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Identificadores y timestamps
+
+
+</span>
+</strong>
+<ul>
+<li>id(): BIGINT autoincremental</li>
+<li>timestamps(): created_at / updated_at</li>
+<li>softDeletes(): deleted_at para borrado lógico</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Schema::<span style="color:#658b00">create</span>(<span style="color:#cd5555">&#39;students&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span> (Blueprint <span style="color:#00688b">$table</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">id</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">timestamps</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">softDeletes</span>();
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Strings, texto y números
+
+
+</span>
+</strong>
+<ul>
+<li>string: VARCHAR(255) por defecto</li>
+<li>text: TEXT</li>
+<li>integer, bigInteger</li>
+<li>decimal(8,2) para importes</li>
+<li>boolean</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Schema::<span style="color:#658b00">table</span>(<span style="color:#cd5555">&#39;students&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span> (Blueprint <span style="color:#00688b">$table</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;name&#39;</span>, <span style="color:#b452cd">120</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">text</span>(<span style="color:#cd5555">&#39;notes&#39;</span>)-&gt;<span style="color:#658b00">nullable</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">integer</span>(<span style="color:#cd5555">&#39;age&#39;</span>)-&gt;<span style="color:#658b00">nullable</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">decimal</span>(<span style="color:#cd5555">&#39;tuition_fee&#39;</span>, <span style="color:#b452cd">8</span>, <span style="color:#b452cd">2</span>)-&gt;<span style="color:#658b00">default</span>(<span style="color:#b452cd">0</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">boolean</span>(<span style="color:#cd5555">&#39;active&#39;</span>)-&gt;<span style="color:#658b00">default</span>(<span style="color:#8b008b;font-weight:bold">true</span>);
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Fechas
+
+
+</span>
+</strong>
+<ul>
+<li>date, time, dateTime</li>
+<li>timestamp</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Schema::<span style="color:#658b00">table</span>(<span style="color:#cd5555">&#39;students&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span> (Blueprint <span style="color:#00688b">$table</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">date</span>(<span style="color:#cd5555">&#39;birth_date&#39;</span>)-&gt;<span style="color:#658b00">nullable</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">dateTime</span>(<span style="color:#cd5555">&#39;last_login_at&#39;</span>)-&gt;<span style="color:#658b00">nullable</span>();
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h4 id="índices-y-restricciones-performance--integridad">Índices y restricciones: performance + integridad</h4>
+<p>El tema de índices es muy importante y lo tenemos que tener muy claro</p>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Índices y únicos
+
+
+</span>
+</strong>
+<ul>
+<li>index() acelera búsquedas</li>
+<li>unique() evita duplicados</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Schema::<span style="color:#658b00">table</span>(<span style="color:#cd5555">&#39;students&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span> (Blueprint <span style="color:#00688b">$table</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;dni&#39;</span>, <span style="color:#b452cd">12</span>)-&gt;<span style="color:#658b00">unique</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;city&#39;</span>)-&gt;<span style="color:#658b00">index</span>();
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Regla práctica
+
+
+</span>
+</strong>:</p>
+<ul>
+<li>index: para columnas que se filtran mucho (where)</li>
+<li>unique: para “identificadores” (email, dni, código, etc.)</li>
+</ul>
+<hr>
+<details>
+    <summary>Resumen</summary>
+    <div class="summary-content">
+        <ul>
+<li>Las migraciones nos van a permitir crear la base de datos y gestionarla</li>
+<li>Permiten versionar el esquema de base de datos como código.</li>
+<li>Se crean con make:migration y se aplican con migrate.</li>
+<li>up() aplica cambios; down() los revierte: migraciones reversibles son más profesionales.</li>
+<li>Schema Builder define columnas, índices y claves foráneas de forma expresiva.</li>
+<li>Evita editar migraciones ya ejecutadas: crea nuevas migraciones para corregir/refactorizar.</li>
+<li>En producción, normalmente se usa migrate (no fresh).</li>
+</ul>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+
+
+
+<hr style="border-color: red; border-width: 3px;"/>
+
+<h2 id="referencias">referencias</h2>
+<ul>
+<li>
+
+
+
+
+
+
+
+
+
+
+<div class="card border border-secondary shadow-sm my-4">
+    <div class="card-body">
+
+        <div class="d-flex align-items-center gap-3">
+
+            
+            <div>
+                
+                <img src="migration.jpeg"
+                     alt="Migraciones y Schema Builder"
+                     style="width:60px; height:60px; object-fit:contain;"
+                     class="rounded">
+              
+            </div>
+
+            <div class="flex-grow-1">
+
+                <h5 class="mb-1">
+                    <a href=""
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="text-decoration-none text-secondary">
+                        Migraciones y Schema Builder
+                    </a>
+
+                    
+                </h5>
+
+                <small class="text-muted">
+                    🌐 
+                </small>
+
+            </div>
+
+        </div>
+
+        
+        <div class="mt-3">
+            
+            Documentación oficial de Laravel: Migrations / Schema Builder
+            
+        </div>
+        
+
+    </div>
+</div></li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<div class="card border border-secondary shadow-sm my-4">
+    <div class="card-body">
+
+        <div class="d-flex align-items-center gap-3">
+
+            
+            <div>
+                
+                <img src="artisan_migration.png"
+                     alt="Comandos Artisan para migraciones"
+                     style="width:60px; height:60px; object-fit:contain;"
+                     class="rounded">
+              
+            </div>
+
+            <div class="flex-grow-1">
+
+                <h5 class="mb-1">
+                    <a href=""
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="text-decoration-none text-secondary">
+                        Comandos Artisan para migraciones
+                    </a>
+
+                    
+                </h5>
+
+                <small class="text-muted">
+                    🌐 
+                </small>
+
+            </div>
+
+        </div>
+
+        
+        <div class="mt-3">
+            
+            Artisan: comandos de migración (migrate, rollback, fresh, status)
+            
+        </div>
+        
+
+    </div>
+</div></li>
+</ul>
+
+  <div class="section-index">
+    
+    
+    <hr class="panel-line">
+        <div class="entry">
+                <h5>
+                    <a href="/laravel/docs/08_migraciones/factory_seeder/">Seeders en Laravel</a>
+                </h5>
+                <p>Inserción de datos iniciales o de prueba mediante Seeders en Laravel.</p>
+            </div>
+        <div class="entry">
+                <h5>
+                    <a href="/laravel/docs/08_migraciones/_index_old%C3%A7/"></a>
+                </h5>
+                <p></p>
+            </div>
+        </div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Migraciones on Laravel: Framework de php</title>
+    <link>http://localhost:1313/laravel/docs/08_migraciones/</link>
+    <description>Recent content in Migraciones on Laravel: Framework de php</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Sat, 08 Apr 2023 18:21:47 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/laravel/docs/08_migraciones/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Seeders en Laravel</title>
+      <link>http://localhost:1313/laravel/docs/08_migraciones/factory_seeder/</link>
+      <pubDate>Sat, 08 Apr 2023 18:21:47 +0200</pubDate>
+      <guid>http://localhost:1313/laravel/docs/08_migraciones/factory_seeder/</guid>
+      <description>&lt;hr style=&#34;border-color: red; border-width: 3px;&#34;/&gt;&#xA;&#xA;&lt;h2 id=&#34;-factory-vs--seeder-esquema-conceptual&#34;&gt;🏭 Factory vs 🌱 Seeder (Esquema conceptual)&lt;/h2&gt;&#xA;&lt;h3 id=&#34;-idea-sencilla&#34;&gt;🎯 Idea sencilla&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Factory → fabrica datos&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Seeder → inserta datos en la base de datos&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-esquema-como-flujo-de-fabricación&#34;&gt;🏗 Esquema como “flujo de fabricación”&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[ Factory ]&#xA;     ↓&#xA;  Genera objetos con datos falsos&#xA;     ↓&#xA;[ Seeder ]&#xA;     ↓&#xA; Inserta esos datos en la tabla&#xA;     ↓&#xA;[ Base de Datos ]&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-factory&#34;&gt;🏭 Factory&lt;/h2&gt;&#xA;&#xA;&lt;div class=&#34;definicion-concepto&#34;&gt;&#xA;    &lt;div class=&#34;definicion-titulo&#34;&gt;&#xA;        &#xA;        &lt;i class=&#34;fas fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;        &#xA;        &lt;strong&gt;Factory&lt;/strong&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;    &lt;div class=&#34;definicion-contenido&#34;&gt;&#xA;        &lt;p&gt;Es una clase que define &lt;strong&gt;cómo se construyen datos de prueba&lt;/strong&gt; para un modelo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/laravel/docs/08_migraciones/_index_old%C3%A7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/laravel/docs/08_migraciones/_index_old%C3%A7/</guid>
+      <description>&lt;h2 id=&#34;description-generación-y-carga-de-datos-de-prueba-mediante-factories-y-seeders-en-laravel&#34;&gt;title: &amp;ldquo;Factories y Seeders en Laravel&amp;rdquo;&#xA;date: date: 2023-04-08T18:21:47+02:00&#xA;draft: true&#xA;weight: 20&#xA;icon: fa-solid fa-seedling&#xA;description: &amp;ldquo;Generación y carga de datos de prueba mediante Factories y Seeders en Laravel.&amp;rdquo;&lt;/h2&gt;&#xA;&#xA;&#xA;&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;&#xA;&lt;h4 id=&#34;qué-son-las-migraciones&#34;&gt;Qué son las migraciones&lt;/h4&gt;&#xA;&lt;hr&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;pre&gt;&lt;code&gt;Una migración en Laravel&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;pre&gt;&lt;code&gt;crear y modificar la estructura de la base de datos&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;pre&gt;&lt;code&gt;agregar, modificar y/o eliminar tablas y columnas&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;&#xA;&lt;h4 id=&#34;ubicacion-de-las-migraciones&#34;&gt;Ubicacion de las migraciones&lt;/h4&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;img src=&#34;img.png&#34; alt=&#34;img.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
