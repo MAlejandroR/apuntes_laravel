@@ -1,0 +1,1205 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/09_crud/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Creando un CRUD | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/09_crud/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Creando un CRUD">
+  <meta property="og:description" content="Realizar un CRUD CRUD Vamos a hacer una aplicación que premita interactuar con una tabla en la base de datos a través de la aplicaicón.
+La palabra CRUD viene de C reate R ead U pdate D elete, es decir, que desde nuestra aplicación podamos hacer estas acciones sobre la tabla de un recurso (por ejemplo, proyectos, alumnos, profesores, …)">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Creando un CRUD">
+  <meta itemprop="description" content="Realizar un CRUD CRUD Vamos a hacer una aplicación que premita interactuar con una tabla en la base de datos a través de la aplicaicón.
+La palabra CRUD viene de C reate R ead U pdate D elete, es decir, que desde nuestra aplicación podamos hacer estas acciones sobre la tabla de un recurso (por ejemplo, proyectos, alumnos, profesores, …)">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="1838">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Creando un CRUD">
+  <meta name="twitter:description" content="Realizar un CRUD CRUD Vamos a hacer una aplicación que premita interactuar con una tabla en la base de datos a través de la aplicaicón.
+La palabra CRUD viene de C reate R ead U pdate D elete, es decir, que desde nuestra aplicación podamos hacer estas acciones sobre la tabla de un recurso (por ejemplo, proyectos, alumnos, profesores, …)">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs-li">
+  <a href="/laravel/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laraveldocs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs01_introduccic3b3n-check"/>
+  <label for="m-laraveldocs01_introduccic3b3n-check"><a href="/laravel/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs02_instalacic3b3n-check"/>
+  <label for="m-laraveldocs02_instalacic3b3n-check"><a href="/laravel/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs03_rutas-li">
+  <input type="checkbox" id="m-laraveldocs03_rutas-check"/>
+  <label for="m-laraveldocs03_rutas-check"><a href="/laravel/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs04_plantillas-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas-check"/>
+  <label for="m-laraveldocs04_plantillas-check"><a href="/laravel/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas01_blade-check"/>
+  <label for="m-laraveldocs04_plantillas01_blade-check"><a href="/laravel/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laraveldocs04_plantillas02_creandodisec3b1o-check"><a href="/laravel/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas03_componentes-check"/>
+  <label for="m-laraveldocs04_plantillas03_componentes-check"><a href="/laravel/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas05_ejemplo-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas05_ejemplo-check"/>
+  <label for="m-laraveldocs04_plantillas05_ejemplo-check"><a href="/laravel/docs/04_plantillas/05_ejemplo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas05_ejemplo"><i class="fa-solid fa-diagram-project"></i><span class="">Ejemplo de nuestro proyecto </span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas04_responsivo-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas04_responsivo-check"/>
+  <label for="m-laraveldocs04_plantillas04_responsivo-check"><a href="/laravel/docs/04_plantillas/04_responsivo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas04_responsivo"><i class="fa-solid fa-mobile-screen-button"></i><span class="">Diseño responsivo</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacion-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacion-check"/>
+  <label for="m-laraveldocs06_autenticacion-check"><a href="/laravel/docs/06_autenticacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacion"><i class="fa-solid fa-sitemap"></i><span class="">Autenticación</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionbreeze-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionbreeze-check"/>
+  <label for="m-laraveldocs06_autenticacionbreeze-check"><a href="/laravel/docs/06_autenticacion/breeze/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionbreeze"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionvistas-y-controladores-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionvistas-y-controladores-check"/>
+  <label for="m-laraveldocs06_autenticacionvistas-y-controladores-check"><a href="/laravel/docs/06_autenticacion/vistas-y-controladores/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionvistas-y-controladores"><i class="fa-solid fa-user-lock"></i><span class="">auth: Vistas y Controladores</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs07_multilenguaje-li">
+  <input type="checkbox" id="m-laraveldocs07_multilenguaje-check"/>
+  <label for="m-laraveldocs07_multilenguaje-check"><a href="/laravel/docs/07_multilenguaje/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs07_multilenguaje"><span class="">Multilenguaje</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs07_multilenguajeplugin_busqueda-li">
+  <input type="checkbox" id="m-laraveldocs07_multilenguajeplugin_busqueda-check"/>
+  <label for="m-laraveldocs07_multilenguajeplugin_busqueda-check"><a href="/laravel/docs/07_multilenguaje/plugin_busqueda/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs07_multilenguajeplugin_busqueda"><i class="fa-solid fa-language"></i><span class="">Extracción de texto</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs08_migraciones-li">
+  <input type="checkbox" id="m-laraveldocs08_migraciones-check"/>
+  <label for="m-laraveldocs08_migraciones-check"><a href="/laravel/docs/08_migraciones/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs08_migraciones"><i class="fa-solid fa-database"></i><span class="">Migraciones</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs08_migracionesfactory_seeder-li">
+  <input type="checkbox" id="m-laraveldocs08_migracionesfactory_seeder-check"/>
+  <label for="m-laraveldocs08_migracionesfactory_seeder-check"><a href="/laravel/docs/08_migraciones/factory_seeder/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs08_migracionesfactory_seeder"><i class="fa-solid fa-seedling"></i><span class="">Seeders en Laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs08_migraciones_index_oldc3a7-li">
+  <input type="checkbox" id="m-laraveldocs08_migraciones_index_oldc3a7-check"/>
+  <label for="m-laraveldocs08_migraciones_index_oldc3a7-check"><a href="/laravel/docs/08_migraciones/_index_old%C3%A7/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs08_migraciones_index_oldc3a7"><span class=""></span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs09_crud-li">
+  <input type="checkbox" id="m-laraveldocs09_crud-check" checked/>
+  <label for="m-laraveldocs09_crud-check"><a href="/laravel/docs/09_crud/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laraveldocs09_crud"><i class="fa-solid fa-database"></i><span class="td-sidebar-nav-active-item">Creando un CRUD</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs09_crud01_la-tabla-li">
+  <input type="checkbox" id="m-laraveldocs09_crud01_la-tabla-check"/>
+  <label for="m-laraveldocs09_crud01_la-tabla-check"><a href="/laravel/docs/09_crud/01_la-tabla/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs09_crud01_la-tabla"><i class="fa-solid fa-database"></i><span class="">Creando la tabla</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet-check"/>
+  <label for="m-laraveldocs999_cheatseet-check"><a href="/laravel/docs/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet"><span class="">Cheat Sheet</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseethelper-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper-check"/>
+  <label for="m-laraveldocs999_cheatseethelper-check"><a href="/laravel/docs/999_cheatseet/helper/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper"><span class="">Helper en Laravel</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper10_vistas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper10_vistas-check"/>
+  <label for="m-laraveldocs999_cheatseethelper10_vistas-check"><a href="/laravel/docs/999_cheatseet/helper/10_vistas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper10_vistas"><span class="">Vistas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper20_rutas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper20_rutas-check"/>
+  <label for="m-laraveldocs999_cheatseethelper20_rutas-check"><a href="/laravel/docs/999_cheatseet/helper/20_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper20_rutas"><span class="">Rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper30_request-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper30_request-check"/>
+  <label for="m-laraveldocs999_cheatseethelper30_request-check"><a href="/laravel/docs/999_cheatseet/helper/30_request/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper30_request"><span class="">Request en Laravel</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetartisan-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetartisan-check"/>
+  <label for="m-laraveldocs999_cheatseetartisan-check"><a href="/laravel/docs/999_cheatseet/artisan/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetartisan"><span class="">Artisan (CLI)</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetblade-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetblade-check"/>
+  <label for="m-laraveldocs999_cheatseetblade-check"><a href="/laravel/docs/999_cheatseet/blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetblade"><span class="">Directivas Blade</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#crear-los-elementos-necesarios">Crear los elementos necesarios:</a>
+      <ul>
+        <li><a href="#migration">Migration</a></li>
+        <li><a href="#factory">Factory</a></li>
+        <li><a href="#seeder">Seeder</a></li>
+        <li><a href="#modelo">Modelo</a></li>
+        <li><a href="#eloquent">Eloquent</a></li>
+        <li><a href="#controlador-resource">Controlador resource</a></li>
+        <li><a href="#request">Request</a></li>
+        <li><a href="#policy">Policy</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            <div class="taxonomy taxonomy-terms-cloud taxo-categories">
+      <h5 class="taxonomy-title">Categories</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      <h5 class="taxonomy-title">Tags</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel/docs/">Laravel</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Creando un CRUD</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Creando un CRUD</h1>
+  
+	<header class="article-meta">
+		
+</header>
+	<h1 id="realizar-un-crud">Realizar un CRUD</h1>
+<h4 id="crud">CRUD</h4>
+<hr>
+<p>Vamos a hacer una aplicación que premita interactuar con una tabla en la base de datos a través de la aplicaicón.</p>
+<p>La palabra 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    CRUD
+
+
+</span>
+</strong> viene de 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    C
+
+
+</span>
+</strong>reate 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    R
+
+
+</span>
+</strong>ead 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    U
+
+
+</span>
+</strong>pdate 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    D
+
+
+</span>
+</strong>elete, es decir, que desde nuestra aplicación podamos hacer estas acciones sobre la tabla de un recurso (por ejemplo, proyectos, alumnos, profesores, &hellip;)</p>
+<p>Partimos de un proyecto ya creado</p>
+
+<span class="font-weight-bold text-primary">
+
+
+    Acciones necesarias
+
+</span>
+
+<blockquote>
+<ul>
+<li>Crear la tabla (migraciones)</li>
+<li>Poblar la tabla con valores (factory y seeder)</li>
+<li>Crear un Modelo (Model)</li>
+<li>Crear un Controlador de tipo recurso (Controller)</li>
+<li>Establecer las rutas y conocerlas</li>
+<li>Escribir las acciones para cada método del controlador según la ruta solicitada</li>
+<li>En cada solicitud crear la vista necesaria para visualizar información</li>
+</ul>
+</blockquote>
+<h2 id="crear-los-elementos-necesarios">Crear los elementos necesarios:</h2>
+<p>En lugar de crear cada uno de los elementos :
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    tabla, factorías y seeder, modelo y controlador de tipo recurso
+
+
+</span>
+</strong> vamos a usar un parámetro a la hora de creaer el modelo que lo crea todo
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:model Alumno --all</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Importante</h4>
+
+    <strong>El modelo simpre en singular</strong>
+
+</div>
+</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Estos  elementos que estamos creando, son 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Clases especializadas de laravel
+
+
+</span>
+</strong>. Es importante ser consciente para cada clase:</p>
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    para qué sirve
+
+
+</span>
+</strong></li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    dónde se ubica
+
+
+</span>
+</strong></li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    cómo se utiliza
+
+
+</span>
+</strong></li>
+</ul>
+<h3 id="migration">Migration</h3>
+<p>Ya están estudadas en el tema anterior</p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Son clases anónimas clase nos va a permitir realizar acciones de tipo DDL sobre la base de datos
+
+
+</span>
+</strong>:</p>
+<blockquote>
+<ul>
+<li>crear</li>
+<li>modificar</li>
+<li>borrar</li>
+<li>tablas</li>
+<li>índices, etc</li>
+</ul>
+</blockquote>
+<hr>
+<p>Cada clase tiene dos métodos:
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">up()</h4>
+
+    Método que creará elementos
+Se ejecutará cuando ejecute una migración
+
+</div>
+
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">down()</h4>
+
+    Este método debería de elminar los elementos creados en up
+Se ejecutará cuando ejecute un dehacer migración (con rollback o reset)
+
+</div>
+</p>
+<p>Cada migración va a ser una clase ubicada en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    ./database/migrations/fecha_create_xxxx.php
+
+
+</span>
+</strong></p>
+<p>En ella lo que tenemos que especificar son 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    los campos de la tabla que queremos crear
+
+
+</span>
+</strong>.
+En nuestro ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">up</span>(): void{
+</span></span><span style="display:flex;"><span>    Schema::<span style="color:#658b00">create</span>(<span style="color:#cd5555">&#39;projects&#39;</span>, <span style="color:#8b008b;font-weight:bold">function</span> (Blueprint <span style="color:#00688b">$table</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">id</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;name&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">string</span>(<span style="color:#cd5555">&#39;description&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">integer</span>(<span style="color:#cd5555">&#39;hours&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">date</span>(<span style="color:#cd5555">&#39;start_date&#39;</span>)-&gt;<span style="color:#658b00">nullable</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$table</span>-&gt;<span style="color:#658b00">timestamps</span>();
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<h3 id="factory">Factory</h3>
+<p>Para 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    fabricar, crear valores o filas
+
+
+</span>
+</strong> de una determinada tabla .
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Aclaración</h4>
+
+    Las factorías crean valores, no los inserta en la tabla.
+
+</div>
+
+Las factorías se ubican en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    ./database/factory/NombreFactory.php
+
+
+</span>
+</strong>
+Por convención, cuando se crea una factoría, debería de ser el 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    NombreModeloFactory
+
+
+</span>
+</strong></p>
+<p>En nuestro ejemplo para crear proyectos hemos creado previamente un fichero en la carpeta config para tener un listado de proyectos y luego los hemos usado para el name y description del proyecto.</p>
+<details>
+    <summary>Fichero /config/projects.php</summary>
+    <div class="solution-content">
+
+        
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?php
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$proyectos</span> = [
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;IA_Chatbot&#34;</span> =&gt; <span style="color:#cd5555">&#34;Desarrollo de un chatbot inteligente para atención al cliente usando IA.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Web_Responsive&#34;</span> =&gt; <span style="color:#cd5555">&#34;Creación de un sitio web adaptable a diferentes dispositivos y pantallas.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;App_Movil&#34;</span> =&gt; <span style="color:#cd5555">&#34;Aplicación móvil multiplataforma para gestión de tareas diarias.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;IoT_Hogar&#34;</span> =&gt; <span style="color:#cd5555">&#34;Sistema IoT para automatización y control de dispositivos en el hogar.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Data_Analytics&#34;</span> =&gt; <span style="color:#cd5555">&#34;Proyecto de análisis de datos para identificar patrones de consumo.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Ecommerce_Plataforma&#34;</span> =&gt; <span style="color:#cd5555">&#34;Desarrollo de una tienda online completa con carrito y pagos.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Blockchain_Segura&#34;</span> =&gt; <span style="color:#cd5555">&#34;Implementación de contratos inteligentes en blockchain para transacciones seguras.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;VR_Experiencia&#34;</span> =&gt; <span style="color:#cd5555">&#34;Creación de una experiencia de realidad virtual para entrenamiento.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;AR_App&#34;</span> =&gt; <span style="color:#cd5555">&#34;Aplicación de realidad aumentada para mostrar productos en 3D.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Machine_Learning&#34;</span> =&gt; <span style="color:#cd5555">&#34;Proyecto de aprendizaje automático para predicción de ventas.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;API_Restful&#34;</span> =&gt; <span style="color:#cd5555">&#34;Desarrollo de una API RESTful para integrar diferentes sistemas.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Seguridad_Ciber&#34;</span> =&gt; <span style="color:#cd5555">&#34;Implementación de medidas de ciberseguridad en aplicaciones web.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Cloud_Storage&#34;</span> =&gt; <span style="color:#cd5555">&#34;Sistema de almacenamiento en la nube para archivos y documentos.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;BigData_Procesamiento&#34;</span> =&gt; <span style="color:#cd5555">&#34;Proyecto de procesamiento de grandes volúmenes de datos en tiempo real.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;DevOps_Pipeline&#34;</span> =&gt; <span style="color:#cd5555">&#34;Automatización de despliegue y testing usando herramientas DevOps.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Microservicios&#34;</span> =&gt; <span style="color:#cd5555">&#34;Arquitectura basada en microservicios para aplicaciones escalables.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Chat_EnTiempoReal&#34;</span> =&gt; <span style="color:#cd5555">&#34;Desarrollo de un chat en tiempo real usando WebSocket.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Reconocimiento_Voz&#34;</span> =&gt; <span style="color:#cd5555">&#34;Sistema de reconocimiento de voz para comandos inteligentes.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Automatizacion_RPA&#34;</span> =&gt; <span style="color:#cd5555">&#34;Implementación de RPA para automatizar procesos administrativos.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Control_Robotica&#34;</span> =&gt; <span style="color:#cd5555">&#34;Proyecto de control de robots mediante sensores y actuadores.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Video_Streaming&#34;</span> =&gt; <span style="color:#cd5555">&#34;Plataforma de streaming de video en tiempo real.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Gamificacion_App&#34;</span> =&gt; <span style="color:#cd5555">&#34;Aplicación gamificada para mejorar la experiencia del usuario.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Sistema_ERP&#34;</span> =&gt; <span style="color:#cd5555">&#34;Desarrollo de un ERP modular para pequeñas empresas.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Monitorizacion_IoT&#34;</span> =&gt; <span style="color:#cd5555">&#34;Sistema de monitorización de sensores IoT en tiempo real.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Recomendaciones_IA&#34;</span> =&gt; <span style="color:#cd5555">&#34;Motor de recomendaciones personalizadas usando inteligencia artificial.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Analitica_Web&#34;</span> =&gt; <span style="color:#cd5555">&#34;Proyecto de analítica web para medir métricas de usuarios.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Control_Acceso&#34;</span> =&gt; <span style="color:#cd5555">&#34;Sistema de control de acceso con identificación biométrica.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Simulacion_3D&#34;</span> =&gt; <span style="color:#cd5555">&#34;Simulador 3D para entrenamiento o pruebas de productos.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Chatbot_Ventas&#34;</span> =&gt; <span style="color:#cd5555">&#34;Chatbot especializado en asistencia para ventas y marketing.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;App_Fitness&#34;</span> =&gt; <span style="color:#cd5555">&#34;Aplicación móvil para seguimiento de ejercicios y dieta.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Integracion_API&#34;</span> =&gt; <span style="color:#cd5555">&#34;Proyecto de integración de múltiples APIs externas en un sistema.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Reconocimiento_Imagen&#34;</span> =&gt; <span style="color:#cd5555">&#34;Sistema de reconocimiento de imágenes para clasificación automática.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Plataforma_Educativa&#34;</span> =&gt; <span style="color:#cd5555">&#34;Plataforma online para cursos y educación a distancia.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Control_Vehicular&#34;</span> =&gt; <span style="color:#cd5555">&#34;Sistema para control y monitoreo de flotas de vehículos.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Simulador_Financiero&#34;</span> =&gt; <span style="color:#cd5555">&#34;Simulación financiera para planificación y análisis de inversiones.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Sistema_CRM&#34;</span> =&gt; <span style="color:#cd5555">&#34;Desarrollo de un CRM para gestión de clientes y ventas.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;App_Entrega&#34;</span> =&gt; <span style="color:#cd5555">&#34;Aplicación para gestión de pedidos y entregas a domicilio.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Mapa_Interactivo&#34;</span> =&gt; <span style="color:#cd5555">&#34;Mapa interactivo con geolocalización y rutas dinámicas.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Reconocimiento_Facial&#34;</span> =&gt; <span style="color:#cd5555">&#34;Proyecto de reconocimiento facial para seguridad y control.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Bot_Trading&#34;</span> =&gt; <span style="color:#cd5555">&#34;Bot de trading automático para mercados financieros.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Sistema_Pagos&#34;</span> =&gt; <span style="color:#cd5555">&#34;Implementación de sistema de pagos online seguro.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;App_Clima&#34;</span> =&gt; <span style="color:#cd5555">&#34;Aplicación móvil para consultar pronósticos del clima en tiempo real.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Seguridad_App&#34;</span> =&gt; <span style="color:#cd5555">&#34;Proyecto de testing y mejora de seguridad en aplicaciones móviles.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Blockchain_Tracking&#34;</span> =&gt; <span style="color:#cd5555">&#34;Sistema de trazabilidad de productos usando blockchain.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;IoT_Agricultura&#34;</span> =&gt; <span style="color:#cd5555">&#34;Monitoreo de cultivos mediante sensores IoT y alertas automáticas.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;App_Transporte&#34;</span> =&gt; <span style="color:#cd5555">&#34;Aplicación para gestión y optimización de transporte público.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Analitica_Redes&#34;</span> =&gt; <span style="color:#cd5555">&#34;Análisis de redes sociales para medir engagement y tendencias.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Sistema_Reservas&#34;</span> =&gt; <span style="color:#cd5555">&#34;Plataforma para reservas de hoteles y servicios online.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Simulacion_AI&#34;</span> =&gt; <span style="color:#cd5555">&#34;Simulación de comportamientos usando inteligencia artificial.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;App_Mensajeria&#34;</span> =&gt; <span style="color:#cd5555">&#34;Aplicación de mensajería segura y cifrada para usuarios.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Control_Produccion&#34;</span> =&gt; <span style="color:#cd5555">&#34;Sistema de control de producción industrial en tiempo real.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;Reconocimiento_Texto&#34;</span> =&gt; <span style="color:#cd5555">&#34;OCR para extracción de texto de documentos y facturas.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#34;App_Cultura&#34;</span> =&gt; <span style="color:#cd5555">&#34;Aplicación para difusión de eventos culturales y artísticos.&#34;</span>
+</span></span><span style="display:flex;"><span>];</span></span></code></pre></div>
+
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<p>Usando el fichero 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    projects.php
+
+
+</span>
+</strong>, el código podría quedar
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>   <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">definition</span>(): <span style="color:#8b008b;font-weight:bold">array</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$projects</span> = config(<span style="color:#cd5555">&#39;projects&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$title</span> = array_rand(<span style="color:#00688b">$projects</span>, <span style="color:#b452cd">1</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$project</span> = <span style="color:#00688b">$projects</span>[<span style="color:#00688b">$title</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">return</span> [
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#34;name&#34;</span> =&gt; <span style="color:#00688b">$title</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#34;description&#34;</span> =&gt; <span style="color:#00688b">$project</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#34;hours&#34;</span> =&gt; <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">faker</span>-&gt;<span style="color:#658b00">numberBetween</span>(<span style="color:#b452cd">10</span>,<span style="color:#b452cd">200</span>),
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#34;start_date&#34;</span> =&gt; <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">faker</span>-&gt;<span style="color:#658b00">date</span>(),
+</span></span><span style="display:flex;"><span>            <span style="color:#228b22">//
+</span></span></span><span style="display:flex;"><span>        ];
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></div></p>
+<h3 id="seeder">Seeder</h3>
+<p>Esta clase va a llamar a la 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    factoría y cada fila que nos retorna la vamos a insertar en la tabla
+
+
+</span>
+</strong></p>
+<p>Para usar esta clase, necesitamos el 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    modelo
+
+
+</span>
+</strong>,que es el especializado en interactuar con la tabla de la base de datos</p>
+<p>Las seeder se ubican en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    ./database/seeder/NombreSeeder.php
+
+
+</span>
+</strong>
+Importante recordar que el modelo debe de extender de la clase 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    UseFactory
+
+
+</span>
+</strong>, para poder invocar el método 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    factory()
+
+
+</span>
+</strong> que es el que llama a la 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Factoria
+
+
+</span>
+</strong>
+Observa el modelo
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Project</span> <span style="color:#8b008b;font-weight:bold">extends</span> Model
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">/** @use HasFactory&lt;\Database\Factories\ProjectFactory&gt; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">use</span> HasFactory;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Warning</h4>
+
+    <p>Como puede haber varios seeder, todos se van a ejecutar a través de DatabaseSeeder.php
+Por ejemplo si tuviera varios seeder
+<!-- raw HTML omitted --></p>
+<pre><code>Nombre1Seeder, Nombre2Seeder, Nombre3Seeder:
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">call</span>([
+</span></span><span style="display:flex;"><span>    Nombre1Seeder::<span style="color:#658b00">class</span>,
+</span></span><span style="display:flex;"><span>    Nombre2Seeder::<span style="color:#658b00">class</span>,
+</span></span><span style="display:flex;"><span>    Nombre3Seeder::<span style="color:#658b00">class</span>,
+</span></span><span style="display:flex;"><span>]);</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h3 id="modelo">Modelo</h3>
+<p>Es una clase que nos va a permitir 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    interactuar con una determinada tabla de la base de datos de forma directa
+
+
+</span>
+</strong>.</p>
+<p>Para ello utilizaremos 
+<span class="font-weight-bold text-primary">
+
+
+    objetos y métodos
+
+</span>
+ sin necesidad de implementar consultas sql y enviarlas a la base de datos a través de los recursos mysqli o PDO.</p>
+<p>Para ello se usa 
+<span class="font-weight-bold text-primary">
+
+
+    Eloquent
+
+</span>
+ Que es un 
+<span class="font-weight-bold text-primary">
+
+
+    ORM
+
+</span>
+
+<img src="/laravel/docs/09_crud/eloquent.png" alt="eloquent.png"></p>
+<p>Las modelos se ubican en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    ./app/Models/Modelo.php
+
+
+</span>
+</strong></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Un modelo asume por defecto valores para interactuar con una tabla sin tener que especificar nada:</p>
+<blockquote>
+<ul>
+<li>Nombre de la tabla igual que 
+<span class="font-weight-bold text-primary">
+
+
+    nombre del modelo en plural
+
+</span>
+. En este caso 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    projects
+
+
+</span>
+</strong></li>
+<li>Clave en la tabla 
+<span class="font-weight-bold text-primary">
+
+
+    id (autoincrement )
+
+</span>
+</li>
+<li>Tiene los campos de maracas de tiempo: 
+<span class="font-weight-bold text-primary">
+
+
+    create_at update_at
+
+</span>
+</li>
+</ul>
+</blockquote>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Warning</h4>
+
+    Estos valores se pueden cambiar estableciéndolos en el modelo correspondiente
+
+</div>
+
+<h3 id="eloquent">Eloquent</h3>
+<p>
+<span class="font-weight-bold text-primary">
+
+
+    Eloquent
+
+</span>
+ es el ORM de Laravel, que permite consultar, insertar, modificar y eliminar datos usando métodos de PHP en lugar de escribir consultas SQL.</p>
+<p>ORM (Object Relational Mapper)</p>
+<p>Un ORM es una herramienta que permite trabajar con la base de datos usando objetos en lugar de SQL.</p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Cada tabla de la base de datos se representa como una clase (modelo)
+
+
+</span>
+</strong> y cada fila como un objeto.</p>
+<h4 id="métodos-habituales-de-eloquent">Métodos habituales de Eloquent</h4>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Obtener registros
+
+
+</span>
+</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>    Model::<span style="color:#658b00">all</span>()<span style="color:#228b22">// obtiene **todos los registros de la tabla**
+</span></span></span><span style="display:flex;"><span>    Model::<span style="color:#658b00">find</span>(<span style="color:#00688b">$id</span>) <span style="color:#228b22">// busca **por clave primaria**
+</span></span></span><span style="display:flex;"><span>    Model::<span style="color:#658b00">findOrFail</span>(<span style="color:#00688b">$id</span>) <span style="color:#228b22">// busca por clave primaria y **lanza error si no existe**
+</span></span></span><span style="display:flex;"><span>    Model::<span style="color:#658b00">first</span>() <span style="color:#228b22">// obtiene **el primer registro del resultado**
+</span></span></span></code></pre></div></p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Construir consultas (no ejecutan todavía)
+
+
+</span>
+</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Model::<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#34;campo&#34;</span>,<span style="color:#cd5555">&#34;valor&#34;</span>) <span style="color:#228b22">// filtra registros por un campo
+</span></span></span><span style="display:flex;"><span>Model::<span style="color:#658b00">where</span>(<span style="color:#cd5555">&#34;campo&#34;</span>,<span style="color:#cd5555">&#34;operador&#34;</span>,<span style="color:#cd5555">&#34;valor&#34;</span>) <span style="color:#228b22">// ejemplo: where(&#34;edad&#34;,&#34;&gt;&#34;,18)
+</span></span></span><span style="display:flex;"><span>Model::<span style="color:#658b00">orderBy</span>(<span style="color:#cd5555">&#34;campo&#34;</span>,<span style="color:#cd5555">&#34;asc|desc&#34;</span>) <span style="color:#228b22">// ordena resultados
+</span></span></span><span style="display:flex;"><span>Model::<span style="color:#658b00">limit</span>(numero) <span style="color:#228b22">// limita el número de registros
+</span></span></span><span style="display:flex;"><span>Model::<span style="color:#658b00">select</span>(<span style="color:#cd5555">&#34;campo1&#34;</span>,<span style="color:#cd5555">&#34;campo2&#34;</span>) <span style="color:#228b22">// selecciona columnas concretas
+</span></span></span></code></pre></div></p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Ejecutar la consulta
+
+
+</span>
+</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>get() <span style="color:#228b22">// ejecuta la consulta y devuelve todos los resultados
+</span></span></span><span style="display:flex;"><span>first() <span style="color:#228b22">// ejecuta la consulta y devuelve un único registro
+</span></span></span><span style="display:flex;"><span>count() <span style="color:#228b22">// devuelve el número de registros
+</span></span></span><span style="display:flex;"><span>exists() <span style="color:#228b22">// comprueba si existe algún registro
+</span></span></span></code></pre></div></p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Modificar datos
+
+
+</span>
+</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Model::<span style="color:#658b00">create</span>([<span style="color:#cd5555">&#34;campo&#34;</span>=&gt;<span style="color:#cd5555">&#34;valor&#34;</span>]) <span style="color:#228b22">// crea un nuevo registro
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$modelo</span>-&gt;<span style="color:#658b00">update</span>([<span style="color:#cd5555">&#34;campo&#34;</span>=&gt;<span style="color:#cd5555">&#34;valor&#34;</span>]) <span style="color:#228b22">// actualiza campos de un registro
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$modelo</span>-&gt;<span style="color:#658b00">delete</span>() <span style="color:#228b22">// elimina el registro
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$modelo</span>-&gt;<span style="color:#658b00">save</span>() <span style="color:#228b22">// guarda cambios en el modelo
+</span></span></span></code></pre></div></p>
+
+<span class="font-weight-bold text-primary">
+
+
+    Idea clave
+
+</span>
+
+<p>Eloquent permite consultar la base de datos usando <strong>métodos de PHP en lugar de escribir SQL</strong>.<br>
+Cada <strong>modelo representa una tabla</strong> y cada <strong>objeto representa un registro</strong>.</p>
+<h3 id="controlador-resource">Controlador resource</h3>
+<p>Un <strong>controlador de tipo resource</strong> es una clase que agrupa todas las acciones necesarias para realizar un CRUD sobre un recurso.</p>
+<p>En nuestro caso el recurso será 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    projects
+
+
+</span>
+</strong>.</p>
+<p>Laravel crea automáticamente los métodos típicos de un CRUD:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>index()   <span style="color:#228b22">// mostrar listado de proyectos
+</span></span></span><span style="display:flex;"><span>create()  <span style="color:#228b22">// mostrar formulario de creación
+</span></span></span><span style="display:flex;"><span>store()   <span style="color:#228b22">// guardar un nuevo proyecto
+</span></span></span><span style="display:flex;"><span>show()    <span style="color:#228b22">// mostrar un proyecto concreto
+</span></span></span><span style="display:flex;"><span>edit()    <span style="color:#228b22">// mostrar formulario de edición
+</span></span></span><span style="display:flex;"><span>update()  <span style="color:#228b22">// actualizar un proyecto
+</span></span></span><span style="display:flex;"><span>destroy() <span style="color:#228b22">// eliminar un proyecto
+</span></span></span></code></pre></div>
+<p>Cada uno de estos métodos responderá a una 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    ruta concreta
+
+
+</span>
+</strong> y normalmente devolverá una 
+<span class="font-weight-bold text-primary">
+
+
+    vista
+
+</span>
+.</p>
+<hr>
+<h3 id="request">Request</h3>
+<p>Una <strong>Request</strong> es una clase que permite 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    validar los datos enviados desde un formulario
+
+
+</span>
+</strong> antes de guardarlos en la base de datos.</p>
+<p>Laravel permite crear clases de validación específicas para cada formulario.</p>
+<p>Por ejemplo, para validar la creación de un proyecto:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>php artisan make:request StoreProjectRequest</span></span></code></pre></div>
+<p>En esta clase podemos definir las reglas de validación:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">rules</span>(): <span style="color:#8b008b;font-weight:bold">array</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#34;name&#34;</span> =&gt; <span style="color:#cd5555">&#34;required|min:3|max:100&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#34;description&#34;</span> =&gt; <span style="color:#cd5555">&#34;required&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#34;hours&#34;</span> =&gt; <span style="color:#cd5555">&#34;required|integer|min:1&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#34;start_date&#34;</span> =&gt; <span style="color:#cd5555">&#34;nullable|date&#34;</span>
+</span></span><span style="display:flex;"><span>    ];
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Si los datos no cumplen las reglas, Laravel devuelve automáticamente los errores al formulario.
+
+
+</span>
+</strong>
+<hr>
+<h3 id="policy">Policy</h3>
+<p>Las <strong>Policy</strong> permiten controlar 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    qué usuarios pueden realizar determinadas acciones
+
+
+</span>
+</strong> sobre un recurso.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>quién puede ver proyectos</li>
+<li>quién puede crear proyectos</li>
+<li>quién puede editar proyectos</li>
+<li>quién puede borrar proyectos</li>
+</ul>
+<p>Cada Policy está asociada a un <strong>modelo</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>php artisan make:policy ProjectPolicy --model=Project</span></span></code></pre></div>
+<p>Dentro de la Policy se definen métodos como:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>view()
+</span></span><span style="display:flex;"><span>create()
+</span></span><span style="display:flex;"><span>update()
+</span></span><span style="display:flex;"><span>delete()</span></span></code></pre></div>
+<p>En nuestro caso utilizaremos 
+<span class="font-weight-bold text-primary">
+
+
+    Policies
+
+</span>
+ para decidir si un usuario puede realizar una acción sobre un recurso.</p>
+<p>Para tomar esa decisión, la Policy consultará los 
+<span class="font-weight-bold text-primary">
+
+
+    roles y permisos
+
+</span>
+ del usuario usando la librería 
+<span class="font-weight-bold text-primary">
+
+
+    Spatie Laravel Permission
+
+</span>
+.</p>
+<p>En nuestro caso utilizaremos 
+<span class="font-weight-bold text-primary">
+
+
+    Policies
+
+</span>
+ para decidir si un usuario puede realizar una acción sobre un recurso.</p>
+<p>Para tomar esa decisión, la Policy consultará los 
+<span class="font-weight-bold text-primary">
+
+
+    roles y permisos
+
+</span>
+ del usuario usando la librería 
+<span class="font-weight-bold text-primary">
+
+
+    Spatie Laravel Permission
+
+</span>
+.</p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    En aplicaciones sencillas muchas veces basta con comprobar el rol del usuario directamente
+
+
+</span>
+</strong><br>
+(por ejemplo <em>admin</em>, <em>profesor</em>, <em>alumno</em>) sin necesidad de crear una Policy específica.</p>
+<p>Las 
+<span class="font-weight-bold text-primary">
+
+
+    Policies
+
+</span>
+ se utilizan cuando necesitamos reglas de autorización más complejas o centralizar la lógica de permisos.</p>
+
+  <div class="section-index">
+    
+    
+    <hr class="panel-line">
+        <div class="entry">
+                <h5>
+                    <a href="/laravel/docs/09_crud/01_la-tabla/">Creando la tabla</a>
+                </h5>
+                <p></p>
+            </div>
+        </div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

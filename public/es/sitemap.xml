@@ -23,12 +23,6 @@
     <loc>http://localhost:1313/laravel/docs/pendiente/06_autenticacion/fortify/02_page_role_autenticated/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/laravel/docs/08_migraciones/eloquent/</loc>
-    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/laravel/docs/08_migraciones/eloquent_2/</loc>
-    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/laravel/docs/999_cheatseet/helper/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
@@ -48,9 +42,6 @@
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/laravel/docs/01_introducci%C3%B3n/</loc>
-    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/laravel/docs/08_migraciones/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/laravel/docs/09_crud/03_el-controlador/01_listado/</loc>
@@ -105,9 +96,6 @@
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/laravel/docs/08_migraciones/factory_seeder/</loc>
-    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/laravel/docs/08_migraciones/sql_to_eloquent/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/laravel/docs/999_cheatseet/04_despliegue/vistas/</loc>
@@ -204,6 +192,12 @@
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/laravel/docs/09_crud/01_la-tabla/</loc>
+    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/docs/08_migraciones/</loc>
+    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/docs/09_crud/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/laravel/docs/pendiente/100_anexos/bootstrap/</loc>
