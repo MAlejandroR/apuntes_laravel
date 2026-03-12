@@ -34,7 +34,7 @@ La palabra CRUD viene de C reate R ead U pdate D elete, es decir, que desde nues
 La palabra CRUD viene de C reate R ead U pdate D elete, es decir, que desde nuestra aplicación podamos hacer estas acciones sobre la tabla de un recurso (por ejemplo, proyectos, alumnos, profesores, …)">
   <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
   <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="1838">
+  <meta itemprop="wordCount" content="1855">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Creando un CRUD">
   <meta name="twitter:description" content="Realizar un CRUD CRUD Vamos a hacer una aplicación que premita interactuar con una tabla en la base de datos a través de la aplicaicón.
@@ -192,6 +192,10 @@ La palabra CRUD viene de C reate R ead U pdate D elete, es decir, que desde nues
   
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_paginacion-li">
+  <input type="checkbox" id="m-laraveldocs10_paginacion-check"/>
+  <label for="m-laraveldocs10_paginacion-check"><a href="/laravel/docs/10_paginacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_paginacion"><i class="fa-solid fa-database"></i><span class="">Paginando datos</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet-li">
   <input type="checkbox" id="m-laraveldocs999_cheatseet-check"/>
   <label for="m-laraveldocs999_cheatseet-check"><a href="/laravel/docs/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet"><span class="">Cheat Sheet</span></a></label>
@@ -408,7 +412,7 @@ La palabra CRUD viene de C reate R ead U pdate D elete, es decir, que desde nues
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:model Alumno --all</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:model Project --all</span></span></code></pre></td></tr></table>
 </div>
 </div>
 
@@ -1089,6 +1093,14 @@ Cada <strong>modelo representa una tabla</strong> y cada <strong>objeto represen
 </span>
 .</p>
 <p>En nuestro caso utilizaremos 
+<span class="font-weight-bold text-primary">
+
+
+    Policies
+
+</span>
+ para decidir si un usuario puede realizar una acción sobre un recurso.
+En nuestro caso utilizaremos 
 <span class="font-weight-bold text-primary">
 
 

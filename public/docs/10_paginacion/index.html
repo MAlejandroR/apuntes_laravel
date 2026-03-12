@@ -3,7 +3,7 @@
   <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/pendiente/999_cheatseet/helper/20_rutas/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/10_paginacion/index.xml">
 <meta name="robots" content="noindex, nofollow">
 
 
@@ -18,27 +18,30 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
-<title>Rutas | Laravel: Framework de php</title>
+<title>Paginando datos | Laravel: Framework de php</title>
 <meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
 
-<meta property="og:url" content="http://localhost:1313/laravel/docs/pendiente/999_cheatseet/helper/20_rutas/">
+<meta property="og:url" content="http://localhost:1313/laravel/docs/10_paginacion/">
   <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Rutas">
-  <meta property="og:description" content="Helpers de Laravel para Rutas Laravel proporciona varios helpers útiles para trabajar con rutas. Estos son algunos de los más importantes:
-route(&#39;nombre_ruta&#39;) Genera una URL para una ruta nombrada. Podemos pasar parámetros a la ruta como un array asociativo [‘variable’=&gt;valor] route(&#39;user.profile&#39;, [&#39;id&#39; =&gt; 1]); url(&#39;path&#39;) Genera una URL absoluta para el path dado. Ejemplo: url(&#39;/user&#39;) redirect()-&gt;route(&#39;nombre_ruta&#39;) Redirige a una ruta nombrada. Ejemplo: redirect()-&gt;route(&#39;home&#39;) action(&#39;NombreControlador@metodo&#39;) Genera una URL para el controlador y método especificados. Ejemplo: action(&#39;UserController@show&#39;, [&#39;id&#39; =&gt; 1]) back() Redirige al usuario a la ubicación anterior. Ejemplo: return back() current() Obtiene la URL actual. Ejemplo: url()-&gt;current() previous() Obtiene la URL previa a la actual. Ejemplo: url()-&gt;previous()">
+  <meta property="og:title" content="Paginando datos">
+  <meta property="og:description" content="Paginación en un CRUD con Laravel 12 Paginación La paginación es una técnica que permite dividir un conjunto grande de registros en bloques más pequeños llamados páginas.
+En lugar de mostrar todos los registros de una tabla, el sistema muestra solo un número limitado de elementos y permite navegar entre páginas.
+¿Por qué usar paginación? En aplicaciones reales es habitual tener cientos o miles de registros.">
   <meta property="og:locale" content="es">
   <meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Rutas">
-  <meta itemprop="description" content="Helpers de Laravel para Rutas Laravel proporciona varios helpers útiles para trabajar con rutas. Estos son algunos de los más importantes:
-route(&#39;nombre_ruta&#39;) Genera una URL para una ruta nombrada. Podemos pasar parámetros a la ruta como un array asociativo [‘variable’=&gt;valor] route(&#39;user.profile&#39;, [&#39;id&#39; =&gt; 1]); url(&#39;path&#39;) Genera una URL absoluta para el path dado. Ejemplo: url(&#39;/user&#39;) redirect()-&gt;route(&#39;nombre_ruta&#39;) Redirige a una ruta nombrada. Ejemplo: redirect()-&gt;route(&#39;home&#39;) action(&#39;NombreControlador@metodo&#39;) Genera una URL para el controlador y método especificados. Ejemplo: action(&#39;UserController@show&#39;, [&#39;id&#39; =&gt; 1]) back() Redirige al usuario a la ubicación anterior. Ejemplo: return back() current() Obtiene la URL actual. Ejemplo: url()-&gt;current() previous() Obtiene la URL previa a la actual. Ejemplo: url()-&gt;previous()">
+  <meta itemprop="name" content="Paginando datos">
+  <meta itemprop="description" content="Paginación en un CRUD con Laravel 12 Paginación La paginación es una técnica que permite dividir un conjunto grande de registros en bloques más pequeños llamados páginas.
+En lugar de mostrar todos los registros de una tabla, el sistema muestra solo un número limitado de elementos y permite navegar entre páginas.
+¿Por qué usar paginación? En aplicaciones reales es habitual tener cientos o miles de registros.">
   <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
   <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="106">
+  <meta itemprop="wordCount" content="607">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Rutas">
-  <meta name="twitter:description" content="Helpers de Laravel para Rutas Laravel proporciona varios helpers útiles para trabajar con rutas. Estos son algunos de los más importantes:
-route(&#39;nombre_ruta&#39;) Genera una URL para una ruta nombrada. Podemos pasar parámetros a la ruta como un array asociativo [‘variable’=&gt;valor] route(&#39;user.profile&#39;, [&#39;id&#39; =&gt; 1]); url(&#39;path&#39;) Genera una URL absoluta para el path dado. Ejemplo: url(&#39;/user&#39;) redirect()-&gt;route(&#39;nombre_ruta&#39;) Redirige a una ruta nombrada. Ejemplo: redirect()-&gt;route(&#39;home&#39;) action(&#39;NombreControlador@metodo&#39;) Genera una URL para el controlador y método especificados. Ejemplo: action(&#39;UserController@show&#39;, [&#39;id&#39; =&gt; 1]) back() Redirige al usuario a la ubicación anterior. Ejemplo: return back() current() Obtiene la URL actual. Ejemplo: url()-&gt;current() previous() Obtiene la URL previa a la actual. Ejemplo: url()-&gt;previous()">
+  <meta name="twitter:title" content="Paginando datos">
+  <meta name="twitter:description" content="Paginación en un CRUD con Laravel 12 Paginación La paginación es una técnica que permite dividir un conjunto grande de registros en bloques más pequeños llamados páginas.
+En lugar de mostrar todos los registros de una tabla, el sistema muestra solo un número limitado de elementos y permite navegar entre páginas.
+¿Por qué usar paginación? En aplicaciones reales es habitual tener cientos o miles de registros.">
 
 
 <link href="/laravel/scss/main.css" rel="stylesheet">
@@ -192,9 +195,9 @@ route(&#39;nombre_ruta&#39;) Genera una URL para una ruta nombrada. Podemos pasa
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_paginacion-li">
-  <input type="checkbox" id="m-laraveldocs10_paginacion-check"/>
-  <label for="m-laraveldocs10_paginacion-check"><a href="/laravel/docs/10_paginacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_paginacion"><i class="fa-solid fa-database"></i><span class="">Paginando datos</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocs10_paginacion-li">
+  <input type="checkbox" id="m-laraveldocs10_paginacion-check" checked/>
+  <label for="m-laraveldocs10_paginacion-check"><a href="/laravel/docs/10_paginacion/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_paginacion"><i class="fa-solid fa-table-list"></i><span class="td-sidebar-nav-active-item">Paginando datos</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet-li">
   <input type="checkbox" id="m-laraveldocs999_cheatseet-check"/>
@@ -246,13 +249,25 @@ route(&#39;nombre_ruta&#39;) Genera una URL para una ruta nombrada. Podemos pasa
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#routenombre_ruta"><code>route(&#39;nombre_ruta&#39;)</code></a></li>
-    <li><a href="#urlpath"><code>url(&#39;path&#39;)</code></a></li>
-    <li><a href="#redirect-routenombre_ruta"><code>redirect()-&gt;route(&#39;nombre_ruta&#39;)</code></a></li>
-    <li><a href="#actionnombrecontroladormetodo"><code>action(&#39;NombreControlador@metodo&#39;)</code></a></li>
-    <li><a href="#back"><code>back()</code></a></li>
-    <li><a href="#current"><code>current()</code></a></li>
-    <li><a href="#previous"><code>previous()</code></a></li>
+    <li><a href="#por-qué-usar-paginación">¿Por qué usar paginación?</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#explicación">Explicación</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#4-paginación-simple">4. Paginación simple</a></li>
+        <li><a href="#5-mantener-filtros-o-parámetros">5. Mantener filtros o parámetros</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-saber-en-qué-página-estamos">6. Saber en qué página estamos</a></li>
   </ul>
 </nav>
       </div>
@@ -305,70 +320,391 @@ route(&#39;nombre_ruta&#39;) Genera una URL para una ruta nombrada. Podemos pasa
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
     <a href="/laravel/docs/">Laravel</a></li>
-  <li class="breadcrumb-item">
-    <a href="">Pendiente de revisar e incorporar</a></li>
-  <li class="breadcrumb-item">
-    <a href="/laravel/docs/pendiente/999_cheatseet/">Cheat Sheet</a></li>
-  <li class="breadcrumb-item">
-    <a href="/laravel/docs/pendiente/999_cheatseet/helper/">Helper en Laravel</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    Rutas</li>
+    Paginando datos</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>Rutas</h1>
+	<h1>Paginando datos</h1>
   
 	<header class="article-meta">
 		
 </header>
-	<h1 id="helpers-de-laravel-para-rutas">Helpers de Laravel para Rutas</h1>
-<p>Laravel proporciona varios helpers útiles para trabajar con rutas. <br>
-Estos son algunos de los más importantes:</p>
-<h2 id="routenombre_ruta"><code>route('nombre_ruta')</code></h2>
-<ul>
-<li>Genera una URL para una ruta nombrada.</li>
-<li>Podemos pasar parámetros a la ruta como un array asociativo 
-<strong>
-<span class="font-weight-bold text-primary">
+	<h1 id="paginación-en-un-crud-con-laravel-12">Paginación en un CRUD con Laravel 12</h1>
 
-    [&lsquo;variable&rsquo;=&gt;valor]
+<div class="definicion-concepto">
+    <div class="definicion-titulo">
+        
+        <i class="fa-solid fa-table-cells-large" aria-hidden="true"></i>
+        
+        <strong>Paginación</strong>
+    </div>
+
+    <div class="definicion-contenido">
+        <p>La <strong>paginación</strong> es una técnica que permite dividir un conjunto grande de registros en <strong>bloques más pequeños llamados páginas</strong>.</p>
+<p>En lugar de mostrar todos los registros de una tabla, el sistema muestra solo un número limitado de elementos y permite navegar entre páginas.</p>
+
+    </div>
+
+    
+</div>
+
+
+
+
+<hr style="border-color: red; border-width: 3px;"/>
+
+<h2 id="por-qué-usar-paginación">¿Por qué usar paginación?</h2>
+<p>En aplicaciones reales es habitual tener cientos o miles de registros.</p>
+<p>Sin paginación:</p>
+<ul>
+<li>Se cargan 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    demasiados datos
+
 
 </span>
-</strong>
+</strong></li>
+<li>La página tarda más en renderizar</li>
+<li>La experiencia del usuario empeora</li>
+</ul>
+<p>Con paginación:</p>
+<ul>
+<li>Se cargan 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    solo los registros necesarios
+
+
+</span>
+</strong></li>
+<li>Se mejora el rendimiento</li>
+<li>La navegación es más cómoda</li>
+</ul>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Idea clave</h4>
+
+    Un CRUD profesional <strong>siempre utiliza paginación</strong> cuando se listan registros de base de datos.
+
+</div>
+
+<!-- raw HTML omitted -->
+<h1 id="ejemplo-con-recurso-teachers">Ejemplo con recurso Teachers</h1>
+<p>En nuestro caso concreto:</p>
+<ul>
+<li>Modelo: <strong>Teacher</strong></li>
+<li>Controlador: <strong>TeacherController</strong></li>
+<li>Vista: <strong>teachers.index</strong> (usando <strong>crud.blade.php</strong>)</li>
+</ul>
+
+
+
+<hr style="border-color: red; border-width: 3px;"/>
+
+<h1 id="1-paginación-en-el-controlador">1. Paginación en el controlador</h1>
+<p>Laravel proporciona el método: 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    paginate(int $numero_registros)
+
+
+</span>
+</strong> que divide automáticamente los resultados en páginas, indicando en su argumento el número de registros por página.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span>public <span style="color:#8b008b;font-weight:bold">function</span> index()<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>{<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex; background-color:#d6d6c6"><span>    <span style="color:#00688b">$teachers</span> = Teacher::paginate(10);<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> view(<span style="color:#cd5555">&#39;teachers.index&#39;</span>, compact(<span style="color:#cd5555">&#39;teachers&#39;</span>));<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="explicación">Explicación</h3>
+<ul>
+<li><code>paginate(10)</code> → devuelve <strong>10 registros por página</strong></li>
+<li>Laravel crea automáticamente:
+<ul>
+<li>número de páginas</li>
+<li>enlaces de navegación</li>
+<li>información de página actual</li>
+</ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>route(<span style="color:#cd5555">&#39;user.profile&#39;</span>, [<span style="color:#cd5555">&#39;id&#39;</span> =&gt; <span style="color:#b452cd">1</span>]);
-</span></span></code></pre></div><h2 id="urlpath"><code>url('path')</code></h2>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Importante</h4>
+
+    El método <strong>paginate()</strong> devuelve un objeto especial llamado <strong>Paginator</strong> que contiene los registros y la información de navegación.
+
+</div>
+
+
+
+
+<hr style="border-color: red; border-width: 3px;"/>
+
+<h1 id="2-mostrar-los-datos-en-la-vista">2. Mostrar los datos en la vista</h1>
+<p>En la vista <code>teachers/index.blade.php</code> mostramos los registros normalmente.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span>@foreach(<span style="color:#00688b">$teachers</span> as <span style="color:#00688b">$teacher</span>)<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex; background-color:#d6d6c6"><span>&lt;tr&gt;<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>    &lt;td&gt;{{<span style="color:#00688b">$teacher</span>-&gt;name}}&lt;/td&gt;<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>    &lt;td&gt;{{<span style="color:#00688b">$teacher</span>-&gt;email}}&lt;/td&gt;<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>&lt;/tr&gt;<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>@endforeach</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Aquí Laravel ya solo devuelve los registros de la página actual. En nuestro caso, usamos el componente <strong>crud.blade.php</strong> donde de forma general visualizamos los registros de una tabla</p>
+
+
+
+<hr style="border-color: red; border-width: 3px;"/>
+
+<h1 id="3-mostrar-los-enlaces-de-paginación">3. Mostrar los enlaces de paginación</h1>
+<p>Para mostrar los botones de navegación utilizamos: el método 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    links()
+
+
+</span>
+</strong> del objeto <strong>paginator</strong> que hemos generado en el controlador</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex; background-color:#d6d6c6"><span>{{<span style="color:#00688b">$teachers</span>-&gt;links()}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Laravel genera automáticamente los botones para navegar:</p>
 <ul>
-<li>Genera una URL absoluta para el path dado.</li>
-<li>Ejemplo: <code>url('/user')</code></li>
+<li>botón <strong>Previous</strong></li>
+<li>botón <strong>Next</strong></li>
+<li>números de página</li>
 </ul>
-<h2 id="redirect-routenombre_ruta"><code>redirect()-&gt;route('nombre_ruta')</code></h2>
+
+
+
+<hr style="border-color: red; border-width: 3px;"/>
+
+<h3 id="4-paginación-simple">4. Paginación simple</h3>
+<p>Alternativa al método <strong>paginate</strong> tenemos otros como <strong>simplePaginate</strong> que lo que hace es modificar lo que retorna <strong>links()</strong> haciendo más sencilla la navegación: solo queremos <strong>Anterior / Siguiente</strong> sin números de página:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span>public <span style="color:#8b008b;font-weight:bold">function</span> index()<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>{<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#00688b">$teachers</span> = Teacher::simplePaginate(10);<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> view(<span style="color:#cd5555">&#39;teachers.index&#39;</span>, compact(<span style="color:#cd5555">&#39;teachers&#39;</span>));<span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Diferencia:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Método</th>
+          <th>Resultado</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>paginate()</td>
+          <td>números de página</td>
+      </tr>
+      <tr>
+          <td>simplePaginate()</td>
+          <td>solo anterior / siguiente</td>
+      </tr>
+  </tbody>
+</table>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Cuándo usar simplePaginate()</h4>
+
+    Es útil cuando la tabla tiene <strong>muchísimos registros</strong>, ya que es más eficiente.
+
+</div>
+
+<!-- raw HTML omitted -->
+<h3 id="5-mantener-filtros-o-parámetros">5. Mantener filtros o parámetros</h3>
+<p>Cuando hay filtros o parámetros en la URL, debemos conservarlos.</p>
+<p>Ejemplo:</p>
+<pre tabindex="0"><code>/teachers?page=2
+</code></pre><p>Laravel lo gestiona automáticamente con <code>links()</code>.</p>
+<p>Pero si añadimos filtros:</p>
+<pre tabindex="0"><code>/teachers?department=math&amp;page=2
+</code></pre><p>Podemos mantenerlos usando:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex; background-color:#d6d6c6"><span>{{<span style="color:#00688b">$teachers</span>-&gt;appends(request()-&gt;query())-&gt;links()}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<!-- raw HTML omitted -->
+<h2 id="6-saber-en-qué-página-estamos">6. Saber en qué página estamos</h2>
+<p>Cuando estamos implementando un crud, es muy importante conocer la página en la que estamos, de forma que is estamos en una página, cualquier acción (borrar o editar),
+El punto clave es ser consciente de que la navegación se basa en el parámetro <code>page</code> que se recibe en  la URL (es decir es un parámetro por get).</p>
+<p>Ejemplo:</p>
+<pre tabindex="0"><code>/teachers?page=3
+</code></pre><p>Podemos obtenerlo con:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex; background-color:#d6d6c6"><span>request()-&gt;get(<span style="color:#cd5555">&#39;page&#39;</span>)</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Esto es útil para:</p>
 <ul>
-<li>Redirige a una ruta nombrada.</li>
-<li>Ejemplo: <code>redirect()-&gt;route('home')</code></li>
+<li>volver a la página anterior</li>
+<li>mantener contexto después de editar</li>
 </ul>
-<h2 id="actionnombrecontroladormetodo"><code>action('NombreControlador@metodo')</code></h2>
+
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Ejemplo práctico</h4>
+
+    Si editas un profesor desde la página 4 del listado, puedes redirigir de nuevo a esa página usando el parámetro <code>page</code>.
+
+</div>
+
+<!-- raw HTML omitted -->
+<h1 id="7-cambiar-la-cantidad-de-registros-por-página">7. Cambiar la cantidad de registros por página</h1>
+<p>Simplemente cambiando el parámetro de <code>paginate()</code>.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#00688b">$teachers</span> = Teacher::paginate(20);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Esto mostrará:</p>
 <ul>
-<li>Genera una URL para el controlador y método especificados.</li>
-<li>Ejemplo: <code>action('UserController@show', ['id' =&gt; 1])</code></li>
+<li>20 registros por página.</li>
 </ul>
-<h2 id="back"><code>back()</code></h2>
-<ul>
-<li>Redirige al usuario a la ubicación anterior.</li>
-<li>Ejemplo: <code>return back()</code></li>
-</ul>
-<h2 id="current"><code>current()</code></h2>
-<ul>
-<li>Obtiene la URL actual.</li>
-<li>Ejemplo: <code>url()-&gt;current()</code></li>
-</ul>
-<h2 id="previous"><code>previous()</code></h2>
-<ul>
-<li>Obtiene la URL previa a la actual.</li>
-<li>Ejemplo: <code>url()-&gt;previous()</code></li>
-</ul>
+<!-- raw HTML omitted -->
+<h1 id="resumen">Resumen</h1>
+<p>La paginación en Laravel es muy sencilla:</p>
+<p>1️⃣ Obtener registros paginados</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#00688b">$teachers</span> = Teacher::paginate(10);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>2️⃣ Mostrar registros</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex; background-color:#d6d6c6"><span>@foreach(<span style="color:#00688b">$teachers</span> as <span style="color:#00688b">$teacher</span>)</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>3️⃣ Mostrar navegación</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex; background-color:#d6d6c6"><span>{{<span style="color:#00688b">$teachers</span>-&gt;links()}}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Conclusión</h4>
+
+    <p>Laravel implementa la paginación de forma</p>
+<!-- raw HTML omitted -->
+<pre><code>automática, limpia y muy eficiente
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+
+
+
+
+
+<div style="border: 1px solid navy; border-radius: 5px; overflow: hidden;">
+    <div style="background-color: navy; color: white;
+    font-weight: bold; padding: 10px; display: flex; align-items: center;">
+        
+        <span style="margin-right: 8px;">
+            
+                <i class="fas fa-book"></i> 
+            
+        </span>
+        
+        <span>Referencias</span>
+    </div>
+
+    <h3 style="padding: 5px; font-weight: bold; color: navy;">Fuentes de Información</h3>
+
+    <hr style="border-color: lightblue; border-width: 3px"/>
+    
+    <div style="background-color: #e0f7fa; color: navy; padding: 10px;">
+        <ul>
+            
+            
+            <li>Laravel Documentation — Pagination</li>
+            
+            <li><a href="https://laravel.com/docs/pagination">https://laravel.com/docs/pagination</a></li>
+            
+            
+            
+            
+        </ul>
+    </div>
+</div>
+
 
   <div class="section-index">
     

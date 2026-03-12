@@ -31,7 +31,7 @@ Partimos de un proyecto ya creado
 
 En lugar de crear cada uno de los elementos :{{<color>}}tabla, factorías y seeder, modelo y controlador de tipo recurso{{</color>}} vamos a usar un parámetro a la hora de creaer el modelo que lo crea todo
 {{< highlight php "linenos=table, hl_lines=1" >}}
-php artisan make:model Alumno --all
+php artisan make:model Project --all
 {{< / highlight >}}
 {{< alert title="Importante" color="warning">}}
   **El modelo simpre en singular**
@@ -370,6 +370,7 @@ En nuestro caso utilizaremos {{<color_blue>}}Policies{{</color_blue>}} para deci
 
 Para tomar esa decisión, la Policy consultará los {{<color_blue>}}roles y permisos{{</color_blue>}} del usuario usando la librería {{<color_blue>}}Spatie Laravel Permission{{</color_blue>}}.
 
+En nuestro caso utilizaremos {{<color_blue>}}Policies{{</color_blue>}} para decidir si un usuario puede realizar una acción sobre un recurso.
 En nuestro caso utilizaremos {{<color_blue>}}Policies{{</color_blue>}} para decidir si un usuario puede realizar una acción sobre un recurso.
 
 Para tomar esa decisión, la Policy consultará los {{<color_blue>}}roles y permisos{{</color_blue>}} del usuario usando la librería {{<color_blue>}}Spatie Laravel Permission{{</color_blue>}}.
