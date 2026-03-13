@@ -1,0 +1,764 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/04_plantillas/04_responsivo/">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/04_plantillas/04_responsivo/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Diseño responsivo | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/04_plantillas/04_responsivo/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Diseño responsivo">
+  <meta property="og:description" content="Diseño responsivo El diseño responsivo permite que una aplicación web se adapte dinámicamente al tamaño del dispositivo desde el que se visualiza. Hoy en día una misma aplicación debe funcionar correctamente en:
+📱 Móviles 📲 Tablets 💻 Portátiles 🖥️ Escritorio La clave no es hacer varias webs, sino una única interfaz flexible.
+Diferencias entre responsivo y adaptativo 🔹 Diseño Responsivo (Responsive Web Design) Usa CSS flexible. Se basa en media queries. El layout se adapta de forma fluida. No depende de dispositivos concretos. Es el enfoque moderno. Cambia progresivamente según el ancho del viewport.">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Diseño responsivo">
+  <meta itemprop="description" content="Diseño responsivo El diseño responsivo permite que una aplicación web se adapte dinámicamente al tamaño del dispositivo desde el que se visualiza. Hoy en día una misma aplicación debe funcionar correctamente en:
+📱 Móviles 📲 Tablets 💻 Portátiles 🖥️ Escritorio La clave no es hacer varias webs, sino una única interfaz flexible.
+Diferencias entre responsivo y adaptativo 🔹 Diseño Responsivo (Responsive Web Design) Usa CSS flexible. Se basa en media queries. El layout se adapta de forma fluida. No depende de dispositivos concretos. Es el enfoque moderno. Cambia progresivamente según el ancho del viewport.">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="1086">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Diseño responsivo">
+  <meta name="twitter:description" content="Diseño responsivo El diseño responsivo permite que una aplicación web se adapte dinámicamente al tamaño del dispositivo desde el que se visualiza. Hoy en día una misma aplicación debe funcionar correctamente en:
+📱 Móviles 📲 Tablets 💻 Portátiles 🖥️ Escritorio La clave no es hacer varias webs, sino una única interfaz flexible.
+Diferencias entre responsivo y adaptativo 🔹 Diseño Responsivo (Responsive Web Design) Usa CSS flexible. Se basa en media queries. El layout se adapta de forma fluida. No depende de dispositivos concretos. Es el enfoque moderno. Cambia progresivamente según el ancho del viewport.">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+Versión imprimible multipagina.
+<a href="#" onclick="print();return false;">Haga click aquí para imprimir</a>.
+</p><p>
+<a href="/laravel/docs/04_plantillas/04_responsivo/">Volver a la vista normal de esta página</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Diseño responsivo</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+
+    </ul>
+
+
+<div class="content">
+      <h1 id="diseño-responsivo">Diseño responsivo</h1>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.8">
+
+    El diseño responsivo permite que una aplicación web se adapte dinámicamente al tamaño del dispositivo desde el que se visualiza.
+
+
+</span>
+</strong>
+<p>Hoy en día una misma aplicación debe funcionar correctamente en:</p>
+<ul>
+<li>📱 Móviles</li>
+<li>📲 Tablets</li>
+<li>💻 Portátiles</li>
+<li>🖥️ Escritorio</li>
+</ul>
+<p>La clave no es hacer varias webs, sino una única interfaz flexible.</p>
+<hr>
+<h2 id="diferencias-entre-responsivo-y-adaptativo">Diferencias entre responsivo y adaptativo</h2>
+<h3 id="-diseño-responsivo-responsive-web-design">🔹 Diseño Responsivo (Responsive Web Design)</h3>
+<ul>
+<li>Usa CSS flexible.</li>
+<li>Se basa en media queries.</li>
+<li>El layout se adapta de forma fluida.</li>
+<li>No depende de dispositivos concretos.</li>
+<li>Es el enfoque moderno.</li>
+</ul>
+<p>Cambia progresivamente según el ancho del viewport.</p>
+<hr>
+<h3 id="-diseño-adaptativo-adaptive-design">🔹 Diseño Adaptativo (Adaptive Design)</h3>
+<ul>
+<li>Se crean varios layouts fijos.</li>
+<li>Cada layout está pensado para un rango de dispositivos.</li>
+<li>El servidor o el navegador decide cuál cargar.</li>
+<li>Es menos flexible.</li>
+<li>Mayor mantenimiento.</li>
+</ul>
+<p>No es fluido, salta entre versiones predefinidas.</p>
+<hr>
+<h2 id="qué-es-y-en-qué-consiste-el-diseño-responsivo">¿Qué es y en qué consiste el diseño responsivo?</h2>
+<p>El diseño responsivo se basa en tres pilares:</p>
+<h3 id="1-layout-flexible">1️⃣ Layout flexible</h3>
+<p>Uso de porcentajes, flexbox o grid en lugar de medidas fijas.</p>
+<h3 id="2-imágenes-flexibles">2️⃣ Imágenes flexibles</h3>
+<p>Las imágenes deben escalar con el contenedor.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">img</span> {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">max-width</span>: <span style="color:#b452cd">100</span><span style="color:#00688b;font-weight:bold">%</span>;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">height</span>: <span style="color:#8b008b;font-weight:bold">auto</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="3-media-queries">3️⃣ Media Queries</h3>
+<p>Permiten aplicar estilos según el ancho del dispositivo.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#8b008b;font-weight:bold">media</span> (<span style="color:#8b008b;font-weight:bold">min-width</span>: <span style="color:#8b008b;font-weight:bold">768px</span>) {
+</span></span><span style="display:flex;"><span>.<span style="color:#008b45;font-weight:bold">contenedor</span> {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">display</span>: <span style="color:#8b008b;font-weight:bold">flex</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="tailwind-y-sistema-mobile-first">Tailwind y sistema mobile-first</h2>
+<p>Tailwind trabaja con enfoque <strong>mobile-first</strong>.</p>
+<ul>
+<li>Primero se diseñan estilos para móvil.</li>
+<li>Después se añaden variantes para pantallas mayores.</li>
+</ul>
+<p>Ejemplo:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;text-base md:text-xl lg:text-3xl&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    Texto adaptable
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Explicación:</p>
+<ul>
+<li>text-base → móvil</li>
+<li>md:text-xl → desde 768px</li>
+<li>lg:text-3xl → desde 1024px</li>
+</ul>
+<p>La clase sin prefijo siempre corresponde al tamaño más pequeño.</p>
+<hr>
+<h2 id="puntos-de-ruptura-breakpoints">Puntos de ruptura (Breakpoints)</h2>
+<p>En Tailwind por defecto:</p>
+<ul>
+<li>sm → 640px</li>
+<li>md → 768px</li>
+<li>lg → 1024px</li>
+<li>xl → 1280px</li>
+<li>2xl → 1536px</li>
+</ul>
+<p>Ejemplo práctico:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;flex flex-col md:flex-row&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">aside</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;w-full md:w-1/3&#34;</span>&gt;Sidebar&lt;/<span style="color:#8b008b;font-weight:bold">aside</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">main</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;w-full md:w-2/3&#34;</span>&gt;Contenido&lt;/<span style="color:#8b008b;font-weight:bold">main</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>En móvil:</p>
+<ul>
+<li>Se muestran en columna.</li>
+</ul>
+<p>En escritorio:</p>
+<ul>
+<li>Se muestran en fila.</li>
+</ul>
+<hr>
+<h2 id="ejemplo-en-nuestra-aplicación">Ejemplo en nuestra aplicación</h2>
+<p>Caso típico en nuestro proyecto:</p>
+<p>Header con logo + título + botones login/register.</p>
+<p>En escritorio:</p>
+<ul>
+<li>Todo en horizontal.</li>
+</ul>
+<p>En móvil:</p>
+<ul>
+<li>Se ocultan los botones.</li>
+<li>Aparece botón hamburguesa.</li>
+<li>Quitamos el título</li>
+<li>Lo ponemos en una columa
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 757px">
+<img class="card-img-top" src="/laravel/docs/04_plantillas/04_responsivo/header_responsive_hu_41d460c4f7f02cb1.png" width="747" height="345">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+  
+
+</p>
+</figcaption>
+</figure>
+</li>
+<li>Ejemplo simplificado:</li>
+</ul>
+<hr>
+<h2 id="botón-hamburguesa">Botón hamburguesa</h2>
+<p>El botón hamburguesa se utiliza para:</p>
+<ul>
+<li>Ahorrar espacio en móvil.</li>
+<li>Mostrar/ocultar navegación.</li>
+<li>Mantener la interfaz limpia.</li>
+</ul>
+<p>Estructura básica:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">button</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;md:hidden p-2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">span</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;block w-6 h-0.5 bg-black mb-1&#34;</span>&gt;&lt;/<span style="color:#8b008b;font-weight:bold">span</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">span</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;block w-6 h-0.5 bg-black mb-1&#34;</span>&gt;&lt;/<span style="color:#8b008b;font-weight:bold">span</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">span</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;block w-6 h-0.5 bg-black&#34;</span>&gt;&lt;/<span style="color:#8b008b;font-weight:bold">span</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">button</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Puede combinarse con:</p>
+<ul>
+<li>hidden / block</li>
+<li>flex / absolute</li>
+<li>peer / peer-checked</li>
+<li>Alpine o Vue para control dinámico</li>
+</ul>
+<hr>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.6">
+
+    Importante: el diseño responsivo no es opcional. Es un requisito estructural en cualquier aplicación web moderna.
+
+
+</span>
+</strong>
+<h3 id="1-proceso-de-creación-clase-hahahugoshortcode482s8hbhb-mantener-hermanos-con-el-id">1. Proceso de creación: clase 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    peer peer-checked
+
+
+</span>
+</strong> mantener hermanos con el id</h3>
+<p>Permite que un input controle el estado visual de sus hermanos posteriores.</p>
+<p><strong>Código mínimo</strong></p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;checkbox&#34;</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;peer sr-only&#34;</span> <span style="color:#658b00">id</span>=<span style="color:#cd5555">&#34;menu&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;opacity-0 peer-checked:opacity-100&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    Contenido visible cuando está checked
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Clases imprescindibles</strong></p>
+<ul>
+<li><code>peer</code> → convierte al input en referencia.</li>
+<li><code>peer-checked:*</code> → aplica estilos cuando el checkbox está marcado.</li>
+<li><code>sr-only</code> → oculta visualmente el input pero mantiene accesibilidad.</li>
+</ul>
+<p>Regla técnica: el elemento afectado debe ser <strong>hermano posterior</strong> del peer.</p>
+<p>&mdash;.</p>
+<h3 id="2-menu-oculto-y-controlado-visible-con-hahahugoshortcode482s10hbhb">2. menu oculto y controlado visible con 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    peer-checked
+
+
+</span>
+</strong></h3>
+<p><strong>El menú existe en el DOM pero se muestra dinámicamente.</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;opacity-0 
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">            peer-checked:opacity-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">            transition-opacity duration-300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    Menú
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p><strong>Clases clave</strong></p>
+<ul>
+<li><code>opacity-0</code> → estado inicial oculto.</li>
+<li><code>peer-checked:opacity-100</code> → visible cuando está activo.</li>
+<li><code>transition-opacity duration-300</code> → animación suave.</li>
+</ul>
+<hr>
+<h3 id="3-contenedor-hahahugoshortcode482s12hbhb-y-menu-hahahugoshortcode482s13hbhb-para-colocar-el-menu">3. contenedor 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    relative
+
+
+</span>
+</strong> y menu 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    absolute
+
+
+</span>
+</strong> para colocar el menu</h3>
+<p>Permite posicionar el menú respecto a su botón.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;relative&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">label</span> <span style="color:#658b00">for</span>=<span style="color:#cd5555">&#34;menu&#34;</span>&gt;Abrir&lt;/<span style="color:#8b008b;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;absolute left-full top-0 ml-2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        Menú
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Clases imprescindibles
+
+
+</span>
+</strong>
+<ul>
+<li><code>relative</code> → referencia de posicionamiento.</li>
+<li><code>absolute</code> → saca el menú del flujo normal.</li>
+<li><code>left-full</code> → lo coloca a la derecha.</li>
+<li><code>top-0</code> → alineación vertical.</li>
+</ul>
+<p>Sin <code>relative</code>, el menú se posiciona respecto al viewport.</p>
+<hr>
+<h3 id="4-hahahugoshortcode482s16hbhb-para-cerrar-al-hacer-click-fuera">4. 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Overlay
+
+
+</span>
+</strong> para cerrar al hacer click fuera</h3>
+<p>Un segundo label con el mismo id permite cerrar el menú sin JavaScript.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">label</span> <span style="color:#658b00">for</span>=<span style="color:#cd5555">&#34;menu&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;fixed inset-0 bg-black/40
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">opacity-0 pointer-events-none
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">peer-checked:opacity-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">peer-checked:pointer-events-auto
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">transition-opacity duration-300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">label</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Clases imprescindibles
+
+
+</span>
+</strong>
+<ul>
+<li><code>fixed</code> → posición respecto al viewport.</li>
+<li><code>inset-0</code> → ocupa toda la pantalla.</li>
+<li><code>bg-black/40</code> → oscurece el fondo.</li>
+<li><code>pointer-events-none</code> → no bloquea cuando está oculto.</li>
+<li><code>peer-checked:pointer-events-auto</code> → activa interacción.</li>
+</ul>
+<p>Al hacer click en el overlay, el checkbox se desmarca.</p>
+<h3 id="resumen--estructura-final">Resumen:  Estructura final</h3>
+<ol>
+<li><code>peer</code> controla estado.</li>
+<li><code>peer-checked</code> modifica hermanos.</li>
+<li><code>relative + absolute</code> posiciona el menú.</li>
+<li>Overlay con <code>fixed inset-0</code> permite cerrar sin JS.</li>
+<li>Cada dropdown usa su propio checkbox.</li>
+</ol>
+<h3 id="5-hahahugoshortcode482s19hbhb">5. 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Otro peer para logout sin javascript
+
+
+</span>
+</strong></h3>
+<p>Cada desplegable necesita su propio checkbox independiente para no interferir con el menú hamburguesa.</p>
+<p>*Código:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;relative&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;checkbox&#34;</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;peer sr-only&#34;</span> <span style="color:#658b00">id</span>=<span style="color:#cd5555">&#34;user_menu&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">label</span> <span style="color:#658b00">for</span>=<span style="color:#cd5555">&#34;user_menu&#34;</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;cursor-pointer flex items-center gap-1&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        {{ auth()-&gt;user()-&gt;name }}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#8b008b;font-weight:bold">svg</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;w-4 h-4 transition-transform duration-300
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                    peer-checked:rotate-180&#34;</span>
+</span></span><span style="display:flex;"><span>             <span style="color:#658b00">fill</span>=<span style="color:#cd5555">&#34;none&#34;</span> <span style="color:#658b00">stroke</span>=<span style="color:#cd5555">&#34;currentColor&#34;</span>
+</span></span><span style="display:flex;"><span>             <span style="color:#658b00">viewBox</span>=<span style="color:#cd5555">&#34;0 0 24 24&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#8b008b;font-weight:bold">path</span> <span style="color:#658b00">stroke-width</span>=<span style="color:#cd5555">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#658b00">stroke-linecap</span>=<span style="color:#cd5555">&#34;round&#34;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#658b00">stroke-linejoin</span>=<span style="color:#cd5555">&#34;round&#34;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#658b00">d</span>=<span style="color:#cd5555">&#34;M19 9l-7 7-7-7&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#8b008b;font-weight:bold">svg</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;absolute top-full mt-2
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                opacity-0 scale-95
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                peer-checked:opacity-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                peer-checked:scale-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                transition-all duration-300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        Logout
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Clases imprescindibles
+
+
+</span>
+</strong>
+<ul>
+<li><code>peer</code> → controla el estado del dropdown.</li>
+<li><code>peer-checked:*</code> → activa visibilidad y animación.</li>
+<li><code>relative</code> → referencia para posicionamiento.</li>
+<li><code>absolute top-full</code> → menú aparece debajo.</li>
+<li><code>transition-all</code> → anima opacity y transform.</li>
+<li><code>peer-checked:rotate-180</code> → rota la flecha al abrir.</li>
+</ul>
+<p><strong>Importante:</strong><br>
+Cada menú (burger y logout) debe tener un <code>id</code> distinto y su propio <code>peer</code>, ya que cada checkbox controla únicamente a sus hermanos posteriores.</p>
+<h3 id="posible-código-final">Posible código final</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>   &lt;!--Para el buttron burguer, usaremos este checkbox--&gt;
+</span></span><span style="display:flex;"><span>        {{-- <span style="color:#b452cd">3</span>) Panel desplegable --}}
+</span></span><span style="display:flex;"><span>        @guest
+</span></span><span style="display:flex;"><span>            &lt;div class=<span style="color:#cd5555">&#34;relative&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;input type=<span style="color:#cd5555">&#34;checkbox&#34;</span> class=<span style="color:#cd5555">&#34;peer sr-only&#34;</span>  id=<span style="color:#cd5555">&#34;burguer_button&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;label <span style="color:#8b008b;font-weight:bold">for</span>=<span style="color:#cd5555">&#34;burguer_button&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;img class=<span style="color:#cd5555">&#34;w-8 h-8 object-containt&#34;</span> src=<span style="color:#cd5555">&#34;{{asset(&#34;</span>/images/burguer.png<span style="color:#cd5555">&#34;)}}&#34;</span> alt=<span style="color:#cd5555">&#34;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;/label&gt;
+</span></span><span style="display:flex;"><span>                &lt;label <span style="color:#8b008b;font-weight:bold">for</span>=<span style="color:#cd5555">&#34;burguer_button&#34;</span>
+</span></span><span style="display:flex;"><span>                       class=<span style="color:#cd5555">&#34;fixed inset-0 bg-black/40
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                  opacity-0 pointer-events-none
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                  peer-checked:opacity-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                  peer-checked:pointer-events-auto
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                  transition-opacity duration-300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;/label&gt;
+</span></span><span style="display:flex;"><span>            &lt;div class=<span style="color:#cd5555">&#34;opacity-0
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                        peer-checked:opacity-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                        transition-all duration-300 ease-out
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">             peer-checked:flex absolute bg-white p-2 flex-col left-9 top-4  transition rounded rounded-sm space-y-2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;a class=<span style="color:#cd5555">&#34;flex-1&#34;</span> href=<span style="color:#cd5555">&#34;{{ route(&#39;login&#39;) }}&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;button class=<span style="color:#cd5555">&#34;btn btn-sm btn-primary w-full&#34;</span> type=<span style="color:#cd5555">&#34;button&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                        Login
+</span></span><span style="display:flex;"><span>                    &lt;/button&gt;
+</span></span><span style="display:flex;"><span>                &lt;/a&gt;
+</span></span><span style="display:flex;"><span>                &lt;a class=<span style="color:#cd5555">&#34;flex-1&#34;</span> href=<span style="color:#cd5555">&#34;{{ route(&#39;register&#39;) }}&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;button class=<span style="color:#cd5555">&#34;btn btn-sm btn-primary w-full&#34;</span> type=<span style="color:#cd5555">&#34;button&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                        Register
+</span></span><span style="display:flex;"><span>                    &lt;/button&gt;
+</span></span><span style="display:flex;"><span>                &lt;/a&gt;
+</span></span><span style="display:flex;"><span>            &lt;/div&gt;
+</span></span><span style="display:flex;"><span>            &lt;/div&gt;
+</span></span><span style="display:flex;"><span>        @endguest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        @auth
+</span></span><span style="display:flex;"><span>            &lt;div class=<span style="color:#cd5555">&#34;relative&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                &lt;input type=<span style="color:#cd5555">&#34;checkbox&#34;</span> class=<span style="color:#cd5555">&#34;peer sr-only&#34;</span> id=<span style="color:#cd5555">&#34;user_menu&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                &lt;label <span style="color:#8b008b;font-weight:bold">for</span>=<span style="color:#cd5555">&#34;user_menu&#34;</span>
+</span></span><span style="display:flex;"><span>                       class=<span style="color:#cd5555">&#34;cursor-pointer text-green-800 text-xl font-semibold&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                    {{ auth()-&gt;<span style="color:#658b00">user</span>()-&gt;<span style="color:#658b00">name</span> }}
+</span></span><span style="display:flex;"><span>                    &lt;!-- Flecha --&gt;
+</span></span><span style="display:flex;"><span>                    &lt;svg class=<span style="color:#cd5555">&#34;w-4 h-4 transition-transform duration-300
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                    peer-checked:rotate-180&#34;</span>
+</span></span><span style="display:flex;"><span>                         fill=<span style="color:#cd5555">&#34;none&#34;</span> stroke=<span style="color:#cd5555">&#34;currentColor&#34;</span>
+</span></span><span style="display:flex;"><span>                         viewBox=<span style="color:#cd5555">&#34;0 0 24 24&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                        &lt;path stroke-width=<span style="color:#cd5555">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>                              stroke-linecap=<span style="color:#cd5555">&#34;round&#34;</span>
+</span></span><span style="display:flex;"><span>                              stroke-linejoin=<span style="color:#cd5555">&#34;round&#34;</span>
+</span></span><span style="display:flex;"><span>                              d=<span style="color:#cd5555">&#34;M19 9l-7 7-7-7&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>                    &lt;/svg&gt;
+</span></span><span style="display:flex;"><span>                &lt;/label&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                &lt;div class=<span style="color:#cd5555">&#34;absolute left-0 top-full mt-2
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                bg-white p-3 rounded shadow flex flex-col
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                opacity-0 scale-95
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                peer-checked:opacity-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                peer-checked:scale-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                transition-all duration-300 ease-out&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    &lt;form action=<span style="color:#cd5555">&#34;{{ route(&#39;logout&#39;) }}&#34;</span> method=<span style="color:#cd5555">&#34;POST&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                        @csrf
+</span></span><span style="display:flex;"><span>                        &lt;button class=<span style="color:#cd5555">&#34;btn btn-primary w-full&#34;</span> type=<span style="color:#cd5555">&#34;submit&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                            Logout
+</span></span><span style="display:flex;"><span>                        &lt;/button&gt;
+</span></span><span style="display:flex;"><span>                    &lt;/form&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                &lt;/div&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            &lt;/div&gt;
+</span></span><span style="display:flex;"><span>        @endauth</span></span></code></pre></div>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

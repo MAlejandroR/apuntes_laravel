@@ -1,0 +1,2417 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/pendiente/10_api/">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/pendiente/10_api/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Creando un api | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/pendiente/10_api/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Creando un api">
+  <meta property="og:description" content="Creando una API Términos importantes que hay que conocer API REST VERBOS HTTP RECURSOS CÓDIGOS DE ESTADO API Una Interfez de programación de aplicaciones Son programas que permiten que otros programas se conecten con él para obtener recursos.
+Para ello establecen una interfaz para que puedan conectarse a él.
+Por un lado una aplicación solicita datos (request) , y la API se los devuelve (response) .">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Creando un api">
+  <meta itemprop="description" content="Creando una API Términos importantes que hay que conocer API REST VERBOS HTTP RECURSOS CÓDIGOS DE ESTADO API Una Interfez de programación de aplicaciones Son programas que permiten que otros programas se conecten con él para obtener recursos.
+Para ello establecen una interfaz para que puedan conectarse a él.
+Por un lado una aplicación solicita datos (request) , y la API se los devuelve (response) .">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="565">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Creando un api">
+  <meta name="twitter:description" content="Creando una API Términos importantes que hay que conocer API REST VERBOS HTTP RECURSOS CÓDIGOS DE ESTADO API Una Interfez de programación de aplicaciones Son programas que permiten que otros programas se conecten con él para obtener recursos.
+Para ello establecen una interfaz para que puedan conectarse a él.
+Por un lado una aplicación solicita datos (request) , y la API se los devuelve (response) .">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+Versión imprimible multipagina.
+<a href="#" onclick="print();return false;">Haga click aquí para imprimir</a>.
+</p><p>
+<a href="/laravel/docs/pendiente/10_api/">Volver a la vista normal de esta página</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Creando un api</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-e65f01c7cde12cacfb58fe6276ecdb2d">01_Introducción y 20_rutas</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-034412d22737f04058de3272e1461ca1">Controlador</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-7481e4ccac245a748bca42de1125627a">3.La Vista unitarios</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-ed32788dcdef9811ca9b608b1230b180">swagger</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <h1 id="creando-una-api">Creando una API</h1>
+
+
+<div class="pageinfo pageinfo-primary">
+<h3 id="términos-importantes-que-hay-que-conocer">Términos importantes que hay que conocer</h3>
+<ul>
+<li>API</li>
+<li>REST</li>
+<li>VERBOS HTTP</li>
+<li>RECURSOS</li>
+<li>CÓDIGOS DE ESTADO</li>
+</ul>
+<h4></h4>
+<hr>
+
+</div>
+
+<h2 id="api">API</h2>
+<p>Una 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Interfez de programación de aplicaciones
+
+</span>
+</strong>
+ <em><strong><strong>Son programas que permiten que otros programas se conecten con él para obtener recursos.</strong></strong></em></p>
+<p>Para ello establecen una 
+<span class="font-weight-bold text-primary">
+
+
+    interfaz
+
+</span>
+ para que puedan conectarse a él.</p>
+<p>Por un lado una aplicación solicita datos 
+<span class="font-weight-bold text-primary">
+
+
+    (request)
+
+</span>
+, y la API se los devuelve 
+<span class="font-weight-bold text-primary">
+
+
+    (response)
+
+</span>
+.</p>
+<p>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Application Programming Interface
+
+</span>
+</strong>
+
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 1810px">
+<img class="card-img-top" src="/laravel/docs/pendiente/10_api/API_hu_8b6a70fa81bd9928.png" width="1800" height="1000">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+API Programa que recibe solicitudes y envía respuesta a otros programas
+
+</p>
+</figcaption>
+</figure>
+</p>
+<h2 id="rest">REST</h2>
+<p>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    REpresentational  State Transfer
+
+</span>
+</strong>
+(
+Transferencia de Estado representacional)</p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">REST</h4>
+
+    <!-- raw HTML omitted -->
+<pre><code>REST
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>en seis principios fundamentales
+</code></pre>
+<!-- raw HTML omitted -->
+
+
+</div>
+
+<p>Estos principios indican 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    cómo deben representarse los datos que se desean transferir
+
+</span>
+</strong>
+, proporcionando una guía para el desarrollo de sistemas web eficientes y bien estructurados.
+
+
+<div class="pageinfo pageinfo-primary">
+<h2 id="principios-que-definen-la-arquitectura-de-rest">PRINCIPIOS QUE DEFINEN LA ARQUITECTURA DE REST</h2>
+<hr>
+<!-- raw HTML omitted -->
+<pre><code>REST se basa en una serie de principios y restricciones que definen su arquitectura. A continuación, se resumen las seis guías o restricciones principales de REST:
+</code></pre>
+<!-- raw HTML omitted -->
+<hr>
+<h4 id="arquitectura-cliente-servidor">Arquitectura Cliente-Servidor:</h4>
+<ul>
+<li>La arquitectura cliente-servidor separa la interfaz de usuario y la lógica del usuario (cliente) de la lógica del servidor.</li>
+<li>Mejora la portabilidad del cliente y la escalabilidad del servidor, ya que cada parte puede evolucionar independientemente.</li>
+<li>O sea que el API y el CLIENTE son dos entes independientes</li>
+</ul>
+<h4 id="sin-estado-stateless">Sin Estado (Stateless):</h4>
+<ul>
+<li>Cada solicitud del cliente al servidor debe contener toda la información necesaria para entender y procesar la solicitud.</li>
+<li>El servidor no debe almacenar el estado del cliente entre solicitudes; cada solicitud desde un cliente se trata de forma independiente. (Ni cookies ni sesiones)</li>
+<li>El estado de la sesión del usuario se mantiene en el cliente (usando tokens)</li>
+</ul>
+<h4 id="cacheable-almacenamiento-en-caché">Cacheable (Almacenamiento en Caché):</h4>
+<ul>
+<li>Las respuestas del servidor deben indicar si se pueden almacenar en caché o no.</li>
+<li>La caché puede mejorar la eficiencia y la escalabilidad al reducir la necesidad de recuperar la misma información una y otra vez.</li>
+</ul>
+<h4 id="interfaz-uniforme">Interfaz Uniforme:</h4>
+<ul>
+<li>
+<p>Define una interfaz uniforme entre los componentes, lo que facilita la independencia y la evolución de cada componente.</p>
+</li>
+<li></li>
+<li>
+<p>La interfaz uniforme se compone de cuatro restricciones:</p>
+<ul>
+<li>Identificación de Recursos: Cada recurso (información o servicio) se identifica mediante un URI (Uniform Resource Identifier).</li>
+<li>Manipulación de Recursos a través de Representaciones: Los recursos pueden ser representados y manipulados en diferentes formatos, como JSON o XML.</li>
+<li>Mensajes Autodescriptivos: Cada mensaje incluye suficiente información para describir cómo procesar la solicitud.</li>
+<li>HATEOAS (Hypertext As The Engine Of Application State): La aplicación es conducida por hipermedios proporcionados dinámicamente a través de aplicaciones de navegadores, es decir
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></li>
+</ul>
+<p>el servidor debe de facilitar información que nos diga cómo navegar por la API, no solo facilitar datso</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h4 id="sistema-de-capas-layered-system">Sistema de Capas (Layered System):</h4>
+<ul>
+<li>La arquitectura se puede organizar en capas jerárquicas.</li>
+<li>Cada capa realiza una funcionalidad específica y solo interactúa directamente con las capas adyacentes.</li>
+</ul>
+<h4 id="codigo-bajo-demanda-code-on-demand-opcional">Codigo Bajo Demanda (Code on Demand) [opcional]:</h4>
+<ul>
+<li>Los clientes pueden descargar y ejecutar código (como applets o scripts) desde el servidor.</li>
+<li>Esta restricción es opcional y no se utiliza comúnmente en aplicaciones RESTful.</li>
+</ul>
+<p>Estas restricciones definen los principios clave de REST y proporcionan una guía para desarrollar sistemas web eficientes, escalables y bien estructurados.</p>
+
+</div>
+</p>
+<h2 id="verbos-http">Verbos HTTP</h2>
+<p>Si la API funciona con el protocolo HTTP, entonces establos hablando de una 
+<span class="font-weight-bold text-primary">
+
+
+    API RestFull
+
+</span>
+
+HTTP sabemos que es un protocolo para transferir texto a través de internet
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Recurso</h4>
+
+    <p>Un recurso es información que está en el servidor a la cual vamos a poder acceder a través de una url
+ej: http://localhost:8000/alumnos
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+<pre><code>alumnos es un recurso
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+</p>
+<h3 id="resource">Resource</h3>
+<h3 id="representación">Representación</h3>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e65f01c7cde12cacfb58fe6276ecdb2d">1 - 01_Introducción y 20_rutas</h1>
+    
+	<h2 id="creando-el-proyecto">Creando el proyecto</h2>
+<p>Vamos a instalar e un</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir books
+</span></span><span style="display:flex;"><span><span style="color:#658b00">cd</span> books
+</span></span></code></pre></div><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>laravel new api --git
+</span></span><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#658b00">cd</span> api
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>git init
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>git add *
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>git commit -m inicial</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Vamos documentando el Readme.md</p>
+<h3 id="creando-los-modelos-controladores-y-factorys">Creando los modelos, controladores y factorys</h3>
+<p>Para hacerlo de forma más rápida usamos  
+<span class="font-weight-bold text-primary">
+
+
+    blueprint
+
+</span>
+</p>
+<ol>
+<li>Instalamos el paquete</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> composer require laravel-shift/blueprint --dev
+</span></span></code></pre></div><ol start="2">
+<li>Creamos el fichero de especificación de construcción</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php_ artisan blueprint:new
+</span></span></code></pre></div><ol start="2">
+<li>Especificamos en el fichero los modelos y los controladores</li>
+</ol>
+<pre tabindex="0"><code class="language-ỳaml" data-lang="ỳaml">models:
+  Profesor:
+    nombre: string
+    email: string
+    proyecto_id: id
+    relationships:
+      hasMany: Proyecto
+  Proyecto:
+    titulo: string
+    web: string
+    horas: integer
+    user_id: id
+controllers:
+  ProyectosController:
+    resource: api
+  ProfesoresController:
+    resource: api.profesor
+  UserController:
+    resource: api 
+</code></pre><ol start="3">
+<li>Modificamos previa publicación opciones de blueprint</li>
+<li>Primero publicamos</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php_ artisan vendor:publish
+</span></span></code></pre></div><p><figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
+<img class="card-img-top" src="/laravel/docs/pendiente/10_api/1.instalacion/publicar_conf_blueprint_hu_40b3f1c504aad8ad.png" width="400" height="450">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+
+</p>
+</figcaption>
+</figure>
+
+2. Ahora modificamos el fichero generado en 
+<span class="font-weight-bold text-primary">
+
+
+    config/blueprint.yaml
+
+</span>
+</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#228b22">//// . . . 
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;use_constraints&#39;</span> =&gt; <span style="color:#8b008b;font-weight:bold">true</span>,
+</span></span><span style="display:flex;"><span><span style="color:#228b22">////. . .
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;use_guarded&#39;</span> =&gt; <span style="color:#8b008b;font-weight:bold">true</span>,
+</span></span><span style="display:flex;"><span><span style="color:#228b22">///. . .
+</span></span></span><span style="display:flex;"><span><span style="color:#b452cd">4.</span> Ejecutamos el fichero
+</span></span><span style="display:flex;"><span><figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
+<img class="card-img-top" src="/laravel/docs/pendiente/10_api/1.instalacion/blueprint_hu_4bde3d3734f3997.png" width="400" height="450">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+
+
+</p>
+</figcaption>
+</figure>
+
+</span></span></code></pre></div><ol start="2">
+<li></li>
+</ol>
+<h3 id="rutas">Rutas</h3>
+<p>Como la aplicación va a ser un API, vamos al fichero de rutas <em><strong>routes/api.php</strong></em>
+<pre tabindex="0"><code class="language-linenos=table,anclorlinenos=true, hl_lines=" data-lang="linenos=table,anclorlinenos=true, hl_lines="></code></pre>
+
+
+<div class="pageinfo pageinfo-primary">
+<p>Entre web.php y api.php hay como diferencias los middeleware que se utilizan. Esto se puede ver en</p>
+
+</div>
+<br>
+En el caso de api.php, casi el único middleware que utiliza es el ThrottleRequests, es decir, poder crear un límite de peticiones, no necesitamos sesiones, cookies ni compartir errores entre ficheros.
+Vemos si hacemos un <strong>route:list</strong> que las rutas que aparecen son las de <strong>web.php</strong> y también las de <strong>api.php</strong> que no habíamos visto
+Las de <strong>api</strong> tiene prefijo, es por que se establece en el <strong>routeservicesproviders.php</strong></p>
+<p>Ahora vamos a crar un modelo, y queremos crear también la migración y el factory y también un controlador con todos los métodos de gestión rest que ya  hemos visto
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan make:model Book -mf --api</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Ahora debemos de agregar rutas
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 819px">
+<img class="card-img-top" src="/laravel/docs/pendiente/10_api/1.instalacion/api_rest_hu_2305292feea54f3a.png" width="809" height="711">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+imagen api
+
+</p>
+</figcaption>
+</figure>
+
+De todas ellas, como solo estamos creando un api, que es para consultar, no realizaremos la acción de editar para modificar, ni de crear por lo que las rutas nos quedarían
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 641px">
+<img class="card-img-top" src="/laravel/docs/pendiente/10_api/1.instalacion/api_rest2_hu_7da774120c25edf0.png" width="631" height="478">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+imagen api
+
+</p>
+</figcaption>
+</figure>
+
+Creamos estas rutas en el fichero <strong>routes/api.php</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>Route::<span style="color:#658b00">apiResource</span>(<span style="color:#cd5555">&#39;books&#39;</span>, \App\Http\Controllers\BookController::<span style="color:#658b00">class</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Podemos ejectura route:list para ver las 5 rutas que hemos creado</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-034412d22737f04058de3272e1461ca1">2 - Controlador</h1>
+    
+	<h2 id="ejecutar-la-migración">Ejecutar la migración</h2>
+<p>Debemos de crear la base de datos y poderla cargar</p>
+<h2 id="métodos-de-get">métodos de get</h2>
+<p>Para ello escribimos el código de index y show con las respectivas rutas
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http://localhost:8000/api/books =&gt; obtener todos los libros
+</span></span><span style="display:flex;"><span>http://localhost:8000/api/books/1 =&gt; obtener el libro de id <span style="color:#b452cd">1</span></span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>Como lo que nos retorna es un Json, podemos instalar algún plugin para verlo de forma mas legible en el navegador, por ejemplo <strong><a href="https://chrome.google.com/webstore/detail/jsonview/gmegofmjomhknnokphhckolhcffdaihd?hl=es">jsonview</a></strong></p>
+<h2 id="metodos-patch-delete-y-post">metodos PATCH DELETE y POST</h2>
+<p>Ahora queremos probar estas otras rutas
+Para ello debemos de tener una herramienta que nos permita realizar llamadas de este tipo, con el navegador no podemos y estamos haciendo un api, no la parte de uso, sino de servicio
+Podemos instalar <strong><a href="https://www.postman.com/">postman</a></strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install snapd
+</span></span><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo snap install postman</span></span></code></pre></td></tr></table>
+</div>
+</div>
+*Podemos probar una solicitud por  <strong>post</strong> y hacer que el método <strong>store</strong> me retorne un texto, lo mismo con <strong>patch</strong> y con <strong>delete</strong>  y ver qué es</p>
+<h3 id="post">post</h3>
+<p>Vemos que con el post, en la parte del body del mensaje hay que aportar algún valor
+Para ello vamos al body y usamo el form-data para pasar valores</p>
+<p><figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 730px">
+<img class="card-img-top" src="/laravel/docs/pendiente/10_api/2.visiongeneral/post_man1_hu_28d90cb05462e744.png" width="720" height="435">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+Pasar parámetros para el post
+
+</p>
+</figcaption>
+</figure>
+
+Escribmos el código del método <strong>store</strong> añadiendo un nuevo libro</p>
+<p>Podemos ver qué ocurre si ponemos otro parámetro o no pasamos ningún libro</p>
+<p>Para poder ver los errores debemos habilitar los hedear para en formato json aceptar los errores
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 786px">
+<img class="card-img-top" src="/laravel/docs/pendiente/10_api/2.visiongeneral/post_header_hu_689581a7847c54fb.png" width="776" height="184">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+Añadir la opción de ver los errores en el navegador
+
+</p>
+</figcaption>
+</figure>
+</p>
+<p>Podemos establecer en el servidor el control del error indicando lo que queramos que se muestre si no aparece el error
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">store</span>(Request <span style="color:#00688b">$request</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$request</span>-&gt;<span style="color:#658b00">validate</span>([
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#39;titulo&#39;</span>=&gt;[<span style="color:#cd5555">&#39;required&#39;</span>]
+</span></span><span style="display:flex;"><span>        ]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$book</span> = <span style="color:#8b008b;font-weight:bold">new</span> Book();
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$book</span>-&gt;<span style="color:#658b00">titulo</span>=<span style="color:#00688b">$request</span>-&gt;<span style="color:#658b00">input</span>(<span style="color:#cd5555">&#39;titulo&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$book</span>-&gt;<span style="color:#658b00">save</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$book</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#228b22">//
+</span></span></span><span style="display:flex;"><span>    }</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h3 id="path">PATH</h3>
+<p>La actualización es muy similar al storage, con la diferencia que solo queremos actualizar, no agregar
+En el postman, para pasar los nuevos datos usamos
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 730px">
+<img class="card-img-top" src="/laravel/docs/pendiente/10_api/2.visiongeneral/post_patch_form_endocode_hu_28d90cb05462e744.png" width="720" height="435">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+modo de pasar datos al método patch
+
+</p>
+</figcaption>
+</figure>
+
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">update</span>(Request <span style="color:#00688b">$request</span>, Book <span style="color:#00688b">$book</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$request</span>-&gt;<span style="color:#658b00">validate</span>([
+</span></span><span style="display:flex;"><span>                    <span style="color:#cd5555">&#39;titulo&#39;</span>=&gt;[<span style="color:#cd5555">&#39;required&#39;</span>]
+</span></span><span style="display:flex;"><span>        ]);
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$book</span>-&gt;<span style="color:#658b00">titulo</span>=<span style="color:#00688b">$request</span>-&gt;<span style="color:#658b00">input</span>(<span style="color:#cd5555">&#39;titulo&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$book</span>-&gt;<span style="color:#658b00">update</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$book</span>;
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h2 id="delete">DELETE</h2>
+<p>En este caso el método <strong>delete</strong> es muy sencillo. Podemos retornar un mensaje</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">destroy</span>(Book <span style="color:#00688b">$book</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$book</span>-&gt;<span style="color:#658b00">delete</span>();
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;Se ha borrado &#34;</span>.<span style="color:#00688b">$book</span>-&gt;<span style="color:#658b00">titulo</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-7481e4ccac245a748bca42de1125627a">3 - 3.La Vista unitarios</h1>
+    
+	<h2 id="tipos-de-test-en-laravel">Tipos de test en laravel</h2>
+<p>Realizar test, es <strong>muy importante</strong>. Muchas veces pensamos que como no los necesitamos para que la apliación funcione lo dejamos para el final, o simplemente no lo hacemos (para ejemplo yo mismo &#x1f976; )</p>
+<p>Laravel ya aporta una estructura de test, que podemos ver en la carpeta correspondiente.
+En ella vemos que tenemos dos tipos de test:</p>
+<ul>
+<li>Feature</li>
+</ul>
+<blockquote>
+<p>Test de características dónde se testean diferentes componentes interactuando entre ellos</p>
+</blockquote>
+<ul>
+<li>Unit</li>
+</ul>
+<blockquote>
+<p>Que testean métodos concretos del código</p>
+</blockquote>
+<p>*El funcionamiento de los métodos creados es el muy parecido. Para esta api, vamos a realizar los test usando los FeatureText</p>
+<h2 id="ejecutando-los-test-en-laravel">Ejecutando los test en laravel</h2>
+<p>En el terminal escribimos
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    php artisan test</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Vamos a crear métodos para validar cada uno de los 5 métodos que tenemos en el controlador
+
+
+<div class="pageinfo pageinfo-primary">
+<p>Un test es un método que nos va a permitir validar otro método
+En el método del test, básicamente vamos a hacer 3 acciones
+*Invocar al método que queremos testear pasándole los valores que consideremos
+*Comprobar que lo que devuelve ese método que validamos es lo que esperamos que devuelva
+*Informar de ello</p>
+
+</div>
+
+Los test no son infalibles, es decir, nosotros validamos lo que consideramos, por ejemplo si valido un método de fecha, si le paso una fecha incorrecta, espero que me lo diga, y si es correcta igual, eso me permitiría validar el método.
+Veamos cómo se realizan estas acciones
+**1.-  Creamos una clase para el test del api. **
+El método de test, se espera que termine con la palabra Test. Creamos una clase llamada <strong>BookApiTest</strong> para nuestro ejemplo
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    php artisan make:test BookApiTest</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Empezamos validando el método <strong>index</strong> para ello vamos a crear un método
+Importante que el método empiece por la palabra test
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">test_can_get_all_books</span>(): void{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>Pero claro, necesitamos tener la base de datos poblada y comprobar que cuando consultamos obtenemos todos los registros
+Pero no queremos tocar la base de datos original, si no que vamos a craar una base de datos para los test, para lo cual vamos a usar la clase (traid) <strong>RefreshDatabase</strong> que nos ofrece Laravel
+Creamos una nueva base de datos (también podríamos usar sqlite en memoria)
+Para configurar la base de datos de test, primero la creamos en nuestro gestor
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 230px">
+<img class="card-img-top" src="/laravel/docs/pendiente/10_api/3.la-vista/base_datos_test_hu_41db0a0cc07a4b0d.png" width="220" height="179">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+creamos la base de datos api_test
+
+</p>
+</figcaption>
+</figure>
+
+Ahora lo configuramos en el fichero <strong>phpunit.xml</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&lt;php&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&lt;env</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;APP_ENV&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;testing&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&lt;env</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;BCRYPT_ROUNDS&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;4&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&lt;env</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;CACHE_DRIVER&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;array&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">&lt;!-- &lt;env name=&#34;DB_CONNECTION&#34; value=&#34;sqlite&#34;/&gt; --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&lt;env</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;DB_DATABASE&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;api_test&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+Para poblar la base de datos de pruebas, vamos a usar el factory que creamos cuando construimos el modelo</p>
+<p>Una vez creado, lo invocamos desde el método credado
+Vamos simplemente a crear un libro y visualizarlo
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#228b22">//En el factory
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">definition</span>(): <span style="color:#8b008b;font-weight:bold">array</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">return</span> [
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#39;titulo&#39;</span>=&gt;fake()-&gt;<span style="color:#658b00">sentence</span>(),
+</span></span><span style="display:flex;"><span>            ];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">//En el test
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">test_can_get_all_books</span>(): void{
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$book</span> = Book::<span style="color:#658b00">factory</span>()-&gt;<span style="color:#658b00">create</span>();
+</span></span><span style="display:flex;"><span>        dd(<span style="color:#00688b">$book</span>);
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Por ejemplo vamos a creaer 4 libros y verificamos que haya 4 libros
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">test_can_get_all_books</span>(): void
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$book</span> = Book::<span style="color:#658b00">factory</span>()-&gt;<span style="color:#658b00">count</span>(<span style="color:#b452cd">4</span>)-&gt;<span style="color:#658b00">create</span>();
+</span></span><span style="display:flex;"><span>    dd(<span style="color:#00688b">$book</span>-&gt;<span style="color:#658b00">count</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Ahora vamos a ver lo que retorno si hacemos una solicitud <strong>get</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">test_can_get_all_books</span>(): void
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$book</span> = Book::<span style="color:#658b00">factory</span>()-&gt;<span style="color:#658b00">count</span>(<span style="color:#b452cd">4</span>)-&gt;<span style="color:#658b00">create</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#34;/api/books&#34;</span>)-&gt;<span style="color:#658b00">dump</span>();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Ahora que vemos esto, se trataría de verficar los libros que nos devuelve son los que hemos creado
+Para ello vamos a hacer uns aserción y verficar que esto funciona.
+para ello vamos a recoger la respuesta y vamos a comparar por ejemplo los títulos de los dos primeros libros recibidos con los títulos de los dos primeros libros creados.
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">test_can_get_all_books</span>(): void
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$book</span> = Book::<span style="color:#658b00">factory</span>()-&gt;<span style="color:#658b00">count</span>(<span style="color:#b452cd">4</span>)-&gt;<span style="color:#658b00">create</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$response</span> = <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">getJson</span>(route(<span style="color:#cd5555">&#34;books.index&#34;</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$response</span>-&gt;<span style="color:#658b00">assertJsonFragment</span>([
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#39;titulo&#39;</span>=&gt;<span style="color:#00688b">$book</span>[<span style="color:#b452cd">0</span>]-&gt;<span style="color:#658b00">titulo</span>
+</span></span><span style="display:flex;"><span>    ])
+</span></span><span style="display:flex;"><span>    -&gt;<span style="color:#658b00">assertJsonFragment</span>([
+</span></span><span style="display:flex;"><span>                <span style="color:#cd5555">&#39;titulo&#39;</span>=&gt;<span style="color:#00688b">$book</span>[<span style="color:#b452cd">1</span>]-&gt;<span style="color:#658b00">titulo</span>
+</span></span><span style="display:flex;"><span>    ]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Ejecutamos el test y vemos que funciona
+Probar por ejemplo a modificar el método index y ver que no funciona, por ejemplo si solo retornamos un libre en lugar de todos , o no devolvemos nada &hellip;
+**Verificar el método <strong>show</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* @test
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">can_get_one_book</span>():void{
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$book</span>=Book::<span style="color:#658b00">factory</span>()-&gt;<span style="color:#658b00">create</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$response</span> = <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">getJson</span>(route(<span style="color:#cd5555">&#34;books.index&#34;</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$response</span>-&gt;<span style="color:#658b00">assertJsonFragment</span>([
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#39;titulo&#39;</span>=&gt;<span style="color:#00688b">$book</span>-&gt;<span style="color:#658b00">titulo</span>
+</span></span><span style="display:flex;"><span>    ]);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>* Observa que si ponemos la directiva **@test** ya no hay que hacer que el nombre del método empiece por la palabra **test**
+</span></span><span style="display:flex;"><span>  
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<strong>Verificar el método store</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* @test
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">can_crate_book</span>():void{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">postJson</span>(route(<span style="color:#cd5555">&#39;books.store&#39;</span>),[
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#39;titulo&#39;</span>=&gt;<span style="color:#cd5555">&#34;Mi libro de pruebas&#34;</span>
+</span></span><span style="display:flex;"><span>        ])-&gt;<span style="color:#658b00">assertJsonFragment</span>([
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#39;titulo&#39;</span>=&gt;<span style="color:#cd5555">&#34;Mi libro de pruebas&#34;</span>
+</span></span><span style="display:flex;"><span>        ]);
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">assertDatabaseHas</span>(<span style="color:#cd5555">&#39;books&#39;</span>,
+</span></span><span style="display:flex;"><span>            [<span style="color:#cd5555">&#39;titulo&#39;</span>=&gt;<span style="color:#cd5555">&#34;Mi libro de pruebas&#34;</span>]
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+En este caso hacemos dos aserciones, podemos ver cómo tanto con solo una, como con dos, funciona correctamente
+Vamos a ver cómo podemos también validar que si no le pasamos nada, nuestra aplicación esparemos que nos de un error. Por ejemplo si quitáramos la validación en el controlador,
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">can_crate_book</span>():void{
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">postJson</span>(route(<span style="color:#cd5555">&#39;books.store&#39;</span>),[])
+</span></span><span style="display:flex;"><span>    -&gt;<span style="color:#658b00">assertJsonValidationErrors</span>(<span style="color:#cd5555">&#39;titulo&#39;</span>);
+</span></span><span style="display:flex;"><span>/....</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<strong>Actualizar un libro</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* @test
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">can_update_book</span>():void{
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$book</span>=Book::<span style="color:#658b00">factory</span>()-&gt;<span style="color:#658b00">create</span>();
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">patch</span>(route(<span style="color:#cd5555">&#34;books.update&#34;</span>,<span style="color:#00688b">$book</span>),[
+</span></span><span style="display:flex;"><span>            <span style="color:#cd5555">&#39;titulo&#39;</span>=&gt;<span style="color:#cd5555">&#34;Libro editado&#34;</span>
+</span></span><span style="display:flex;"><span>            ])-&gt;<span style="color:#658b00">assertJsonFragment</span>([
+</span></span><span style="display:flex;"><span>                <span style="color:#cd5555">&#39;titulo&#39;</span>=&gt;<span style="color:#cd5555">&#39;Libro editado&#39;</span>
+</span></span><span style="display:flex;"><span>            ]);
+</span></span><span style="display:flex;"><span>            <span style="color:#228b22">//Verificamos también en la base de datos
+</span></span></span><span style="display:flex;"><span>        <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">assertDatabaseHas</span>(<span style="color:#cd5555">&#39;books&#39;</span>,[
+</span></span><span style="display:flex;"><span>                <span style="color:#cd5555">&#39;titulo&#39;</span>=&gt;<span style="color:#cd5555">&#34;Libro editado&#34;</span>
+</span></span><span style="display:flex;"><span>            ]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }</span></span></code></pre></td></tr></table>
+</div>
+</div>
+*Podemos (debemos) de verificar  también la validación
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#228b22">//Validamos también la validación
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">patch</span>(route(<span style="color:#cd5555">&#34;books.update&#34;</span>,<span style="color:#00688b">$book</span>),[])
+</span></span><span style="display:flex;"><span>-&gt;<span style="color:#658b00">assertJsonValidationErrors</span>(<span style="color:#cd5555">&#39;titulo&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<strong>Borrar un libro</strong>
+*En este caso vamos a eliminar un libro y verificar que no existe
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* @test
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">can_delete_book</span>(): void
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$book</span> = Book::<span style="color:#658b00">factory</span>()-&gt;<span style="color:#658b00">create</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#228b22">//Validamos también la validación
+</span></span></span><span style="display:flex;"><span>        <span style="color:#00688b">$respuesta</span> = <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">deleteJson</span>(route(<span style="color:#cd5555">&#34;books.destroy&#34;</span>, <span style="color:#00688b">$book</span>), [])
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">assertContent</span>(<span style="color:#cd5555">&#34;Se ha borrado &#34;</span>.<span style="color:#00688b">$book</span>-&gt;<span style="color:#658b00">titulo</span>);
+</span></span><span style="display:flex;"><span><span style="color:#228b22">//            -&gt;assertNoContent();
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-ed32788dcdef9811ca9b608b1230b180">4 - swagger</h1>
+    
+	<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"></code></pre></td></tr></table>
+</div>
+</div>
+
+
+
+
+<div style="border: 1px solid navy; border-radius: 5px; overflow: hidden;">
+    <div style="background-color: navy; color: white;
+    font-weight: bold; padding: 10px; display: flex; align-items: center;">
+        
+        <span style="margin-right: 8px;">
+            
+                <i class="fas fa-book"></i> 
+            
+        </span>
+        
+        <span>Referencias</span>
+    </div>
+
+    <h3 style="padding: 5px; font-weight: bold; color: navy;">Fuentes de Información</h3>
+
+    <hr style="border-color: lightblue; border-width: 3px"/>
+    
+    <div style="background-color: #e0f7fa; color: navy; padding: 10px;">
+        <ul>
+            
+            <li><ul>
+<li><a href="https://github.com/DarkaOnLine/L5-Swagger/wiki">https://github.com/DarkaOnLine/L5-Swagger/wiki</a></li>
+</ul>
+</li>
+            
+            
+            
+        </ul>
+    </div>
+</div>
+
+<h1 id="swagger-en-laravel-11">Swagger en Laravel 11</h1>
+<!-- raw HTML omitted -->
+<h2 id="introducción">Introducción</h2>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Swagger (OpenAPI)
+
+
+</span>
+</strong> es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.</p>
+<p>En Laravel, la biblioteca 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    L5 Swagger
+
+
+</span>
+</strong> ayuda a integrar esta documentación automáticamente a partir de anotaciones en el código.</p>
+<p>Este documento explica cómo configurar Swagger en Laravel 11 y cómo documentar los endpoints de una API.</p>
+<!-- raw HTML omitted -->
+<h2 id="instalación-de-swagger-en-laravel-12">Instalación de Swagger en Laravel 12</h2>
+<p>Instalamos con composer la librería <strong>darkaonline/l5-swagger</strong></p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>  composer require darkaonline/l5-swagger</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Publicamos la configuración para ponerla disponible en el direcotiro del proyecto.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>php artisan vendor:publish --provider=<span style="color:#cd5555">&#34;L5Swagger\\L5SwaggerServiceProvider&#34;</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<!-- raw HTML omitted -->
+<h2 id="configuración-de-swagger">Configuración de Swagger</h2>
+<p>Swagger tiene un fichero de cofiguracion en la carpeta <strong>config</strong>:</p>
+<ul>
+<li><em><strong>config/l5-swagger.php</strong></em>
+En su contendio podemos especificar diferentes directivas, como el directorio dónde se ubica los fichero de anotaciones o especificación general:</li>
+</ul>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#cd5555">&#39;paths&#39;</span> =&gt; [
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>            <span style="color:#cd5555">&#39;docs&#39;</span> =&gt; storage_path(<span style="color:#cd5555">&#39;api-docs&#39;</span>),
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>            <span style="color:#cd5555">&#39;annotations&#39;</span> =&gt; base_path(<span style="color:#cd5555">&#39;app/Http/Controllers&#39;</span>),
+</span></span><span style="display:flex;"><span>          ],</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Si tu API usa autenticación, puedes configurar el esquema de seguridad:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#cd5555">&#39;defaults&#39;</span> =&gt; [
+</span></span><span style="display:flex;"><span>      <span style="color:#cd5555">&#39;security&#39;</span> =&gt; [
+</span></span><span style="display:flex;"><span>          [
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>              <span style="color:#cd5555">&#39;bearerAuth&#39;</span> =&gt; []
+</span></span><span style="display:flex;"><span>          ],
+</span></span><span style="display:flex;"><span>      ],
+</span></span><span style="display:flex;"><span>],</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<!-- raw HTML omitted -->
+<h2 id="incluir-informacion-sobre-el-api-usando-swager">Incluir informacion sobre el api usando swager</h2>
+<p>Para incluir información sobre nuestra api, lo realizaremos incluyendo las 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Etiquetas de swagger
+
+
+</span>
+</strong> o 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Anotaciones de swagger
+
+
+</span>
+</strong>.</p>
+<p>Estas etiquetas se incluyen entre comentarios en el fichero correspondiente usando la forma de comentar
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#cd5555">/**
+</span></span></span><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#cd5555"> @OA/anotacion (anotaciones swager)
+</span></span></span><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#cd5555">*/</span></span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<!-- raw HTML omitted -->
+<p>Las anotaciones más comúnmente usadas son:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Anotación</th>
+          <th>Descripción en Español</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>@OA\Info</code></td>
+          <td>Define los metadatos de la API (título, versión, descripción).</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Get</code></td>
+          <td>Define una petición GET.</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Post</code></td>
+          <td>Define una petición POST.</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Put</code></td>
+          <td>Define una petición PUT.</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Delete</code></td>
+          <td>Define una petición DELETE.</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Schema</code></td>
+          <td>Define un modelo reutilizable.</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Property</code></td>
+          <td>Define una propiedad dentro de un esquema.</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Parameter</code></td>
+          <td>Define un parámetro de consulta o ruta.</td>
+      </tr>
+      <tr>
+          <td><code>@OA\RequestBody</code></td>
+          <td>Define el cuerpo de una petición (POST/PUT).</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Response</code></td>
+          <td>Define posibles respuestas.</td>
+      </tr>
+      <tr>
+          <td><code>@OA\JsonContent</code></td>
+          <td>Define la estructura JSON dentro de una respuesta.</td>
+      </tr>
+      <tr>
+          <td><code>@OA\SecurityScheme</code></td>
+          <td>Define el método de autenticación (Bearer, API Key).</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Tag</code></td>
+          <td>Agrupa endpoints bajo una etiqueta.</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Server</code></td>
+          <td>Define la URL base del servidor.</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>A continuación mostramos un ejemplo de información general de nuestra API, que habrá que ubicarlo en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    el fichero del controlador antes de la especificación de la clase
+
+
+</span>
+</strong></p>
+<blockquote>
+<details>
+    <summary>Ejemplo de @OA\Info</summary>
+    <div class="summary-content">
+        <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?php
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">namespace</span> App\Http\Controllers;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span>  ...
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* @OA\Info(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     title=&#34;API de Alumnos&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     version=&#34;1.0.0&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     description=&#34;Para obtener listado de alumnos&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     @OA\Contact(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*         name=&#34;Manuel&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*         email=&#34;manuelromeromiguel@gmail.com&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     ),
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     @OA\License(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*         name=&#34;MIT&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*         url=&#34;https://opensource.org/license/mit&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">  */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">AlumnoApiController</span> <span style="color:#8b008b;font-weight:bold">extends</span> Controller{
+</span></span><span style="display:flex;"><span>.....
+</span></span></code></pre></div>
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+</blockquote>
+</blockquote>
+<ul>
+<li>Una vez escritos las anotaciones, ya las podemos ver en la web, para ello temeos que generar la documentación y acceder a la web donde se ha generado dicha información:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  php artisan l5-swagger:generate
+</span></span></code></pre></div><ul>
+<li>Y ahora accedemos a la web.</li>
+</ul>
+<blockquote>
+<p><em>(debemos tener levantada nuestra aplicación, si estamos en local podemos ejecutar el script dev de composer.json)</em>:</p>
+<blockquote>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>composer run dev</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</blockquote>
+</blockquote>
+<p>Y podemos acceder a la información en nuestro navegador</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>http://<span style="color:#b452cd">127.0</span>.<span style="color:#b452cd">0.1</span>:<span style="color:#b452cd">8000</span>/api/documentation
+</span></span></code></pre></div><h3 id="incluyendo-información-general">Incluyendo información general</h3>
+<p>La información general, debería de ir en un fichero dedicado para esto: 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    app/Http/Swagger.php
+
+
+</span>
+</strong>.</p>
+<p>Alternativamente podemos incluirlo directamente el en controlador de la API, y así  tener todo concentrado en un solo fichero.</p>
+<h4 id="principales-campos-de-metadatos-en-oainfo">Principales Campos de Metadatos en @OA\Info</h4>
+<p>Estos son los campos de 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    metadatos
+
+
+</span>
+</strong> u opciones  más importantes utilizados en <code>@OA\Info</code>:
+<details>
+    <summary>Principales Campos en @OA\Info</summary>
+    <div class="summary-content">
+        <table>
+  <thead>
+      <tr>
+          <th><strong>Campo</strong></th>
+          <th><strong>Descripción en Español</strong></th>
+          <th><strong>Obligatorio</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>title</code></td>
+          <td>Define el título de la API.</td>
+          <td>✅ <strong>Sí</strong></td>
+      </tr>
+      <tr>
+          <td><code>version</code></td>
+          <td>Especifica la versión de la API.</td>
+          <td>✅ <strong>Sí</strong></td>
+      </tr>
+      <tr>
+          <td><code>description</code></td>
+          <td>Proporciona una descripción general de la API.</td>
+          <td>❌ <strong>No</strong></td>
+      </tr>
+      <tr>
+          <td><code>termsOfService</code></td>
+          <td>Enlace a los términos de servicio de la API.</td>
+          <td>❌ <strong>No</strong></td>
+      </tr>
+      <tr>
+          <td><code>@OA\Contact</code></td>
+          <td>Información de contacto del responsable de la API.</td>
+          <td>❌ <strong>No</strong></td>
+      </tr>
+      <tr>
+          <td><code>@OA\License</code></td>
+          <td>Detalles sobre la licencia de la API.</td>
+          <td>❌ <strong>No</strong></td>
+      </tr>
+  </tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+</p>
+<blockquote>
+<p>Vemos que tenemos dos componentes o campos de anotación como elementos del componente 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    OA\Info
+
+
+</span>
+</strong>:</p>
+<blockquote>
+<p><details>
+    <summary>Campos dentro de @OA\Contact</summary>
+    <div class="summary-content">
+        <table>
+  <thead>
+      <tr>
+          <th><strong>Opción</strong></th>
+          <th><strong>Descripción</strong></th>
+          <th><strong>Obligatorio</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>name</code></td>
+          <td>Nombre de la persona de contacto.</td>
+          <td>❌ No</td>
+      </tr>
+      <tr>
+          <td><code>email</code></td>
+          <td>Dirección de correo electrónico de contacto.</td>
+          <td>❌ No</td>
+      </tr>
+      <tr>
+          <td><code>url</code></td>
+          <td>URL con más información de contacto.</td>
+          <td>❌ No</td>
+      </tr>
+  </tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<details>
+    <summary>Campos dentro de @OA\License</summary>
+    <div class="summary-content">
+        <table>
+  <thead>
+      <tr>
+          <th><strong>Campo</strong></th>
+          <th><strong>Descripción en Español</strong></th>
+          <th><strong>Obligatorio</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>name</code></td>
+          <td>Nombre de la licencia de la API.</td>
+          <td>✅ <strong>Sí</strong></td>
+      </tr>
+      <tr>
+          <td><code>url</code></td>
+          <td>Enlace a la licencia de la API.</td>
+          <td>❌ <strong>No</strong></td>
+      </tr>
+  </tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+</p>
+</blockquote>
+</blockquote>
+<h3 id="-2-definir-endpoints-de-la-api">🔹 2. Definir Endpoints de la API</h3>
+<p>Para poder general la información de nuestra apì, al menos tenemos que tener un entrypoint de acceso, si no, no nos generará la documentación</p>
+<h4 id="principales-campos-de-metadatos-en-oaget-oapost-oaput-y-oadelete">Principales Campos de Metadatos en @OA\Get, @OA\Post, @OA\Put y @OA\Delete</h4>
+<p>Estos son los campos de metadatos más importantes utilizados en los métodos HTTP dentro de Swagger:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Anotación</strong></th>
+          <th><strong>Descripción en Español</strong></th>
+          <th><strong>Obligatorio</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>path</code></td>
+          <td>Define la ruta de la API donde se ejecutará la operación.</td>
+          <td>✅ Sí</td>
+      </tr>
+      <tr>
+          <td><code>operationId</code></td>
+          <td>Identificador único de la operación dentro de la API.</td>
+          <td>✅ Sí</td>
+      </tr>
+      <tr>
+          <td><code>tags</code></td>
+          <td>Agrupa las operaciones en categorías dentro de la documentación.</td>
+          <td>❌ No</td>
+      </tr>
+      <tr>
+          <td><code>summary</code></td>
+          <td>Breve descripción de la operación.</td>
+          <td>❌ No</td>
+      </tr>
+      <tr>
+          <td><code>description</code></td>
+          <td>Explicación más detallada de la operación.</td>
+          <td>❌ No</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Response</code></td>
+          <td>Define las respuestas esperadas de la API.</td>
+          <td>✅ Sí</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Parameter</code></td>
+          <td>Define los parámetros que recibe la API en la URL o query.</td>
+          <td>✅ Solo si hay parámetros en la URL</td>
+      </tr>
+      <tr>
+          <td><code>@OA\RequestBody</code></td>
+          <td>Define los datos que se envían en una petición (POST o PUT).</td>
+          <td>✅ Solo en <code>POST</code> y <code>PUT</code></td>
+      </tr>
+      <tr>
+          <td><code>@OA\JsonContent</code></td>
+          <td>Especifica el formato de respuesta en JSON.</td>
+          <td>✅ Solo si la respuesta es JSON</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Items</code></td>
+          <td>Define los elementos dentro de una respuesta que es un array.</td>
+          <td>✅ Solo si la respuesta es un array</td>
+      </tr>
+  </tbody>
+</table>
+<details>
+    <summary>@OA\Response</summary>
+    <div class="summary-content">
+        <table>
+  <thead>
+      <tr>
+          <th><strong>Opción</strong></th>
+          <th><strong>Descripción</strong></th>
+          <th><strong>Obligatorio</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>response</code></td>
+          <td>Código de estado HTTP (<code>200</code>, <code>400</code>, <code>404</code>, etc.).</td>
+          <td>✅ Sí</td>
+      </tr>
+      <tr>
+          <td><code>description</code></td>
+          <td>Breve descripción de la respuesta.</td>
+          <td>✅ Sí</td>
+      </tr>
+      <tr>
+          <td><code>@OA\JsonContent</code></td>
+          <td>Define el contenido en formato JSON.</td>
+          <td>❌ No</td>
+      </tr>
+      <tr>
+          <td><code>@OA\XmlContent</code></td>
+          <td>Define el contenido en formato XML.</td>
+          <td>❌ No</td>
+      </tr>
+  </tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+<details>
+    <summary>@OA\Parameter</summary>
+    <div class="summary-content">
+        <table>
+  <thead>
+      <tr>
+          <th><strong>Opción</strong></th>
+          <th><strong>Descripción</strong></th>
+          <th><strong>Obligatorio</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>name</code></td>
+          <td>Nombre del parámetro (<code>id</code>, <code>page</code>, etc.).</td>
+          <td>✅ Sí</td>
+      </tr>
+      <tr>
+          <td><code>in</code></td>
+          <td>Ubicación (<code>query</code>, <code>path</code>, <code>header</code>, <code>cookie</code>).</td>
+          <td>✅ Sí</td>
+      </tr>
+      <tr>
+          <td><code>required</code></td>
+          <td>Indica si el parámetro es obligatorio (<code>true</code> o <code>false</code>).</td>
+          <td>✅ Solo en <code>path</code></td>
+      </tr>
+      <tr>
+          <td><code>@OA\Schema</code></td>
+          <td>Define el tipo de dato (<code>string</code>, <code>integer</code>, <code>boolean</code>).</td>
+          <td>❌ No</td>
+      </tr>
+  </tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+<details>
+    <summary>@OA\RequestBody</summary>
+    <div class="summary-content">
+        <table>
+  <thead>
+      <tr>
+          <th><strong>Opción</strong></th>
+          <th><strong>Descripción</strong></th>
+          <th><strong>Obligatorio</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>required</code></td>
+          <td>Indica si el cuerpo es obligatorio (<code>true</code> o <code>false</code>).</td>
+          <td>✅ Sí</td>
+      </tr>
+      <tr>
+          <td><code>description</code></td>
+          <td>Explicación del contenido del cuerpo.</td>
+          <td>❌ No</td>
+      </tr>
+      <tr>
+          <td><code>@OA\JsonContent</code></td>
+          <td>Define el contenido en JSON.</td>
+          <td>✅ Solo si la petición envía datos</td>
+      </tr>
+      <tr>
+          <td><code>@OA\XmlContent</code></td>
+          <td>Define el contenido en XML (opcional).</td>
+          <td>❌ No</td>
+      </tr>
+  </tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+<details>
+    <summary>@OA\JsonContent</summary>
+    <div class="summary-content">
+        <table>
+  <thead>
+      <tr>
+          <th><strong>Opción</strong></th>
+          <th><strong>Descripción</strong></th>
+          <th><strong>Obligatorio</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>type</code></td>
+          <td>Tipo de dato (<code>object</code>, <code>array</code>).</td>
+          <td>✅ Sí</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Items</code></td>
+          <td>Define elementos dentro de un array.</td>
+          <td>❌ No</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Property</code></td>
+          <td>Define propiedades dentro de un objeto JSON.</td>
+          <td>❌ No</td>
+      </tr>
+  </tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+<details>
+    <summary>@OA\Items</summary>
+    <div class="summary-content">
+        <table>
+  <thead>
+      <tr>
+          <th><strong>Opción</strong></th>
+          <th><strong>Descripción</strong></th>
+          <th><strong>Obligatorio</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>type</code></td>
+          <td>Tipo de dato de los elementos (<code>string</code>, <code>integer</code>, <code>object</code>).</td>
+          <td>✅ Sí</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Property</code></td>
+          <td>Define propiedades dentro del objeto del array.</td>
+          <td>❌ No</td>
+      </tr>
+      <tr>
+          <td><code>example</code></td>
+          <td>Define un valor de ejemplo para un elemento del array.</td>
+          <td>❌ No</td>
+      </tr>
+      <tr>
+          <td><code>ref</code></td>
+          <td>Permite hacer referencia a un esquema predefinido (<code>ref=&quot;#/components/schemas/Alumno&quot;</code>).</td>
+          <td>❌ No</td>
+      </tr>
+  </tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+<details>
+    <summary>@OA\Property</summary>
+    <div class="summary-content">
+        <table>
+  <thead>
+      <tr>
+          <th><strong>Opción</strong></th>
+          <th><strong>Descripción</strong></th>
+          <th><strong>Obligatorio</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>property</code></td>
+          <td>Nombre de la propiedad en el objeto JSON.</td>
+          <td>✅ Sí</td>
+      </tr>
+      <tr>
+          <td><code>type</code></td>
+          <td>Tipo de dato (<code>string</code>, <code>integer</code>, <code>boolean</code>, <code>array</code>, <code>object</code>).</td>
+          <td>✅ Sí</td>
+      </tr>
+      <tr>
+          <td><code>format</code></td>
+          <td>Formato del dato (<code>date-time</code>, <code>email</code>, <code>uuid</code>, etc.).</td>
+          <td>❌ No</td>
+      </tr>
+      <tr>
+          <td><code>example</code></td>
+          <td>Valor de ejemplo para la propiedad.</td>
+          <td>❌ No</td>
+      </tr>
+      <tr>
+          <td><code>description</code></td>
+          <td>Breve explicación de la propiedad.</td>
+          <td>❌ No</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Items</code></td>
+          <td>Se usa si la propiedad es un array (<code>type=&quot;array&quot;</code>).</td>
+          <td>❌ No</td>
+      </tr>
+      <tr>
+          <td><code>@OA\Schema</code></td>
+          <td>Se usa si la propiedad es un objeto (<code>type=&quot;object&quot;</code>).</td>
+          <td>❌ No</td>
+      </tr>
+  </tbody>
+</table>
+
+    </div>
+</details>
+
+<style>
+    .summary-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+<p>Cada método HTTP tiene su propia anotación:</p>
+<h3 id="-get-request-oaget---recupera-datos">🟢 <strong>GET Request (@OA\Get)</strong> - Recupera datos</h3>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* @OA\Get(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      path=&#34;/api/users&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      operationId=&#34;getUsersList&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      tags={&#34;Users&#34;},
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      summary=&#34;Get all users&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      description=&#34;Returns a list of users&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      @OA\Response(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          response=200,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          description=&#34;Successful response&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          @OA\JsonContent(type=&#34;array&#34;, @OA\Items(ref=&#34;#/components/schemas/User&#34;))
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">  */</span>
+</span></span><span style="display:flex;"><span>  
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="-post-request-oapost---crea-un-nuevo-recurso">🟡 <strong>POST Request (@OA\Post)</strong> - Crea un nuevo recurso</h3>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* @OA\Post(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      path=&#34;/api/users&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      operationId=&#34;createUser&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      tags={&#34;Users&#34;},
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      summary=&#34;Create a new user&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      description=&#34;Stores a new user in the database&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      @OA\RequestBody(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          required=true,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          @OA\JsonContent(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*              required={&#34;name&#34;,&#34;email&#34;,&#34;password&#34;},
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*              @OA\Property(property=&#34;name&#34;, type=&#34;string&#34;, example=&#34;John Doe&#34;),
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*              @OA\Property(property=&#34;email&#34;, type=&#34;string&#34;, example=&#34;johndoe@example.com&#34;),
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*              @OA\Property(property=&#34;password&#34;, type=&#34;string&#34;, example=&#34;123456&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      ),
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      @OA\Response(response=201, description=&#34;User created successfully&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">  */</span>
+</span></span><span style="display:flex;"><span>  
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="-3-definir-modelos-de-respuesta-oaschema">🔹 3. Definir Modelos de Respuesta (<strong>@OA\Schema</strong>)</h2>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* @OA\Schema(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     schema=&#34;User&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     type=&#34;object&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     required={&#34;id&#34;, &#34;name&#34;, &#34;email&#34;},
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     @OA\Property(property=&#34;id&#34;, type=&#34;integer&#34;, example=1),
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     @OA\Property(property=&#34;name&#34;, type=&#34;string&#34;, example=&#34;John Doe&#34;),
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*     @OA\Property(property=&#34;email&#34;, type=&#34;string&#34;, example=&#34;johndoe@example.com&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">  */</span>
+</span></span><span style="display:flex;"><span>  
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="-4-autenticación-oasecurityscheme">🔹 4. Autenticación (<strong>@OA\SecurityScheme</strong>)</h2>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* @OA\SecurityScheme(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      securityScheme=&#34;bearerAuth&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      type=&#34;http&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      scheme=&#34;bearer&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      bearerFormat=&#34;JWT&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">  */</span>
+</span></span><span style="display:flex;"><span>  
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="-documentar-el-método-index">🔹 Documentar el método <em><strong>index</strong></em></h2>
+<p>Edita <code>app/Http/Controllers/Api/UserController.php</code> y agrega las anotaciones de Swagger:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#8b008b;font-weight:bold">namespace</span> App\Http\Controllers\Api;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Http\Request;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> App\Http\Controllers\Controller;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* @OA\Get(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      path=&#34;/api/users&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      operationId=&#34;getUsersList&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      tags={&#34;Usuarios&#34;},
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      summary=&#34;Obtener lista de usuarios&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      description=&#34;Retorna una lista de usuarios&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      @OA\Response(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          response=200,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          description=&#34;Éxito&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          @OA\JsonContent(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*              type=&#34;array&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*              @OA\Items(
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*                  type=&#34;object&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*                  @OA\Property(property=&#34;id&#34;, type=&#34;integer&#34;, example=1),
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*                  @OA\Property(property=&#34;name&#34;, type=&#34;string&#34;, example=&#34;Juan Pérez&#34;),
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*                  @OA\Property(property=&#34;email&#34;, type=&#34;string&#34;, example=&#34;juan@example.com&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*              )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*          )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">*      )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">* )
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">  */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">UserController</span> <span style="color:#8b008b;font-weight:bold">extends</span> Controller
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">index</span>()
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">return</span> response()-&gt;<span style="color:#658b00">json</span>([
+</span></span><span style="display:flex;"><span>  [<span style="color:#cd5555">&#39;id&#39;</span> =&gt; <span style="color:#b452cd">1</span>, <span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;Juan Pérez&#39;</span>, <span style="color:#cd5555">&#39;email&#39;</span> =&gt; <span style="color:#cd5555">&#39;juan@example.com&#39;</span>],
+</span></span><span style="display:flex;"><span>  [<span style="color:#cd5555">&#39;id&#39;</span> =&gt; <span style="color:#b452cd">2</span>, <span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#cd5555">&#39;Ana Gómez&#39;</span>, <span style="color:#cd5555">&#39;email&#39;</span> =&gt; <span style="color:#cd5555">&#39;ana@example.com&#39;</span>],
+</span></span><span style="display:flex;"><span>  ]);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<!-- raw HTML omitted -->
+<h2 id="-generar-y-visualizar-la-documentación">🔹 Generar y visualizar la documentación</h2>
+<p>Ejecuta el siguiente comando para generar la documentación:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>php artisan l5-swagger:generate</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Luego, inicia el servidor:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>php artisan serve</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Y accede a la documentación desde el navegador:</p>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    http://127.0.0.1:8000/api/documentation
+
+
+</span>
+</strong>
+<!-- raw HTML omitted -->
+<h2 id="-conclusión">🔹 Conclusión</h2>
+<p>Con estos pasos, has configurado <em><strong>Swagger en Laravel 11</strong></em> y documentado el primer endpoint (<code>index</code>). Puedes continuar documentando otros métodos como <code>store</code>, <code>update</code> y <code>destroy</code> siguiendo la misma estructura.</p>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

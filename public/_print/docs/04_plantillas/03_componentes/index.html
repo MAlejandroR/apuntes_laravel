@@ -1,0 +1,760 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/04_plantillas/03_componentes/">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/04_plantillas/03_componentes/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Componentes  | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/04_plantillas/03_componentes/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Componentes ">
+  <meta property="og:description" content="Introducción a los Componentes de Blade en Laravel ¿Qué son los Componentes de Blade? Los componentes de Blade en Laravel son una poderosa herramienta para reutilizar código HTML y PHP en tus vistas.
+Estos componentes son archivos .blade.php que residen en la carpeta resources/views/components. Si la carpeta no existe, puedes crearla manualmente. El hecho de que cada componente sea un archivo .blade.php independiente, facilita su reutilización y mantenimiento.">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Componentes ">
+  <meta itemprop="description" content="Introducción a los Componentes de Blade en Laravel ¿Qué son los Componentes de Blade? Los componentes de Blade en Laravel son una poderosa herramienta para reutilizar código HTML y PHP en tus vistas.
+Estos componentes son archivos .blade.php que residen en la carpeta resources/views/components. Si la carpeta no existe, puedes crearla manualmente. El hecho de que cada componente sea un archivo .blade.php independiente, facilita su reutilización y mantenimiento.">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="998">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Componentes ">
+  <meta name="twitter:description" content="Introducción a los Componentes de Blade en Laravel ¿Qué son los Componentes de Blade? Los componentes de Blade en Laravel son una poderosa herramienta para reutilizar código HTML y PHP en tus vistas.
+Estos componentes son archivos .blade.php que residen en la carpeta resources/views/components. Si la carpeta no existe, puedes crearla manualmente. El hecho de que cada componente sea un archivo .blade.php independiente, facilita su reutilización y mantenimiento.">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+Versión imprimible multipagina.
+<a href="#" onclick="print();return false;">Haga click aquí para imprimir</a>.
+</p><p>
+<a href="/laravel/docs/04_plantillas/03_componentes/">Volver a la vista normal de esta página</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Componentes </h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+
+    </ul>
+
+
+<div class="content">
+      <h1 id="introducción-a-los-componentes-de-blade-en-laravel">Introducción a los Componentes de Blade en Laravel</h1>
+<h2 id="qué-son-los-componentes-de-blade">¿Qué son los Componentes de Blade?</h2>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Los componentes de Blade
+
+
+</span>
+</strong>en Laravel son una poderosa herramienta para reutilizar código HTML y PHP en tus vistas.</p>
+<p>Estos componentes son archivos <strong>.blade.php</strong> que residen en la carpeta <strong>resources/views/components</strong>. Si la carpeta no existe, puedes crearla manualmente. El hecho de que cada componente sea un archivo .blade.php independiente, facilita su reutilización y mantenimiento.</p>
+
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Idea de usar componentes</h4>
+
+    <strong>Descomponer</strong> un diseño complejo (layout) <strong>en elementos más pequeños y manejables</strong> conocidos como <strong>componentes</strong>.
+
+</div>
+
+<p>Al crear un layout, este se convierte en una composición de estos ficheros individuales. Cada componente representa 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    una parte del layout
+
+
+</span>
+</strong>, como:  <strong>una cabecera, pie de página, sección principal o barra de navegación</strong> como podemos ver en la siguiente imagen:</p>
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 1443px">
+<img class="card-img-top" src="/laravel/docs/04_plantillas/03_componentes/componentes_laravel_general_hu_c142852b2095e8a1.png" width="1433" height="606">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+
+
+</p>
+</figcaption>
+</figure>
+
+<h2 id="creación-y-uso-de-componentes">Creación y Uso de Componentes</h2>
+<p>Tenemos dos formas de crear un componente:</p>
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Componente anónimo
+
+
+</span>
+</strong>. Crear el fichero directamente en la carpeta correspondiente</li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Componentes basados en clases
+
+
+</span>
+</strong>. A través de 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    una clase usando Artisan****
+
+
+</span>
+</strong></li>
+<li></li>
+</ul>
+<h4 id="creando-el-componentes-directamente">Creando el componentes directamente</h4>
+<p>Simplemente creamos el fichero desde nuestro EDI. <br>
+En nuestro caso creamos los ficheros 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    header.blade,php, main.blade.php, nav.blade.php
+
+
+</span>
+</strong> y 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    footer.blade.php
+
+
+</span>
+</strong>.</p>
+<p>Como son parte del layout, podríamos crearlo dentro de una carpeta llamada layout, por cuestiones organizativas:
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 249px">
+<img class="card-img-top" src="/laravel/docs/04_plantillas/03_componentes/creacion_componentes_layout_1_hu_1c4e130fa7d3356.png" width="239" height="227">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+
+
+
+</p>
+</figcaption>
+</figure>
+</p>
+<h4 id="creando-el-componente-con-artisan">Creando el componente con Artisan</h4>
+<p>Podemos crearlo a partir de una clase. El funcionamiento es igual. La forma de crearlo sería con artisan:
+Vamos a hacerlo para nuestro ejemplo:
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:Component nombre_componente</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h4 id="crear-componente-directo-vs-con-artisan">Crear componente directo Vs con Artisan</h4>
+<h5 id="artisan"><strong>Artisan</strong></h5>
+<p>Usar 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Artisan para crear componentes
+
+
+</span>
+</strong> tiene ventajas:</p>
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Estructura Consistente
+
+
+</span>
+</strong>: Artisan genera automáticamente la estructura de archivos necesaria, asegurando consistencia en todo el proyecto.</li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Rapidez
+
+
+</span>
+</strong> y 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Conveniencia
+
+
+</span>
+</strong>: Es rápido y evita la posibilidad de errores al crear los archivos manualmente.
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Comandos Claros
+
+
+</span>
+</strong>: Los comandos de Artisan son claros y documentados, lo que facilita su uso y aprendizaje.
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>  php artisan make:component NombreDelComponente</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Si queremos crear el componente en una carpeta concreta lo podemos hacer especificandolo
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>    php artisan make:component directorio/.../NombreDelComponente</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Esto crea un nuevo componente en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    resources/views/components
+
+
+</span>
+</strong> y un archivo de clase correspondiente en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    app/View/Components
+
+
+</span>
+</strong>.</li>
+</ul>
+</li>
+</ul>
+<h5 id="crear-componentes-manualmente"><strong>Crear Componentes Manualmente</strong></h5>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Crear componentes manualmente
+
+
+</span>
+</strong> también buena que te da más control en la estructura y organización de carpetas:</p>
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Flexibilidad
+
+
+</span>
+</strong>: Tienes control total sobre la estructura y organización de tus archivos.</li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Simplicidad
+
+
+</span>
+</strong>: Para proyectos más pequeños o si prefieres un enfoque más &ldquo;manual&rdquo;, este método puede ser más directo.</li>
+</ul>
+<h4></h4>
+<ul>
+<li>Para crear un componente manualmente:</li>
+</ul>
+<ol>
+<li>Crea un archivo Blade en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    resources/views/components
+
+
+</span>
+</strong>.</li>
+<li>Opcionalmente, crea una clase de componente en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    app/View/Components
+
+
+</span>
+</strong>.</li>
+</ol>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Conclusión personal</h4>
+
+    <ul>
+<li>Proyectos Grandes o en Equipos:</li>
+</ul>
+<blockquote>
+<p>Usar Artisan es generalmente más recomendado, ya que asegura una estructura coherente y reduce el riesgo de errores.</p>
+</blockquote>
+<ul>
+<li>Para Proyectos Pequeños o Preferencias Personales:</li>
+</ul>
+<blockquote>
+<p>Si prefieres un control más directo o trabajas en un proyecto más pequeño, crear los archivos manualmente puede ser igualmente efectivo.</p>
+</blockquote>
+
+
+</div>
+
+<h3 id="referenciar-un-componente">Referenciar un Componente</h3>
+<p>Para usar un componente en tus vistas Blade, lo referencias como un elemento HTML, pero con una sintaxis especial que incluye un prefijo <code>x-</code>::</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">x-miComponente</span> /&gt;
+</span></span></code></pre></div><p>
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">x-nombre</h4>
+
+    <p>Cuando referenciamos un elemento con</p>
+<!-- raw HTML omitted -->
+<pre><code>&amp;lt;x-&amp;hellip;&amp;gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>resources/views/components
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">x-capeta.sub.nombre</h4>
+
+    <p>Si el componentes estuvier en subcarpetas, lo podemos especicar con puntos.</p>
+<p>De esta forma</p>
+<!-- raw HTML omitted -->
+<pre><code>x-capeta.sub.componentes
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>resources/views/components/carpeta/sub/nombre.blade.php
+</code></pre>
+<!-- raw HTML omitted -->
+
+
+</div>
+</p>
+<h2 id="nuestro-ejemplo">Nuestro ejemplo</h2>
+<p>Creamos los componentes usando artisan.
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Ubicación</h4>
+
+    Como todos son para el layout, los creamos en la carpeta layout
+
+</div>
+</p>
+<p><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:component layout/Header
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:component layout/Nav
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:component layout/Main
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:component layout/Footer</span></span></code></pre></div>
+La imagen muestra el resultado generado
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 610px">
+<img class="card-img-top" src="/laravel/docs/04_plantillas/03_componentes/img_hu_e12b24b9a25a03c.png" width="600" height="700">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Creción de componentes con artisan
+
+
+</span>
+</strong>
+
+</p>
+</figcaption>
+</figure>
+</p>
+<h2 id="variables-en-componentes">Variables en Componentes</h2>
+<p>Los componentes de Blade  
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    ofrecen acceso a varias variables y objetos especiales
+
+
+</span>
+</strong> que facilitan la construcción de interfaces dinámicas y reutilizables. Los más usados</p>
+<ul>
+<li>$slot</li>
+<li>$attributes</li>
+<li>$errors</li>
+</ul>
+<h3 id="slot">$slot</h3>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Contiene el contenido que se pasa al componente desde donde se llama.
+
+
+</span>
+</strong>
+<hr>
+<blockquote>
+<p>Fichero layout</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">x-layout.main</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>&lt;<span style="color:#8b008b;font-weight:bold">h1</span>&gt; Este es un contendio para el componente, lo recibirá como $slot&lt;/<span style="color:#8b008b;font-weight:bold">h1</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">x-layout.main</span>&gt;</span></span></code></pre></div>
+<blockquote>
+<p>Fichero del componente 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    main.blade.php
+
+
+</span>
+</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex;"><span> &lt;header class=<span style="color:#cd5555">&#34;hidden lg:flex h-15v bg-header flex flex-row justify-center items-center&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;img class=<span style="color:#cd5555">&#34;w-1/5 max-h-full w-auto  p-5 &#34;</span> src=<span style="color:#cd5555">&#34;{{asset(&#34;</span>images/logos/logo.png<span style="color:#cd5555">&#34;)}}&#34;</span> alt=<span style="color:#cd5555">&#34;logo nett&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;div class=<span style="color:#cd5555">&#34;w-3/5 flex justify-center items-center&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;h1 class=<span style="color:#cd5555">&#34;text-3xl text-white h-auto max-w-full truncate &#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>          {{<span style="color:#00688b">$slot</span>}}
+</span></span><span style="display:flex;"><span>        &lt;/h1&gt;
+</span></span><span style="display:flex;"><span>    &lt;/div&gt;
+</span></span><span style="display:flex;"><span>&lt;!-- ...  --&gt;
+</span></span><span style="display:flex;"><span>&lt;/header&gt;</span></span></code></pre></div></p>
+</blockquote>
+<h3 id="atributes">$atributes</h3>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Permite acceder a atributos adicionales pasados al componente.
+
+
+</span>
+</strong>
+La variable 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    $attributes
+
+
+</span>
+</strong> en los componentes de Blade de Laravel 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    es una instancia de Illuminate\View\ComponentAttributeBag
+
+
+</span>
+</strong></p>
+<p>Proporciona varios métodos útiles para manipular los atributos que se pasan a un componente<br>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Uno de los métodos más útiles es merge()
+
+
+</span>
+</strong>:
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">merge()</h4>
+
+    Fusiona los atributos predeterminados del componente con los atributos adicionales proporcionados en la vista.
+
+</div>
+</p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    El método merge()
+
+
+</span>
+</strong> se usa comúnmente para combinar clases CSS y otros atributos. Esto es especialmente útil cuando deseas que tu componente tenga algunas clases CSS por defecto, pero también quieres permitir que se añadan clases adicionales desde fuera del componente.</p>
+<p>Supongamos el siguiente ejemplo donde tenemos un  componente boton.blade.php: <br>
+Aquí, btn btn-default son las clases predeterminadas para todos los botones.
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>&lt;button {{ <span style="color:#00688b">$attributes</span>-&gt;<span style="color:#658b00">merge</span>([<span style="color:#cd5555">&#39;class&#39;</span> =&gt; <span style="color:#cd5555">&#39;btn btn-default&#39;</span>]) }}&gt;
+</span></span><span style="display:flex;"><span>{{ <span style="color:#00688b">$slot</span> }}
+</span></span><span style="display:flex;"><span>&lt;/button&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Cuando usas el componente y pasas clases adicionales:</p>
+<p>Laravel fusionará las clases, resultando en un botón que tiene class=&ldquo;btn btn-default btn-large&rdquo;.</p>
+<p><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>&lt;x-boton class=<span style="color:#cd5555">&#34;btn-large&#34;</span>&gt;Click Aquí&lt;/x-boton&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Laravel fusionará las clases, resultando en un botón que tiene class=&ldquo;btn btn-default btn-large&rdquo;.</p>
+<hr>
+<h4 id="otros-métodos-de-attributes">Otros Métodos de $attributes</h4>
+<ul>
+<li>
+<p><code>only()</code>: Devuelve solo un subconjunto de los atributos.</p>
+</li>
+<li>
+<p><code>except()</code>: Devuelve todos los atributos excepto los especificados.</p>
+</li>
+<li>
+<p><code>class()</code>: Devuelve una instancia de Illuminate\View\ComponentAttributeBag solo con las clases.</p>
+</li>
+<li>
+<p><code>first()</code>: Devuelve el primer valor de los atributos especificados.</p>
+</li>
+</ul>
+<h3 id="pasando-atributos-a-un-componentes">Pasando atributos a un componentes</h3>
+<p>Para pasar atributos a un componente, usamos una sintaxis similar a la de las etiquetas HTML:</p>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">&lt;x-miComponente atributo=&#34;valor&#34; /&gt;
+</code></pre><p>Posteriormente en el componete podemos utilzar dicho valor.</p>
+<p>Si lo establecemos, Laravel proporciona una conversión automática entre la notación kebab-case en la invocación del componente y camelCase dentro del componente.</p>
+<h2 id="notación-kebab-case-y-camelcase">Notación Kebab-Case y CamelCase</h2>
+<ul>
+<li><strong>Kebab-Case</strong>: Usada al pasar atributos al componente. Ejemplo: <code>mi-atributo</code>.</li>
+<li><strong>CamelCase</strong>: Usada dentro del componente para referenciar estos atributos. Ejemplo: <code>miAtributo</code>.</li>
+</ul>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Cuando invocas un componente y pasas un atributo, usas kebab-case:
+
+
+</span>
+</strong>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">&lt;x-miComponente mi-atributo=&#34;valor&#34; /&gt;
+</code></pre>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Dentro del archivo del componente, Laravel convierte automáticamente mi-atributo a miAtributo:
+
+
+</span>
+</strong>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">&lt;!-- miComponente.blade.php --&gt;
+&lt;div&gt;
+    {{ $miAtributo }} &lt;!-- Accede al valor de &#39;mi-atributo&#39; --&gt;
+&lt;/div&gt;
+```
+</code></pre>
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

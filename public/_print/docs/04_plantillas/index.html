@@ -1,0 +1,2618 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/04_plantillas/">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/04_plantillas/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Plantillas en laravel | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/04_plantillas/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Plantillas en laravel">
+  <meta property="og:description" content="Plantillas en Laravel En Laravel, las plantillas constituyen la capa de presentación de la aplicación .
+Son la parte encargada de generar el HTML que finalmente recibe el navegador del usuario . Sin embargo, no se trata de HTML estático aislado: las plantillas están directamente relacionadas con el código del backend, ya que:
+reciben datos desde los controladores, muestran información dinámica permiten integrar lógica mínima de presentación. Dentro de la arquitectura MVC, las plantillas forman parte de la Vista (View). El controlador prepara los datos y los envía a la vista, que se encarga de representarlos en formato HTML (o en otros formatos como JSON, si se trata de una API). De esta forma, se mantiene la separación entre lógica de negocio y presentación. Las plantillas las escribiremos en la carpeta ./resources .">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Plantillas en laravel">
+  <meta itemprop="description" content="Plantillas en Laravel En Laravel, las plantillas constituyen la capa de presentación de la aplicación .
+Son la parte encargada de generar el HTML que finalmente recibe el navegador del usuario . Sin embargo, no se trata de HTML estático aislado: las plantillas están directamente relacionadas con el código del backend, ya que:
+reciben datos desde los controladores, muestran información dinámica permiten integrar lógica mínima de presentación. Dentro de la arquitectura MVC, las plantillas forman parte de la Vista (View). El controlador prepara los datos y los envía a la vista, que se encarga de representarlos en formato HTML (o en otros formatos como JSON, si se trata de una API). De esta forma, se mantiene la separación entre lógica de negocio y presentación. Las plantillas las escribiremos en la carpeta ./resources .">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="576">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Plantillas en laravel">
+  <meta name="twitter:description" content="Plantillas en Laravel En Laravel, las plantillas constituyen la capa de presentación de la aplicación .
+Son la parte encargada de generar el HTML que finalmente recibe el navegador del usuario . Sin embargo, no se trata de HTML estático aislado: las plantillas están directamente relacionadas con el código del backend, ya que:
+reciben datos desde los controladores, muestran información dinámica permiten integrar lógica mínima de presentación. Dentro de la arquitectura MVC, las plantillas forman parte de la Vista (View). El controlador prepara los datos y los envía a la vista, que se encarga de representarlos en formato HTML (o en otros formatos como JSON, si se trata de una API). De esta forma, se mantiene la separación entre lógica de negocio y presentación. Las plantillas las escribiremos en la carpeta ./resources .">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+Versión imprimible multipagina.
+<a href="#" onclick="print();return false;">Haga click aquí para imprimir</a>.
+</p><p>
+<a href="/laravel/docs/04_plantillas/">Volver a la vista normal de esta página</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Plantillas en laravel</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-bdc22ccf0f1fe2ea055332f3b093f5b4">Plantillas en laravel</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-2593fc90bc21c010ccb810138ebfd037">Diseñando el layout</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-d044fc7767eff2bf3629b2ba30e6b81f">Componentes </a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-79957e3709f32d4cfce73f02dc938bb9">Ejemplo de nuestro proyecto </a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-dd7f38147493d8cab128a423c6719770">Diseño responsivo</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <h1 id="plantillas-en-laravel">Plantillas en Laravel</h1>
+<p>En Laravel, las plantillas constituyen 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    la capa de presentación de la aplicación
+
+
+</span>
+</strong>.</p>
+<p>Son la parte encargada de generar 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    el HTML que finalmente recibe el navegador del usuario
+
+
+</span>
+</strong>. Sin embargo, no se trata de HTML estático aislado: <em><strong>las plantillas están directamente relacionadas con el código del backend</strong></em>, ya que:</p>
+<ul>
+<li>reciben datos desde los controladores,</li>
+<li>muestran información dinámica</li>
+<li>permiten integrar lógica mínima de presentación.</li>
+</ul>
+<p>Dentro de la arquitectura MVC, las plantillas forman parte de la <strong>Vista (View)</strong>. El controlador prepara los datos y los envía a la vista, que se encarga de representarlos en formato HTML (o en otros formatos como JSON, si se trata de una API). De esta forma, se mantiene la separación entre lógica de negocio y presentación.
+Las plantillas las escribiremos en la carpeta 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    ./resources
+
+
+</span>
+</strong>.</p>
+<p>Laravel ofrece distintas formas de gestionar esta capa de presentación, dependiendo del enfoque arquitectónico que se quiera adoptar.</p>
+<hr>
+<h2 id="blade">Blade</h2>
+<p>Blade es el motor de plantillas nativo de Laravel. Permite escribir HTML enriquecido con directivas especiales (<code>@if</code>, <code>@foreach</code>, <code>@extends</code>, etc.) que facilitan la inserción de datos dinámicos y la reutilización de estructuras.</p>
+<p>Blade no es un framework frontend, sino un sistema de renderizado del lado del servidor. El HTML se genera completamente en el backend antes de enviarse al navegador. Es ideal para aplicaciones clásicas basadas en renderizado server-side y para proyectos donde no se necesita una SPA (Single Page Application).</p>
+<p>En este caso Las plantillas se escriben en la carpeta ./resources/views.</p>
+<p>Laravel no las sirve directamente al navegador. Cuando una vista se renderiza, el motor Blade la compila internamente a código PHP y la almacena en storage/framework/views.</p>
+<ul>
+<li>Ese código PHP compilado se ejecuta en el servidor y genera el HTML final que se envía al cliente.</li>
+</ul>
+<hr>
+<h2 id="vue-react-u-otros-frameworks-frontend">Vue, React u otros frameworks frontend</h2>
+<p>Laravel puede integrarse con frameworks modernos de frontend como Vue o React. En este caso, la generación del HTML dinámico se traslada principalmente al cliente (navegador), mientras que Laravel actúa como backend o como proveedor de API.</p>
+<p>Esta integración puede realizarse de distintas formas:</p>
+<ul>
+<li>Como backend API puro (Laravel devuelve JSON).</li>
+<li>Mediante Inertia.js, que permite usar Vue o React sin necesidad de construir una API REST tradicional.</li>
+<li>En combinación con Vite, que gestiona el empaquetado de los recursos frontend.</li>
+</ul>
+<p>Este enfoque es adecuado cuando se desea construir interfaces más dinámicas y reactivas.</p>
+<p>En este caso, los ficheros (componentes), se escriben  en la carpeta resources/js.</p>
+<p>Mediante herramientas como 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Vite
+
+
+</span>
+</strong>, el código es procesado, transpìlado (por ejemplo, JSX o sintaxis moderna de JavaScript a JavaScript compatible con el navegador), y empaquetado en archivos optimizados que se generan en el directorio public/build.</p>
+<p>Estos archivos son los que finalmente se sirven al navegador.</p>
+<hr>
+<h2 id="livewire">Livewire</h2>
+<p>Livewire es una solución intermedia que permite crear interfaces dinámicas sin abandonar completamente el renderizado del lado del servidor. Funciona integrando componentes PHP que se comunican con el frontend mediante peticiones AJAX automáticas.</p>
+<p>El desarrollador escribe principalmente código PHP y Blade, y Livewire se encarga de sincronizar los cambios con el navegador sin necesidad de escribir JavaScript complejo. Es una alternativa interesante cuando se quiere interactividad avanzada manteniendo una arquitectura centrada en Laravel.</p>
+<hr>
+<p>En resumen, Laravel permite múltiples estrategias para la capa de presentación:</p>
+<ul>
+<li>Blade → Renderizado clásico del lado del servidor.</li>
+<li>Vue / React → Renderizado dinámico del lado del cliente.</li>
+<li>Livewire → Interactividad avanzada con lógica principalmente en PHP.</li>
+</ul>
+<p>La elección depende del nivel de dinamismo requerido, la complejidad de la interfaz y la arquitectura general del proyecto.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-bdc22ccf0f1fe2ea055332f3b093f5b4">1 - Plantillas en laravel</h1>
+    
+	<h2 id="plantillas-con-blade">Plantillas con Blade</h2>
+<p>Una herramienta poderosa y flexible incluida en Laravel, que nos va a permitir 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    escribir html e incluir php y visualizar datos del servidor
+
+
+</span>
+</strong>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    balde.php
+
+
+</span>
+</strong> de una forma elegante y descriptiva. (Esto facilita visualizar datos</p>
+<p>Los ficheros blade, tienen extensión  
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    blade.php
+
+
+</span>
+</strong> y estarán ubicados en la carpeta 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    ./resources/view
+
+
+</span>
+</strong>.<br>
+Cuando hagamos referencia a los ficheros blade, esta información <strong>no hay que especificar</strong>, ni su <strong>ubicación</strong>, ni su <strong>extensión</strong>, como podemos ver en el siguiente ejemplo</p>
+<hr>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#8b008b;font-weight:bold">return</span> view(<span style="color:#cd5555">&#39;welcome&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#228b22">//Va a retornar el fichero ./resources/view/welcome.blade.php
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="contenido-de-un-fichero-blade">Contenido de un fichero blade</h3>
+<p><strong>Dentro de un fichero blade</strong> 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    (.blade.php)
+
+
+</span>
+</strong></p>
+<p>En él podemos  encontrar el siguiente tipo de <strong>código o instrucciones</strong>:</p>
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Código html y js
+
+
+</span>
+</strong></li>
+</ul>
+<blockquote>
+<blockquote>
+<p>(como cualquier página html)</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    {{}} Doble braquets
+
+
+</span>
+</strong>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>Para mostrar el contenido de variables PHP o lo que retornara una expresión o función
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  {{date(d-m-Y}} =&gt; Mostrará el resultado de la función 
+</span></span><span style="display:flex;"><span>  {{ <span style="color:#00688b">$variable</span> }}  =&gt; Se mostrará el valor de la varialbe</span></span></code></pre></div></p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>No se puede  incluir código php
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  {{<span style="color:#00688b">$a</span> = <span style="color:#b452cd">5</span>}} =&gt; Esto no se puede hacer</span></span></code></pre></div></p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>Blade automáticamente escapa el HTML en las variables para evitar ataques XSS.</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>También para comentar, en lugar de <strong>&lt;!- - Comentario html - -&gt;</strong>, podemos usar  <strong>{{- - Comentario html - -}}</strong></p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    @
+
+
+</span>
+</strong>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>para utilizar directivas/estructuras de control propias de laravel, como como condicionales y bucles.</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>Por ejemplo, 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    @if, @foreach, @switch
+
+
+</span>
+</strong>, @auth &ndash; @endauth, @guest - @endguest entre otras.</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>Otro ejemplo es incluir código php con la diretiva @php
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  @php
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$a</span> = <span style="color:#b452cd">5</span> <span style="color:#228b22">//Aquí creamos la variable $a y la podremos usar  
+</span></span></span><span style="display:flex;"><span>  @endphp 
+</span></span></code></pre></div></p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h3 id="herencia-creando-un-layout">Herencia: Creando un layout</h3>
+<h4 id="concepto">Concepto</h4>
+<p>En el desarrollo web con Laravel, 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    la herencia en las plantillas Blade
+
+
+</span>
+</strong> proporciona una forma eficiente de garantizar 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    una estructura consistente en todas las páginas
+
+
+</span>
+</strong>, fomentando un diseño corporativo uniforme.</p>
+<h4 id="idea-de-su-usofuncionamiento">Idea de su uso/funcionamiento</h4>
+<h1 id="herencia-mediante-componentes-blade">Herencia mediante Componentes Blade</h1>
+<h2 id="concepto-1">Concepto</h2>
+<p>En el desarrollo web con Laravel, la reutilización de estructuras comunes se realiza actualmente mediante <strong>componentes Blade</strong>, que permiten definir una estructura base reutilizable para todas las páginas.</p>
+<p>En lugar de utilizar las directivas <code>@extends</code> y <code>@yield</code>, se crea un componente de layout (por ejemplo <code>&lt;x-layout&gt;</code>) que encapsula la estructura general de la interfaz: cabecera, navegación, pie de página, estilos y scripts.</p>
+<p>Este componente actúa como contenedor común sobre el que se insertan los contenidos específicos de cada vista.</p>
+<hr>
+<h2 id="idea-de-uso-y-funcionamiento">Idea de uso y funcionamiento</h2>
+<p>Con este enfoque se define un <strong>componente principal</strong> que representa el diseño corporativo general de la aplicación.</p>
+<p>Cada página no hereda formalmente mediante directivas, sino que <strong>compone su contenido dentro del componente</strong>.</p>
+<p>El funcionamiento es el siguiente:</p>
+<ul>
+<li>El layout define la estructura global.</li>
+<li>Las páginas insertan su contenido en el <code>{{ $slot }}</code>.</li>
+<li>Opcionalmente pueden definirse <em>slots nombrados</em> como <code>title</code>, <code>header</code>, <code>description</code>, etc.</li>
+</ul>
+<p>De este modo:</p>
+<ul>
+<li>Se mantiene coherencia visual en toda la aplicación.</li>
+<li>Se separa claramente la estructura global del contenido específico.</li>
+<li>Se adopta un enfoque basado en composición, más cercano al modelo de trabajo de frameworks como React o Vue.</li>
+</ul>
+<hr>
+<h2 id="ventajas-frente-al-enfoque-clásico-con-extends">Ventajas frente al enfoque clásico con <code>@extends</code></h2>
+<ul>
+<li>Arquitectura más moderna y alineada con componentes.</li>
+<li>Mejor encapsulación del diseño.</li>
+<li>Mayor reutilización.</li>
+<li>Modelo mental más coherente para estudiantes que trabajan también con frontend basado en componentes.</li>
+</ul>
+<hr>
+<h2 id="conclusión">Conclusión</h2>
+<p>El uso de componentes Blade para estructurar layouts permite mantener la coherencia visual de la aplicación y facilita el mantenimiento.</p>
+<p>Cualquier modificación en el componente principal se reflejará automáticamente en todas las vistas que lo utilicen, garantizando consistencia, modularidad y escalabilidad en el diseño.</p>
+<h3 id="comentarios-blade">Comentarios blade</h3>
+<hr>
+<h4 id="insertando-comentarios-en-fichero-bladephp">Insertando comentarios en fichero .blade.php</h4>
+<hr>
+<p>Dentro de un fichero 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Blade
+
+
+</span>
+</strong>, podemos comentar de dos maneras</p>
+<ol>
+<li>Comentarios HTML (<code>&lt;!-- Comentarios --&gt;</code>)</li>
+<li>Comentarios Blade (<code>{{-- Comentarios --}}</code>)</li>
+</ol>
+<blockquote>
+<p>Hay diferencias significativas entre comentar con <code>&lt;!-- Comentarios --&gt;</code> y <code>{{-- Comentarios --}}</code> en un fichero Blade de Laravel.     <br>
+Estas diferencias se relacionan principalmente con cómo se manejan y se muestran estos comentarios en el HTML generado y enviado al navegador.</p>
+</blockquote>
+<p><strong>Comentarios HTML (<code>&lt;!-- Comentarios --&gt;</code>):</strong></p>
+<ul>
+<li>Son comentarios estándar de HTML.</li>
+<li>Serán visibles en el código fuente del HTML generado y enviado al navegador.</li>
+<li>Cualquiera que inspeccione el código fuente de la página en el navegador podrá ver estos comentarios.</li>
+<li>Son útiles para anotaciones que no afectan la presentación de la página pero podrían ser de ayuda durante el desarrollo o para otros desarrolladores.</li>
+</ul>
+<p><strong>Comentarios Blade (<code>{{-- Comentarios --}}</code>):</strong></p>
+<ul>
+<li>Son específicos del motor de plantillas Blade de Laravel.</li>
+<li>No serán incluidos en el HTML final generado. Esto significa que no aparecerán en el código fuente de la página cuando se vea en un navegador.</li>
+<li>Son útiles para dejar notas o comentarios en el código que solo deben ser visibles durante el desarrollo y no deben ser expuestos a los usuarios finales o en el ambiente de producción.</li>
+<li>Proporcionan una manera de hacer anotaciones en las plantillas Blade sin afectar lo que ve el usuario.</li>
+</ul>
+<hr>
+<p><img src="" alt=""></p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-2593fc90bc21c010ccb810138ebfd037">2 - Diseñando el layout</h1>
+    
+	<h2 id="creando-un-diseño">Creando un diseño</h2>
+<hr>
+<h4 id="proceso-de-diseño">Proceso de diseño</h4>
+<hr>
+<p>Diseñar es un aspecto fundamentan antes de crear las páginas  <br>
+Para crear un proyecto debemos crear previaemnte <strong>los mockups</strong> o <strong>Prototipados de pantallas</strong> <br>
+Posteriormente hemos de crear las páginas usando los estilos adecuados para conseguir los diseños previamente prototipados, esto implicará usar <strong>html y css</strong>
+Para crear los diseños se usan herramientas gráficas de prototipado, y para el css normalmente usaremos algún fremework tipo <strong>Bootstrap</strong> o <strong>tailwindcss</strong></p>
+<h3 id="herramientas-para-el-diseño">Herramientas para el diseño</h3>
+<h4></h4>
+<p>Vamos a usar <strong>Balsamiq</strong> porque disponemos de licencia estudiante en el centro <br>
+Existen varias herramientas alternativas:</p>
+<hr>
+<ol>
+<li><strong><a href="https://pencil.evolus.vn/">Pencil Project</a>:</strong>
+<ul>
+<li>Pencil Project es una herramienta de prototipado de código abierto que te permite crear mockups de manera sencilla. Es fácil de usar y ofrece una variedad de elementos predefinidos.</li>
+</ul>
+</li>
+<li><strong><a href="https://www.mockflow.com/">MockFlow</a>:</strong>
+<ul>
+<li>MockFlow es una plataforma en línea que ofrece una herramienta de diseño de wireframes y mockups. La versión gratuita tiene algunas limitaciones, pero aún así proporciona funcionalidades útiles.</li>
+</ul>
+</li>
+<li><strong><a href="https://balsamiq.cloud/">Balsamiq Cloud (versión gratuita)</a> ):</strong>
+<ul>
+<li>Balsamiq, conocido por su aplicación de escritorio, también ofrece una versión en línea gratuita llamada Balsamiq Cloud que permite crear mockups y wireframes.</li>
+</ul>
+</li>
+<li><strong><a href="https://www.figma.com/">Figma</a>:</strong>
+<ul>
+<li>Figma es una herramienta de diseño colaborativo en línea que permite crear mockups, wireframes y prototipos. Tiene una versión gratuita con muchas funcionalidades.</li>
+</ul>
+</li>
+<li><strong><a href="https://wireframe.cc/">Wireframe.cc</a>:</strong>
+<ul>
+<li>Wireframe.cc es una herramienta simple y fácil de usar para crear wireframes rápidos y sencillos. Puedes comenzar a usarla directamente en el navegador.</li>
+</ul>
+</li>
+</ol>
+<h3 id="laravel-como-fullstack">Laravel como fullstack</h3>
+<p><strong>Laravel es un poderoso framework de backend.</strong></p>
+<p>Con Laravel, es posible realizar 
+<span class="font-weight-bold text-primary">
+
+
+    desarrollos web full-stack
+
+</span>
+. Esto  significa que este framework nos habilita para gestionar tanto <strong>el backend como el frontend</strong> de una aplicación web.<br>
+Así, Laravel se convierte en <strong>una solución integral</strong> que permite implementar todas las facetas del desarrollo web, desde la lógica del servidor hasta la interfaz de usuario.</p>
+<blockquote>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Recuerda</h4>
+
+    <!-- raw HTML omitted -->
+
+
+</div>
+
+<blockquote>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Laravel
+
+
+</span>
+</strong>Permite integrar de 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    forma agnóstica
+
+
+</span>
+</strong> cualquier herramienta para el front.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>En el proceso de instalación, se instala 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    tailwindcss
+
+
+</span>
+</strong> como framework del css, pero lo podemos cambiar</p>
+</blockquote>
+</blockquote>
+<h3 id="instalación-de-tailwind-framework-de-css">Instalación de <a href="https://tailwindcss.com/">Tailwind</a>: framework de css</h3>
+<h4 id="introducción"><strong>Introducción</strong></h4>
+<p>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Tailwind CSS
+
+</span>
+</strong>
+  es un poderoso framework de estilos de CSS que se puede utilizar de manera efectiva con Laravel.</p>
+<p>La  simplicidad y flexibilidad de 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Tailwind
+
+</span>
+</strong>
+ permiten una integración fluida con proyectos Laravel, y es común ver su uso en conjunción con este framework de PHP.</p>
+<p>Muchos paquetes y recursos integrados en el ecosistema de Laravel incorporan Tailwind CSS como herramienta preferida para la estilización de componentes y diseños, por ese motivo lo vamos a utilizar en este curso.</p>
+<hr>
+<h4 id="instalación"><strong>Instalación</strong></h4>
+<p>Para la instalación necesitamos herramientas para gestionar paquetes del cliente <strong>node y npm</strong>, y vamos a usar <strong>vite</strong> como herramienta de compilación (traspilación) de ficheros en el frontend</p>
+<hr>
+<h5 id="node-y-npm"><strong>Node y npm</strong></h5>
+<p><strong><a href="https://nodejs.org/">Node</a></strong></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ol>
+<li>Descarga e instala Node.js desde el <a href="https://nodejs.org/">sitio web oficial</a>.</li>
+</ol>
+<p>Antes de integrar Tailwind CSS en tu proyecto Laravel, necesitarás tener Node.js instalado.
+
+<strong>
+<span class="font-weight-bold text-primary">
+
+    node
+
+</span>
+</strong>
+ y
+<strong>
+<span class="font-weight-bold text-primary">
+
+    npm
+
+</span>
+</strong>
+ son Gestores de paquetes para el front
+Van a crear un fichero llamado 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    pakage.json (vs composer.json)
+
+</span>
+</strong>
+</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install
+</span></span></code></pre></div><p>Al ejecutar 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    npm install
+
+</span>
+</strong>
+,  se creará en el proyecto una carpeta llamada 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    node_modules
+
+</span>
+</strong>
+, donde se instalarán los paquetes especificados en el fichero json.<br>
+Este directorio 
+<span class="font-weight-bold text-primary">
+
+
+    node_modules
+
+</span>
+ tampoco hay que subir a git, ya que lo podremos generar a partir del fichero 
+<span class="font-weight-bold text-primary">
+
+
+    pakage.json
+
+</span>
+ .  <br>
+Su instalación es sencilla. Una vez instalado cerramos el terminal y al volverlo a abrir, ya lo podemos utilizar.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<hr>
+<h5 id="tailwindcss"><strong>Tailwindcss</strong></h5>
+<p><strong><a href="https://tailwindcss.com/docs/installation/framework-guides">Tailwindcss</a></strong></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<hr>
+<h5 id="vite"><strong>Vite</strong></h5>
+<p><strong><a href="https://vitejs.dev/">Vite</a></strong></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>
+<span class="font-weight-bold text-primary">
+
+
+    Vite
+
+</span>
+ en un proyecto Laravel es un moderno entorno de 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    construcción frontend
+
+</span>
+</strong>
+ que proporciona una compilación (transpilación)rápida y eficiente de los recursos del front para ponerlos disponibles en ejecución.</p>
+<hr>
+<p>
+<span class="font-weight-bold text-primary">
+
+
+    Vite
+
+</span>
+, por ejemplo, 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    transpila archivos SCSS o LESS a CSS
+
+</span>
+</strong>
+, 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    procesa las directivas de Tailwind CSS para generar clases CSS utilizables
+
+</span>
+</strong>
+.</p>
+<hr>
+<p>Además, 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    compila componentes de Vue o React a JavaScript
+
+</span>
+</strong>
+, facilitando su ejecución en el navegador.</p>
+<h3 id="diseño-del-layout">Diseño del layout</h3>
+<h4 id="planteamos-el-siguiente-layout-general">Planteamos el siguiente layout general</h4>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><strong>Para conseguirlo escribimos el siguiente código</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;!doctype html&gt;
+</span></span><span style="display:flex;"><span>&lt;html lang=<span style="color:#cd5555">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;head&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>       @vite([<span style="color:#cd5555">&#39;resources/css/app.css&#39;</span>, <span style="color:#cd5555">&#39;resources/js/app.js&#39;</span>])
+</span></span><span style="display:flex;"><span>       &lt;title&gt;Document&lt;/title&gt;
+</span></span><span style="display:flex;"><span>   &lt;/head&gt;
+</span></span><span style="display:flex;"><span>   &lt;body&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>      &lt;header class=<span style="color:#cd5555">&#34;lg:hidden bg-header flex flex-col justify-center items-center  py-2 space-y-1&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>         HEADER MÓVIL
+</span></span><span style="display:flex;"><span>      &lt;/header&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>      &lt;header class=<span style="color:#cd5555">&#34;hidden lg:flex h-15v bg-header flex flex-row justify-center items-center&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>         HEADER DESKTOP
+</span></span><span style="display:flex;"><span>      &lt;/header&gt;
+</span></span><span style="display:flex;"><span>      &lt;nav&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>          &lt;nav class=<span style="color:#cd5555">&#34;hidden lg:flex h-10v bg-nav flex flex-row justify-start items-center space-x-2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            NAV MÓVIL
+</span></span><span style="display:flex;"><span>          &lt;/nav&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>          &lt;nav class=<span style="color:#cd5555">&#34;lg:hidden bg-nav flex flex-col justify-start space-y-1 px-2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            NAV DESKTOP
+</span></span><span style="display:flex;"><span>          &lt;/nav&gt;
+</span></span><span style="display:flex;"><span>      &lt;/nav&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>      &lt;main class=<span style="color:#cd5555">&#34;h-65v bg-main&#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>          @<span style="color:#8b008b;font-weight:bold">yield</span>(<span style="color:#cd5555">&#34;contenido&#34;</span>)
+</span></span><span style="display:flex;"><span>      &lt;/main&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>      &lt;footer  class=<span style="color:#cd5555">&#34;h-10v bg-footer footer items-center p-4 bg-neutral text-neutral-content&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>         FOOTER          
+</span></span><span style="display:flex;"><span>      &lt;/footer&gt;
+</span></span><span style="display:flex;"><span>   &lt;/body&gt;
+</span></span><span style="display:flex;"><span>&lt;/html&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h4 id="diseño-de-la-cabecera-hahahugoshortcode472s28hbhb">Diseño de la cabecera 
+<span class="font-weight-bold text-primary">
+
+
+    header
+
+</span>
+</h4>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><strong>Escribimos el siguiente código</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex;"><span> &lt;header class=<span style="color:#cd5555">&#34;lg:hidden bg-header flex flex-col justify-center items-center  py-2 space-y-1&#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;img class=<span style="color:#cd5555">&#34;h-3/5&#34;</span> src=<span style="color:#cd5555">&#34;{{asset(&#34;</span>images/logos/nett_logo.png<span style="color:#cd5555">&#34;)}}&#34;</span> alt=<span style="color:#cd5555">&#34;logo nett&#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;button class=<span style="color:#cd5555">&#34;h-1/5 w-full btn bg-main &#34;</span>&gt; Acceder&lt;/button&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;button class=<span style="color:#cd5555">&#34;h-1/5 w-full btn  bg-main&#34;</span>&gt;Registrar&lt;/button&gt;
+</span></span><span style="display:flex;"><span>    &lt;/header&gt;
+</span></span><span style="display:flex;"><span>    &lt;header class=<span style="color:#cd5555">&#34;hidden lg:flex h-15v bg-header flex flex-row justify-center items-center&#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;img class=<span style="color:#cd5555">&#34;w-1/5 max-h-full w-auto  p-5 &#34;</span> src=<span style="color:#cd5555">&#34;{{asset(&#34;</span>images/logos/nett_logo.png<span style="color:#cd5555">&#34;)}}&#34;</span> alt=<span style="color:#cd5555">&#34;logo nett&#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;div class=<span style="color:#cd5555">&#34;w-3/5 flex justify-center items-center&#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>            &lt;h1 class=<span style="color:#cd5555">&#34;text-3xl text-white h-auto max-w-full truncate &#34;</span>&gt;APLICACIÓN EJEMPLO LARAVEL&lt;/h1&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;/div&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;div class=<span style="color:#cd5555">&#34; w-1/5 h-auto max-w-full flex items-center space-x-4 &#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>            &lt;button class=<span style="color:#cd5555">&#34;btn glass  text-white&#34;</span>&gt; Acceder&lt;/button&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>            &lt;button class=<span style="color:#cd5555">&#34;btn  glass text-white&#34;</span>&gt;Registrar&lt;/button&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;/div&gt;
+</span></span><span style="display:flex;"><span>    &lt;/header&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h4 id="diseño-de-la-sección-de-menú--hahahugoshortcode472s31hbhb">Diseño de la sección de menú:  
+<span class="font-weight-bold text-primary">
+
+
+    nav
+
+</span>
+</h4>
+<p>
+
+<div class="pageinfo pageinfo-primary">
+<!-- raw HTML omitted -->
+<hr>
+<p><strong>Escribimos el siguiente código</strong></p>
+<!-- raw HTML omitted -->
+
+</div>
+
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">helper route</h4>
+
+    <p>El helper
+<!-- raw HTML omitted --></p>
+<pre><code>route
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>routes/web.php
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+
+**</p>
+<h4 id="diseño-de-la-sección-de-principal---hahahugoshortcode472s34hbhb">Diseño de la sección de principal :  
+<span class="font-weight-bold text-primary">
+
+
+    main
+
+</span>
+</h4>
+<p>En este caso vamos a escribir el contenido de una página 
+<span class="font-weight-bold text-primary">
+
+
+    landing page
+
+</span>
+</p>
+<p>Para ello usaremos de la librería 
+<span class="font-weight-bold text-primary">
+
+
+    <a href="https://daisyui.com">Daisy</a>
+
+</span>
+, el componente 
+<span class="font-weight-bold text-primary">
+
+
+    <a href="https://daisyui.com/components/hero/">Hero</a>
+
+</span>
+
+
+
+<div class="pageinfo pageinfo-primary">
+<!-- raw HTML omitted -->
+<p><strong>Escribimos el siguiente código</strong></p>
+<!-- raw HTML omitted -->
+<pre><code>home.blade.php
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>Establece una página de hereda de otra (un layout)
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>Para establecer una sección dónde se aportará contenido en la página que herede de ella
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;!-- raw HTML omitted --&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+</p>
+<hr>
+<h4 id="diseño-footer">Diseño footer</h4>
+
+
+<div class="pageinfo pageinfo-primary">
+<h4></h4>
+<hr>
+<h4 id="diseño-de-la-sección-de-pie-de-página-">Diseño de la sección de pie de página :</h4>
+<!-- raw HTML omitted -->
+<pre><code>footer
+</code></pre>
+<!-- raw HTML omitted -->
+<p>En este caso vamos a escribir el contenido de una página
+<!-- raw HTML omitted --></p>
+<pre><code>landing page
+</code></pre>
+<!-- raw HTML omitted -->
+<p>En este caso vamos a seleccionar un
+<!-- raw HTML omitted --></p>
+<pre><code>footer
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+</div>
+
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-d044fc7767eff2bf3629b2ba30e6b81f">3 - Componentes </h1>
+    
+	<h1 id="introducción-a-los-componentes-de-blade-en-laravel">Introducción a los Componentes de Blade en Laravel</h1>
+<h2 id="qué-son-los-componentes-de-blade">¿Qué son los Componentes de Blade?</h2>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Los componentes de Blade
+
+
+</span>
+</strong>en Laravel son una poderosa herramienta para reutilizar código HTML y PHP en tus vistas.</p>
+<p>Estos componentes son archivos <strong>.blade.php</strong> que residen en la carpeta <strong>resources/views/components</strong>. Si la carpeta no existe, puedes crearla manualmente. El hecho de que cada componente sea un archivo .blade.php independiente, facilita su reutilización y mantenimiento.</p>
+
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Idea de usar componentes</h4>
+
+    <strong>Descomponer</strong> un diseño complejo (layout) <strong>en elementos más pequeños y manejables</strong> conocidos como <strong>componentes</strong>.
+
+</div>
+
+<p>Al crear un layout, este se convierte en una composición de estos ficheros individuales. Cada componente representa 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    una parte del layout
+
+
+</span>
+</strong>, como:  <strong>una cabecera, pie de página, sección principal o barra de navegación</strong> como podemos ver en la siguiente imagen:</p>
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 1443px">
+<img class="card-img-top" src="/laravel/docs/04_plantillas/03_componentes/componentes_laravel_general_hu_c142852b2095e8a1.png" width="1433" height="606">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+
+
+</p>
+</figcaption>
+</figure>
+
+<h2 id="creación-y-uso-de-componentes">Creación y Uso de Componentes</h2>
+<p>Tenemos dos formas de crear un componente:</p>
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Componente anónimo
+
+
+</span>
+</strong>. Crear el fichero directamente en la carpeta correspondiente</li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Componentes basados en clases
+
+
+</span>
+</strong>. A través de 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    una clase usando Artisan****
+
+
+</span>
+</strong></li>
+<li></li>
+</ul>
+<h4 id="creando-el-componentes-directamente">Creando el componentes directamente</h4>
+<p>Simplemente creamos el fichero desde nuestro EDI. <br>
+En nuestro caso creamos los ficheros 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    header.blade,php, main.blade.php, nav.blade.php
+
+
+</span>
+</strong> y 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    footer.blade.php
+
+
+</span>
+</strong>.</p>
+<p>Como son parte del layout, podríamos crearlo dentro de una carpeta llamada layout, por cuestiones organizativas:
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 249px">
+<img class="card-img-top" src="/laravel/docs/04_plantillas/03_componentes/creacion_componentes_layout_1_hu_1c4e130fa7d3356.png" width="239" height="227">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+
+
+
+</p>
+</figcaption>
+</figure>
+</p>
+<h4 id="creando-el-componente-con-artisan">Creando el componente con Artisan</h4>
+<p>Podemos crearlo a partir de una clase. El funcionamiento es igual. La forma de crearlo sería con artisan:
+Vamos a hacerlo para nuestro ejemplo:
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:Component nombre_componente</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h4 id="crear-componente-directo-vs-con-artisan">Crear componente directo Vs con Artisan</h4>
+<h5 id="artisan"><strong>Artisan</strong></h5>
+<p>Usar 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Artisan para crear componentes
+
+
+</span>
+</strong> tiene ventajas:</p>
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Estructura Consistente
+
+
+</span>
+</strong>: Artisan genera automáticamente la estructura de archivos necesaria, asegurando consistencia en todo el proyecto.</li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Rapidez
+
+
+</span>
+</strong> y 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Conveniencia
+
+
+</span>
+</strong>: Es rápido y evita la posibilidad de errores al crear los archivos manualmente.
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Comandos Claros
+
+
+</span>
+</strong>: Los comandos de Artisan son claros y documentados, lo que facilita su uso y aprendizaje.
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>  php artisan make:component NombreDelComponente</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Si queremos crear el componente en una carpeta concreta lo podemos hacer especificandolo
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>    php artisan make:component directorio/.../NombreDelComponente</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Esto crea un nuevo componente en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    resources/views/components
+
+
+</span>
+</strong> y un archivo de clase correspondiente en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    app/View/Components
+
+
+</span>
+</strong>.</li>
+</ul>
+</li>
+</ul>
+<h5 id="crear-componentes-manualmente"><strong>Crear Componentes Manualmente</strong></h5>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Crear componentes manualmente
+
+
+</span>
+</strong> también buena que te da más control en la estructura y organización de carpetas:</p>
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Flexibilidad
+
+
+</span>
+</strong>: Tienes control total sobre la estructura y organización de tus archivos.</li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Simplicidad
+
+
+</span>
+</strong>: Para proyectos más pequeños o si prefieres un enfoque más &ldquo;manual&rdquo;, este método puede ser más directo.</li>
+</ul>
+<h4></h4>
+<ul>
+<li>Para crear un componente manualmente:</li>
+</ul>
+<ol>
+<li>Crea un archivo Blade en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    resources/views/components
+
+
+</span>
+</strong>.</li>
+<li>Opcionalmente, crea una clase de componente en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    app/View/Components
+
+
+</span>
+</strong>.</li>
+</ol>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Conclusión personal</h4>
+
+    <ul>
+<li>Proyectos Grandes o en Equipos:</li>
+</ul>
+<blockquote>
+<p>Usar Artisan es generalmente más recomendado, ya que asegura una estructura coherente y reduce el riesgo de errores.</p>
+</blockquote>
+<ul>
+<li>Para Proyectos Pequeños o Preferencias Personales:</li>
+</ul>
+<blockquote>
+<p>Si prefieres un control más directo o trabajas en un proyecto más pequeño, crear los archivos manualmente puede ser igualmente efectivo.</p>
+</blockquote>
+
+
+</div>
+
+<h3 id="referenciar-un-componente">Referenciar un Componente</h3>
+<p>Para usar un componente en tus vistas Blade, lo referencias como un elemento HTML, pero con una sintaxis especial que incluye un prefijo <code>x-</code>::</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">x-miComponente</span> /&gt;
+</span></span></code></pre></div><p>
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">x-nombre</h4>
+
+    <p>Cuando referenciamos un elemento con</p>
+<!-- raw HTML omitted -->
+<pre><code>&amp;lt;x-&amp;hellip;&amp;gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>resources/views/components
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">x-capeta.sub.nombre</h4>
+
+    <p>Si el componentes estuvier en subcarpetas, lo podemos especicar con puntos.</p>
+<p>De esta forma</p>
+<!-- raw HTML omitted -->
+<pre><code>x-capeta.sub.componentes
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>resources/views/components/carpeta/sub/nombre.blade.php
+</code></pre>
+<!-- raw HTML omitted -->
+
+
+</div>
+</p>
+<h2 id="nuestro-ejemplo">Nuestro ejemplo</h2>
+<p>Creamos los componentes usando artisan.
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Ubicación</h4>
+
+    Como todos son para el layout, los creamos en la carpeta layout
+
+</div>
+</p>
+<p><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:component layout/Header
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:component layout/Nav
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:component layout/Main
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:component layout/Footer</span></span></code></pre></div>
+La imagen muestra el resultado generado
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 610px">
+<img class="card-img-top" src="/laravel/docs/04_plantillas/03_componentes/img_hu_e12b24b9a25a03c.png" width="600" height="700">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Creción de componentes con artisan
+
+
+</span>
+</strong>
+
+</p>
+</figcaption>
+</figure>
+</p>
+<h2 id="variables-en-componentes">Variables en Componentes</h2>
+<p>Los componentes de Blade  
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    ofrecen acceso a varias variables y objetos especiales
+
+
+</span>
+</strong> que facilitan la construcción de interfaces dinámicas y reutilizables. Los más usados</p>
+<ul>
+<li>$slot</li>
+<li>$attributes</li>
+<li>$errors</li>
+</ul>
+<h3 id="slot">$slot</h3>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Contiene el contenido que se pasa al componente desde donde se llama.
+
+
+</span>
+</strong>
+<hr>
+<blockquote>
+<p>Fichero layout</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">x-layout.main</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>&lt;<span style="color:#8b008b;font-weight:bold">h1</span>&gt; Este es un contendio para el componente, lo recibirá como $slot&lt;/<span style="color:#8b008b;font-weight:bold">h1</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">x-layout.main</span>&gt;</span></span></code></pre></div>
+<blockquote>
+<p>Fichero del componente 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    main.blade.php
+
+
+</span>
+</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex;"><span> &lt;header class=<span style="color:#cd5555">&#34;hidden lg:flex h-15v bg-header flex flex-row justify-center items-center&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;img class=<span style="color:#cd5555">&#34;w-1/5 max-h-full w-auto  p-5 &#34;</span> src=<span style="color:#cd5555">&#34;{{asset(&#34;</span>images/logos/logo.png<span style="color:#cd5555">&#34;)}}&#34;</span> alt=<span style="color:#cd5555">&#34;logo nett&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;div class=<span style="color:#cd5555">&#34;w-3/5 flex justify-center items-center&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;h1 class=<span style="color:#cd5555">&#34;text-3xl text-white h-auto max-w-full truncate &#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>          {{<span style="color:#00688b">$slot</span>}}
+</span></span><span style="display:flex;"><span>        &lt;/h1&gt;
+</span></span><span style="display:flex;"><span>    &lt;/div&gt;
+</span></span><span style="display:flex;"><span>&lt;!-- ...  --&gt;
+</span></span><span style="display:flex;"><span>&lt;/header&gt;</span></span></code></pre></div></p>
+</blockquote>
+<h3 id="atributes">$atributes</h3>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Permite acceder a atributos adicionales pasados al componente.
+
+
+</span>
+</strong>
+La variable 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    $attributes
+
+
+</span>
+</strong> en los componentes de Blade de Laravel 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    es una instancia de Illuminate\View\ComponentAttributeBag
+
+
+</span>
+</strong></p>
+<p>Proporciona varios métodos útiles para manipular los atributos que se pasan a un componente<br>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Uno de los métodos más útiles es merge()
+
+
+</span>
+</strong>:
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">merge()</h4>
+
+    Fusiona los atributos predeterminados del componente con los atributos adicionales proporcionados en la vista.
+
+</div>
+</p>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    El método merge()
+
+
+</span>
+</strong> se usa comúnmente para combinar clases CSS y otros atributos. Esto es especialmente útil cuando deseas que tu componente tenga algunas clases CSS por defecto, pero también quieres permitir que se añadan clases adicionales desde fuera del componente.</p>
+<p>Supongamos el siguiente ejemplo donde tenemos un  componente boton.blade.php: <br>
+Aquí, btn btn-default son las clases predeterminadas para todos los botones.
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>&lt;button {{ <span style="color:#00688b">$attributes</span>-&gt;<span style="color:#658b00">merge</span>([<span style="color:#cd5555">&#39;class&#39;</span> =&gt; <span style="color:#cd5555">&#39;btn btn-default&#39;</span>]) }}&gt;
+</span></span><span style="display:flex;"><span>{{ <span style="color:#00688b">$slot</span> }}
+</span></span><span style="display:flex;"><span>&lt;/button&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Cuando usas el componente y pasas clases adicionales:</p>
+<p>Laravel fusionará las clases, resultando en un botón que tiene class=&ldquo;btn btn-default btn-large&rdquo;.</p>
+<p><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>&lt;x-boton class=<span style="color:#cd5555">&#34;btn-large&#34;</span>&gt;Click Aquí&lt;/x-boton&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Laravel fusionará las clases, resultando en un botón que tiene class=&ldquo;btn btn-default btn-large&rdquo;.</p>
+<hr>
+<h4 id="otros-métodos-de-attributes">Otros Métodos de $attributes</h4>
+<ul>
+<li>
+<p><code>only()</code>: Devuelve solo un subconjunto de los atributos.</p>
+</li>
+<li>
+<p><code>except()</code>: Devuelve todos los atributos excepto los especificados.</p>
+</li>
+<li>
+<p><code>class()</code>: Devuelve una instancia de Illuminate\View\ComponentAttributeBag solo con las clases.</p>
+</li>
+<li>
+<p><code>first()</code>: Devuelve el primer valor de los atributos especificados.</p>
+</li>
+</ul>
+<h3 id="pasando-atributos-a-un-componentes">Pasando atributos a un componentes</h3>
+<p>Para pasar atributos a un componente, usamos una sintaxis similar a la de las etiquetas HTML:</p>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">&lt;x-miComponente atributo=&#34;valor&#34; /&gt;
+</code></pre><p>Posteriormente en el componete podemos utilzar dicho valor.</p>
+<p>Si lo establecemos, Laravel proporciona una conversión automática entre la notación kebab-case en la invocación del componente y camelCase dentro del componente.</p>
+<h2 id="notación-kebab-case-y-camelcase">Notación Kebab-Case y CamelCase</h2>
+<ul>
+<li><strong>Kebab-Case</strong>: Usada al pasar atributos al componente. Ejemplo: <code>mi-atributo</code>.</li>
+<li><strong>CamelCase</strong>: Usada dentro del componente para referenciar estos atributos. Ejemplo: <code>miAtributo</code>.</li>
+</ul>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Cuando invocas un componente y pasas un atributo, usas kebab-case:
+
+
+</span>
+</strong>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">&lt;x-miComponente mi-atributo=&#34;valor&#34; /&gt;
+</code></pre>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Dentro del archivo del componente, Laravel convierte automáticamente mi-atributo a miAtributo:
+
+
+</span>
+</strong>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">&lt;!-- miComponente.blade.php --&gt;
+&lt;div&gt;
+    {{ $miAtributo }} &lt;!-- Accede al valor de &#39;mi-atributo&#39; --&gt;
+&lt;/div&gt;
+```
+</code></pre>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-79957e3709f32d4cfce73f02dc938bb9">4 - Ejemplo de nuestro proyecto </h1>
+    
+	<h1 id="landing-autenticada-en-laravel-con-tailwind-sin-javascript">Landing autenticada en Laravel con Tailwind (Sin JavaScript)</h1>
+<h2 id="objetivos">Objetivos</h2>
+<ul>
+<li>Crear un grid reutilizable (máximo 3 columnas).</li>
+<li>Crear un componente card reutilizable.</li>
+<li>Implementar un menú principal con botón hamburguesa.</li>
+<li>Implementar un menú de usuario independiente.</li>
+<li>Usar solo Tailwind (sin JS).</li>
+</ul>
+<hr>
+<h1 id="1-componente-grid">1. Componente Grid</h1>
+<p>Ubicación:
+resources/views/components/concept-grid.blade.php</p>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">&lt;div class=&#34;grid 
+            grid-cols-1 
+            sm:grid-cols-2 
+            lg:grid-cols-3 
+            gap-6 
+            auto-rows-fr&#34;&gt;
+    {{ $slot }}
+&lt;/div&gt;
+</code></pre><h2 id="explicación">Explicación</h2>
+<ul>
+<li><code>grid</code> → activa CSS Grid.</li>
+<li><code>grid-cols-1</code> → 1 columna en móvil.</li>
+<li><code>sm:grid-cols-2</code> → 2 columnas en tablet.</li>
+<li><code>lg:grid-cols-3</code> → máximo 3 columnas en desktop.</li>
+<li><code>gap-6</code> → separación uniforme.</li>
+<li><code>auto-rows-fr</code> → tarjetas misma altura.</li>
+</ul>
+<hr>
+<h1 id="2-componente-card">2. Componente Card</h1>
+<p>Ubicación:
+resources/views/components/concept-card.blade.php</p>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">@props([
+    &#39;title&#39;,
+    &#39;image&#39;,
+    &#39;url&#39;,
+    &#39;buttonText&#39; =&gt; &#39;Ver más&#39;
+])
+
+&lt;div class=&#34;flex flex-col bg-white rounded-xl shadow-md 
+            hover:shadow-lg transition 
+            overflow-hidden h-full&#34;&gt;
+
+    &lt;div class=&#34;flex justify-center items-center p-6 bg-gray-50&#34;&gt;
+        &lt;img src=&#34;{{ $image }}&#34; 
+             alt=&#34;{{ $title }}&#34; 
+             class=&#34;h-16 object-contain&#34;&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&#34;flex flex-col flex-1 p-6 text-center&#34;&gt;
+
+        &lt;h3 class=&#34;text-lg font-semibold mb-2&#34;&gt;
+            {{ $title }}
+        &lt;/h3&gt;
+
+        &lt;div class=&#34;text-sm text-gray-600 flex-1&#34;&gt;
+            {{ $slot }}
+        &lt;/div&gt;
+
+        &lt;div class=&#34;mt-4&#34;&gt;
+            &lt;a href=&#34;{{ $url }}&#34;
+               class=&#34;inline-block px-4 py-2 rounded-lg 
+                      border border-indigo-600 
+                      text-indigo-600 
+                      hover:bg-indigo-600 
+                      hover:text-white transition&#34;&gt;
+                {{ $buttonText }}
+            &lt;/a&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><hr>
+<h1 id="3-navbar-con-dos-toggles-sin-js">3. Navbar con dos toggles (sin JS)</h1>
+<h2 id="concepto-importante">Concepto importante</h2>
+<p>No usamos dos hamburguesas iguales.</p>
+<p>Separación clara:</p>
+<ul>
+<li>☰ → Menú principal (navegación global)</li>
+<li>Usuario ▼ → Menú contextual del usuario</li>
+</ul>
+<p>Ambos usan <code>peer</code>, pero son independientes.</p>
+<hr>
+<h1 id="31-toggle-del-menú-principal-hamburguesa">3.1 Toggle del menú principal (Hamburguesa)</h1>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">&lt;div class=&#34;relative&#34;&gt;
+
+    &lt;input type=&#34;checkbox&#34; id=&#34;menu-toggle&#34; class=&#34;hidden peer&#34;&gt;
+
+    &lt;label for=&#34;menu-toggle&#34;
+           class=&#34;lg:hidden cursor-pointer text-2xl&#34;&gt;
+        ☰
+    &lt;/label&gt;
+
+    &lt;ul class=&#34;hidden 
+               peer-checked:flex 
+               flex-col 
+               absolute 
+               top-full left-0 
+               w-full 
+               bg-slate-800 
+               text-white 
+               lg:static 
+               lg:flex 
+               lg:flex-row 
+               lg:w-auto 
+               gap-6 
+               p-4 lg:p-0&#34;&gt;
+
+        &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Proyectos&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Documentación&lt;/a&gt;&lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+</code></pre><h3 id="funcionamiento">Funcionamiento</h3>
+<ul>
+<li><code>peer</code> → permite reaccionar al estado checked.</li>
+<li><code>peer-checked:flex</code> → muestra el menú.</li>
+<li>En desktop (<code>lg:</code>) siempre visible.</li>
+</ul>
+<hr>
+<h1 id="32-toggle-del-usuario-dropdown-independiente">3.2 Toggle del usuario (Dropdown independiente)</h1>
+<pre tabindex="0"><code class="language-blade" data-lang="blade">&lt;div class=&#34;relative&#34;&gt;
+
+    &lt;input type=&#34;checkbox&#34; id=&#34;user-toggle&#34; class=&#34;hidden peer&#34;&gt;
+
+    &lt;label for=&#34;user-toggle&#34;
+           class=&#34;cursor-pointer px-3 py-1 
+                  bg-slate-700 text-white 
+                  rounded flex items-center gap-1&#34;&gt;
+        {{ auth()-&gt;user()-&gt;name }}
+        &lt;span class=&#34;text-xs&#34;&gt;▼&lt;/span&gt;
+    &lt;/label&gt;
+
+    &lt;div class=&#34;hidden 
+                peer-checked:block 
+                absolute 
+                right-0 
+                mt-2 
+                w-44 
+                bg-white 
+                text-gray-800 
+                rounded-lg 
+                shadow-lg 
+                border&#34;&gt;
+
+        &lt;a href=&#34;/profile&#34; 
+           class=&#34;block px-4 py-2 hover:bg-gray-100&#34;&gt;
+            Perfil
+        &lt;/a&gt;
+
+        &lt;form method=&#34;POST&#34; action=&#34;/logout&#34;&gt;
+            @csrf
+            &lt;button type=&#34;submit&#34;
+                    class=&#34;w-full text-left px-4 py-2 hover:bg-gray-100&#34;&gt;
+                Logout
+            &lt;/button&gt;
+        &lt;/form&gt;
+
+    &lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre><hr>
+<h1 id="4-conceptos-que-el-alumnado-debe-entender">4. Conceptos que el alumnado debe entender</h1>
+<h2 id="1-separación-de-responsabilidades">1. Separación de responsabilidades</h2>
+<ul>
+<li>Grid → layout.</li>
+<li>Card → contenido.</li>
+<li>Navbar → navegación.</li>
+<li>Usuario → contexto de sesión.</li>
+</ul>
+<h2 id="2-responsive-design">2. Responsive design</h2>
+<p>Uso de prefijos:</p>
+<ul>
+<li><code>sm:</code></li>
+<li><code>lg:</code></li>
+</ul>
+<h2 id="3-interactividad-sin-js">3. Interactividad sin JS</h2>
+<p>Uso de:</p>
+<ul>
+<li><code>peer</code></li>
+<li><code>peer-checked:*</code></li>
+<li><code>hidden</code></li>
+<li><code>absolute</code></li>
+</ul>
+<h2 id="4-limitaciones-del-enfoque-sin-js">4. Limitaciones del enfoque sin JS</h2>
+<ul>
+<li>No se cierra al hacer click fuera.</li>
+<li>No hay control de estado global.</li>
+<li>No hay animaciones complejas.</li>
+</ul>
+<p>Es válido para aprendizaje y proyectos simples.</p>
+<hr>
+<h1 id="conclusión">Conclusión</h1>
+<p>Es posible crear:</p>
+<ul>
+<li>Landing autenticada.</li>
+<li>Grid responsive.</li>
+<li>Componentes reutilizables.</li>
+<li>Menú principal responsive.</li>
+<li>Dropdown de usuario.</li>
+</ul>
+<p>Todo usando únicamente:</p>
+<ul>
+<li>Blade Components</li>
+<li>Tailwind CSS</li>
+<li>Sin JavaScript adicional.</li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-dd7f38147493d8cab128a423c6719770">5 - Diseño responsivo</h1>
+    
+	<h1 id="diseño-responsivo">Diseño responsivo</h1>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.8">
+
+    El diseño responsivo permite que una aplicación web se adapte dinámicamente al tamaño del dispositivo desde el que se visualiza.
+
+
+</span>
+</strong>
+<p>Hoy en día una misma aplicación debe funcionar correctamente en:</p>
+<ul>
+<li>📱 Móviles</li>
+<li>📲 Tablets</li>
+<li>💻 Portátiles</li>
+<li>🖥️ Escritorio</li>
+</ul>
+<p>La clave no es hacer varias webs, sino una única interfaz flexible.</p>
+<hr>
+<h2 id="diferencias-entre-responsivo-y-adaptativo">Diferencias entre responsivo y adaptativo</h2>
+<h3 id="-diseño-responsivo-responsive-web-design">🔹 Diseño Responsivo (Responsive Web Design)</h3>
+<ul>
+<li>Usa CSS flexible.</li>
+<li>Se basa en media queries.</li>
+<li>El layout se adapta de forma fluida.</li>
+<li>No depende de dispositivos concretos.</li>
+<li>Es el enfoque moderno.</li>
+</ul>
+<p>Cambia progresivamente según el ancho del viewport.</p>
+<hr>
+<h3 id="-diseño-adaptativo-adaptive-design">🔹 Diseño Adaptativo (Adaptive Design)</h3>
+<ul>
+<li>Se crean varios layouts fijos.</li>
+<li>Cada layout está pensado para un rango de dispositivos.</li>
+<li>El servidor o el navegador decide cuál cargar.</li>
+<li>Es menos flexible.</li>
+<li>Mayor mantenimiento.</li>
+</ul>
+<p>No es fluido, salta entre versiones predefinidas.</p>
+<hr>
+<h2 id="qué-es-y-en-qué-consiste-el-diseño-responsivo">¿Qué es y en qué consiste el diseño responsivo?</h2>
+<p>El diseño responsivo se basa en tres pilares:</p>
+<h3 id="1-layout-flexible">1️⃣ Layout flexible</h3>
+<p>Uso de porcentajes, flexbox o grid en lugar de medidas fijas.</p>
+<h3 id="2-imágenes-flexibles">2️⃣ Imágenes flexibles</h3>
+<p>Las imágenes deben escalar con el contenedor.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">img</span> {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">max-width</span>: <span style="color:#b452cd">100</span><span style="color:#00688b;font-weight:bold">%</span>;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">height</span>: <span style="color:#8b008b;font-weight:bold">auto</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="3-media-queries">3️⃣ Media Queries</h3>
+<p>Permiten aplicar estilos según el ancho del dispositivo.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#8b008b;font-weight:bold">media</span> (<span style="color:#8b008b;font-weight:bold">min-width</span>: <span style="color:#8b008b;font-weight:bold">768px</span>) {
+</span></span><span style="display:flex;"><span>.<span style="color:#008b45;font-weight:bold">contenedor</span> {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">display</span>: <span style="color:#8b008b;font-weight:bold">flex</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="tailwind-y-sistema-mobile-first">Tailwind y sistema mobile-first</h2>
+<p>Tailwind trabaja con enfoque <strong>mobile-first</strong>.</p>
+<ul>
+<li>Primero se diseñan estilos para móvil.</li>
+<li>Después se añaden variantes para pantallas mayores.</li>
+</ul>
+<p>Ejemplo:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;text-base md:text-xl lg:text-3xl&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    Texto adaptable
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Explicación:</p>
+<ul>
+<li>text-base → móvil</li>
+<li>md:text-xl → desde 768px</li>
+<li>lg:text-3xl → desde 1024px</li>
+</ul>
+<p>La clase sin prefijo siempre corresponde al tamaño más pequeño.</p>
+<hr>
+<h2 id="puntos-de-ruptura-breakpoints">Puntos de ruptura (Breakpoints)</h2>
+<p>En Tailwind por defecto:</p>
+<ul>
+<li>sm → 640px</li>
+<li>md → 768px</li>
+<li>lg → 1024px</li>
+<li>xl → 1280px</li>
+<li>2xl → 1536px</li>
+</ul>
+<p>Ejemplo práctico:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;flex flex-col md:flex-row&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">aside</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;w-full md:w-1/3&#34;</span>&gt;Sidebar&lt;/<span style="color:#8b008b;font-weight:bold">aside</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">main</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;w-full md:w-2/3&#34;</span>&gt;Contenido&lt;/<span style="color:#8b008b;font-weight:bold">main</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>En móvil:</p>
+<ul>
+<li>Se muestran en columna.</li>
+</ul>
+<p>En escritorio:</p>
+<ul>
+<li>Se muestran en fila.</li>
+</ul>
+<hr>
+<h2 id="ejemplo-en-nuestra-aplicación">Ejemplo en nuestra aplicación</h2>
+<p>Caso típico en nuestro proyecto:</p>
+<p>Header con logo + título + botones login/register.</p>
+<p>En escritorio:</p>
+<ul>
+<li>Todo en horizontal.</li>
+</ul>
+<p>En móvil:</p>
+<ul>
+<li>Se ocultan los botones.</li>
+<li>Aparece botón hamburguesa.</li>
+<li>Quitamos el título</li>
+<li>Lo ponemos en una columa
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 757px">
+<img class="card-img-top" src="/laravel/docs/04_plantillas/04_responsivo/header_responsive_hu_41d460c4f7f02cb1.png" width="747" height="345">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+  
+
+</p>
+</figcaption>
+</figure>
+</li>
+<li>Ejemplo simplificado:</li>
+</ul>
+<hr>
+<h2 id="botón-hamburguesa">Botón hamburguesa</h2>
+<p>El botón hamburguesa se utiliza para:</p>
+<ul>
+<li>Ahorrar espacio en móvil.</li>
+<li>Mostrar/ocultar navegación.</li>
+<li>Mantener la interfaz limpia.</li>
+</ul>
+<p>Estructura básica:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">button</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;md:hidden p-2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">span</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;block w-6 h-0.5 bg-black mb-1&#34;</span>&gt;&lt;/<span style="color:#8b008b;font-weight:bold">span</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">span</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;block w-6 h-0.5 bg-black mb-1&#34;</span>&gt;&lt;/<span style="color:#8b008b;font-weight:bold">span</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">span</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;block w-6 h-0.5 bg-black&#34;</span>&gt;&lt;/<span style="color:#8b008b;font-weight:bold">span</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">button</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Puede combinarse con:</p>
+<ul>
+<li>hidden / block</li>
+<li>flex / absolute</li>
+<li>peer / peer-checked</li>
+<li>Alpine o Vue para control dinámico</li>
+</ul>
+<hr>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.6">
+
+    Importante: el diseño responsivo no es opcional. Es un requisito estructural en cualquier aplicación web moderna.
+
+
+</span>
+</strong>
+<h3 id="1-proceso-de-creación-clase-hahahugoshortcode482s8hbhb-mantener-hermanos-con-el-id">1. Proceso de creación: clase 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    peer peer-checked
+
+
+</span>
+</strong> mantener hermanos con el id</h3>
+<p>Permite que un input controle el estado visual de sus hermanos posteriores.</p>
+<p><strong>Código mínimo</strong></p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;checkbox&#34;</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;peer sr-only&#34;</span> <span style="color:#658b00">id</span>=<span style="color:#cd5555">&#34;menu&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;opacity-0 peer-checked:opacity-100&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    Contenido visible cuando está checked
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Clases imprescindibles</strong></p>
+<ul>
+<li><code>peer</code> → convierte al input en referencia.</li>
+<li><code>peer-checked:*</code> → aplica estilos cuando el checkbox está marcado.</li>
+<li><code>sr-only</code> → oculta visualmente el input pero mantiene accesibilidad.</li>
+</ul>
+<p>Regla técnica: el elemento afectado debe ser <strong>hermano posterior</strong> del peer.</p>
+<p>&mdash;.</p>
+<h3 id="2-menu-oculto-y-controlado-visible-con-hahahugoshortcode482s10hbhb">2. menu oculto y controlado visible con 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    peer-checked
+
+
+</span>
+</strong></h3>
+<p><strong>El menú existe en el DOM pero se muestra dinámicamente.</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;opacity-0 
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">            peer-checked:opacity-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">            transition-opacity duration-300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    Menú
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p><strong>Clases clave</strong></p>
+<ul>
+<li><code>opacity-0</code> → estado inicial oculto.</li>
+<li><code>peer-checked:opacity-100</code> → visible cuando está activo.</li>
+<li><code>transition-opacity duration-300</code> → animación suave.</li>
+</ul>
+<hr>
+<h3 id="3-contenedor-hahahugoshortcode482s12hbhb-y-menu-hahahugoshortcode482s13hbhb-para-colocar-el-menu">3. contenedor 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    relative
+
+
+</span>
+</strong> y menu 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    absolute
+
+
+</span>
+</strong> para colocar el menu</h3>
+<p>Permite posicionar el menú respecto a su botón.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;relative&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">label</span> <span style="color:#658b00">for</span>=<span style="color:#cd5555">&#34;menu&#34;</span>&gt;Abrir&lt;/<span style="color:#8b008b;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;absolute left-full top-0 ml-2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        Menú
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Clases imprescindibles
+
+
+</span>
+</strong>
+<ul>
+<li><code>relative</code> → referencia de posicionamiento.</li>
+<li><code>absolute</code> → saca el menú del flujo normal.</li>
+<li><code>left-full</code> → lo coloca a la derecha.</li>
+<li><code>top-0</code> → alineación vertical.</li>
+</ul>
+<p>Sin <code>relative</code>, el menú se posiciona respecto al viewport.</p>
+<hr>
+<h3 id="4-hahahugoshortcode482s16hbhb-para-cerrar-al-hacer-click-fuera">4. 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Overlay
+
+
+</span>
+</strong> para cerrar al hacer click fuera</h3>
+<p>Un segundo label con el mismo id permite cerrar el menú sin JavaScript.</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">label</span> <span style="color:#658b00">for</span>=<span style="color:#cd5555">&#34;menu&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;fixed inset-0 bg-black/40
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">opacity-0 pointer-events-none
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">peer-checked:opacity-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">peer-checked:pointer-events-auto
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">transition-opacity duration-300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">label</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Clases imprescindibles
+
+
+</span>
+</strong>
+<ul>
+<li><code>fixed</code> → posición respecto al viewport.</li>
+<li><code>inset-0</code> → ocupa toda la pantalla.</li>
+<li><code>bg-black/40</code> → oscurece el fondo.</li>
+<li><code>pointer-events-none</code> → no bloquea cuando está oculto.</li>
+<li><code>peer-checked:pointer-events-auto</code> → activa interacción.</li>
+</ul>
+<p>Al hacer click en el overlay, el checkbox se desmarca.</p>
+<h3 id="resumen--estructura-final">Resumen:  Estructura final</h3>
+<ol>
+<li><code>peer</code> controla estado.</li>
+<li><code>peer-checked</code> modifica hermanos.</li>
+<li><code>relative + absolute</code> posiciona el menú.</li>
+<li>Overlay con <code>fixed inset-0</code> permite cerrar sin JS.</li>
+<li>Cada dropdown usa su propio checkbox.</li>
+</ol>
+<h3 id="5-hahahugoshortcode482s19hbhb">5. 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Otro peer para logout sin javascript
+
+
+</span>
+</strong></h3>
+<p>Cada desplegable necesita su propio checkbox independiente para no interferir con el menú hamburguesa.</p>
+<p>*Código:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;relative&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">input</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;checkbox&#34;</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;peer sr-only&#34;</span> <span style="color:#658b00">id</span>=<span style="color:#cd5555">&#34;user_menu&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">label</span> <span style="color:#658b00">for</span>=<span style="color:#cd5555">&#34;user_menu&#34;</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;cursor-pointer flex items-center gap-1&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        {{ auth()-&gt;user()-&gt;name }}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#8b008b;font-weight:bold">svg</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;w-4 h-4 transition-transform duration-300
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                    peer-checked:rotate-180&#34;</span>
+</span></span><span style="display:flex;"><span>             <span style="color:#658b00">fill</span>=<span style="color:#cd5555">&#34;none&#34;</span> <span style="color:#658b00">stroke</span>=<span style="color:#cd5555">&#34;currentColor&#34;</span>
+</span></span><span style="display:flex;"><span>             <span style="color:#658b00">viewBox</span>=<span style="color:#cd5555">&#34;0 0 24 24&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#8b008b;font-weight:bold">path</span> <span style="color:#658b00">stroke-width</span>=<span style="color:#cd5555">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#658b00">stroke-linecap</span>=<span style="color:#cd5555">&#34;round&#34;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#658b00">stroke-linejoin</span>=<span style="color:#cd5555">&#34;round&#34;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#658b00">d</span>=<span style="color:#cd5555">&#34;M19 9l-7 7-7-7&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#8b008b;font-weight:bold">svg</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">div</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;absolute top-full mt-2
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                opacity-0 scale-95
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                peer-checked:opacity-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                peer-checked:scale-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                transition-all duration-300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        Logout
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Clases imprescindibles
+
+
+</span>
+</strong>
+<ul>
+<li><code>peer</code> → controla el estado del dropdown.</li>
+<li><code>peer-checked:*</code> → activa visibilidad y animación.</li>
+<li><code>relative</code> → referencia para posicionamiento.</li>
+<li><code>absolute top-full</code> → menú aparece debajo.</li>
+<li><code>transition-all</code> → anima opacity y transform.</li>
+<li><code>peer-checked:rotate-180</code> → rota la flecha al abrir.</li>
+</ul>
+<p><strong>Importante:</strong><br>
+Cada menú (burger y logout) debe tener un <code>id</code> distinto y su propio <code>peer</code>, ya que cada checkbox controla únicamente a sus hermanos posteriores.</p>
+<h3 id="posible-código-final">Posible código final</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>   &lt;!--Para el buttron burguer, usaremos este checkbox--&gt;
+</span></span><span style="display:flex;"><span>        {{-- <span style="color:#b452cd">3</span>) Panel desplegable --}}
+</span></span><span style="display:flex;"><span>        @guest
+</span></span><span style="display:flex;"><span>            &lt;div class=<span style="color:#cd5555">&#34;relative&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;input type=<span style="color:#cd5555">&#34;checkbox&#34;</span> class=<span style="color:#cd5555">&#34;peer sr-only&#34;</span>  id=<span style="color:#cd5555">&#34;burguer_button&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;label <span style="color:#8b008b;font-weight:bold">for</span>=<span style="color:#cd5555">&#34;burguer_button&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;img class=<span style="color:#cd5555">&#34;w-8 h-8 object-containt&#34;</span> src=<span style="color:#cd5555">&#34;{{asset(&#34;</span>/images/burguer.png<span style="color:#cd5555">&#34;)}}&#34;</span> alt=<span style="color:#cd5555">&#34;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;/label&gt;
+</span></span><span style="display:flex;"><span>                &lt;label <span style="color:#8b008b;font-weight:bold">for</span>=<span style="color:#cd5555">&#34;burguer_button&#34;</span>
+</span></span><span style="display:flex;"><span>                       class=<span style="color:#cd5555">&#34;fixed inset-0 bg-black/40
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                  opacity-0 pointer-events-none
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                  peer-checked:opacity-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                  peer-checked:pointer-events-auto
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                  transition-opacity duration-300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;/label&gt;
+</span></span><span style="display:flex;"><span>            &lt;div class=<span style="color:#cd5555">&#34;opacity-0
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                        peer-checked:opacity-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                        transition-all duration-300 ease-out
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">             peer-checked:flex absolute bg-white p-2 flex-col left-9 top-4  transition rounded rounded-sm space-y-2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;a class=<span style="color:#cd5555">&#34;flex-1&#34;</span> href=<span style="color:#cd5555">&#34;{{ route(&#39;login&#39;) }}&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;button class=<span style="color:#cd5555">&#34;btn btn-sm btn-primary w-full&#34;</span> type=<span style="color:#cd5555">&#34;button&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                        Login
+</span></span><span style="display:flex;"><span>                    &lt;/button&gt;
+</span></span><span style="display:flex;"><span>                &lt;/a&gt;
+</span></span><span style="display:flex;"><span>                &lt;a class=<span style="color:#cd5555">&#34;flex-1&#34;</span> href=<span style="color:#cd5555">&#34;{{ route(&#39;register&#39;) }}&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;button class=<span style="color:#cd5555">&#34;btn btn-sm btn-primary w-full&#34;</span> type=<span style="color:#cd5555">&#34;button&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                        Register
+</span></span><span style="display:flex;"><span>                    &lt;/button&gt;
+</span></span><span style="display:flex;"><span>                &lt;/a&gt;
+</span></span><span style="display:flex;"><span>            &lt;/div&gt;
+</span></span><span style="display:flex;"><span>            &lt;/div&gt;
+</span></span><span style="display:flex;"><span>        @endguest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        @auth
+</span></span><span style="display:flex;"><span>            &lt;div class=<span style="color:#cd5555">&#34;relative&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                &lt;input type=<span style="color:#cd5555">&#34;checkbox&#34;</span> class=<span style="color:#cd5555">&#34;peer sr-only&#34;</span> id=<span style="color:#cd5555">&#34;user_menu&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                &lt;label <span style="color:#8b008b;font-weight:bold">for</span>=<span style="color:#cd5555">&#34;user_menu&#34;</span>
+</span></span><span style="display:flex;"><span>                       class=<span style="color:#cd5555">&#34;cursor-pointer text-green-800 text-xl font-semibold&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                    {{ auth()-&gt;<span style="color:#658b00">user</span>()-&gt;<span style="color:#658b00">name</span> }}
+</span></span><span style="display:flex;"><span>                    &lt;!-- Flecha --&gt;
+</span></span><span style="display:flex;"><span>                    &lt;svg class=<span style="color:#cd5555">&#34;w-4 h-4 transition-transform duration-300
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                    peer-checked:rotate-180&#34;</span>
+</span></span><span style="display:flex;"><span>                         fill=<span style="color:#cd5555">&#34;none&#34;</span> stroke=<span style="color:#cd5555">&#34;currentColor&#34;</span>
+</span></span><span style="display:flex;"><span>                         viewBox=<span style="color:#cd5555">&#34;0 0 24 24&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                        &lt;path stroke-width=<span style="color:#cd5555">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>                              stroke-linecap=<span style="color:#cd5555">&#34;round&#34;</span>
+</span></span><span style="display:flex;"><span>                              stroke-linejoin=<span style="color:#cd5555">&#34;round&#34;</span>
+</span></span><span style="display:flex;"><span>                              d=<span style="color:#cd5555">&#34;M19 9l-7 7-7-7&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>                    &lt;/svg&gt;
+</span></span><span style="display:flex;"><span>                &lt;/label&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                &lt;div class=<span style="color:#cd5555">&#34;absolute left-0 top-full mt-2
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                bg-white p-3 rounded shadow flex flex-col
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                opacity-0 scale-95
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                peer-checked:opacity-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                peer-checked:scale-100
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                transition-all duration-300 ease-out&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    &lt;form action=<span style="color:#cd5555">&#34;{{ route(&#39;logout&#39;) }}&#34;</span> method=<span style="color:#cd5555">&#34;POST&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                        @csrf
+</span></span><span style="display:flex;"><span>                        &lt;button class=<span style="color:#cd5555">&#34;btn btn-primary w-full&#34;</span> type=<span style="color:#cd5555">&#34;submit&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                            Logout
+</span></span><span style="display:flex;"><span>                        &lt;/button&gt;
+</span></span><span style="display:flex;"><span>                    &lt;/form&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                &lt;/div&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            &lt;/div&gt;
+</span></span><span style="display:flex;"><span>        @endauth</span></span></code></pre></div>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

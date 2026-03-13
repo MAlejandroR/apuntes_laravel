@@ -1,0 +1,2553 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/pendiente/999_cheatseet/">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/pendiente/999_cheatseet/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Cheat Sheet | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/pendiente/999_cheatseet/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Cheat Sheet">
+  <meta property="og:description" content="Resumen de acciones de laravel Instalación: Debemos tener instalado composer **Instalamos el instalador de proyectos de laravel Ahora ya podemos crear un proyecto nuevo de laravel 1 laravel new NuevoProyectoLaravel composer create-project --prefer-dist laravel/laravel project-name 2. Artisan Commands: Create a controller: bash Copy code php artisan make:controller ControllerName Create a model: bash Copy code php artisan make:model ModelName Run migrations: bash Copy code php artisan migrate 3. Routing: Define a route in routes/web.php: php Copy code Route::get(&#39;/route&#39;, &#39;ControllerName@method&#39;); 4. Views: Blade template: php Copy code &lt;p&gt;{{ $variable }}&lt;/p&gt; 5. Database: Eloquent ORM: php Copy code $model = ModelName::find($id); Query Builder: php Copy code $results = DB::table(&#39;table&#39;)-&gt;get(); 6. Middleware: Apply middleware in routes: php Copy code Route::get(&#39;/admin&#39;, &#39;Controller@method&#39;)-&gt;middleware(&#39;auth&#39;); 7. Authentication: Create authentication scaffolding: bash Copy code php artisan make:auth 8. Validation: Validate requests in controllers: php Copy code $validatedData = $request-&gt;validate([ &#39;field&#39; =&gt; &#39;required|numeric&#39;, ]); 9. Testing: Run tests: bash Copy code php artisan test 10. Artisan Tinker: Interact with your application: bash Copy code php artisan tinker ## ## Rutas ## Artisan ## MVC">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Cheat Sheet">
+  <meta itemprop="description" content="Resumen de acciones de laravel Instalación: Debemos tener instalado composer **Instalamos el instalador de proyectos de laravel Ahora ya podemos crear un proyecto nuevo de laravel 1 laravel new NuevoProyectoLaravel composer create-project --prefer-dist laravel/laravel project-name 2. Artisan Commands: Create a controller: bash Copy code php artisan make:controller ControllerName Create a model: bash Copy code php artisan make:model ModelName Run migrations: bash Copy code php artisan migrate 3. Routing: Define a route in routes/web.php: php Copy code Route::get(&#39;/route&#39;, &#39;ControllerName@method&#39;); 4. Views: Blade template: php Copy code &lt;p&gt;{{ $variable }}&lt;/p&gt; 5. Database: Eloquent ORM: php Copy code $model = ModelName::find($id); Query Builder: php Copy code $results = DB::table(&#39;table&#39;)-&gt;get(); 6. Middleware: Apply middleware in routes: php Copy code Route::get(&#39;/admin&#39;, &#39;Controller@method&#39;)-&gt;middleware(&#39;auth&#39;); 7. Authentication: Create authentication scaffolding: bash Copy code php artisan make:auth 8. Validation: Validate requests in controllers: php Copy code $validatedData = $request-&gt;validate([ &#39;field&#39; =&gt; &#39;required|numeric&#39;, ]); 9. Testing: Run tests: bash Copy code php artisan test 10. Artisan Tinker: Interact with your application: bash Copy code php artisan tinker ## ## Rutas ## Artisan ## MVC">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="174">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cheat Sheet">
+  <meta name="twitter:description" content="Resumen de acciones de laravel Instalación: Debemos tener instalado composer **Instalamos el instalador de proyectos de laravel Ahora ya podemos crear un proyecto nuevo de laravel 1 laravel new NuevoProyectoLaravel composer create-project --prefer-dist laravel/laravel project-name 2. Artisan Commands: Create a controller: bash Copy code php artisan make:controller ControllerName Create a model: bash Copy code php artisan make:model ModelName Run migrations: bash Copy code php artisan migrate 3. Routing: Define a route in routes/web.php: php Copy code Route::get(&#39;/route&#39;, &#39;ControllerName@method&#39;); 4. Views: Blade template: php Copy code &lt;p&gt;{{ $variable }}&lt;/p&gt; 5. Database: Eloquent ORM: php Copy code $model = ModelName::find($id); Query Builder: php Copy code $results = DB::table(&#39;table&#39;)-&gt;get(); 6. Middleware: Apply middleware in routes: php Copy code Route::get(&#39;/admin&#39;, &#39;Controller@method&#39;)-&gt;middleware(&#39;auth&#39;); 7. Authentication: Create authentication scaffolding: bash Copy code php artisan make:auth 8. Validation: Validate requests in controllers: php Copy code $validatedData = $request-&gt;validate([ &#39;field&#39; =&gt; &#39;required|numeric&#39;, ]); 9. Testing: Run tests: bash Copy code php artisan test 10. Artisan Tinker: Interact with your application: bash Copy code php artisan tinker ## ## Rutas ## Artisan ## MVC">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+Versión imprimible multipagina.
+<a href="#" onclick="print();return false;">Haga click aquí para imprimir</a>.
+</p><p>
+<a href="/laravel/docs/pendiente/999_cheatseet/">Volver a la vista normal de esta página</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Cheat Sheet</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-a4b09f1ae68fa6dc5cd7a8dd1fa18cf9">Helper en Laravel</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1.1: <a href="#pg-6f2873bbeb1653383b99f4e6b4ab2d21">Vistas</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>1.2: <a href="#pg-e1554d6203f03808741144a9a8dc416c">Rutas</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>1.3: <a href="#pg-07286cabf0e155a4d37ed138c163112d">Request en Laravel</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-9943e9df26b6cc4a8dc9cc44d330d1e6">Artisan (CLI)</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-7c31b26db4a3704ae115e341311ae348">Directivas Blade</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-b27d34d03d7eec16258c64c662ae4720">Carbon (fechas</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-5be69e1ca3403caa4e31c410a7af5bb7">Desplegar en hosgint</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>5.1: <a href="#pg-249f176d514a13a336f595d4fa36a05d">Rutas</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>5.2: <a href="#pg-86d795ad32cda9ed60f8a40748e7aa13">Vistas</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>6: <a href="#pg-eb2463966e441ebd8bd566492de77a08">Desplegar en hosgint</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>7: <a href="#pg-fafb9392cbf5afacc27ff9a617d20bff">Laravel: Uso de la Facade File</a></li>
+
+
+    
+  
+    
+    
+	
+<li>8: <a href="#pg-49b64f7c5f4b3303551df9bfc633db90">Laravel: Uso de la Facade File</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <h1 id="resumen-de-acciones-de-laravel">Resumen de acciones de laravel</h1>
+<h2 id="instalación">Instalación:</h2>
+<p>Debemos tener instalado 
+<span class="font-weight-bold text-primary">
+
+
+    composer
+
+</span>
+</p>
+<h2 id="hahahugoshortcode563s2hbhb">
+
+<div class="pageinfo pageinfo-primary">
+<p>**Instalamos
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+<pre><code>el instalador de proyectos de laravel
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+</div>
+
+<strong>Ahora ya podemos crear un proyecto nuevo de laravel</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>laravel <span style="color:#8b008b;font-weight:bold">new</span> NuevoProyectoLaravel</span></span></code></pre></td></tr></table>
+</div>
+</div></h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer create-project --prefer-dist laravel/laravel project-name
+</span></span><span style="display:flex;"><span>2. Artisan Commands:
+</span></span><span style="display:flex;"><span> Create a controller:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>bash
+</span></span><span style="display:flex;"><span>Copy code
+</span></span><span style="display:flex;"><span>php artisan make:controller ControllerName
+</span></span><span style="display:flex;"><span>Create a model:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>bash
+</span></span><span style="display:flex;"><span>Copy code
+</span></span><span style="display:flex;"><span>php artisan make:model ModelName
+</span></span><span style="display:flex;"><span>Run migrations:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>bash
+</span></span><span style="display:flex;"><span>Copy code
+</span></span><span style="display:flex;"><span>php artisan migrate
+</span></span><span style="display:flex;"><span>3. Routing:
+</span></span><span style="display:flex;"><span> Define a route in routes/web.php:
+</span></span><span style="display:flex;"><span> php
+</span></span><span style="display:flex;"><span> Copy code
+</span></span><span style="display:flex;"><span> Route::get(<span style="color:#cd5555">&#39;/route&#39;</span>, <span style="color:#cd5555">&#39;ControllerName@method&#39;</span>);
+</span></span><span style="display:flex;"><span>4. Views:
+</span></span><span style="display:flex;"><span> Blade template:
+</span></span><span style="display:flex;"><span> php
+</span></span><span style="display:flex;"><span> Copy code
+</span></span><span style="display:flex;"><span>&lt;p&gt;{{ <span style="color:#00688b">$variable</span> }}&lt;/p&gt;
+</span></span><span style="display:flex;"><span>5. Database:
+</span></span><span style="display:flex;"><span>Eloquent ORM:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>php
+</span></span><span style="display:flex;"><span>Copy code
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$model</span> = ModelName::find(<span style="color:#00688b">$id</span>);
+</span></span><span style="display:flex;"><span>Query Builder:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>php
+</span></span><span style="display:flex;"><span>Copy code
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$results</span> = DB::table(<span style="color:#cd5555">&#39;table&#39;</span>)-&gt;get();
+</span></span><span style="display:flex;"><span>6. Middleware:
+</span></span><span style="display:flex;"><span> Apply middleware in routes:
+</span></span><span style="display:flex;"><span> php
+</span></span><span style="display:flex;"><span> Copy code
+</span></span><span style="display:flex;"><span> Route::get(<span style="color:#cd5555">&#39;/admin&#39;</span>, <span style="color:#cd5555">&#39;Controller@method&#39;</span>)-&gt;middleware(<span style="color:#cd5555">&#39;auth&#39;</span>);
+</span></span><span style="display:flex;"><span>7. Authentication:
+</span></span><span style="display:flex;"><span> Create authentication scaffolding:
+</span></span><span style="display:flex;"><span> bash
+</span></span><span style="display:flex;"><span> Copy code
+</span></span><span style="display:flex;"><span> php artisan make:auth
+</span></span><span style="display:flex;"><span>8. Validation:
+</span></span><span style="display:flex;"><span> Validate requests in controllers:
+</span></span><span style="display:flex;"><span> php
+</span></span><span style="display:flex;"><span> Copy code
+</span></span><span style="display:flex;"><span> <span style="color:#00688b">$validatedData</span> = <span style="color:#00688b">$request</span>-&gt;validate([
+</span></span><span style="display:flex;"><span> <span style="color:#cd5555">&#39;field&#39;</span> =&gt; <span style="color:#cd5555">&#39;required|numeric&#39;</span>,
+</span></span><span style="display:flex;"><span> ]);
+</span></span><span style="display:flex;"><span>9. Testing:
+</span></span><span style="display:flex;"><span> Run tests:
+</span></span><span style="display:flex;"><span> bash
+</span></span><span style="display:flex;"><span> Copy code
+</span></span><span style="display:flex;"><span> php artisan <span style="color:#658b00">test</span>
+</span></span><span style="display:flex;"><span>10. Artisan Tinker:
+</span></span><span style="display:flex;"><span>  Interact with your application:
+</span></span><span style="display:flex;"><span>  bash
+</span></span><span style="display:flex;"><span>  Copy code
+</span></span><span style="display:flex;"><span>  php artisan tinker
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">## </span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">## Rutas</span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">## Artisan</span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">## MVC</span>
+</span></span></code></pre></div>
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a4b09f1ae68fa6dc5cd7a8dd1fa18cf9">1 - Helper en Laravel</h1>
+    
+	<h1 id="helpers-en-laravel">Helpers en Laravel</h1>
+<h2 id="qué-son-los-helpers">¿Qué son los Helpers?</h2>
+<p>Helpers en Laravel son funciones globales que proporcionan una manera conveniente y eficiente para realizar tareas comunes en la programación con Laravel. Estas funciones están disponibles globalmente en cualquier parte de tu aplicación.</p>
+<h2 id="grupos-principales-de-helpers">Grupos Principales de Helpers</h2>
+<h3 id="helpers-de-rutas">Helpers de Rutas</h3>
+<ul>
+<li><code>route()</code>: Genera una URL para una ruta nombrada.</li>
+<li><code>url()</code>: Genera una URL absoluta.</li>
+<li><code>action()</code>: Genera una URL para un controlador y método específicos.</li>
+</ul>
+<h3 id="helpers-de-strings">Helpers de Strings</h3>
+<ul>
+<li><code>str_*</code>: Varias funciones para manipular strings.</li>
+<li><code>__()</code>: Traduce el texto dado según tu localización.</li>
+</ul>
+<h3 id="helpers-de-arrays">Helpers de Arrays</h3>
+<ul>
+<li><code>array_*</code>: Funciones para manipular arrays.</li>
+<li><code>head()</code>: Devuelve el primer elemento de un array.</li>
+<li><code>last()</code>: Devuelve el último elemento de un array.</li>
+</ul>
+<h3 id="helpers-de-vistas">Helpers de Vistas</h3>
+<ul>
+<li><code>view()</code>: Genera una nueva vista.</li>
+<li><code>response()</code>: Crea una instancia de respuesta.</li>
+</ul>
+<h3 id="helpers-de-url">Helpers de URL</h3>
+<ul>
+<li><code>asset()</code>: Genera una URL para un asset usando el esquema de URL actual.</li>
+<li><code>secure_asset()</code>: Genera una URL segura para un asset.</li>
+</ul>
+<h3 id="helpers-generales">Helpers Generales</h3>
+<ul>
+<li><code>app()</code>: Accede a la instancia del contenedor de servicios.</li>
+<li><code>config()</code>: Obtiene o establece valores de configuración.</li>
+</ul>
+<h2 id="crear-un-helper">Crear un helper</h2>
+<p>Creamos una carpeta en app:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>app<span style="color:#a61717;background-color:#e3d2d2">\</span>helper
+</span></span></code></pre></div><h2 id="facade-vs-helper">Facade Vs Helper</h2>
+<p><a href="https://medium.com/@azimidev/laravel-facades-vs-helpers-understanding-the-differences-and-use-cases-007d41a1b257">https://medium.com/@azimidev/laravel-facades-vs-helpers-understanding-the-differences-and-use-cases-007d41a1b257</a></p>
+<p>Laravel Facades vs. Helpers: Understanding the Differences and Use Cases</p>
+<p><img src="/laravel/docs/pendiente/999_cheatseet/helper/img.png" alt="img.png"></p>
+<p>When developing with Laravel, you’ll often come across two powerful tools: Facades and Helpers. Both are designed to simplify your code and make it more readable, but they serve different purposes and are used in different scenarios. In this article, we’ll explore what Laravel Facades and Helpers are, their differences, and when to use each.</p>
+<p>What are Laravel Facades?
+Facades provide a “static” interface to classes that are available in the application’s service container. They allow you to call methods in a class without having to instantiate them, making your code cleaner and more concise.</p>
+<p>Example: Using Facades
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Support\Facades\Cache;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Cache::<span style="color:#658b00">put</span>(<span style="color:#cd5555">&#39;key&#39;</span>, <span style="color:#cd5555">&#39;value&#39;</span>, <span style="color:#00688b">$minutes</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$value</span> = Cache::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;key&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Here, Cache is a facade that provides access to the caching service in Laravel.</p>
+<p><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#00688b">$value</span> = array_get(<span style="color:#00688b">$array</span>, <span style="color:#cd5555">&#39;key&#39;</span>, <span style="color:#cd5555">&#39;default&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$slug</span> = str_slug(<span style="color:#cd5555">&#39;Laravel Facades vs Helpers&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$url</span> = route(<span style="color:#cd5555">&#39;home&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Helpers are designed to be straightforward to use, offering quick solutions for common tasks.</p>
+<p>Key Differences
+Implementation:</p>
+<p>Facades: Act as static proxies to underlying classes in the service container.
+Helpers: Simple, procedural functions.
+Dependency Injection:</p>
+<p>Facades: Work with Laravel’s service container, making it easier to manage dependencies and mock services in tests.
+Helpers: Do not support dependency injection, which can make testing more challenging.
+Readability and Intent:</p>
+<p>Facades: This can make code more readable by clearly indicating, which service is being used.
+Helpers: Provide a quick and dirty way to perform tasks, which can sometimes lead to less readable code.
+When to Use Facades
+Dependency Injection: When you need to leverage dependency injection, especially in testing.
+Readability: When you want to make it clear which service is being utilized.
+Complex Logic: For more complex interactions with Laravel services.
+Example: Using a Facade in a Controller</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Support\Facades\Mail;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">sendWelcomeEmail</span>(<span style="color:#00688b">$user</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>Mail::<span style="color:#658b00">to</span>(<span style="color:#00688b">$user</span>-&gt;<span style="color:#658b00">email</span>)-&gt;<span style="color:#658b00">send</span>(<span style="color:#8b008b;font-weight:bold">new</span> WelcomeEmail(<span style="color:#00688b">$user</span>));
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>When to Use Helpers
+Simplicity: For simple tasks where dependency injection is not necessary.
+Quick Solutions: When you need a quick and straightforward solution.
+Performance: When you want to avoid the overhead of the service container.
+Example: Using Helpers in a Blade Template</p>
+<p><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>&lt;p&gt;{{ ucfirst(<span style="color:#00688b">$user</span>-&gt;<span style="color:#658b00">name</span>) }}&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;{{ route(<span style="color:#cd5555">&#39;profile&#39;</span>, [<span style="color:#cd5555">&#39;id&#39;</span> =&gt; <span style="color:#00688b">$user</span>-&gt;<span style="color:#658b00">id</span>]) }}&lt;/p&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+<span class="font-weight-bold text-primary">
+
+
+    Conclusion
+
+</span>
+
+Both Facades and Helpers have their place in Laravel development. Understanding when to use each can help you write cleaner, more maintainable code. Use Facades when you need the power of the service container and dependency injection. Use Helpers for quick, simple tasks. By leveraging both appropriately, you can make the most out of Laravel’s features and improve your development workflow.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-6f2873bbeb1653383b99f4e6b4ab2d21">1.1 - Vistas</h1>
+    
+	<h1 id="helpers-de-vistas-en-laravel">Helpers de Vistas en Laravel</h1>
+<h2 id="qué-son-los-helpers-de-vistas">¿Qué son los Helpers de Vistas?</h2>
+<p>Los helpers de vistas en Laravel son funciones que facilitan el manejo y la renderización de las vistas. Estos helpers permiten una interacción más simple y eficiente con las plantillas Blade del framework.</p>
+<p>Cómo helper de vistas, tenemos  la función 
+<span class="font-weight-bold text-primary">
+
+
+    view()
+
+</span>
+ de Laravel.</p>
+<p>Este helper 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    retorna una instancia de una vista
+
+</span>
+</strong>
+.</p>
+<p>Esta función no solo carga y retorna la vista especificada, sino que también permite 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    el encadenamiento de métodos adicionales disponibles en la instancia del objeto de la vista
+
+</span>
+</strong>
+.</p>
+<p>Esto facilita <strong>la manipulación y personalización de la vista</strong> antes de que se envíe al navegador.</p>
+<h2 id="principales-helpers-de-vistas">Principales Helpers de Vistas</h2>
+<h3 id="view"><strong><code>view()</code></strong></h3>
+<ul>
+<li>Genera una nueva vista.</li>
+<li>Ejemplo: <code>view('welcome', ['data' =&gt; $data])</code> carga la vista <code>welcome</code> con datos.</li>
+</ul>
+<h3 id="view-make"><strong><code>view()-&gt;make()</code></strong></h3>
+<ul>
+<li>Similar a <code>view()</code>, pero con una sintaxis alternativa.</li>
+<li>Ejemplo: <code>view()-&gt;make('welcome', ['data' =&gt; $data])</code>.</li>
+</ul>
+<h3 id="view-exists"><strong><code>view()-&gt;exists()</code></strong></h3>
+<ul>
+<li>Comprueba si una vista existe.</li>
+<li>Ejemplo: <code>view()-&gt;exists('welcome')</code> devuelve <code>true</code> si la vista <code>welcome</code> existe.</li>
+</ul>
+<h3 id="view-first"><strong><code>view()-&gt;first()</code></strong></h3>
+<ul>
+<li>Intenta renderizar la primera vista existente de una lista.</li>
+<li>Ejemplo: <code>view()-&gt;first(['custom', 'default'])</code> carga la primera vista que exista entre <code>custom</code> y <code>default</code>.</li>
+</ul>
+<h3 id="view-share"><strong><code>view()-&gt;share()</code></strong></h3>
+<ul>
+<li>Comparte una variable en todas las vistas.</li>
+<li>Ejemplo: <code>view()-&gt;share('key', 'value')</code> hace que <code>key</code> esté disponible globalmente en todas las vistas.</li>
+</ul>
+<h3 id="view-composer"><strong><code>view()-&gt;composer()</code></strong></h3>
+<ul>
+<li>Asigna datos a una vista cada vez que se carga.</li>
+<li>Ejemplo: <code>view()-&gt;composer('welcome', function ($view) { ... })</code>.</li>
+</ul>
+<h3 id="view-creator"><strong><code>view()-&gt;creator()</code></strong></h3>
+<ul>
+<li>Similar a <code>view()-&gt;composer()</code>, pero se ejecuta cuando la vista se crea.</li>
+<li>Ejemplo: <code>view()-&gt;creator('welcome', function ($view) { ... })</code>.</li>
+</ul>
+<p>Estos helpers son fundamentales para la gestión de vistas en Laravel, permitiendo un flujo de trabajo más ágil y una mayor flexibilidad en la renderización y el manejo de datos en las vistas.</p>
+<ul>
+<li>Ejemplo: <code>url()-&gt;previous()</code></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e1554d6203f03808741144a9a8dc416c">1.2 - Rutas</h1>
+    
+	<h1 id="helpers-de-laravel-para-rutas">Helpers de Laravel para Rutas</h1>
+<p>Laravel proporciona varios helpers útiles para trabajar con rutas. <br>
+Estos son algunos de los más importantes:</p>
+<h2 id="routenombre_ruta"><code>route('nombre_ruta')</code></h2>
+<ul>
+<li>Genera una URL para una ruta nombrada.</li>
+<li>Podemos pasar parámetros a la ruta como un array asociativo 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    [&lsquo;variable&rsquo;=&gt;valor]
+
+</span>
+</strong>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>route(<span style="color:#cd5555">&#39;user.profile&#39;</span>, [<span style="color:#cd5555">&#39;id&#39;</span> =&gt; <span style="color:#b452cd">1</span>]);
+</span></span></code></pre></div><h2 id="urlpath"><code>url('path')</code></h2>
+<ul>
+<li>Genera una URL absoluta para el path dado.</li>
+<li>Ejemplo: <code>url('/user')</code></li>
+</ul>
+<h2 id="redirect-routenombre_ruta"><code>redirect()-&gt;route('nombre_ruta')</code></h2>
+<ul>
+<li>Redirige a una ruta nombrada.</li>
+<li>Ejemplo: <code>redirect()-&gt;route('home')</code></li>
+</ul>
+<h2 id="actionnombrecontroladormetodo"><code>action('NombreControlador@metodo')</code></h2>
+<ul>
+<li>Genera una URL para el controlador y método especificados.</li>
+<li>Ejemplo: <code>action('UserController@show', ['id' =&gt; 1])</code></li>
+</ul>
+<h2 id="back"><code>back()</code></h2>
+<ul>
+<li>Redirige al usuario a la ubicación anterior.</li>
+<li>Ejemplo: <code>return back()</code></li>
+</ul>
+<h2 id="current"><code>current()</code></h2>
+<ul>
+<li>Obtiene la URL actual.</li>
+<li>Ejemplo: <code>url()-&gt;current()</code></li>
+</ul>
+<h2 id="previous"><code>previous()</code></h2>
+<ul>
+<li>Obtiene la URL previa a la actual.</li>
+<li>Ejemplo: <code>url()-&gt;previous()</code></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-07286cabf0e155a4d37ed138c163112d">1.3 - Request en Laravel</h1>
+    
+	<h1 id="helpers-y-métodos-para-obtener-datos-de-la-request-en-laravel">Helpers y métodos para obtener datos de la Request en Laravel</h1>
+<p>En Laravel podemos acceder a los datos de la petición HTTP usando:</p>
+<ul>
+<li>El <strong>helper global</strong> <code>request()</code></li>
+<li>La <strong>fachada</strong> <code>Request</code> (<code>Illuminate\Support\Facades\Request</code>)</li>
+<li>Inyección de la clase <code>Illuminate\Http\Request</code></li>
+</ul>
+<p>A continuación, los métodos más usados:</p>
+<h2 id="requestclave"><code>request('clave')</code></h2>
+<ul>
+<li>Obtiene el valor de la clave indicada, buscando en GET, POST, JSON, etc.</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request(<span style="color:#cd5555">&#39;family_id&#39;</span>);</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-inputclave"><code>request()-&gt;input('clave')</code></h2>
+<ul>
+<li>Equivalente a <code>request('clave')</code>.</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">input</span>(<span style="color:#cd5555">&#39;family_id&#39;</span>);</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-queryclave"><code>request()-&gt;query('clave')</code></h2>
+<ul>
+<li>Obtiene el valor <strong>solo de la query string</strong> (<code>?param=valor</code>).</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">query</span>(<span style="color:#cd5555">&#39;family_id&#39;</span>);</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-postclave"><code>request()-&gt;post('clave')</code></h2>
+<ul>
+<li>Obtiene el valor <strong>solo del cuerpo POST</strong>.</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">post</span>(<span style="color:#cd5555">&#39;family_id&#39;</span>);</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-all"><code>request()-&gt;all()</code></h2>
+<ul>
+<li>Obtiene <strong>todos los datos</strong> de la petición (GET, POST, JSON, etc.)</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">all</span>();</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-only"><code>request()-&gt;only([...])</code></h2>
+<ul>
+<li>Obtiene <strong>solo</strong> las claves especificadas.</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">only</span>([<span style="color:#cd5555">&#39;name&#39;</span>, <span style="color:#cd5555">&#39;email&#39;</span>]);</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-except"><code>request()-&gt;except([...])</code></h2>
+<ul>
+<li>Obtiene todos los datos <strong>excepto</strong> las claves indicadas.</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">except</span>([<span style="color:#cd5555">&#39;password&#39;</span>]);</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-hasclave"><code>request()-&gt;has('clave')</code></h2>
+<ul>
+<li>Devuelve <code>true</code> si la clave existe (aunque esté vacía).</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">has</span>(<span style="color:#cd5555">&#39;family_id&#39;</span>);</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-filledclave"><code>request()-&gt;filled('clave')</code></h2>
+<ul>
+<li>Devuelve <code>true</code> si la clave existe y <strong>no está vacía</strong>.</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">filled</span>(<span style="color:#cd5555">&#39;family_id&#39;</span>);</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-missingclave"><code>request()-&gt;missing('clave')</code></h2>
+<ul>
+<li>Devuelve <code>true</code> si la clave no existe o es null.</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">missing</span>(<span style="color:#cd5555">&#39;family_id&#39;</span>);</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-ajax"><code>request()-&gt;ajax()</code></h2>
+<ul>
+<li>Devuelve <code>true</code> si la petición es AJAX.</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">ajax</span>();</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-isjson"><code>request()-&gt;isJson()</code></h2>
+<ul>
+<li>Devuelve <code>true</code> si la petición es de tipo JSON.</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">isJson</span>();</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-method"><code>request()-&gt;method()</code></h2>
+<ul>
+<li>Devuelve el método HTTP (<code>GET</code>, <code>POST</code>, <code>PUT</code>…).</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">method</span>();</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-ismethodmetodo"><code>request()-&gt;isMethod('metodo')</code></h2>
+<ul>
+<li>Comprueba si el método HTTP es el indicado.</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">isMethod</span>(<span style="color:#cd5555">&#39;post&#39;</span>);</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-fullurl"><code>request()-&gt;fullUrl()</code></h2>
+<ul>
+<li>Devuelve la URL completa con query string.</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">fullUrl</span>();</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-url"><code>request()-&gt;url()</code></h2>
+<ul>
+<li>Devuelve la URL sin query string.</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">url</span>();</span></span></code></pre></div></li>
+</ul>
+<h2 id="request-path"><code>request()-&gt;path()</code></h2>
+<ul>
+<li>Devuelve solo el path de la URL.</li>
+<li>Ejemplo:<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>request()-&gt;<span style="color:#658b00">path</span>();</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h1 id="uso-con-la-fachada-request">Uso con la fachada <code>Request</code></h1>
+<p>Podemos hacer lo mismo usando la fachada:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Support\Facades\Request;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Request::<span style="color:#658b00">input</span>(<span style="color:#cd5555">&#39;family_id&#39;</span>);
+</span></span><span style="display:flex;"><span>Request::<span style="color:#658b00">query</span>(<span style="color:#cd5555">&#39;family_id&#39;</span>);
+</span></span><span style="display:flex;"><span>Request::<span style="color:#658b00">post</span>(<span style="color:#cd5555">&#39;family_id&#39;</span>);
+</span></span><span style="display:flex;"><span>Request::<span style="color:#658b00">all</span>();
+</span></span><span style="display:flex;"><span>Request::<span style="color:#658b00">only</span>([<span style="color:#cd5555">&#39;name&#39;</span>, <span style="color:#cd5555">&#39;email&#39;</span>]);
+</span></span><span style="display:flex;"><span>Request::<span style="color:#658b00">fullUrl</span>();</span></span></code></pre></div>
+<p>📌 <strong>Nota:</strong> Tanto <code>request()</code> como <code>Request</code> usan internamente el mismo objeto <code>Illuminate\Http\Request</code>.</p>
+<hr>
+<h1 id="tabla-resumen-de-métodos-principales">Tabla resumen de métodos principales</h1>
+<table>
+  <thead>
+      <tr>
+          <th>Método</th>
+          <th>Origen de datos</th>
+          <th>Descripción</th>
+          <th>Ejemplo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>request('clave')</code></td>
+          <td>GET, POST, JSON</td>
+          <td>Busca la clave en todos los datos de la petición</td>
+          <td><code>request('id')</code></td>
+      </tr>
+      <tr>
+          <td><code>input('clave')</code></td>
+          <td>GET, POST, JSON</td>
+          <td>Igual que <code>request('clave')</code></td>
+          <td><code>request()-&gt;input('id')</code></td>
+      </tr>
+      <tr>
+          <td><code>query('clave')</code></td>
+          <td>Query string (<code>?param=</code>)</td>
+          <td>Solo busca en los parámetros de la URL</td>
+          <td><code>request()-&gt;query('page')</code></td>
+      </tr>
+      <tr>
+          <td><code>post('clave')</code></td>
+          <td>Cuerpo POST</td>
+          <td>Solo busca en el contenido del formulario o cuerpo POST</td>
+          <td><code>request()-&gt;post('email')</code></td>
+      </tr>
+      <tr>
+          <td><code>all()</code></td>
+          <td>GET, POST, JSON</td>
+          <td>Devuelve todos los datos</td>
+          <td><code>request()-&gt;all()</code></td>
+      </tr>
+      <tr>
+          <td><code>only([...])</code></td>
+          <td>GET, POST, JSON</td>
+          <td>Devuelve solo las claves indicadas</td>
+          <td><code>request()-&gt;only(['name'])</code></td>
+      </tr>
+      <tr>
+          <td><code>except([...])</code></td>
+          <td>GET, POST, JSON</td>
+          <td>Devuelve todos excepto las claves indicadas</td>
+          <td><code>request()-&gt;except(['password'])</code></td>
+      </tr>
+      <tr>
+          <td><code>has('clave')</code></td>
+          <td>GET, POST, JSON</td>
+          <td>Existe la clave (aunque esté vacía)</td>
+          <td><code>request()-&gt;has('name')</code></td>
+      </tr>
+      <tr>
+          <td><code>filled('clave')</code></td>
+          <td>GET, POST, JSON</td>
+          <td>Existe y tiene valor no vacío</td>
+          <td><code>request()-&gt;filled('name')</code></td>
+      </tr>
+      <tr>
+          <td><code>missing('clave')</code></td>
+          <td>GET, POST, JSON</td>
+          <td>No existe o está vacía</td>
+          <td><code>request()-&gt;missing('token')</code></td>
+      </tr>
+      <tr>
+          <td><code>ajax()</code></td>
+          <td>Encabezado <code>X-Requested-With</code></td>
+          <td>Comprueba si la petición es AJAX</td>
+          <td><code>request()-&gt;ajax()</code></td>
+      </tr>
+      <tr>
+          <td><code>isJson()</code></td>
+          <td>Cabecera <code>Content-Type</code></td>
+          <td>Comprueba si es JSON</td>
+          <td><code>request()-&gt;isJson()</code></td>
+      </tr>
+      <tr>
+          <td><code>method()</code></td>
+          <td>Método HTTP</td>
+          <td>Devuelve el método usado (<code>GET</code>, <code>POST</code>, etc.)</td>
+          <td><code>request()-&gt;method()</code></td>
+      </tr>
+      <tr>
+          <td><code>isMethod('metodo')</code></td>
+          <td>Método HTTP</td>
+          <td>Comprueba si el método es el indicado</td>
+          <td><code>request()-&gt;isMethod('post')</code></td>
+      </tr>
+      <tr>
+          <td><code>fullUrl()</code></td>
+          <td>URL completa</td>
+          <td>Devuelve la URL con query string</td>
+          <td><code>request()-&gt;fullUrl()</code></td>
+      </tr>
+      <tr>
+          <td><code>url()</code></td>
+          <td>URL base</td>
+          <td>Devuelve la URL sin query string</td>
+          <td><code>request()-&gt;url()</code></td>
+      </tr>
+      <tr>
+          <td><code>path()</code></td>
+          <td>URL base</td>
+          <td>Devuelve solo el path</td>
+          <td><code>request()-&gt;path()</code></td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9943e9df26b6cc4a8dc9cc44d330d1e6">2 - Artisan (CLI)</h1>
+    
+	<h1 id="introducción-a-artisan-en-laravel">Introducción a Artisan en Laravel</h1>
+<p>Artisan es la interfaz de línea de comandos (CLI) incluida con Laravel. <br>
+Ofrece una variedad de comandos útiles para realizar tareas comunes de desarrollo y mantenimiento de aplicaciones.
+La palabra artisan viene de artesano intentando reflejar la sencillez y eficiencia de su utilización</p>
+<h1 id="características-principales">Características principales</h1>
+<ul>
+<li><strong>Generación de Código</strong>: Artisan facilita la creación de modelos, controladores, y otras clases necesarias en aplicaciones Laravel.</li>
+<li><strong>Migraciones de Bases de Datos</strong>: Permite manejar fácilmente las migraciones de bases de datos.</li>
+<li><strong>Tareas Programadas</strong>: Proporciona una forma sencilla de programar tareas que deben ejecutarse periódicamente.</li>
+<li><strong>Entorno de Pruebas</strong>: Ofrece comandos para ejecutar pruebas y otros chequeos.</li>
+</ul>
+<p>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Artisan es una herramienta esencial en el desarrollo de Laravel
+
+</span>
+</strong>
+, que aumenta la eficiencia y simplifica muchas tareas de programación.</p>
+<h1 id="creando-un-comando-en-artisan">Creando un comando en artisan</h1>
+<blockquote>
+<p>Podemos crear comandos presonalizados para trabajar en nuestros proyectos. Para ello seguiremos las siguientes acciones</p>
+</blockquote>
+<details>
+    <summary>Creando un comando con artisan</summary>
+    <div class="solution-content">
+
+        
+;Creamos un fichero con command con una clase para especificar el comando
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:command ClearLog</span></span></code></pre></td></tr></table>
+</div>
+</div>
+![Carpeta de comando](folderCommand.png)
+
+
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<!-- raw HTML omitted -->
+<h1 id="ejemplo-de-uso">Ejemplo de Uso</h1>
+<p>Para ver una lista de todos los comandos disponibles, puedes ejecutar:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php_ artisan list
+</span></span></code></pre></div><h1 id="clasificación-de-los-principales-comandos-de-artisan-en-laravel">Clasificación de los Principales Comandos de Artisan en Laravel</h1>
+
+
+<div class="pageinfo pageinfo-primary">
+<h2 id="clasificación-de-los-principales-comandos-de-artisan-en-laravel">Clasificación de los Principales Comandos de Artisan en Laravel</h2>
+<hr>
+
+</div>
+
+<p>Artisan, el CLI de Laravel, ofrece una amplia gama de comandos útiles. A continuación se presentan algunos de los comandos más importantes agrupados por su funcionalidad.</p>
+<h2 id="comandos-de-generación-de-código">Comandos de Generación de Código</h2>
+<p>Estos comandos ayudan en la creación rápida de clases comúnmente usadas.</p>
+<ul>
+<li><strong>Controladores</strong>: <code>php artisan make:controller</code></li>
+<li><strong>Modelos</strong>: <code>php artisan make:model</code></li>
+<li><strong>Migraciones</strong>: <code>php artisan make:migration</code></li>
+<li><strong>Seeders</strong>: <code>php artisan make:seeder</code></li>
+<li><strong>Factories</strong>: <code>php artisan make:factory</code></li>
+<li><strong>Eventos</strong>: <code>php artisan make:event</code></li>
+<li><strong>Listeners</strong>: <code>php artisan make:listener</code></li>
+<li><strong>Middlewares</strong>: <code>php artisan make:middleware</code></li>
+</ul>
+<h2 id="comandos-de-base-de-datos-y-migraciones">Comandos de Base de Datos y Migraciones</h2>
+<p>Utilizados para gestionar bases de datos y ejecutar migraciones.</p>
+<ul>
+<li><strong>Ejecutar Migraciones</strong>: <code>php artisan migrate</code></li>
+<li><strong>Revertir Migraciones</strong>: <code>php artisan migrate:rollback</code></li>
+<li><strong>Refrescar Migraciones</strong>: <code>php artisan migrate:refresh</code></li>
+<li><strong>Resetear Migraciones</strong>: <code>php artisan migrate:reset</code></li>
+</ul>
+<h2 id="comandos-de-tareas-programadas">Comandos de Tareas Programadas</h2>
+<p>Para manejar tareas programadas o cron jobs.</p>
+<ul>
+<li><strong>Ejecutar Tareas Programadas</strong>: <code>php artisan schedule:run</code></li>
+</ul>
+<h2 id="comandos-de-caché">Comandos de Caché</h2>
+<p>Estos comandos son útiles para gestionar diferentes tipos de caché.</p>
+<ul>
+<li><strong>Limpiar Caché</strong>: <code>php artisan cache:clear</code></li>
+<li><strong>Limpiar Caché de Configuración</strong>: <code>php artisan config:clear</code></li>
+<li><strong>Limpiar Caché de Rutas</strong>: <code>php artisan route:clear</code></li>
+<li><strong>Limpiar Caché de Vistas</strong>: <code>php artisan view:clear</code></li>
+</ul>
+<h2 id="comandos-de-pruebas">Comandos de Pruebas</h2>
+<p>Para ejecutar pruebas unitarias y de integración.</p>
+<ul>
+<li><strong>Ejecutar Pruebas</strong>: <code>php artisan test</code></li>
+</ul>
+<h2 id="comandos-de-rutas">Comandos de Rutas</h2>
+<p>Para trabajar con rutas.</p>
+<ul>
+<li><strong>Listar Rutas</strong>: <code>php artisan route:list</code></li>
+</ul>
+<h2 id="otros-comandos-útiles">Otros Comandos Útiles</h2>
+<ul>
+<li><strong>Limpiar Cache de la Aplicación</strong>: <code>php artisan optimize</code></li>
+<li><strong>Crear Enlace Simbólico para Almacenamiento</strong>: <code>php artisan storage:link</code></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-7c31b26db4a3704ae115e341311ae348">3 - Directivas Blade</h1>
+    
+	<h1 id="directivas-de-blade-en-laravel">Directivas de Blade en Laravel</h1>
+<h2 id="qué-son-las-directivas-de-blade">¿Qué son las Directivas de Blade?</h2>
+<p>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Las directivas de Blade
+
+</span>
+</strong>
+ en Laravel 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    son instrucciones especiales
+
+</span>
+</strong>
+ en las plantillas Blade que proporcionan una forma sencilla y expresiva de:</p>
+<ul>
+<li>
+<span class="font-weight-bold text-primary">
+
+
+    Controlar
+
+</span>
+ la lógica de las vistas</li>
+<li>Permiten incorporar 
+<span class="font-weight-bold text-primary">
+
+
+    estructuras de control
+
+</span>
+ de PHP</li>
+<li>
+<span class="font-weight-bold text-primary">
+
+
+    Funcionalidades específicas de Laravel
+
+</span>
+ directamente en las plantillas Blade.</li>
+</ul>
+<h2 id="principales-directivas-de-blade">Principales Directivas de Blade</h2>
+<h3 id="estructuras-de-control">Estructuras de Control</h3>
+<ul>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    <code>@if</code>, <code>@elseif</code>, <code>@else</code>
+
+</span>
+</strong>
+: Condicionales.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    <code>@foreach</code>, <code>@for</code>, <code>@while</code>
+
+</span>
+</strong>
+: Bucles.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    <code>@switch</code>, <code>@case</code>, <code>@break</code>, <code>@default</code>
+
+</span>
+</strong>
+: Estructura switch.</li>
+</ul>
+<h3 id="autenticación-y-autorización">Autenticación y Autorización</h3>
+<ul>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    <code>@auth</code>, <code>@guest</code>
+
+</span>
+</strong>
+: Directivas para comprobar si el usuario está autenticado o no.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    <code>@can</code>, <code>@cannot</code>
+
+</span>
+</strong>
+: Directivas para comprobar permisos basados en roles.</li>
+</ul>
+<h3 id="inclusión-y-herencia-de-plantillas">Inclusión y Herencia de Plantillas</h3>
+<ul>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    <code>@extends</code>
+
+</span>
+</strong>
+: Define la plantilla padre.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    <code>@section</code>, <code>@yield</code>
+
+</span>
+</strong>
+: Define y muestra una sección de contenido.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    <code>@include</code>
+
+</span>
+</strong>
+: Incluye otra plantilla Blade.</li>
+</ul>
+<h3 id="otros">Otros</h3>
+<ul>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    <code>@csrf</code>
+
+</span>
+</strong>
+: Genera un campo de token CSRF.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    <code>@method</code>
+
+</span>
+</strong>
+: Define un método HTTP para formularios.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    <code>@slot</code>, <code>@component</code>
+
+</span>
+</strong>
+: Trabajar con componentes y slots.</li>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    <code>@php</code>, <code>@endphp</code>
+
+</span>
+</strong>
+: Ejecutar código PHP directamente.</li>
+</ul>
+<p>Estas directivas simplifican la implementación de lógica compleja en las vistas, manteniendo el código limpio y fácil de leer. Blade convierte estas directivas en código PHP apropiado durante el proceso de renderizado de las vistas.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-b27d34d03d7eec16258c64c662ae4720">4 - Carbon (fechas</h1>
+    
+	<h1 id="introducción-a-carbon">Introducción a Carbon</h1>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Carbon
+
+
+</span>
+</strong> es una clase en <em>Laravel</em> que nos permite trabajar con fechas de forma sencilla e intuitiva.</p>
+<p>A continuación mostramos un <strong>cheatsheet</strong> de sus principales usos.</p>
+<p>Para referencia completa: <a href="https://laravel.com/docs/11.x/helpers#date-and-time">Documentación Oficial de Carbon</a></p>
+<hr>
+<h2 id="crear-un-objeto-de-la-clase">Crear un objeto de la clase</h2>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#228b22">// Crear una fecha con la fecha y hora actual
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = <span style="color:#8b008b;font-weight:bold">new</span> Carbon();
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// Fecha actual en formato YYYY-MM-DD HH:MM:SS
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// Crear una fecha específica
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = <span style="color:#8b008b;font-weight:bold">new</span> Carbon(<span style="color:#cd5555">&#39;1969-12-27&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// 1969-12-27 00:00:00
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<details>
+    <summary>Otras formas de crear fechas</summary>
+    <div class="solution-content">
+
+        
+
+### **Usando `Carbon::create()`**
+Este método permite definir una fecha con mayor precisión:
+
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#228b22">// Crear una fecha específica (Año, Mes, Día, Hora, Minuto, Segundo)
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = Carbon::<span style="color:#658b00">create</span>(<span style="color:#b452cd">2024</span>, <span style="color:#b452cd">12</span>, <span style="color:#b452cd">25</span>, <span style="color:#b452cd">15</span>, <span style="color:#b452cd">30</span>, <span style="color:#b452cd">45</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// 2024-12-25 15:30:45
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+---
+
+### **Usando `Carbon::createFromFormat()`**
+Permite crear fechas desde un formato específico:
+
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = Carbon::<span style="color:#658b00">createFromFormat</span>(<span style="color:#cd5555">&#39;d/m/Y H:i:s&#39;</span>, <span style="color:#cd5555">&#39;31/01/2025 14:00:00&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// 2025-01-31 14:00:00
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+---
+
+### **Usando `Carbon::parse()`**
+Convierte una cadena de texto en una fecha:
+
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#228b22">// Convertir texto en fecha
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = Carbon::<span style="color:#658b00">parse</span>(<span style="color:#cd5555">&#39;next Monday&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// 2025-02-03 (si hoy es domingo)
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// Desde un timestamp
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = Carbon::<span style="color:#658b00">createFromTimestamp</span>(<span style="color:#b452cd">1700000000</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// Fecha correspondiente al timestamp
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+---
+
+### **Usando `CarbonImmutable` (Fechas inmutables)**
+Si necesitas fechas inmutables que no cambien con `add()` o `sub()`, usa **CarbonImmutable**:
+
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Carbon\CarbonImmutable;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = CarbonImmutable::<span style="color:#658b00">now</span>();
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>-&gt;<span style="color:#658b00">addDays</span>(<span style="color:#b452cd">5</span>); <span style="color:#228b22">// Nueva fecha sin modificar la original
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<hr>
+<h2 id="obtener-la-fecha-actual">Obtener la fecha actual</h2>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$now</span> = Carbon::<span style="color:#658b00">now</span>();
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$now</span>; <span style="color:#228b22">// 2025-02-02 15:30:45
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="formatear-fechas">Formatear fechas</h2>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#228b22">// Formatos comunes
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>-&gt;<span style="color:#658b00">toDateString</span>();     <span style="color:#228b22">// 2025-02-02
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>-&gt;<span style="color:#658b00">toTimeString</span>();     <span style="color:#228b22">// 15:30:45
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>-&gt;<span style="color:#658b00">toDateTimeString</span>(); <span style="color:#228b22">// 2025-02-02 15:30:45
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// Formato personalizado
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>-&gt;<span style="color:#658b00">format</span>(<span style="color:#cd5555">&#39;d/m/Y&#39;</span>);    <span style="color:#228b22">// 02/02/2025
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>-&gt;<span style="color:#658b00">format</span>(<span style="color:#cd5555">&#39;l, d F Y&#39;</span>); <span style="color:#228b22">// Sunday, 02 February 2025
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="operaciones-con-fechas">Operaciones con Fechas</h2>
+<details>
+    <summary>Operaciones con fechas</summary>
+    <div class="solution-content">
+
+        
+
+### Sumar Fechas
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = Carbon::<span style="color:#658b00">now</span>()-&gt;<span style="color:#658b00">addDays</span>(<span style="color:#b452cd">10</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// Fecha +10 días
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+### Restar Fechas
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = Carbon::<span style="color:#658b00">now</span>()-&gt;<span style="color:#658b00">subMonths</span>(<span style="color:#b452cd">1</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// Fecha -1 mes
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+### Diferencia entre Fechas
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$fecha1</span> = Carbon::<span style="color:#658b00">create</span>(<span style="color:#b452cd">2025</span>, <span style="color:#b452cd">5</span>, <span style="color:#b452cd">1</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$fecha2</span> = Carbon::<span style="color:#658b00">create</span>(<span style="color:#b452cd">2025</span>, <span style="color:#b452cd">6</span>, <span style="color:#b452cd">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha1</span>-&gt;<span style="color:#658b00">diffInDays</span>(<span style="color:#00688b">$fecha2</span>); <span style="color:#228b22">// Diferencia en días
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha1</span>-&gt;<span style="color:#658b00">diffForHumans</span>(); <span style="color:#228b22">// &#34;hace 1 mes&#34;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+    </div>
+</details>
+
+<style>
+    .solution-content {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: #f9f9f9;
+    }
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #0073e6;
+    }
+</style>
+
+<hr>
+<h2 id="comparación-de-fechas">Comparación de Fechas</h2>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$fecha1</span> = Carbon::<span style="color:#658b00">create</span>(<span style="color:#b452cd">2025</span>, <span style="color:#b452cd">5</span>, <span style="color:#b452cd">1</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$fecha2</span> = Carbon::<span style="color:#658b00">create</span>(<span style="color:#b452cd">2025</span>, <span style="color:#b452cd">6</span>, <span style="color:#b452cd">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">if</span> (<span style="color:#00688b">$fecha1</span>-&gt;<span style="color:#658b00">equalTo</span>(<span style="color:#00688b">$fecha2</span>)) {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#cd5555">&#34;Son iguales&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">if</span> (<span style="color:#00688b">$fecha1</span>-&gt;<span style="color:#658b00">isToday</span>()) {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#cd5555">&#34;La fecha es hoy&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">if</span> (<span style="color:#00688b">$fecha1</span>-&gt;<span style="color:#658b00">isFuture</span>()) {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#cd5555">&#34;La fecha está en el futuro&#34;</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="manejo-de-zonas-horarias">Manejo de Zonas Horarias</h2>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = Carbon::<span style="color:#658b00">now</span>(<span style="color:#cd5555">&#39;Europe/Madrid&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// 2025-02-02 16:30:45 (hora de Madrid)
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// Convertir a UTC
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$fechaUtc</span> = <span style="color:#00688b">$fecha</span>-&gt;<span style="color:#658b00">timezone</span>(<span style="color:#cd5555">&#39;UTC&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fechaUtc</span>; <span style="color:#228b22">// 2025-02-02 15:30:45 (UTC)
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="fechas-en-español">Fechas en Español</h2>
+
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Tip</h4>
+
+    Para obtener fechas en español, cambia la configuración de <strong>Carbon</strong>:
+
+</div>
+
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>setlocale(LC_TIME, <span style="color:#cd5555">&#39;es_ES.UTF-8&#39;</span>);
+</span></span><span style="display:flex;"><span>Carbon::<span style="color:#658b00">setLocale</span>(<span style="color:#cd5555">&#39;es&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = Carbon::<span style="color:#658b00">now</span>();
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>-&gt;<span style="color:#658b00">translatedFormat</span>(<span style="color:#cd5555">&#39;l, d F Y&#39;</span>); <span style="color:#228b22">// domingo, 02 febrero 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>-&gt;<span style="color:#658b00">diffForHumans</span>(); <span style="color:#228b22">// &#34;hace 1 segundo&#34;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>&ndash;</p>
+<h2 id="helpers-de-fechas-en-laravel"><strong>Helpers de fechas en Laravel</strong></h2>
+<h3 id="1"><strong>1. <code>now()</code> → Equivalente a <code>Carbon::now()</code></strong></h3>
+<p>Devuelve la fecha y hora actual:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = now();
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// 2025-02-02 15:30:45
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h3 id="2"><strong>2. <code>today()</code> → Equivalente a <code>Carbon::today()</code></strong></h3>
+<p>Devuelve la fecha actual con hora <strong>00:00:00</strong>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = today();
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// 2025-02-02 00:00:00
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h3 id="3"><strong>3. <code>tomorrow()</code> → Equivalente a <code>Carbon::tomorrow()</code></strong></h3>
+<p>Devuelve la fecha de mañana con hora <strong>00:00:00</strong>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = tomorrow();
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// 2025-02-03 00:00:00
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h3 id="4"><strong>4. <code>yesterday()</code> → Equivalente a <code>Carbon::yesterday()</code></strong></h3>
+<p>Devuelve la fecha de ayer con hora <strong>00:00:00</strong>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = yesterday();
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// 2025-02-01 00:00:00
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h3 id="5"><strong>5. <code>carbon()</code> → Instancia de Carbon desde un valor</strong></h3>
+<p>Convierte un <strong>timestamp, string o DateTime</strong> en un objeto Carbon:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#228b22">// Desde una fecha en string
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = carbon(<span style="color:#cd5555">&#39;2025-05-10&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// 2025-05-10 00:00:00
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// Desde un timestamp
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = carbon(<span style="color:#b452cd">1700000000</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// Fecha correspondiente al timestamp
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#228b22">// Desde un DateTime
+</span></span></span><span style="display:flex;"><span><span style="color:#00688b">$fecha</span> = carbon(<span style="color:#8b008b;font-weight:bold">new</span> DateTime());
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$fecha</span>; <span style="color:#228b22">// Fecha actual
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="comparación-rápida-de-helpers"><strong>Comparación rápida de helpers</strong></h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Helper</strong></th>
+          <th><strong>Descripción</strong></th>
+          <th><strong>Equivalente Carbon</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>now()</code></td>
+          <td>Fecha y hora actual</td>
+          <td><code>Carbon::now()</code></td>
+      </tr>
+      <tr>
+          <td><code>today()</code></td>
+          <td>Fecha actual a las 00:00:00</td>
+          <td><code>Carbon::today()</code></td>
+      </tr>
+      <tr>
+          <td><code>tomorrow()</code></td>
+          <td>Fecha de mañana a las 00:00:00</td>
+          <td><code>Carbon::tomorrow()</code></td>
+      </tr>
+      <tr>
+          <td><code>yesterday()</code></td>
+          <td>Fecha de ayer a las 00:00:00</td>
+          <td><code>Carbon::yesterday()</code></td>
+      </tr>
+      <tr>
+          <td><code>carbon()</code></td>
+          <td>Convierte cualquier valor en Carbon</td>
+          <td><code>Carbon::parse()</code> o <code>Carbon::createFromFormat()</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p>Estos <strong>helpers</strong> simplifican el uso de fechas en <strong>Laravel</strong> sin necesidad de escribir <code>Carbon::now()</code>, haciéndolo más limpio y elegante. 🚀</p>
+<!-- raw HTML omitted -->
+<ul>
+<li></li>
+</ul>
+<h2 id="-referencias">📌 Referencias</h2>
+
+
+
+
+<div style="border: 1px solid navy; border-radius: 5px; overflow: hidden;">
+    <div style="background-color: navy; color: white;
+    font-weight: bold; padding: 10px; display: flex; align-items: center;">
+        
+        <span style="margin-right: 8px;">
+            
+                <i class="fas fa-book"></i> 
+            
+        </span>
+        
+        <span>Documentación Oficial</span>
+    </div>
+
+    <h3 style="padding: 5px; font-weight: bold; color: navy;">Fuentes de Información</h3>
+
+    <hr style="border-color: lightblue; border-width: 3px"/>
+    
+    <div style="background-color: #e0f7fa; color: navy; padding: 10px;">
+        <ul>
+            
+            <li><a href="https://laravel.com/docs/11.x/helpers#date-and-time">Carbon en Laravel</a></li>
+            
+            <li><a href="https://carbon.nesbot.com/docs/">Carbon PHP Library</a></li>
+            
+            <li><a href="https://laravel.com/docs/11.x/helpers#dates">Helper de fechas</a></li>
+            
+            <li><a href="https://laravel.com/docs/11.x/helpers#available-methods">Helper, buscar el Miscellaneous las funciones de fechas</a></li>
+            
+            
+            
+        </ul>
+    </div>
+</div>
+
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5be69e1ca3403caa4e31c410a7af5bb7">5 - Desplegar en hosgint</h1>
+    
+	<h1 id="despliegue-en-un-proyecto">Despliegue en un proyecto</h1>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-249f176d514a13a336f595d4fa36a05d">5.1 - Rutas</h1>
+    
+	<h1 id="helpers-de-laravel-para-rutas">Helpers de Laravel para Rutas</h1>
+<p>Laravel proporciona varios helpers útiles para trabajar con rutas. <br>
+Estos son algunos de los más importantes:</p>
+<h2 id="routenombre_ruta"><code>route('nombre_ruta')</code></h2>
+<ul>
+<li>Genera una URL para una ruta nombrada.</li>
+<li>Podemos pasar parámetros a la ruta como un array asociativo 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    [&lsquo;variable&rsquo;=&gt;valor]
+
+</span>
+</strong>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>route(<span style="color:#cd5555">&#39;user.profile&#39;</span>, [<span style="color:#cd5555">&#39;id&#39;</span> =&gt; <span style="color:#b452cd">1</span>]);
+</span></span></code></pre></div><h2 id="urlpath"><code>url('path')</code></h2>
+<ul>
+<li>Genera una URL absoluta para el path dado.</li>
+<li>Ejemplo: <code>url('/user')</code></li>
+</ul>
+<h2 id="redirect-routenombre_ruta"><code>redirect()-&gt;route('nombre_ruta')</code></h2>
+<ul>
+<li>Redirige a una ruta nombrada.</li>
+<li>Ejemplo: <code>redirect()-&gt;route('home')</code></li>
+</ul>
+<h2 id="actionnombrecontroladormetodo"><code>action('NombreControlador@metodo')</code></h2>
+<ul>
+<li>Genera una URL para el controlador y método especificados.</li>
+<li>Ejemplo: <code>action('UserController@show', ['id' =&gt; 1])</code></li>
+</ul>
+<h2 id="back"><code>back()</code></h2>
+<ul>
+<li>Redirige al usuario a la ubicación anterior.</li>
+<li>Ejemplo: <code>return back()</code></li>
+</ul>
+<h2 id="current"><code>current()</code></h2>
+<ul>
+<li>Obtiene la URL actual.</li>
+<li>Ejemplo: <code>url()-&gt;current()</code></li>
+</ul>
+<h2 id="previous"><code>previous()</code></h2>
+<ul>
+<li>Obtiene la URL previa a la actual.</li>
+<li>Ejemplo: <code>url()-&gt;previous()</code></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-86d795ad32cda9ed60f8a40748e7aa13">5.2 - Vistas</h1>
+    
+	<h1 id="helpers-de-vistas-en-laravel">Helpers de Vistas en Laravel</h1>
+<h2 id="qué-son-los-helpers-de-vistas">¿Qué son los Helpers de Vistas?</h2>
+<p>Los helpers de vistas en Laravel son funciones que facilitan el manejo y la renderización de las vistas. Estos helpers permiten una interacción más simple y eficiente con las plantillas Blade del framework.</p>
+<p>Cómo helper de vistas, tenemos  la función 
+<span class="font-weight-bold text-primary">
+
+
+    view()
+
+</span>
+ de Laravel.</p>
+<p>Este helper 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    retorna una instancia de una vista
+
+</span>
+</strong>
+.</p>
+<p>Esta función no solo carga y retorna la vista especificada, sino que también permite 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    el encadenamiento de métodos adicionales disponibles en la instancia del objeto de la vista
+
+</span>
+</strong>
+.</p>
+<p>Esto facilita <strong>la manipulación y personalización de la vista</strong> antes de que se envíe al navegador.</p>
+<h2 id="principales-helpers-de-vistas">Principales Helpers de Vistas</h2>
+<h3 id="view"><strong><code>view()</code></strong></h3>
+<ul>
+<li>Genera una nueva vista.</li>
+<li>Ejemplo: <code>view('welcome', ['data' =&gt; $data])</code> carga la vista <code>welcome</code> con datos.</li>
+</ul>
+<h3 id="view-make"><strong><code>view()-&gt;make()</code></strong></h3>
+<ul>
+<li>Similar a <code>view()</code>, pero con una sintaxis alternativa.</li>
+<li>Ejemplo: <code>view()-&gt;make('welcome', ['data' =&gt; $data])</code>.</li>
+</ul>
+<h3 id="view-exists"><strong><code>view()-&gt;exists()</code></strong></h3>
+<ul>
+<li>Comprueba si una vista existe.</li>
+<li>Ejemplo: <code>view()-&gt;exists('welcome')</code> devuelve <code>true</code> si la vista <code>welcome</code> existe.</li>
+</ul>
+<h3 id="view-first"><strong><code>view()-&gt;first()</code></strong></h3>
+<ul>
+<li>Intenta renderizar la primera vista existente de una lista.</li>
+<li>Ejemplo: <code>view()-&gt;first(['custom', 'default'])</code> carga la primera vista que exista entre <code>custom</code> y <code>default</code>.</li>
+</ul>
+<h3 id="view-share"><strong><code>view()-&gt;share()</code></strong></h3>
+<ul>
+<li>Comparte una variable en todas las vistas.</li>
+<li>Ejemplo: <code>view()-&gt;share('key', 'value')</code> hace que <code>key</code> esté disponible globalmente en todas las vistas.</li>
+</ul>
+<h3 id="view-composer"><strong><code>view()-&gt;composer()</code></strong></h3>
+<ul>
+<li>Asigna datos a una vista cada vez que se carga.</li>
+<li>Ejemplo: <code>view()-&gt;composer('welcome', function ($view) { ... })</code>.</li>
+</ul>
+<h3 id="view-creator"><strong><code>view()-&gt;creator()</code></strong></h3>
+<ul>
+<li>Similar a <code>view()-&gt;composer()</code>, pero se ejecuta cuando la vista se crea.</li>
+<li>Ejemplo: <code>view()-&gt;creator('welcome', function ($view) { ... })</code>.</li>
+</ul>
+<p>Estos helpers son fundamentales para la gestión de vistas en Laravel, permitiendo un flujo de trabajo más ágil y una mayor flexibilidad en la renderización y el manejo de datos en las vistas.</p>
+<ul>
+<li>Ejemplo: <code>url()-&gt;previous()</code></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-eb2463966e441ebd8bd566492de77a08">6 - Desplegar en hosgint</h1>
+    
+	<h1 id="uso-práctico-de-bases-de-datos-facade-schema">Uso práctico de bases de datos: Facade Schema</h1>
+<ul>
+<li>Permite ver la estructura de una tabla</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Iluminate\Schema\Facade
+</span></span><span style="display:flex;"><span>Schema::<span style="color:#658b00">getColumnListing</span>(<span style="color:#cd5555">&#34;nombre_tabla&#34;</span>);
+</span></span></code></pre></div><ul>
+<li>P.e. tabla specializatios:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Schema::<span style="color:#658b00">getColumnListing</span>(<span style="color:#cd5555">&#34;specializations&#34;</span>);
+</span></span><span style="display:flex;"><span>= [
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#34;id&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#34;families_id&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#34;created_at&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#34;updated_at&#34;</span>,
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><blockquote>
+</blockquote>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-fafb9392cbf5afacc27ff9a617d20bff">7 - Laravel: Uso de la Facade File</h1>
+    
+	<h1 id="laravel-uso-de-la-facade-file">Laravel: Uso de la Facade File</h1>
+<p>La <strong>facade <code>File</code></strong> en Laravel permite manipular archivos de manera sencilla sin necesidad de utilizar directamente funciones de PHP como <code>fopen</code>, <code>fwrite</code>, o <code>unlink</code>.</p>
+<h2 id="importación-de-la-facade">Importación de la Facade</h2>
+<p>Antes de usarla, es necesario importar la clase:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Support\Facades\File;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="escribir-en-un-archivo">Escribir en un Archivo</h2>
+<p>Para escribir en un archivo, usamos <code>File::put()</code>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>File::<span style="color:#658b00">put</span>(storage_path(<span style="color:#cd5555">&#39;logs/laravel.log&#39;</span>), <span style="color:#cd5555">&#39;Este es un nuevo contenido.&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Esto sobrescribe el contenido del archivo con el nuevo texto.</p>
+<h2 id="añadir-contenido-a-un-archivo">Añadir Contenido a un Archivo</h2>
+<p>Si queremos <strong>añadir</strong> contenido en lugar de sobrescribirlo, usamos <code>File::append()</code>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>File::<span style="color:#658b00">append</span>(storage_path(<span style="color:#cd5555">&#39;logs/laravel.log&#39;</span>), <span style="color:#cd5555">&#34;</span><span style="color:#cd5555">\n</span><span style="color:#cd5555">Nueva línea de log.&#34;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="leer-el-contenido-de-un-archivo">Leer el Contenido de un Archivo</h2>
+<p>Podemos leer el contenido de un archivo con <code>File::get()</code>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#00688b">$contenido</span> = File::<span style="color:#658b00">get</span>(storage_path(<span style="color:#cd5555">&#39;logs/laravel.log&#39;</span>));
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$contenido</span>;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="comprobar-si-un-archivo-existe">Comprobar si un Archivo Existe</h2>
+<p>Para verificar si un archivo existe:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#8b008b;font-weight:bold">if</span> (File::<span style="color:#658b00">exists</span>(storage_path(<span style="color:#cd5555">&#39;logs/laravel.log&#39;</span>))) {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#cd5555">&#34;El archivo existe.&#34;</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="eliminar-un-archivo">Eliminar un Archivo</h2>
+<p>Si queremos eliminar un archivo:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>File::<span style="color:#658b00">delete</span>(storage_path(<span style="color:#cd5555">&#39;logs/laravel.log&#39;</span>));</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="conclusión">Conclusión</h2>
+<p>La facade <code>File</code> facilita la manipulación de archivos en Laravel, proporcionando una interfaz simple y elegante en comparación con las funciones nativas de PHP.</p>
+<blockquote>
+<p>📌 <strong>Nota:</strong> Para operaciones avanzadas, Laravel también ofrece la facade <code>Storage</code>, que permite interactuar con sistemas de archivos locales y en la nube (como Amazon S3).</p>
+</blockquote>
+<hr>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-49b64f7c5f4b3303551df9bfc633db90">8 - Laravel: Uso de la Facade File</h1>
+    
+	<h1 id="-laravel-auth-cheatsheet-facade--helpers">✅ Laravel Auth Cheatsheet (Facade &amp; Helpers)</h1>
+<blockquote>
+<p>Autenticación usando el facade <code>Auth</code> y el helper <code>auth()</code><br>
+<em>(Válido para Laravel + Fortify)</em></p>
+</blockquote>
+<hr>
+<h2 id="-inicio-y-cierre-de-sesión">🔐 Inicio y cierre de sesión</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Código</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Auth::login($user)</code></td>
+          <td>Inicia sesión con el usuario indicado</td>
+      </tr>
+      <tr>
+          <td><code>Auth::logout()</code></td>
+          <td>Cierra la sesión del usuario</td>
+      </tr>
+      <tr>
+          <td><code>Auth::attempt(['email' =&gt; ..., 'password' =&gt; ...])</code></td>
+          <td>Intenta iniciar sesión con credenciales</td>
+      </tr>
+      <tr>
+          <td><code>auth()-&gt;login($user)</code></td>
+          <td>Igual que <code>Auth::login()</code> (helper)</td>
+      </tr>
+      <tr>
+          <td><code>auth()-&gt;logout()</code></td>
+          <td>Igual que <code>Auth::logout()</code></td>
+      </tr>
+      <tr>
+          <td><code>auth()-&gt;attempt([...])</code></td>
+          <td>Igual que <code>Auth::attempt()</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-acceder-al-usuario-autenticado">👤 Acceder al usuario autenticado</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Código</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Auth::user()</code></td>
+          <td>Devuelve el usuario actual autenticado (o <code>null</code>)</td>
+      </tr>
+      <tr>
+          <td><code>auth()-&gt;user()</code></td>
+          <td>Igual que arriba</td>
+      </tr>
+      <tr>
+          <td><code>Auth::id()</code></td>
+          <td>Devuelve el ID del usuario autenticado</td>
+      </tr>
+      <tr>
+          <td><code>auth()-&gt;id()</code></td>
+          <td>Igual que arriba</td>
+      </tr>
+      <tr>
+          <td><code>Auth::check()</code></td>
+          <td>Devuelve <code>true</code> si hay un usuario autenticado</td>
+      </tr>
+      <tr>
+          <td><code>auth()-&gt;check()</code></td>
+          <td>Igual que arriba</td>
+      </tr>
+      <tr>
+          <td><code>Auth::guest()</code></td>
+          <td>Devuelve <code>true</code> si <strong>no</strong> hay usuario autenticado</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-proteger-rutas">🛡️ Proteger rutas</h2>
+<p>En tu archivo <code>routes/web.php</code>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>Route::<span style="color:#658b00">middleware</span>([<span style="color:#cd5555">&#39;auth&#39;</span>])-&gt;<span style="color:#658b00">group</span>(<span style="color:#8b008b;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;/dashboard&#39;</span>, fn () =&gt; view(<span style="color:#cd5555">&#39;dashboard&#39;</span>));
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>O directamente:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;/dashboard&#39;</span>, fn () =&gt; view(<span style="color:#cd5555">&#39;dashboard&#39;</span>))-&gt;<span style="color:#658b00">middleware</span>(<span style="color:#cd5555">&#39;auth&#39;</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="-redirección-después-del-login-fortify">🔁 Redirección después del login (Fortify)</h2>
+<p>En <code>FortifyServiceProvider</code> o en <code>App\Providers\RouteServiceProvider</code>:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Support\Facades\Redirect;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Fortify::<span style="color:#658b00">redirects</span>([
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;login&#39;</span> =&gt; <span style="color:#8b008b;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span><span style="color:#00688b">$role</span> = auth()-&gt;<span style="color:#658b00">user</span>()-&gt;<span style="color:#658b00">getRoleNames</span>()-&gt;<span style="color:#658b00">first</span>();
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> match (<span style="color:#00688b">$role</span>) {
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;admin&#39;</span> =&gt; <span style="color:#cd5555">&#39;/admin&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;teacher&#39;</span> =&gt; <span style="color:#cd5555">&#39;/teacher&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;student&#39;</span> =&gt; <span style="color:#cd5555">&#39;/student&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">default</span> =&gt; <span style="color:#cd5555">&#39;/&#39;</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>]);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>También puedes usar la propiedad <code>RouteServiceProvider::$redirectTo</code> si usas Fortify con configuración clásica.</p>
+<hr>
+<h2 id="-otros-métodos-útiles">⚙️ Otros métodos útiles</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Código</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Auth::viaRemember()</code></td>
+          <td>Comprueba si el usuario se autenticó con “recordarme”</td>
+      </tr>
+      <tr>
+          <td><code>auth()-&gt;viaRemember()</code></td>
+          <td>Igual que arriba</td>
+      </tr>
+      <tr>
+          <td><code>auth()-&gt;setUser($user)</code></td>
+          <td>Establece manualmente un usuario en la request (avanzado)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-ejemplo-con-tinker">🧪 Ejemplo con Tinker</h2>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan tinker
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; <span style="color:#00688b">$user</span> = App<span style="color:#cd5555">\M</span>odels<span style="color:#cd5555">\U</span>ser::find(1);
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; Auth::login(<span style="color:#00688b">$user</span>);
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; Auth::user()-&gt;name;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

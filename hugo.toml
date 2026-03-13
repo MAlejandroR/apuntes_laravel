@@ -90,8 +90,9 @@ copyright = "@MRomero"
 privacy_policy = "https://policies.google.com/privacy"
 disableToc = true
 disable_toc= false
-[print]
 
+[params.print]
+enable = true
 
 [params.links]
 # # End user relevant links. These will show up on left side of footer and in the community page if you have one.
@@ -154,3 +155,5 @@ algolia_docsearch = false
 enable = true
 [params.mermaid]
 enable = true
+[outputs]
+section = [ "HTML", "RSS", "print" ]

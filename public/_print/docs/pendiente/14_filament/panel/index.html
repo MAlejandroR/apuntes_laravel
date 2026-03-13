@@ -1,0 +1,624 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/pendiente/14_filament/panel/">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/pendiente/14_filament/panel/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Panel  | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/pendiente/14_filament/panel/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Panel ">
+  <meta property="og:description" content="El panel del admin La parte visual de la administración en Filament se centra en uno o varios paneles, que son el núcleo desde donde un administrador o los roles autorizados pueden ver y gestionar los recursos de la aplicación.
+Cuando instalamos Filament, se crea automáticamente un panel de administración por defecto, al cual se accede directamente desde la URL:
+1 /admin Además de este panel inicial, se pueden crear más paneles según las necesidades del proyecto.
+Por ejemplo:">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Panel ">
+  <meta itemprop="description" content="El panel del admin La parte visual de la administración en Filament se centra en uno o varios paneles, que son el núcleo desde donde un administrador o los roles autorizados pueden ver y gestionar los recursos de la aplicación.
+Cuando instalamos Filament, se crea automáticamente un panel de administración por defecto, al cual se accede directamente desde la URL:
+1 /admin Además de este panel inicial, se pueden crear más paneles según las necesidades del proyecto.
+Por ejemplo:">
+  <meta itemprop="datePublished" content="2024-08-08T18:23:50+02:00">
+  <meta itemprop="dateModified" content="2024-08-08T18:23:50+02:00">
+  <meta itemprop="wordCount" content="713">
+  <meta itemprop="keywords" content="Laravel,Filament,Dashboard,Herramientas,Panel">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Panel ">
+  <meta name="twitter:description" content="El panel del admin La parte visual de la administración en Filament se centra en uno o varios paneles, que son el núcleo desde donde un administrador o los roles autorizados pueden ver y gestionar los recursos de la aplicación.
+Cuando instalamos Filament, se crea automáticamente un panel de administración por defecto, al cual se accede directamente desde la URL:
+1 /admin Además de este panel inicial, se pueden crear más paneles según las necesidades del proyecto.
+Por ejemplo:">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+Versión imprimible multipagina.
+<a href="#" onclick="print();return false;">Haga click aquí para imprimir</a>.
+</p><p>
+<a href="/laravel/docs/pendiente/14_filament/panel/">Volver a la vista normal de esta página</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Panel </h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-706b48573c7cb827b38967708a704a79">Navegación</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <h1 id="el-panel-del-admin">El panel del admin</h1>
+<p>La parte visual de la administración en <strong>Filament</strong> se centra en uno o varios <strong>paneles</strong>, que son el núcleo desde donde un administrador o los roles autorizados pueden ver y gestionar los recursos de la aplicación.</p>
+<p>Cuando instalamos Filament, se crea automáticamente un <strong>panel de administración por defecto</strong>, al cual se accede directamente desde la URL:</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>/admin</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Además de este panel inicial, se pueden <strong>crear más paneles según las necesidades del proyecto</strong>.<br>
+Por ejemplo:</p>
+<ul>
+<li>Un panel para administradores internos (<code>/admin</code>).</li>
+<li>Un panel separado para clientes o usuarios externos (<code>/client</code>).</li>
+<li>Incluso un panel para profesores y otro para estudiantes en una plataforma educativa.</li>
+</ul>
+<p>Sin embargo, en muchos casos un único panel es suficiente para centralizar toda la gestión.<br>
+Dentro de cada panel se pueden añadir y organizar diferentes elementos que Filament pone a disposición, como:</p>
+<ul>
+<li><strong>Widgets</strong> para mostrar gráficos, estadísticas y métricas.</li>
+<li><strong>Recursos (Resources)</strong> para gestionar modelos de base de datos con formularios y tablas.</li>
+<li><strong>Clusters</strong> para agrupar secciones de administración.</li>
+<li><strong>Pages</strong> para pantallas personalizadas.</li>
+<li><strong>Navegación</strong> configurable para organizar menús y accesos.</li>
+</ul>
+<p>En resumen, <strong>el panel es el punto de entrada y la interfaz principal de Filament</strong> para administrar y visualizar recursos de la aplicación de manera estructurada y personalizable.</p>
+<hr>
+<h2 id="ejemplo-mínimo-de-panelprovider">Ejemplo mínimo de <code>PanelProvider</code></h2>
+<p>Un ejemplo básico de cómo definir un <strong>panel de administración</strong> en Filament mediante un <code>AdminPanelProvider</code>.<br>
+En este archivo se configura el ID del panel, la ruta de acceso (<code>/admin</code>) y los métodos <code>discover...</code> para cargar automáticamente recursos, páginas y widgets:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?php
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">namespace</span> App\Providers\Filament;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Filament\Panel;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Filament\PanelProvider;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">AdminPanelProvider</span> <span style="color:#8b008b;font-weight:bold">extends</span> PanelProvider
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">panel</span>(Panel <span style="color:#00688b">$panel</span>): Panel
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$panel</span>
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">default</span>() <span style="color:#228b22">// Define este panel como el principal
+</span></span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">id</span>(<span style="color:#cd5555">&#39;admin&#39;</span>) <span style="color:#228b22">// Identificador único del panel
+</span></span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">path</span>(<span style="color:#cd5555">&#39;admin&#39;</span>) <span style="color:#228b22">// Ruta de acceso al panel (/admin)
+</span></span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">discoverResources</span>(
+</span></span><span style="display:flex;"><span>                in: app_path(<span style="color:#cd5555">&#39;Filament/Resources&#39;</span>),
+</span></span><span style="display:flex;"><span>                <span style="color:#8b008b;font-weight:bold">for</span>: <span style="color:#cd5555">&#39;App\\Filament\\Resources&#39;</span>
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">discoverPages</span>(
+</span></span><span style="display:flex;"><span>                in: app_path(<span style="color:#cd5555">&#39;Filament/Pages&#39;</span>),
+</span></span><span style="display:flex;"><span>                <span style="color:#8b008b;font-weight:bold">for</span>: <span style="color:#cd5555">&#39;App\\Filament\\Pages&#39;</span>
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">discoverWidgets</span>(
+</span></span><span style="display:flex;"><span>                in: app_path(<span style="color:#cd5555">&#39;Filament/Widgets&#39;</span>),
+</span></span><span style="display:flex;"><span>                <span style="color:#8b008b;font-weight:bold">for</span>: <span style="color:#cd5555">&#39;App\\Filament\\Widgets&#39;</span>
+</span></span><span style="display:flex;"><span>            );
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<hr>
+<h2 id="ejemplo-con-múltiples-paneles">Ejemplo con múltiples paneles</h2>
+<p>Filament permite tener <strong>varios paneles</strong> en la misma aplicación.<br>
+Esto resulta útil cuando distintos tipos de usuarios necesitan interfaces separadas.<br>
+Por ejemplo:</p>
+<ul>
+<li>Un <strong>panel de administración</strong> (<code>/admin</code>) para gestionar todos los recursos.</li>
+<li>Un <strong>panel de clientes</strong> (<code>/client</code>) con acceso restringido a ciertos recursos o páginas.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?php
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">namespace</span> App\Providers\Filament;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Filament\Panel;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Filament\PanelProvider;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">AdminPanelProvider</span> <span style="color:#8b008b;font-weight:bold">extends</span> PanelProvider
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">panel</span>(Panel <span style="color:#00688b">$panel</span>): Panel
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$panel</span>
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">default</span>()
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">id</span>(<span style="color:#cd5555">&#39;admin&#39;</span>)
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">path</span>(<span style="color:#cd5555">&#39;admin&#39;</span>)
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">discoverResources</span>(
+</span></span><span style="display:flex;"><span>                in: app_path(<span style="color:#cd5555">&#39;Filament/Admin/Resources&#39;</span>),
+</span></span><span style="display:flex;"><span>                <span style="color:#8b008b;font-weight:bold">for</span>: <span style="color:#cd5555">&#39;App\\Filament\\Admin\\Resources&#39;</span>
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">discoverPages</span>(
+</span></span><span style="display:flex;"><span>                in: app_path(<span style="color:#cd5555">&#39;Filament/Admin/Pages&#39;</span>),
+</span></span><span style="display:flex;"><span>                <span style="color:#8b008b;font-weight:bold">for</span>: <span style="color:#cd5555">&#39;App\\Filament\\Admin\\Pages&#39;</span>
+</span></span><span style="display:flex;"><span>            );
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">ClientPanelProvider</span> <span style="color:#8b008b;font-weight:bold">extends</span> PanelProvider
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">panel</span>(Panel <span style="color:#00688b">$panel</span>): Panel
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$panel</span>
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">id</span>(<span style="color:#cd5555">&#39;client&#39;</span>)
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">path</span>(<span style="color:#cd5555">&#39;client&#39;</span>)
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">discoverResources</span>(
+</span></span><span style="display:flex;"><span>                in: app_path(<span style="color:#cd5555">&#39;Filament/Client/Resources&#39;</span>),
+</span></span><span style="display:flex;"><span>                <span style="color:#8b008b;font-weight:bold">for</span>: <span style="color:#cd5555">&#39;App\\Filament\\Client\\Resources&#39;</span>
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">discoverPages</span>(
+</span></span><span style="display:flex;"><span>                in: app_path(<span style="color:#cd5555">&#39;Filament/Client/Pages&#39;</span>),
+</span></span><span style="display:flex;"><span>                <span style="color:#8b008b;font-weight:bold">for</span>: <span style="color:#cd5555">&#39;App\\Filament\\Client\\Pages&#39;</span>
+</span></span><span style="display:flex;"><span>            );
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>En este caso:</p>
+<ul>
+<li>El <strong>panel admin</strong> se accede desde <code>/admin</code>.</li>
+<li>El <strong>panel cliente</strong> se accede desde <code>/client</code>.</li>
+</ul>
+<p>Cada uno carga sus propios <strong>Resources</strong>, <strong>Pages</strong> y <strong>Widgets</strong> según la carpeta y namespace definidos.</p>
+<hr>
+<h1 id="configurar-el-path-de-filament-en-el-panel">Configurar el path de Filament en el panel</h1>
+<p>Cuando instalamos <strong>Filament 4</strong>, automáticamente se crea un provider en<br>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    app/Providers/Filament/AdminPanelProvider.php
+
+
+</span>
+</strong>.</p>
+<p>Este archivo define las rutas, el nombre del panel, colores y la URL base donde se monta el panel de administración.</p>
+<p>Dentro del método 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    panel()
+
+
+</span>
+</strong> encontramos la definición:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Filament\Panel;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Filament\PanelProvider;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">AdminPanelProvider</span> <span style="color:#8b008b;font-weight:bold">extends</span> PanelProvider
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">panel</span>(Panel <span style="color:#00688b">$panel</span>): Panel
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#00688b">$panel</span>
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">id</span>(<span style="color:#cd5555">&#39;admin&#39;</span>)
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">path</span>(<span style="color:#cd5555">&#39;admin&#39;</span>) <span style="color:#228b22">// Aquí definimos el path base
+</span></span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">login</span>()
+</span></span><span style="display:flex;"><span>            -&gt;<span style="color:#658b00">colors</span>([
+</span></span><span style="display:flex;"><span>                <span style="color:#cd5555">&#39;primary&#39;</span> =&gt; <span style="color:#cd5555">&#39;#4f46e5&#39;</span>,
+</span></span><span style="display:flex;"><span>            ]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>En este ejemplo, el panel está disponible en la URL:</p>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    <a href="http://tusitio.com/admin">http://tusitio.com/admin</a>
+
+
+</span>
+</strong>
+<p>Si modificamos 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    -&gt;path(&lsquo;admin&rsquo;)
+
+
+</span>
+</strong> a 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    -&gt;path(&lsquo;dashboard&rsquo;)
+
+
+</span>
+</strong>, el panel pasará a estar en:</p>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    <a href="http://tusitio.com/dashboard">http://tusitio.com/dashboard</a>
+
+
+</span>
+</strong>
+<hr>
+<h2 id="cambiar-la-página-inicial-del-panel">Cambiar la página inicial del panel</h2>
+<p>Por defecto, cuando accedemos a 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    /admin
+
+
+</span>
+</strong>, Filament muestra su página <strong>Dashboard</strong>.<br>
+Si queremos que cargue una página personalizada (por ejemplo, <strong>AdminHome</strong>), tenemos que crearla primero:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">namespace</span> App\Filament\Pages;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Filament\Pages\Page;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">AdminHome</span> <span style="color:#8b008b;font-weight:bold">extends</span> Page
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">protected</span> <span style="color:#8b008b;font-weight:bold">static</span> ?string <span style="color:#00688b">$navigationIcon</span> = <span style="color:#cd5555">&#39;heroicon-o-home&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">protected</span> <span style="color:#8b008b;font-weight:bold">static</span> string <span style="color:#00688b">$view</span> = <span style="color:#cd5555">&#39;filament.pages.admin-home&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">protected</span> <span style="color:#8b008b;font-weight:bold">static</span> ?string <span style="color:#00688b">$title</span> = <span style="color:#cd5555">&#39;Inicio del panel&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">protected</span> <span style="color:#8b008b;font-weight:bold">static</span> ?string <span style="color:#00688b">$navigationLabel</span> = <span style="color:#cd5555">&#39;Inicio&#39;</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Y su vista Blade:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">x-filament-panels::page</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">h1</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;text-2xl font-bold&#34;</span>&gt;¡Bienvenido, {{ auth()-&gt;user()-&gt;name }}!&lt;/<span style="color:#8b008b;font-weight:bold">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#8b008b;font-weight:bold">p</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;text-gray-500&#34;</span>&gt;Este es tu panel de administración.&lt;/<span style="color:#8b008b;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">x-filament-panels::page</span>&gt;</span></span></code></pre></div>
+<p>Luego, en el 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    AdminPanelProvider
+
+
+</span>
+</strong>, añadimos:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>-&gt;<span style="color:#658b00">homeUrl</span>(fn () =&gt; route(<span style="color:#cd5555">&#39;filament.admin.pages.admin-home&#39;</span>))</span></span></code></pre></div>
+<p>De esta forma, cuando un usuario entre a 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    /admin
+
+
+</span>
+</strong>, la página que verá primero será <strong>AdminHome</strong> y no el Dashboard por defecto.</p>
+<hr>
+<h2 id="resumen">Resumen</h2>
+<ul>
+<li>El path del panel se define con 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    -&gt;path(&lsquo;admin&rsquo;)
+
+
+</span>
+</strong>.</li>
+<li>La página inicial se puede personalizar con 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    -&gt;homeUrl()
+
+
+</span>
+</strong>.</li>
+<li>Filament carga sus rutas automáticamente, no hace falta definirlas en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    web.php
+
+
+</span>
+</strong>.</li>
+</ul>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-706b48573c7cb827b38967708a704a79">1 - Navegación</h1>
+    
+	<h1 id="navegación-en-el-panel">Navegación en el panel</h1>
+<p>En el panel de administración de Filament, la <strong>navegación</strong> es el conjunto de menús y botones que nos permiten acceder a los <strong>recursos</strong>, <strong>páginas</strong> o <strong>clústeres</strong> que hemos creado.</p>
+<p>Filament nos permite <strong>organizar y personalizar</strong> cómo se muestran estos elementos en el panel.</p>
+<hr>
+<h2 id="agrupar-recursos-con-navigationgroup">Agrupar recursos con $navigationGroup</h2>
+<p>La forma más sencilla de agrupar recursos es mediante el atributo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">protected</span> <span style="color:#8b008b;font-weight:bold">static</span> ?string <span style="color:#00688b">$navigationGroup</span> = <span style="color:#cd5555">&#39;Usuarios&#39;</span>;</span></span></code></pre></div>
+<p>O bien, con un método dinámico que incluso se puede traducir:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">getNavigationGroup</span>(): ?string
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> __(<span style="color:#cd5555">&#39;Gestión de Datos&#39;</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>De esta forma, los recursos aparecen agrupados en el menú lateral bajo la etiqueta indicada.</p>
+<hr>
+<h2 id="uso-de-clusters">Uso de Clusters</h2>
+<p>A partir de <strong>Filament 4</strong> existe una forma más avanzada de organizar la navegación: los <strong>Clusters</strong>.</p>
+<p>Un <strong>Cluster</strong> es un <strong>módulo separado</strong> dentro del panel, que agrupa varios recursos y páginas bajo un mismo menú principal.<br>
+Se diferencia de <code>$navigationGroup</code> porque:</p>
+<ul>
+<li><code>$navigationGroup</code> solo organiza visualmente recursos dentro del mismo panel.</li>
+<li>Un <strong>Cluster</strong> crea un <strong>espacio modular independiente</strong>, ideal cuando se tienen varios conjuntos grandes de recursos (ej: Usuarios, Pedidos, Configuración).</li>
+<li>Permite añadir recursos, páginas e incluso dashboards personalizados dentro del mismo módulo.</li>
+</ul>
+<p>Ejemplo de Cluster:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">UserCluster</span> <span style="color:#8b008b;font-weight:bold">extends</span> Cluster
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">protected</span> <span style="color:#8b008b;font-weight:bold">static</span> ?string <span style="color:#00688b">$navigationIcon</span> = <span style="color:#cd5555">&#39;heroicon-o-users&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">protected</span> <span style="color:#8b008b;font-weight:bold">static</span> ?string <span style="color:#00688b">$navigationLabel</span> = <span style="color:#cd5555">&#39;Usuarios&#39;</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Y en un recurso dentro de ese clúster:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">protected</span> <span style="color:#8b008b;font-weight:bold">static</span> ?string <span style="color:#00688b">$cluster</span> = \App\Filament\Clusters\UserCluster::<span style="color:#658b00">class</span>;</span></span></code></pre></div>
+<p>Convención recomendada:</p>
+<ul>
+<li>Nombre de la clase en inglés, singular y terminado en <code>Cluster</code> (ej: <code>UserCluster</code>).</li>
+<li>Etiqueta visible traducida (<code>Usuarios</code>).</li>
+</ul>
+<hr>
+<h2 id="personalización-de-la-navegación">Personalización de la navegación</h2>
+<p>Cada recurso o cluster puede modificar cómo aparece en el menú con varios atributos:</p>
+<ul>
+<li>
+<p><strong>Icono del recurso</strong><br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">protected</span> <span style="color:#8b008b;font-weight:bold">static</span> ?string <span style="color:#00688b">$navigationIcon</span> = <span style="color:#cd5555">&#39;heroicon-o-user&#39;</span>;</span></span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Etiqueta personalizada</strong><br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">protected</span> <span style="color:#8b008b;font-weight:bold">static</span> ?string <span style="color:#00688b">$navigationLabel</span> = <span style="color:#cd5555">&#39;Estudiantes&#39;</span>;</span></span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Orden dentro del menú</strong><br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">protected</span> <span style="color:#8b008b;font-weight:bold">static</span> ?int <span style="color:#00688b">$navigationSort</span> = <span style="color:#b452cd">1</span>;</span></span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Control de visibilidad</strong><br>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">canViewNavigation</span>(): bool
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> auth()-&gt;<span style="color:#658b00">user</span>()-&gt;<span style="color:#658b00">hasRole</span>(<span style="color:#cd5555">&#39;admin&#39;</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+</li>
+</ul>
+<hr>
+<h2 id="posición-de-la-navegación-en-el-panel">Posición de la navegación en el panel</h2>
+<p>En el <code>AdminPanelProvider</code>, podemos decidir <strong>dónde se ubica el menú de navegación</strong>:</p>
+<ul>
+<li><strong>Menú lateral izquierdo (por defecto):</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$panel</span>-&gt;<span style="color:#658b00">sidebarCollapsibleOnDesktop</span>();</span></span></code></pre></div>
+<ul>
+<li><strong>Menú lateral derecho:</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$panel</span>-&gt;<span style="color:#658b00">sidebarPosition</span>(<span style="color:#cd5555">&#39;right&#39;</span>);</span></span></code></pre></div>
+<ul>
+<li><strong>Navegación en la parte superior (horizontal):</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00688b">$panel</span>-&gt;<span style="color:#658b00">topNavigation</span>();</span></span></code></pre></div>
+<hr>
+<h2 id="resumen">Resumen</h2>
+<ul>
+<li><strong>$navigationGroup</strong> → agrupa recursos dentro de la misma navegación.</li>
+<li><strong>Clusters</strong> → crean módulos separados, más potentes para grandes aplicaciones.</li>
+<li><strong>Atributos útiles</strong>:
+<ul>
+<li><code>navigationIcon</code>, <code>navigationLabel</code>, <code>navigationSort</code>, <code>canViewNavigation</code>.</li>
+</ul>
+</li>
+<li><strong>Posición del menú</strong>:
+<ul>
+<li>Lateral izquierdo (default).</li>
+<li>Lateral derecho (<code>sidebarPosition('right')</code>).</li>
+<li>Superior horizontal (<code>topNavigation()</code>).</li>
+</ul>
+</li>
+</ul>
+<h2 id="de-esta-manera-podemos-construir-una-navegación-organizada-modular-y-adaptable-a-las-necesidades-de-cada-proyecto-en-filament">De esta manera podemos construir una navegación <strong>organizada, modular y adaptable</strong> a las necesidades de cada proyecto en Filament.</h2>
+<h3 id="diferencias-principales">Diferencias principales</h3>
+<ul>
+<li>
+<p><strong>$navigationGroup</strong></p>
+<ul>
+<li>Agrupa solo a nivel visual.</li>
+<li>Todos los recursos conviven en el mismo &ldquo;espacio&rdquo;.</li>
+<li>Menú más sencillo, útil para proyectos pequeños/medianos.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cluster</strong></p>
+<ul>
+<li>Crea módulos separados con sus propios recursos y páginas.</li>
+<li>Útil para proyectos grandes con muchas secciones.</li>
+<li>Más escalable y organizado, similar a módulos de un CMS.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

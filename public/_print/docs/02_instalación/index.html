@@ -1,0 +1,625 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/02_instalaci%C3%B3n/">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/02_instalaci%C3%B3n/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Instalación | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/02_instalaci%C3%B3n/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Instalación">
+  <meta property="og:description" content="La instalación Como ya hemos comentado Laravel , uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes. Para comenzar un proyecto en Laravel, existen dos enfoques principales:
+Crear un proyecto con composer Instalar un programa llamado laravel . Este programa permitirá crear proyectos de laravel con toda la estructura de carpetas y ficheros necesarios. Instalar composer Composer documentación Oficial 🌐 getcomposer.org Lo primero que necesitamos es tener composer instalado en nuestro sistema">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Instalación">
+  <meta itemprop="description" content="La instalación Como ya hemos comentado Laravel , uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes. Para comenzar un proyecto en Laravel, existen dos enfoques principales:
+Crear un proyecto con composer Instalar un programa llamado laravel . Este programa permitirá crear proyectos de laravel con toda la estructura de carpetas y ficheros necesarios. Instalar composer Composer documentación Oficial 🌐 getcomposer.org Lo primero que necesitamos es tener composer instalado en nuestro sistema">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="936">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Instalación">
+  <meta name="twitter:description" content="La instalación Como ya hemos comentado Laravel , uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes. Para comenzar un proyecto en Laravel, existen dos enfoques principales:
+Crear un proyecto con composer Instalar un programa llamado laravel . Este programa permitirá crear proyectos de laravel con toda la estructura de carpetas y ficheros necesarios. Instalar composer Composer documentación Oficial 🌐 getcomposer.org Lo primero que necesitamos es tener composer instalado en nuestro sistema">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+Versión imprimible multipagina.
+<a href="#" onclick="print();return false;">Haga click aquí para imprimir</a>.
+</p><p>
+<a href="/laravel/docs/02_instalaci%C3%B3n/">Volver a la vista normal de esta página</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Instalación</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+
+    </ul>
+
+
+<div class="content">
+      <h2 id="la-instalación">La instalación</h2>
+<p>Como ya hemos comentado 
+<span class="font-weight-bold text-primary">
+
+
+    Laravel
+
+</span>
+, uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes. <br>
+Para comenzar un proyecto en Laravel, existen dos enfoques principales:</p>
+<ul>
+<li>Crear un proyecto con 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    composer
+
+
+</span>
+</strong></li>
+<li>Instalar un programa llamado 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    laravel
+
+
+</span>
+</strong>. Este programa permitirá crear proyectos de laravel con toda la estructura de carpetas y ficheros necesarios.</li>
+</ul>
+<h2 id="instalar--hahahugoshortcode465s3hbhb">Instalar  
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    <a href="https://getcomposer.org/">composer</a>
+
+
+</span>
+</strong></h2>
+
+
+
+
+
+
+
+
+
+
+
+<div class="card border border-primary shadow-sm my-4">
+    <div class="card-body">
+
+        <div class="d-flex align-items-center gap-3">
+
+            
+            <div>
+                
+                <img src="composer.jpeg"
+                     alt="Composer documentación"
+                     style="width:60px; height:60px; object-fit:contain;"
+                     class="rounded">
+              
+            </div>
+
+            <div class="flex-grow-1">
+
+                <h5 class="mb-1">
+                    <a href="https://getcomposer.org/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="text-decoration-none text-primary">
+                        Composer documentación
+                    </a>
+
+                    
+                    <span class="badge bg-success ms-2">
+                            Oficial
+                        </span>
+                    
+                </h5>
+
+                <small class="text-muted">
+                    🌐 getcomposer.org
+                </small>
+
+            </div>
+
+        </div>
+
+        
+        <div class="mt-3">
+            
+            <blockquote>
+</blockquote>
+
+            
+        </div>
+        
+
+    </div>
+</div>
+<p>Lo primero que necesitamos es tener 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    composer
+
+</span>
+</strong>
+ instalado en nuestro sistema</p>
+<p>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Composer
+
+</span>
+</strong>
+ es un sistema de gestión de dependencias para PHP que permite  especificar y manejar las librerías de las cuales sus proyectos dependen, a través de un fichero llamado 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    composer.json
+
+</span>
+</strong>
+.  <br>
+Igualmente, composer permite aportar documentación sobre el proyecto y automatizar la autocarga de clases para la ejecución del mismo.</p>
+<p>Funciona <strong>descargando e instalando estas librerías y sus dependencias en el proyecto, asegurando compatibilidad y facilitando la actualización</strong>.</p>
+<p>Es esencial para proyectos modernos de PHP, ya que automatiza y gestiona tareas complejas de gestión de paquetes de forma eficiente.
+
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Instalar Composer</h4>
+
+    <ul>
+<li>Linux- Mac: <a href="https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos">https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos</a></li>
+<li>Windows <a href="https://getcomposer.org/doc/00-intro.md#installation-windows">https://getcomposer.org/doc/00-intro.md#installation-windows</a></li>
+</ul>
+
+
+</div>
+
+Una vez instalado lo podremos usar desde el terminal, independientemente del sistema operativo
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>  composer -V</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Entonces veremos una salida, si simplemente escribmos 
+<span class="font-weight-bold text-primary">
+
+
+    composer
+
+</span>
+ saldrán todas las opciones disponibles
+Una vez instalado en un terminal (CMD o PowerShell en windows) escribimos
+<img src="/laravel/docs/02_instalaci%C3%B3n/composer_version.png" alt="versión de composer"></p>
+<h2 id="instalar-el-instalardor-laravel">Instalar el instalardor Laravel</h2>
+<p>Laravel dispone de una utilidad, un ejecutable que nos va a permitir crear proyectos con la estructura de un proyecto laravel. En este punto es un 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    creador de proyectos de laravel
+
+
+</span>
+</strong></p>
+<h4 id="laravel-installer">Laravel installer</h4>
+<p><img src="/laravel/docs/02_instalaci%C3%B3n/img.png" alt="img.png"></p>
+<hr>
+<p>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Laravel no es ni un EDI, ni un lenguaje de programación
+
+</span>
+</strong>
+, 
+
+<strong>
+<span class="font-weight-bold text-accent fs-5">
+
+    es un framework
+
+
+</span>
+</strong>.</p>
+<p>Necesitamos de alguna manera un programa que nos permita crear un proyecto nuevo con la estructura y todas las utilidades que ofrece el framework.</p>
+<p>Podemos instalar un instalador de laravel  con composer:
+
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Instalador de Laravel
+
+</span>
+</strong>
+:<br>
+Alternativamente, puedes utilizar el instalador de Laravel, una herramienta ligera que se instala globalmente en tu sistema a través del comando
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>composer <span style="color:#8b008b;font-weight:bold">global</span> <span style="color:#8b008b;font-weight:bold">require</span> laravel/installer</span></span></code></pre></td></tr></table>
+</div>
+</div>.</p>
+<h3 id="creando-un-proyecto">Creando un proyecto</h3>
+<blockquote>
+<ul>
+<li>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Uso de Composer
+
+</span>
+</strong>
+: <br>
+Puedes crear un nuevo proyecto Laravel ejecutando el comando
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>composer create-project laravel/laravel nombre_proyecto</span></span></code></pre></td></tr></table>
+</div>
+</div>  <br>
+Este método instala Laravel y todas sus dependencias, configurando una estructura de directorios lista para comenzar a desarrollar tu aplicación.</li>
+<li>A diferencia del instalador de laravel, no te asistirá ni ayudará durante el proceso de creación del proyecto</li>
+</ul>
+</blockquote>
+<p>Este instalador permite crear nuevos proyectos rápidamente con el comando laravel new nombre_proyecto.</p>
+<p>Además utilizando esta herramiena, el comando 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    laravel
+
+
+</span>
+</strong> durante el proceso de instalación, se irán planteando opciones durante que puedes elegir</p>
+<p>Para crear un proyecto nuevo en laravel
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>laravel <span style="color:#8b008b;font-weight:bold">new</span> nombre_proyecto</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Actualiza el PATH</h4>
+
+    Recuerda que la ruta dónde se ubique el programa de instalación, <strong>laravel</strong> , debe de estar incluída en el PATH del sistema
+
+</div>
+</p>
+<h3 id="hahahugoshortcode465s21hbhb">
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Instala dependencias
+
+
+</span>
+</strong></h3>
+<p>Laravel tiene una serie de requisitos que necesita satisfacer para poder funcionar.</p>
+<ul>
+<li>
+<p>PHP &gt;= 8.2
+Extensiones necesarias queya se instalan por defecto:</p>
+</li>
+<li>
+<p>Ctype PHP Extension</p>
+</li>
+<li>
+<p>Fileinfo PHP Extension</p>
+</li>
+<li>
+<p>Filter PHP Extension</p>
+</li>
+<li>
+<p>Hash PHP Extension</p>
+</li>
+<li>
+<p>OpenSSL PHP Extension (si no lo estuviera <code>php-openssl</code>)</p>
+</li>
+<li>
+<p>PCRE PHP Extension</p>
+</li>
+<li>
+<p>Session PHP Extension</p>
+</li>
+<li>
+<p>Tokenizer PHP Extension</p>
+</li>
+<li>
+<p>Extensiones que hay que instalar</p>
+</li>
+<li>
+<p>cURL PHP Extension <code>php-curl</code></p>
+</li>
+<li>
+<p>DOM PHP Extension <code>php-xml</code></p>
+</li>
+<li>
+<p>Mbstring PHP Extension <code>php-mbstring</code></p>
+</li>
+<li>
+<p>PDO PHP Extension <code>php-mysql</code></p>
+</li>
+<li>
+<p>XML PHP Extension <code>php-xml</code></p>
+</li>
+</ul>
+<p>Para instalar estas extensiones en linux, usaremos apt :
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>apt install php-curl php-xml php-mbstring php-mysql php-xml</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Para instalar estas extensiones en windows
+<a href="https://www.php.net/manual/en/install.pecl.windows.php">https://www.php.net/manual/en/install.pecl.windows.php</a>
+Hay que seguir estos pasos:</p>
+<ol>
+<li>
+<p>Abre 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    php.ini
+
+
+</span>
+</strong> en un editor de texto como Notepad++, o bien xammp/wammp nos ofrece editar el fichero directamente .</p>
+</li>
+<li>
+<p>Busca las líneas correspondientes a las extensiones y descoméntalas eliminando el punto y coma (;) al inicio.
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>   extension=curl
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>   extension=dom
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>   extension=mbstring
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>   extension=mysqli
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>   extension=pdo_mysql
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>   extension=xml</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Si alguna extensión no la tuvieses, eso implica que habría que descargar el <strong>dll</strong>
+<a href="https://windows.php.net/download">https://windows.php.net/download</a></p>
+</li>
+</ol>
+<h1 id="poner-el-proyecto-en-ejecución">Poner el proyecto en ejecución</h1>
+<p>La base de datos se ejecuta en Docker, configurada mediante el archivo <code>.env</code>.</p>
+<p>En el archivo <code>package.json</code> tenemos scripts para facilitar el desarrollo local.<br>
+Por ejemplo, el script <code>npm run dev</code> se encarga de lanzar Vite para compilar y recargar automáticamente nuestros assets (JavaScript, CSS, etc.).</p>
+<p>Además, usamos <code>php artisan serve</code> para levantar el servidor web de Laravel, que por defecto escucha en el puerto <strong>8000</strong>.</p>
+<h2 id="script-básico-para-desarrollo">Script básico para desarrollo</h2>
+<p>En la sección <code>&quot;scripts&quot;</code> de <code>package.json</code> podemos tener algo así:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#cd5555">&#34;scripts&#34;</span><span style="color:#a61717;background-color:#e3d2d2">:</span> {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&#34;dev&#34;</span>: <span style="color:#cd5555">&#34;vite&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&#34;build&#34;</span>: <span style="color:#cd5555">&#34;vite build&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<hr>
+<h2 id="usar-docker-para-la-base-de-datos">Usar Docker para la base de datos</h2>
+<p>Con Docker podemos levantar la base de datos MySQL y phpMyAdmin fácilmente.<br>
+El archivo <code>docker-compose.yml</code> define los servicios y mapea puertos para acceder desde el host.</p>
+<p>Para iniciarlo en segundo plano:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker compose up -d</span></span></code></pre></div>
+<hr>
+<h2 id="crear-un-script-para-todo-en-uno">Crear un script para todo en uno</h2>
+<p>Podemos crear un script que ejecute a la vez:</p>
+<ul>
+<li>Docker para la base de datos</li>
+<li>Vite (<code>npm run dev</code>)</li>
+<li>Laravel (<code>php artisan serve</code>)</li>
+</ul>
+<p>Para ello instalamos el paquete <strong>concurrently</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install --save-dev concurrently</span></span></code></pre></div>
+<p>Y añadimos en <code>package.json</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#cd5555">&#34;scripts&#34;</span><span style="color:#a61717;background-color:#e3d2d2">:</span> {
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&#34;dev&#34;</span>: <span style="color:#cd5555">&#34;vite&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&#34;build&#34;</span>: <span style="color:#cd5555">&#34;vite build&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">&#34;localdev&#34;</span>: <span style="color:#cd5555">&#34;docker compose up -d &amp;&amp; concurrently \&#34;npm run dev\&#34; \&#34;php artisan serve\&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Así, con un solo comando:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm run localdev</span></span></code></pre></div>
+<p>se pondrá en marcha todo el entorno local de desarrollo.</p>
+<hr>
+<p><strong>Resumen:</strong></p>
+<ul>
+<li><code>npm run dev</code> → lanza Vite para desarrollo frontend</li>
+<li><code>php artisan serve</code> → levanta el servidor Laravel en localhost:8000
+<blockquote>
+<p>En lugar de usar el ejecutable php, se puede usar @php artisan serve en los scripts del package.json.
+Esto hace que el comando sea más portable entre distintos sistemas operativos, ya que utiliza el ejecutable de PHP que está configurado en el PATH del sistema.</p>
+</blockquote>
+</li>
+<li><code>docker compose up -d</code> → arranca la base de datos y phpMyAdmin</li>
+<li><code>npm run localdev</code> → todo junto, usando <code>concurrently</code></li>
+</ul>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

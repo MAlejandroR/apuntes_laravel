@@ -1,0 +1,465 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/04_plantillas/01_blade/">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/04_plantillas/01_blade/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Plantillas en laravel | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/04_plantillas/01_blade/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Plantillas en laravel">
+  <meta property="og:description" content="Plantillas con Blade Una herramienta poderosa y flexible incluida en Laravel, que nos va a permitir escribir html e incluir php y visualizar datos del servidor balde.php de una forma elegante y descriptiva. (Esto facilita visualizar datos
+Los ficheros blade, tienen extensión blade.php y estarán ubicados en la carpeta ./resources/view .
+Cuando hagamos referencia a los ficheros blade, esta información no hay que especificar, ni su ubicación, ni su extensión, como podemos ver en el siguiente ejemplo">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Plantillas en laravel">
+  <meta itemprop="description" content="Plantillas con Blade Una herramienta poderosa y flexible incluida en Laravel, que nos va a permitir escribir html e incluir php y visualizar datos del servidor balde.php de una forma elegante y descriptiva. (Esto facilita visualizar datos
+Los ficheros blade, tienen extensión blade.php y estarán ubicados en la carpeta ./resources/view .
+Cuando hagamos referencia a los ficheros blade, esta información no hay que especificar, ni su ubicación, ni su extensión, como podemos ver en el siguiente ejemplo">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="785">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Plantillas en laravel">
+  <meta name="twitter:description" content="Plantillas con Blade Una herramienta poderosa y flexible incluida en Laravel, que nos va a permitir escribir html e incluir php y visualizar datos del servidor balde.php de una forma elegante y descriptiva. (Esto facilita visualizar datos
+Los ficheros blade, tienen extensión blade.php y estarán ubicados en la carpeta ./resources/view .
+Cuando hagamos referencia a los ficheros blade, esta información no hay que especificar, ni su ubicación, ni su extensión, como podemos ver en el siguiente ejemplo">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+Versión imprimible multipagina.
+<a href="#" onclick="print();return false;">Haga click aquí para imprimir</a>.
+</p><p>
+<a href="/laravel/docs/04_plantillas/01_blade/">Volver a la vista normal de esta página</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Plantillas en laravel</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+
+    </ul>
+
+
+<div class="content">
+      <h2 id="plantillas-con-blade">Plantillas con Blade</h2>
+<p>Una herramienta poderosa y flexible incluida en Laravel, que nos va a permitir 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    escribir html e incluir php y visualizar datos del servidor
+
+
+</span>
+</strong>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    balde.php
+
+
+</span>
+</strong> de una forma elegante y descriptiva. (Esto facilita visualizar datos</p>
+<p>Los ficheros blade, tienen extensión  
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    blade.php
+
+
+</span>
+</strong> y estarán ubicados en la carpeta 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    ./resources/view
+
+
+</span>
+</strong>.<br>
+Cuando hagamos referencia a los ficheros blade, esta información <strong>no hay que especificar</strong>, ni su <strong>ubicación</strong>, ni su <strong>extensión</strong>, como podemos ver en el siguiente ejemplo</p>
+<hr>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#8b008b;font-weight:bold">return</span> view(<span style="color:#cd5555">&#39;welcome&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#228b22">//Va a retornar el fichero ./resources/view/welcome.blade.php
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="contenido-de-un-fichero-blade">Contenido de un fichero blade</h3>
+<p><strong>Dentro de un fichero blade</strong> 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    (.blade.php)
+
+
+</span>
+</strong></p>
+<p>En él podemos  encontrar el siguiente tipo de <strong>código o instrucciones</strong>:</p>
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Código html y js
+
+
+</span>
+</strong></li>
+</ul>
+<blockquote>
+<blockquote>
+<p>(como cualquier página html)</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    {{}} Doble braquets
+
+
+</span>
+</strong>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>Para mostrar el contenido de variables PHP o lo que retornara una expresión o función
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  {{date(d-m-Y}} =&gt; Mostrará el resultado de la función 
+</span></span><span style="display:flex;"><span>  {{ <span style="color:#00688b">$variable</span> }}  =&gt; Se mostrará el valor de la varialbe</span></span></code></pre></div></p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>No se puede  incluir código php
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  {{<span style="color:#00688b">$a</span> = <span style="color:#b452cd">5</span>}} =&gt; Esto no se puede hacer</span></span></code></pre></div></p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>Blade automáticamente escapa el HTML en las variables para evitar ataques XSS.</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>También para comentar, en lugar de <strong>&lt;!- - Comentario html - -&gt;</strong>, podemos usar  <strong>{{- - Comentario html - -}}</strong></p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    @
+
+
+</span>
+</strong>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>para utilizar directivas/estructuras de control propias de laravel, como como condicionales y bucles.</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>Por ejemplo, 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    @if, @foreach, @switch
+
+
+</span>
+</strong>, @auth &ndash; @endauth, @guest - @endguest entre otras.</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>Otro ejemplo es incluir código php con la diretiva @php
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  @php
+</span></span><span style="display:flex;"><span>    <span style="color:#00688b">$a</span> = <span style="color:#b452cd">5</span> <span style="color:#228b22">//Aquí creamos la variable $a y la podremos usar  
+</span></span></span><span style="display:flex;"><span>  @endphp 
+</span></span></code></pre></div></p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h3 id="herencia-creando-un-layout">Herencia: Creando un layout</h3>
+<h4 id="concepto">Concepto</h4>
+<p>En el desarrollo web con Laravel, 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    la herencia en las plantillas Blade
+
+
+</span>
+</strong> proporciona una forma eficiente de garantizar 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    una estructura consistente en todas las páginas
+
+
+</span>
+</strong>, fomentando un diseño corporativo uniforme.</p>
+<h4 id="idea-de-su-usofuncionamiento">Idea de su uso/funcionamiento</h4>
+<h1 id="herencia-mediante-componentes-blade">Herencia mediante Componentes Blade</h1>
+<h2 id="concepto-1">Concepto</h2>
+<p>En el desarrollo web con Laravel, la reutilización de estructuras comunes se realiza actualmente mediante <strong>componentes Blade</strong>, que permiten definir una estructura base reutilizable para todas las páginas.</p>
+<p>En lugar de utilizar las directivas <code>@extends</code> y <code>@yield</code>, se crea un componente de layout (por ejemplo <code>&lt;x-layout&gt;</code>) que encapsula la estructura general de la interfaz: cabecera, navegación, pie de página, estilos y scripts.</p>
+<p>Este componente actúa como contenedor común sobre el que se insertan los contenidos específicos de cada vista.</p>
+<hr>
+<h2 id="idea-de-uso-y-funcionamiento">Idea de uso y funcionamiento</h2>
+<p>Con este enfoque se define un <strong>componente principal</strong> que representa el diseño corporativo general de la aplicación.</p>
+<p>Cada página no hereda formalmente mediante directivas, sino que <strong>compone su contenido dentro del componente</strong>.</p>
+<p>El funcionamiento es el siguiente:</p>
+<ul>
+<li>El layout define la estructura global.</li>
+<li>Las páginas insertan su contenido en el <code>{{ $slot }}</code>.</li>
+<li>Opcionalmente pueden definirse <em>slots nombrados</em> como <code>title</code>, <code>header</code>, <code>description</code>, etc.</li>
+</ul>
+<p>De este modo:</p>
+<ul>
+<li>Se mantiene coherencia visual en toda la aplicación.</li>
+<li>Se separa claramente la estructura global del contenido específico.</li>
+<li>Se adopta un enfoque basado en composición, más cercano al modelo de trabajo de frameworks como React o Vue.</li>
+</ul>
+<hr>
+<h2 id="ventajas-frente-al-enfoque-clásico-con-extends">Ventajas frente al enfoque clásico con <code>@extends</code></h2>
+<ul>
+<li>Arquitectura más moderna y alineada con componentes.</li>
+<li>Mejor encapsulación del diseño.</li>
+<li>Mayor reutilización.</li>
+<li>Modelo mental más coherente para estudiantes que trabajan también con frontend basado en componentes.</li>
+</ul>
+<hr>
+<h2 id="conclusión">Conclusión</h2>
+<p>El uso de componentes Blade para estructurar layouts permite mantener la coherencia visual de la aplicación y facilita el mantenimiento.</p>
+<p>Cualquier modificación en el componente principal se reflejará automáticamente en todas las vistas que lo utilicen, garantizando consistencia, modularidad y escalabilidad en el diseño.</p>
+<h3 id="comentarios-blade">Comentarios blade</h3>
+<hr>
+<h4 id="insertando-comentarios-en-fichero-bladephp">Insertando comentarios en fichero .blade.php</h4>
+<hr>
+<p>Dentro de un fichero 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Blade
+
+
+</span>
+</strong>, podemos comentar de dos maneras</p>
+<ol>
+<li>Comentarios HTML (<code>&lt;!-- Comentarios --&gt;</code>)</li>
+<li>Comentarios Blade (<code>{{-- Comentarios --}}</code>)</li>
+</ol>
+<blockquote>
+<p>Hay diferencias significativas entre comentar con <code>&lt;!-- Comentarios --&gt;</code> y <code>{{-- Comentarios --}}</code> en un fichero Blade de Laravel.     <br>
+Estas diferencias se relacionan principalmente con cómo se manejan y se muestran estos comentarios en el HTML generado y enviado al navegador.</p>
+</blockquote>
+<p><strong>Comentarios HTML (<code>&lt;!-- Comentarios --&gt;</code>):</strong></p>
+<ul>
+<li>Son comentarios estándar de HTML.</li>
+<li>Serán visibles en el código fuente del HTML generado y enviado al navegador.</li>
+<li>Cualquiera que inspeccione el código fuente de la página en el navegador podrá ver estos comentarios.</li>
+<li>Son útiles para anotaciones que no afectan la presentación de la página pero podrían ser de ayuda durante el desarrollo o para otros desarrolladores.</li>
+</ul>
+<p><strong>Comentarios Blade (<code>{{-- Comentarios --}}</code>):</strong></p>
+<ul>
+<li>Son específicos del motor de plantillas Blade de Laravel.</li>
+<li>No serán incluidos en el HTML final generado. Esto significa que no aparecerán en el código fuente de la página cuando se vea en un navegador.</li>
+<li>Son útiles para dejar notas o comentarios en el código que solo deben ser visibles durante el desarrollo y no deben ser expuestos a los usuarios finales o en el ambiente de producción.</li>
+<li>Proporcionan una manera de hacer anotaciones en las plantillas Blade sin afectar lo que ve el usuario.</li>
+</ul>
+<hr>
+<p><img src="" alt=""></p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

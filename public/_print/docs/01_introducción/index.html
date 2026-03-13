@@ -1,0 +1,553 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/01_introducci%C3%B3n/">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/01_introducci%C3%B3n/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Introducción | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/01_introducci%C3%B3n/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Introducción">
+  <meta property="og:description" content="Objetivos de este curso Qué veremos aquí Idea de lo que es un framework. Trabajar con una herramienta profesional. Entender el entorno (Instalación y configuración de Laravel). El patrón MVC y cómo Laravel lo implementa. (Laravel es más que un típico MVC) El sistema de enrutamiento, middleware, y controladores. El ORM Eloquent para operaciones de base de datos. Autenticación, autorización y seguridad. Pruebas unitarias y de integración. Hacer un proyecto con Laravel y deplegarlo en un hosting o amazon Al terminar este módulo Al terminar el tema deberás... Saber trabajar con laravel Desarrollar un full stack (diseño, front, back, API’s) A través de este viaje, no solo aprenderás a usar un framework, sino a adoptar una forma de trabajar que te hará una mejor desarrolladora. Laravel: un framework de php">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Introducción">
+  <meta itemprop="description" content="Objetivos de este curso Qué veremos aquí Idea de lo que es un framework. Trabajar con una herramienta profesional. Entender el entorno (Instalación y configuración de Laravel). El patrón MVC y cómo Laravel lo implementa. (Laravel es más que un típico MVC) El sistema de enrutamiento, middleware, y controladores. El ORM Eloquent para operaciones de base de datos. Autenticación, autorización y seguridad. Pruebas unitarias y de integración. Hacer un proyecto con Laravel y deplegarlo en un hosting o amazon Al terminar este módulo Al terminar el tema deberás... Saber trabajar con laravel Desarrollar un full stack (diseño, front, back, API’s) A través de este viaje, no solo aprenderás a usar un framework, sino a adoptar una forma de trabajar que te hará una mejor desarrolladora. Laravel: un framework de php">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="839">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Introducción">
+  <meta name="twitter:description" content="Objetivos de este curso Qué veremos aquí Idea de lo que es un framework. Trabajar con una herramienta profesional. Entender el entorno (Instalación y configuración de Laravel). El patrón MVC y cómo Laravel lo implementa. (Laravel es más que un típico MVC) El sistema de enrutamiento, middleware, y controladores. El ORM Eloquent para operaciones de base de datos. Autenticación, autorización y seguridad. Pruebas unitarias y de integración. Hacer un proyecto con Laravel y deplegarlo en un hosting o amazon Al terminar este módulo Al terminar el tema deberás... Saber trabajar con laravel Desarrollar un full stack (diseño, front, back, API’s) A través de este viaje, no solo aprenderás a usar un framework, sino a adoptar una forma de trabajar que te hará una mejor desarrolladora. Laravel: un framework de php">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+Versión imprimible multipagina.
+<a href="#" onclick="print();return false;">Haga click aquí para imprimir</a>.
+</p><p>
+<a href="/laravel/docs/01_introducci%C3%B3n/">Volver a la vista normal de esta página</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Introducción</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+
+    </ul>
+
+
+<div class="content">
+      
+
+
+
+
+<div style="border: 1px solid darkgreen; border-radius: 5px; overflow: hidden;">
+    <div style="background-color:darkgreen; color:white;
+    font-weight:bold; padding:10px; display: flex; align-items: center;">
+        
+        <span style="margin-right: 8px;">
+            
+                <i class="fas fa-check-circle"></i> 
+            
+        </span>
+        
+        <span>Objetivos de este curso</span>
+    </div>
+
+    <h3 style="padding: 5px; font-weight:bold">Qué veremos aquí</h3>
+
+    <hr style="border-color:seagreen; border-width:3px"/>
+    
+    <div style="background-color:#d0f0d0; color:darkgreen; padding: 10px;">
+        <ul>
+            
+            <li>Idea de lo que es un framework.</li>
+            
+            <li>Trabajar con una herramienta profesional. </li>
+            
+            <li>Entender el entorno (Instalación y configuración de Laravel).</li>
+            
+            <li>El patrón MVC y cómo Laravel lo implementa. (Laravel es más que un típico MVC)</li>
+            
+            <li>El sistema de enrutamiento, middleware, y controladores.</li>
+            
+            <li>El ORM Eloquent para operaciones de base de datos.</li>
+            
+            <li>Autenticación, autorización y seguridad.</li>
+            
+            <li>Pruebas unitarias y de integración.</li>
+            
+            <li>Hacer un proyecto con Laravel y deplegarlo en un hosting o amazon</li>
+            
+            
+            
+        </ul>
+    </div>
+    
+
+
+</div>
+
+<blockquote>
+</blockquote>
+
+
+
+
+<div style="border: 1px solid royalblue; border-radius: 5px; overflow: hidden;">
+  <div style="background-color: royalblue; color: white;
+    font-weight: bold; padding: 10px; display: flex; align-items: center;">
+    
+    <span style="margin-right: 8px;">
+            
+                <i class="fas fa-flag-checkered"></i> 
+            
+        </span>
+    
+    <span>Al terminar este módulo</span>
+  </div>
+
+  <h3 style="padding: 5px; font-weight: bold; color: royalblue;">Al terminar el tema deberás...</h3>
+
+  <hr style="border-color: lightsteelblue; border-width: 3px"/>
+  
+  <div style="background-color: #f0f8ff; color: royalblue; padding: 10px;">
+    <ul>
+      
+      <li>Saber trabajar con laravel</li>
+      
+      <li>Desarrollar un full stack (diseño, front, back, API&rsquo;s)</li>
+      
+      <li>A través de este viaje, no solo aprenderás a usar un framework, sino a adoptar una forma de trabajar que te hará una mejor desarrolladora.</li>
+      
+      
+      
+    </ul>
+  </div>
+</div>
+
+<h2 id="laravel-un-framework-de-php">Laravel: un framework de php</h2>
+<p><strong><img src="/laravel/docs/01_introducci%C3%B3n/img.png" alt="img.png"></strong></p>
+<hr>
+<p>En este módulo, vamos a sumergirnos en el mundo de 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Laravel
+
+</span>
+</strong>
+, <strong>un framework de PHP</strong>, del que podríamos afirmar  <em>que ha revolucionado la forma en que desarrollamos aplicaciones web</em>.</p>
+<p>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Laravel
+
+</span>
+</strong>
+ no es solo un conjunto de herramientas, que también las aporta;</p>
+<p>Lo podemos ver como una  <strong>una metodología</strong>,  <strong><strong>una forma de pensar en el desarrollo web</strong></strong> que nos permite crear aplicaciones robustas, escalables y mantenibles con eficiencia y elegancia.</p>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Laravel constituye un fullstack a la hora de desarrollar una aplicación web
+
+
+</span>
+</strong>
+<hr>
+<h2 id="por-qué-laravel">¿Por qué Laravel?</h2>
+<p>Laravel se ha ganado un lugar destacado en el desarrollo web por varias razones:</p>
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Estructura de Carpetas Organizada:
+
+
+</span>
+</strong></li>
+</ul>
+<blockquote>
+<p>Laravel ofrece una <strong>estructura de carpetas y ficheros del proyecto</strong>  bien definida. <br>
+Esto  <strong>facilita el mantenimiento</strong> del código y la colaboración entre desarrolladores. <br>
+Es una organización intuitiva, pero puede ser uno de los puntos flojos, ya que nos tenemos que mover entre diferentes carpetas para localizar nuestros ficheros, y eso, sobre todo al principio, cuesta acostumbrarse.<br>
+En la versión actual, <strong>versión 12</strong>, se ha reducido bastante respecto a versiones anteriores (Esta característica se potención en la versión 11.<br>
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 310px">
+<img class="card-img-top" src="/laravel/docs/01_introducci%C3%B3n/estructura_carpetas_hu_fd6e6764022925f5.png" width="300" height="250">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+ Proyecto de laravel creado con phpstorm 
+ 
+</p>
+</figcaption>
+</figure>
+</p>
+</blockquote>
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Conjunto de Librerías y Herramientas:
+
+
+</span>
+</strong> &gt;</li>
+</ul>
+<blockquote>
+<p>Viene cargado con 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    bibliotecas y herramientas
+
+
+</span>
+</strong> que resuelven muchos problemas comunes en el desarrollo web, como <em>autenticación, enrutamiento, manejo de sesiones y protección contra vulnerabilidades</em>.
+Esto nos permite centrarnos en las características únicas de nuestra aplicación (programa tus aplicaciones, no tus herramientas).</p>
+</blockquote>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Ecosistema y Comunidad:
+
+
+</span>
+</strong>
+<blockquote>
+<p>Laravel tiene un ecosistema rico, con herramientas como Laravel Forge, Laravel Vapor, y Nova, así como un sistema robusto de paquetes a través de Composer. Además, la vibrante comunidad en torno a Laravel ofrece un vasto recurso de conocimiento, tutoriales y soporte.
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 1284px">
+<img class="card-img-top" src="/laravel/docs/01_introducci%C3%B3n/ecosistema_laravel_hu_1376d35ee82841ec.png" width="1274" height="791">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+  https://laravel.com/ (Framework)
+
+</p>
+</figcaption>
+</figure>
+</p>
+</blockquote>
+<hr>
+<ul>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    MVC y Patrones de Diseño:
+
+
+</span>
+</strong></li>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    MVC y Patrones de Diseño:
+
+
+</span>
+</strong></li>
+</ul>
+<blockquote>
+<p>Laravel se adhiere al patrón Modelo-Vista-Controlador (MVC), promoviendo un desarrollo limpio y <strong>separando la lógica de negocio de la presentación</strong>.</p>
+</blockquote>
+<p><img src="/laravel/docs/01_introducci%C3%B3n/modelo_mvc_tradicional.png" alt="img_3.png"></p>
+<ul>
+<li>
+<blockquote>
+<p>Además, el uso de otros patrones de diseño y prácticas recomendadas está profundamente integrado en su arquitectura.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Laravel se basa en MVC, pero su arquitectura real combina el patrón Front Controller, un contenedor IoC para la resolución automática de dependencias y un ciclo de petición HTTP extensible mediante middleware y eventos:</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    1.Patrón Front Controller
+
+
+</span>
+</strong>
+</blockquote>
+<p>Laravel implementa el patrón Front Controller, lo que significa que todas las peticiones HTTP son gestionadas por un único punto de entrada: public/index.php.</p>
+<p>Este archivo inicializa la aplicación y delega la petición al Kernel HTTP, que coordina el resto del ciclo de vida.</p>
+<blockquote>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    2.Contenedor de dependencias (IoC Container)
+
+
+</span>
+</strong>
+</blockquote>
+<p>Laravel dispone de un contenedor de inversión de control (IoC) que se encarga de:</p>
+<ul>
+<li>Instanciar clases automáticamente.</li>
+<li>Resolver dependencias entre clases.</li>
+<li>Inyectar dependencias en constructores o métodos.</li>
+<li>Permitir el uso de interfaces y bindings.</li>
+<li>Facilitar el testing y la sustitución de implementaciones.</li>
+</ul>
+<blockquote>
+
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    3.Ciclo completo de petición HTTP extensible
+
+
+</span>
+</strong>
+</blockquote>
+<p>El procesamiento de una petición en Laravel sigue un flujo estructurado y extensible:</p>
+<ul>
+<li>La petición entra por index.php.</li>
+<li>Es gestionada por el Kernel HTTP.</li>
+<li>Atraviesa una tubería de Middleware.</li>
+<li>El Router determina el controlador correspondiente.</li>
+<li>El controlador coordina la lógica de aplicación.</li>
+<li>Se genera una respuesta.</li>
+<li>La respuesta vuelve a atravesar middleware antes de enviarse al cliente.</li>
+</ul>
+<hr>
+<p><img src="/laravel/docs/01_introducci%C3%B3n/modelo_mvc_avanzado.png" alt="modelo_mvc_avanzado.png"></p>
+<h2 id="qué-es-un-framework-vs-librería">Qué es un framework Vs Librería</h2>
+<p>Un framework es una forma de trabajar con una determinada tecnología , donde nos van a marcar diferentes aspectos como la ubicación de ficheros, la forma de nombrar los componentes (clases), nos van a ofrecer herramientas y utilidades para hacer más sencillo nuestra forma de desarrollar la aplicación</p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Anotaciones</h4>
+
+    <ul>
+<li>Nos va a marcar una organización de la estructura completa de nuestro proyecto</li>
+<li>Nos ofrece librerías y métodos para realizar gran cantidad de trabajo típico de desarrollos (acceso a base de datos, gestión de cookies, autenticación, …)</li>
+<li>Estos conceptos tienen un tiempo de aprendizaje que hay que dedicar con un poco de paciencia las ventajas son muy significativas</li>
+</ul>
+
+
+</div>
+
+<p><figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 610px">
+<img class="card-img-top" src="/laravel/docs/01_introducci%C3%B3n/listado_frameworks_hu_ae0818efe3b70849.png" width="600" height="400">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+
+
+</p>
+</figcaption>
+</figure>
+
+<img src="/laravel/docs/01_introducci%C3%B3n/img_5.png" alt="img_5.png"></p>
+<h3 id="laravel">Laravel</h3>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Especificación actual</h4>
+
+    <ul>
+<li>Lenguaje de programación: PHP</li>
+<li>Fecha del lanzamiento inicial: junio de 2011</li>
+<li>Desarrollador: Taylor Otwell</li>
+<li>Licencia: Licencia MIT</li>
+<li>Tipo de programa: Framework</li>
+<li>Versión actual  12 (febrero 2026)</li>
+<li>Lanzamiento de próxima versión  Primer trimestre 2026 (en breve)</li>
+<li>Versión de php 8.2</li>
+</ul>
+
+
+</div>
+
+
+
+<div class="pageinfo pageinfo-primary">
+<p>Laravel es un framework de código abierto.  <br>
+Usa tecnología php para desarrollar aplicaciones de forma elegante y simple.  <br>
+Tiene una curva de aprendizaje muy suave, lo que permite no necesitar demasiado tiempo para desarrollar aplicaciones.</p>
+
+</div>
+
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

@@ -1,0 +1,685 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/04_plantillas/02_creandodise%C3%B1o/">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/04_plantillas/02_creandodise%C3%B1o/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Diseñando el layout | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/04_plantillas/02_creandodise%C3%B1o/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Diseñando el layout">
+  <meta property="og:description" content="Creando un diseño Proceso de diseño Diseñar es un aspecto fundamentan antes de crear las páginas Para crear un proyecto debemos crear previaemnte los mockups o Prototipados de pantallas Posteriormente hemos de crear las páginas usando los estilos adecuados para conseguir los diseños previamente prototipados, esto implicará usar html y css Para crear los diseños se usan herramientas gráficas de prototipado, y para el css normalmente usaremos algún fremework tipo Bootstrap o tailwindcss">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Diseñando el layout">
+  <meta itemprop="description" content="Creando un diseño Proceso de diseño Diseñar es un aspecto fundamentan antes de crear las páginas Para crear un proyecto debemos crear previaemnte los mockups o Prototipados de pantallas Posteriormente hemos de crear las páginas usando los estilos adecuados para conseguir los diseños previamente prototipados, esto implicará usar html y css Para crear los diseños se usan herramientas gráficas de prototipado, y para el css normalmente usaremos algún fremework tipo Bootstrap o tailwindcss">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="961">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Diseñando el layout">
+  <meta name="twitter:description" content="Creando un diseño Proceso de diseño Diseñar es un aspecto fundamentan antes de crear las páginas Para crear un proyecto debemos crear previaemnte los mockups o Prototipados de pantallas Posteriormente hemos de crear las páginas usando los estilos adecuados para conseguir los diseños previamente prototipados, esto implicará usar html y css Para crear los diseños se usan herramientas gráficas de prototipado, y para el css normalmente usaremos algún fremework tipo Bootstrap o tailwindcss">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+Versión imprimible multipagina.
+<a href="#" onclick="print();return false;">Haga click aquí para imprimir</a>.
+</p><p>
+<a href="/laravel/docs/04_plantillas/02_creandodise%C3%B1o/">Volver a la vista normal de esta página</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Diseñando el layout</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+
+    </ul>
+
+
+<div class="content">
+      <h2 id="creando-un-diseño">Creando un diseño</h2>
+<hr>
+<h4 id="proceso-de-diseño">Proceso de diseño</h4>
+<hr>
+<p>Diseñar es un aspecto fundamentan antes de crear las páginas  <br>
+Para crear un proyecto debemos crear previaemnte <strong>los mockups</strong> o <strong>Prototipados de pantallas</strong> <br>
+Posteriormente hemos de crear las páginas usando los estilos adecuados para conseguir los diseños previamente prototipados, esto implicará usar <strong>html y css</strong>
+Para crear los diseños se usan herramientas gráficas de prototipado, y para el css normalmente usaremos algún fremework tipo <strong>Bootstrap</strong> o <strong>tailwindcss</strong></p>
+<h3 id="herramientas-para-el-diseño">Herramientas para el diseño</h3>
+<h4></h4>
+<p>Vamos a usar <strong>Balsamiq</strong> porque disponemos de licencia estudiante en el centro <br>
+Existen varias herramientas alternativas:</p>
+<hr>
+<ol>
+<li><strong><a href="https://pencil.evolus.vn/">Pencil Project</a>:</strong>
+<ul>
+<li>Pencil Project es una herramienta de prototipado de código abierto que te permite crear mockups de manera sencilla. Es fácil de usar y ofrece una variedad de elementos predefinidos.</li>
+</ul>
+</li>
+<li><strong><a href="https://www.mockflow.com/">MockFlow</a>:</strong>
+<ul>
+<li>MockFlow es una plataforma en línea que ofrece una herramienta de diseño de wireframes y mockups. La versión gratuita tiene algunas limitaciones, pero aún así proporciona funcionalidades útiles.</li>
+</ul>
+</li>
+<li><strong><a href="https://balsamiq.cloud/">Balsamiq Cloud (versión gratuita)</a> ):</strong>
+<ul>
+<li>Balsamiq, conocido por su aplicación de escritorio, también ofrece una versión en línea gratuita llamada Balsamiq Cloud que permite crear mockups y wireframes.</li>
+</ul>
+</li>
+<li><strong><a href="https://www.figma.com/">Figma</a>:</strong>
+<ul>
+<li>Figma es una herramienta de diseño colaborativo en línea que permite crear mockups, wireframes y prototipos. Tiene una versión gratuita con muchas funcionalidades.</li>
+</ul>
+</li>
+<li><strong><a href="https://wireframe.cc/">Wireframe.cc</a>:</strong>
+<ul>
+<li>Wireframe.cc es una herramienta simple y fácil de usar para crear wireframes rápidos y sencillos. Puedes comenzar a usarla directamente en el navegador.</li>
+</ul>
+</li>
+</ol>
+<h3 id="laravel-como-fullstack">Laravel como fullstack</h3>
+<p><strong>Laravel es un poderoso framework de backend.</strong></p>
+<p>Con Laravel, es posible realizar 
+<span class="font-weight-bold text-primary">
+
+
+    desarrollos web full-stack
+
+</span>
+. Esto  significa que este framework nos habilita para gestionar tanto <strong>el backend como el frontend</strong> de una aplicación web.<br>
+Así, Laravel se convierte en <strong>una solución integral</strong> que permite implementar todas las facetas del desarrollo web, desde la lógica del servidor hasta la interfaz de usuario.</p>
+<blockquote>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Recuerda</h4>
+
+    <!-- raw HTML omitted -->
+
+
+</div>
+
+<blockquote>
+<p>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    Laravel
+
+
+</span>
+</strong>Permite integrar de 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    forma agnóstica
+
+
+</span>
+</strong> cualquier herramienta para el front.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>En el proceso de instalación, se instala 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    tailwindcss
+
+
+</span>
+</strong> como framework del css, pero lo podemos cambiar</p>
+</blockquote>
+</blockquote>
+<h3 id="instalación-de-tailwind-framework-de-css">Instalación de <a href="https://tailwindcss.com/">Tailwind</a>: framework de css</h3>
+<h4 id="introducción"><strong>Introducción</strong></h4>
+<p>
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Tailwind CSS
+
+</span>
+</strong>
+  es un poderoso framework de estilos de CSS que se puede utilizar de manera efectiva con Laravel.</p>
+<p>La  simplicidad y flexibilidad de 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    Tailwind
+
+</span>
+</strong>
+ permiten una integración fluida con proyectos Laravel, y es común ver su uso en conjunción con este framework de PHP.</p>
+<p>Muchos paquetes y recursos integrados en el ecosistema de Laravel incorporan Tailwind CSS como herramienta preferida para la estilización de componentes y diseños, por ese motivo lo vamos a utilizar en este curso.</p>
+<hr>
+<h4 id="instalación"><strong>Instalación</strong></h4>
+<p>Para la instalación necesitamos herramientas para gestionar paquetes del cliente <strong>node y npm</strong>, y vamos a usar <strong>vite</strong> como herramienta de compilación (traspilación) de ficheros en el frontend</p>
+<hr>
+<h5 id="node-y-npm"><strong>Node y npm</strong></h5>
+<p><strong><a href="https://nodejs.org/">Node</a></strong></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ol>
+<li>Descarga e instala Node.js desde el <a href="https://nodejs.org/">sitio web oficial</a>.</li>
+</ol>
+<p>Antes de integrar Tailwind CSS en tu proyecto Laravel, necesitarás tener Node.js instalado.
+
+<strong>
+<span class="font-weight-bold text-primary">
+
+    node
+
+</span>
+</strong>
+ y
+<strong>
+<span class="font-weight-bold text-primary">
+
+    npm
+
+</span>
+</strong>
+ son Gestores de paquetes para el front
+Van a crear un fichero llamado 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    pakage.json (vs composer.json)
+
+</span>
+</strong>
+</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install
+</span></span></code></pre></div><p>Al ejecutar 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    npm install
+
+</span>
+</strong>
+,  se creará en el proyecto una carpeta llamada 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    node_modules
+
+</span>
+</strong>
+, donde se instalarán los paquetes especificados en el fichero json.<br>
+Este directorio 
+<span class="font-weight-bold text-primary">
+
+
+    node_modules
+
+</span>
+ tampoco hay que subir a git, ya que lo podremos generar a partir del fichero 
+<span class="font-weight-bold text-primary">
+
+
+    pakage.json
+
+</span>
+ .  <br>
+Su instalación es sencilla. Una vez instalado cerramos el terminal y al volverlo a abrir, ya lo podemos utilizar.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<hr>
+<h5 id="tailwindcss"><strong>Tailwindcss</strong></h5>
+<p><strong><a href="https://tailwindcss.com/docs/installation/framework-guides">Tailwindcss</a></strong></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<hr>
+<h5 id="vite"><strong>Vite</strong></h5>
+<p><strong><a href="https://vitejs.dev/">Vite</a></strong></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>
+<span class="font-weight-bold text-primary">
+
+
+    Vite
+
+</span>
+ en un proyecto Laravel es un moderno entorno de 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    construcción frontend
+
+</span>
+</strong>
+ que proporciona una compilación (transpilación)rápida y eficiente de los recursos del front para ponerlos disponibles en ejecución.</p>
+<hr>
+<p>
+<span class="font-weight-bold text-primary">
+
+
+    Vite
+
+</span>
+, por ejemplo, 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    transpila archivos SCSS o LESS a CSS
+
+</span>
+</strong>
+, 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    procesa las directivas de Tailwind CSS para generar clases CSS utilizables
+
+</span>
+</strong>
+.</p>
+<hr>
+<p>Además, 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    compila componentes de Vue o React a JavaScript
+
+</span>
+</strong>
+, facilitando su ejecución en el navegador.</p>
+<h3 id="diseño-del-layout">Diseño del layout</h3>
+<h4 id="planteamos-el-siguiente-layout-general">Planteamos el siguiente layout general</h4>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><strong>Para conseguirlo escribimos el siguiente código</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;!doctype html&gt;
+</span></span><span style="display:flex;"><span>&lt;html lang=<span style="color:#cd5555">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;head&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>       @vite([<span style="color:#cd5555">&#39;resources/css/app.css&#39;</span>, <span style="color:#cd5555">&#39;resources/js/app.js&#39;</span>])
+</span></span><span style="display:flex;"><span>       &lt;title&gt;Document&lt;/title&gt;
+</span></span><span style="display:flex;"><span>   &lt;/head&gt;
+</span></span><span style="display:flex;"><span>   &lt;body&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>      &lt;header class=<span style="color:#cd5555">&#34;lg:hidden bg-header flex flex-col justify-center items-center  py-2 space-y-1&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>         HEADER MÓVIL
+</span></span><span style="display:flex;"><span>      &lt;/header&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>      &lt;header class=<span style="color:#cd5555">&#34;hidden lg:flex h-15v bg-header flex flex-row justify-center items-center&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>         HEADER DESKTOP
+</span></span><span style="display:flex;"><span>      &lt;/header&gt;
+</span></span><span style="display:flex;"><span>      &lt;nav&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>          &lt;nav class=<span style="color:#cd5555">&#34;hidden lg:flex h-10v bg-nav flex flex-row justify-start items-center space-x-2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            NAV MÓVIL
+</span></span><span style="display:flex;"><span>          &lt;/nav&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>          &lt;nav class=<span style="color:#cd5555">&#34;lg:hidden bg-nav flex flex-col justify-start space-y-1 px-2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            NAV DESKTOP
+</span></span><span style="display:flex;"><span>          &lt;/nav&gt;
+</span></span><span style="display:flex;"><span>      &lt;/nav&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>      &lt;main class=<span style="color:#cd5555">&#34;h-65v bg-main&#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>          @<span style="color:#8b008b;font-weight:bold">yield</span>(<span style="color:#cd5555">&#34;contenido&#34;</span>)
+</span></span><span style="display:flex;"><span>      &lt;/main&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>      &lt;footer  class=<span style="color:#cd5555">&#34;h-10v bg-footer footer items-center p-4 bg-neutral text-neutral-content&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>         FOOTER          
+</span></span><span style="display:flex;"><span>      &lt;/footer&gt;
+</span></span><span style="display:flex;"><span>   &lt;/body&gt;
+</span></span><span style="display:flex;"><span>&lt;/html&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h4 id="diseño-de-la-cabecera-hahahugoshortcode472s28hbhb">Diseño de la cabecera 
+<span class="font-weight-bold text-primary">
+
+
+    header
+
+</span>
+</h4>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><strong>Escribimos el siguiente código</strong>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex;"><span> &lt;header class=<span style="color:#cd5555">&#34;lg:hidden bg-header flex flex-col justify-center items-center  py-2 space-y-1&#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;img class=<span style="color:#cd5555">&#34;h-3/5&#34;</span> src=<span style="color:#cd5555">&#34;{{asset(&#34;</span>images/logos/nett_logo.png<span style="color:#cd5555">&#34;)}}&#34;</span> alt=<span style="color:#cd5555">&#34;logo nett&#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;button class=<span style="color:#cd5555">&#34;h-1/5 w-full btn bg-main &#34;</span>&gt; Acceder&lt;/button&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;button class=<span style="color:#cd5555">&#34;h-1/5 w-full btn  bg-main&#34;</span>&gt;Registrar&lt;/button&gt;
+</span></span><span style="display:flex;"><span>    &lt;/header&gt;
+</span></span><span style="display:flex;"><span>    &lt;header class=<span style="color:#cd5555">&#34;hidden lg:flex h-15v bg-header flex flex-row justify-center items-center&#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;img class=<span style="color:#cd5555">&#34;w-1/5 max-h-full w-auto  p-5 &#34;</span> src=<span style="color:#cd5555">&#34;{{asset(&#34;</span>images/logos/nett_logo.png<span style="color:#cd5555">&#34;)}}&#34;</span> alt=<span style="color:#cd5555">&#34;logo nett&#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;div class=<span style="color:#cd5555">&#34;w-3/5 flex justify-center items-center&#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>            &lt;h1 class=<span style="color:#cd5555">&#34;text-3xl text-white h-auto max-w-full truncate &#34;</span>&gt;APLICACIÓN EJEMPLO LARAVEL&lt;/h1&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;/div&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;div class=<span style="color:#cd5555">&#34; w-1/5 h-auto max-w-full flex items-center space-x-4 &#34;</span>&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>            &lt;button class=<span style="color:#cd5555">&#34;btn glass  text-white&#34;</span>&gt; Acceder&lt;/button&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>            &lt;button class=<span style="color:#cd5555">&#34;btn  glass text-white&#34;</span>&gt;Registrar&lt;/button&gt;
+</span></span><span style="display:flex; background-color:#d6d6c6"><span>        &lt;/div&gt;
+</span></span><span style="display:flex;"><span>    &lt;/header&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h4 id="diseño-de-la-sección-de-menú--hahahugoshortcode472s31hbhb">Diseño de la sección de menú:  
+<span class="font-weight-bold text-primary">
+
+
+    nav
+
+</span>
+</h4>
+<p>
+
+<div class="pageinfo pageinfo-primary">
+<!-- raw HTML omitted -->
+<hr>
+<p><strong>Escribimos el siguiente código</strong></p>
+<!-- raw HTML omitted -->
+
+</div>
+
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">helper route</h4>
+
+    <p>El helper
+<!-- raw HTML omitted --></p>
+<pre><code>route
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>routes/web.php
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+
+**</p>
+<h4 id="diseño-de-la-sección-de-principal---hahahugoshortcode472s34hbhb">Diseño de la sección de principal :  
+<span class="font-weight-bold text-primary">
+
+
+    main
+
+</span>
+</h4>
+<p>En este caso vamos a escribir el contenido de una página 
+<span class="font-weight-bold text-primary">
+
+
+    landing page
+
+</span>
+</p>
+<p>Para ello usaremos de la librería 
+<span class="font-weight-bold text-primary">
+
+
+    <a href="https://daisyui.com">Daisy</a>
+
+</span>
+, el componente 
+<span class="font-weight-bold text-primary">
+
+
+    <a href="https://daisyui.com/components/hero/">Hero</a>
+
+</span>
+
+
+
+<div class="pageinfo pageinfo-primary">
+<!-- raw HTML omitted -->
+<p><strong>Escribimos el siguiente código</strong></p>
+<!-- raw HTML omitted -->
+<pre><code>home.blade.php
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>Establece una página de hereda de otra (un layout)
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>Para establecer una sección dónde se aportará contenido en la página que herede de ella
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;!-- raw HTML omitted --&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+
+</div>
+</p>
+<hr>
+<h4 id="diseño-footer">Diseño footer</h4>
+
+
+<div class="pageinfo pageinfo-primary">
+<h4></h4>
+<hr>
+<h4 id="diseño-de-la-sección-de-pie-de-página-">Diseño de la sección de pie de página :</h4>
+<!-- raw HTML omitted -->
+<pre><code>footer
+</code></pre>
+<!-- raw HTML omitted -->
+<p>En este caso vamos a escribir el contenido de una página
+<!-- raw HTML omitted --></p>
+<pre><code>landing page
+</code></pre>
+<!-- raw HTML omitted -->
+<p>En este caso vamos a seleccionar un
+<!-- raw HTML omitted --></p>
+<pre><code>footer
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+</div>
+
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>
