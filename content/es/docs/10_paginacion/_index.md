@@ -190,7 +190,153 @@ Si editas un profesor desde la página 4 del listado, puedes redirigir de nuevo 
 
 {{% line %}}
 
-# 7. Cambiar la cantidad de registros por página
+## 7. Modificar controlador y vistas 
+Para mantener los números de páginas tenemos que modificar el controlador, leerlo en las vistas y pasarlo entre ambos (de la vista al controlador y del controlador a la vista)
+No debemos perder este valor, para poderlo mantener
+
+### {{<color>}}En el index{{</color>}}
+
+Recibiremos el número de página como argumento. 
+
+Cuando hacemos la paginación, láravel internamete lee el número de página si lo tiene, hace algo del tipo:
+{{< highlight php tabla_alumnos "linenos=table, hl_lines=1" >}}
+$page = request()->query('page', 1);
+{{< /highlight>}}
+Por lo que en realidad, en el index no tenemos que realizar ninguna acción. Si queremos podemos pasar explícitamente el número de página para dejarlo mas explícto a la vista
+{{< highlight php tabla_alumnos "linenos=table, hl_lines=5 6" >}}
+    public function index()
+    {
+        $teachers = Teacher::paginate(5);
+        $campos = Teacher::getLabels();
+        $page = request()->get('page', 1);
+        return view('teachers.index', compact('teachers', 'campos', 'page'));
+    }
+{{< /highlight>}}
+Esto lo realizaremos en el {{<color>}}crud.blade.php{{</color>}}
+
+Observa cómo podemos leer el número de página directamente de request 
+{{< highlight php tabla_alumnos "linenos=table, hl_lines= 6" >}}
+@props([
+    'resource'=>"",
+    'campos'=>[], //Array asociativo con nombre_campos => titulo para la tabla ("start_date"=>"Fecha de comienzo")
+    'filas'=>[], //Un array de objetos
+    'page'=>$page
+])
+{{< /highlight>}}
+### {{<color>}}create{{</color>}}
+
+Este método es invocado desde la página html.
+
+Ahí debemos de pasar el número de página y luego leerlo en el método {{<color>}}create{{</color>}} del controlador
+{{< highlight php tabla_alumnos "linenos=table, hl_lines= 1" >}}
+<a href="{{route("$resource.create")}}?page={{$page}}" class="btn btn-primary">Añadir {{strtoupper($resource)}}</a>
+{{< /highlight>}}
+Y luego en el controlador el método create recogerá el número de página, y lo pasará a la página html para no perderlo
+{{< highlight php tabla_alumnos "linenos=table, hl_lines=2 3" >}}
+public function create(){
+    $page = request()->get('page');
+    return view('teachers.create',['page'=>$page]);
+        //
+}
+{{< /highlight>}}
+Y la vista create lo recoge y lo enviará al método store del controlador
+{{< highlight php tabla_alumnos "linenos=table, hl_lines=1 2 3 8 " >}}
+@props([
+'page'=>$page
+])
+<x-layouts.layout>
+
+    <div class="flex justify-center items-center min-h-full bg-gray-200">
+
+        <form method="POST" action="{{ route('teachers.store') }}"?page="$page" class="bg-white p-4 rounded-2xl">
+            @csrf
+
+{{< /highlight>}}
+### {{<color>}}El método store{{</color>}}
+Guardamos el registro y retornamos el index con la página que teníamos
+
+Aquí hay que tener en cuenta que puede ser que el nuevo registro estará en la última  página, si queremos mostrarlo, deveremos especificar es página
+
+{{< highlight php tabla_alumnos "linenos=table, hl_lines=" >}}
+public function store(StoreTeacherRequest $request)
+{
+$datos = $request->input();
+Teacher::create($datos);
+$page = Teacher::paginate(5)->lastPage();
+return redirect()->route('teachers.index',['page'=>$page])->with('success','Registro creado satisfactoriamente');
+//
+}
+
+{{< /highlight>}}
+
+### {{<color>}}El método  edit{{</color>}}
+A esta acción venimos del crud, por lo que ahí debemos de pasar el número de página
+* {{<color>}}**En el crud**{{</color>}}
+{{< highlight php tabla_alumnos "linenos=table, hl_lines=" >}}
+* <td>
+                        <a href="{{route("$resource.edit",$fila->id)}}?page={{request('page')}}"
+                           class="btn btn-primary">Editar</a>
+                    </td>
+{{< /highlight>}}
+* {{<color>}}En el método edit{{</color>}}
+* Aquí recogemos el número de página y se lo pasamos a la vista
+{{< highlight php tabla_alumnos "linenos=table, hl_lines=" >}}
+  @props([
+  'page'=>$page
+  ])
+  <x-layouts.layout>
+
+    <div class="flex justify-center items-center min-h-full bg-gray-200">
+
+
+        <form method="POST" onsubmit="return confirm ('quieres actualizar este profesor')"  action="{{ route('teachers.update', $teacher->id)}}?page={{$page}}" class="bg-white p-4 rounded-2xl">
+ 
+{{< /highlight>}}
+* {{<color>}}En el método update {{</color>}} que invoca este formulario
+{{< highlight php tabla_alumnos "linenos=table, hl_lines=" >}}
+  public function update(UpdateTeacherRequest $request, Teacher $teacher)
+  {
+  $datos = $request->input();
+  $teacher->update($datos);
+  $page = $request->input('page');
+  return redirect()->route('teachers.index',['page'=>$page]);
+
+        //
+  }
+{{< /highlight>}} 
+### {{<color>}}El método delete{{</color>}}
+
+* Como siempre, primero {{<color>}}la vista{{</color>}} desde donde vamos a realizar esta acción
+{{< highlight php tabla_alumnos "linenos=table, hl_lines=" >}}
+  <td>
+  <form action="{{route("$resource.destroy",$fila->id)}}?page={{request('page')}}" method="POST">
+  @csrf
+  @method('DELETE')
+  <input type="button" value="Borrar" class="btn btn-warning"
+  onclick="confirmar(this)"
+  >
+  </form>
+  </td>
+{{< /highlight>}}
+
+* Ahora el método {{<color>}}destroy{{</color>}} del controlador
+ 
+{{< highlight php tabla_alumnos "linenos=table, hl_lines=" >}}
+  public function destroy(Teacher $teacher)
+  {
+  $teacher->delete();
+  return redirect()->route('teachers.index',[
+  'page'=>request('page')
+  ]);
+  //
+  }
+ 
+{{< /highlight>}}
+
+
+
+
+## 7. Cambiar la cantidad de registros por página
 
 Simplemente cambiando el parámetro de `paginate()`.
 
@@ -214,7 +360,7 @@ La paginación en Laravel es muy sencilla:
 $teachers = Teacher::paginate(10);
 {{< / highlight >}}
 
-2. ️⃣ Mostrar registros
+2. Mostrar registros
 
 {{< highlight dockerfile "linenos=table, hl_lines=1" >}}
 @foreach($teachers as $teacher)
@@ -224,6 +370,27 @@ $teachers = Teacher::paginate(10);
 
 {{< highlight dockerfile "linenos=table, hl_lines=1" >}}
 {{$teachers->links()}}
+{{< / highlight >}}
+
+{{< alert title="Conclusión" color="success" >}}
+Laravel implementa la paginación de forma {{< color >}}automática, limpia y muy eficiente{{< /color >}}, lo que facilita construir CRUD profesionales con muy poco código.
+{{< /alert >}}
+
+4. Creaer rutas con el parámetro page en las vistas
+
+{{< highlight dockerfile "linenos=table, hl_lines=1" >}}
+{{route("teachers.create")??=page={{$page}}
+{{< / highlight >}}
+
+5.- Leer la página en el controlador
+{{< highlight dockerfile "linenos=table, hl_lines=1" >}}
+ $page = request('page');
+ // o
+ $page = request()->get('page');
+// o
+ $page = request()->query('page');
+//o
+ $page = request()->input('page');
 {{< / highlight >}}
 
 {{< alert title="Conclusión" color="success" >}}
