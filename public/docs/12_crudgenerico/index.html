@@ -1,0 +1,870 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/12_crudgenerico/index.xml">
+<link rel="alternate" type="text/html" href="http://localhost:1313/laravel/_print/docs/12_crudgenerico/">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/laravel/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/laravel/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/laravel/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
+
+<title>Plantilla para Crud | Laravel: Framework de php</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+
+<meta property="og:url" content="http://localhost:1313/laravel/docs/12_crudgenerico/">
+  <meta property="og:site_name" content="Laravel: Framework de php">
+  <meta property="og:title" content="Plantilla para Crud">
+  <meta property="og:description" content="Planteamiento Se trata de crear un sistema automatizado para generar un crud genérico a partir de un fichero de configuración.
+En el fichero especificaremos los recursos que queremos gestionar
+Este proyecto automatizará una gran parte del proceso
+title Planteamiento Crud genérico component &#34;Fichero config/resource.php&#34; as Config #5DADE2 component &#34;main.blade.php&#34; as Vista #F5B041 component &#34;CrudController.php&#34; as Controller #58D68D Config --&gt; Vista: config(&#34;resources&#34;) Vista --&gt; Controller : &lt;resource&gt; note right of Controller Genera datos: - resource - rows - fields - table end note Creamos el fichero de configuración En la carpeta config creamos un fichero llamado resources.php">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Plantilla para Crud">
+  <meta itemprop="description" content="Planteamiento Se trata de crear un sistema automatizado para generar un crud genérico a partir de un fichero de configuración.
+En el fichero especificaremos los recursos que queremos gestionar
+Este proyecto automatizará una gran parte del proceso
+title Planteamiento Crud genérico component &#34;Fichero config/resource.php&#34; as Config #5DADE2 component &#34;main.blade.php&#34; as Vista #F5B041 component &#34;CrudController.php&#34; as Controller #58D68D Config --&gt; Vista: config(&#34;resources&#34;) Vista --&gt; Controller : &lt;resource&gt; note right of Controller Genera datos: - resource - rows - fields - table end note Creamos el fichero de configuración En la carpeta config creamos un fichero llamado resources.php">
+  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+  <meta itemprop="wordCount" content="1463">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Plantilla para Crud">
+  <meta name="twitter:description" content="Planteamiento Se trata de crear un sistema automatizado para generar un crud genérico a partir de un fichero de configuración.
+En el fichero especificaremos los recursos que queremos gestionar
+Este proyecto automatizará una gran parte del proceso
+title Planteamiento Crud genérico component &#34;Fichero config/resource.php&#34; as Config #5DADE2 component &#34;main.blade.php&#34; as Vista #F5B041 component &#34;CrudController.php&#34; as Controller #58D68D Config --&gt; Vista: config(&#34;resources&#34;) Vista --&gt; Controller : &lt;resource&gt; note right of Controller Genera datos: - resource - rows - fields - table end note Creamos el fichero de configuración En la carpeta config creamos un fichero llamado resources.php">
+
+
+<link href="/laravel/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll "  data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row ">
+  <a class="navbar-brand" href="/laravel/"><span class="navbar-brand__logo navbar-logo">
+    <img src="/laravel/images/logo.png" alt="Logo" width="150" height="auto" />
+    </span><span class="navbar-brand__name">Laravel: Framework de php</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
+    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs-li">
+  <a href="/laravel/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laraveldocs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs01_introduccic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs01_introduccic3b3n-check"/>
+  <label for="m-laraveldocs01_introduccic3b3n-check"><a href="/laravel/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs02_instalacic3b3n-li">
+  <input type="checkbox" id="m-laraveldocs02_instalacic3b3n-check"/>
+  <label for="m-laraveldocs02_instalacic3b3n-check"><a href="/laravel/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs03_rutas-li">
+  <input type="checkbox" id="m-laraveldocs03_rutas-check"/>
+  <label for="m-laraveldocs03_rutas-check"><a href="/laravel/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs04_plantillas-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas-check"/>
+  <label for="m-laraveldocs04_plantillas-check"><a href="/laravel/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas01_blade-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas01_blade-check"/>
+  <label for="m-laraveldocs04_plantillas01_blade-check"><a href="/laravel/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas02_creandodisec3b1o-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas02_creandodisec3b1o-check"/>
+  <label for="m-laraveldocs04_plantillas02_creandodisec3b1o-check"><a href="/laravel/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas03_componentes-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas03_componentes-check"/>
+  <label for="m-laraveldocs04_plantillas03_componentes-check"><a href="/laravel/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas05_ejemplo-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas05_ejemplo-check"/>
+  <label for="m-laraveldocs04_plantillas05_ejemplo-check"><a href="/laravel/docs/04_plantillas/05_ejemplo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas05_ejemplo"><i class="fa-solid fa-diagram-project"></i><span class="">Ejemplo de nuestro proyecto </span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas04_responsivo-li">
+  <input type="checkbox" id="m-laraveldocs04_plantillas04_responsivo-check"/>
+  <label for="m-laraveldocs04_plantillas04_responsivo-check"><a href="/laravel/docs/04_plantillas/04_responsivo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas04_responsivo"><i class="fa-solid fa-mobile-screen-button"></i><span class="">Diseño responsivo</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacion-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacion-check"/>
+  <label for="m-laraveldocs06_autenticacion-check"><a href="/laravel/docs/06_autenticacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacion"><i class="fa-solid fa-sitemap"></i><span class="">Autenticación</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionbreeze-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionbreeze-check"/>
+  <label for="m-laraveldocs06_autenticacionbreeze-check"><a href="/laravel/docs/06_autenticacion/breeze/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionbreeze"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionvistas-y-controladores-li">
+  <input type="checkbox" id="m-laraveldocs06_autenticacionvistas-y-controladores-check"/>
+  <label for="m-laraveldocs06_autenticacionvistas-y-controladores-check"><a href="/laravel/docs/06_autenticacion/vistas-y-controladores/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionvistas-y-controladores"><i class="fa-solid fa-user-lock"></i><span class="">auth: Vistas y Controladores</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs07_multilenguaje-li">
+  <input type="checkbox" id="m-laraveldocs07_multilenguaje-check"/>
+  <label for="m-laraveldocs07_multilenguaje-check"><a href="/laravel/docs/07_multilenguaje/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs07_multilenguaje"><span class="">Multilenguaje</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs07_multilenguajeplugin_busqueda-li">
+  <input type="checkbox" id="m-laraveldocs07_multilenguajeplugin_busqueda-check"/>
+  <label for="m-laraveldocs07_multilenguajeplugin_busqueda-check"><a href="/laravel/docs/07_multilenguaje/plugin_busqueda/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs07_multilenguajeplugin_busqueda"><i class="fa-solid fa-language"></i><span class="">Extracción de texto</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs08_migraciones-li">
+  <input type="checkbox" id="m-laraveldocs08_migraciones-check"/>
+  <label for="m-laraveldocs08_migraciones-check"><a href="/laravel/docs/08_migraciones/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs08_migraciones"><i class="fa-solid fa-database"></i><span class="">Migraciones</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs08_migracionesfactory_seeder-li">
+  <input type="checkbox" id="m-laraveldocs08_migracionesfactory_seeder-check"/>
+  <label for="m-laraveldocs08_migracionesfactory_seeder-check"><a href="/laravel/docs/08_migraciones/factory_seeder/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs08_migracionesfactory_seeder"><i class="fa-solid fa-seedling"></i><span class="">Seeders en Laravel</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs08_migraciones_index_oldc3a7-li">
+  <input type="checkbox" id="m-laraveldocs08_migraciones_index_oldc3a7-check"/>
+  <label for="m-laraveldocs08_migraciones_index_oldc3a7-check"><a href="/laravel/docs/08_migraciones/_index_old%C3%A7/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs08_migraciones_index_oldc3a7"><span class=""></span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs09_crud-li">
+  <input type="checkbox" id="m-laraveldocs09_crud-check"/>
+  <label for="m-laraveldocs09_crud-check"><a href="/laravel/docs/09_crud/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs09_crud"><i class="fa-solid fa-database"></i><span class="">Creando un CRUD</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs09_crud01_la-tabla-li">
+  <input type="checkbox" id="m-laraveldocs09_crud01_la-tabla-check"/>
+  <label for="m-laraveldocs09_crud01_la-tabla-check"><a href="/laravel/docs/09_crud/01_la-tabla/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs09_crud01_la-tabla"><i class="fa-solid fa-database"></i><span class="">Creando la tabla</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_paginacion-li">
+  <input type="checkbox" id="m-laraveldocs10_paginacion-check"/>
+  <label for="m-laraveldocs10_paginacion-check"><a href="/laravel/docs/10_paginacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_paginacion"><i class="fa-solid fa-table-list"></i><span class="">Paginando datos</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs11_roles-li">
+  <input type="checkbox" id="m-laraveldocs11_roles-check"/>
+  <label for="m-laraveldocs11_roles-check"><a href="/laravel/docs/11_roles/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs11_roles"><i class="fa-brands fa-critical-role"></i><span class="">Roles</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocs12_crudgenerico-li">
+  <input type="checkbox" id="m-laraveldocs12_crudgenerico-check" checked/>
+  <label for="m-laraveldocs12_crudgenerico-check"><a href="/laravel/docs/12_crudgenerico/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laraveldocs12_crudgenerico"><i class="fa-solid fa-layer-group"></i><span class="td-sidebar-nav-active-item">Plantilla para Crud</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseet-check"/>
+  <label for="m-laraveldocs999_cheatseet-check"><a href="/laravel/docs/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet"><span class="">Cheat Sheet</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseethelper-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper-check"/>
+  <label for="m-laraveldocs999_cheatseethelper-check"><a href="/laravel/docs/999_cheatseet/helper/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper"><span class="">Helper en Laravel</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper10_vistas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper10_vistas-check"/>
+  <label for="m-laraveldocs999_cheatseethelper10_vistas-check"><a href="/laravel/docs/999_cheatseet/helper/10_vistas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper10_vistas"><span class="">Vistas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper20_rutas-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper20_rutas-check"/>
+  <label for="m-laraveldocs999_cheatseethelper20_rutas-check"><a href="/laravel/docs/999_cheatseet/helper/20_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper20_rutas"><span class="">Rutas</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper30_request-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseethelper30_request-check"/>
+  <label for="m-laraveldocs999_cheatseethelper30_request-check"><a href="/laravel/docs/999_cheatseet/helper/30_request/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper30_request"><span class="">Request en Laravel</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetartisan-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetartisan-check"/>
+  <label for="m-laraveldocs999_cheatseetartisan-check"><a href="/laravel/docs/999_cheatseet/artisan/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetartisan"><span class="">Artisan (CLI)</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetblade-li">
+  <input type="checkbox" id="m-laraveldocs999_cheatseetblade-check"/>
+  <label for="m-laraveldocs999_cheatseetblade-check"><a href="/laravel/docs/999_cheatseet/blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetblade"><span class="">Directivas Blade</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+<a id="print" href="/laravel/_print/docs/12_crudgenerico/"><i class="fa-solid fa-print fa-fw"></i> Imprimir la sección entera</a>
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#planteamiento">Planteamiento</a></li>
+    <li><a href="#creamos-el-fichero-de-configuración">Creamos el fichero de configuración</a></li>
+    <li><a href="#creamos-el-fichero-main">Creamos el fichero main</a></li>
+    <li><a href="#creamos-el-controlador-genérico">Creamos el controlador genérico</a></li>
+    <li><a href="#componente-para-crear-los-modelos">Componente para crear los modelos</a>
+      <ul>
+        <li><a href="#creando-el-nuevo-comando">Creando el nuevo comando</a></li>
+      </ul>
+    </li>
+    <li><a href="#componente-para-crear-los-fichero-de-labels">Componente para crear los fichero de labels</a></li>
+  </ul>
+</nav>
+      </div>
+    
+            <div class="taxonomy taxonomy-terms-cloud taxo-categories">
+      <h5 class="taxonomy-title">Categories</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      <h5 class="taxonomy-title">Tags</h5>
+      <ul class="taxonomy-terms">
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        </ul>
+    </div>
+  
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/laravel/docs/">Laravel</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Plantilla para Crud</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Plantilla para Crud</h1>
+  
+	<header class="article-meta">
+		
+</header>
+	<h2 id="planteamiento">Planteamiento</h2>
+<p>Se trata de crear un sistema automatizado para generar un crud genérico a partir de un fichero de configuración.</p>
+<p>En el fichero especificaremos los recursos que queremos gestionar</p>
+<p>Este proyecto automatizará una gran parte del proceso</p>
+<hr>
+<pre tabindex="0"><code class="language-plantuml" data-lang="plantuml">title Planteamiento Crud genérico
+
+
+component &#34;Fichero config/resource.php&#34; as Config #5DADE2
+component &#34;main.blade.php&#34; as Vista #F5B041
+component &#34;CrudController.php&#34; as Controller #58D68D
+
+Config --&gt; Vista:   config(&#34;resources&#34;)
+Vista --&gt; Controller : &lt;resource&gt;
+
+note right of Controller
+Genera datos:
+- resource
+- rows
+- fields
+- table
+end note
+</code></pre><h2 id="creamos-el-fichero-de-configuración">Creamos el fichero de configuración</h2>
+<p>En la carpeta <strong>config</strong> creamos un fichero llamado <strong>resources.php</strong></p>
+<p>En una primera acción simplemente los recursos que queremos gestionar</p>
+<p>La idea será que si añadimos aquí resucursos mi aplicción funione y se adapte a todos los recursos que aquí
+especifiquemos</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;?php
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;projects&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;users&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;teachers&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;students&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;guests&#39;</span> <span style="color:#228b22">//usuario registrado que no es ni profesor ni estudiante
+</span></span></span><span style="display:flex;"><span>    <span style="color:#a61717;background-color:#e3d2d2">&#39;</span>tasks
+</span></span><span style="display:flex;"><span>];
+</span></span></code></pre></div><p>'</p>
+<h2 id="creamos-el-fichero-main">Creamos el fichero main</h2>
+<p>Ahora queremos crear un main con tantas tarjetas como recursos tenga.</p>
+<p>Las tarjetas que estamos usando son las de daysy, y las hemos creado en componentes html
+Esta sería una tarjeta que tenemos ahora</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  &lt;x-card&gt;
+</span></span><span style="display:flex;"><span>                    &lt;x-slot name=<span style="color:#cd5555">&#34;label&#34;</span>&gt;{{__(<span style="color:#cd5555">&#34;Ver Proyectos&#34;</span>)}}&lt;/x-slot&gt;
+</span></span><span style="display:flex;"><span>                    &lt;x-slot name=<span style="color:#cd5555">&#34;img&#34;</span>&gt;{{ asset(<span style="color:#cd5555">&#34;/images/project.jpeg&#34;</span>) }}&lt;/x-slot&gt;
+</span></span><span style="display:flex;"><span>                    &lt;x-slot name=<span style="color:#cd5555">&#34;title&#34;</span>&gt;Gestión de Proyectos&lt;/x-slot&gt;
+</span></span><span style="display:flex;"><span>                    &lt;x-slot name=<span style="color:#cd5555">&#34;description&#34;</span>&gt;Vamos a ver un Crud con los proyecots&lt;/x-slot&gt;
+</span></span><span style="display:flex;"><span>                    &lt;x-slot name=<span style="color:#cd5555">&#34;ref&#34;</span>&gt;{{route(<span style="color:#cd5555">&#34;proyecto.index&#34;</span>)}}&lt;/x-slot&gt;
+</span></span><span style="display:flex;"><span>                &lt;/x-card&gt;
+</span></span></code></pre></div><p>Queremos creaer tantas tarjetas como elementos tengamos en el fichero de resources</p>
+<p>Analizamos los datos que necesitamos en el card y vemos cómo obtenerlos:</p>
+<ul>
+<li>Vamos a obviar de momento el nombre traducido, y vamos a usar como nombre siempre el valor del recurso que tengo en el
+fichero.</li>
+<li>El tema de las imágenes, lo solucionaremos teniendo imágenes todas con el nombre del recurso, en nuestro caso:
+!(img_1.png)[img_1.png]</li>
+<li>El tema de la ruta, es diferente, necesito rutas pero que el recurso que quiere gestionar sea parametrizable. Para
+resolver este punto ver el apartado siguiente</li>
+</ul>
+<p>Ahora tenemos
+Una vez que tenemos esto la creación del <strong>main</strong> se vuelve sencilla</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>            @<span style="color:#8b008b;font-weight:bold">foreach</span>(config(<span style="color:#cd5555">&#39;resources&#39;</span>) <span style="color:#8b008b;font-weight:bold">as</span> <span style="color:#00688b">$resource</span>)
+</span></span><span style="display:flex;"><span>                &lt;x-card&gt;
+</span></span><span style="display:flex;"><span>                    &lt;x-slot name=<span style="color:#cd5555">&#34;label&#34;</span>&gt;{{__(<span style="color:#cd5555">&#34;Ver </span><span style="color:#cd5555">$resource</span><span style="color:#cd5555">&#34;</span>)}}&lt;/x-slot&gt;
+</span></span><span style="display:flex;"><span>                    &lt;x-slot name=<span style="color:#cd5555">&#34;img&#34;</span>&gt;{{ asset(<span style="color:#cd5555">&#34;/images/</span><span style="color:#cd5555">$resource</span><span style="color:#cd5555">.jpeg&#34;</span>) }}&lt;/x-slot&gt;
+</span></span><span style="display:flex;"><span>                    &lt;x-slot name=<span style="color:#cd5555">&#34;title&#34;</span>&gt;Gestión de {{<span style="color:#00688b">$resource</span>}}&lt;/x-slot&gt;
+</span></span><span style="display:flex;"><span>                    &lt;x-slot name=<span style="color:#cd5555">&#34;description&#34;</span>&gt;Vamos a ver un Crud con los {{<span style="color:#00688b">$resource</span>}}&lt;/x-slot&gt;
+</span></span><span style="display:flex;"><span>                    &lt;x-slot name=<span style="color:#cd5555">&#34;ref&#34;</span>&gt;{{route(<span style="color:#cd5555">&#34;crud.index&#34;</span>,<span style="color:#00688b">$resource</span>)}}&lt;/x-slot&gt;
+</span></span><span style="display:flex;"><span>                &lt;/x-card&gt;
+</span></span><span style="display:flex;"><span>        @<span style="color:#8b008b;font-weight:bold">endforeach</span>
+</span></span></code></pre></div><h2 id="creamos-el-controlador-genérico">Creamos el controlador genérico</h2>
+<p>Creamos un controlador de tipo API que va a ser genérico, es decir el recurso que va a gestionar.</p>
+<p>El controlador le llamamos <strong>CrudController</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>php artisan make:controller CrudController --api
+</span></span></code></pre></div><p>Por ser de tipo API tendrá todos los métodos para atender las solicitudes</p>
+<table>
+  <thead>
+      <tr>
+          <th>Método</th>
+          <th>Endpoint</th>
+          <th>Método Controller</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>GET</td>
+          <td>/recurso</td>
+          <td>index()</td>
+          <td>Listado de todos los registros del recurso</td>
+      </tr>
+      <tr>
+          <td>GET</td>
+          <td>/recurso/{id}</td>
+          <td>show()</td>
+          <td>Mostrar un registro concreto</td>
+      </tr>
+      <tr>
+          <td>POST</td>
+          <td>/recurso</td>
+          <td>store()</td>
+          <td>Crear un nuevo registro</td>
+      </tr>
+      <tr>
+          <td>PUT</td>
+          <td>/recurso/{id}</td>
+          <td>update()</td>
+          <td>Actualizar un registro completo</td>
+      </tr>
+      <tr>
+          <td>PATCH</td>
+          <td>/recurso/{id}</td>
+          <td>update()</td>
+          <td>Actualizar parcialmente un registro</td>
+      </tr>
+      <tr>
+          <td>DELETE</td>
+          <td>/recurso/{id}</td>
+          <td>destroy()</td>
+          <td>Eliminar un registro</td>
+      </tr>
+  </tbody>
+</table>
+<p>Como el recurso es te tipo parámetro, paremetrizamos la ruta. y le ponemos nombre</p>
+<table>
+  <thead>
+      <tr>
+          <th>Método</th>
+          <th>Endpoint</th>
+          <th>Método Controller</th>
+          <th>Descripción</th>
+          <th>Ruta</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>GET</td>
+          <td>/{resource}</td>
+          <td>index(string $resource)</td>
+          <td>Listado de todos los registros del recurso</td>
+          <td>crud.index</td>
+      </tr>
+      <tr>
+          <td>GET</td>
+          <td>/{resource}/{id}</td>
+          <td>show(string $resource, $id)</td>
+          <td>Mostrar un registro concreto</td>
+          <td>crud.show</td>
+      </tr>
+      <tr>
+          <td>POST</td>
+          <td>/{resource}</td>
+          <td>store(string $resource)</td>
+          <td>Crear un nuevo registro</td>
+          <td>crud.store</td>
+      </tr>
+      <tr>
+          <td>PUT</td>
+          <td>/{resource}/{id}</td>
+          <td>update(string $resource, $id)</td>
+          <td>Actualizar un registro completo</td>
+          <td>crud.update</td>
+      </tr>
+      <tr>
+          <td>PATCH</td>
+          <td>/{resource}/{id}</td>
+          <td>update(string $resource, $id)</td>
+          <td>Actualizar parcialmente un registro</td>
+          <td>crud.update</td>
+      </tr>
+      <tr>
+          <td>DELETE</td>
+          <td>/{resource}/{id}</td>
+          <td>destroy(string $resource, $id)</td>
+          <td>Eliminar un registro</td>
+          <td>crud.destroy</td>
+      </tr>
+  </tbody>
+</table>
+<p>Para ello sería deseable crear en <strong>web.php</strong> con el método <strong>Route::resources</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Route::<span style="color:#658b00">resource</span>(<span style="color:#cd5555">&#34;{resource}&#34;</span>, CrudController::<span style="color:#658b00">class</span>)-&gt;<span style="color:#658b00">middleware</span>(<span style="color:#cd5555">&#39;auth&#39;</span>);
+</span></span></code></pre></div><p>Pero esto no funciona, así que tendremos que crear la ruta, de una en una
+Como todas ellas son rutas protegidas, en lugar de hacerlo de una en una, las puedo envolver en el método middleware</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Route::<span style="color:#658b00">middleware</span>(<span style="color:#cd5555">&#39;auth&#39;</span>)-&gt;<span style="color:#658b00">group</span>(<span style="color:#8b008b;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span>   Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;{resource}&#39;</span>, [CrudController::<span style="color:#658b00">class</span>,<span style="color:#cd5555">&#39;index&#39;</span>])-&gt;<span style="color:#658b00">name</span>(<span style="color:#cd5555">&#39;crud.index&#39;</span>);
+</span></span><span style="display:flex;"><span>   Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;{resource}/create&#39;</span>, [CrudController::<span style="color:#658b00">class</span>,<span style="color:#cd5555">&#39;create&#39;</span>])-&gt;<span style="color:#658b00">name</span>(<span style="color:#cd5555">&#39;crud.create&#39;</span>);
+</span></span><span style="display:flex;"><span>   Route::<span style="color:#658b00">post</span>(<span style="color:#cd5555">&#39;{resource}&#39;</span>, [CrudController::<span style="color:#658b00">class</span>,<span style="color:#cd5555">&#39;store&#39;</span>])-&gt;<span style="color:#658b00">name</span>(<span style="color:#cd5555">&#39;crud.store&#39;</span>);
+</span></span><span style="display:flex;"><span>   Route::<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#39;{resource}/{id}/edit&#39;</span>, [CrudController::<span style="color:#658b00">class</span>,<span style="color:#cd5555">&#39;edit&#39;</span>])-&gt;<span style="color:#658b00">name</span>(<span style="color:#cd5555">&#39;crud.edit&#39;</span>);
+</span></span><span style="display:flex;"><span>   Route::<span style="color:#658b00">put</span>(<span style="color:#cd5555">&#39;{resource}/{id}&#39;</span>, [CrudController::<span style="color:#658b00">class</span>,<span style="color:#cd5555">&#39;update&#39;</span>])-&gt;<span style="color:#658b00">name</span>(<span style="color:#cd5555">&#39;crud.update&#39;</span>);
+</span></span><span style="display:flex;"><span>   Route::<span style="color:#658b00">delete</span>(<span style="color:#cd5555">&#39;{resource}/{id}&#39;</span>, [CrudController::<span style="color:#658b00">class</span>,<span style="color:#cd5555">&#39;destroy&#39;</span>])-&gt;<span style="color:#658b00">name</span>(<span style="color:#cd5555">&#39;crud.destroy&#39;</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>Ahora ya tenemos las rutas creadas a partir de los nombres de los recursos que tenemos identificados en el fichero *
+<em>config/resources.php</em>*</p>
+<p>Para adecuarlo todo tendremos que añadir el parámetro en cada método del controlador, existen otras opciones, pero
+tomamos esta por ser la más directa.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">index</span>(string <span style="color:#00688b">$resource</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">store</span>(string <span style="color:#00688b">$resource</span>,Request <span style="color:#00688b">$request</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">show</span>(string <span style="color:#00688b">$resource</span>,string <span style="color:#00688b">$id</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">update</span>(string <span style="color:#00688b">$resource</span>,Request <span style="color:#00688b">$request</span>, string <span style="color:#00688b">$id</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">destroy</span>(string <span style="color:#00688b">$resource</span>,string <span style="color:#00688b">$id</span>)
+</span></span></code></pre></div><h2 id="componente-para-crear-los-modelos">Componente para crear los modelos</h2>
+<p>Lo que sí que vamos a necesitar es un modelo, una tabla y posiblemente queramos hacer factoría y seeder</p>
+<p>Para ello lo ideal sería tener un comando de <strong>php artisan</strong> y que automáticamente lo cree todo
+Es conveniente tener clara la estructura de datos que tenemos en este caso y conseguir un sistema adaptable a cualquiera.</p>
+<p>Partimos de nuestro sistema con el diagram E/R
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 824px">
+<img class="card-img-top" src="/laravel/docs/12_crudgenerico/ER_hu_d601b06774cdae74.png" width="814" height="577">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+  
+
+</p>
+</figcaption>
+</figure>
+</p>
+<p>Pero ahora van a sugir unas circunstancias que tenemos que analizar:</p>
+<ol>
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    No todos los recursos serán tablas y modelos
+
+
+</span>
+</strong></li>
+</ol>
+<blockquote>
+<p>Esto es porque hay recursos que en realidad son subtipos o quedan especificados por roles, por lo tanto necesito saber si un recurso es o no rol</p>
+</blockquote>
+<ol start="2">
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    No todos los recursos serán tablas y modelos
+
+
+</span>
+</strong></li>
+</ol>
+<blockquote>
+<p>Todos los modelos incorporar filleble, por lo que estaría bien saber sus atributos.</p>
+</blockquote>
+<ol start="3">
+<li>
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    En la fábrica conocer los atributos
+
+
+</span>
+</strong></li>
+</ol>
+<blockquote>
+<p>Si sabemos los atributos de cada modelo, podré crear la fábrica ya con el esqueleto</p>
+</blockquote>
+<p>Empezamos con esta acción que puede ser nueva, y por ello muy interesante</p>
+<h3 id="creando-el-nuevo-comando">Creando el nuevo comando</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>php artisan make:command GenerateModels
+</span></span></code></pre></div><p>Ahora accedemos al fichero generado en <strong>app\Console\Commands\GenerateModels.php</strong>  y escribimos el código</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">protected</span> <span style="color:#00688b">$signature</span> = <span style="color:#cd5555">&#39;generate:models&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     * The console command description.
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     *
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     * @var string
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">protected</span> <span style="color:#00688b">$description</span> = <span style="color:#cd5555">&#39;Generar Moldels y migraciones a partir del ficherode configuración resources.php&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     * Execute the console command.
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">handle</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$resources</span> = config(<span style="color:#cd5555">&#34;resources&#34;</span>); <span style="color:#228b22">//Leemos los recursos
+</span></span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">foreach</span> (<span style="color:#00688b">$resources</span> <span style="color:#8b008b;font-weight:bold">as</span> <span style="color:#00688b">$resource</span> ) {
+</span></span><span style="display:flex;"><span>        <span style="color:#228b22">//Cambiamos el nombre del resource a nombre de Model (mayúscula y en singular)
+</span></span></span><span style="display:flex;"><span>            <span style="color:#00688b">$modelName</span> = Str::<span style="color:#658b00">studly</span>(Str::<span style="color:#658b00">singular</span>(<span style="color:#00688b">$resource</span>));
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$modelPath</span> = app_path(<span style="color:#cd5555">&#34;Models/</span><span style="color:#cd5555">{</span><span style="color:#00688b">$modelName</span><span style="color:#cd5555">}</span><span style="color:#cd5555">.php&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#8b008b;font-weight:bold">if</span> (!file_exists(<span style="color:#00688b">$modelPath</span>)) {
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#228b22">//Esta es la forma de ejecutar una función y pasarle los argumentos
+</span></span></span><span style="display:flex;"><span>            <span style="color:#228b22">//La forma de especificar los argumentos puede ser nueva, pero se entiendo fácilmente
+</span></span></span><span style="display:flex;"><span>                <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">call</span>(<span style="color:#cd5555">&#39;make:model&#39;</span>, [<span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#00688b">$modelName</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#cd5555">&#39;--migration&#39;</span> =&gt; <span style="color:#8b008b;font-weight:bold">true</span>]);
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">info</span>(<span style="color:#cd5555">&#34;Modelo </span><span style="color:#cd5555">$modelName</span><span style="color:#cd5555"> generado con exito&#34;</span>);
+</span></span><span style="display:flex;"><span>            } <span style="color:#8b008b;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">info</span>(<span style="color:#cd5555">&#34;El Modelo </span><span style="color:#cd5555">$modelName</span><span style="color:#cd5555"> Ya existe&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#228b22">//
+</span></span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong>Problema</strong>: que nos crea modelos que no debería, ya que son roles.</li>
+<li><strong>Solución</strong>: Vamos a detallar info en el fichero de resources, lo vamos a convertir en un array asociativo para ir dando detalles que nos interesen, aportando metadatos</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;projects&#39;</span>=&gt;[],
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;users&#39;</span> =&gt;[],
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;teachers&#39;</span>=&gt;[<span style="color:#cd5555">&#39;rol&#39;</span>=&gt;<span style="color:#cd5555">&#39;teacher&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;students&#39;</span>=&gt;[<span style="color:#cd5555">&#39;rol&#39;</span>=&gt;<span style="color:#cd5555">&#39;student&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;guests&#39;</span>=&gt;[<span style="color:#cd5555">&#39;rol&#39;</span>=&gt;<span style="color:#cd5555">&#39;guest&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;tasks&#39;</span>=&gt;[],
+</span></span><span style="display:flex;"><span>];
+</span></span></code></pre></div><p>Y ahora modificamos el código</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  <span style="color:#00688b">$resources</span> = config(<span style="color:#cd5555">&#34;resources&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">foreach</span> (<span style="color:#00688b">$resources</span> <span style="color:#8b008b;font-weight:bold">as</span> <span style="color:#00688b">$resource</span> =&gt; <span style="color:#00688b">$data</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#8b008b;font-weight:bold">if</span> (isset(<span style="color:#00688b">$data</span>[<span style="color:#cd5555">&#39;roll&#39;</span>]))
+</span></span><span style="display:flex;"><span>                <span style="color:#8b008b;font-weight:bold">continue</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$modelName</span> = Str::<span style="color:#658b00">studly</span>(Str::<span style="color:#658b00">singular</span>(<span style="color:#00688b">$resource</span>));
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$modelPath</span> = app_path(<span style="color:#cd5555">&#34;Models/</span><span style="color:#cd5555">{</span><span style="color:#00688b">$modelName</span><span style="color:#cd5555">}</span><span style="color:#cd5555">.php&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#8b008b;font-weight:bold">if</span> (!file_exists(<span style="color:#00688b">$modelPath</span>)) {
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">call</span>(<span style="color:#cd5555">&#39;make:model&#39;</span>, [<span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#00688b">$modelName</span>, <span style="color:#cd5555">&#39;--migration&#39;</span> =&gt; <span style="color:#8b008b;font-weight:bold">true</span>]);
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">info</span>(<span style="color:#cd5555">&#34;Modelo </span><span style="color:#cd5555">$modelName</span><span style="color:#cd5555"> generado con exito&#34;</span>);
+</span></span><span style="display:flex;"><span>            } <span style="color:#8b008b;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">info</span>(<span style="color:#cd5555">&#34;El Modelo </span><span style="color:#cd5555">$modelName</span><span style="color:#cd5555"> Ya existe&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }
+</span></span></code></pre></div><p>Podríamos añadir los nombres de los campos y así que nos cree los fillable, la migración con los campos , la fábrica y el seeder</p>
+<p>Luego habrá que revisar los ficheros generados y ajustarlos.</p>
+<p>Primero aportamos la información en el fichero resources:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?php
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;projects&#39;</span>=&gt;[
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#39;fields&#39;</span>=&gt;[<span style="color:#cd5555">&#39;name&#39;</span>,<span style="color:#cd5555">&#39;title&#39;</span>,<span style="color:#cd5555">&#39;description&#39;</span>, <span style="color:#cd5555">&#39;hours&#39;</span>,<span style="color:#cd5555">&#39;start_date&#39;</span>]
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;users&#39;</span> =&gt;[
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#39;fields&#39;</span>=&gt;[<span style="color:#cd5555">&#39;name&#39;</span>,<span style="color:#cd5555">&#39;email&#39;</span>,<span style="color:#cd5555">&#39;password&#39;</span>,<span style="color:#cd5555">&#39;phone&#39;</span>, <span style="color:#cd5555">&#39;dni&#39;</span>,<span style="color:#cd5555">&#39;department&#39;</span>]
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;teachers&#39;</span>=&gt;[<span style="color:#cd5555">&#39;type&#39;</span>=&gt;<span style="color:#cd5555">&#39;rol&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;students&#39;</span>=&gt;[<span style="color:#cd5555">&#39;type&#39;</span>=&gt;<span style="color:#cd5555">&#39;rol&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;registereds&#39;</span>=&gt;[<span style="color:#cd5555">&#39;type&#39;</span>=&gt;<span style="color:#cd5555">&#39;rol&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;tasks&#39;</span>=&gt;[
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#39;fields&#39;</span>=&gt;[<span style="color:#cd5555">&#39;name&#39;</span>,<span style="color:#cd5555">&#39;title&#39;</span>,<span style="color:#cd5555">&#39;description&#39;</span>, <span style="color:#cd5555">&#39;status&#39;</span>,<span style="color:#cd5555">&#39;priority&#39;</span>]
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>];
+</span></span></code></pre></div><p>Modificamos el comando para crear los fillable y el método getLabels que vamos a usar también en todos los casos</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">handle</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$resources</span> = config(<span style="color:#cd5555">&#34;resources&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">foreach</span> (<span style="color:#00688b">$resources</span> <span style="color:#8b008b;font-weight:bold">as</span> <span style="color:#00688b">$resource</span> =&gt; <span style="color:#00688b">$data</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#8b008b;font-weight:bold">if</span> (<span style="color:#00688b">$data</span>[<span style="color:#cd5555">&#39;type&#39;</span>] ?? <span style="color:#8b008b;font-weight:bold">null</span> == <span style="color:#cd5555">&#39;rol&#39;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#8b008b;font-weight:bold">continue</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$modelName</span> = Str::<span style="color:#658b00">studly</span>(Str::<span style="color:#658b00">singular</span>(<span style="color:#00688b">$resource</span>));
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$modelPath</span> = app_path(<span style="color:#cd5555">&#34;Models/</span><span style="color:#cd5555">{</span><span style="color:#00688b">$modelName</span><span style="color:#cd5555">}</span><span style="color:#cd5555">.php&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#8b008b;font-weight:bold">if</span> (!file_exists(<span style="color:#00688b">$modelPath</span>)) {
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">call</span>(<span style="color:#cd5555">&#39;make:model&#39;</span>,
+</span></span><span style="display:flex;"><span>                    [<span style="color:#cd5555">&#39;name&#39;</span> =&gt; <span style="color:#00688b">$modelName</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#cd5555">&#39;--migration&#39;</span> =&gt; <span style="color:#8b008b;font-weight:bold">true</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#cd5555">&#39;--factory&#39;</span> =&gt; <span style="color:#8b008b;font-weight:bold">true</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#cd5555">&#39;--seed&#39;</span> =&gt; <span style="color:#8b008b;font-weight:bold">true</span>,
+</span></span><span style="display:flex;"><span>                    ]);
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">info</span>(<span style="color:#cd5555">&#34;Modelo </span><span style="color:#cd5555">$modelName</span><span style="color:#cd5555"> generado con exito&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$fillable</span> = <span style="color:#cd5555">&#34;&#39;&#34;</span> . implode(<span style="color:#cd5555">&#34;&#39;, &#39;&#34;</span>, <span style="color:#00688b">$data</span>[<span style="color:#cd5555">&#34;fields&#34;</span>]) . <span style="color:#cd5555">&#34;&#39;&#34;</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$getLabel</span> = <span style="color:#cd5555">&#34;public static function getLabels(){
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                return __(</span><span style="color:#cd5555">\&#34;</span><span style="color:#cd5555">$resource</span><span style="color:#cd5555">.fields</span><span style="color:#cd5555">\&#34;</span><span style="color:#cd5555">);
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                }&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$content</span> = file_get_contents(<span style="color:#00688b">$modelPath</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$content</span> = str_replace(
+</span></span><span style="display:flex;"><span>                    <span style="color:#cd5555">&#34;use HasFactory;&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#cd5555">&#34;use HasFactory; </span><span style="color:#cd5555">\n\n</span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">protected </span><span style="color:#cd5555">\$</span><span style="color:#cd5555">fillable=[</span><span style="color:#cd5555">$fillable</span><span style="color:#cd5555">];</span><span style="color:#cd5555">\n</span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">$getLabel</span><span style="color:#cd5555">&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#00688b">$content</span>
+</span></span><span style="display:flex;"><span>                );
+</span></span><span style="display:flex;"><span>                file_put_contents(<span style="color:#00688b">$modelPath</span>, <span style="color:#00688b">$content</span>);
+</span></span><span style="display:flex;"><span>            } <span style="color:#8b008b;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">info</span>(<span style="color:#cd5555">&#34;El Modelo </span><span style="color:#cd5555">$modelName</span><span style="color:#cd5555"> Ya existe&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#228b22">//
+</span></span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>OK! Ahora ya tenemos la infraestructura de los modelos creados.</p>
+<p>Para terminar correctamente este paso, nos falta crear los ficheros de traducción que también  lo vamos automatizar</p>
+<ol>
+<li>Creando el comando</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;fields&#39;</span> =&gt; [
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#34;name&#34;</span> =&gt; <span style="color:#cd5555">&#34;Name&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#34;email&#34;</span> =&gt; <span style="color:#cd5555">&#34;Email&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#34;phone&#34;</span> =&gt; <span style="color:#cd5555">&#34;Phone&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#34;password&#34;</span> =&gt; <span style="color:#cd5555">&#34;Password&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#cd5555">&#34;dni&#34;</span> =&gt; <span style="color:#cd5555">&#34;DNI&#34;</span>,
+</span></span><span style="display:flex;"><span>    ]
+</span></span></code></pre></div><p>'
+2. Escribiendo el código en el fichero
+Accedemos al fichero recién creado y escribimos el código</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>**&lt;?php
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">namespace</span> App\Console\Commands;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Console\Command;
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">use</span> Illuminate\Filesystem\Filesystem;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">GenerateLangsFiles</span> <span style="color:#8b008b;font-weight:bold">extends</span> Command
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     * The name and signature of the console command.
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     *
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     * @var string
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">protected</span> <span style="color:#00688b">$signature</span> = <span style="color:#cd5555">&#39;generate:langs-files&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     * The console command description.
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     *
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     * @var string
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">protected</span> <span style="color:#00688b">$description</span> = <span style="color:#cd5555">&#39;Genera ficheros para cada modelo y traducir sus campos&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#cd5555">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     * Execute the console command.
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">function</span> <span style="color:#008b45">handle</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$resources</span> = config(<span style="color:#cd5555">&#39;resources&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$langs</span> = config(<span style="color:#cd5555">&#34;langs&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$files</span> = <span style="color:#8b008b;font-weight:bold">new</span> Filesystem();
+</span></span><span style="display:flex;"><span>        <span style="color:#00688b">$fieldArray</span>=<span style="color:#cd5555">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8b008b;font-weight:bold">foreach</span> (<span style="color:#00688b">$langs</span> <span style="color:#8b008b;font-weight:bold">as</span> <span style="color:#00688b">$lang</span>=&gt;<span style="color:#00688b">$content</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00688b">$base_path</span> = lang_path(<span style="color:#00688b">$lang</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#8b008b;font-weight:bold">foreach</span> (<span style="color:#00688b">$resources</span> <span style="color:#8b008b;font-weight:bold">as</span> <span style="color:#00688b">$resource</span>=&gt;<span style="color:#00688b">$data</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$fieldArray</span>=<span style="color:#cd5555">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#8b008b;font-weight:bold">if</span> (<span style="color:#00688b">$data</span>[<span style="color:#cd5555">&#39;type&#39;</span>] ?? <span style="color:#8b008b;font-weight:bold">null</span> == <span style="color:#cd5555">&#39;rol&#39;</span>)
+</span></span><span style="display:flex;"><span>                    <span style="color:#8b008b;font-weight:bold">continue</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$fields</span> = <span style="color:#00688b">$data</span>[<span style="color:#cd5555">&#39;fields&#39;</span>];
+</span></span><span style="display:flex;"><span>                <span style="color:#8b008b;font-weight:bold">foreach</span> (<span style="color:#00688b">$fields</span> <span style="color:#8b008b;font-weight:bold">as</span> <span style="color:#00688b">$field</span>) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#00688b">$fieldArray</span> .= <span style="color:#cd5555">&#34; &#39;</span><span style="color:#cd5555">$field</span><span style="color:#cd5555">&#39;=&gt; &#39;&#39;,</span><span style="color:#cd5555">\n</span><span style="color:#cd5555"> &#34;</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$content</span> = <span style="color:#cd5555">&lt;&lt;&lt;</span><span style="color:#cd5555">FIN</span><span style="color:#cd5555">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                   &lt;?php
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                    return[
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                    &#39;fields&#39;=&gt;[\n$fieldArray],\n
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                    &#39;table&#39;=&gt;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">                    ];
+</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">FIN</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$field_Path</span> = <span style="color:#00688b">$base_path</span> . <span style="color:#cd5555">&#34;/</span><span style="color:#cd5555">$resource</span><span style="color:#cd5555">.php&#34;</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$files</span>-&gt;<span style="color:#658b00">put</span>(<span style="color:#00688b">$field_Path</span>, <span style="color:#00688b">$content</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#00688b">$this</span>-&gt;<span style="color:#658b00">info</span>(<span style="color:#cd5555">&#34;Se generaron </span><span style="color:#cd5555">$field_Path</span><span style="color:#cd5555">&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#228b22">//
+</span></span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol start="3">
+<li>Ejecutándolo</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>php artisan generate:langs-files
+</span></span></code></pre></div><p>4.- Ahora toca revisar los contendios y actualizarlo correctamente</p>
+<h2 id="componente-para-crear-los-fichero-de-labels">Componente para crear los fichero de labels</h2>
+
+  <div class="section-index">
+    
+    
+    </div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2026
+    <span class="td-footer__authors">@MRomero</span></span><span class="td-footer__all_rights_reserved">Derechos reservados</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
+<script>
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src='/laravel/js/deflate.js'></script>
+<script src="/laravel/js/main.js"></script>
+<script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/laravel/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

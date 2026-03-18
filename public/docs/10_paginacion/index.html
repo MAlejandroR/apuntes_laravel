@@ -204,6 +204,10 @@ En lugar de mostrar todos los registros de una tabla, el sistema muestra solo un
   <input type="checkbox" id="m-laraveldocs11_roles-check"/>
   <label for="m-laraveldocs11_roles-check"><a href="/laravel/docs/11_roles/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs11_roles"><i class="fa-brands fa-critical-role"></i><span class="">Roles</span></a></label>
   
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs12_crudgenerico-li">
+  <input type="checkbox" id="m-laraveldocs12_crudgenerico-check"/>
+  <label for="m-laraveldocs12_crudgenerico-check"><a href="/laravel/docs/12_crudgenerico/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs12_crudgenerico"><i class="fa-solid fa-layer-group"></i><span class="">Plantilla para Crud</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet-li">
   <input type="checkbox" id="m-laraveldocs999_cheatseet-check"/>
   <label for="m-laraveldocs999_cheatseet-check"><a href="/laravel/docs/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet"><span class="">Cheat Sheet</span></a></label>
@@ -276,11 +280,11 @@ En lugar de mostrar todos los registros de una tabla, el sistema muestra solo un
     <li><a href="#6-saber-en-qué-página-estamos">6. Saber en qué página estamos</a></li>
     <li><a href="#7-modificar-controlador-y-vistas">7. Modificar controlador y vistas</a>
       <ul>
-        <li><a href="#hahahugoshortcode489s24hbhb">HAHAHUGOSHORTCODE489s24HBHB</a></li>
-        <li><a href="#hahahugoshortcode489s29hbhb">HAHAHUGOSHORTCODE489s29HBHB</a></li>
-        <li><a href="#hahahugoshortcode489s34hbhb">HAHAHUGOSHORTCODE489s34HBHB</a></li>
-        <li><a href="#hahahugoshortcode489s36hbhb">HAHAHUGOSHORTCODE489s36HBHB</a></li>
-        <li><a href="#hahahugoshortcode489s43hbhb">HAHAHUGOSHORTCODE489s43HBHB</a></li>
+        <li><a href="#hahahugoshortcode37s24hbhb">HAHAHUGOSHORTCODE37s24HBHB</a></li>
+        <li><a href="#hahahugoshortcode37s29hbhb">HAHAHUGOSHORTCODE37s29HBHB</a></li>
+        <li><a href="#hahahugoshortcode37s34hbhb">HAHAHUGOSHORTCODE37s34HBHB</a></li>
+        <li><a href="#hahahugoshortcode37s36hbhb">HAHAHUGOSHORTCODE37s36HBHB</a></li>
+        <li><a href="#hahahugoshortcode37s43hbhb">HAHAHUGOSHORTCODE37s43HBHB</a></li>
       </ul>
     </li>
     <li><a href="#7-cambiar-la-cantidad-de-registros-por-página">7. Cambiar la cantidad de registros por página</a></li>
@@ -631,7 +635,7 @@ El punto clave es ser consciente de que la navegación se basa en el parámetro 
 <h2 id="7-modificar-controlador-y-vistas">7. Modificar controlador y vistas</h2>
 <p>Para mantener los números de páginas tenemos que modificar el controlador, leerlo en las vistas y pasarlo entre ambos (de la vista al controlador y del controlador a la vista)
 No debemos perder este valor, para poderlo mantener</p>
-<h3 id="hahahugoshortcode489s24hbhb">
+<h3 id="hahahugoshortcode37s24hbhb">
 
 <strong>
 <span class="font-weight-bold text-accent fs-1.5">
@@ -669,7 +673,7 @@ Esto lo realizaremos en el
 </span></span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;filas&#39;</span>=&gt;[], <span style="color:#228b22">//Un array de objetos
 </span></span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;page&#39;</span>=&gt;<span style="color:#00688b">$page</span>
 </span></span><span style="display:flex;"><span>])</span></span></code></pre></div></p>
-<h3 id="hahahugoshortcode489s29hbhb">
+<h3 id="hahahugoshortcode37s29hbhb">
 
 <strong>
 <span class="font-weight-bold text-accent fs-1.5">
@@ -707,7 +711,7 @@ Y la vista create lo recoge y lo enviará al método store del controlador
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        &lt;form method=<span style="color:#cd5555">&#34;POST&#34;</span> action=<span style="color:#cd5555">&#34;{{ route(&#39;teachers.store&#39;) }}&#34;</span>?page=<span style="color:#cd5555">&#34;</span><span style="color:#cd5555">$page</span><span style="color:#cd5555">&#34;</span> class=<span style="color:#cd5555">&#34;bg-white p-4 rounded-2xl&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>            @csrf</span></span></code></pre></div></p>
-<h3 id="hahahugoshortcode489s34hbhb">
+<h3 id="hahahugoshortcode37s34hbhb">
 
 <strong>
 <span class="font-weight-bold text-accent fs-1.5">
@@ -727,7 +731,7 @@ Y la vista create lo recoge y lo enviará al método store del controlador
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> redirect()-&gt;<span style="color:#658b00">route</span>(<span style="color:#cd5555">&#39;teachers.index&#39;</span>,[<span style="color:#cd5555">&#39;page&#39;</span>=&gt;<span style="color:#00688b">$page</span>])-&gt;<span style="color:#658b00">with</span>(<span style="color:#cd5555">&#39;success&#39;</span>,<span style="color:#cd5555">&#39;Registro creado satisfactoriamente&#39;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#228b22">//
 </span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-<h3 id="hahahugoshortcode489s36hbhb">
+<h3 id="hahahugoshortcode37s36hbhb">
 
 <strong>
 <span class="font-weight-bold text-accent fs-1.5">
@@ -795,7 +799,7 @@ Y la vista create lo recoge y lo enviará al método store del controlador
 </span></span><span style="display:flex;"><span>        <span style="color:#228b22">//
 </span></span></span><span style="display:flex;"><span>  }</span></span></code></pre></div></li>
 </ul>
-<h3 id="hahahugoshortcode489s43hbhb">
+<h3 id="hahahugoshortcode37s43hbhb">
 
 <strong>
 <span class="font-weight-bold text-accent fs-1.5">
@@ -1054,6 +1058,7 @@ window.markmap = {
 };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<script src='/laravel/js/deflate.js'></script>
 <script src="/laravel/js/main.js"></script>
 <script defer src="/laravel/js/click-to-copy.js" crossorigin="anonymous"></script>
 <script src='/laravel/js/tabpane-persist.js'></script>

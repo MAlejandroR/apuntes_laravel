@@ -1,0 +1,10 @@
+skinparam component {
+  BackgroundColor<<config>> #D6EAF8
+  BorderColor<<config>> #2E86C1
+
+  BackgroundColor<<vista>> #FDEBD0
+  BorderColor<<vista>> #CA6F1E
+
+  BackgroundColor<<controller>> #D5F5E3
+  BorderColor<<controller>> #239B56
+}
