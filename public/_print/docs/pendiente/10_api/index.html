@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/pendiente/10_api/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/pendiente/10_api/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,31 +21,30 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Creando un api | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Creando una API Términos importantes que hay que conocer API REST VERBOS HTTP RECURSOS CÓDIGOS DE ESTADO API Una Interfez de programación de aplicaciones Son programas que permiten que otros programas se conecten con él para obtener recursos.
+Para ello establecen una interfaz para que puedan conectarse a él.
+Por un lado una aplicación solicita datos (request) , y la API se los devuelve (response) .">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/pendiente/10_api/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Creando un api">
-  <meta property="og:description" content="Creando una API Términos importantes que hay que conocer API REST VERBOS HTTP RECURSOS CÓDIGOS DE ESTADO API Una Interfez de programación de aplicaciones Son programas que permiten que otros programas se conecten con él para obtener recursos.
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Creando un api">
+	<meta property="og:description" content="Creando una API Términos importantes que hay que conocer API REST VERBOS HTTP RECURSOS CÓDIGOS DE ESTADO API Una Interfez de programación de aplicaciones Son programas que permiten que otros programas se conecten con él para obtener recursos.
 Para ello establecen una interfaz para que puedan conectarse a él.
 Por un lado una aplicación solicita datos (request) , y la API se los devuelve (response) .">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Creando un api">
-  <meta itemprop="description" content="Creando una API Términos importantes que hay que conocer API REST VERBOS HTTP RECURSOS CÓDIGOS DE ESTADO API Una Interfez de programación de aplicaciones Son programas que permiten que otros programas se conecten con él para obtener recursos.
+	<meta itemprop="name" content="Creando un api">
+	<meta itemprop="description" content="Creando una API Términos importantes que hay que conocer API REST VERBOS HTTP RECURSOS CÓDIGOS DE ESTADO API Una Interfez de programación de aplicaciones Son programas que permiten que otros programas se conecten con él para obtener recursos.
 Para ello establecen una interfaz para que puedan conectarse a él.
 Por un lado una aplicación solicita datos (request) , y la API se los devuelve (response) .">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="565">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Creando un api">
-  <meta name="twitter:description" content="Creando una API Términos importantes que hay que conocer API REST VERBOS HTTP RECURSOS CÓDIGOS DE ESTADO API Una Interfez de programación de aplicaciones Son programas que permiten que otros programas se conecten con él para obtener recursos.
+	<meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="wordCount" content="575">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Creando un api">
+	<meta name="twitter:description" content="Creando una API Términos importantes que hay que conocer API REST VERBOS HTTP RECURSOS CÓDIGOS DE ESTADO API Una Interfez de programación de aplicaciones Son programas que permiten que otros programas se conecten con él para obtener recursos.
 Para ello establecen una interfaz para que puedan conectarse a él.
 Por un lado una aplicación solicita datos (request) , y la API se los devuelve (response) .">
-
-
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -65,12 +65,17 @@ Por un lado una aplicación solicita datos (request) , y la API se los devuelve 
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -187,9 +192,7 @@ Versión imprimible multipagina.
 
 <div class="content">
       <h1 id="creando-una-api">Creando una API</h1>
-
-
-<div class="pageinfo pageinfo-primary">
+<!-- raw HTML omitted -->
 <h3 id="términos-importantes-que-hay-que-conocer">Términos importantes que hay que conocer</h3>
 <ul>
 <li>API</li>
@@ -200,9 +203,7 @@ Versión imprimible multipagina.
 </ul>
 <h4></h4>
 <hr>
-
-</div>
-
+<!-- raw HTML omitted -->
 <h2 id="api">API</h2>
 <p>Una 
 <strong>
@@ -246,7 +247,7 @@ Versión imprimible multipagina.
 </strong>
 
 <figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 1810px">
-<img class="card-img-top" src="/laravel/docs/pendiente/10_api/API_hu_8b6a70fa81bd9928.png" width="1800" height="1000">
+<img class="card-img-top" src="/laravel/docs/pendiente/10_api/API_hu_41214a3e96a33e64.png" width="1800" height="1000">
 <figcaption class="card-body px-0 pt-2 pb-0">
 <p class="card-text">
 
@@ -268,20 +269,26 @@ API Programa que recibe solicitudes y envía respuesta a otros programas
 </strong>
 (
 Transferencia de Estado representacional)</p>
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">REST</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">REST</h4>
 
-    <!-- raw HTML omitted -->
-<pre><code>REST
-</code></pre>
-<!-- raw HTML omitted -->
-<pre><code>en seis principios fundamentales
-</code></pre>
-<!-- raw HTML omitted -->
+<strong>
+<span class="font-weight-bold text-primary">
 
+    REST
 
+</span>
+</strong>
+ es una especificación o recomendación basada 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    en seis principios fundamentales
+
+</span>
+</strong>
+que definen su arquitectura. 
 </div>
 
 <p>Estos principios indican 
@@ -292,10 +299,8 @@ Transferencia de Estado representacional)</p>
 
 </span>
 </strong>
-, proporcionando una guía para el desarrollo de sistemas web eficientes y bien estructurados.
-
-
-<div class="pageinfo pageinfo-primary">
+, proporcionando una guía para el desarrollo de sistemas web eficientes y bien estructurados.</p>
+<!-- raw HTML omitted -->
 <h2 id="principios-que-definen-la-arquitectura-de-rest">PRINCIPIOS QUE DEFINEN LA ARQUITECTURA DE REST</h2>
 <hr>
 <!-- raw HTML omitted -->
@@ -351,9 +356,7 @@ Transferencia de Estado representacional)</p>
 <li>Esta restricción es opcional y no se utiliza comúnmente en aplicaciones RESTful.</li>
 </ul>
 <p>Estas restricciones definen los principios clave de REST y proporcionan una guía para desarrollar sistemas web eficientes, escalables y bien estructurados.</p>
-
-</div>
-</p>
+<!-- raw HTML omitted -->
 <h2 id="verbos-http">Verbos HTTP</h2>
 <p>Si la API funciona con el protocolo HTTP, entonces establos hablando de una 
 <span class="font-weight-bold text-primary">
@@ -364,18 +367,18 @@ Transferencia de Estado representacional)</p>
 </span>
 
 HTTP sabemos que es un protocolo para transferir texto a través de internet
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">Recurso</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Recurso</h4>
+Un recurso es información que está en el servidor a la cual vamos a poder acceder a través de una url
+ej: http://localhost:8000/alumnos 
+<strong>
+<span class="font-weight-bold text-primary">
 
-    <p>Un recurso es información que está en el servidor a la cual vamos a poder acceder a través de una url
-ej: http://localhost:8000/alumnos
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></p>
-<pre><code>alumnos es un recurso
-</code></pre>
-<!-- raw HTML omitted -->
+    alumnos es un recurso
+
+</span>
+</strong>
 
 </div>
 </p>
@@ -470,7 +473,7 @@ controllers:
 </ol>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php_ artisan vendor:publish
 </span></span></code></pre></div><p><figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
-<img class="card-img-top" src="/laravel/docs/pendiente/10_api/1.instalacion/publicar_conf_blueprint_hu_40b3f1c504aad8ad.png" width="400" height="450">
+<img class="card-img-top" src="/laravel/docs/pendiente/10_api/1.instalacion/publicar_conf_blueprint_hu_c841f3d32b399b4f.png" width="400" height="450">
 <figcaption class="card-body px-0 pt-2 pb-0">
 <p class="card-text">
 
@@ -495,7 +498,7 @@ controllers:
 </span></span><span style="display:flex;"><span><span style="color:#228b22">///. . .
 </span></span></span><span style="display:flex;"><span><span style="color:#b452cd">4.</span> Ejecutamos el fichero
 </span></span><span style="display:flex;"><span><figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
-<img class="card-img-top" src="/laravel/docs/pendiente/10_api/1.instalacion/blueprint_hu_4bde3d3734f3997.png" width="400" height="450">
+<img class="card-img-top" src="/laravel/docs/pendiente/10_api/1.instalacion/blueprint_hu_e370df5a43a40f21.png" width="400" height="450">
 <figcaption class="card-body px-0 pt-2 pb-0">
 <p class="card-text">
 
@@ -511,15 +514,11 @@ controllers:
 </ol>
 <h3 id="rutas">Rutas</h3>
 <p>Como la aplicación va a ser un API, vamos al fichero de rutas <em><strong>routes/api.php</strong></em>
-<pre tabindex="0"><code class="language-linenos=table,anclorlinenos=true, hl_lines=" data-lang="linenos=table,anclorlinenos=true, hl_lines="></code></pre>
-
-
-<div class="pageinfo pageinfo-primary">
+<pre tabindex="0"><code class="language-linenos=table,anclorlinenos=true, hl_lines=" data-lang="linenos=table,anclorlinenos=true, hl_lines="></code></pre></p>
+<!-- raw HTML omitted -->
 <p>Entre web.php y api.php hay como diferencias los middeleware que se utilizan. Esto se puede ver en</p>
-
-</div>
-<br>
-En el caso de api.php, casi el único middleware que utiliza es el ThrottleRequests, es decir, poder crear un límite de peticiones, no necesitamos sesiones, cookies ni compartir errores entre ficheros.
+<!-- raw HTML omitted -->
+<p>En el caso de api.php, casi el único middleware que utiliza es el ThrottleRequests, es decir, poder crear un límite de peticiones, no necesitamos sesiones, cookies ni compartir errores entre ficheros.
 Vemos si hacemos un <strong>route:list</strong> que las rutas que aparecen son las de <strong>web.php</strong> y también las de <strong>api.php</strong> que no habíamos visto
 Las de <strong>api</strong> tiene prefijo, es por que se establece en el <strong>routeservicesproviders.php</strong></p>
 <p>Ahora vamos a crar un modelo, y queremos crear también la migración y el factory y también un controlador con todos los métodos de gestión rest que ya  hemos visto
@@ -800,19 +799,15 @@ En ella vemos que tenemos dos tipos de test:</p>
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    php artisan test</span></span></code></pre></td></tr></table>
 </div>
 </div>
-Vamos a crear métodos para validar cada uno de los 5 métodos que tenemos en el controlador
-
-
-<div class="pageinfo pageinfo-primary">
+Vamos a crear métodos para validar cada uno de los 5 métodos que tenemos en el controlador</p>
+<!-- raw HTML omitted -->
 <p>Un test es un método que nos va a permitir validar otro método
 En el método del test, básicamente vamos a hacer 3 acciones
 *Invocar al método que queremos testear pasándole los valores que consideremos
 *Comprobar que lo que devuelve ese método que validamos es lo que esperamos que devuelva
 *Informar de ello</p>
-
-</div>
-
-Los test no son infalibles, es decir, nosotros validamos lo que consideramos, por ejemplo si valido un método de fecha, si le paso una fecha incorrecta, espero que me lo diga, y si es correcta igual, eso me permitiría validar el método.
+<!-- raw HTML omitted -->
+<p>Los test no son infalibles, es decir, nosotros validamos lo que consideramos, por ejemplo si valido un método de fecha, si le paso una fecha incorrecta, espero que me lo diga, y si es correcta igual, eso me permitiría validar el método.
 Veamos cómo se realizan estas acciones
 **1.-  Creamos una clase para el test del api. **
 El método de test, se espera que termine con la palabra Test. Creamos una clase llamada <strong>BookApiTest</strong> para nuestro ejemplo
@@ -1347,70 +1342,70 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
 <!-- raw HTML omitted -->
 <p>Las anotaciones más comúnmente usadas son:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Anotación</th>
-          <th>Descripción en Español</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>@OA\Info</code></td>
-          <td>Define los metadatos de la API (título, versión, descripción).</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Get</code></td>
-          <td>Define una petición GET.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Post</code></td>
-          <td>Define una petición POST.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Put</code></td>
-          <td>Define una petición PUT.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Delete</code></td>
-          <td>Define una petición DELETE.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Schema</code></td>
-          <td>Define un modelo reutilizable.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Property</code></td>
-          <td>Define una propiedad dentro de un esquema.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Parameter</code></td>
-          <td>Define un parámetro de consulta o ruta.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\RequestBody</code></td>
-          <td>Define el cuerpo de una petición (POST/PUT).</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Response</code></td>
-          <td>Define posibles respuestas.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\JsonContent</code></td>
-          <td>Define la estructura JSON dentro de una respuesta.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\SecurityScheme</code></td>
-          <td>Define el método de autenticación (Bearer, API Key).</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Tag</code></td>
-          <td>Agrupa endpoints bajo una etiqueta.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Server</code></td>
-          <td>Define la URL base del servidor.</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Anotación</th>
+					<th>Descripción en Español</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>@OA\Info</code></td>
+					<td>Define los metadatos de la API (título, versión, descripción).</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Get</code></td>
+					<td>Define una petición GET.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Post</code></td>
+					<td>Define una petición POST.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Put</code></td>
+					<td>Define una petición PUT.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Delete</code></td>
+					<td>Define una petición DELETE.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Schema</code></td>
+					<td>Define un modelo reutilizable.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Property</code></td>
+					<td>Define una propiedad dentro de un esquema.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Parameter</code></td>
+					<td>Define un parámetro de consulta o ruta.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\RequestBody</code></td>
+					<td>Define el cuerpo de una petición (POST/PUT).</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Response</code></td>
+					<td>Define posibles respuestas.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\JsonContent</code></td>
+					<td>Define la estructura JSON dentro de una respuesta.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\SecurityScheme</code></td>
+					<td>Define el método de autenticación (Bearer, API Key).</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Tag</code></td>
+					<td>Agrupa endpoints bajo una etiqueta.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Server</code></td>
+					<td>Define la URL base del servidor.</td>
+			</tr>
+	</tbody>
 </table>
 <blockquote>
 <p>A continuación mostramos un ejemplo de información general de nuestra API, que habrá que ubicarlo en 
@@ -1520,45 +1515,45 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>Principales Campos en @OA\Info</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Campo</strong></th>
-          <th><strong>Descripción en Español</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>title</code></td>
-          <td>Define el título de la API.</td>
-          <td>✅ <strong>Sí</strong></td>
-      </tr>
-      <tr>
-          <td><code>version</code></td>
-          <td>Especifica la versión de la API.</td>
-          <td>✅ <strong>Sí</strong></td>
-      </tr>
-      <tr>
-          <td><code>description</code></td>
-          <td>Proporciona una descripción general de la API.</td>
-          <td>❌ <strong>No</strong></td>
-      </tr>
-      <tr>
-          <td><code>termsOfService</code></td>
-          <td>Enlace a los términos de servicio de la API.</td>
-          <td>❌ <strong>No</strong></td>
-      </tr>
-      <tr>
-          <td><code>@OA\Contact</code></td>
-          <td>Información de contacto del responsable de la API.</td>
-          <td>❌ <strong>No</strong></td>
-      </tr>
-      <tr>
-          <td><code>@OA\License</code></td>
-          <td>Detalles sobre la licencia de la API.</td>
-          <td>❌ <strong>No</strong></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Campo</strong></th>
+					<th><strong>Descripción en Español</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>title</code></td>
+					<td>Define el título de la API.</td>
+					<td>✅ <strong>Sí</strong></td>
+			</tr>
+			<tr>
+					<td><code>version</code></td>
+					<td>Especifica la versión de la API.</td>
+					<td>✅ <strong>Sí</strong></td>
+			</tr>
+			<tr>
+					<td><code>description</code></td>
+					<td>Proporciona una descripción general de la API.</td>
+					<td>❌ <strong>No</strong></td>
+			</tr>
+			<tr>
+					<td><code>termsOfService</code></td>
+					<td>Enlace a los términos de servicio de la API.</td>
+					<td>❌ <strong>No</strong></td>
+			</tr>
+			<tr>
+					<td><code>@OA\Contact</code></td>
+					<td>Información de contacto del responsable de la API.</td>
+					<td>❌ <strong>No</strong></td>
+			</tr>
+			<tr>
+					<td><code>@OA\License</code></td>
+					<td>Detalles sobre la licencia de la API.</td>
+					<td>❌ <strong>No</strong></td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -1595,30 +1590,30 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>Campos dentro de @OA\Contact</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Opción</strong></th>
-          <th><strong>Descripción</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>name</code></td>
-          <td>Nombre de la persona de contacto.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>email</code></td>
-          <td>Dirección de correo electrónico de contacto.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>url</code></td>
-          <td>URL con más información de contacto.</td>
-          <td>❌ No</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Opción</strong></th>
+					<th><strong>Descripción</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>name</code></td>
+					<td>Nombre de la persona de contacto.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>email</code></td>
+					<td>Dirección de correo electrónico de contacto.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>url</code></td>
+					<td>URL con más información de contacto.</td>
+					<td>❌ No</td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -1643,25 +1638,25 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>Campos dentro de @OA\License</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Campo</strong></th>
-          <th><strong>Descripción en Español</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>name</code></td>
-          <td>Nombre de la licencia de la API.</td>
-          <td>✅ <strong>Sí</strong></td>
-      </tr>
-      <tr>
-          <td><code>url</code></td>
-          <td>Enlace a la licencia de la API.</td>
-          <td>❌ <strong>No</strong></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Campo</strong></th>
+					<th><strong>Descripción en Español</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>name</code></td>
+					<td>Nombre de la licencia de la API.</td>
+					<td>✅ <strong>Sí</strong></td>
+			</tr>
+			<tr>
+					<td><code>url</code></td>
+					<td>Enlace a la licencia de la API.</td>
+					<td>❌ <strong>No</strong></td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -1689,99 +1684,99 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
 <h4 id="principales-campos-de-metadatos-en-oaget-oapost-oaput-y-oadelete">Principales Campos de Metadatos en @OA\Get, @OA\Post, @OA\Put y @OA\Delete</h4>
 <p>Estos son los campos de metadatos más importantes utilizados en los métodos HTTP dentro de Swagger:</p>
 <table>
-  <thead>
-      <tr>
-          <th><strong>Anotación</strong></th>
-          <th><strong>Descripción en Español</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>path</code></td>
-          <td>Define la ruta de la API donde se ejecutará la operación.</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>operationId</code></td>
-          <td>Identificador único de la operación dentro de la API.</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>tags</code></td>
-          <td>Agrupa las operaciones en categorías dentro de la documentación.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>summary</code></td>
-          <td>Breve descripción de la operación.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>description</code></td>
-          <td>Explicación más detallada de la operación.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Response</code></td>
-          <td>Define las respuestas esperadas de la API.</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Parameter</code></td>
-          <td>Define los parámetros que recibe la API en la URL o query.</td>
-          <td>✅ Solo si hay parámetros en la URL</td>
-      </tr>
-      <tr>
-          <td><code>@OA\RequestBody</code></td>
-          <td>Define los datos que se envían en una petición (POST o PUT).</td>
-          <td>✅ Solo en <code>POST</code> y <code>PUT</code></td>
-      </tr>
-      <tr>
-          <td><code>@OA\JsonContent</code></td>
-          <td>Especifica el formato de respuesta en JSON.</td>
-          <td>✅ Solo si la respuesta es JSON</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Items</code></td>
-          <td>Define los elementos dentro de una respuesta que es un array.</td>
-          <td>✅ Solo si la respuesta es un array</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Anotación</strong></th>
+					<th><strong>Descripción en Español</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>path</code></td>
+					<td>Define la ruta de la API donde se ejecutará la operación.</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>operationId</code></td>
+					<td>Identificador único de la operación dentro de la API.</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>tags</code></td>
+					<td>Agrupa las operaciones en categorías dentro de la documentación.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>summary</code></td>
+					<td>Breve descripción de la operación.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>description</code></td>
+					<td>Explicación más detallada de la operación.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Response</code></td>
+					<td>Define las respuestas esperadas de la API.</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Parameter</code></td>
+					<td>Define los parámetros que recibe la API en la URL o query.</td>
+					<td>✅ Solo si hay parámetros en la URL</td>
+			</tr>
+			<tr>
+					<td><code>@OA\RequestBody</code></td>
+					<td>Define los datos que se envían en una petición (POST o PUT).</td>
+					<td>✅ Solo en <code>POST</code> y <code>PUT</code></td>
+			</tr>
+			<tr>
+					<td><code>@OA\JsonContent</code></td>
+					<td>Especifica el formato de respuesta en JSON.</td>
+					<td>✅ Solo si la respuesta es JSON</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Items</code></td>
+					<td>Define los elementos dentro de una respuesta que es un array.</td>
+					<td>✅ Solo si la respuesta es un array</td>
+			</tr>
+	</tbody>
 </table>
 <details>
     <summary>@OA\Response</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Opción</strong></th>
-          <th><strong>Descripción</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>response</code></td>
-          <td>Código de estado HTTP (<code>200</code>, <code>400</code>, <code>404</code>, etc.).</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>description</code></td>
-          <td>Breve descripción de la respuesta.</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>@OA\JsonContent</code></td>
-          <td>Define el contenido en formato JSON.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>@OA\XmlContent</code></td>
-          <td>Define el contenido en formato XML.</td>
-          <td>❌ No</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Opción</strong></th>
+					<th><strong>Descripción</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>response</code></td>
+					<td>Código de estado HTTP (<code>200</code>, <code>400</code>, <code>404</code>, etc.).</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>description</code></td>
+					<td>Breve descripción de la respuesta.</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>@OA\JsonContent</code></td>
+					<td>Define el contenido en formato JSON.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>@OA\XmlContent</code></td>
+					<td>Define el contenido en formato XML.</td>
+					<td>❌ No</td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -1807,35 +1802,35 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>@OA\Parameter</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Opción</strong></th>
-          <th><strong>Descripción</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>name</code></td>
-          <td>Nombre del parámetro (<code>id</code>, <code>page</code>, etc.).</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>in</code></td>
-          <td>Ubicación (<code>query</code>, <code>path</code>, <code>header</code>, <code>cookie</code>).</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>required</code></td>
-          <td>Indica si el parámetro es obligatorio (<code>true</code> o <code>false</code>).</td>
-          <td>✅ Solo en <code>path</code></td>
-      </tr>
-      <tr>
-          <td><code>@OA\Schema</code></td>
-          <td>Define el tipo de dato (<code>string</code>, <code>integer</code>, <code>boolean</code>).</td>
-          <td>❌ No</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Opción</strong></th>
+					<th><strong>Descripción</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>name</code></td>
+					<td>Nombre del parámetro (<code>id</code>, <code>page</code>, etc.).</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>in</code></td>
+					<td>Ubicación (<code>query</code>, <code>path</code>, <code>header</code>, <code>cookie</code>).</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>required</code></td>
+					<td>Indica si el parámetro es obligatorio (<code>true</code> o <code>false</code>).</td>
+					<td>✅ Solo en <code>path</code></td>
+			</tr>
+			<tr>
+					<td><code>@OA\Schema</code></td>
+					<td>Define el tipo de dato (<code>string</code>, <code>integer</code>, <code>boolean</code>).</td>
+					<td>❌ No</td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -1861,35 +1856,35 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>@OA\RequestBody</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Opción</strong></th>
-          <th><strong>Descripción</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>required</code></td>
-          <td>Indica si el cuerpo es obligatorio (<code>true</code> o <code>false</code>).</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>description</code></td>
-          <td>Explicación del contenido del cuerpo.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>@OA\JsonContent</code></td>
-          <td>Define el contenido en JSON.</td>
-          <td>✅ Solo si la petición envía datos</td>
-      </tr>
-      <tr>
-          <td><code>@OA\XmlContent</code></td>
-          <td>Define el contenido en XML (opcional).</td>
-          <td>❌ No</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Opción</strong></th>
+					<th><strong>Descripción</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>required</code></td>
+					<td>Indica si el cuerpo es obligatorio (<code>true</code> o <code>false</code>).</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>description</code></td>
+					<td>Explicación del contenido del cuerpo.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>@OA\JsonContent</code></td>
+					<td>Define el contenido en JSON.</td>
+					<td>✅ Solo si la petición envía datos</td>
+			</tr>
+			<tr>
+					<td><code>@OA\XmlContent</code></td>
+					<td>Define el contenido en XML (opcional).</td>
+					<td>❌ No</td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -1915,30 +1910,30 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>@OA\JsonContent</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Opción</strong></th>
-          <th><strong>Descripción</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>type</code></td>
-          <td>Tipo de dato (<code>object</code>, <code>array</code>).</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Items</code></td>
-          <td>Define elementos dentro de un array.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Property</code></td>
-          <td>Define propiedades dentro de un objeto JSON.</td>
-          <td>❌ No</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Opción</strong></th>
+					<th><strong>Descripción</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>type</code></td>
+					<td>Tipo de dato (<code>object</code>, <code>array</code>).</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Items</code></td>
+					<td>Define elementos dentro de un array.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Property</code></td>
+					<td>Define propiedades dentro de un objeto JSON.</td>
+					<td>❌ No</td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -1964,35 +1959,35 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>@OA\Items</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Opción</strong></th>
-          <th><strong>Descripción</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>type</code></td>
-          <td>Tipo de dato de los elementos (<code>string</code>, <code>integer</code>, <code>object</code>).</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Property</code></td>
-          <td>Define propiedades dentro del objeto del array.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>example</code></td>
-          <td>Define un valor de ejemplo para un elemento del array.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>ref</code></td>
-          <td>Permite hacer referencia a un esquema predefinido (<code>ref=&quot;#/components/schemas/Alumno&quot;</code>).</td>
-          <td>❌ No</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Opción</strong></th>
+					<th><strong>Descripción</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>type</code></td>
+					<td>Tipo de dato de los elementos (<code>string</code>, <code>integer</code>, <code>object</code>).</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Property</code></td>
+					<td>Define propiedades dentro del objeto del array.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>example</code></td>
+					<td>Define un valor de ejemplo para un elemento del array.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>ref</code></td>
+					<td>Permite hacer referencia a un esquema predefinido (<code>ref=&quot;#/components/schemas/Alumno&quot;</code>).</td>
+					<td>❌ No</td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -2018,50 +2013,50 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>@OA\Property</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Opción</strong></th>
-          <th><strong>Descripción</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>property</code></td>
-          <td>Nombre de la propiedad en el objeto JSON.</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>type</code></td>
-          <td>Tipo de dato (<code>string</code>, <code>integer</code>, <code>boolean</code>, <code>array</code>, <code>object</code>).</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>format</code></td>
-          <td>Formato del dato (<code>date-time</code>, <code>email</code>, <code>uuid</code>, etc.).</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>example</code></td>
-          <td>Valor de ejemplo para la propiedad.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>description</code></td>
-          <td>Breve explicación de la propiedad.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Items</code></td>
-          <td>Se usa si la propiedad es un array (<code>type=&quot;array&quot;</code>).</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Schema</code></td>
-          <td>Se usa si la propiedad es un objeto (<code>type=&quot;object&quot;</code>).</td>
-          <td>❌ No</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Opción</strong></th>
+					<th><strong>Descripción</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>property</code></td>
+					<td>Nombre de la propiedad en el objeto JSON.</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>type</code></td>
+					<td>Tipo de dato (<code>string</code>, <code>integer</code>, <code>boolean</code>, <code>array</code>, <code>object</code>).</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>format</code></td>
+					<td>Formato del dato (<code>date-time</code>, <code>email</code>, <code>uuid</code>, etc.).</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>example</code></td>
+					<td>Valor de ejemplo para la propiedad.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>description</code></td>
+					<td>Breve explicación de la propiedad.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Items</code></td>
+					<td>Se usa si la propiedad es un array (<code>type=&quot;array&quot;</code>).</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Schema</code></td>
+					<td>Se usa si la propiedad es un objeto (<code>type=&quot;object&quot;</code>).</td>
+					<td>❌ No</td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -2366,13 +2361,13 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

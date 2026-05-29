@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
@@ -27,13 +28,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/laravel/en/"
+                hreflang="fr"
+                href="http://localhost:1313/laravel/fr/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/laravel/fr/"
+                hreflang="en"
+                href="http://localhost:1313/laravel/en/"
                 />
   </url><url>
     <loc>http://localhost:1313/laravel/fr/tags/</loc>
@@ -44,13 +45,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/laravel/en/tags/"
+                hreflang="fr"
+                href="http://localhost:1313/laravel/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/laravel/fr/tags/"
+                hreflang="en"
+                href="http://localhost:1313/laravel/en/tags/"
                 />
   </url>
 </urlset>

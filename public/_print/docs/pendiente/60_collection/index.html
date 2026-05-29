@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/pendiente/60_collection/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/pendiente/60_collection/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,31 +21,30 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Collection en Laravel | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Collection Las Collections en Laravel son una herramienta muy poderosa que extiende las posibilidades de trabajar con arrays de PHP. Permiten transformar, filtrar, ordenar o agrupar datos de forma más expresiva, elegante y legible .
+️ ¿Qué es una Collection en Laravel? Collection Una Collection es un objeto de la clase Illuminate\Support\Collection que envuelve un array y nos da métodos extra para trabajar de forma fluida y encadenada. Diferencia principal con un array tradicional Un array de PHP tiene funciones globales como array_map, array_filter…
+Una Collection permite encadenar métodos , haciendo el código más limpio y fácil de leer.">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/pendiente/60_collection/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Collection en Laravel">
-  <meta property="og:description" content="Collection Las Collections en Laravel son una herramienta muy poderosa que extiende las posibilidades de trabajar con arrays de PHP. Permiten transformar, filtrar, ordenar o agrupar datos de forma más expresiva, elegante y legible .
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Collection en Laravel">
+	<meta property="og:description" content="Collection Las Collections en Laravel son una herramienta muy poderosa que extiende las posibilidades de trabajar con arrays de PHP. Permiten transformar, filtrar, ordenar o agrupar datos de forma más expresiva, elegante y legible .
 ️ ¿Qué es una Collection en Laravel? Collection Una Collection es un objeto de la clase Illuminate\Support\Collection que envuelve un array y nos da métodos extra para trabajar de forma fluida y encadenada. Diferencia principal con un array tradicional Un array de PHP tiene funciones globales como array_map, array_filter…
 Una Collection permite encadenar métodos , haciendo el código más limpio y fácil de leer.">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Collection en Laravel">
-  <meta itemprop="description" content="Collection Las Collections en Laravel son una herramienta muy poderosa que extiende las posibilidades de trabajar con arrays de PHP. Permiten transformar, filtrar, ordenar o agrupar datos de forma más expresiva, elegante y legible .
+	<meta itemprop="name" content="Collection en Laravel">
+	<meta itemprop="description" content="Collection Las Collections en Laravel son una herramienta muy poderosa que extiende las posibilidades de trabajar con arrays de PHP. Permiten transformar, filtrar, ordenar o agrupar datos de forma más expresiva, elegante y legible .
 ️ ¿Qué es una Collection en Laravel? Collection Una Collection es un objeto de la clase Illuminate\Support\Collection que envuelve un array y nos da métodos extra para trabajar de forma fluida y encadenada. Diferencia principal con un array tradicional Un array de PHP tiene funciones globales como array_map, array_filter…
 Una Collection permite encadenar métodos , haciendo el código más limpio y fácil de leer.">
-  <meta itemprop="datePublished" content="2025-07-24T12:00:00+02:00">
-  <meta itemprop="dateModified" content="2025-07-24T12:00:00+02:00">
-  <meta itemprop="wordCount" content="725">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Collection en Laravel">
-  <meta name="twitter:description" content="Collection Las Collections en Laravel son una herramienta muy poderosa que extiende las posibilidades de trabajar con arrays de PHP. Permiten transformar, filtrar, ordenar o agrupar datos de forma más expresiva, elegante y legible .
+	<meta itemprop="datePublished" content="2025-07-24T12:00:00+02:00">
+	<meta itemprop="dateModified" content="2025-07-24T12:00:00+02:00">
+	<meta itemprop="wordCount" content="738">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Collection en Laravel">
+	<meta name="twitter:description" content="Collection Las Collections en Laravel son una herramienta muy poderosa que extiende las posibilidades de trabajar con arrays de PHP. Permiten transformar, filtrar, ordenar o agrupar datos de forma más expresiva, elegante y legible .
 ️ ¿Qué es una Collection en Laravel? Collection Una Collection es un objeto de la clase Illuminate\Support\Collection que envuelve un array y nos da métodos extra para trabajar de forma fluida y encadenada. Diferencia principal con un array tradicional Un array de PHP tiene funciones globales como array_map, array_filter…
 Una Collection permite encadenar métodos , haciendo el código más limpio y fácil de leer.">
-
-
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -65,12 +65,17 @@ Una Collection permite encadenar métodos , haciendo el código más limpio y f�
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -248,17 +253,19 @@ Una <strong>Collection</strong> permite
 </ul>
 <hr>
 <h2 id="por-qué-usar-collections">¿Por qué usar Collections?</h2>
+<div class="alert alert-success" role="alert"><div class="h4 alert-heading" role="heading">Ventaja principal</div>
 
 
-<div class="alert alert-success" role="alert">
-<h4 class="alert-heading">Ventaja principal</h4>
+Permiten escribir código más 
 
-    <p>Permiten escribir código más</p>
-<!-- raw HTML omitted -->
-<pre><code>declarativo, limpio y mantenible
-</code></pre>
-<!-- raw HTML omitted -->
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
+    declarativo, limpio y mantenible
+
+
+</span>
+</strong>, sobre todo cuando trabajamos con datos de base de datos o APIs.
 </div>
 
 <hr>
@@ -408,7 +415,7 @@ Esto es muy útil si queremos reutilizar lógica que usamos frecuentemente.</p>
 </ul>
 <hr>
 <h2 id="más-información">Más información</h2>
-<h2 id="hahahugoshortcode105s19hbhb">
+<h2 id="hahahugoshortcode110s19hbhb">
 
 
 
@@ -563,14 +570,11 @@ Esto es muy útil si queremos reutilizar lógica que usamos frecuentemente.</p>
 </div>
 <hr>
 <h2 id="ventajas">Ventajas</h2>
+<div class="alert alert-info" role="alert"><div class="h4 alert-heading" role="heading">Reutilizable</div>
 
 
-<div class="alert alert-info" role="alert">
-<h4 class="alert-heading">Reutilizable</h4>
-
-    Con este macro, cada vez que tengas arrays con claves en snake_case,
+Con este macro, cada vez que tengas arrays con claves en snake_case,
 puedes transformarlas a camelCase de forma directa, sin escribir la lógica de nuevo.
-
 </div>
 
 <hr>
@@ -643,13 +647,13 @@ puedes transformarlas a camelCase de forma directa, sin escribir la lógica de n
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

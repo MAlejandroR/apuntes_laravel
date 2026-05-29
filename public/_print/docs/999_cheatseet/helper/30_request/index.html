@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/999_cheatseet/helper/30_request/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/999_cheatseet/helper/30_request/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,12 +21,30 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Request en Laravel | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Helpers y métodos para obtener datos de la Request en Laravel En Laravel podemos acceder a los datos de la petición HTTP usando:
+El helper global request() La fachada Request (Illuminate\Support\Facades\Request) Inyección de la clase Illuminate\Http\Request A continuación, los métodos más usados:
+request(&#39;clave&#39;) Obtiene el valor de la clave indicada, buscando en GET, POST, JSON, etc. Ejemplo:
+request(&#39;family_id&#39;); request()-&gt;input(&#39;clave&#39;) Equivalente a request(&#39;clave&#39;). Ejemplo:
+request()-&gt;input(&#39;family_id&#39;); request()-&gt;query(&#39;clave&#39;) Obtiene el valor solo de la query string (?param=valor). Ejemplo:
+request()-&gt;query(&#39;family_id&#39;); request()-&gt;post(&#39;clave&#39;) Obtiene el valor solo del cuerpo POST. Ejemplo:
+request()-&gt;post(&#39;family_id&#39;); request()-&gt;all() Obtiene todos los datos de la petición (GET, POST, JSON, etc.) Ejemplo:
+request()-&gt;all(); request()-&gt;only([...]) Obtiene solo las claves especificadas. Ejemplo:
+request()-&gt;only([&#39;name&#39;, &#39;email&#39;]); request()-&gt;except([...]) Obtiene todos los datos excepto las claves indicadas. Ejemplo:
+request()-&gt;except([&#39;password&#39;]); request()-&gt;has(&#39;clave&#39;) Devuelve true si la clave existe (aunque esté vacía). Ejemplo:
+request()-&gt;has(&#39;family_id&#39;); request()-&gt;filled(&#39;clave&#39;) Devuelve true si la clave existe y no está vacía. Ejemplo:
+request()-&gt;filled(&#39;family_id&#39;); request()-&gt;missing(&#39;clave&#39;) Devuelve true si la clave no existe o es null. Ejemplo:
+request()-&gt;missing(&#39;family_id&#39;); request()-&gt;ajax() Devuelve true si la petición es AJAX. Ejemplo:
+request()-&gt;ajax(); request()-&gt;isJson() Devuelve true si la petición es de tipo JSON. Ejemplo:
+request()-&gt;isJson(); request()-&gt;method() Devuelve el método HTTP (GET, POST, PUT…). Ejemplo:
+request()-&gt;method(); request()-&gt;isMethod(&#39;metodo&#39;) Comprueba si el método HTTP es el indicado. Ejemplo:
+request()-&gt;isMethod(&#39;post&#39;); request()-&gt;fullUrl() Devuelve la URL completa con query string. Ejemplo:
+request()-&gt;fullUrl(); request()-&gt;url() Devuelve la URL sin query string. Ejemplo:
+request()-&gt;url(); request()-&gt;path() Devuelve solo el path de la URL. Ejemplo:
+request()-&gt;path(); Uso con la fachada Request Podemos hacer lo mismo usando la fachada:">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/999_cheatseet/helper/30_request/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Request en Laravel">
-  <meta property="og:description" content="Helpers y métodos para obtener datos de la Request en Laravel En Laravel podemos acceder a los datos de la petición HTTP usando:
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Request en Laravel">
+	<meta property="og:description" content="Helpers y métodos para obtener datos de la Request en Laravel En Laravel podemos acceder a los datos de la petición HTTP usando:
 El helper global request() La fachada Request (Illuminate\Support\Facades\Request) Inyección de la clase Illuminate\Http\Request A continuación, los métodos más usados:
 request(&#39;clave&#39;) Obtiene el valor de la clave indicada, buscando en GET, POST, JSON, etc. Ejemplo:
 request(&#39;family_id&#39;); request()-&gt;input(&#39;clave&#39;) Equivalente a request(&#39;clave&#39;). Ejemplo:
@@ -45,11 +64,11 @@ request()-&gt;isMethod(&#39;post&#39;); request()-&gt;fullUrl() Devuelve la URL 
 request()-&gt;fullUrl(); request()-&gt;url() Devuelve la URL sin query string. Ejemplo:
 request()-&gt;url(); request()-&gt;path() Devuelve solo el path de la URL. Ejemplo:
 request()-&gt;path(); Uso con la fachada Request Podemos hacer lo mismo usando la fachada:">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Request en Laravel">
-  <meta itemprop="description" content="Helpers y métodos para obtener datos de la Request en Laravel En Laravel podemos acceder a los datos de la petición HTTP usando:
+	<meta itemprop="name" content="Request en Laravel">
+	<meta itemprop="description" content="Helpers y métodos para obtener datos de la Request en Laravel En Laravel podemos acceder a los datos de la petición HTTP usando:
 El helper global request() La fachada Request (Illuminate\Support\Facades\Request) Inyección de la clase Illuminate\Http\Request A continuación, los métodos más usados:
 request(&#39;clave&#39;) Obtiene el valor de la clave indicada, buscando en GET, POST, JSON, etc. Ejemplo:
 request(&#39;family_id&#39;); request()-&gt;input(&#39;clave&#39;) Equivalente a request(&#39;clave&#39;). Ejemplo:
@@ -69,12 +88,12 @@ request()-&gt;isMethod(&#39;post&#39;); request()-&gt;fullUrl() Devuelve la URL 
 request()-&gt;fullUrl(); request()-&gt;url() Devuelve la URL sin query string. Ejemplo:
 request()-&gt;url(); request()-&gt;path() Devuelve solo el path de la URL. Ejemplo:
 request()-&gt;path(); Uso con la fachada Request Podemos hacer lo mismo usando la fachada:">
-  <meta itemprop="datePublished" content="2023-08-13T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-08-13T18:21:47+02:00">
-  <meta itemprop="wordCount" content="454">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Request en Laravel">
-  <meta name="twitter:description" content="Helpers y métodos para obtener datos de la Request en Laravel En Laravel podemos acceder a los datos de la petición HTTP usando:
+	<meta itemprop="datePublished" content="2023-08-13T18:21:47+02:00">
+	<meta itemprop="dateModified" content="2023-08-13T18:21:47+02:00">
+	<meta itemprop="wordCount" content="454">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Request en Laravel">
+	<meta name="twitter:description" content="Helpers y métodos para obtener datos de la Request en Laravel En Laravel podemos acceder a los datos de la petición HTTP usando:
 El helper global request() La fachada Request (Illuminate\Support\Facades\Request) Inyección de la clase Illuminate\Http\Request A continuación, los métodos más usados:
 request(&#39;clave&#39;) Obtiene el valor de la clave indicada, buscando en GET, POST, JSON, etc. Ejemplo:
 request(&#39;family_id&#39;); request()-&gt;input(&#39;clave&#39;) Equivalente a request(&#39;clave&#39;). Ejemplo:
@@ -94,8 +113,6 @@ request()-&gt;isMethod(&#39;post&#39;); request()-&gt;fullUrl() Devuelve la URL 
 request()-&gt;fullUrl(); request()-&gt;url() Devuelve la URL sin query string. Ejemplo:
 request()-&gt;url(); request()-&gt;path() Devuelve solo el path de la URL. Ejemplo:
 request()-&gt;path(); Uso con la fachada Request Podemos hacer lo mismo usando la fachada:">
-
-
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -116,12 +133,17 @@ request()-&gt;path(); Uso con la fachada Request Podemos hacer lo mismo usando l
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -297,118 +319,118 @@ Versión imprimible multipagina.
 <hr>
 <h1 id="tabla-resumen-de-métodos-principales">Tabla resumen de métodos principales</h1>
 <table>
-  <thead>
-      <tr>
-          <th>Método</th>
-          <th>Origen de datos</th>
-          <th>Descripción</th>
-          <th>Ejemplo</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>request('clave')</code></td>
-          <td>GET, POST, JSON</td>
-          <td>Busca la clave en todos los datos de la petición</td>
-          <td><code>request('id')</code></td>
-      </tr>
-      <tr>
-          <td><code>input('clave')</code></td>
-          <td>GET, POST, JSON</td>
-          <td>Igual que <code>request('clave')</code></td>
-          <td><code>request()-&gt;input('id')</code></td>
-      </tr>
-      <tr>
-          <td><code>query('clave')</code></td>
-          <td>Query string (<code>?param=</code>)</td>
-          <td>Solo busca en los parámetros de la URL</td>
-          <td><code>request()-&gt;query('page')</code></td>
-      </tr>
-      <tr>
-          <td><code>post('clave')</code></td>
-          <td>Cuerpo POST</td>
-          <td>Solo busca en el contenido del formulario o cuerpo POST</td>
-          <td><code>request()-&gt;post('email')</code></td>
-      </tr>
-      <tr>
-          <td><code>all()</code></td>
-          <td>GET, POST, JSON</td>
-          <td>Devuelve todos los datos</td>
-          <td><code>request()-&gt;all()</code></td>
-      </tr>
-      <tr>
-          <td><code>only([...])</code></td>
-          <td>GET, POST, JSON</td>
-          <td>Devuelve solo las claves indicadas</td>
-          <td><code>request()-&gt;only(['name'])</code></td>
-      </tr>
-      <tr>
-          <td><code>except([...])</code></td>
-          <td>GET, POST, JSON</td>
-          <td>Devuelve todos excepto las claves indicadas</td>
-          <td><code>request()-&gt;except(['password'])</code></td>
-      </tr>
-      <tr>
-          <td><code>has('clave')</code></td>
-          <td>GET, POST, JSON</td>
-          <td>Existe la clave (aunque esté vacía)</td>
-          <td><code>request()-&gt;has('name')</code></td>
-      </tr>
-      <tr>
-          <td><code>filled('clave')</code></td>
-          <td>GET, POST, JSON</td>
-          <td>Existe y tiene valor no vacío</td>
-          <td><code>request()-&gt;filled('name')</code></td>
-      </tr>
-      <tr>
-          <td><code>missing('clave')</code></td>
-          <td>GET, POST, JSON</td>
-          <td>No existe o está vacía</td>
-          <td><code>request()-&gt;missing('token')</code></td>
-      </tr>
-      <tr>
-          <td><code>ajax()</code></td>
-          <td>Encabezado <code>X-Requested-With</code></td>
-          <td>Comprueba si la petición es AJAX</td>
-          <td><code>request()-&gt;ajax()</code></td>
-      </tr>
-      <tr>
-          <td><code>isJson()</code></td>
-          <td>Cabecera <code>Content-Type</code></td>
-          <td>Comprueba si es JSON</td>
-          <td><code>request()-&gt;isJson()</code></td>
-      </tr>
-      <tr>
-          <td><code>method()</code></td>
-          <td>Método HTTP</td>
-          <td>Devuelve el método usado (<code>GET</code>, <code>POST</code>, etc.)</td>
-          <td><code>request()-&gt;method()</code></td>
-      </tr>
-      <tr>
-          <td><code>isMethod('metodo')</code></td>
-          <td>Método HTTP</td>
-          <td>Comprueba si el método es el indicado</td>
-          <td><code>request()-&gt;isMethod('post')</code></td>
-      </tr>
-      <tr>
-          <td><code>fullUrl()</code></td>
-          <td>URL completa</td>
-          <td>Devuelve la URL con query string</td>
-          <td><code>request()-&gt;fullUrl()</code></td>
-      </tr>
-      <tr>
-          <td><code>url()</code></td>
-          <td>URL base</td>
-          <td>Devuelve la URL sin query string</td>
-          <td><code>request()-&gt;url()</code></td>
-      </tr>
-      <tr>
-          <td><code>path()</code></td>
-          <td>URL base</td>
-          <td>Devuelve solo el path</td>
-          <td><code>request()-&gt;path()</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Método</th>
+					<th>Origen de datos</th>
+					<th>Descripción</th>
+					<th>Ejemplo</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>request('clave')</code></td>
+					<td>GET, POST, JSON</td>
+					<td>Busca la clave en todos los datos de la petición</td>
+					<td><code>request('id')</code></td>
+			</tr>
+			<tr>
+					<td><code>input('clave')</code></td>
+					<td>GET, POST, JSON</td>
+					<td>Igual que <code>request('clave')</code></td>
+					<td><code>request()-&gt;input('id')</code></td>
+			</tr>
+			<tr>
+					<td><code>query('clave')</code></td>
+					<td>Query string (<code>?param=</code>)</td>
+					<td>Solo busca en los parámetros de la URL</td>
+					<td><code>request()-&gt;query('page')</code></td>
+			</tr>
+			<tr>
+					<td><code>post('clave')</code></td>
+					<td>Cuerpo POST</td>
+					<td>Solo busca en el contenido del formulario o cuerpo POST</td>
+					<td><code>request()-&gt;post('email')</code></td>
+			</tr>
+			<tr>
+					<td><code>all()</code></td>
+					<td>GET, POST, JSON</td>
+					<td>Devuelve todos los datos</td>
+					<td><code>request()-&gt;all()</code></td>
+			</tr>
+			<tr>
+					<td><code>only([...])</code></td>
+					<td>GET, POST, JSON</td>
+					<td>Devuelve solo las claves indicadas</td>
+					<td><code>request()-&gt;only(['name'])</code></td>
+			</tr>
+			<tr>
+					<td><code>except([...])</code></td>
+					<td>GET, POST, JSON</td>
+					<td>Devuelve todos excepto las claves indicadas</td>
+					<td><code>request()-&gt;except(['password'])</code></td>
+			</tr>
+			<tr>
+					<td><code>has('clave')</code></td>
+					<td>GET, POST, JSON</td>
+					<td>Existe la clave (aunque esté vacía)</td>
+					<td><code>request()-&gt;has('name')</code></td>
+			</tr>
+			<tr>
+					<td><code>filled('clave')</code></td>
+					<td>GET, POST, JSON</td>
+					<td>Existe y tiene valor no vacío</td>
+					<td><code>request()-&gt;filled('name')</code></td>
+			</tr>
+			<tr>
+					<td><code>missing('clave')</code></td>
+					<td>GET, POST, JSON</td>
+					<td>No existe o está vacía</td>
+					<td><code>request()-&gt;missing('token')</code></td>
+			</tr>
+			<tr>
+					<td><code>ajax()</code></td>
+					<td>Encabezado <code>X-Requested-With</code></td>
+					<td>Comprueba si la petición es AJAX</td>
+					<td><code>request()-&gt;ajax()</code></td>
+			</tr>
+			<tr>
+					<td><code>isJson()</code></td>
+					<td>Cabecera <code>Content-Type</code></td>
+					<td>Comprueba si es JSON</td>
+					<td><code>request()-&gt;isJson()</code></td>
+			</tr>
+			<tr>
+					<td><code>method()</code></td>
+					<td>Método HTTP</td>
+					<td>Devuelve el método usado (<code>GET</code>, <code>POST</code>, etc.)</td>
+					<td><code>request()-&gt;method()</code></td>
+			</tr>
+			<tr>
+					<td><code>isMethod('metodo')</code></td>
+					<td>Método HTTP</td>
+					<td>Comprueba si el método es el indicado</td>
+					<td><code>request()-&gt;isMethod('post')</code></td>
+			</tr>
+			<tr>
+					<td><code>fullUrl()</code></td>
+					<td>URL completa</td>
+					<td>Devuelve la URL con query string</td>
+					<td><code>request()-&gt;fullUrl()</code></td>
+			</tr>
+			<tr>
+					<td><code>url()</code></td>
+					<td>URL base</td>
+					<td>Devuelve la URL sin query string</td>
+					<td><code>request()-&gt;url()</code></td>
+			</tr>
+			<tr>
+					<td><code>path()</code></td>
+					<td>URL base</td>
+					<td>Devuelve solo el path</td>
+					<td><code>request()-&gt;path()</code></td>
+			</tr>
+	</tbody>
 </table>
 
 </div>
@@ -437,13 +459,13 @@ Versión imprimible multipagina.
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

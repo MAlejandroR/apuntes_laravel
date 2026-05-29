@@ -39,6 +39,7 @@ end note
 
 ## Creamos el fichero de configuración
 
+
 En la carpeta **config** creamos un fichero llamado **resources.php**
 
 En una primera acción simplemente los recursos que queremos gestionar
@@ -85,7 +86,10 @@ Analizamos los datos que necesitamos en el card y vemos cómo obtenerlos:
 * Vamos a obviar de momento el nombre traducido, y vamos a usar como nombre siempre el valor del recurso que tengo en el
   fichero.
 * El tema de las imágenes, lo solucionaremos teniendo imágenes todas con el nombre del recurso, en nuestro caso:
-  !(img_1.png)[img_1.png]
+{{< imgproc img Fill "456x223" >}}
+  
+{{< /imgproc >}}
+
 * El tema de la ruta, es diferente, necesito rutas pero que el recurso que quiere gestionar sea parametrizable. Para
   resolver este punto ver el apartado siguiente
 

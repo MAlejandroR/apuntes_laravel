@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/09_crud/03_el-controlador/03_modificar/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/09_crud/03_el-controlador/03_modificar/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,31 +21,30 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Modificando elementos | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Modificar un alumno Al igual que Crear, Modificar un alumno es una acción de dos pasos
+Primero retornamos un formulario con los datos del alumno para modificar Segundo actualizamos los datos en la base de datos Retornando el formulario Lo primero debemos de generar un botón en la vista para cada alumno, y que el usuario pueda seleccionar la opción de editar alumno
+Modificamos cada línea del listado añadiendo un botón de editar">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/09_crud/03_el-controlador/03_modificar/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Modificando elementos">
-  <meta property="og:description" content="Modificar un alumno Al igual que Crear, Modificar un alumno es una acción de dos pasos
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Modificando elementos">
+	<meta property="og:description" content="Modificar un alumno Al igual que Crear, Modificar un alumno es una acción de dos pasos
 Primero retornamos un formulario con los datos del alumno para modificar Segundo actualizamos los datos en la base de datos Retornando el formulario Lo primero debemos de generar un botón en la vista para cada alumno, y que el usuario pueda seleccionar la opción de editar alumno
 Modificamos cada línea del listado añadiendo un botón de editar">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Modificando elementos">
-  <meta itemprop="description" content="Modificar un alumno Al igual que Crear, Modificar un alumno es una acción de dos pasos
+	<meta itemprop="name" content="Modificando elementos">
+	<meta itemprop="description" content="Modificar un alumno Al igual que Crear, Modificar un alumno es una acción de dos pasos
 Primero retornamos un formulario con los datos del alumno para modificar Segundo actualizamos los datos en la base de datos Retornando el formulario Lo primero debemos de generar un botón en la vista para cada alumno, y que el usuario pueda seleccionar la opción de editar alumno
 Modificamos cada línea del listado añadiendo un botón de editar">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="911">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Modificando elementos">
-  <meta name="twitter:description" content="Modificar un alumno Al igual que Crear, Modificar un alumno es una acción de dos pasos
+	<meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="wordCount" content="912">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Modificando elementos">
+	<meta name="twitter:description" content="Modificar un alumno Al igual que Crear, Modificar un alumno es una acción de dos pasos
 Primero retornamos un formulario con los datos del alumno para modificar Segundo actualizamos los datos en la base de datos Retornando el formulario Lo primero debemos de generar un botón en la vista para cada alumno, y que el usuario pueda seleccionar la opción de editar alumno
 Modificamos cada línea del listado añadiendo un botón de editar">
-
-
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -65,12 +65,17 @@ Modificamos cada línea del listado añadiendo un botón de editar">
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -169,7 +174,7 @@ Versión imprimible multipagina.
 </li>
 </ul>
 <figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 1015px">
-<img class="card-img-top" src="/laravel/docs/09_crud/03_el-controlador/03_modificar/FicheroDiaUpdateAlumno_hu_581705c8b1a76376.png" width="1005" height="398">
+<img class="card-img-top" src="/laravel/docs/09_crud/03_el-controlador/03_modificar/FicheroDiaUpdateAlumno_hu_48073bd09eeda79b.png" width="1005" height="398">
 <figcaption class="card-body px-0 pt-2 pb-0">
 <p class="card-text">
 
@@ -232,31 +237,42 @@ Versión imprimible multipagina.
 </span></span><span style="display:flex;"><span>      @<span style="color:#8b008b;font-weight:bold">endforeach</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">Acciones</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Acciones</h4>
+Hemos usado tailwindcss y agregado 
+<span class="font-weight-bold text-primary">
 
-    <p>Hemos usado tailwindcss y agregado
-<!-- raw HTML omitted --></p>
-<pre><code>una nueva celda en cada fila
-</code></pre>
-<!-- raw HTML omitted -->
-<p>Para referenciar la ruta que tiene nombre usamos el helper
-<!-- raw HTML omitted --></p>
-<pre><code>route()
-</code></pre>
-<!-- raw HTML omitted -->
-<p>En este caso es importante ver que la ruta necesita el
-<!-- raw HTML omitted --></p>
-<pre><code>id del alumno
-</code></pre>
-<!-- raw HTML omitted -->
-<p>Lo pasamos como según parámetro en el helper
-<!-- raw HTML omitted --></p>
-<pre><code>route(&amp;ldquo;alumnos.edit&amp;rdquo;, $alumno-&amp;gt;id)
-</code></pre>
-<!-- raw HTML omitted -->
+
+    una nueva celda en cada fila
+
+</span>
+.
+
+
+Para referenciar la ruta que tiene nombre usamos el helper 
+<span class="font-weight-bold text-primary">
+
+
+    route()
+
+</span>
+    
+En este caso es importante ver que la ruta necesita el 
+<span class="font-weight-bold text-primary">
+
+
+    id del alumno
+
+</span>
+
+Lo pasamos como según parámetro en el helper 
+<span class="font-weight-bold text-primary">
+
+
+    route(&ldquo;alumnos.edit&rdquo;, $alumno-&gt;id)
+
+</span>
 
 
 </div>
@@ -302,42 +318,50 @@ Versión imprimible multipagina.
 </li>
 <li></li>
 </ul>
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">El código</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">El código</h4>
+Retornamos la vista 
+<strong>
+<span class="font-weight-bold text-primary">
 
-    <p>Retornamos la vista
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></p>
-<pre><code>alumnos.edit
-</code></pre>
-<!-- raw HTML omitted -->
-<p>Le pasamos el alumno que queremos editar
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></p>
-<pre><code>(Alumno $alumno)
-</code></pre>
-<!-- raw HTML omitted -->
-<p>Observa como laravel asocia de forma automática
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></p>
-<pre><code>el modelo a partir de un identificador
-</code></pre>
-<!-- raw HTML omitted -->
-<p>Esto se conocoe como<br>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></p>
-<pre><code>&amp;ldquo;enlace implícito de modelo&amp;rdquo; (Implicit Model Binding) en Laravel.
-</code></pre>
-<!-- raw HTML omitted -->
+    alumnos.edit
 
+</span>
+</strong>
+    
+Le pasamos el alumno que queremos editar 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    (Alumno $alumno)
+
+</span>
+</strong>
+     
+Observa como laravel asocia de forma automática 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    el modelo a partir de un identificador
+
+</span>
+</strong>
+     
+Esto se conocoe como  
+<strong>
+<span class="font-weight-bold text-primary">
+
+    &ldquo;enlace implícito de modelo&rdquo; (Implicit Model Binding) en Laravel.
+
+</span>
+</strong>
 
 </div>
 
 <h3 id="creando-la-vista">Creando la vista</h3>
 <figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 260px">
-<img class="card-img-top" src="/laravel/docs/09_crud/03_el-controlador/03_modificar/vistaEditAlumno_hu_e8ce2ef14c150e2.png" width="250" height="100">
+<img class="card-img-top" src="/laravel/docs/09_crud/03_el-controlador/03_modificar/vistaEditAlumno_hu_5a30ac32b55f1767.png" width="250" height="100">
 <figcaption class="card-body px-0 pt-2 pb-0">
 <p class="card-text">
 
@@ -482,30 +506,35 @@ Versión imprimible multipagina.
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#8b008b;font-weight:bold">html</span>&gt;</span></span></code></pre></td></tr></table>
 </div>
 </div>
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">El formulario</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">El formulario</h4>
+Hemos añadido  de forma explícita 
+<strong>
+<span class="font-weight-bold text-primary">
 
-    <p>Hemos añadido  de forma explícita
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></p>
-<pre><code>el método PATCH
-</code></pre>
-<!-- raw HTML omitted -->
-<p>HTML solo admite en la etiqueta action
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></p>
-<pre><code>el método POST y GET
-</code></pre>
-<!-- raw HTML omitted -->
-<p>debemos añadir explícitametne con la directiva
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></p>
-<pre><code>@method
-</code></pre>
-<!-- raw HTML omitted -->
+    el método PATCH
 
+</span>
+</strong>
+     
+HTML solo admite en la etiqueta action 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    el método POST y GET
+
+</span>
+</strong>
+    
+debemos añadir explícitametne con la directiva 
+<strong>
+<span class="font-weight-bold text-primary">
+
+    @method
+
+</span>
+</strong>
 
 </div>
 
@@ -563,7 +592,7 @@ Versión imprimible multipagina.
 </strong>
  por parte del servidor:
 <figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 710px">
-<img class="card-img-top" src="/laravel/docs/09_crud/03_el-controlador/03_modificar/forbbiden_hu_828d9a9c636bed43.png" width="700" height="250">
+<img class="card-img-top" src="/laravel/docs/09_crud/03_el-controlador/03_modificar/forbbiden_hu_f0fad5278d384c1e.png" width="700" height="250">
 <figcaption class="card-body px-0 pt-2 pb-0">
 <p class="card-text">
 
@@ -576,9 +605,7 @@ Versión imprimible multipagina.
 </li>
 </ul>
 <h3 id="clases-de-request-en-laravel">Clases de Request en Laravel</h3>
-
-
-<div class="pageinfo pageinfo-primary">
+<!-- raw HTML omitted -->
 <h4></h4>
 <hr>
 <p>Las clases de Request en Laravel, como <code>ProfileUpdateRequest</code>, <code>StoreAlumnoRequest</code>, y <code>UpdateAlumnoRequest</code>, son una parte integral de la validación de datos en aplicaciones Laravel.</p>
@@ -608,9 +635,7 @@ Versión imprimible multipagina.
 <pre><code>true
 </code></pre>
 <!-- raw HTML omitted -->
-
-</div>
-
+<!-- raw HTML omitted -->
 
 </div>
 </div>
@@ -638,13 +663,13 @@ Versión imprimible multipagina.
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/09_crud/03_el-controlador/02_crearalumno/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/09_crud/03_el-controlador/02_crearalumno/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,28 +21,26 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Creando elementos | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Crear un nuevo alumno Crear un nuevo alumno es una acción de dos pasos
+Primero retornamos un formulario para rellenar los datos del nuevo alumno Segundo guardamos el alumno en la base de datos y retornamos todos un listado con todos los alumnos Retornando el formulario Lo primero debemos de generar un botón en la vista para que el usuario pueda seleccionar la opción de crear un nuevo alumno. Para ello modificamos el fichero resources/view/alumnos/listado.blade.php">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/09_crud/03_el-controlador/02_crearalumno/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Creando elementos">
-  <meta property="og:description" content="Crear un nuevo alumno Crear un nuevo alumno es una acción de dos pasos
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Creando elementos">
+	<meta property="og:description" content="Crear un nuevo alumno Crear un nuevo alumno es una acción de dos pasos
 Primero retornamos un formulario para rellenar los datos del nuevo alumno Segundo guardamos el alumno en la base de datos y retornamos todos un listado con todos los alumnos Retornando el formulario Lo primero debemos de generar un botón en la vista para que el usuario pueda seleccionar la opción de crear un nuevo alumno. Para ello modificamos el fichero resources/view/alumnos/listado.blade.php">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Creando elementos">
-  <meta itemprop="description" content="Crear un nuevo alumno Crear un nuevo alumno es una acción de dos pasos
+	<meta itemprop="name" content="Creando elementos">
+	<meta itemprop="description" content="Crear un nuevo alumno Crear un nuevo alumno es una acción de dos pasos
 Primero retornamos un formulario para rellenar los datos del nuevo alumno Segundo guardamos el alumno en la base de datos y retornamos todos un listado con todos los alumnos Retornando el formulario Lo primero debemos de generar un botón en la vista para que el usuario pueda seleccionar la opción de crear un nuevo alumno. Para ello modificamos el fichero resources/view/alumnos/listado.blade.php">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="733">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Creando elementos">
-  <meta name="twitter:description" content="Crear un nuevo alumno Crear un nuevo alumno es una acción de dos pasos
+	<meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="wordCount" content="752">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Creando elementos">
+	<meta name="twitter:description" content="Crear un nuevo alumno Crear un nuevo alumno es una acción de dos pasos
 Primero retornamos un formulario para rellenar los datos del nuevo alumno Segundo guardamos el alumno en la base de datos y retornamos todos un listado con todos los alumnos Retornando el formulario Lo primero debemos de generar un botón en la vista para que el usuario pueda seleccionar la opción de crear un nuevo alumno. Para ello modificamos el fichero resources/view/alumnos/listado.blade.php">
-
-
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -62,12 +61,17 @@ Primero retornamos un formulario para rellenar los datos del nuevo alumno Segund
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -154,7 +158,7 @@ alumno.</li>
 </li>
 </ul>
 <figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 923px">
-<img class="card-img-top" src="/laravel/docs/09_crud/03_el-controlador/02_crearalumno/createAlumno_hu_a1380ec53745fd20.png" width="913" height="372">
+<img class="card-img-top" src="/laravel/docs/09_crud/03_el-controlador/02_crearalumno/createAlumno_hu_c353bf1522d01e90.png" width="913" height="372">
 <figcaption class="card-body px-0 pt-2 pb-0">
 <p class="card-text">
 
@@ -197,21 +201,27 @@ alumno.</li>
 </span></span><span style="display:flex;"><span>&lt;/div&gt;</span></span></code></pre></td></tr></table>
 </div>
 </div>
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">Acciones</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Acciones</h4>
+Hemos usado tailwindcss y agregado 
+<span class="font-weight-bold text-primary">
 
-    <p>Hemos usado tailwindcss y agregado
-<!-- raw HTML omitted --></p>
-<pre><code>el nuevo botón
-</code></pre>
-<!-- raw HTML omitted -->
-<pre><code>route()
-</code></pre>
-<!-- raw HTML omitted -->
-<p>Se da un poco de estilo para que el botón y la tabla queden en medio</p>
 
+    el nuevo botón
+
+</span>
+.
+La línea 7 es dónde añadimos el botón
+Para referenciar la ruta que tiene nombre usamos el helper 
+<span class="font-weight-bold text-primary">
+
+
+    route()
+
+</span>
+
+Se da un poco de estilo para que el botón y la tabla queden en medio
 
 </div>
 </p>
@@ -268,7 +278,7 @@ alumno.</li>
 </ul>
 <h3 id="creando-la-vista">Creando la vista</h3>
 <figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 260px">
-<img class="card-img-top" src="/laravel/docs/09_crud/03_el-controlador/02_crearalumno/vistaCrearAlumno_hu_dec16f1c8081dd0b.png" width="250" height="100">
+<img class="card-img-top" src="/laravel/docs/09_crud/03_el-controlador/02_crearalumno/vistaCrearAlumno_hu_9be1f8900dfa7d43.png" width="250" height="100">
 <figcaption class="card-body px-0 pt-2 pb-0">
 <p class="card-text">
 
@@ -403,23 +413,23 @@ alumno.</li>
 </span></span><span style="display:flex;"><span>&lt;/html&gt;</span></span></code></pre></td></tr></table>
 </div>
 </div>
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">El formulario</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">El formulario</h4>
+Este html lo ha retornado chat-gpt para centrar el formulario
+Lo importante es respetar que 
+<strong>
+<span class="font-weight-bold text-primary">
 
-    <p>Este html lo ha retornado chat-gpt para centrar el formulario
-Lo importante es respetar que
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></p>
-<pre><code>los name de los input sean los nombres de las tabls
-</code></pre>
-<!-- raw HTML omitted -->
+    los name de los input sean los nombres de las tabls
+
+</span>
+</strong>
 
 </div>
 
 <figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 510px">
-<img class="card-img-top" src="/laravel/docs/09_crud/03_el-controlador/02_crearalumno/formularioNuevoAlumno_hu_7e3de4e61bb4843e.jpg" width="500" height="700">
+<img class="card-img-top" src="/laravel/docs/09_crud/03_el-controlador/02_crearalumno/formularioNuevoAlumno_hu_faa28576a4c365da.jpg" width="500" height="700">
 <figcaption class="card-body px-0 pt-2 pb-0">
 <p class="card-text">
 
@@ -483,7 +493,7 @@ Lo importante es respetar que
 </strong>
  por parte del servidor:
 <figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 710px">
-<img class="card-img-top" src="/laravel/docs/09_crud/03_el-controlador/02_crearalumno/forbbiden_hu_828d9a9c636bed43.png" width="700" height="250">
+<img class="card-img-top" src="/laravel/docs/09_crud/03_el-controlador/02_crearalumno/forbbiden_hu_f0fad5278d384c1e.png" width="700" height="250">
 <figcaption class="card-body px-0 pt-2 pb-0">
 <p class="card-text">
 
@@ -504,9 +514,7 @@ Lo importante es respetar que
 </strong>
  que va a controlar la autorizacioń</strong></p>
 <h3 id="clases-de-request-en-laravel">Clases de Request en Laravel</h3>
-
-
-<div class="pageinfo pageinfo-primary">
+<!-- raw HTML omitted -->
 <h4></h4>
 <hr>
 <p>Las clases de Request en Laravel, como <code>ProfileUpdateRequest</code>, <code>StoreAlumnoRequest</code>, y <code>UpdateAlumnoRequest</code>, son una parte integral de la validación de datos en aplicaciones Laravel.</p>
@@ -536,9 +544,7 @@ Lo importante es respetar que
 <pre><code>true
 </code></pre>
 <!-- raw HTML omitted -->
-
-</div>
-
+<!-- raw HTML omitted -->
 
 </div>
 </div>
@@ -566,13 +572,13 @@ Lo importante es respetar que
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

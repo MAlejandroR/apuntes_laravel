@@ -1,7 +1,6 @@
 baseURL = 'https://web.infenlaces.com/laravel/'
 #baseURL = 'https://web.infenlaces.com/laravel_certificado_2026/'
 #baseURL = 'http://localhost'
-languageCode = 'es-es'
 title = 'Laravel'
 
 
@@ -63,21 +62,21 @@ pygmentsStyle = "perldoc"
 ##    style="base16-snazzy"
 #    style="monokai"
 #    tabWidth = 4
-
 [languages.en]
 title = "Laravel"
-languageName = "English"
+label = "English"
 contentDir = "content/en"
 
 [languages.es]
 title = "Laravel: Framework de php"
-languageName = "Español"
+label = "Español"
 contentDir = "content/es"
 
 [languages.fr]
 title = "Docsy"
-languageName = "Francés"
+label = "Francés"
 contentDir = "content/fr"
+
 
 [params.ui]
 sidebar_menu_compact = true
@@ -170,3 +169,5 @@ svg_image_url = "https://www.plantuml.com/plantuml/svg/"
 # When svg is set to true, diagrams are displayed using <svg /> tags, maintaining functionality like links e.g.
 # default = false
 svg = true
+[security]
+  allowContent = ['.*']

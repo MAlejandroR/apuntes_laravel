@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/04_plantillas/05_ejemplo/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/04_plantillas/05_ejemplo/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,28 +21,26 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Ejemplo de nuestro proyecto  | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Landing autenticada en Laravel con Tailwind (Sin JavaScript) Objetivos Crear un grid reutilizable (máximo 3 columnas). Crear un componente card reutilizable. Implementar un menú principal con botón hamburguesa. Implementar un menú de usuario independiente. Usar solo Tailwind (sin JS). 1. Componente Grid Ubicación: resources/views/components/concept-grid.blade.php
+&lt;div class=&#34;grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr&#34;&gt; {{ $slot }} &lt;/div&gt; Explicación grid → activa CSS Grid. grid-cols-1 → 1 columna en móvil. sm:grid-cols-2 → 2 columnas en tablet. lg:grid-cols-3 → máximo 3 columnas en desktop. gap-6 → separación uniforme. auto-rows-fr → tarjetas misma altura. 2. Componente Card Ubicación: resources/views/components/concept-card.blade.php">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/04_plantillas/05_ejemplo/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Ejemplo de nuestro proyecto ">
-  <meta property="og:description" content="Landing autenticada en Laravel con Tailwind (Sin JavaScript) Objetivos Crear un grid reutilizable (máximo 3 columnas). Crear un componente card reutilizable. Implementar un menú principal con botón hamburguesa. Implementar un menú de usuario independiente. Usar solo Tailwind (sin JS). 1. Componente Grid Ubicación: resources/views/components/concept-grid.blade.php
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Ejemplo de nuestro proyecto ">
+	<meta property="og:description" content="Landing autenticada en Laravel con Tailwind (Sin JavaScript) Objetivos Crear un grid reutilizable (máximo 3 columnas). Crear un componente card reutilizable. Implementar un menú principal con botón hamburguesa. Implementar un menú de usuario independiente. Usar solo Tailwind (sin JS). 1. Componente Grid Ubicación: resources/views/components/concept-grid.blade.php
 &lt;div class=&#34;grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr&#34;&gt; {{ $slot }} &lt;/div&gt; Explicación grid → activa CSS Grid. grid-cols-1 → 1 columna en móvil. sm:grid-cols-2 → 2 columnas en tablet. lg:grid-cols-3 → máximo 3 columnas en desktop. gap-6 → separación uniforme. auto-rows-fr → tarjetas misma altura. 2. Componente Card Ubicación: resources/views/components/concept-card.blade.php">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Ejemplo de nuestro proyecto ">
-  <meta itemprop="description" content="Landing autenticada en Laravel con Tailwind (Sin JavaScript) Objetivos Crear un grid reutilizable (máximo 3 columnas). Crear un componente card reutilizable. Implementar un menú principal con botón hamburguesa. Implementar un menú de usuario independiente. Usar solo Tailwind (sin JS). 1. Componente Grid Ubicación: resources/views/components/concept-grid.blade.php
+	<meta itemprop="name" content="Ejemplo de nuestro proyecto ">
+	<meta itemprop="description" content="Landing autenticada en Laravel con Tailwind (Sin JavaScript) Objetivos Crear un grid reutilizable (máximo 3 columnas). Crear un componente card reutilizable. Implementar un menú principal con botón hamburguesa. Implementar un menú de usuario independiente. Usar solo Tailwind (sin JS). 1. Componente Grid Ubicación: resources/views/components/concept-grid.blade.php
 &lt;div class=&#34;grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr&#34;&gt; {{ $slot }} &lt;/div&gt; Explicación grid → activa CSS Grid. grid-cols-1 → 1 columna en móvil. sm:grid-cols-2 → 2 columnas en tablet. lg:grid-cols-3 → máximo 3 columnas en desktop. gap-6 → separación uniforme. auto-rows-fr → tarjetas misma altura. 2. Componente Card Ubicación: resources/views/components/concept-card.blade.php">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="437">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Ejemplo de nuestro proyecto ">
-  <meta name="twitter:description" content="Landing autenticada en Laravel con Tailwind (Sin JavaScript) Objetivos Crear un grid reutilizable (máximo 3 columnas). Crear un componente card reutilizable. Implementar un menú principal con botón hamburguesa. Implementar un menú de usuario independiente. Usar solo Tailwind (sin JS). 1. Componente Grid Ubicación: resources/views/components/concept-grid.blade.php
+	<meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="wordCount" content="437">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Ejemplo de nuestro proyecto ">
+	<meta name="twitter:description" content="Landing autenticada en Laravel con Tailwind (Sin JavaScript) Objetivos Crear un grid reutilizable (máximo 3 columnas). Crear un componente card reutilizable. Implementar un menú principal con botón hamburguesa. Implementar un menú de usuario independiente. Usar solo Tailwind (sin JS). 1. Componente Grid Ubicación: resources/views/components/concept-grid.blade.php
 &lt;div class=&#34;grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr&#34;&gt; {{ $slot }} &lt;/div&gt; Explicación grid → activa CSS Grid. grid-cols-1 → 1 columna en móvil. sm:grid-cols-2 → 2 columnas en tablet. lg:grid-cols-3 → máximo 3 columnas en desktop. gap-6 → separación uniforme. auto-rows-fr → tarjetas misma altura. 2. Componente Card Ubicación: resources/views/components/concept-card.blade.php">
-
-
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -62,12 +61,17 @@
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -356,13 +360,13 @@ resources/views/components/concept-card.blade.php</p>
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

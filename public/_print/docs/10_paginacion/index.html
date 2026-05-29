@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/10_paginacion/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/10_paginacion/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,31 +21,30 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Paginando datos | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Paginación en un CRUD con Laravel 12 Paginación La paginación es una técnica que permite dividir un conjunto grande de registros en bloques más pequeños llamados páginas.
+En lugar de mostrar todos los registros de una tabla, el sistema muestra solo un número limitado de elementos y permite navegar entre páginas.
+¿Por qué usar paginación? En aplicaciones reales es habitual tener cientos o miles de registros.">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/10_paginacion/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Paginando datos">
-  <meta property="og:description" content="Paginación en un CRUD con Laravel 12 Paginación La paginación es una técnica que permite dividir un conjunto grande de registros en bloques más pequeños llamados páginas.
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Paginando datos">
+	<meta property="og:description" content="Paginación en un CRUD con Laravel 12 Paginación La paginación es una técnica que permite dividir un conjunto grande de registros en bloques más pequeños llamados páginas.
 En lugar de mostrar todos los registros de una tabla, el sistema muestra solo un número limitado de elementos y permite navegar entre páginas.
 ¿Por qué usar paginación? En aplicaciones reales es habitual tener cientos o miles de registros.">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Paginando datos">
-  <meta itemprop="description" content="Paginación en un CRUD con Laravel 12 Paginación La paginación es una técnica que permite dividir un conjunto grande de registros en bloques más pequeños llamados páginas.
+	<meta itemprop="name" content="Paginando datos">
+	<meta itemprop="description" content="Paginación en un CRUD con Laravel 12 Paginación La paginación es una técnica que permite dividir un conjunto grande de registros en bloques más pequeños llamados páginas.
 En lugar de mostrar todos los registros de una tabla, el sistema muestra solo un número limitado de elementos y permite navegar entre páginas.
 ¿Por qué usar paginación? En aplicaciones reales es habitual tener cientos o miles de registros.">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="1122">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Paginando datos">
-  <meta name="twitter:description" content="Paginación en un CRUD con Laravel 12 Paginación La paginación es una técnica que permite dividir un conjunto grande de registros en bloques más pequeños llamados páginas.
+	<meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="wordCount" content="1144">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Paginando datos">
+	<meta name="twitter:description" content="Paginación en un CRUD con Laravel 12 Paginación La paginación es una técnica que permite dividir un conjunto grande de registros en bloques más pequeños llamados páginas.
 En lugar de mostrar todos los registros de una tabla, el sistema muestra solo un número limitado de elementos y permite navegar entre páginas.
 ¿Por qué usar paginación? En aplicaciones reales es habitual tener cientos o miles de registros.">
-
-
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -65,12 +65,17 @@ En lugar de mostrar todos los registros de una tabla, el sistema muestra solo un
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -177,13 +182,10 @@ Versión imprimible multipagina.
 <li>Se mejora el rendimiento</li>
 <li>La navegación es más cómoda</li>
 </ul>
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">Idea clave</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Idea clave</h4>
-
-    Un CRUD profesional <strong>siempre utiliza paginación</strong> cuando se listan registros de base de datos.
-
+Un CRUD profesional **siempre utiliza paginación** cuando se listan registros de base de datos.
 </div>
 
 <!-- raw HTML omitted -->
@@ -237,13 +239,10 @@ Versión imprimible multipagina.
 </ul>
 </li>
 </ul>
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">Importante</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Importante</h4>
-
-    El método <strong>paginate()</strong> devuelve un objeto especial llamado <strong>Paginator</strong> que contiene los registros y la información de navegación.
-
+El método **paginate()** devuelve un objeto especial llamado **Paginator** que contiene los registros y la información de navegación.
 </div>
 
 
@@ -329,30 +328,27 @@ Versión imprimible multipagina.
 </div>
 <p>Diferencia:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Método</th>
-          <th>Resultado</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>paginate()</td>
-          <td>números de página</td>
-      </tr>
-      <tr>
-          <td>simplePaginate()</td>
-          <td>solo anterior / siguiente</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Método</th>
+					<th>Resultado</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>paginate()</td>
+					<td>números de página</td>
+			</tr>
+			<tr>
+					<td>simplePaginate()</td>
+					<td>solo anterior / siguiente</td>
+			</tr>
+	</tbody>
 </table>
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">Cuándo usar simplePaginate()</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Cuándo usar simplePaginate()</h4>
-
-    Es útil cuando la tabla tiene <strong>muchísimos registros</strong>, ya que es más eficiente.
-
+Es útil cuando la tabla tiene **muchísimos registros**, ya que es más eficiente.
 </div>
 
 <!-- raw HTML omitted -->
@@ -392,20 +388,17 @@ El punto clave es ser consciente de que la navegación se basa en el parámetro 
 <li>volver a la página anterior</li>
 <li>mantener contexto después de editar</li>
 </ul>
+<div class="alert alert-success" role="alert"><div class="h4 alert-heading" role="heading">Ejemplo práctico</div>
 
 
-<div class="alert alert-success" role="alert">
-<h4 class="alert-heading">Ejemplo práctico</h4>
-
-    Si editas un profesor desde la página 4 del listado, puedes redirigir de nuevo a esa página usando el parámetro <code>page</code>.
-
+Si editas un profesor desde la página 4 del listado, puedes redirigir de nuevo a esa página usando el parámetro `page`.
 </div>
 
 <!-- raw HTML omitted -->
 <h2 id="7-modificar-controlador-y-vistas">7. Modificar controlador y vistas</h2>
 <p>Para mantener los números de páginas tenemos que modificar el controlador, leerlo en las vistas y pasarlo entre ambos (de la vista al controlador y del controlador a la vista)
 No debemos perder este valor, para poderlo mantener</p>
-<h3 id="hahahugoshortcode37s24hbhb">
+<h3 id="hahahugoshortcode36s24hbhb">
 
 <strong>
 <span class="font-weight-bold text-accent fs-1.5">
@@ -443,7 +436,7 @@ Esto lo realizaremos en el
 </span></span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;filas&#39;</span>=&gt;[], <span style="color:#228b22">//Un array de objetos
 </span></span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;page&#39;</span>=&gt;<span style="color:#00688b">$page</span>
 </span></span><span style="display:flex;"><span>])</span></span></code></pre></div></p>
-<h3 id="hahahugoshortcode37s29hbhb">
+<h3 id="hahahugoshortcode36s29hbhb">
 
 <strong>
 <span class="font-weight-bold text-accent fs-1.5">
@@ -481,7 +474,7 @@ Y la vista create lo recoge y lo enviará al método store del controlador
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        &lt;form method=<span style="color:#cd5555">&#34;POST&#34;</span> action=<span style="color:#cd5555">&#34;{{ route(&#39;teachers.store&#39;) }}&#34;</span>?page=<span style="color:#cd5555">&#34;</span><span style="color:#cd5555">$page</span><span style="color:#cd5555">&#34;</span> class=<span style="color:#cd5555">&#34;bg-white p-4 rounded-2xl&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>            @csrf</span></span></code></pre></div></p>
-<h3 id="hahahugoshortcode37s34hbhb">
+<h3 id="hahahugoshortcode36s34hbhb">
 
 <strong>
 <span class="font-weight-bold text-accent fs-1.5">
@@ -501,7 +494,7 @@ Y la vista create lo recoge y lo enviará al método store del controlador
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> redirect()-&gt;<span style="color:#658b00">route</span>(<span style="color:#cd5555">&#39;teachers.index&#39;</span>,[<span style="color:#cd5555">&#39;page&#39;</span>=&gt;<span style="color:#00688b">$page</span>])-&gt;<span style="color:#658b00">with</span>(<span style="color:#cd5555">&#39;success&#39;</span>,<span style="color:#cd5555">&#39;Registro creado satisfactoriamente&#39;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#228b22">//
 </span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-<h3 id="hahahugoshortcode37s36hbhb">
+<h3 id="hahahugoshortcode36s36hbhb">
 
 <strong>
 <span class="font-weight-bold text-accent fs-1.5">
@@ -569,7 +562,7 @@ Y la vista create lo recoge y lo enviará al método store del controlador
 </span></span><span style="display:flex;"><span>        <span style="color:#228b22">//
 </span></span></span><span style="display:flex;"><span>  }</span></span></code></pre></div></li>
 </ul>
-<h3 id="hahahugoshortcode37s43hbhb">
+<h3 id="hahahugoshortcode36s43hbhb">
 
 <strong>
 <span class="font-weight-bold text-accent fs-1.5">
@@ -674,17 +667,19 @@ Y la vista create lo recoge y lo enviará al método store del controlador
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex; background-color:#d6d6c6"><span>{{<span style="color:#00688b">$teachers</span>-&gt;links()}}</span></span></code></pre></td></tr></table>
 </div>
 </div>
+<div class="alert alert-success" role="alert"><div class="h4 alert-heading" role="heading">Conclusión</div>
 
 
-<div class="alert alert-success" role="alert">
-<h4 class="alert-heading">Conclusión</h4>
+Laravel implementa la paginación de forma 
 
-    <p>Laravel implementa la paginación de forma</p>
-<!-- raw HTML omitted -->
-<pre><code>automática, limpia y muy eficiente
-</code></pre>
-<!-- raw HTML omitted -->
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
+    automática, limpia y muy eficiente
+
+
+</span>
+</strong>, lo que facilita construir CRUD profesionales con muy poco código.
 </div>
 
 <ol start="4">
@@ -719,17 +714,19 @@ Y la vista create lo recoge y lo enviará al método store del controlador
 </span></span></span><span style="display:flex;"><span> <span style="color:#00688b">$page</span> = request()-&gt;input(<span style="color:#cd5555">&#39;page&#39;</span>);</span></span></code></pre></td></tr></table>
 </div>
 </div></p>
+<div class="alert alert-success" role="alert"><div class="h4 alert-heading" role="heading">Conclusión</div>
 
 
-<div class="alert alert-success" role="alert">
-<h4 class="alert-heading">Conclusión</h4>
+Laravel implementa la paginación de forma 
 
-    <p>Laravel implementa la paginación de forma</p>
-<!-- raw HTML omitted -->
-<pre><code>automática, limpia y muy eficiente
-</code></pre>
-<!-- raw HTML omitted -->
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
 
+    automática, limpia y muy eficiente
+
+
+</span>
+</strong>, lo que facilita construir CRUD profesionales con muy poco código.
 </div>
 
 
@@ -795,13 +792,13 @@ Y la vista create lo recoge y lo enviará al método store del controlador
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

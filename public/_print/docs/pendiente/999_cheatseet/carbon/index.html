@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/pendiente/999_cheatseet/carbon/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/pendiente/999_cheatseet/carbon/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,34 +21,34 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Carbon (fechas | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Introducción a Carbon Carbon es una clase en Laravel que nos permite trabajar con fechas de forma sencilla e intuitiva.
+A continuación mostramos un cheatsheet de sus principales usos.
+Para referencia completa: Documentación Oficial de Carbon
+Crear un objeto de la clase 1 2 3 4 5 6 7 // Crear una fecha con la fecha y hora actual $fecha = new Carbon(); echo $fecha; // Fecha actual en formato YYYY-MM-DD HH:MM:SS // Crear una fecha específica $fecha = new Carbon(&#39;1969-12-27&#39;); echo $fecha; // 1969-12-27 00:00:00 Otras formas de crear fechas ### **Usando `Carbon::create()`** Este método permite definir una fecha con mayor precisión: 1 2 3 // Crear una fecha específica (Año, Mes, Día, Hora, Minuto, Segundo) $fecha = Carbon::create(2024, 12, 25, 15, 30, 45); echo $fecha; // 2024-12-25 15:30:45 --- ### **Usando `Carbon::createFromFormat()`** Permite crear fechas desde un formato específico: 1 2 $fecha = Carbon::createFromFormat(&#39;d/m/Y H:i:s&#39;, &#39;31/01/2025 14:00:00&#39;); echo $fecha; // 2025-01-31 14:00:00 --- ### **Usando `Carbon::parse()`** Convierte una cadena de texto en una fecha: 1 2 3 4 5 6 7 // Convertir texto en fecha $fecha = Carbon::parse(&#39;next Monday&#39;); echo $fecha; // 2025-02-03 (si hoy es domingo) // Desde un timestamp $fecha = Carbon::createFromTimestamp(1700000000); echo $fecha; // Fecha correspondiente al timestamp --- ### **Usando `CarbonImmutable` (Fechas inmutables)** Si necesitas fechas inmutables que no cambien con `add()` o `sub()`, usa **CarbonImmutable**: 1 2 3 4 use Carbon\CarbonImmutable; $fecha = CarbonImmutable::now(); echo $fecha-&gt;addDays(5); // Nueva fecha sin modificar la original Obtener la fecha actual 1 2 $now = Carbon::now(); echo $now; // 2025-02-02 15:30:45 Formatear fechas 1 2 3 4 5 6 7 8 // Formatos comunes echo $fecha-&gt;toDateString(); // 2025-02-02 echo $fecha-&gt;toTimeString(); // 15:30:45 echo $fecha-&gt;toDateTimeString(); // 2025-02-02 15:30:45 // Formato personalizado echo $fecha-&gt;format(&#39;d/m/Y&#39;); // 02/02/2025 echo $fecha-&gt;format(&#39;l, d F Y&#39;); // Sunday, 02 February 2025 Operaciones con Fechas Operaciones con fechas ### Sumar Fechas 1 2 $fecha = Carbon::now()-&gt;addDays(10); echo $fecha; // Fecha &#43;10 días ### Restar Fechas 1 2 $fecha = Carbon::now()-&gt;subMonths(1); echo $fecha; // Fecha -1 mes ### Diferencia entre Fechas 1 2 3 4 5 $fecha1 = Carbon::create(2025, 5, 1); $fecha2 = Carbon::create(2025, 6, 1); echo $fecha1-&gt;diffInDays($fecha2); // Diferencia en días echo $fecha1-&gt;diffForHumans(); // &#34;hace 1 mes&#34; Comparación de Fechas 1 2 3 4 5 6 7 8 9 10 11 12 13 14 $fecha1 = Carbon::create(2025, 5, 1); $fecha2 = Carbon::create(2025, 6, 1); if ($fecha1-&gt;equalTo($fecha2)) { echo &#34;Son iguales&#34;; } if ($fecha1-&gt;isToday()) { echo &#34;La fecha es hoy&#34;; } if ($fecha1-&gt;isFuture()) { echo &#34;La fecha está en el futuro&#34;; } Manejo de Zonas Horarias 1 2 3 4 5 6 $fecha = Carbon::now(&#39;Europe/Madrid&#39;); echo $fecha; // 2025-02-02 16:30:45 (hora de Madrid) // Convertir a UTC $fechaUtc = $fecha-&gt;timezone(&#39;UTC&#39;); echo $fechaUtc; // 2025-02-02 15:30:45 (UTC) Fechas en Español Tip Para obtener fechas en español, cambia la configuración de **Carbon**: 1 2 3 4 5 6 setlocale(LC_TIME, &#39;es_ES.UTF-8&#39;); Carbon::setLocale(&#39;es&#39;); $fecha = Carbon::now(); echo $fecha-&gt;translatedFormat(&#39;l, d F Y&#39;); // domingo, 02 febrero 2025 echo $fecha-&gt;diffForHumans(); // &#34;hace 1 segundo&#34; –">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/pendiente/999_cheatseet/carbon/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Carbon (fechas">
-  <meta property="og:description" content="Introducción a Carbon Carbon es una clase en Laravel que nos permite trabajar con fechas de forma sencilla e intuitiva.
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Carbon (fechas">
+	<meta property="og:description" content="Introducción a Carbon Carbon es una clase en Laravel que nos permite trabajar con fechas de forma sencilla e intuitiva.
 A continuación mostramos un cheatsheet de sus principales usos.
 Para referencia completa: Documentación Oficial de Carbon
-Crear un objeto de la clase 1 2 3 4 5 6 7 // Crear una fecha con la fecha y hora actual $fecha = new Carbon(); echo $fecha; // Fecha actual en formato YYYY-MM-DD HH:MM:SS // Crear una fecha específica $fecha = new Carbon(&#39;1969-12-27&#39;); echo $fecha; // 1969-12-27 00:00:00 Otras formas de crear fechas ### **Usando `Carbon::create()`** Este método permite definir una fecha con mayor precisión: 1 2 3 // Crear una fecha específica (Año, Mes, Día, Hora, Minuto, Segundo) $fecha = Carbon::create(2024, 12, 25, 15, 30, 45); echo $fecha; // 2024-12-25 15:30:45 --- ### **Usando `Carbon::createFromFormat()`** Permite crear fechas desde un formato específico: 1 2 $fecha = Carbon::createFromFormat(&#39;d/m/Y H:i:s&#39;, &#39;31/01/2025 14:00:00&#39;); echo $fecha; // 2025-01-31 14:00:00 --- ### **Usando `Carbon::parse()`** Convierte una cadena de texto en una fecha: 1 2 3 4 5 6 7 // Convertir texto en fecha $fecha = Carbon::parse(&#39;next Monday&#39;); echo $fecha; // 2025-02-03 (si hoy es domingo) // Desde un timestamp $fecha = Carbon::createFromTimestamp(1700000000); echo $fecha; // Fecha correspondiente al timestamp --- ### **Usando `CarbonImmutable` (Fechas inmutables)** Si necesitas fechas inmutables que no cambien con `add()` o `sub()`, usa **CarbonImmutable**: 1 2 3 4 use Carbon\CarbonImmutable; $fecha = CarbonImmutable::now(); echo $fecha-&gt;addDays(5); // Nueva fecha sin modificar la original Obtener la fecha actual 1 2 $now = Carbon::now(); echo $now; // 2025-02-02 15:30:45 Formatear fechas 1 2 3 4 5 6 7 8 // Formatos comunes echo $fecha-&gt;toDateString(); // 2025-02-02 echo $fecha-&gt;toTimeString(); // 15:30:45 echo $fecha-&gt;toDateTimeString(); // 2025-02-02 15:30:45 // Formato personalizado echo $fecha-&gt;format(&#39;d/m/Y&#39;); // 02/02/2025 echo $fecha-&gt;format(&#39;l, d F Y&#39;); // Sunday, 02 February 2025 Operaciones con Fechas Operaciones con fechas ### Sumar Fechas 1 2 $fecha = Carbon::now()-&gt;addDays(10); echo $fecha; // Fecha &#43;10 días ### Restar Fechas 1 2 $fecha = Carbon::now()-&gt;subMonths(1); echo $fecha; // Fecha -1 mes ### Diferencia entre Fechas 1 2 3 4 5 $fecha1 = Carbon::create(2025, 5, 1); $fecha2 = Carbon::create(2025, 6, 1); echo $fecha1-&gt;diffInDays($fecha2); // Diferencia en días echo $fecha1-&gt;diffForHumans(); // &#34;hace 1 mes&#34; Comparación de Fechas 1 2 3 4 5 6 7 8 9 10 11 12 13 14 $fecha1 = Carbon::create(2025, 5, 1); $fecha2 = Carbon::create(2025, 6, 1); if ($fecha1-&gt;equalTo($fecha2)) { echo &#34;Son iguales&#34;; } if ($fecha1-&gt;isToday()) { echo &#34;La fecha es hoy&#34;; } if ($fecha1-&gt;isFuture()) { echo &#34;La fecha está en el futuro&#34;; } Manejo de Zonas Horarias 1 2 3 4 5 6 $fecha = Carbon::now(&#39;Europe/Madrid&#39;); echo $fecha; // 2025-02-02 16:30:45 (hora de Madrid) // Convertir a UTC $fechaUtc = $fecha-&gt;timezone(&#39;UTC&#39;); echo $fechaUtc; // 2025-02-02 15:30:45 (UTC) Fechas en Español Tip Para obtener fechas en español, cambia la configuración de Carbon: 1 2 3 4 5 6 setlocale(LC_TIME, &#39;es_ES.UTF-8&#39;); Carbon::setLocale(&#39;es&#39;); $fecha = Carbon::now(); echo $fecha-&gt;translatedFormat(&#39;l, d F Y&#39;); // domingo, 02 febrero 2025 echo $fecha-&gt;diffForHumans(); // &#34;hace 1 segundo&#34; –">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+Crear un objeto de la clase 1 2 3 4 5 6 7 // Crear una fecha con la fecha y hora actual $fecha = new Carbon(); echo $fecha; // Fecha actual en formato YYYY-MM-DD HH:MM:SS // Crear una fecha específica $fecha = new Carbon(&#39;1969-12-27&#39;); echo $fecha; // 1969-12-27 00:00:00 Otras formas de crear fechas ### **Usando `Carbon::create()`** Este método permite definir una fecha con mayor precisión: 1 2 3 // Crear una fecha específica (Año, Mes, Día, Hora, Minuto, Segundo) $fecha = Carbon::create(2024, 12, 25, 15, 30, 45); echo $fecha; // 2024-12-25 15:30:45 --- ### **Usando `Carbon::createFromFormat()`** Permite crear fechas desde un formato específico: 1 2 $fecha = Carbon::createFromFormat(&#39;d/m/Y H:i:s&#39;, &#39;31/01/2025 14:00:00&#39;); echo $fecha; // 2025-01-31 14:00:00 --- ### **Usando `Carbon::parse()`** Convierte una cadena de texto en una fecha: 1 2 3 4 5 6 7 // Convertir texto en fecha $fecha = Carbon::parse(&#39;next Monday&#39;); echo $fecha; // 2025-02-03 (si hoy es domingo) // Desde un timestamp $fecha = Carbon::createFromTimestamp(1700000000); echo $fecha; // Fecha correspondiente al timestamp --- ### **Usando `CarbonImmutable` (Fechas inmutables)** Si necesitas fechas inmutables que no cambien con `add()` o `sub()`, usa **CarbonImmutable**: 1 2 3 4 use Carbon\CarbonImmutable; $fecha = CarbonImmutable::now(); echo $fecha-&gt;addDays(5); // Nueva fecha sin modificar la original Obtener la fecha actual 1 2 $now = Carbon::now(); echo $now; // 2025-02-02 15:30:45 Formatear fechas 1 2 3 4 5 6 7 8 // Formatos comunes echo $fecha-&gt;toDateString(); // 2025-02-02 echo $fecha-&gt;toTimeString(); // 15:30:45 echo $fecha-&gt;toDateTimeString(); // 2025-02-02 15:30:45 // Formato personalizado echo $fecha-&gt;format(&#39;d/m/Y&#39;); // 02/02/2025 echo $fecha-&gt;format(&#39;l, d F Y&#39;); // Sunday, 02 February 2025 Operaciones con Fechas Operaciones con fechas ### Sumar Fechas 1 2 $fecha = Carbon::now()-&gt;addDays(10); echo $fecha; // Fecha &#43;10 días ### Restar Fechas 1 2 $fecha = Carbon::now()-&gt;subMonths(1); echo $fecha; // Fecha -1 mes ### Diferencia entre Fechas 1 2 3 4 5 $fecha1 = Carbon::create(2025, 5, 1); $fecha2 = Carbon::create(2025, 6, 1); echo $fecha1-&gt;diffInDays($fecha2); // Diferencia en días echo $fecha1-&gt;diffForHumans(); // &#34;hace 1 mes&#34; Comparación de Fechas 1 2 3 4 5 6 7 8 9 10 11 12 13 14 $fecha1 = Carbon::create(2025, 5, 1); $fecha2 = Carbon::create(2025, 6, 1); if ($fecha1-&gt;equalTo($fecha2)) { echo &#34;Son iguales&#34;; } if ($fecha1-&gt;isToday()) { echo &#34;La fecha es hoy&#34;; } if ($fecha1-&gt;isFuture()) { echo &#34;La fecha está en el futuro&#34;; } Manejo de Zonas Horarias 1 2 3 4 5 6 $fecha = Carbon::now(&#39;Europe/Madrid&#39;); echo $fecha; // 2025-02-02 16:30:45 (hora de Madrid) // Convertir a UTC $fechaUtc = $fecha-&gt;timezone(&#39;UTC&#39;); echo $fechaUtc; // 2025-02-02 15:30:45 (UTC) Fechas en Español Tip Para obtener fechas en español, cambia la configuración de **Carbon**: 1 2 3 4 5 6 setlocale(LC_TIME, &#39;es_ES.UTF-8&#39;); Carbon::setLocale(&#39;es&#39;); $fecha = Carbon::now(); echo $fecha-&gt;translatedFormat(&#39;l, d F Y&#39;); // domingo, 02 febrero 2025 echo $fecha-&gt;diffForHumans(); // &#34;hace 1 segundo&#34; –">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Carbon (fechas">
-  <meta itemprop="description" content="Introducción a Carbon Carbon es una clase en Laravel que nos permite trabajar con fechas de forma sencilla e intuitiva.
+	<meta itemprop="name" content="Carbon (fechas">
+	<meta itemprop="description" content="Introducción a Carbon Carbon es una clase en Laravel que nos permite trabajar con fechas de forma sencilla e intuitiva.
 A continuación mostramos un cheatsheet de sus principales usos.
 Para referencia completa: Documentación Oficial de Carbon
-Crear un objeto de la clase 1 2 3 4 5 6 7 // Crear una fecha con la fecha y hora actual $fecha = new Carbon(); echo $fecha; // Fecha actual en formato YYYY-MM-DD HH:MM:SS // Crear una fecha específica $fecha = new Carbon(&#39;1969-12-27&#39;); echo $fecha; // 1969-12-27 00:00:00 Otras formas de crear fechas ### **Usando `Carbon::create()`** Este método permite definir una fecha con mayor precisión: 1 2 3 // Crear una fecha específica (Año, Mes, Día, Hora, Minuto, Segundo) $fecha = Carbon::create(2024, 12, 25, 15, 30, 45); echo $fecha; // 2024-12-25 15:30:45 --- ### **Usando `Carbon::createFromFormat()`** Permite crear fechas desde un formato específico: 1 2 $fecha = Carbon::createFromFormat(&#39;d/m/Y H:i:s&#39;, &#39;31/01/2025 14:00:00&#39;); echo $fecha; // 2025-01-31 14:00:00 --- ### **Usando `Carbon::parse()`** Convierte una cadena de texto en una fecha: 1 2 3 4 5 6 7 // Convertir texto en fecha $fecha = Carbon::parse(&#39;next Monday&#39;); echo $fecha; // 2025-02-03 (si hoy es domingo) // Desde un timestamp $fecha = Carbon::createFromTimestamp(1700000000); echo $fecha; // Fecha correspondiente al timestamp --- ### **Usando `CarbonImmutable` (Fechas inmutables)** Si necesitas fechas inmutables que no cambien con `add()` o `sub()`, usa **CarbonImmutable**: 1 2 3 4 use Carbon\CarbonImmutable; $fecha = CarbonImmutable::now(); echo $fecha-&gt;addDays(5); // Nueva fecha sin modificar la original Obtener la fecha actual 1 2 $now = Carbon::now(); echo $now; // 2025-02-02 15:30:45 Formatear fechas 1 2 3 4 5 6 7 8 // Formatos comunes echo $fecha-&gt;toDateString(); // 2025-02-02 echo $fecha-&gt;toTimeString(); // 15:30:45 echo $fecha-&gt;toDateTimeString(); // 2025-02-02 15:30:45 // Formato personalizado echo $fecha-&gt;format(&#39;d/m/Y&#39;); // 02/02/2025 echo $fecha-&gt;format(&#39;l, d F Y&#39;); // Sunday, 02 February 2025 Operaciones con Fechas Operaciones con fechas ### Sumar Fechas 1 2 $fecha = Carbon::now()-&gt;addDays(10); echo $fecha; // Fecha &#43;10 días ### Restar Fechas 1 2 $fecha = Carbon::now()-&gt;subMonths(1); echo $fecha; // Fecha -1 mes ### Diferencia entre Fechas 1 2 3 4 5 $fecha1 = Carbon::create(2025, 5, 1); $fecha2 = Carbon::create(2025, 6, 1); echo $fecha1-&gt;diffInDays($fecha2); // Diferencia en días echo $fecha1-&gt;diffForHumans(); // &#34;hace 1 mes&#34; Comparación de Fechas 1 2 3 4 5 6 7 8 9 10 11 12 13 14 $fecha1 = Carbon::create(2025, 5, 1); $fecha2 = Carbon::create(2025, 6, 1); if ($fecha1-&gt;equalTo($fecha2)) { echo &#34;Son iguales&#34;; } if ($fecha1-&gt;isToday()) { echo &#34;La fecha es hoy&#34;; } if ($fecha1-&gt;isFuture()) { echo &#34;La fecha está en el futuro&#34;; } Manejo de Zonas Horarias 1 2 3 4 5 6 $fecha = Carbon::now(&#39;Europe/Madrid&#39;); echo $fecha; // 2025-02-02 16:30:45 (hora de Madrid) // Convertir a UTC $fechaUtc = $fecha-&gt;timezone(&#39;UTC&#39;); echo $fechaUtc; // 2025-02-02 15:30:45 (UTC) Fechas en Español Tip Para obtener fechas en español, cambia la configuración de Carbon: 1 2 3 4 5 6 setlocale(LC_TIME, &#39;es_ES.UTF-8&#39;); Carbon::setLocale(&#39;es&#39;); $fecha = Carbon::now(); echo $fecha-&gt;translatedFormat(&#39;l, d F Y&#39;); // domingo, 02 febrero 2025 echo $fecha-&gt;diffForHumans(); // &#34;hace 1 segundo&#34; –">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="753">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Carbon (fechas">
-  <meta name="twitter:description" content="Introducción a Carbon Carbon es una clase en Laravel que nos permite trabajar con fechas de forma sencilla e intuitiva.
+Crear un objeto de la clase 1 2 3 4 5 6 7 // Crear una fecha con la fecha y hora actual $fecha = new Carbon(); echo $fecha; // Fecha actual en formato YYYY-MM-DD HH:MM:SS // Crear una fecha específica $fecha = new Carbon(&#39;1969-12-27&#39;); echo $fecha; // 1969-12-27 00:00:00 Otras formas de crear fechas ### **Usando `Carbon::create()`** Este método permite definir una fecha con mayor precisión: 1 2 3 // Crear una fecha específica (Año, Mes, Día, Hora, Minuto, Segundo) $fecha = Carbon::create(2024, 12, 25, 15, 30, 45); echo $fecha; // 2024-12-25 15:30:45 --- ### **Usando `Carbon::createFromFormat()`** Permite crear fechas desde un formato específico: 1 2 $fecha = Carbon::createFromFormat(&#39;d/m/Y H:i:s&#39;, &#39;31/01/2025 14:00:00&#39;); echo $fecha; // 2025-01-31 14:00:00 --- ### **Usando `Carbon::parse()`** Convierte una cadena de texto en una fecha: 1 2 3 4 5 6 7 // Convertir texto en fecha $fecha = Carbon::parse(&#39;next Monday&#39;); echo $fecha; // 2025-02-03 (si hoy es domingo) // Desde un timestamp $fecha = Carbon::createFromTimestamp(1700000000); echo $fecha; // Fecha correspondiente al timestamp --- ### **Usando `CarbonImmutable` (Fechas inmutables)** Si necesitas fechas inmutables que no cambien con `add()` o `sub()`, usa **CarbonImmutable**: 1 2 3 4 use Carbon\CarbonImmutable; $fecha = CarbonImmutable::now(); echo $fecha-&gt;addDays(5); // Nueva fecha sin modificar la original Obtener la fecha actual 1 2 $now = Carbon::now(); echo $now; // 2025-02-02 15:30:45 Formatear fechas 1 2 3 4 5 6 7 8 // Formatos comunes echo $fecha-&gt;toDateString(); // 2025-02-02 echo $fecha-&gt;toTimeString(); // 15:30:45 echo $fecha-&gt;toDateTimeString(); // 2025-02-02 15:30:45 // Formato personalizado echo $fecha-&gt;format(&#39;d/m/Y&#39;); // 02/02/2025 echo $fecha-&gt;format(&#39;l, d F Y&#39;); // Sunday, 02 February 2025 Operaciones con Fechas Operaciones con fechas ### Sumar Fechas 1 2 $fecha = Carbon::now()-&gt;addDays(10); echo $fecha; // Fecha &#43;10 días ### Restar Fechas 1 2 $fecha = Carbon::now()-&gt;subMonths(1); echo $fecha; // Fecha -1 mes ### Diferencia entre Fechas 1 2 3 4 5 $fecha1 = Carbon::create(2025, 5, 1); $fecha2 = Carbon::create(2025, 6, 1); echo $fecha1-&gt;diffInDays($fecha2); // Diferencia en días echo $fecha1-&gt;diffForHumans(); // &#34;hace 1 mes&#34; Comparación de Fechas 1 2 3 4 5 6 7 8 9 10 11 12 13 14 $fecha1 = Carbon::create(2025, 5, 1); $fecha2 = Carbon::create(2025, 6, 1); if ($fecha1-&gt;equalTo($fecha2)) { echo &#34;Son iguales&#34;; } if ($fecha1-&gt;isToday()) { echo &#34;La fecha es hoy&#34;; } if ($fecha1-&gt;isFuture()) { echo &#34;La fecha está en el futuro&#34;; } Manejo de Zonas Horarias 1 2 3 4 5 6 $fecha = Carbon::now(&#39;Europe/Madrid&#39;); echo $fecha; // 2025-02-02 16:30:45 (hora de Madrid) // Convertir a UTC $fechaUtc = $fecha-&gt;timezone(&#39;UTC&#39;); echo $fechaUtc; // 2025-02-02 15:30:45 (UTC) Fechas en Español Tip Para obtener fechas en español, cambia la configuración de **Carbon**: 1 2 3 4 5 6 setlocale(LC_TIME, &#39;es_ES.UTF-8&#39;); Carbon::setLocale(&#39;es&#39;); $fecha = Carbon::now(); echo $fecha-&gt;translatedFormat(&#39;l, d F Y&#39;); // domingo, 02 febrero 2025 echo $fecha-&gt;diffForHumans(); // &#34;hace 1 segundo&#34; –">
+	<meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="wordCount" content="753">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Carbon (fechas">
+	<meta name="twitter:description" content="Introducción a Carbon Carbon es una clase en Laravel que nos permite trabajar con fechas de forma sencilla e intuitiva.
 A continuación mostramos un cheatsheet de sus principales usos.
 Para referencia completa: Documentación Oficial de Carbon
-Crear un objeto de la clase 1 2 3 4 5 6 7 // Crear una fecha con la fecha y hora actual $fecha = new Carbon(); echo $fecha; // Fecha actual en formato YYYY-MM-DD HH:MM:SS // Crear una fecha específica $fecha = new Carbon(&#39;1969-12-27&#39;); echo $fecha; // 1969-12-27 00:00:00 Otras formas de crear fechas ### **Usando `Carbon::create()`** Este método permite definir una fecha con mayor precisión: 1 2 3 // Crear una fecha específica (Año, Mes, Día, Hora, Minuto, Segundo) $fecha = Carbon::create(2024, 12, 25, 15, 30, 45); echo $fecha; // 2024-12-25 15:30:45 --- ### **Usando `Carbon::createFromFormat()`** Permite crear fechas desde un formato específico: 1 2 $fecha = Carbon::createFromFormat(&#39;d/m/Y H:i:s&#39;, &#39;31/01/2025 14:00:00&#39;); echo $fecha; // 2025-01-31 14:00:00 --- ### **Usando `Carbon::parse()`** Convierte una cadena de texto en una fecha: 1 2 3 4 5 6 7 // Convertir texto en fecha $fecha = Carbon::parse(&#39;next Monday&#39;); echo $fecha; // 2025-02-03 (si hoy es domingo) // Desde un timestamp $fecha = Carbon::createFromTimestamp(1700000000); echo $fecha; // Fecha correspondiente al timestamp --- ### **Usando `CarbonImmutable` (Fechas inmutables)** Si necesitas fechas inmutables que no cambien con `add()` o `sub()`, usa **CarbonImmutable**: 1 2 3 4 use Carbon\CarbonImmutable; $fecha = CarbonImmutable::now(); echo $fecha-&gt;addDays(5); // Nueva fecha sin modificar la original Obtener la fecha actual 1 2 $now = Carbon::now(); echo $now; // 2025-02-02 15:30:45 Formatear fechas 1 2 3 4 5 6 7 8 // Formatos comunes echo $fecha-&gt;toDateString(); // 2025-02-02 echo $fecha-&gt;toTimeString(); // 15:30:45 echo $fecha-&gt;toDateTimeString(); // 2025-02-02 15:30:45 // Formato personalizado echo $fecha-&gt;format(&#39;d/m/Y&#39;); // 02/02/2025 echo $fecha-&gt;format(&#39;l, d F Y&#39;); // Sunday, 02 February 2025 Operaciones con Fechas Operaciones con fechas ### Sumar Fechas 1 2 $fecha = Carbon::now()-&gt;addDays(10); echo $fecha; // Fecha &#43;10 días ### Restar Fechas 1 2 $fecha = Carbon::now()-&gt;subMonths(1); echo $fecha; // Fecha -1 mes ### Diferencia entre Fechas 1 2 3 4 5 $fecha1 = Carbon::create(2025, 5, 1); $fecha2 = Carbon::create(2025, 6, 1); echo $fecha1-&gt;diffInDays($fecha2); // Diferencia en días echo $fecha1-&gt;diffForHumans(); // &#34;hace 1 mes&#34; Comparación de Fechas 1 2 3 4 5 6 7 8 9 10 11 12 13 14 $fecha1 = Carbon::create(2025, 5, 1); $fecha2 = Carbon::create(2025, 6, 1); if ($fecha1-&gt;equalTo($fecha2)) { echo &#34;Son iguales&#34;; } if ($fecha1-&gt;isToday()) { echo &#34;La fecha es hoy&#34;; } if ($fecha1-&gt;isFuture()) { echo &#34;La fecha está en el futuro&#34;; } Manejo de Zonas Horarias 1 2 3 4 5 6 $fecha = Carbon::now(&#39;Europe/Madrid&#39;); echo $fecha; // 2025-02-02 16:30:45 (hora de Madrid) // Convertir a UTC $fechaUtc = $fecha-&gt;timezone(&#39;UTC&#39;); echo $fechaUtc; // 2025-02-02 15:30:45 (UTC) Fechas en Español Tip Para obtener fechas en español, cambia la configuración de Carbon: 1 2 3 4 5 6 setlocale(LC_TIME, &#39;es_ES.UTF-8&#39;); Carbon::setLocale(&#39;es&#39;); $fecha = Carbon::now(); echo $fecha-&gt;translatedFormat(&#39;l, d F Y&#39;); // domingo, 02 febrero 2025 echo $fecha-&gt;diffForHumans(); // &#34;hace 1 segundo&#34; –">
-
-
+Crear un objeto de la clase 1 2 3 4 5 6 7 // Crear una fecha con la fecha y hora actual $fecha = new Carbon(); echo $fecha; // Fecha actual en formato YYYY-MM-DD HH:MM:SS // Crear una fecha específica $fecha = new Carbon(&#39;1969-12-27&#39;); echo $fecha; // 1969-12-27 00:00:00 Otras formas de crear fechas ### **Usando `Carbon::create()`** Este método permite definir una fecha con mayor precisión: 1 2 3 // Crear una fecha específica (Año, Mes, Día, Hora, Minuto, Segundo) $fecha = Carbon::create(2024, 12, 25, 15, 30, 45); echo $fecha; // 2024-12-25 15:30:45 --- ### **Usando `Carbon::createFromFormat()`** Permite crear fechas desde un formato específico: 1 2 $fecha = Carbon::createFromFormat(&#39;d/m/Y H:i:s&#39;, &#39;31/01/2025 14:00:00&#39;); echo $fecha; // 2025-01-31 14:00:00 --- ### **Usando `Carbon::parse()`** Convierte una cadena de texto en una fecha: 1 2 3 4 5 6 7 // Convertir texto en fecha $fecha = Carbon::parse(&#39;next Monday&#39;); echo $fecha; // 2025-02-03 (si hoy es domingo) // Desde un timestamp $fecha = Carbon::createFromTimestamp(1700000000); echo $fecha; // Fecha correspondiente al timestamp --- ### **Usando `CarbonImmutable` (Fechas inmutables)** Si necesitas fechas inmutables que no cambien con `add()` o `sub()`, usa **CarbonImmutable**: 1 2 3 4 use Carbon\CarbonImmutable; $fecha = CarbonImmutable::now(); echo $fecha-&gt;addDays(5); // Nueva fecha sin modificar la original Obtener la fecha actual 1 2 $now = Carbon::now(); echo $now; // 2025-02-02 15:30:45 Formatear fechas 1 2 3 4 5 6 7 8 // Formatos comunes echo $fecha-&gt;toDateString(); // 2025-02-02 echo $fecha-&gt;toTimeString(); // 15:30:45 echo $fecha-&gt;toDateTimeString(); // 2025-02-02 15:30:45 // Formato personalizado echo $fecha-&gt;format(&#39;d/m/Y&#39;); // 02/02/2025 echo $fecha-&gt;format(&#39;l, d F Y&#39;); // Sunday, 02 February 2025 Operaciones con Fechas Operaciones con fechas ### Sumar Fechas 1 2 $fecha = Carbon::now()-&gt;addDays(10); echo $fecha; // Fecha &#43;10 días ### Restar Fechas 1 2 $fecha = Carbon::now()-&gt;subMonths(1); echo $fecha; // Fecha -1 mes ### Diferencia entre Fechas 1 2 3 4 5 $fecha1 = Carbon::create(2025, 5, 1); $fecha2 = Carbon::create(2025, 6, 1); echo $fecha1-&gt;diffInDays($fecha2); // Diferencia en días echo $fecha1-&gt;diffForHumans(); // &#34;hace 1 mes&#34; Comparación de Fechas 1 2 3 4 5 6 7 8 9 10 11 12 13 14 $fecha1 = Carbon::create(2025, 5, 1); $fecha2 = Carbon::create(2025, 6, 1); if ($fecha1-&gt;equalTo($fecha2)) { echo &#34;Son iguales&#34;; } if ($fecha1-&gt;isToday()) { echo &#34;La fecha es hoy&#34;; } if ($fecha1-&gt;isFuture()) { echo &#34;La fecha está en el futuro&#34;; } Manejo de Zonas Horarias 1 2 3 4 5 6 $fecha = Carbon::now(&#39;Europe/Madrid&#39;); echo $fecha; // 2025-02-02 16:30:45 (hora de Madrid) // Convertir a UTC $fechaUtc = $fecha-&gt;timezone(&#39;UTC&#39;); echo $fechaUtc; // 2025-02-02 15:30:45 (UTC) Fechas en Español Tip Para obtener fechas en español, cambia la configuración de **Carbon**: 1 2 3 4 5 6 setlocale(LC_TIME, &#39;es_ES.UTF-8&#39;); Carbon::setLocale(&#39;es&#39;); $fecha = Carbon::now(); echo $fecha-&gt;translatedFormat(&#39;l, d F Y&#39;); // domingo, 02 febrero 2025 echo $fecha-&gt;diffForHumans(); // &#34;hace 1 segundo&#34; –">
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -68,12 +69,17 @@ Crear un objeto de la clase 1 2 3 4 5 6 7 // Crear una fecha con la fecha y hora
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -436,13 +442,10 @@ Si necesitas fechas inmutables que no cambien con `add()` o `sub()`, usa **Carbo
 </div>
 <hr>
 <h2 id="fechas-en-español">Fechas en Español</h2>
+<div class="alert alert-success" role="alert"><div class="h4 alert-heading" role="heading">Tip</div>
 
 
-<div class="alert alert-success" role="alert">
-<h4 class="alert-heading">Tip</h4>
-
-    Para obtener fechas en español, cambia la configuración de <strong>Carbon</strong>:
-
+Para obtener fechas en español, cambia la configuración de **Carbon**:
 </div>
 
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
@@ -556,40 +559,40 @@ Si necesitas fechas inmutables que no cambien con `add()` o `sub()`, usa **Carbo
 <hr>
 <h2 id="comparación-rápida-de-helpers"><strong>Comparación rápida de helpers</strong></h2>
 <table>
-  <thead>
-      <tr>
-          <th><strong>Helper</strong></th>
-          <th><strong>Descripción</strong></th>
-          <th><strong>Equivalente Carbon</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>now()</code></td>
-          <td>Fecha y hora actual</td>
-          <td><code>Carbon::now()</code></td>
-      </tr>
-      <tr>
-          <td><code>today()</code></td>
-          <td>Fecha actual a las 00:00:00</td>
-          <td><code>Carbon::today()</code></td>
-      </tr>
-      <tr>
-          <td><code>tomorrow()</code></td>
-          <td>Fecha de mañana a las 00:00:00</td>
-          <td><code>Carbon::tomorrow()</code></td>
-      </tr>
-      <tr>
-          <td><code>yesterday()</code></td>
-          <td>Fecha de ayer a las 00:00:00</td>
-          <td><code>Carbon::yesterday()</code></td>
-      </tr>
-      <tr>
-          <td><code>carbon()</code></td>
-          <td>Convierte cualquier valor en Carbon</td>
-          <td><code>Carbon::parse()</code> o <code>Carbon::createFromFormat()</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Helper</strong></th>
+					<th><strong>Descripción</strong></th>
+					<th><strong>Equivalente Carbon</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>now()</code></td>
+					<td>Fecha y hora actual</td>
+					<td><code>Carbon::now()</code></td>
+			</tr>
+			<tr>
+					<td><code>today()</code></td>
+					<td>Fecha actual a las 00:00:00</td>
+					<td><code>Carbon::today()</code></td>
+			</tr>
+			<tr>
+					<td><code>tomorrow()</code></td>
+					<td>Fecha de mañana a las 00:00:00</td>
+					<td><code>Carbon::tomorrow()</code></td>
+			</tr>
+			<tr>
+					<td><code>yesterday()</code></td>
+					<td>Fecha de ayer a las 00:00:00</td>
+					<td><code>Carbon::yesterday()</code></td>
+			</tr>
+			<tr>
+					<td><code>carbon()</code></td>
+					<td>Convierte cualquier valor en Carbon</td>
+					<td><code>Carbon::parse()</code> o <code>Carbon::createFromFormat()</code></td>
+			</tr>
+	</tbody>
 </table>
 <hr>
 <p>Estos <strong>helpers</strong> simplifican el uso de fechas en <strong>Laravel</strong> sin necesidad de escribir <code>Carbon::now()</code>, haciéndolo más limpio y elegante. 🚀</p>
@@ -663,13 +666,13 @@ Si necesitas fechas inmutables que no cambien con `add()` o `sub()`, usa **Carbo
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

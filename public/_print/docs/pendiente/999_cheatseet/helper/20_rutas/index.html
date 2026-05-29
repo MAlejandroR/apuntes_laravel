@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/pendiente/999_cheatseet/helper/20_rutas/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/pendiente/999_cheatseet/helper/20_rutas/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,28 +21,26 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Rutas | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Helpers de Laravel para Rutas Laravel proporciona varios helpers útiles para trabajar con rutas. Estos son algunos de los más importantes:
+route(&#39;nombre_ruta&#39;) Genera una URL para una ruta nombrada. Podemos pasar parámetros a la ruta como un array asociativo [‘variable’=&gt;valor] route(&#39;user.profile&#39;, [&#39;id&#39; =&gt; 1]); url(&#39;path&#39;) Genera una URL absoluta para el path dado. Ejemplo: url(&#39;/user&#39;) redirect()-&gt;route(&#39;nombre_ruta&#39;) Redirige a una ruta nombrada. Ejemplo: redirect()-&gt;route(&#39;home&#39;) action(&#39;NombreControlador@metodo&#39;) Genera una URL para el controlador y método especificados. Ejemplo: action(&#39;UserController@show&#39;, [&#39;id&#39; =&gt; 1]) back() Redirige al usuario a la ubicación anterior. Ejemplo: return back() current() Obtiene la URL actual. Ejemplo: url()-&gt;current() previous() Obtiene la URL previa a la actual. Ejemplo: url()-&gt;previous()">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/pendiente/999_cheatseet/helper/20_rutas/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Rutas">
-  <meta property="og:description" content="Helpers de Laravel para Rutas Laravel proporciona varios helpers útiles para trabajar con rutas. Estos son algunos de los más importantes:
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Rutas">
+	<meta property="og:description" content="Helpers de Laravel para Rutas Laravel proporciona varios helpers útiles para trabajar con rutas. Estos son algunos de los más importantes:
 route(&#39;nombre_ruta&#39;) Genera una URL para una ruta nombrada. Podemos pasar parámetros a la ruta como un array asociativo [‘variable’=&gt;valor] route(&#39;user.profile&#39;, [&#39;id&#39; =&gt; 1]); url(&#39;path&#39;) Genera una URL absoluta para el path dado. Ejemplo: url(&#39;/user&#39;) redirect()-&gt;route(&#39;nombre_ruta&#39;) Redirige a una ruta nombrada. Ejemplo: redirect()-&gt;route(&#39;home&#39;) action(&#39;NombreControlador@metodo&#39;) Genera una URL para el controlador y método especificados. Ejemplo: action(&#39;UserController@show&#39;, [&#39;id&#39; =&gt; 1]) back() Redirige al usuario a la ubicación anterior. Ejemplo: return back() current() Obtiene la URL actual. Ejemplo: url()-&gt;current() previous() Obtiene la URL previa a la actual. Ejemplo: url()-&gt;previous()">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Rutas">
-  <meta itemprop="description" content="Helpers de Laravel para Rutas Laravel proporciona varios helpers útiles para trabajar con rutas. Estos son algunos de los más importantes:
+	<meta itemprop="name" content="Rutas">
+	<meta itemprop="description" content="Helpers de Laravel para Rutas Laravel proporciona varios helpers útiles para trabajar con rutas. Estos son algunos de los más importantes:
 route(&#39;nombre_ruta&#39;) Genera una URL para una ruta nombrada. Podemos pasar parámetros a la ruta como un array asociativo [‘variable’=&gt;valor] route(&#39;user.profile&#39;, [&#39;id&#39; =&gt; 1]); url(&#39;path&#39;) Genera una URL absoluta para el path dado. Ejemplo: url(&#39;/user&#39;) redirect()-&gt;route(&#39;nombre_ruta&#39;) Redirige a una ruta nombrada. Ejemplo: redirect()-&gt;route(&#39;home&#39;) action(&#39;NombreControlador@metodo&#39;) Genera una URL para el controlador y método especificados. Ejemplo: action(&#39;UserController@show&#39;, [&#39;id&#39; =&gt; 1]) back() Redirige al usuario a la ubicación anterior. Ejemplo: return back() current() Obtiene la URL actual. Ejemplo: url()-&gt;current() previous() Obtiene la URL previa a la actual. Ejemplo: url()-&gt;previous()">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="106">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Rutas">
-  <meta name="twitter:description" content="Helpers de Laravel para Rutas Laravel proporciona varios helpers útiles para trabajar con rutas. Estos son algunos de los más importantes:
+	<meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="wordCount" content="106">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Rutas">
+	<meta name="twitter:description" content="Helpers de Laravel para Rutas Laravel proporciona varios helpers útiles para trabajar con rutas. Estos son algunos de los más importantes:
 route(&#39;nombre_ruta&#39;) Genera una URL para una ruta nombrada. Podemos pasar parámetros a la ruta como un array asociativo [‘variable’=&gt;valor] route(&#39;user.profile&#39;, [&#39;id&#39; =&gt; 1]); url(&#39;path&#39;) Genera una URL absoluta para el path dado. Ejemplo: url(&#39;/user&#39;) redirect()-&gt;route(&#39;nombre_ruta&#39;) Redirige a una ruta nombrada. Ejemplo: redirect()-&gt;route(&#39;home&#39;) action(&#39;NombreControlador@metodo&#39;) Genera una URL para el controlador y método especificados. Ejemplo: action(&#39;UserController@show&#39;, [&#39;id&#39; =&gt; 1]) back() Redirige al usuario a la ubicación anterior. Ejemplo: return back() current() Obtiene la URL actual. Ejemplo: url()-&gt;current() previous() Obtiene la URL previa a la actual. Ejemplo: url()-&gt;previous()">
-
-
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -62,12 +61,17 @@ route(&#39;nombre_ruta&#39;) Genera una URL para una ruta nombrada. Podemos pasa
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -192,13 +196,13 @@ Estos son algunos de los más importantes:</p>
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

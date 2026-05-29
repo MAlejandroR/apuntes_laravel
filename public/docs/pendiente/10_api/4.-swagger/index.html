@@ -3,6 +3,7 @@
   <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <meta name="robots" content="noindex, nofollow">
 
 
@@ -18,28 +19,25 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>swagger | Laravel: Framework de php</title>
-<meta name="description" content=" Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki Swagger en Laravel 11 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.">
-
+<meta name="description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki Swagger en Laravel 11 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/pendiente/10_api/4.-swagger/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="swagger">
-  <meta property="og:description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki Swagger en Laravel 11 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="docs">
-    <meta property="article:published_time" content="2025-03-03T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-03T00:00:00+00:00">
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="swagger">
+	<meta property="og:description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki Swagger en Laravel 11 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:published_time" content="2025-03-03T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-03-03T00:00:00+00:00">
 
-  <meta itemprop="name" content="swagger">
-  <meta itemprop="description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki Swagger en Laravel 11 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.">
-  <meta itemprop="datePublished" content="2025-03-03T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-03-03T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1604">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="swagger">
-  <meta name="twitter:description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki Swagger en Laravel 11 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.">
-
-
+	<meta itemprop="name" content="swagger">
+	<meta itemprop="description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki Swagger en Laravel 11 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.">
+	<meta itemprop="datePublished" content="2025-03-03T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2025-03-03T00:00:00+00:00">
+	<meta itemprop="wordCount" content="1604">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="swagger">
+	<meta name="twitter:description" content="Referencias Fuentes de Información https://github.com/DarkaOnLine/L5-Swagger/wiki Swagger en Laravel 11 Introducción Swagger (OpenAPI) es una herramienta que permite documentar APIs de manera estructurada y visual, facilitando su uso por parte de desarrolladores y otros sistemas.">
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -60,12 +58,17 @@
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -77,182 +80,199 @@
 
     </header>
     <div class="container-fluid td-outer">
-      <div class="td-main">
+      <div class="td-main" data-bs-spy="scroll" data-bs-target=".td-toc" data-bs-root-margin="0px 0px -10%">
         <div class="row flex-xl-nowrap">
           <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
             <div id="td-sidebar-menu" class="td-sidebar__inner">
   <form class="td-sidebar__search d-flex align-items-center">
     
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <button class="btn btn-link td-sidebar__toggle" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
     </button>
   </form>
   <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
-    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
-      <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
-</div>
-    </div>
     <ul class="td-sidebar-nav__section pe-md-3 ul-0">
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs-li">
-  <a href="/laravel/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laraveldocs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
-  <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs01_introduccic3b3n-li">
-  <input type="checkbox" id="m-laraveldocs01_introduccic3b3n-check"/>
-  <label for="m-laraveldocs01_introduccic3b3n-check"><a href="/laravel/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs02_instalacic3b3n-li">
-  <input type="checkbox" id="m-laraveldocs02_instalacic3b3n-check"/>
-  <label for="m-laraveldocs02_instalacic3b3n-check"><a href="/laravel/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs03_rutas-li">
-  <input type="checkbox" id="m-laraveldocs03_rutas-check"/>
-  <label for="m-laraveldocs03_rutas-check"><a href="/laravel/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs04_plantillas-li">
-  <input type="checkbox" id="m-laraveldocs04_plantillas-check"/>
-  <label for="m-laraveldocs04_plantillas-check"><a href="/laravel/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
-  
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas01_blade-li">
-  <input type="checkbox" id="m-laraveldocs04_plantillas01_blade-check"/>
-  <label for="m-laraveldocs04_plantillas01_blade-check"><a href="/laravel/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas02_creandodisec3b1o-li">
-  <input type="checkbox" id="m-laraveldocs04_plantillas02_creandodisec3b1o-check"/>
-  <label for="m-laraveldocs04_plantillas02_creandodisec3b1o-check"><a href="/laravel/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas03_componentes-li">
-  <input type="checkbox" id="m-laraveldocs04_plantillas03_componentes-check"/>
-  <label for="m-laraveldocs04_plantillas03_componentes-check"><a href="/laravel/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas05_ejemplo-li">
-  <input type="checkbox" id="m-laraveldocs04_plantillas05_ejemplo-check"/>
-  <label for="m-laraveldocs04_plantillas05_ejemplo-check"><a href="/laravel/docs/04_plantillas/05_ejemplo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas05_ejemplo"><i class="fa-solid fa-diagram-project"></i><span class="">Ejemplo de nuestro proyecto </span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas04_responsivo-li">
-  <input type="checkbox" id="m-laraveldocs04_plantillas04_responsivo-check"/>
-  <label for="m-laraveldocs04_plantillas04_responsivo-check"><a href="/laravel/docs/04_plantillas/04_responsivo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas04_responsivo"><i class="fa-solid fa-mobile-screen-button"></i><span class="">Diseño responsivo</span></a></label>
-  
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacion-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacion-check"/>
-  <label for="m-laraveldocs06_autenticacion-check"><a href="/laravel/docs/06_autenticacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacion"><i class="fa-solid fa-sitemap"></i><span class="">Autenticación</span></a></label>
-  
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionbreeze-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionbreeze-check"/>
-  <label for="m-laraveldocs06_autenticacionbreeze-check"><a href="/laravel/docs/06_autenticacion/breeze/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionbreeze"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionvistas-y-controladores-li">
-  <input type="checkbox" id="m-laraveldocs06_autenticacionvistas-y-controladores-check"/>
-  <label for="m-laraveldocs06_autenticacionvistas-y-controladores-check"><a href="/laravel/docs/06_autenticacion/vistas-y-controladores/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionvistas-y-controladores"><i class="fa-solid fa-user-lock"></i><span class="">auth: Vistas y Controladores</span></a></label>
-  
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs07_multilenguaje-li">
-  <input type="checkbox" id="m-laraveldocs07_multilenguaje-check"/>
-  <label for="m-laraveldocs07_multilenguaje-check"><a href="/laravel/docs/07_multilenguaje/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs07_multilenguaje"><span class="">Multilenguaje</span></a></label>
-  
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs07_multilenguajeplugin_busqueda-li">
-  <input type="checkbox" id="m-laraveldocs07_multilenguajeplugin_busqueda-check"/>
-  <label for="m-laraveldocs07_multilenguajeplugin_busqueda-check"><a href="/laravel/docs/07_multilenguaje/plugin_busqueda/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs07_multilenguajeplugin_busqueda"><i class="fa-solid fa-language"></i><span class="">Extracción de texto</span></a></label>
-  
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs08_migraciones-li">
-  <input type="checkbox" id="m-laraveldocs08_migraciones-check"/>
-  <label for="m-laraveldocs08_migraciones-check"><a href="/laravel/docs/08_migraciones/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs08_migraciones"><i class="fa-solid fa-database"></i><span class="">Migraciones</span></a></label>
-  
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs08_migracionesfactory_seeder-li">
-  <input type="checkbox" id="m-laraveldocs08_migracionesfactory_seeder-check"/>
-  <label for="m-laraveldocs08_migracionesfactory_seeder-check"><a href="/laravel/docs/08_migraciones/factory_seeder/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs08_migracionesfactory_seeder"><i class="fa-solid fa-seedling"></i><span class="">Seeders en Laravel</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs08_migraciones_index_oldc3a7-li">
-  <input type="checkbox" id="m-laraveldocs08_migraciones_index_oldc3a7-check"/>
-  <label for="m-laraveldocs08_migraciones_index_oldc3a7-check"><a href="/laravel/docs/08_migraciones/_index_old%C3%A7/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs08_migraciones_index_oldc3a7"><span class=""></span></a></label>
-  
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs09_crud-li">
-  <input type="checkbox" id="m-laraveldocs09_crud-check"/>
-  <label for="m-laraveldocs09_crud-check"><a href="/laravel/docs/09_crud/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs09_crud"><i class="fa-solid fa-database"></i><span class="">Creando un CRUD</span></a></label>
-  
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs09_crud01_la-tabla-li">
-  <input type="checkbox" id="m-laraveldocs09_crud01_la-tabla-check"/>
-  <label for="m-laraveldocs09_crud01_la-tabla-check"><a href="/laravel/docs/09_crud/01_la-tabla/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs09_crud01_la-tabla"><i class="fa-solid fa-database"></i><span class="">Creando la tabla</span></a></label>
-  
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_paginacion-li">
-  <input type="checkbox" id="m-laraveldocs10_paginacion-check"/>
-  <label for="m-laraveldocs10_paginacion-check"><a href="/laravel/docs/10_paginacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_paginacion"><i class="fa-solid fa-table-list"></i><span class="">Paginando datos</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs11_roles-li">
-  <input type="checkbox" id="m-laraveldocs11_roles-check"/>
-  <label for="m-laraveldocs11_roles-check"><a href="/laravel/docs/11_roles/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs11_roles"><i class="fa-brands fa-critical-role"></i><span class="">Roles</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs12_crudgenerico-li">
-  <input type="checkbox" id="m-laraveldocs12_crudgenerico-check"/>
-  <label for="m-laraveldocs12_crudgenerico-check"><a href="/laravel/docs/12_crudgenerico/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs12_crudgenerico"><i class="fa-solid fa-layer-group"></i><span class="">Plantilla para Crud</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet-li">
-  <input type="checkbox" id="m-laraveldocs999_cheatseet-check"/>
-  <label for="m-laraveldocs999_cheatseet-check"><a href="/laravel/docs/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet"><span class="">Cheat Sheet</span></a></label>
-  
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseethelper-li">
-  <input type="checkbox" id="m-laraveldocs999_cheatseethelper-check"/>
-  <label for="m-laraveldocs999_cheatseethelper-check"><a href="/laravel/docs/999_cheatseet/helper/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper"><span class="">Helper en Laravel</span></a></label>
-  
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper10_vistas-li">
-  <input type="checkbox" id="m-laraveldocs999_cheatseethelper10_vistas-check"/>
-  <label for="m-laraveldocs999_cheatseethelper10_vistas-check"><a href="/laravel/docs/999_cheatseet/helper/10_vistas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper10_vistas"><span class="">Vistas</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper20_rutas-li">
-  <input type="checkbox" id="m-laraveldocs999_cheatseethelper20_rutas-check"/>
-  <label for="m-laraveldocs999_cheatseethelper20_rutas-check"><a href="/laravel/docs/999_cheatseet/helper/20_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper20_rutas"><span class="">Rutas</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper30_request-li">
-  <input type="checkbox" id="m-laraveldocs999_cheatseethelper30_request-check"/>
-  <label for="m-laraveldocs999_cheatseethelper30_request-check"><a href="/laravel/docs/999_cheatseet/helper/30_request/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper30_request"><span class="">Request en Laravel</span></a></label>
-  
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetartisan-li">
-  <input type="checkbox" id="m-laraveldocs999_cheatseetartisan-check"/>
-  <label for="m-laraveldocs999_cheatseetartisan-check"><a href="/laravel/docs/999_cheatseet/artisan/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetartisan"><span class="">Artisan (CLI)</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetblade-li">
-  <input type="checkbox" id="m-laraveldocs999_cheatseetblade-check"/>
-  <label for="m-laraveldocs999_cheatseetblade-check"><a href="/laravel/docs/999_cheatseet/blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetblade"><span class="">Directivas Blade</span></a></label>
-  
-</li>
-  </ul>
-</li>
-  </ul>
-</li>
+    <a href="/laravel/docs/" title="Laravel Framework de php" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-laraveldocs"><i class="fa-brands fa-laravel"></i><span class="">Laravel</span></a>
+    <ul class="ul-1">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs01_introduccic3b3n-li">
+    <input type="checkbox" id="m-laraveldocs01_introduccic3b3n-check"/>
+    <label for="m-laraveldocs01_introduccic3b3n-check"><a href="/laravel/docs/01_introducci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs01_introduccic3b3n"><i class="fa-solid fa-info"></i><span class="">Introducción</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs02_instalacic3b3n-li">
+    <input type="checkbox" id="m-laraveldocs02_instalacic3b3n-check"/>
+    <label for="m-laraveldocs02_instalacic3b3n-check"><a href="/laravel/docs/02_instalaci%C3%B3n/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs02_instalacic3b3n"><i class="fa-solid fa-arrow-right"></i><span class="">Instalación</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs03_rutas-li">
+    <input type="checkbox" id="m-laraveldocs03_rutas-check"/>
+    <label for="m-laraveldocs03_rutas-check"><a href="/laravel/docs/03_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs03_rutas"><i class="fa-solid fa-road"></i><span class="">Rutas en laravel</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs04_plantillas-li">
+    <input type="checkbox" id="m-laraveldocs04_plantillas-check"/>
+    <label for="m-laraveldocs04_plantillas-check"><a href="/laravel/docs/04_plantillas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas"><i class="fa-brands fa-html5&#34;"></i><span class="">Plantillas en laravel</span></a></label>
+    
+    <ul class="ul-2 foldable">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas01_blade-li">
+    <input type="checkbox" id="m-laraveldocs04_plantillas01_blade-check"/>
+    <label for="m-laraveldocs04_plantillas01_blade-check"><a href="/laravel/docs/04_plantillas/01_blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas01_blade"><i class="fa-brands fa-html5"></i><span class="">Plantillas en laravel</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas02_creandodisec3b1o-li">
+    <input type="checkbox" id="m-laraveldocs04_plantillas02_creandodisec3b1o-check"/>
+    <label for="m-laraveldocs04_plantillas02_creandodisec3b1o-check"><a href="/laravel/docs/04_plantillas/02_creandodise%C3%B1o/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas02_creandodisec3b1o"><i class="fa-solid fa-layer-group"></i><span class="">Diseñando el layout</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas03_componentes-li">
+    <input type="checkbox" id="m-laraveldocs04_plantillas03_componentes-check"/>
+    <label for="m-laraveldocs04_plantillas03_componentes-check"><a href="/laravel/docs/04_plantillas/03_componentes/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas03_componentes"><i class="fa-regular fa-window-restore"></i><span class="">Componentes </span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas05_ejemplo-li">
+    <input type="checkbox" id="m-laraveldocs04_plantillas05_ejemplo-check"/>
+    <label for="m-laraveldocs04_plantillas05_ejemplo-check"><a href="/laravel/docs/04_plantillas/05_ejemplo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas05_ejemplo"><i class="fa-solid fa-diagram-project"></i><span class="">Ejemplo de nuestro proyecto </span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs04_plantillas04_responsivo-li">
+    <input type="checkbox" id="m-laraveldocs04_plantillas04_responsivo-check"/>
+    <label for="m-laraveldocs04_plantillas04_responsivo-check"><a href="/laravel/docs/04_plantillas/04_responsivo/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs04_plantillas04_responsivo"><i class="fa-solid fa-mobile-screen-button"></i><span class="">Diseño responsivo</span></a></label>
+    
+  </li>
+    </ul>
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs06_autenticacion-li">
+    <input type="checkbox" id="m-laraveldocs06_autenticacion-check"/>
+    <label for="m-laraveldocs06_autenticacion-check"><a href="/laravel/docs/06_autenticacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacion"><i class="fa-solid fa-sitemap"></i><span class="">Autenticación</span></a></label>
+    
+    <ul class="ul-2 foldable">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionbreeze-li">
+    <input type="checkbox" id="m-laraveldocs06_autenticacionbreeze-check"/>
+    <label for="m-laraveldocs06_autenticacionbreeze-check"><a href="/laravel/docs/06_autenticacion/breeze/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionbreeze"><i class="fa-solid fa-sitemap"></i><span class="">Instalación</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs06_autenticacionvistas-y-controladores-li">
+    <input type="checkbox" id="m-laraveldocs06_autenticacionvistas-y-controladores-check"/>
+    <label for="m-laraveldocs06_autenticacionvistas-y-controladores-check"><a href="/laravel/docs/06_autenticacion/vistas-y-controladores/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs06_autenticacionvistas-y-controladores"><i class="fa-solid fa-user-lock"></i><span class="">auth: Vistas y Controladores</span></a></label>
+    
+  </li>
+    </ul>
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs07_multilenguaje-li">
+    <input type="checkbox" id="m-laraveldocs07_multilenguaje-check"/>
+    <label for="m-laraveldocs07_multilenguaje-check"><a href="/laravel/docs/07_multilenguaje/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs07_multilenguaje"><span class="">Multilenguaje</span></a></label>
+    
+    <ul class="ul-2 foldable">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs07_multilenguajeplugin_busqueda-li">
+    <input type="checkbox" id="m-laraveldocs07_multilenguajeplugin_busqueda-check"/>
+    <label for="m-laraveldocs07_multilenguajeplugin_busqueda-check"><a href="/laravel/docs/07_multilenguaje/plugin_busqueda/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs07_multilenguajeplugin_busqueda"><i class="fa-solid fa-language"></i><span class="">Extracción de texto</span></a></label>
+    
+  </li>
+    </ul>
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs08_migraciones-li">
+    <input type="checkbox" id="m-laraveldocs08_migraciones-check"/>
+    <label for="m-laraveldocs08_migraciones-check"><a href="/laravel/docs/08_migraciones/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs08_migraciones"><i class="fa-solid fa-database"></i><span class="">Migraciones</span></a></label>
+    
+    <ul class="ul-2 foldable">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs08_migracionesfactory_seeder-li">
+    <input type="checkbox" id="m-laraveldocs08_migracionesfactory_seeder-check"/>
+    <label for="m-laraveldocs08_migracionesfactory_seeder-check"><a href="/laravel/docs/08_migraciones/factory_seeder/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs08_migracionesfactory_seeder"><i class="fa-solid fa-seedling"></i><span class="">Seeders en Laravel</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs08_migraciones_index_oldc3a7-li">
+    <input type="checkbox" id="m-laraveldocs08_migraciones_index_oldc3a7-check"/>
+    <label for="m-laraveldocs08_migraciones_index_oldc3a7-check"><a href="/laravel/docs/08_migraciones/_index_old%C3%A7/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-laraveldocs08_migraciones_index_oldc3a7"><span class=""></span></a></label>
+    
+  </li>
+    </ul>
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs09_crud-li">
+    <input type="checkbox" id="m-laraveldocs09_crud-check"/>
+    <label for="m-laraveldocs09_crud-check"><a href="/laravel/docs/09_crud/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs09_crud"><i class="fa-solid fa-database"></i><span class="">Creando un CRUD</span></a></label>
+    
+    <ul class="ul-2 foldable">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs09_crud01_la-tabla-li">
+    <input type="checkbox" id="m-laraveldocs09_crud01_la-tabla-check"/>
+    <label for="m-laraveldocs09_crud01_la-tabla-check"><a href="/laravel/docs/09_crud/01_la-tabla/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs09_crud01_la-tabla"><i class="fa-solid fa-database"></i><span class="">Creando la tabla</span></a></label>
+    
+  </li>
+    </ul>
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_paginacion-li">
+    <input type="checkbox" id="m-laraveldocs10_paginacion-check"/>
+    <label for="m-laraveldocs10_paginacion-check"><a href="/laravel/docs/10_paginacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_paginacion"><i class="fa-solid fa-table-list"></i><span class="">Paginando datos</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs11_roles-li">
+    <input type="checkbox" id="m-laraveldocs11_roles-check"/>
+    <label for="m-laraveldocs11_roles-check"><a href="/laravel/docs/11_roles/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs11_roles"><i class="fa-brands fa-critical-role"></i><span class="">Roles</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs12_crudgenerico-li">
+    <input type="checkbox" id="m-laraveldocs12_crudgenerico-check"/>
+    <label for="m-laraveldocs12_crudgenerico-check"><a href="/laravel/docs/12_crudgenerico/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs12_crudgenerico"><i class="fa-solid fa-layer-group"></i><span class="">Plantilla para Crud</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs13_api-li">
+    <input type="checkbox" id="m-laraveldocs13_api-check"/>
+    <label for="m-laraveldocs13_api-check"><a href="/laravel/docs/13_api/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_api"><i class="fas fa-code"></i><span class="">Creando un api</span></a></label>
+    
+    <ul class="ul-2 foldable">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs13_api1instalacion-li">
+    <input type="checkbox" id="m-laraveldocs13_api1instalacion-check"/>
+    <label for="m-laraveldocs13_api1instalacion-check"><a href="/laravel/docs/13_api/1.instalacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_api1instalacion"><span class="">01_Introducción y rutas</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs13_api2visiongeneral-li">
+    <input type="checkbox" id="m-laraveldocs13_api2visiongeneral-check"/>
+    <label for="m-laraveldocs13_api2visiongeneral-check"><a href="/laravel/docs/13_api/2.visiongeneral/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_api2visiongeneral"><span class="">Controlador</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs13_api3la-vista-li">
+    <input type="checkbox" id="m-laraveldocs13_api3la-vista-check"/>
+    <label for="m-laraveldocs13_api3la-vista-check"><a href="/laravel/docs/13_api/3.la-vista/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_api3la-vista"><span class="">3.La Vista unitarios</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs13_api4swagger-li">
+    <input type="checkbox" id="m-laraveldocs13_api4swagger-check"/>
+    <label for="m-laraveldocs13_api4swagger-check"><a href="/laravel/docs/13_api/4.swagger/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_api4swagger"><span class="">3.La Vista unitarios</span></a></label>
+    
+  </li>
+    </ul>
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet-li">
+    <input type="checkbox" id="m-laraveldocs999_cheatseet-check"/>
+    <label for="m-laraveldocs999_cheatseet-check"><a href="/laravel/docs/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet"><span class="">Cheat Sheet</span></a></label>
+    
+    <ul class="ul-2 foldable">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseethelper-li">
+    <input type="checkbox" id="m-laraveldocs999_cheatseethelper-check"/>
+    <label for="m-laraveldocs999_cheatseethelper-check"><a href="/laravel/docs/999_cheatseet/helper/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper"><span class="">Helper en Laravel</span></a></label>
+    
+    <ul class="ul-3 foldable">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper10_vistas-li">
+    <input type="checkbox" id="m-laraveldocs999_cheatseethelper10_vistas-check"/>
+    <label for="m-laraveldocs999_cheatseethelper10_vistas-check"><a href="/laravel/docs/999_cheatseet/helper/10_vistas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper10_vistas"><span class="">Vistas</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper20_rutas-li">
+    <input type="checkbox" id="m-laraveldocs999_cheatseethelper20_rutas-check"/>
+    <label for="m-laraveldocs999_cheatseethelper20_rutas-check"><a href="/laravel/docs/999_cheatseet/helper/20_rutas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper20_rutas"><span class="">Rutas</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseethelper30_request-li">
+    <input type="checkbox" id="m-laraveldocs999_cheatseethelper30_request-check"/>
+    <label for="m-laraveldocs999_cheatseethelper30_request-check"><a href="/laravel/docs/999_cheatseet/helper/30_request/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseethelper30_request"><span class="">Request en Laravel</span></a></label>
+    
+  </li>
+    </ul>
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetartisan-li">
+    <input type="checkbox" id="m-laraveldocs999_cheatseetartisan-check"/>
+    <label for="m-laraveldocs999_cheatseetartisan-check"><a href="/laravel/docs/999_cheatseet/artisan/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetartisan"><span class="">Artisan (CLI)</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs999_cheatseetblade-li">
+    <input type="checkbox" id="m-laraveldocs999_cheatseetblade-check"/>
+    <label for="m-laraveldocs999_cheatseetblade-check"><a href="/laravel/docs/999_cheatseet/blade/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseetblade"><span class="">Directivas Blade</span></a></label>
+    
+  </li>
+    </ul>
+  </li>
+    </ul>
+  </li>
     </ul>
   </nav>
 </div>
-
           </aside>
-          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+          <aside class="td-sidebar-toc">
             <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
 <a id="print" href="/laravel/_print/docs/pendiente/10_api/"><i class="fa-solid fa-print fa-fw"></i> Imprimir la sección entera</a>
 
 </div>
 
-            <div class="td-toc">
-        <nav id="TableOfContents">
+            <div class="td-toc" data-proofer-ignore>
+<div class="td-toc-title">
+      <span class="td-toc-title__text">En esta página</span>
+      <a class="td-toc-title__link" title="Inicio de la página" href="#"></a>
+    </div>
+    <nav id="TableOfContents">
   <ul>
     <li><a href="#introducción">Introducción</a></li>
     <li><a href="#instalación-de-swagger-en-laravel-12">Instalación de Swagger en Laravel 12</a></li>
@@ -272,8 +292,8 @@
     <li><a href="#-conclusión">🔹 Conclusión</a></li>
   </ul>
 </nav>
-      </div>
-    
+  </div>
+
             <div class="taxonomy taxonomy-terms-cloud taxo-categories">
       <h5 class="taxonomy-title">Categories</h5>
       <ul class="taxonomy-terms">
@@ -316,8 +336,6 @@
           </aside>
           <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
             
-  
-
             <nav aria-label="breadcrumb" class="td-breadcrumbs">
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
@@ -330,7 +348,6 @@
     swagger</li>
   </ol>
 </nav>
-            
 <div class="td-content">
 	<h1>swagger</h1>
 	
@@ -502,70 +519,70 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
 <!-- raw HTML omitted -->
 <p>Las anotaciones más comúnmente usadas son:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Anotación</th>
-          <th>Descripción en Español</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>@OA\Info</code></td>
-          <td>Define los metadatos de la API (título, versión, descripción).</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Get</code></td>
-          <td>Define una petición GET.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Post</code></td>
-          <td>Define una petición POST.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Put</code></td>
-          <td>Define una petición PUT.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Delete</code></td>
-          <td>Define una petición DELETE.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Schema</code></td>
-          <td>Define un modelo reutilizable.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Property</code></td>
-          <td>Define una propiedad dentro de un esquema.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Parameter</code></td>
-          <td>Define un parámetro de consulta o ruta.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\RequestBody</code></td>
-          <td>Define el cuerpo de una petición (POST/PUT).</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Response</code></td>
-          <td>Define posibles respuestas.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\JsonContent</code></td>
-          <td>Define la estructura JSON dentro de una respuesta.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\SecurityScheme</code></td>
-          <td>Define el método de autenticación (Bearer, API Key).</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Tag</code></td>
-          <td>Agrupa endpoints bajo una etiqueta.</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Server</code></td>
-          <td>Define la URL base del servidor.</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Anotación</th>
+					<th>Descripción en Español</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>@OA\Info</code></td>
+					<td>Define los metadatos de la API (título, versión, descripción).</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Get</code></td>
+					<td>Define una petición GET.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Post</code></td>
+					<td>Define una petición POST.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Put</code></td>
+					<td>Define una petición PUT.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Delete</code></td>
+					<td>Define una petición DELETE.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Schema</code></td>
+					<td>Define un modelo reutilizable.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Property</code></td>
+					<td>Define una propiedad dentro de un esquema.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Parameter</code></td>
+					<td>Define un parámetro de consulta o ruta.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\RequestBody</code></td>
+					<td>Define el cuerpo de una petición (POST/PUT).</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Response</code></td>
+					<td>Define posibles respuestas.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\JsonContent</code></td>
+					<td>Define la estructura JSON dentro de una respuesta.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\SecurityScheme</code></td>
+					<td>Define el método de autenticación (Bearer, API Key).</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Tag</code></td>
+					<td>Agrupa endpoints bajo una etiqueta.</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Server</code></td>
+					<td>Define la URL base del servidor.</td>
+			</tr>
+	</tbody>
 </table>
 <blockquote>
 <p>A continuación mostramos un ejemplo de información general de nuestra API, que habrá que ubicarlo en 
@@ -675,45 +692,45 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>Principales Campos en @OA\Info</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Campo</strong></th>
-          <th><strong>Descripción en Español</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>title</code></td>
-          <td>Define el título de la API.</td>
-          <td>✅ <strong>Sí</strong></td>
-      </tr>
-      <tr>
-          <td><code>version</code></td>
-          <td>Especifica la versión de la API.</td>
-          <td>✅ <strong>Sí</strong></td>
-      </tr>
-      <tr>
-          <td><code>description</code></td>
-          <td>Proporciona una descripción general de la API.</td>
-          <td>❌ <strong>No</strong></td>
-      </tr>
-      <tr>
-          <td><code>termsOfService</code></td>
-          <td>Enlace a los términos de servicio de la API.</td>
-          <td>❌ <strong>No</strong></td>
-      </tr>
-      <tr>
-          <td><code>@OA\Contact</code></td>
-          <td>Información de contacto del responsable de la API.</td>
-          <td>❌ <strong>No</strong></td>
-      </tr>
-      <tr>
-          <td><code>@OA\License</code></td>
-          <td>Detalles sobre la licencia de la API.</td>
-          <td>❌ <strong>No</strong></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Campo</strong></th>
+					<th><strong>Descripción en Español</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>title</code></td>
+					<td>Define el título de la API.</td>
+					<td>✅ <strong>Sí</strong></td>
+			</tr>
+			<tr>
+					<td><code>version</code></td>
+					<td>Especifica la versión de la API.</td>
+					<td>✅ <strong>Sí</strong></td>
+			</tr>
+			<tr>
+					<td><code>description</code></td>
+					<td>Proporciona una descripción general de la API.</td>
+					<td>❌ <strong>No</strong></td>
+			</tr>
+			<tr>
+					<td><code>termsOfService</code></td>
+					<td>Enlace a los términos de servicio de la API.</td>
+					<td>❌ <strong>No</strong></td>
+			</tr>
+			<tr>
+					<td><code>@OA\Contact</code></td>
+					<td>Información de contacto del responsable de la API.</td>
+					<td>❌ <strong>No</strong></td>
+			</tr>
+			<tr>
+					<td><code>@OA\License</code></td>
+					<td>Detalles sobre la licencia de la API.</td>
+					<td>❌ <strong>No</strong></td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -750,30 +767,30 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>Campos dentro de @OA\Contact</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Opción</strong></th>
-          <th><strong>Descripción</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>name</code></td>
-          <td>Nombre de la persona de contacto.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>email</code></td>
-          <td>Dirección de correo electrónico de contacto.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>url</code></td>
-          <td>URL con más información de contacto.</td>
-          <td>❌ No</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Opción</strong></th>
+					<th><strong>Descripción</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>name</code></td>
+					<td>Nombre de la persona de contacto.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>email</code></td>
+					<td>Dirección de correo electrónico de contacto.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>url</code></td>
+					<td>URL con más información de contacto.</td>
+					<td>❌ No</td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -798,25 +815,25 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>Campos dentro de @OA\License</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Campo</strong></th>
-          <th><strong>Descripción en Español</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>name</code></td>
-          <td>Nombre de la licencia de la API.</td>
-          <td>✅ <strong>Sí</strong></td>
-      </tr>
-      <tr>
-          <td><code>url</code></td>
-          <td>Enlace a la licencia de la API.</td>
-          <td>❌ <strong>No</strong></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Campo</strong></th>
+					<th><strong>Descripción en Español</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>name</code></td>
+					<td>Nombre de la licencia de la API.</td>
+					<td>✅ <strong>Sí</strong></td>
+			</tr>
+			<tr>
+					<td><code>url</code></td>
+					<td>Enlace a la licencia de la API.</td>
+					<td>❌ <strong>No</strong></td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -844,99 +861,99 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
 <h4 id="principales-campos-de-metadatos-en-oaget-oapost-oaput-y-oadelete">Principales Campos de Metadatos en @OA\Get, @OA\Post, @OA\Put y @OA\Delete</h4>
 <p>Estos son los campos de metadatos más importantes utilizados en los métodos HTTP dentro de Swagger:</p>
 <table>
-  <thead>
-      <tr>
-          <th><strong>Anotación</strong></th>
-          <th><strong>Descripción en Español</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>path</code></td>
-          <td>Define la ruta de la API donde se ejecutará la operación.</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>operationId</code></td>
-          <td>Identificador único de la operación dentro de la API.</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>tags</code></td>
-          <td>Agrupa las operaciones en categorías dentro de la documentación.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>summary</code></td>
-          <td>Breve descripción de la operación.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>description</code></td>
-          <td>Explicación más detallada de la operación.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Response</code></td>
-          <td>Define las respuestas esperadas de la API.</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Parameter</code></td>
-          <td>Define los parámetros que recibe la API en la URL o query.</td>
-          <td>✅ Solo si hay parámetros en la URL</td>
-      </tr>
-      <tr>
-          <td><code>@OA\RequestBody</code></td>
-          <td>Define los datos que se envían en una petición (POST o PUT).</td>
-          <td>✅ Solo en <code>POST</code> y <code>PUT</code></td>
-      </tr>
-      <tr>
-          <td><code>@OA\JsonContent</code></td>
-          <td>Especifica el formato de respuesta en JSON.</td>
-          <td>✅ Solo si la respuesta es JSON</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Items</code></td>
-          <td>Define los elementos dentro de una respuesta que es un array.</td>
-          <td>✅ Solo si la respuesta es un array</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Anotación</strong></th>
+					<th><strong>Descripción en Español</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>path</code></td>
+					<td>Define la ruta de la API donde se ejecutará la operación.</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>operationId</code></td>
+					<td>Identificador único de la operación dentro de la API.</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>tags</code></td>
+					<td>Agrupa las operaciones en categorías dentro de la documentación.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>summary</code></td>
+					<td>Breve descripción de la operación.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>description</code></td>
+					<td>Explicación más detallada de la operación.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Response</code></td>
+					<td>Define las respuestas esperadas de la API.</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Parameter</code></td>
+					<td>Define los parámetros que recibe la API en la URL o query.</td>
+					<td>✅ Solo si hay parámetros en la URL</td>
+			</tr>
+			<tr>
+					<td><code>@OA\RequestBody</code></td>
+					<td>Define los datos que se envían en una petición (POST o PUT).</td>
+					<td>✅ Solo en <code>POST</code> y <code>PUT</code></td>
+			</tr>
+			<tr>
+					<td><code>@OA\JsonContent</code></td>
+					<td>Especifica el formato de respuesta en JSON.</td>
+					<td>✅ Solo si la respuesta es JSON</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Items</code></td>
+					<td>Define los elementos dentro de una respuesta que es un array.</td>
+					<td>✅ Solo si la respuesta es un array</td>
+			</tr>
+	</tbody>
 </table>
 <details>
     <summary>@OA\Response</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Opción</strong></th>
-          <th><strong>Descripción</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>response</code></td>
-          <td>Código de estado HTTP (<code>200</code>, <code>400</code>, <code>404</code>, etc.).</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>description</code></td>
-          <td>Breve descripción de la respuesta.</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>@OA\JsonContent</code></td>
-          <td>Define el contenido en formato JSON.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>@OA\XmlContent</code></td>
-          <td>Define el contenido en formato XML.</td>
-          <td>❌ No</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Opción</strong></th>
+					<th><strong>Descripción</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>response</code></td>
+					<td>Código de estado HTTP (<code>200</code>, <code>400</code>, <code>404</code>, etc.).</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>description</code></td>
+					<td>Breve descripción de la respuesta.</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>@OA\JsonContent</code></td>
+					<td>Define el contenido en formato JSON.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>@OA\XmlContent</code></td>
+					<td>Define el contenido en formato XML.</td>
+					<td>❌ No</td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -962,35 +979,35 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>@OA\Parameter</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Opción</strong></th>
-          <th><strong>Descripción</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>name</code></td>
-          <td>Nombre del parámetro (<code>id</code>, <code>page</code>, etc.).</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>in</code></td>
-          <td>Ubicación (<code>query</code>, <code>path</code>, <code>header</code>, <code>cookie</code>).</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>required</code></td>
-          <td>Indica si el parámetro es obligatorio (<code>true</code> o <code>false</code>).</td>
-          <td>✅ Solo en <code>path</code></td>
-      </tr>
-      <tr>
-          <td><code>@OA\Schema</code></td>
-          <td>Define el tipo de dato (<code>string</code>, <code>integer</code>, <code>boolean</code>).</td>
-          <td>❌ No</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Opción</strong></th>
+					<th><strong>Descripción</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>name</code></td>
+					<td>Nombre del parámetro (<code>id</code>, <code>page</code>, etc.).</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>in</code></td>
+					<td>Ubicación (<code>query</code>, <code>path</code>, <code>header</code>, <code>cookie</code>).</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>required</code></td>
+					<td>Indica si el parámetro es obligatorio (<code>true</code> o <code>false</code>).</td>
+					<td>✅ Solo en <code>path</code></td>
+			</tr>
+			<tr>
+					<td><code>@OA\Schema</code></td>
+					<td>Define el tipo de dato (<code>string</code>, <code>integer</code>, <code>boolean</code>).</td>
+					<td>❌ No</td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -1016,35 +1033,35 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>@OA\RequestBody</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Opción</strong></th>
-          <th><strong>Descripción</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>required</code></td>
-          <td>Indica si el cuerpo es obligatorio (<code>true</code> o <code>false</code>).</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>description</code></td>
-          <td>Explicación del contenido del cuerpo.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>@OA\JsonContent</code></td>
-          <td>Define el contenido en JSON.</td>
-          <td>✅ Solo si la petición envía datos</td>
-      </tr>
-      <tr>
-          <td><code>@OA\XmlContent</code></td>
-          <td>Define el contenido en XML (opcional).</td>
-          <td>❌ No</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Opción</strong></th>
+					<th><strong>Descripción</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>required</code></td>
+					<td>Indica si el cuerpo es obligatorio (<code>true</code> o <code>false</code>).</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>description</code></td>
+					<td>Explicación del contenido del cuerpo.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>@OA\JsonContent</code></td>
+					<td>Define el contenido en JSON.</td>
+					<td>✅ Solo si la petición envía datos</td>
+			</tr>
+			<tr>
+					<td><code>@OA\XmlContent</code></td>
+					<td>Define el contenido en XML (opcional).</td>
+					<td>❌ No</td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -1070,30 +1087,30 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>@OA\JsonContent</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Opción</strong></th>
-          <th><strong>Descripción</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>type</code></td>
-          <td>Tipo de dato (<code>object</code>, <code>array</code>).</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Items</code></td>
-          <td>Define elementos dentro de un array.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Property</code></td>
-          <td>Define propiedades dentro de un objeto JSON.</td>
-          <td>❌ No</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Opción</strong></th>
+					<th><strong>Descripción</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>type</code></td>
+					<td>Tipo de dato (<code>object</code>, <code>array</code>).</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Items</code></td>
+					<td>Define elementos dentro de un array.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Property</code></td>
+					<td>Define propiedades dentro de un objeto JSON.</td>
+					<td>❌ No</td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -1119,35 +1136,35 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>@OA\Items</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Opción</strong></th>
-          <th><strong>Descripción</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>type</code></td>
-          <td>Tipo de dato de los elementos (<code>string</code>, <code>integer</code>, <code>object</code>).</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Property</code></td>
-          <td>Define propiedades dentro del objeto del array.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>example</code></td>
-          <td>Define un valor de ejemplo para un elemento del array.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>ref</code></td>
-          <td>Permite hacer referencia a un esquema predefinido (<code>ref=&quot;#/components/schemas/Alumno&quot;</code>).</td>
-          <td>❌ No</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Opción</strong></th>
+					<th><strong>Descripción</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>type</code></td>
+					<td>Tipo de dato de los elementos (<code>string</code>, <code>integer</code>, <code>object</code>).</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Property</code></td>
+					<td>Define propiedades dentro del objeto del array.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>example</code></td>
+					<td>Define un valor de ejemplo para un elemento del array.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>ref</code></td>
+					<td>Permite hacer referencia a un esquema predefinido (<code>ref=&quot;#/components/schemas/Alumno&quot;</code>).</td>
+					<td>❌ No</td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -1173,50 +1190,50 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
     <summary>@OA\Property</summary>
     <div class="summary-content">
         <table>
-  <thead>
-      <tr>
-          <th><strong>Opción</strong></th>
-          <th><strong>Descripción</strong></th>
-          <th><strong>Obligatorio</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>property</code></td>
-          <td>Nombre de la propiedad en el objeto JSON.</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>type</code></td>
-          <td>Tipo de dato (<code>string</code>, <code>integer</code>, <code>boolean</code>, <code>array</code>, <code>object</code>).</td>
-          <td>✅ Sí</td>
-      </tr>
-      <tr>
-          <td><code>format</code></td>
-          <td>Formato del dato (<code>date-time</code>, <code>email</code>, <code>uuid</code>, etc.).</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>example</code></td>
-          <td>Valor de ejemplo para la propiedad.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>description</code></td>
-          <td>Breve explicación de la propiedad.</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Items</code></td>
-          <td>Se usa si la propiedad es un array (<code>type=&quot;array&quot;</code>).</td>
-          <td>❌ No</td>
-      </tr>
-      <tr>
-          <td><code>@OA\Schema</code></td>
-          <td>Se usa si la propiedad es un objeto (<code>type=&quot;object&quot;</code>).</td>
-          <td>❌ No</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th><strong>Opción</strong></th>
+					<th><strong>Descripción</strong></th>
+					<th><strong>Obligatorio</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>property</code></td>
+					<td>Nombre de la propiedad en el objeto JSON.</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>type</code></td>
+					<td>Tipo de dato (<code>string</code>, <code>integer</code>, <code>boolean</code>, <code>array</code>, <code>object</code>).</td>
+					<td>✅ Sí</td>
+			</tr>
+			<tr>
+					<td><code>format</code></td>
+					<td>Formato del dato (<code>date-time</code>, <code>email</code>, <code>uuid</code>, etc.).</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>example</code></td>
+					<td>Valor de ejemplo para la propiedad.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>description</code></td>
+					<td>Breve explicación de la propiedad.</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Items</code></td>
+					<td>Se usa si la propiedad es un array (<code>type=&quot;array&quot;</code>).</td>
+					<td>❌ No</td>
+			</tr>
+			<tr>
+					<td><code>@OA\Schema</code></td>
+					<td>Se usa si la propiedad es un objeto (<code>type=&quot;object&quot;</code>).</td>
+					<td>❌ No</td>
+			</tr>
+	</tbody>
 </table>
 
     </div>
@@ -1515,13 +1532,13 @@ En su contendio podemos especificar diferentes directivas, como el directorio d�
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

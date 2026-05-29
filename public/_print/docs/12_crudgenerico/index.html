@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/12_crudgenerico/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/12_crudgenerico/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,34 +21,34 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Plantilla para Crud | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Planteamiento Se trata de crear un sistema automatizado para generar un crud genérico a partir de un fichero de configuración.
+En el fichero especificaremos los recursos que queremos gestionar
+Este proyecto automatizará una gran parte del proceso
+title Planteamiento Crud genérico component &#34;Fichero config/resource.php&#34; as Config #5DADE2 component &#34;main.blade.php&#34; as Vista #F5B041 component &#34;CrudController.php&#34; as Controller #58D68D Config --&gt; Vista: config(&#34;resources&#34;) Vista --&gt; Controller : &lt;resource&gt; note right of Controller Genera datos: - resource - rows - fields - table end note Creamos el fichero de configuración En la carpeta config creamos un fichero llamado resources.php">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/12_crudgenerico/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Plantilla para Crud">
-  <meta property="og:description" content="Planteamiento Se trata de crear un sistema automatizado para generar un crud genérico a partir de un fichero de configuración.
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Plantilla para Crud">
+	<meta property="og:description" content="Planteamiento Se trata de crear un sistema automatizado para generar un crud genérico a partir de un fichero de configuración.
 En el fichero especificaremos los recursos que queremos gestionar
 Este proyecto automatizará una gran parte del proceso
 title Planteamiento Crud genérico component &#34;Fichero config/resource.php&#34; as Config #5DADE2 component &#34;main.blade.php&#34; as Vista #F5B041 component &#34;CrudController.php&#34; as Controller #58D68D Config --&gt; Vista: config(&#34;resources&#34;) Vista --&gt; Controller : &lt;resource&gt; note right of Controller Genera datos: - resource - rows - fields - table end note Creamos el fichero de configuración En la carpeta config creamos un fichero llamado resources.php">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Plantilla para Crud">
-  <meta itemprop="description" content="Planteamiento Se trata de crear un sistema automatizado para generar un crud genérico a partir de un fichero de configuración.
+	<meta itemprop="name" content="Plantilla para Crud">
+	<meta itemprop="description" content="Planteamiento Se trata de crear un sistema automatizado para generar un crud genérico a partir de un fichero de configuración.
 En el fichero especificaremos los recursos que queremos gestionar
 Este proyecto automatizará una gran parte del proceso
 title Planteamiento Crud genérico component &#34;Fichero config/resource.php&#34; as Config #5DADE2 component &#34;main.blade.php&#34; as Vista #F5B041 component &#34;CrudController.php&#34; as Controller #58D68D Config --&gt; Vista: config(&#34;resources&#34;) Vista --&gt; Controller : &lt;resource&gt; note right of Controller Genera datos: - resource - rows - fields - table end note Creamos el fichero de configuración En la carpeta config creamos un fichero llamado resources.php">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="1463">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Plantilla para Crud">
-  <meta name="twitter:description" content="Planteamiento Se trata de crear un sistema automatizado para generar un crud genérico a partir de un fichero de configuración.
+	<meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="wordCount" content="1469">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Plantilla para Crud">
+	<meta name="twitter:description" content="Planteamiento Se trata de crear un sistema automatizado para generar un crud genérico a partir de un fichero de configuración.
 En el fichero especificaremos los recursos que queremos gestionar
 Este proyecto automatizará una gran parte del proceso
 title Planteamiento Crud genérico component &#34;Fichero config/resource.php&#34; as Config #5DADE2 component &#34;main.blade.php&#34; as Vista #F5B041 component &#34;CrudController.php&#34; as Controller #58D68D Config --&gt; Vista: config(&#34;resources&#34;) Vista --&gt; Controller : &lt;resource&gt; note right of Controller Genera datos: - resource - rows - fields - table end note Creamos el fichero de configuración En la carpeta config creamos un fichero llamado resources.php">
-
-
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -68,12 +69,17 @@ title Planteamiento Crud genérico component &#34;Fichero config/resource.php&#3
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -176,12 +182,29 @@ Esta sería una tarjeta que tenemos ahora</p>
 </span></span></code></pre></div><p>Queremos creaer tantas tarjetas como elementos tengamos en el fichero de resources</p>
 <p>Analizamos los datos que necesitamos en el card y vemos cómo obtenerlos:</p>
 <ul>
-<li>Vamos a obviar de momento el nombre traducido, y vamos a usar como nombre siempre el valor del recurso que tengo en el
-fichero.</li>
-<li>El tema de las imágenes, lo solucionaremos teniendo imágenes todas con el nombre del recurso, en nuestro caso:
-!(img_1.png)[img_1.png]</li>
-<li>El tema de la ruta, es diferente, necesito rutas pero que el recurso que quiere gestionar sea parametrizable. Para
-resolver este punto ver el apartado siguiente</li>
+<li>
+<p>Vamos a obviar de momento el nombre traducido, y vamos a usar como nombre siempre el valor del recurso que tengo en el
+fichero.</p>
+</li>
+<li>
+<p>El tema de las imágenes, lo solucionaremos teniendo imágenes todas con el nombre del recurso, en nuestro caso:
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 466px">
+<img class="card-img-top" src="/laravel/docs/12_crudgenerico/img_hu_867efdb59a71cbf4.png" width="456" height="223">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+
+
+  
+
+</p>
+</figcaption>
+</figure>
+</p>
+</li>
+<li>
+<p>El tema de la ruta, es diferente, necesito rutas pero que el recurso que quiere gestionar sea parametrizable. Para
+resolver este punto ver el apartado siguiente</p>
+</li>
 </ul>
 <p>Ahora tenemos
 Una vez que tenemos esto la creación del <strong>main</strong> se vuelve sencilla</p>
@@ -200,108 +223,108 @@ Una vez que tenemos esto la creación del <strong>main</strong> se vuelve sencil
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>php artisan make:controller CrudController --api
 </span></span></code></pre></div><p>Por ser de tipo API tendrá todos los métodos para atender las solicitudes</p>
 <table>
-  <thead>
-      <tr>
-          <th>Método</th>
-          <th>Endpoint</th>
-          <th>Método Controller</th>
-          <th>Descripción</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>GET</td>
-          <td>/recurso</td>
-          <td>index()</td>
-          <td>Listado de todos los registros del recurso</td>
-      </tr>
-      <tr>
-          <td>GET</td>
-          <td>/recurso/{id}</td>
-          <td>show()</td>
-          <td>Mostrar un registro concreto</td>
-      </tr>
-      <tr>
-          <td>POST</td>
-          <td>/recurso</td>
-          <td>store()</td>
-          <td>Crear un nuevo registro</td>
-      </tr>
-      <tr>
-          <td>PUT</td>
-          <td>/recurso/{id}</td>
-          <td>update()</td>
-          <td>Actualizar un registro completo</td>
-      </tr>
-      <tr>
-          <td>PATCH</td>
-          <td>/recurso/{id}</td>
-          <td>update()</td>
-          <td>Actualizar parcialmente un registro</td>
-      </tr>
-      <tr>
-          <td>DELETE</td>
-          <td>/recurso/{id}</td>
-          <td>destroy()</td>
-          <td>Eliminar un registro</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Método</th>
+					<th>Endpoint</th>
+					<th>Método Controller</th>
+					<th>Descripción</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>GET</td>
+					<td>/recurso</td>
+					<td>index()</td>
+					<td>Listado de todos los registros del recurso</td>
+			</tr>
+			<tr>
+					<td>GET</td>
+					<td>/recurso/{id}</td>
+					<td>show()</td>
+					<td>Mostrar un registro concreto</td>
+			</tr>
+			<tr>
+					<td>POST</td>
+					<td>/recurso</td>
+					<td>store()</td>
+					<td>Crear un nuevo registro</td>
+			</tr>
+			<tr>
+					<td>PUT</td>
+					<td>/recurso/{id}</td>
+					<td>update()</td>
+					<td>Actualizar un registro completo</td>
+			</tr>
+			<tr>
+					<td>PATCH</td>
+					<td>/recurso/{id}</td>
+					<td>update()</td>
+					<td>Actualizar parcialmente un registro</td>
+			</tr>
+			<tr>
+					<td>DELETE</td>
+					<td>/recurso/{id}</td>
+					<td>destroy()</td>
+					<td>Eliminar un registro</td>
+			</tr>
+	</tbody>
 </table>
 <p>Como el recurso es te tipo parámetro, paremetrizamos la ruta. y le ponemos nombre</p>
 <table>
-  <thead>
-      <tr>
-          <th>Método</th>
-          <th>Endpoint</th>
-          <th>Método Controller</th>
-          <th>Descripción</th>
-          <th>Ruta</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>GET</td>
-          <td>/{resource}</td>
-          <td>index(string $resource)</td>
-          <td>Listado de todos los registros del recurso</td>
-          <td>crud.index</td>
-      </tr>
-      <tr>
-          <td>GET</td>
-          <td>/{resource}/{id}</td>
-          <td>show(string $resource, $id)</td>
-          <td>Mostrar un registro concreto</td>
-          <td>crud.show</td>
-      </tr>
-      <tr>
-          <td>POST</td>
-          <td>/{resource}</td>
-          <td>store(string $resource)</td>
-          <td>Crear un nuevo registro</td>
-          <td>crud.store</td>
-      </tr>
-      <tr>
-          <td>PUT</td>
-          <td>/{resource}/{id}</td>
-          <td>update(string $resource, $id)</td>
-          <td>Actualizar un registro completo</td>
-          <td>crud.update</td>
-      </tr>
-      <tr>
-          <td>PATCH</td>
-          <td>/{resource}/{id}</td>
-          <td>update(string $resource, $id)</td>
-          <td>Actualizar parcialmente un registro</td>
-          <td>crud.update</td>
-      </tr>
-      <tr>
-          <td>DELETE</td>
-          <td>/{resource}/{id}</td>
-          <td>destroy(string $resource, $id)</td>
-          <td>Eliminar un registro</td>
-          <td>crud.destroy</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Método</th>
+					<th>Endpoint</th>
+					<th>Método Controller</th>
+					<th>Descripción</th>
+					<th>Ruta</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>GET</td>
+					<td>/{resource}</td>
+					<td>index(string $resource)</td>
+					<td>Listado de todos los registros del recurso</td>
+					<td>crud.index</td>
+			</tr>
+			<tr>
+					<td>GET</td>
+					<td>/{resource}/{id}</td>
+					<td>show(string $resource, $id)</td>
+					<td>Mostrar un registro concreto</td>
+					<td>crud.show</td>
+			</tr>
+			<tr>
+					<td>POST</td>
+					<td>/{resource}</td>
+					<td>store(string $resource)</td>
+					<td>Crear un nuevo registro</td>
+					<td>crud.store</td>
+			</tr>
+			<tr>
+					<td>PUT</td>
+					<td>/{resource}/{id}</td>
+					<td>update(string $resource, $id)</td>
+					<td>Actualizar un registro completo</td>
+					<td>crud.update</td>
+			</tr>
+			<tr>
+					<td>PATCH</td>
+					<td>/{resource}/{id}</td>
+					<td>update(string $resource, $id)</td>
+					<td>Actualizar parcialmente un registro</td>
+					<td>crud.update</td>
+			</tr>
+			<tr>
+					<td>DELETE</td>
+					<td>/{resource}/{id}</td>
+					<td>destroy(string $resource, $id)</td>
+					<td>Eliminar un registro</td>
+					<td>crud.destroy</td>
+			</tr>
+	</tbody>
 </table>
 <p>Para ello sería deseable crear en <strong>web.php</strong> con el método <strong>Route::resources</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Route::<span style="color:#658b00">resource</span>(<span style="color:#cd5555">&#34;{resource}&#34;</span>, CrudController::<span style="color:#658b00">class</span>)-&gt;<span style="color:#658b00">middleware</span>(<span style="color:#cd5555">&#39;auth&#39;</span>);
@@ -330,7 +353,7 @@ tomamos esta por ser la más directa.</p>
 Es conveniente tener clara la estructura de datos que tenemos en este caso y conseguir un sistema adaptable a cualquiera.</p>
 <p>Partimos de nuestro sistema con el diagram E/R
 <figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 824px">
-<img class="card-img-top" src="/laravel/docs/12_crudgenerico/ER_hu_d601b06774cdae74.png" width="814" height="577">
+<img class="card-img-top" src="/laravel/docs/12_crudgenerico/ER_hu_a22559423193c43c.png" width="814" height="577">
 <figcaption class="card-body px-0 pt-2 pb-0">
 <p class="card-text">
 
@@ -590,6 +613,7 @@ Accedemos al fichero recién creado y escribimos el código</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>php artisan generate:langs-files
 </span></span></code></pre></div><p>4.- Ahora toca revisar los contendios y actualizarlo correctamente</p>
 <h2 id="componente-para-crear-los-fichero-de-labels">Componente para crear los fichero de labels</h2>
+<h2 id="revisar-todos-los-ficheros-creados-y-actualizarlos">Revisar todos los ficheros creados y actualizarlos</h2>
 
 </div>
 </div>
@@ -617,13 +641,13 @@ Accedemos al fichero recién creado y escribimos el código</p>
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

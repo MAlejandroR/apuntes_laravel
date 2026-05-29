@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/11_roles/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/11_roles/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,40 +21,42 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Roles | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Gestión de roles Spatie Laravel Permission
+El paquete spatie/laravel-permission permite gestionar roles y permisos fácilmente en Laravel.
+Se integra con el sistema de autenticación estándar, por lo que puedes asignar y comprobar el rol de cualquier usuario autenticado.
+Instalación 1 composer require spatie/laravel-permission Publica la configuración y migraciones:
+1 php artisan vendor:publish --provider=&#34;Spatie\Permission\PermissionServiceProvider&#34; Ejecuta las migraciones:
+1 php artisan migrate Esto creará las tablas necesarias:">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/11_roles/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Roles">
-  <meta property="og:description" content="Gestión de roles Spatie Laravel Permission
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Roles">
+	<meta property="og:description" content="Gestión de roles Spatie Laravel Permission
 El paquete spatie/laravel-permission permite gestionar roles y permisos fácilmente en Laravel.
 Se integra con el sistema de autenticación estándar, por lo que puedes asignar y comprobar el rol de cualquier usuario autenticado.
 Instalación 1 composer require spatie/laravel-permission Publica la configuración y migraciones:
 1 php artisan vendor:publish --provider=&#34;Spatie\Permission\PermissionServiceProvider&#34; Ejecuta las migraciones:
 1 php artisan migrate Esto creará las tablas necesarias:">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Roles">
-  <meta itemprop="description" content="Gestión de roles Spatie Laravel Permission
+	<meta itemprop="name" content="Roles">
+	<meta itemprop="description" content="Gestión de roles Spatie Laravel Permission
 El paquete spatie/laravel-permission permite gestionar roles y permisos fácilmente en Laravel.
 Se integra con el sistema de autenticación estándar, por lo que puedes asignar y comprobar el rol de cualquier usuario autenticado.
 Instalación 1 composer require spatie/laravel-permission Publica la configuración y migraciones:
 1 php artisan vendor:publish --provider=&#34;Spatie\Permission\PermissionServiceProvider&#34; Ejecuta las migraciones:
 1 php artisan migrate Esto creará las tablas necesarias:">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="393">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Roles">
-  <meta name="twitter:description" content="Gestión de roles Spatie Laravel Permission
+	<meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="wordCount" content="393">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Roles">
+	<meta name="twitter:description" content="Gestión de roles Spatie Laravel Permission
 El paquete spatie/laravel-permission permite gestionar roles y permisos fácilmente en Laravel.
 Se integra con el sistema de autenticación estándar, por lo que puedes asignar y comprobar el rol de cualquier usuario autenticado.
 Instalación 1 composer require spatie/laravel-permission Publica la configuración y migraciones:
 1 php artisan vendor:publish --provider=&#34;Spatie\Permission\PermissionServiceProvider&#34; Ejecuta las migraciones:
 1 php artisan migrate Esto creará las tablas necesarias:">
-
-
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -74,12 +77,17 @@ Instalación 1 composer require spatie/laravel-permission Publica la configuraci
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -367,46 +375,46 @@ Se integra con el sistema de autenticación estándar, por lo que puedes asignar
 <hr>
 <h3 id="resumen-final">Resumen final</h3>
 <table>
-  <thead>
-      <tr>
-          <th>Acción</th>
-          <th>Ejemplo</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Instalar paquete</strong></td>
-          <td><code>composer require spatie/laravel-permission</code></td>
-      </tr>
-      <tr>
-          <td><strong>Publicar y migrar</strong></td>
-          <td><code>php artisan vendor:publish ... &amp;&amp; php artisan migrate</code></td>
-      </tr>
-      <tr>
-          <td><strong>Añadir HasRoles al modelo</strong></td>
-          <td><code>use HasRoles;</code></td>
-      </tr>
-      <tr>
-          <td><strong>Crear roles</strong></td>
-          <td><code>Role::create(['name' =&gt; 'student']);</code></td>
-      </tr>
-      <tr>
-          <td><strong>Asignar rol a usuario</strong></td>
-          <td><code>$user-&gt;assignRole('student');</code></td>
-      </tr>
-      <tr>
-          <td><strong>Comprobar rol</strong></td>
-          <td><code>auth()-&gt;user()-&gt;hasRole('admin');</code></td>
-      </tr>
-      <tr>
-          <td><strong>Obtener rol actual</strong></td>
-          <td><code>auth()-&gt;user()-&gt;getRoleNames()-&gt;first();</code></td>
-      </tr>
-      <tr>
-          <td><strong>Usuarios con un rol</strong></td>
-          <td><code>User::role(&quot;admin&quot;)-&gt;get();</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Acción</th>
+					<th>Ejemplo</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Instalar paquete</strong></td>
+					<td><code>composer require spatie/laravel-permission</code></td>
+			</tr>
+			<tr>
+					<td><strong>Publicar y migrar</strong></td>
+					<td><code>php artisan vendor:publish ... &amp;&amp; php artisan migrate</code></td>
+			</tr>
+			<tr>
+					<td><strong>Añadir HasRoles al modelo</strong></td>
+					<td><code>use HasRoles;</code></td>
+			</tr>
+			<tr>
+					<td><strong>Crear roles</strong></td>
+					<td><code>Role::create(['name' =&gt; 'student']);</code></td>
+			</tr>
+			<tr>
+					<td><strong>Asignar rol a usuario</strong></td>
+					<td><code>$user-&gt;assignRole('student');</code></td>
+			</tr>
+			<tr>
+					<td><strong>Comprobar rol</strong></td>
+					<td><code>auth()-&gt;user()-&gt;hasRole('admin');</code></td>
+			</tr>
+			<tr>
+					<td><strong>Obtener rol actual</strong></td>
+					<td><code>auth()-&gt;user()-&gt;getRoleNames()-&gt;first();</code></td>
+			</tr>
+			<tr>
+					<td><strong>Usuarios con un rol</strong></td>
+					<td><code>User::role(&quot;admin&quot;)-&gt;get();</code></td>
+			</tr>
+	</tbody>
 </table>
 <hr>
 <hr>
@@ -437,13 +445,13 @@ Se integra con el sistema de autenticación estándar, por lo que puedes asignar
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

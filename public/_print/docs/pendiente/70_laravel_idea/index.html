@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/pendiente/70_laravel_idea/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/pendiente/70_laravel_idea/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,31 +21,30 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Laravel Idea | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Cómo usar Laravel Idea Laravel Idea es un plugin premium para PhpStorm que facilita el desarrollo de proyectos Laravel.
+Instalación Abre PhpStorm. Ve a Preferences / Settings → Plugins. Busca “Laravel Idea”. Instala el plugin y reinicia PhpStorm. Activa la licencia (puedes probarlo gratis unos días). ️ Configuración En Preferences → Laravel Idea puedes ajustar:
+Autocompletado de rutas, vistas y traducciones. Generación de migrations, factories y seeders junto al modelo. Integración con tests. Reglas para nombres de tablas, campos y relaciones. Soporte para paquetes externos (ej: Spatie, Filament). ️ Generar código (ejemplo) Para crear un modelo con migration y factory:">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/pendiente/70_laravel_idea/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Laravel Idea">
-  <meta property="og:description" content="Cómo usar Laravel Idea Laravel Idea es un plugin premium para PhpStorm que facilita el desarrollo de proyectos Laravel.
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Laravel Idea">
+	<meta property="og:description" content="Cómo usar Laravel Idea Laravel Idea es un plugin premium para PhpStorm que facilita el desarrollo de proyectos Laravel.
 Instalación Abre PhpStorm. Ve a Preferences / Settings → Plugins. Busca “Laravel Idea”. Instala el plugin y reinicia PhpStorm. Activa la licencia (puedes probarlo gratis unos días). ️ Configuración En Preferences → Laravel Idea puedes ajustar:
 Autocompletado de rutas, vistas y traducciones. Generación de migrations, factories y seeders junto al modelo. Integración con tests. Reglas para nombres de tablas, campos y relaciones. Soporte para paquetes externos (ej: Spatie, Filament). ️ Generar código (ejemplo) Para crear un modelo con migration y factory:">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Laravel Idea">
-  <meta itemprop="description" content="Cómo usar Laravel Idea Laravel Idea es un plugin premium para PhpStorm que facilita el desarrollo de proyectos Laravel.
+	<meta itemprop="name" content="Laravel Idea">
+	<meta itemprop="description" content="Cómo usar Laravel Idea Laravel Idea es un plugin premium para PhpStorm que facilita el desarrollo de proyectos Laravel.
 Instalación Abre PhpStorm. Ve a Preferences / Settings → Plugins. Busca “Laravel Idea”. Instala el plugin y reinicia PhpStorm. Activa la licencia (puedes probarlo gratis unos días). ️ Configuración En Preferences → Laravel Idea puedes ajustar:
 Autocompletado de rutas, vistas y traducciones. Generación de migrations, factories y seeders junto al modelo. Integración con tests. Reglas para nombres de tablas, campos y relaciones. Soporte para paquetes externos (ej: Spatie, Filament). ️ Generar código (ejemplo) Para crear un modelo con migration y factory:">
-  <meta itemprop="datePublished" content="2025-07-27T12:30:00+02:00">
-  <meta itemprop="dateModified" content="2025-07-27T12:30:00+02:00">
-  <meta itemprop="wordCount" content="524">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Laravel Idea">
-  <meta name="twitter:description" content="Cómo usar Laravel Idea Laravel Idea es un plugin premium para PhpStorm que facilita el desarrollo de proyectos Laravel.
+	<meta itemprop="datePublished" content="2025-07-27T12:30:00+02:00">
+	<meta itemprop="dateModified" content="2025-07-27T12:30:00+02:00">
+	<meta itemprop="wordCount" content="524">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Laravel Idea">
+	<meta name="twitter:description" content="Cómo usar Laravel Idea Laravel Idea es un plugin premium para PhpStorm que facilita el desarrollo de proyectos Laravel.
 Instalación Abre PhpStorm. Ve a Preferences / Settings → Plugins. Busca “Laravel Idea”. Instala el plugin y reinicia PhpStorm. Activa la licencia (puedes probarlo gratis unos días). ️ Configuración En Preferences → Laravel Idea puedes ajustar:
 Autocompletado de rutas, vistas y traducciones. Generación de migrations, factories y seeders junto al modelo. Integración con tests. Reglas para nombres de tablas, campos y relaciones. Soporte para paquetes externos (ej: Spatie, Filament). ️ Generar código (ejemplo) Para crear un modelo con migration y factory:">
-
-
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -65,12 +65,17 @@ Autocompletado de rutas, vistas y traducciones. Generación de migrations, facto
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -185,38 +190,38 @@ Versión imprimible multipagina.
 <hr>
 <h2 id="-tabla-de-atajos-útiles">️ Tabla de atajos útiles</h2>
 <table>
-  <thead>
-      <tr>
-          <th>Acción</th>
-          <th>Atajo (Mac / Windows)</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Generar código Laravel</td>
-          <td><code>Alt+Insert</code> o clic derecho → Generate</td>
-      </tr>
-      <tr>
-          <td>Buscar cualquier archivo, clase o vista</td>
-          <td><code>Shift+Shift</code></td>
-      </tr>
-      <tr>
-          <td>Navegar a definición (ir a modelo, vista&hellip;)</td>
-          <td><code>Ctrl+Click</code> o <code>Cmd+Click</code></td>
-      </tr>
-      <tr>
-          <td>Buscar dentro de archivos abiertos</td>
-          <td><code>Cmd+E</code> o <code>Ctrl+E</code></td>
-      </tr>
-      <tr>
-          <td>Mostrar estructura del archivo</td>
-          <td><code>Cmd+F12</code> o <code>Ctrl+F12</code></td>
-      </tr>
-      <tr>
-          <td>Generar métodos mágicos (ej: <code>getXAttribute</code>)</td>
-          <td><code>Alt+Insert</code> en la clase</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Acción</th>
+					<th>Atajo (Mac / Windows)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Generar código Laravel</td>
+					<td><code>Alt+Insert</code> o clic derecho → Generate</td>
+			</tr>
+			<tr>
+					<td>Buscar cualquier archivo, clase o vista</td>
+					<td><code>Shift+Shift</code></td>
+			</tr>
+			<tr>
+					<td>Navegar a definición (ir a modelo, vista&hellip;)</td>
+					<td><code>Ctrl+Click</code> o <code>Cmd+Click</code></td>
+			</tr>
+			<tr>
+					<td>Buscar dentro de archivos abiertos</td>
+					<td><code>Cmd+E</code> o <code>Ctrl+E</code></td>
+			</tr>
+			<tr>
+					<td>Mostrar estructura del archivo</td>
+					<td><code>Cmd+F12</code> o <code>Ctrl+F12</code></td>
+			</tr>
+			<tr>
+					<td>Generar métodos mágicos (ej: <code>getXAttribute</code>)</td>
+					<td><code>Alt+Insert</code> en la clase</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
 <h2 id="consejos-finales">Consejos finales</h2>
@@ -323,13 +328,13 @@ Pensar qué entidades vas a necesitar, sus campos y relaciones.</li>
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

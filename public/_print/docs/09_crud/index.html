@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/09_crud/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/09_crud/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,28 +21,26 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Creando un CRUD | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Realizar un CRUD CRUD Vamos a hacer una aplicación que premita interactuar con una tabla en la base de datos a través de la aplicaicón.
+La palabra CRUD viene de C reate R ead U pdate D elete, es decir, que desde nuestra aplicación podamos hacer estas acciones sobre la tabla de un recurso (por ejemplo, proyectos, alumnos, profesores, …)">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/09_crud/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Creando un CRUD">
-  <meta property="og:description" content="Realizar un CRUD CRUD Vamos a hacer una aplicación que premita interactuar con una tabla en la base de datos a través de la aplicaicón.
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Creando un CRUD">
+	<meta property="og:description" content="Realizar un CRUD CRUD Vamos a hacer una aplicación que premita interactuar con una tabla en la base de datos a través de la aplicaicón.
 La palabra CRUD viene de C reate R ead U pdate D elete, es decir, que desde nuestra aplicación podamos hacer estas acciones sobre la tabla de un recurso (por ejemplo, proyectos, alumnos, profesores, …)">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Creando un CRUD">
-  <meta itemprop="description" content="Realizar un CRUD CRUD Vamos a hacer una aplicación que premita interactuar con una tabla en la base de datos a través de la aplicaicón.
+	<meta itemprop="name" content="Creando un CRUD">
+	<meta itemprop="description" content="Realizar un CRUD CRUD Vamos a hacer una aplicación que premita interactuar con una tabla en la base de datos a través de la aplicaicón.
 La palabra CRUD viene de C reate R ead U pdate D elete, es decir, que desde nuestra aplicación podamos hacer estas acciones sobre la tabla de un recurso (por ejemplo, proyectos, alumnos, profesores, …)">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="1855">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Creando un CRUD">
-  <meta name="twitter:description" content="Realizar un CRUD CRUD Vamos a hacer una aplicación que premita interactuar con una tabla en la base de datos a través de la aplicaicón.
+	<meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="wordCount" content="1855">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Creando un CRUD">
+	<meta name="twitter:description" content="Realizar un CRUD CRUD Vamos a hacer una aplicación que premita interactuar con una tabla en la base de datos a través de la aplicaicón.
 La palabra CRUD viene de C reate R ead U pdate D elete, es decir, que desde nuestra aplicación podamos hacer estas acciones sobre la tabla de un recurso (por ejemplo, proyectos, alumnos, profesores, …)">
-
-
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -62,12 +61,17 @@ La palabra CRUD viene de C reate R ead U pdate D elete, es decir, que desde nues
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -226,13 +230,10 @@ Versión imprimible multipagina.
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:model Project --all</span></span></code></pre></td></tr></table>
 </div>
 </div>
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">Importante</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Importante</h4>
-
-    <strong>El modelo simpre en singular</strong>
-
+  **El modelo simpre en singular**
 </div>
 </p>
 <!-- raw HTML omitted -->
@@ -302,24 +303,18 @@ Versión imprimible multipagina.
 </blockquote>
 <hr>
 <p>Cada clase tiene dos métodos:
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">up()</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">up()</h4>
-
-    Método que creará elementos
+Método que creará elementos
 Se ejecutará cuando ejecute una migración
-
 </div>
 
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">down()</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">down()</h4>
-
-    Este método debería de elminar los elementos creados en up
+Este método debería de elminar los elementos creados en up
 Se ejecutará cuando ejecute un dehacer migración (con rollback o reset)
-
 </div>
 </p>
 <p>Cada migración va a ser una clase ubicada en 
@@ -364,13 +359,10 @@ En nuestro ejemplo:</p>
 
 </span>
 </strong> de una determinada tabla .
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">Aclaración</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Aclaración</h4>
-
-    Las factorías crean valores, no los inserta en la tabla.
-
+Las factorías crean valores, no los inserta en la tabla.
 </div>
 
 Las factorías se ubican en 
@@ -564,17 +556,17 @@ Observa el modelo
 </span></span><span style="display:flex;"><span>    <span style="color:#cd5555">/** @use HasFactory&lt;\Database\Factories\ProjectFactory&gt; */</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#8b008b;font-weight:bold">use</span> HasFactory;
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">Warning</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Warning</h4>
+Como puede haber varios seeder, todos se van a ejecutar a través de DatabaseSeeder.php
+Por ejemplo si tuviera varios seeder 
+<span class="font-weight-bold text-primary">
 
-    <p>Como puede haber varios seeder, todos se van a ejecutar a través de DatabaseSeeder.php
-Por ejemplo si tuviera varios seeder
-<!-- raw HTML omitted --></p>
-<pre><code>Nombre1Seeder, Nombre2Seeder, Nombre3Seeder:
-</code></pre>
-<!-- raw HTML omitted -->
+
+    Nombre1Seeder, Nombre2Seeder, Nombre3Seeder:
+
+</span>
 
 </div>
 
@@ -679,13 +671,10 @@ Por ejemplo si tuviera varios seeder
 </li>
 </ul>
 </blockquote>
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">Warning</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Warning</h4>
-
-    Estos valores se pueden cambiar estableciéndolos en el modelo correspondiente
-
+Estos valores se pueden cambiar estableciéndolos en el modelo correspondiente
 </div>
 
 <h3 id="eloquent">Eloquent</h3>
@@ -977,9 +966,7 @@ En nuestro caso utilizaremos
 	<h1 id="pg-530cfd4836d2aa1c02d04fbd1c918e33">1 - Creando la tabla</h1>
     
 	<h2 id="creamos-los-campos-en-la-tabla">Creamos los campos en la tabla</h2>
-
-
-<div class="pageinfo pageinfo-primary">
+<!-- raw HTML omitted -->
 <h4></h4>
 <hr>
 <p>Vamos a la migracion que hemos creado y añadimos los campos que consideremos</p>
@@ -992,48 +979,58 @@ En nuestro caso utilizaremos
 <p>Aquí puedes ver todos los métodos que puedes
 usar <a href="https://laravel.com/docs/10.x/migrations#available-column-types">Métodos para crear campos</a></p>
 <!-- raw HTML omitted -->
+<p>Estos métodos crean campos en la tabla</p>
+<ul>
+<li></li>
+</ul>
 <!-- raw HTML omitted -->
-<pre><code>&lt;p&gt;Estos métodos crean campos en la tabla&lt;/p&gt;
+<pre><code>id
+</code></pre>
+<!-- raw HTML omitted -->
+<ul>
+<li></li>
+</ul>
+<!-- raw HTML omitted -->
+<pre><code>create_at
+</code></pre>
+<!-- raw HTML omitted -->
+<ul>
+<li></li>
+</ul>
+<!-- raw HTML omitted -->
+<pre><code>update_at
 </code></pre>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-
-</div>
-
+<!-- raw HTML omitted -->
 <h2 id="poblamos-la-tabla">Poblamos la tabla</h2>
-
-
-<div class="pageinfo pageinfo-primary">
+<!-- raw HTML omitted -->
 <h3 id="creamos-la-factoría-de-valores">Creamos la factoría de valores</h3>
 <p>En</p>
 <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre><code>&lt;p&gt;usamos fake() para generar valores aleatorios&lt;/p&gt;
-</code></pre>
-<!-- raw HTML omitted -->
+<p>usamos fake() para generar valores aleatorios</p>
+<p>Como el dni no está, crearmos un método para hacerlo</p>
+<p>El orden de las letras la podemos ver
+aquí <a href="https://www.interior.gob.es/opencms/ca/servicios-al-ciudadano/tramites-y-gestiones/dni/calculo-del-digito-de-control-del-nif-nie/">Orden de las 23 letras</a></p>
 <!-- raw HTML omitted -->
 <h3 id="creamos-la-llamada-a-las-factorías-desde-el-seeder">Creamos la llamada a las factorías desde el seeder</h3>
 <p>Para ello vamos al seeder AlumnoSeeder</p>
 <!-- raw HTML omitted -->
 <p>E invocamos a la factoria</p>
 <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre><code>&lt;p&gt;factory() es un métod del modelo
+<p>factory() es un métod del modelo
+Para poderlo usar debemos de especificar su uso con la instruccióno
+<!-- raw HTML omitted --></p>
+<pre><code>use App\Models\Alumno
 </code></pre>
-<p>Para poderlo usar debemos de especificar su uso con la instruccióno</p>
-<!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>Ahora queda llamar al seeder a partir de la clase DatabaseSeeder</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-
-</div>
-
+<!-- raw HTML omitted -->
 <h2 id="ejecutamos-las-accciones-sobre-la-base-de-datos">Ejecutamos las accciones sobre la base de datos</h2>
-
-
-<div class="pageinfo pageinfo-primary">
+<!-- raw HTML omitted -->
 <h4 id="configuramos-la-base-de-datos">Configuramos la base de datos</h4>
 <p>En el fihcero
 <!-- raw HTML omitted --></p>
@@ -1055,15 +1052,12 @@ usar <a href="https://laravel.com/docs/10.x/migrations#available-column-types">M
 <pre><code>el seeder para que las pueble
 </code></pre>
 <!-- raw HTML omitted -->
+<blockquote>
+<p>Si hubiera algún error o queremos modificar algo y volver a cargar la base de datos</p>
 <!-- raw HTML omitted -->
-<pre><code>&lt;blockquote&gt;
-</code></pre>
+</blockquote>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
-</div>
-
 
 </div>
 
@@ -1097,13 +1091,13 @@ usar <a href="https://laravel.com/docs/10.x/migrations#available-column-types">M
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

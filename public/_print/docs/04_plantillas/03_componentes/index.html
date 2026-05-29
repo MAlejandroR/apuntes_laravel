@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/04_plantillas/03_componentes/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/04_plantillas/03_componentes/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,28 +21,26 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Componentes  | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Introducción a los Componentes de Blade en Laravel ¿Qué son los Componentes de Blade? Los componentes de Blade en Laravel son una poderosa herramienta para reutilizar código HTML y PHP en tus vistas.
+Estos componentes son archivos .blade.php que residen en la carpeta resources/views/components. Si la carpeta no existe, puedes crearla manualmente. El hecho de que cada componente sea un archivo .blade.php independiente, facilita su reutilización y mantenimiento.">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/04_plantillas/03_componentes/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Componentes ">
-  <meta property="og:description" content="Introducción a los Componentes de Blade en Laravel ¿Qué son los Componentes de Blade? Los componentes de Blade en Laravel son una poderosa herramienta para reutilizar código HTML y PHP en tus vistas.
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Componentes ">
+	<meta property="og:description" content="Introducción a los Componentes de Blade en Laravel ¿Qué son los Componentes de Blade? Los componentes de Blade en Laravel son una poderosa herramienta para reutilizar código HTML y PHP en tus vistas.
 Estos componentes son archivos .blade.php que residen en la carpeta resources/views/components. Si la carpeta no existe, puedes crearla manualmente. El hecho de que cada componente sea un archivo .blade.php independiente, facilita su reutilización y mantenimiento.">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Componentes ">
-  <meta itemprop="description" content="Introducción a los Componentes de Blade en Laravel ¿Qué son los Componentes de Blade? Los componentes de Blade en Laravel son una poderosa herramienta para reutilizar código HTML y PHP en tus vistas.
+	<meta itemprop="name" content="Componentes ">
+	<meta itemprop="description" content="Introducción a los Componentes de Blade en Laravel ¿Qué son los Componentes de Blade? Los componentes de Blade en Laravel son una poderosa herramienta para reutilizar código HTML y PHP en tus vistas.
 Estos componentes son archivos .blade.php que residen en la carpeta resources/views/components. Si la carpeta no existe, puedes crearla manualmente. El hecho de que cada componente sea un archivo .blade.php independiente, facilita su reutilización y mantenimiento.">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="998">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Componentes ">
-  <meta name="twitter:description" content="Introducción a los Componentes de Blade en Laravel ¿Qué son los Componentes de Blade? Los componentes de Blade en Laravel son una poderosa herramienta para reutilizar código HTML y PHP en tus vistas.
+	<meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="wordCount" content="1013">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Componentes ">
+	<meta name="twitter:description" content="Introducción a los Componentes de Blade en Laravel ¿Qué son los Componentes de Blade? Los componentes de Blade en Laravel son una poderosa herramienta para reutilizar código HTML y PHP en tus vistas.
 Estos componentes son archivos .blade.php que residen en la carpeta resources/views/components. Si la carpeta no existe, puedes crearla manualmente. El hecho de que cada componente sea un archivo .blade.php independiente, facilita su reutilización y mantenimiento.">
-
-
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -62,12 +61,17 @@ Estos componentes son archivos .blade.php que residen en la carpeta resources/vi
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -131,13 +135,10 @@ Versión imprimible multipagina.
 </span>
 </strong>en Laravel son una poderosa herramienta para reutilizar código HTML y PHP en tus vistas.</p>
 <p>Estos componentes son archivos <strong>.blade.php</strong> que residen en la carpeta <strong>resources/views/components</strong>. Si la carpeta no existe, puedes crearla manualmente. El hecho de que cada componente sea un archivo .blade.php independiente, facilita su reutilización y mantenimiento.</p>
+<div class="alert alert-success" role="alert"><div class="h4 alert-heading" role="heading">Idea de usar componentes</div>
 
 
-<div class="alert alert-success" role="alert">
-<h4 class="alert-heading">Idea de usar componentes</h4>
-
-    <strong>Descomponer</strong> un diseño complejo (layout) <strong>en elementos más pequeños y manejables</strong> conocidos como <strong>componentes</strong>.
-
+**Descomponer** un diseño complejo (layout) **en elementos más pequeños y manejables** conocidos como **componentes**.
 </div>
 
 <p>Al crear un layout, este se convierte en una composición de estos ficheros individuales. Cada componente representa 
@@ -393,75 +394,74 @@ Si queremos crear el componente en una carpeta concreta lo podemos hacer especif
 </span>
 </strong>.</li>
 </ol>
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">Conclusión personal</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Conclusión personal</h4>
-
-    <ul>
-<li>Proyectos Grandes o en Equipos:</li>
-</ul>
-<blockquote>
-<p>Usar Artisan es generalmente más recomendado, ya que asegura una estructura coherente y reduce el riesgo de errores.</p>
-</blockquote>
-<ul>
-<li>Para Proyectos Pequeños o Preferencias Personales:</li>
-</ul>
-<blockquote>
-<p>Si prefieres un control más directo o trabajas en un proyecto más pequeño, crear los archivos manualmente puede ser igualmente efectivo.</p>
-</blockquote>
-
-
+- Proyectos Grandes o en Equipos:
+> Usar Artisan es generalmente más recomendado, ya que asegura una estructura coherente y reduce el riesgo de errores.
+- Para Proyectos Pequeños o Preferencias Personales:
+> Si prefieres un control más directo o trabajas en un proyecto más pequeño, crear los archivos manualmente puede ser igualmente efectivo.
 </div>
 
 <h3 id="referenciar-un-componente">Referenciar un Componente</h3>
 <p>Para usar un componente en tus vistas Blade, lo referencias como un elemento HTML, pero con una sintaxis especial que incluye un prefijo <code>x-</code>::</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8b008b;font-weight:bold">x-miComponente</span> /&gt;
-</span></span></code></pre></div><p>
+</span></span></code></pre></div><p><div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">x-nombre</div>
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">x-nombre</h4>
 
-    <p>Cuando referenciamos un elemento con</p>
-<!-- raw HTML omitted -->
-<pre><code>&amp;lt;x-&amp;hellip;&amp;gt;
-</code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre><code>resources/views/components
-</code></pre>
-<!-- raw HTML omitted -->
+Cuando referenciamos un elemento con 
 
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    &lt;x-&hellip;&gt;
+
+
+</span>
+</strong> laravel buscará el fichero en la carpeta 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    resources/views/components
+
+
+</span>
+</strong>
 </div>
 
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">x-capeta.sub.nombre</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">x-capeta.sub.nombre</h4>
+Si el componentes estuvier en subcarpetas, lo podemos especicar con puntos.
 
-    <p>Si el componentes estuvier en subcarpetas, lo podemos especicar con puntos.</p>
-<p>De esta forma</p>
-<!-- raw HTML omitted -->
-<pre><code>x-capeta.sub.componentes
-</code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre><code>resources/views/components/carpeta/sub/nombre.blade.php
-</code></pre>
-<!-- raw HTML omitted -->
+De esta forma 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    x-capeta.sub.componentes
 
 
+</span>
+</strong> implicará la ubicaicón en 
+
+<strong>
+<span class="font-weight-bold text-accent fs-1.5">
+
+    resources/views/components/carpeta/sub/nombre.blade.php
+
+
+</span>
+</strong> 
 </div>
 </p>
 <h2 id="nuestro-ejemplo">Nuestro ejemplo</h2>
 <p>Creamos los componentes usando artisan.
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">Ubicación</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Ubicación</h4>
-
-    Como todos son para el layout, los creamos en la carpeta layout
-
+Como todos son para el layout, los creamos en la carpeta layout
 </div>
 </p>
 <p><div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:component layout/Header
@@ -470,7 +470,7 @@ Si queremos crear el componente en una carpeta concreta lo podemos hacer especif
 </span></span><span style="display:flex; background-color:#d6d6c6"><span>php artisan make:component layout/Footer</span></span></code></pre></div>
 La imagen muestra el resultado generado
 <figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 610px">
-<img class="card-img-top" src="/laravel/docs/04_plantillas/03_componentes/img_hu_e12b24b9a25a03c.png" width="600" height="700">
+<img class="card-img-top" src="/laravel/docs/04_plantillas/03_componentes/img_hu_bd2055474f9958a8.png" width="600" height="700">
 <figcaption class="card-body px-0 pt-2 pb-0">
 <p class="card-text">
 
@@ -586,13 +586,10 @@ La variable
 
 </span>
 </strong>:
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">merge()</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">merge()</h4>
-
-    Fusiona los atributos predeterminados del componente con los atributos adicionales proporcionados en la vista.
-
+Fusiona los atributos predeterminados del componente con los atributos adicionales proporcionados en la vista.
 </div>
 </p>
 <p>
@@ -709,13 +706,13 @@ Laravel fusionará las clases, resultando en un botón que tiene class=&ldquo;bt
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

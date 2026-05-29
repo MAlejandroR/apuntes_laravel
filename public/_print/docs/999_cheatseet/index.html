@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/999_cheatseet/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/999_cheatseet/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,25 +21,22 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Cheat Sheet | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Resumen de acciones de laravel Instalación: Debemos tener instalado composer **Instalamos el instalador de proyectos de laravel Ahora ya podemos crear un proyecto nuevo de laravel 1 laravel new NuevoProyectoLaravel composer create-project --prefer-dist laravel/laravel project-name 2. Artisan Commands: Create a controller: bash Copy code php artisan make:controller ControllerName Create a model: bash Copy code php artisan make:model ModelName Run migrations: bash Copy code php artisan migrate 3. Routing: Define a route in routes/web.php: php Copy code Route::get(&#39;/route&#39;, &#39;ControllerName@method&#39;); 4. Views: Blade template: php Copy code &lt;p&gt;{{ $variable }}&lt;/p&gt; 5. Database: Eloquent ORM: php Copy code $model = ModelName::find($id); Query Builder: php Copy code $results = DB::table(&#39;table&#39;)-&gt;get(); 6. Middleware: Apply middleware in routes: php Copy code Route::get(&#39;/admin&#39;, &#39;Controller@method&#39;)-&gt;middleware(&#39;auth&#39;); 7. Authentication: Create authentication scaffolding: bash Copy code php artisan make:auth 8. Validation: Validate requests in controllers: php Copy code $validatedData = $request-&gt;validate([ &#39;field&#39; =&gt; &#39;required|numeric&#39;, ]); 9. Testing: Run tests: bash Copy code php artisan test 10. Artisan Tinker: Interact with your application: bash Copy code php artisan tinker ## ## Rutas ## Artisan ## MVC">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/999_cheatseet/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Cheat Sheet">
-  <meta property="og:description" content="Resumen de acciones de laravel Instalación: Debemos tener instalado composer **Instalamos el instalador de proyectos de laravel Ahora ya podemos crear un proyecto nuevo de laravel 1 laravel new NuevoProyectoLaravel composer create-project --prefer-dist laravel/laravel project-name 2. Artisan Commands: Create a controller: bash Copy code php artisan make:controller ControllerName Create a model: bash Copy code php artisan make:model ModelName Run migrations: bash Copy code php artisan migrate 3. Routing: Define a route in routes/web.php: php Copy code Route::get(&#39;/route&#39;, &#39;ControllerName@method&#39;); 4. Views: Blade template: php Copy code &lt;p&gt;{{ $variable }}&lt;/p&gt; 5. Database: Eloquent ORM: php Copy code $model = ModelName::find($id); Query Builder: php Copy code $results = DB::table(&#39;table&#39;)-&gt;get(); 6. Middleware: Apply middleware in routes: php Copy code Route::get(&#39;/admin&#39;, &#39;Controller@method&#39;)-&gt;middleware(&#39;auth&#39;); 7. Authentication: Create authentication scaffolding: bash Copy code php artisan make:auth 8. Validation: Validate requests in controllers: php Copy code $validatedData = $request-&gt;validate([ &#39;field&#39; =&gt; &#39;required|numeric&#39;, ]); 9. Testing: Run tests: bash Copy code php artisan test 10. Artisan Tinker: Interact with your application: bash Copy code php artisan tinker ## ## Rutas ## Artisan ## MVC">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Cheat Sheet">
+	<meta property="og:description" content="Resumen de acciones de laravel Instalación: Debemos tener instalado composer **Instalamos el instalador de proyectos de laravel Ahora ya podemos crear un proyecto nuevo de laravel 1 laravel new NuevoProyectoLaravel composer create-project --prefer-dist laravel/laravel project-name 2. Artisan Commands: Create a controller: bash Copy code php artisan make:controller ControllerName Create a model: bash Copy code php artisan make:model ModelName Run migrations: bash Copy code php artisan migrate 3. Routing: Define a route in routes/web.php: php Copy code Route::get(&#39;/route&#39;, &#39;ControllerName@method&#39;); 4. Views: Blade template: php Copy code &lt;p&gt;{{ $variable }}&lt;/p&gt; 5. Database: Eloquent ORM: php Copy code $model = ModelName::find($id); Query Builder: php Copy code $results = DB::table(&#39;table&#39;)-&gt;get(); 6. Middleware: Apply middleware in routes: php Copy code Route::get(&#39;/admin&#39;, &#39;Controller@method&#39;)-&gt;middleware(&#39;auth&#39;); 7. Authentication: Create authentication scaffolding: bash Copy code php artisan make:auth 8. Validation: Validate requests in controllers: php Copy code $validatedData = $request-&gt;validate([ &#39;field&#39; =&gt; &#39;required|numeric&#39;, ]); 9. Testing: Run tests: bash Copy code php artisan test 10. Artisan Tinker: Interact with your application: bash Copy code php artisan tinker ## ## Rutas ## Artisan ## MVC">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Cheat Sheet">
-  <meta itemprop="description" content="Resumen de acciones de laravel Instalación: Debemos tener instalado composer **Instalamos el instalador de proyectos de laravel Ahora ya podemos crear un proyecto nuevo de laravel 1 laravel new NuevoProyectoLaravel composer create-project --prefer-dist laravel/laravel project-name 2. Artisan Commands: Create a controller: bash Copy code php artisan make:controller ControllerName Create a model: bash Copy code php artisan make:model ModelName Run migrations: bash Copy code php artisan migrate 3. Routing: Define a route in routes/web.php: php Copy code Route::get(&#39;/route&#39;, &#39;ControllerName@method&#39;); 4. Views: Blade template: php Copy code &lt;p&gt;{{ $variable }}&lt;/p&gt; 5. Database: Eloquent ORM: php Copy code $model = ModelName::find($id); Query Builder: php Copy code $results = DB::table(&#39;table&#39;)-&gt;get(); 6. Middleware: Apply middleware in routes: php Copy code Route::get(&#39;/admin&#39;, &#39;Controller@method&#39;)-&gt;middleware(&#39;auth&#39;); 7. Authentication: Create authentication scaffolding: bash Copy code php artisan make:auth 8. Validation: Validate requests in controllers: php Copy code $validatedData = $request-&gt;validate([ &#39;field&#39; =&gt; &#39;required|numeric&#39;, ]); 9. Testing: Run tests: bash Copy code php artisan test 10. Artisan Tinker: Interact with your application: bash Copy code php artisan tinker ## ## Rutas ## Artisan ## MVC">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="174">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Cheat Sheet">
-  <meta name="twitter:description" content="Resumen de acciones de laravel Instalación: Debemos tener instalado composer **Instalamos el instalador de proyectos de laravel Ahora ya podemos crear un proyecto nuevo de laravel 1 laravel new NuevoProyectoLaravel composer create-project --prefer-dist laravel/laravel project-name 2. Artisan Commands: Create a controller: bash Copy code php artisan make:controller ControllerName Create a model: bash Copy code php artisan make:model ModelName Run migrations: bash Copy code php artisan migrate 3. Routing: Define a route in routes/web.php: php Copy code Route::get(&#39;/route&#39;, &#39;ControllerName@method&#39;); 4. Views: Blade template: php Copy code &lt;p&gt;{{ $variable }}&lt;/p&gt; 5. Database: Eloquent ORM: php Copy code $model = ModelName::find($id); Query Builder: php Copy code $results = DB::table(&#39;table&#39;)-&gt;get(); 6. Middleware: Apply middleware in routes: php Copy code Route::get(&#39;/admin&#39;, &#39;Controller@method&#39;)-&gt;middleware(&#39;auth&#39;); 7. Authentication: Create authentication scaffolding: bash Copy code php artisan make:auth 8. Validation: Validate requests in controllers: php Copy code $validatedData = $request-&gt;validate([ &#39;field&#39; =&gt; &#39;required|numeric&#39;, ]); 9. Testing: Run tests: bash Copy code php artisan test 10. Artisan Tinker: Interact with your application: bash Copy code php artisan tinker ## ## Rutas ## Artisan ## MVC">
-
-
+	<meta itemprop="name" content="Cheat Sheet">
+	<meta itemprop="description" content="Resumen de acciones de laravel Instalación: Debemos tener instalado composer **Instalamos el instalador de proyectos de laravel Ahora ya podemos crear un proyecto nuevo de laravel 1 laravel new NuevoProyectoLaravel composer create-project --prefer-dist laravel/laravel project-name 2. Artisan Commands: Create a controller: bash Copy code php artisan make:controller ControllerName Create a model: bash Copy code php artisan make:model ModelName Run migrations: bash Copy code php artisan migrate 3. Routing: Define a route in routes/web.php: php Copy code Route::get(&#39;/route&#39;, &#39;ControllerName@method&#39;); 4. Views: Blade template: php Copy code &lt;p&gt;{{ $variable }}&lt;/p&gt; 5. Database: Eloquent ORM: php Copy code $model = ModelName::find($id); Query Builder: php Copy code $results = DB::table(&#39;table&#39;)-&gt;get(); 6. Middleware: Apply middleware in routes: php Copy code Route::get(&#39;/admin&#39;, &#39;Controller@method&#39;)-&gt;middleware(&#39;auth&#39;); 7. Authentication: Create authentication scaffolding: bash Copy code php artisan make:auth 8. Validation: Validate requests in controllers: php Copy code $validatedData = $request-&gt;validate([ &#39;field&#39; =&gt; &#39;required|numeric&#39;, ]); 9. Testing: Run tests: bash Copy code php artisan test 10. Artisan Tinker: Interact with your application: bash Copy code php artisan tinker ## ## Rutas ## Artisan ## MVC">
+	<meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="wordCount" content="174">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Cheat Sheet">
+	<meta name="twitter:description" content="Resumen de acciones de laravel Instalación: Debemos tener instalado composer **Instalamos el instalador de proyectos de laravel Ahora ya podemos crear un proyecto nuevo de laravel 1 laravel new NuevoProyectoLaravel composer create-project --prefer-dist laravel/laravel project-name 2. Artisan Commands: Create a controller: bash Copy code php artisan make:controller ControllerName Create a model: bash Copy code php artisan make:model ModelName Run migrations: bash Copy code php artisan migrate 3. Routing: Define a route in routes/web.php: php Copy code Route::get(&#39;/route&#39;, &#39;ControllerName@method&#39;); 4. Views: Blade template: php Copy code &lt;p&gt;{{ $variable }}&lt;/p&gt; 5. Database: Eloquent ORM: php Copy code $model = ModelName::find($id); Query Builder: php Copy code $results = DB::table(&#39;table&#39;)-&gt;get(); 6. Middleware: Apply middleware in routes: php Copy code Route::get(&#39;/admin&#39;, &#39;Controller@method&#39;)-&gt;middleware(&#39;auth&#39;); 7. Authentication: Create authentication scaffolding: bash Copy code php artisan make:auth 8. Validation: Validate requests in controllers: php Copy code $validatedData = $request-&gt;validate([ &#39;field&#39; =&gt; &#39;required|numeric&#39;, ]); 9. Testing: Run tests: bash Copy code php artisan test 10. Artisan Tinker: Interact with your application: bash Copy code php artisan tinker ## ## Rutas ## Artisan ## MVC">
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -59,12 +57,17 @@
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -239,9 +242,7 @@ Versión imprimible multipagina.
 
 </span>
 </p>
-<h2 id="hahahugoshortcode44s2hbhb">
-
-<div class="pageinfo pageinfo-primary">
+<!-- raw HTML omitted -->
 <p>**Instalamos
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted --></p>
@@ -249,10 +250,8 @@ Versión imprimible multipagina.
 </code></pre>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-
-</div>
-
-<strong>Ahora ya podemos crear un proyecto nuevo de laravel</strong>
+<!-- raw HTML omitted -->
+<h2 id="hahahugoshortcode50s2hbhb"><strong>Ahora ya podemos crear un proyecto nuevo de laravel</strong>
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -811,118 +810,118 @@ Estos son algunos de los más importantes:</p>
 <hr>
 <h1 id="tabla-resumen-de-métodos-principales">Tabla resumen de métodos principales</h1>
 <table>
-  <thead>
-      <tr>
-          <th>Método</th>
-          <th>Origen de datos</th>
-          <th>Descripción</th>
-          <th>Ejemplo</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>request('clave')</code></td>
-          <td>GET, POST, JSON</td>
-          <td>Busca la clave en todos los datos de la petición</td>
-          <td><code>request('id')</code></td>
-      </tr>
-      <tr>
-          <td><code>input('clave')</code></td>
-          <td>GET, POST, JSON</td>
-          <td>Igual que <code>request('clave')</code></td>
-          <td><code>request()-&gt;input('id')</code></td>
-      </tr>
-      <tr>
-          <td><code>query('clave')</code></td>
-          <td>Query string (<code>?param=</code>)</td>
-          <td>Solo busca en los parámetros de la URL</td>
-          <td><code>request()-&gt;query('page')</code></td>
-      </tr>
-      <tr>
-          <td><code>post('clave')</code></td>
-          <td>Cuerpo POST</td>
-          <td>Solo busca en el contenido del formulario o cuerpo POST</td>
-          <td><code>request()-&gt;post('email')</code></td>
-      </tr>
-      <tr>
-          <td><code>all()</code></td>
-          <td>GET, POST, JSON</td>
-          <td>Devuelve todos los datos</td>
-          <td><code>request()-&gt;all()</code></td>
-      </tr>
-      <tr>
-          <td><code>only([...])</code></td>
-          <td>GET, POST, JSON</td>
-          <td>Devuelve solo las claves indicadas</td>
-          <td><code>request()-&gt;only(['name'])</code></td>
-      </tr>
-      <tr>
-          <td><code>except([...])</code></td>
-          <td>GET, POST, JSON</td>
-          <td>Devuelve todos excepto las claves indicadas</td>
-          <td><code>request()-&gt;except(['password'])</code></td>
-      </tr>
-      <tr>
-          <td><code>has('clave')</code></td>
-          <td>GET, POST, JSON</td>
-          <td>Existe la clave (aunque esté vacía)</td>
-          <td><code>request()-&gt;has('name')</code></td>
-      </tr>
-      <tr>
-          <td><code>filled('clave')</code></td>
-          <td>GET, POST, JSON</td>
-          <td>Existe y tiene valor no vacío</td>
-          <td><code>request()-&gt;filled('name')</code></td>
-      </tr>
-      <tr>
-          <td><code>missing('clave')</code></td>
-          <td>GET, POST, JSON</td>
-          <td>No existe o está vacía</td>
-          <td><code>request()-&gt;missing('token')</code></td>
-      </tr>
-      <tr>
-          <td><code>ajax()</code></td>
-          <td>Encabezado <code>X-Requested-With</code></td>
-          <td>Comprueba si la petición es AJAX</td>
-          <td><code>request()-&gt;ajax()</code></td>
-      </tr>
-      <tr>
-          <td><code>isJson()</code></td>
-          <td>Cabecera <code>Content-Type</code></td>
-          <td>Comprueba si es JSON</td>
-          <td><code>request()-&gt;isJson()</code></td>
-      </tr>
-      <tr>
-          <td><code>method()</code></td>
-          <td>Método HTTP</td>
-          <td>Devuelve el método usado (<code>GET</code>, <code>POST</code>, etc.)</td>
-          <td><code>request()-&gt;method()</code></td>
-      </tr>
-      <tr>
-          <td><code>isMethod('metodo')</code></td>
-          <td>Método HTTP</td>
-          <td>Comprueba si el método es el indicado</td>
-          <td><code>request()-&gt;isMethod('post')</code></td>
-      </tr>
-      <tr>
-          <td><code>fullUrl()</code></td>
-          <td>URL completa</td>
-          <td>Devuelve la URL con query string</td>
-          <td><code>request()-&gt;fullUrl()</code></td>
-      </tr>
-      <tr>
-          <td><code>url()</code></td>
-          <td>URL base</td>
-          <td>Devuelve la URL sin query string</td>
-          <td><code>request()-&gt;url()</code></td>
-      </tr>
-      <tr>
-          <td><code>path()</code></td>
-          <td>URL base</td>
-          <td>Devuelve solo el path</td>
-          <td><code>request()-&gt;path()</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Método</th>
+					<th>Origen de datos</th>
+					<th>Descripción</th>
+					<th>Ejemplo</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>request('clave')</code></td>
+					<td>GET, POST, JSON</td>
+					<td>Busca la clave en todos los datos de la petición</td>
+					<td><code>request('id')</code></td>
+			</tr>
+			<tr>
+					<td><code>input('clave')</code></td>
+					<td>GET, POST, JSON</td>
+					<td>Igual que <code>request('clave')</code></td>
+					<td><code>request()-&gt;input('id')</code></td>
+			</tr>
+			<tr>
+					<td><code>query('clave')</code></td>
+					<td>Query string (<code>?param=</code>)</td>
+					<td>Solo busca en los parámetros de la URL</td>
+					<td><code>request()-&gt;query('page')</code></td>
+			</tr>
+			<tr>
+					<td><code>post('clave')</code></td>
+					<td>Cuerpo POST</td>
+					<td>Solo busca en el contenido del formulario o cuerpo POST</td>
+					<td><code>request()-&gt;post('email')</code></td>
+			</tr>
+			<tr>
+					<td><code>all()</code></td>
+					<td>GET, POST, JSON</td>
+					<td>Devuelve todos los datos</td>
+					<td><code>request()-&gt;all()</code></td>
+			</tr>
+			<tr>
+					<td><code>only([...])</code></td>
+					<td>GET, POST, JSON</td>
+					<td>Devuelve solo las claves indicadas</td>
+					<td><code>request()-&gt;only(['name'])</code></td>
+			</tr>
+			<tr>
+					<td><code>except([...])</code></td>
+					<td>GET, POST, JSON</td>
+					<td>Devuelve todos excepto las claves indicadas</td>
+					<td><code>request()-&gt;except(['password'])</code></td>
+			</tr>
+			<tr>
+					<td><code>has('clave')</code></td>
+					<td>GET, POST, JSON</td>
+					<td>Existe la clave (aunque esté vacía)</td>
+					<td><code>request()-&gt;has('name')</code></td>
+			</tr>
+			<tr>
+					<td><code>filled('clave')</code></td>
+					<td>GET, POST, JSON</td>
+					<td>Existe y tiene valor no vacío</td>
+					<td><code>request()-&gt;filled('name')</code></td>
+			</tr>
+			<tr>
+					<td><code>missing('clave')</code></td>
+					<td>GET, POST, JSON</td>
+					<td>No existe o está vacía</td>
+					<td><code>request()-&gt;missing('token')</code></td>
+			</tr>
+			<tr>
+					<td><code>ajax()</code></td>
+					<td>Encabezado <code>X-Requested-With</code></td>
+					<td>Comprueba si la petición es AJAX</td>
+					<td><code>request()-&gt;ajax()</code></td>
+			</tr>
+			<tr>
+					<td><code>isJson()</code></td>
+					<td>Cabecera <code>Content-Type</code></td>
+					<td>Comprueba si es JSON</td>
+					<td><code>request()-&gt;isJson()</code></td>
+			</tr>
+			<tr>
+					<td><code>method()</code></td>
+					<td>Método HTTP</td>
+					<td>Devuelve el método usado (<code>GET</code>, <code>POST</code>, etc.)</td>
+					<td><code>request()-&gt;method()</code></td>
+			</tr>
+			<tr>
+					<td><code>isMethod('metodo')</code></td>
+					<td>Método HTTP</td>
+					<td>Comprueba si el método es el indicado</td>
+					<td><code>request()-&gt;isMethod('post')</code></td>
+			</tr>
+			<tr>
+					<td><code>fullUrl()</code></td>
+					<td>URL completa</td>
+					<td>Devuelve la URL con query string</td>
+					<td><code>request()-&gt;fullUrl()</code></td>
+			</tr>
+			<tr>
+					<td><code>url()</code></td>
+					<td>URL base</td>
+					<td>Devuelve la URL sin query string</td>
+					<td><code>request()-&gt;url()</code></td>
+			</tr>
+			<tr>
+					<td><code>path()</code></td>
+					<td>URL base</td>
+					<td>Devuelve solo el path</td>
+					<td><code>request()-&gt;path()</code></td>
+			</tr>
+	</tbody>
 </table>
 
 </div>
@@ -1021,14 +1020,10 @@ La palabra artisan viene de artesano intentando reflejar la sencillez y eficienc
 <p>Para ver una lista de todos los comandos disponibles, puedes ejecutar:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php_ artisan list
 </span></span></code></pre></div><h1 id="clasificación-de-los-principales-comandos-de-artisan-en-laravel">Clasificación de los Principales Comandos de Artisan en Laravel</h1>
-
-
-<div class="pageinfo pageinfo-primary">
-<h2 id="clasificación-de-los-principales-comandos-de-artisan-en-laravel">Clasificación de los Principales Comandos de Artisan en Laravel</h2>
+<!-- raw HTML omitted -->
+<h2 id="clasificación-de-los-principales-comandos-de-artisan-en-laravel-1">Clasificación de los Principales Comandos de Artisan en Laravel</h2>
 <hr>
-
-</div>
-
+<!-- raw HTML omitted -->
 <p>Artisan, el CLI de Laravel, ofrece una amplia gama de comandos útiles. A continuación se presentan algunos de los comandos más importantes agrupados por su funcionalidad.</p>
 <h2 id="comandos-de-generación-de-código">Comandos de Generación de Código</h2>
 <p>Estos comandos ayudan en la creación rápida de clases comúnmente usadas.</p>
@@ -1307,13 +1302,13 @@ La palabra artisan viene de artesano intentando reflejar la sencillez y eficienc
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/02_instalaci%C3%B3n/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/02_instalaci%C3%B3n/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,28 +21,26 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Instalación | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="La instalación Como ya hemos comentado Laravel , uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes. Para comenzar un proyecto en Laravel, existen dos enfoques principales:
+Crear un proyecto con composer Instalar un programa llamado laravel . Este programa permitirá crear proyectos de laravel con toda la estructura de carpetas y ficheros necesarios. Instalar composer Composer documentación Oficial 🌐 getcomposer.org Lo primero que necesitamos es tener composer instalado en nuestro sistema">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/02_instalaci%C3%B3n/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Instalación">
-  <meta property="og:description" content="La instalación Como ya hemos comentado Laravel , uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes. Para comenzar un proyecto en Laravel, existen dos enfoques principales:
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Instalación">
+	<meta property="og:description" content="La instalación Como ya hemos comentado Laravel , uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes. Para comenzar un proyecto en Laravel, existen dos enfoques principales:
 Crear un proyecto con composer Instalar un programa llamado laravel . Este programa permitirá crear proyectos de laravel con toda la estructura de carpetas y ficheros necesarios. Instalar composer Composer documentación Oficial 🌐 getcomposer.org Lo primero que necesitamos es tener composer instalado en nuestro sistema">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Instalación">
-  <meta itemprop="description" content="La instalación Como ya hemos comentado Laravel , uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes. Para comenzar un proyecto en Laravel, existen dos enfoques principales:
+	<meta itemprop="name" content="Instalación">
+	<meta itemprop="description" content="La instalación Como ya hemos comentado Laravel , uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes. Para comenzar un proyecto en Laravel, existen dos enfoques principales:
 Crear un proyecto con composer Instalar un programa llamado laravel . Este programa permitirá crear proyectos de laravel con toda la estructura de carpetas y ficheros necesarios. Instalar composer Composer documentación Oficial 🌐 getcomposer.org Lo primero que necesitamos es tener composer instalado en nuestro sistema">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="936">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Instalación">
-  <meta name="twitter:description" content="La instalación Como ya hemos comentado Laravel , uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes. Para comenzar un proyecto en Laravel, existen dos enfoques principales:
+	<meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="wordCount" content="938">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Instalación">
+	<meta name="twitter:description" content="La instalación Como ya hemos comentado Laravel , uno de los frameworks de PHP más populares, simplifica el desarrollo web mediante una estructura organizada y herramientas potentes. Para comenzar un proyecto en Laravel, existen dos enfoques principales:
 Crear un proyecto con composer Instalar un programa llamado laravel . Este programa permitirá crear proyectos de laravel con toda la estructura de carpetas y ficheros necesarios. Instalar composer Composer documentación Oficial 🌐 getcomposer.org Lo primero que necesitamos es tener composer instalado en nuestro sistema">
-
-
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -62,12 +61,17 @@ Crear un proyecto con composer Instalar un programa llamado laravel . Este progr
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -252,18 +256,12 @@ Para comenzar un proyecto en Laravel, existen dos enfoques principales:</p>
 Igualmente, composer permite aportar documentación sobre el proyecto y automatizar la autocarga de clases para la ejecución del mismo.</p>
 <p>Funciona <strong>descargando e instalando estas librerías y sus dependencias en el proyecto, asegurando compatibilidad y facilitando la actualización</strong>.</p>
 <p>Es esencial para proyectos modernos de PHP, ya que automatiza y gestiona tareas complejas de gestión de paquetes de forma eficiente.
+<div class="alert alert-success" role="alert"><div class="h4 alert-heading" role="heading">Instalar Composer</div>
 
 
-<div class="alert alert-success" role="alert">
-<h4 class="alert-heading">Instalar Composer</h4>
-
-    <ul>
-<li>Linux- Mac: <a href="https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos">https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos</a></li>
-<li>Windows <a href="https://getcomposer.org/doc/00-intro.md#installation-windows">https://getcomposer.org/doc/00-intro.md#installation-windows</a></li>
-</ul>
-
-
-</div>
+* Linux- Mac: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos
+* Windows https://getcomposer.org/doc/00-intro.md#installation-windows
+  </div>
 
 Una vez instalado lo podremos usar desde el terminal, independientemente del sistema operativo
 <div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
@@ -381,13 +379,10 @@ Este método instala Laravel y todas sus dependencias, configurando una estructu
 <pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>laravel <span style="color:#8b008b;font-weight:bold">new</span> nombre_proyecto</span></span></code></pre></td></tr></table>
 </div>
 </div>
+<div class="alert alert-warning" role="alert"><div class="h4 alert-heading" role="heading">Actualiza el PATH</div>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Actualiza el PATH</h4>
-
-    Recuerda que la ruta dónde se ubique el programa de instalación, <strong>laravel</strong> , debe de estar incluída en el PATH del sistema
-
+Recuerda que la ruta dónde se ubique el programa de instalación, **laravel** , debe de estar incluída en el PATH del sistema
 </div>
 </p>
 <h3 id="hahahugoshortcode12s21hbhb">
@@ -574,13 +569,13 @@ Esto hace que el comando sea más portable entre distintos sistemas operativos, 
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>

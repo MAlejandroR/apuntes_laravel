@@ -1,8 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link rel="canonical" type="text/html" href="http://localhost:1313/laravel/docs/04_plantillas/04_responsivo/">
 <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/04_plantillas/04_responsivo/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -20,31 +21,30 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
 <title>Diseño responsivo | Laravel: Framework de php</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-
+<meta name="description" content="Diseño responsivo El diseño responsivo permite que una aplicación web se adapte dinámicamente al tamaño del dispositivo desde el que se visualiza. Hoy en día una misma aplicación debe funcionar correctamente en:
+📱 Móviles 📲 Tablets 💻 Portátiles 🖥️ Escritorio La clave no es hacer varias webs, sino una única interfaz flexible.
+Diferencias entre responsivo y adaptativo 🔹 Diseño Responsivo (Responsive Web Design) Usa CSS flexible. Se basa en media queries. El layout se adapta de forma fluida. No depende de dispositivos concretos. Es el enfoque moderno. Cambia progresivamente según el ancho del viewport.">
 <meta property="og:url" content="http://localhost:1313/laravel/docs/04_plantillas/04_responsivo/">
-  <meta property="og:site_name" content="Laravel: Framework de php">
-  <meta property="og:title" content="Diseño responsivo">
-  <meta property="og:description" content="Diseño responsivo El diseño responsivo permite que una aplicación web se adapte dinámicamente al tamaño del dispositivo desde el que se visualiza. Hoy en día una misma aplicación debe funcionar correctamente en:
+	<meta property="og:site_name" content="Laravel: Framework de php">
+	<meta property="og:title" content="Diseño responsivo">
+	<meta property="og:description" content="Diseño responsivo El diseño responsivo permite que una aplicación web se adapte dinámicamente al tamaño del dispositivo desde el que se visualiza. Hoy en día una misma aplicación debe funcionar correctamente en:
 📱 Móviles 📲 Tablets 💻 Portátiles 🖥️ Escritorio La clave no es hacer varias webs, sino una única interfaz flexible.
 Diferencias entre responsivo y adaptativo 🔹 Diseño Responsivo (Responsive Web Design) Usa CSS flexible. Se basa en media queries. El layout se adapta de forma fluida. No depende de dispositivos concretos. Es el enfoque moderno. Cambia progresivamente según el ancho del viewport.">
-  <meta property="og:locale" content="es">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="es">
+	<meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Diseño responsivo">
-  <meta itemprop="description" content="Diseño responsivo El diseño responsivo permite que una aplicación web se adapte dinámicamente al tamaño del dispositivo desde el que se visualiza. Hoy en día una misma aplicación debe funcionar correctamente en:
+	<meta itemprop="name" content="Diseño responsivo">
+	<meta itemprop="description" content="Diseño responsivo El diseño responsivo permite que una aplicación web se adapte dinámicamente al tamaño del dispositivo desde el que se visualiza. Hoy en día una misma aplicación debe funcionar correctamente en:
 📱 Móviles 📲 Tablets 💻 Portátiles 🖥️ Escritorio La clave no es hacer varias webs, sino una única interfaz flexible.
 Diferencias entre responsivo y adaptativo 🔹 Diseño Responsivo (Responsive Web Design) Usa CSS flexible. Se basa en media queries. El layout se adapta de forma fluida. No depende de dispositivos concretos. Es el enfoque moderno. Cambia progresivamente según el ancho del viewport.">
-  <meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-  <meta itemprop="wordCount" content="1086">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Diseño responsivo">
-  <meta name="twitter:description" content="Diseño responsivo El diseño responsivo permite que una aplicación web se adapte dinámicamente al tamaño del dispositivo desde el que se visualiza. Hoy en día una misma aplicación debe funcionar correctamente en:
+	<meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
+	<meta itemprop="wordCount" content="1086">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Diseño responsivo">
+	<meta name="twitter:description" content="Diseño responsivo El diseño responsivo permite que una aplicación web se adapte dinámicamente al tamaño del dispositivo desde el que se visualiza. Hoy en día una misma aplicación debe funcionar correctamente en:
 📱 Móviles 📲 Tablets 💻 Portátiles 🖥️ Escritorio La clave no es hacer varias webs, sino una única interfaz flexible.
 Diferencias entre responsivo y adaptativo 🔹 Diseño Responsivo (Responsive Web Design) Usa CSS flexible. Se basa en media queries. El layout se adapta de forma fluida. No depende de dispositivos concretos. Es el enfoque moderno. Cambia progresivamente según el ancho del viewport.">
-
-
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -65,12 +65,17 @@ Diferencias entre responsivo y adaptativo 🔹 Diseño Responsivo (Responsive We
         <a class="nav-link active" href="/laravel/docs/"><span>Laravel</span></a>
       </li>
       <li class="nav-item dropdown d-none d-lg-block">
-        <div class="dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
+        <div class="td-lang-menu dropdown">
+  <a class="nav-link dropdown-toggle td-lang-menu__title" href="#" role="button"
+    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="td-lang-menu__title-text">Español</span>
+    <span class="td-lang-menu__title-code">ES</span>
+  </a>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/laravel/fr/">Francés</a></li>
-    <li><a class="dropdown-item" href="/laravel/en/">English</a></li>
-    </ul>
+    <li><span class="dropdown-item disabled">English</span></li>
+      <li><span class="dropdown-item active">Español</span></li>
+      <li><span class="dropdown-item disabled">Francés</span></li>
+      </ul>
 </div></li>
       </ul>
   </div>
@@ -275,7 +280,7 @@ Versión imprimible multipagina.
 <li>Quitamos el título</li>
 <li>Lo ponemos en una columa
 <figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 757px">
-<img class="card-img-top" src="/laravel/docs/04_plantillas/04_responsivo/header_responsive_hu_41d460c4f7f02cb1.png" width="747" height="345">
+<img class="card-img-top" src="/laravel/docs/04_plantillas/04_responsivo/header_responsive_hu_fed9e975edcf9c9a.png" width="747" height="345">
 <figcaption class="card-body px-0 pt-2 pb-0">
 <p class="card-text">
 
@@ -713,13 +718,13 @@ Cada menú (burger y logout) debe tener un <code>id</code> distinto y su propio 
         <ul class="td-footer__links-list">
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Correo del usuario" aria-label="Correo del usuario">
-    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Correo del usuario">
+    <a href="https://example.org/mail" aria-label="Correo del usuario" target="_blank" rel="noopener">
       <i class="fa fa-envelope"></i>
     </a>
   </li>
   
   <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
-    <a target="_blank" rel="noopener" href="https://github.com/MAlejandroR" aria-label="GitHub">
+    <a href="https://github.com/MAlejandroR" aria-label="GitHub" target="_blank" rel="noopener">
       <i class="fab fa-github"></i>
     </a>
   </li>
