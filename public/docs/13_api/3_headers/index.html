@@ -1,11 +1,11 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="es" class="no-js">
-  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=44273&amp;path=laravel/livereload" data-no-instant defer></script>
+  <head><script src="/laravel/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=laravel/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:44273/laravel/docs/10_api/1.instalacion/index.xml">
-<link rel="alternate" type="text/html" href="http://localhost:44273/laravel/_print/docs/10_api/1.instalacion/">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/laravel/docs/13_api/3_headers/index.xml">
+<link rel="alternate" type="text/html" href="http://localhost:1313/laravel/_print/docs/13_api/3_headers/">
 <meta name="robots" content="noindex, nofollow">
 
 
@@ -20,31 +20,35 @@
 <link rel="icon" type="image/png" href="/laravel/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/laravel/favicons/android-192x192.png" sizes="192x192">
 
-<title>01_Introducción y rutas | Laravel: Framework de php</title>
-<meta name="description" content="Creando el proyecto Vamos a instalar e un
-mkdir books cd books 1 2 3 4 5 laravel new api --git cd api git init git add * git commit -m inicial Vamos documentando el Readme.md
-Creando los modelos, controladores y factorys Para hacerlo de forma más rápida usamos blueprint">
-<meta property="og:url" content="http://localhost:44273/laravel/docs/10_api/1.instalacion/">
+<title>Cabeceras http | Laravel: Framework de php</title>
+<meta name="description" content="Las cabeceras HTTP La especificación JSON:API establece una serie de requisitos sobre las cabeceras HTTP que deben enviarse tanto en las solicitudes (request) como en las respuestas (response).
+Estas cabeceras permiten que cliente y servidor acuerden el formato de los datos intercambiados y garantizan que ambos cumplen la especificación.
+La gestión de las cabeceras en nuestra aplicación tiene dos sentidos:
+En las solicitudes El servidor debe verificar que el cliente ha enviado las cabeceras requeridas.">
+<meta property="og:url" content="http://localhost:1313/laravel/docs/13_api/3_headers/">
 	<meta property="og:site_name" content="Laravel: Framework de php">
-	<meta property="og:title" content="01_Introducción y rutas">
-	<meta property="og:description" content="Creando el proyecto Vamos a instalar e un
-mkdir books cd books 1 2 3 4 5 laravel new api --git cd api git init git add * git commit -m inicial Vamos documentando el Readme.md
-Creando los modelos, controladores y factorys Para hacerlo de forma más rápida usamos blueprint">
+	<meta property="og:title" content="Cabeceras http">
+	<meta property="og:description" content="Las cabeceras HTTP La especificación JSON:API establece una serie de requisitos sobre las cabeceras HTTP que deben enviarse tanto en las solicitudes (request) como en las respuestas (response).
+Estas cabeceras permiten que cliente y servidor acuerden el formato de los datos intercambiados y garantizan que ambos cumplen la especificación.
+La gestión de las cabeceras en nuestra aplicación tiene dos sentidos:
+En las solicitudes El servidor debe verificar que el cliente ha enviado las cabeceras requeridas.">
 	<meta property="og:locale" content="es">
 	<meta property="og:type" content="website">
 
-	<meta itemprop="name" content="01_Introducción y rutas">
-	<meta itemprop="description" content="Creando el proyecto Vamos a instalar e un
-mkdir books cd books 1 2 3 4 5 laravel new api --git cd api git init git add * git commit -m inicial Vamos documentando el Readme.md
-Creando los modelos, controladores y factorys Para hacerlo de forma más rápida usamos blueprint">
+	<meta itemprop="name" content="Cabeceras http">
+	<meta itemprop="description" content="Las cabeceras HTTP La especificación JSON:API establece una serie de requisitos sobre las cabeceras HTTP que deben enviarse tanto en las solicitudes (request) como en las respuestas (response).
+Estas cabeceras permiten que cliente y servidor acuerden el formato de los datos intercambiados y garantizan que ambos cumplen la especificación.
+La gestión de las cabeceras en nuestra aplicación tiene dos sentidos:
+En las solicitudes El servidor debe verificar que el cliente ha enviado las cabeceras requeridas.">
 	<meta itemprop="datePublished" content="2023-04-08T18:21:47+02:00">
 	<meta itemprop="dateModified" content="2023-04-08T18:21:47+02:00">
-	<meta itemprop="wordCount" content="342">
+	<meta itemprop="wordCount" content="459">
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="01_Introducción y rutas">
-	<meta name="twitter:description" content="Creando el proyecto Vamos a instalar e un
-mkdir books cd books 1 2 3 4 5 laravel new api --git cd api git init git add * git commit -m inicial Vamos documentando el Readme.md
-Creando los modelos, controladores y factorys Para hacerlo de forma más rápida usamos blueprint">
+	<meta name="twitter:title" content="Cabeceras http">
+	<meta name="twitter:description" content="Las cabeceras HTTP La especificación JSON:API establece una serie de requisitos sobre las cabeceras HTTP que deben enviarse tanto en las solicitudes (request) como en las respuestas (response).
+Estas cabeceras permiten que cliente y servidor acuerden el formato de los datos intercambiados y garantizan que ambos cumplen la especificación.
+La gestión de las cabeceras en nuestra aplicación tiene dos sentidos:
+En las solicitudes El servidor debe verificar que el cliente ha enviado las cabeceras requeridas.">
 <link href="/laravel/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -192,25 +196,6 @@ Creando los modelos, controladores y factorys Para hacerlo de forma más rápida
     
   </li>
     </ul>
-  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs10_api-li">
-    <input type="checkbox" id="m-laraveldocs10_api-check" checked/>
-    <label for="m-laraveldocs10_api-check"><a href="/laravel/docs/10_api/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api"><i class="fas fa-code"></i><span class="">Creando un api</span></a></label>
-    
-    <ul class="ul-2 foldable">
-      <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocs10_api1instalacion-li">
-    <input type="checkbox" id="m-laraveldocs10_api1instalacion-check" checked/>
-    <label for="m-laraveldocs10_api1instalacion-check"><a href="/laravel/docs/10_api/1.instalacion/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api1instalacion"><span class="td-sidebar-nav-active-item">01_Introducción y rutas</span></a></label>
-    
-  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_api2visiongeneral-li">
-    <input type="checkbox" id="m-laraveldocs10_api2visiongeneral-check"/>
-    <label for="m-laraveldocs10_api2visiongeneral-check"><a href="/laravel/docs/10_api/2.visiongeneral/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api2visiongeneral"><span class="">Controlador</span></a></label>
-    
-  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_api3la-vista-li">
-    <input type="checkbox" id="m-laraveldocs10_api3la-vista-check"/>
-    <label for="m-laraveldocs10_api3la-vista-check"><a href="/laravel/docs/10_api/3.la-vista/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_api3la-vista"><span class="">3.La Vista unitarios</span></a></label>
-    
-  </li>
-    </ul>
   </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs10_paginacion-li">
     <input type="checkbox" id="m-laraveldocs10_paginacion-check"/>
     <label for="m-laraveldocs10_paginacion-check"><a href="/laravel/docs/10_paginacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs10_paginacion"><i class="fa-solid fa-table-list"></i><span class="">Paginando datos</span></a></label>
@@ -223,6 +208,33 @@ Creando los modelos, controladores y factorys Para hacerlo de forma más rápida
     <input type="checkbox" id="m-laraveldocs12_crudgenerico-check"/>
     <label for="m-laraveldocs12_crudgenerico-check"><a href="/laravel/docs/12_crudgenerico/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs12_crudgenerico"><i class="fa-solid fa-layer-group"></i><span class="">Plantilla para Crud</span></a></label>
     
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-laraveldocs13_api-li">
+    <input type="checkbox" id="m-laraveldocs13_api-check" checked/>
+    <label for="m-laraveldocs13_api-check"><a href="/laravel/docs/13_api/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_api"><i class="fas fa-code"></i><span class="">Creando un api</span></a></label>
+    
+    <ul class="ul-2 foldable">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs13_api1instalacion-li">
+    <input type="checkbox" id="m-laraveldocs13_api1instalacion-check"/>
+    <label for="m-laraveldocs13_api1instalacion-check"><a href="/laravel/docs/13_api/1.instalacion/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_api1instalacion"><span class="">01_Introducción y rutas</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs13_api2visiongeneral-li">
+    <input type="checkbox" id="m-laraveldocs13_api2visiongeneral-check"/>
+    <label for="m-laraveldocs13_api2visiongeneral-check"><a href="/laravel/docs/13_api/2.visiongeneral/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_api2visiongeneral"><span class="">Controlador</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-laraveldocs13_api3_headers-li">
+    <input type="checkbox" id="m-laraveldocs13_api3_headers-check" checked/>
+    <label for="m-laraveldocs13_api3_headers-check"><a href="/laravel/docs/13_api/3_headers/" class="align-left ps-0  active td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_api3_headers"><span class="td-sidebar-nav-active-item">Cabeceras http</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs13_api4swagger-li">
+    <input type="checkbox" id="m-laraveldocs13_api4swagger-check"/>
+    <label for="m-laraveldocs13_api4swagger-check"><a href="/laravel/docs/13_api/4.swagger/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_api4swagger"><span class="">Creando un swagger</span></a></label>
+    
+  </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-laraveldocs13_api4test-li">
+    <input type="checkbox" id="m-laraveldocs13_api4test-check"/>
+    <label for="m-laraveldocs13_api4test-check"><a href="/laravel/docs/13_api/4.test/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs13_api4test"><span class="">Test unitarios</span></a></label>
+    
+  </li>
+    </ul>
   </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-laraveldocs999_cheatseet-li">
     <input type="checkbox" id="m-laraveldocs999_cheatseet-check"/>
     <label for="m-laraveldocs999_cheatseet-check"><a href="/laravel/docs/999_cheatseet/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-laraveldocs999_cheatseet"><span class="">Cheat Sheet</span></a></label>
@@ -266,7 +278,7 @@ Creando los modelos, controladores y factorys Para hacerlo de forma más rápida
           </aside>
           <aside class="td-sidebar-toc">
             <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
-<a id="print" href="/laravel/_print/docs/10_api/1.instalacion/"><i class="fa-solid fa-print fa-fw"></i> Imprimir la sección entera</a>
+<a id="print" href="/laravel/_print/docs/13_api/3_headers/"><i class="fa-solid fa-print fa-fw"></i> Imprimir la sección entera</a>
 
 </div>
 
@@ -277,10 +289,19 @@ Creando los modelos, controladores y factorys Para hacerlo de forma más rápida
     </div>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#creando-el-proyecto">Creando el proyecto</a>
+    <li><a href="#las-cabeceras-http">Las cabeceras HTTP</a>
       <ul>
-        <li><a href="#creando-los-modelos-controladores-y-factorys">Creando los modelos, controladores y factorys</a></li>
-        <li><a href="#rutas">Rutas</a></li>
+        <li><a href="#en-las-solicitudes">En las solicitudes</a></li>
+        <li><a href="#en-las-respuestas">En las respuestas</a></li>
+        <li><a href="#cabeceras-más-utilizadas-en-jsonapi">Cabeceras más utilizadas en JSON:API</a></li>
+        <li><a href="#validación-de-cabeceras">Validación de cabeceras</a></li>
+      </ul>
+    </li>
+    <li><a href="#cabeceras-requeridas-según-el-verbo-http">Cabeceras requeridas según el verbo HTTP</a>
+      <ul>
+        <li><a href="#valores-esperados">Valores esperados</a></li>
+        <li><a href="#resumen-práctico">Resumen práctico</a></li>
+        <li><a href="#cabeceras-en-las-respuestas">Cabeceras en las respuestas</a></li>
       </ul>
     </li>
   </ul>
@@ -290,38 +311,38 @@ Creando los modelos, controladores y factorys Para hacerlo de forma más rápida
             <div class="taxonomy taxonomy-terms-cloud taxo-categories">
       <h5 class="taxonomy-title">Categories</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/archivos/" data-taxonomy-term="archivos"><span class="taxonomy-label">Archivos</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/optimizaci%C3%B3n/" data-taxonomy-term="optimizaci%C3%B3n"><span class="taxonomy-label">Optimización</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/categories/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
   <div class="taxonomy taxonomy-terms-cloud taxo-tags">
       <h5 class="taxonomy-title">Tags</h5>
       <ul class="taxonomy-terms">
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
-        <li><a class="taxonomy-term" href="http://localhost:44273/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/auth/" data-taxonomy-term="auth"><span class="taxonomy-label">Auth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/axios/" data-taxonomy-term="axios"><span class="taxonomy-label">Axios</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/dashboard/" data-taxonomy-term="dashboard"><span class="taxonomy-label">Dashboard</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/facades/" data-taxonomy-term="facades"><span class="taxonomy-label">Facades</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/filament/" data-taxonomy-term="filament"><span class="taxonomy-label">Filament</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/file/" data-taxonomy-term="file"><span class="taxonomy-label">File</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/fortity/" data-taxonomy-term="fortity"><span class="taxonomy-label">Fortity</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/herramientas/" data-taxonomy-term="herramientas"><span class="taxonomy-label">Herramientas</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/inertia/" data-taxonomy-term="inertia"><span class="taxonomy-label">Inertia</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/laravel/" data-taxonomy-term="laravel"><span class="taxonomy-label">Laravel&#39;</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/navegaci%C3%B3n/" data-taxonomy-term="navegaci%C3%B3n"><span class="taxonomy-label">Navegación</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/panel/" data-taxonomy-term="panel"><span class="taxonomy-label">Panel</span><span class="taxonomy-count">4</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/performance/" data-taxonomy-term="performance"><span class="taxonomy-label">Performance</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/p%C3%A1ginas/" data-taxonomy-term="p%C3%A1ginas"><span class="taxonomy-label">Páginas</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/vue/" data-taxonomy-term="vue"><span class="taxonomy-label">Vue</span><span class="taxonomy-count">3</span></a></li>
+        <li><a class="taxonomy-term" href="http://localhost:1313/laravel/tags/widgets/" data-taxonomy-term="widgets"><span class="taxonomy-label">Widgets</span><span class="taxonomy-count">1</span></a></li>
         </ul>
     </div>
   
@@ -334,176 +355,167 @@ Creando los modelos, controladores y factorys Para hacerlo de forma más rápida
   <li class="breadcrumb-item">
     <a href="/laravel/docs/">Laravel</a></li>
   <li class="breadcrumb-item">
-    <a href="/laravel/docs/10_api/">Creando un api</a></li>
+    <a href="/laravel/docs/13_api/">Creando un api</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    01_Introducción y rutas</li>
+    Cabeceras http</li>
   </ol>
 </nav>
 <div class="td-content">
-	<h1>01_Introducción y rutas</h1>
+	<h1>Cabeceras http</h1>
   
 	<header class="article-meta">
 		
 </header>
-	<h2 id="creando-el-proyecto">Creando el proyecto</h2>
-<p>Vamos a instalar e un</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir books
-</span></span><span style="display:flex;"><span><span style="color:#658b00">cd</span> books
-</span></span></code></pre></div><div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></span><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-bash" data-lang="bash"><span style="display:flex; background-color:#d6d6c6"><span>laravel new api --git
-</span></span><span style="display:flex; background-color:#d6d6c6"><span><span style="color:#658b00">cd</span> api
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>git init
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>git add *
-</span></span><span style="display:flex; background-color:#d6d6c6"><span>git commit -m inicial</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<p>Vamos documentando el Readme.md</p>
-<h3 id="creando-los-modelos-controladores-y-factorys">Creando los modelos, controladores y factorys</h3>
-<p>Para hacerlo de forma más rápida usamos  
-<span class="font-weight-bold text-primary">
-
-
-    blueprint
-
-</span>
-</p>
-<ol>
-<li>Instalamos el paquete</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> composer require laravel-shift/blueprint --dev
-</span></span></code></pre></div><ol start="2">
-<li>Creamos el fichero de especificación de construcción</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php_ artisan blueprint:new
-</span></span></code></pre></div><ol start="2">
-<li>Especificamos en el fichero los modelos y los controladores</li>
-</ol>
-<pre tabindex="0"><code class="language-ỳaml" data-lang="ỳaml">models:
-  Profesor:
-    nombre: string
-    email: string
-    proyecto_id: id
-    relationships:
-      hasMany: Proyecto
-  Proyecto:
-    titulo: string
-    web: string
-    horas: integer
-    user_id: id
-controllers:
-  ProyectosController:
-    resource: api
-  ProfesoresController:
-    resource: api.profesor
-  UserController:
-    resource: api 
-</code></pre><ol start="3">
-<li>Modificamos previa publicación opciones de blueprint</li>
-<li>Primero publicamos</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php_ artisan vendor:publish
-</span></span></code></pre></div><p><figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
-<img class="card-img-top" src="/laravel/docs/10_api/1.instalacion/publicar_conf_blueprint_hu_c841f3d32b399b4f.png" width="400" height="450">
-<figcaption class="card-body px-0 pt-2 pb-0">
-<p class="card-text">
-
-
-
-</p>
-</figcaption>
-</figure>
-
-2. Ahora modificamos el fichero generado en 
-<span class="font-weight-bold text-primary">
-
-
-    config/blueprint.yaml
-
-</span>
-</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#228b22">//// . . . 
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;use_constraints&#39;</span> =&gt; <span style="color:#8b008b;font-weight:bold">true</span>,
-</span></span><span style="display:flex;"><span><span style="color:#228b22">////. . .
-</span></span></span><span style="display:flex;"><span><span style="color:#cd5555">&#39;use_guarded&#39;</span> =&gt; <span style="color:#8b008b;font-weight:bold">true</span>,
-</span></span><span style="display:flex;"><span><span style="color:#228b22">///. . .
-</span></span></span><span style="display:flex;"><span><span style="color:#b452cd">4.</span> Ejecutamos el fichero
-</span></span><span style="display:flex;"><span><figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
-<img class="card-img-top" src="/laravel/docs/10_api/1.instalacion/blueprint_hu_e370df5a43a40f21.png" width="400" height="450">
-<figcaption class="card-body px-0 pt-2 pb-0">
-<p class="card-text">
-
-
-
-
-</p>
-</figcaption>
-</figure>
-
-</span></span></code></pre></div><ol start="2">
-<li></li>
-</ol>
-<h3 id="rutas">Rutas</h3>
-<p>Como la aplicación va a ser un API, vamos al fichero de rutas <em><strong>routes/api.php</strong></em>
-<pre tabindex="0"><code class="language-linenos=table,anclorlinenos=true, hl_lines=" data-lang="linenos=table,anclorlinenos=true, hl_lines="></code></pre></p>
-<!-- raw HTML omitted -->
-<p>Entre web.php y api.php hay como diferencias los middeleware que se utilizan. Esto se puede ver en</p>
-<!-- raw HTML omitted -->
-<p>En el caso de api.php, casi el único middleware que utiliza es el ThrottleRequests, es decir, poder crear un límite de peticiones, no necesitamos sesiones, cookies ni compartir errores entre ficheros.
-Vemos si hacemos un <strong>route:list</strong> que las rutas que aparecen son las de <strong>web.php</strong> y también las de <strong>api.php</strong> que no habíamos visto
-Las de <strong>api</strong> tiene prefijo, es por que se establece en el <strong>routeservicesproviders.php</strong></p>
-<p>Ahora vamos a crar un modelo, y queremos crear también la migración y el factory y también un controlador con todos los métodos de gestión rest que ya  hemos visto
-<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php artisan make:model Book -mf --api</span></span></code></pre></td></tr></table>
-</div>
-</div>
-Ahora debemos de agregar rutas
-<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 819px">
-<img class="card-img-top" src="/laravel/docs/10_api/1.instalacion/api_rest_hu_2305292feea54f3a.png" width="809" height="711">
-<figcaption class="card-body px-0 pt-2 pb-0">
-<p class="card-text">
-
-
-imagen api
-
-</p>
-</figcaption>
-</figure>
-
-De todas ellas, como solo estamos creando un api, que es para consultar, no realizaremos la acción de editar para modificar, ni de crear por lo que las rutas nos quedarían
-<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 641px">
-<img class="card-img-top" src="/laravel/docs/10_api/1.instalacion/api_rest2_hu_7da774120c25edf0.png" width="631" height="478">
-<figcaption class="card-body px-0 pt-2 pb-0">
-<p class="card-text">
-
-
-imagen api
-
-</p>
-</figcaption>
-</figure>
-
-Creamos estas rutas en el fichero <strong>routes/api.php</strong>
-<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="background-color:#d6d6c6"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-php" data-lang="php"><span style="display:flex; background-color:#d6d6c6"><span>Route::<span style="color:#658b00">apiResource</span>(<span style="color:#cd5555">&#39;books&#39;</span>, \App\Http\Controllers\BookController::<span style="color:#658b00">class</span>);</span></span></code></pre></td></tr></table>
-</div>
-</div>
-Podemos ejectura route:list para ver las 5 rutas que hemos creado</p>
+	<h2 id="las-cabeceras-http">Las cabeceras HTTP</h2>
+<p>La especificación JSON:API establece una serie de requisitos sobre las cabeceras HTTP que deben enviarse tanto en las solicitudes (<em>request</em>) como en las respuestas (<em>response</em>).</p>
+<p>Estas cabeceras permiten que cliente y servidor acuerden el formato de los datos intercambiados y garantizan que ambos cumplen la especificación.</p>
+<p>La gestión de las cabeceras en nuestra aplicación tiene dos sentidos:</p>
+<h3 id="en-las-solicitudes">En las solicitudes</h3>
+<p>El servidor debe verificar que el cliente ha enviado las cabeceras requeridas.</p>
+<p>Por ejemplo, en una operación de creación o modificación de recursos, el cliente deberá indicar que está enviando datos en formato JSON:API mediante la cabecera:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">Content-Type: application/vnd.api+json</span></span></span></code></pre></div>
+<p>Asimismo, el cliente puede indicar que espera recibir la respuesta en formato JSON:API mediante:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">Accept: application/vnd.api+json</span></span></span></code></pre></div>
+<p>Si alguna de estas cabeceras es incorrecta o no está presente cuando es obligatoria, el servidor deberá devolver el código de error correspondiente.</p>
+<h3 id="en-las-respuestas">En las respuestas</h3>
+<p>El servidor también debe incluir determinadas cabeceras en las respuestas que envía al cliente.</p>
+<p>Por ejemplo, una respuesta correcta debería indicar el formato utilizado:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">Content-Type: application/vnd.api+json</span></span></span></code></pre></div>
+<p>Además, en determinadas operaciones pueden ser necesarias otras cabeceras adicionales.</p>
+<p>Por ejemplo, tras crear un recurso mediante una petición POST, es habitual devolver la ubicación del nuevo recurso utilizando la cabecera:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">Location: /api/students/15</span></span></span></code></pre></div>
+<h3 id="cabeceras-más-utilizadas-en-jsonapi">Cabeceras más utilizadas en JSON:API</h3>
+<table>
+	<thead>
+			<tr>
+					<th>Cabecera</th>
+					<th>Quién la envía</th>
+					<th>Finalidad</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Accept</td>
+					<td>Cliente</td>
+					<td>Indica el formato que espera recibir.</td>
+			</tr>
+			<tr>
+					<td>Content-Type</td>
+					<td>Cliente y servidor</td>
+					<td>Indica el formato de los datos enviados.</td>
+			</tr>
+			<tr>
+					<td>Location</td>
+					<td>Servidor</td>
+					<td>Informa de la URI de un recurso recién creado.</td>
+			</tr>
+			<tr>
+					<td>Authorization</td>
+					<td>Cliente</td>
+					<td>Envía credenciales de autenticación.</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="validación-de-cabeceras">Validación de cabeceras</h3>
+<p>Una buena práctica consiste en validar las cabeceras antes de procesar la petición.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>Si falta la cabecera <code>Accept</code>, puede devolverse <code>406 Not Acceptable</code>.</li>
+<li>Si falta la cabecera <code>Content-Type</code> o contiene un valor incorrecto, puede devolverse <code>415 Unsupported Media Type</code>.</li>
+<li>Si la autenticación es obligatoria y no existe la cabecera <code>Authorization</code>, puede devolverse <code>401 Unauthorized</code>.</li>
+</ul>
+<p>De esta forma evitamos procesar peticiones que no cumplen las reglas establecidas por la API.</p>
+<h2 id="cabeceras-requeridas-según-el-verbo-http">Cabeceras requeridas según el verbo HTTP</h2>
+<p>La especificación JSON:API establece principalmente el uso de las cabeceras <code>Accept</code> y <code>Content-Type</code>.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Verbo HTTP</th>
+					<th>Accept</th>
+					<th>Content-Type</th>
+					<th>Observaciones</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>GET</td>
+					<td>Obligatoria</td>
+					<td>No necesaria</td>
+					<td>El cliente indica que espera recibir JSON:API.</td>
+			</tr>
+			<tr>
+					<td>POST</td>
+					<td>Obligatoria</td>
+					<td>Obligatoria</td>
+					<td>Se envían datos JSON:API al servidor.</td>
+			</tr>
+			<tr>
+					<td>PATCH</td>
+					<td>Obligatoria</td>
+					<td>Obligatoria</td>
+					<td>Se envían modificaciones de un recurso.</td>
+			</tr>
+			<tr>
+					<td>DELETE</td>
+					<td>Obligatoria</td>
+					<td>No necesaria</td>
+					<td>No se envía cuerpo en la petición.</td>
+			</tr>
+			<tr>
+					<td>HEAD</td>
+					<td>Obligatoria</td>
+					<td>No necesaria</td>
+					<td>Similar a GET, pero sin cuerpo de respuesta.</td>
+			</tr>
+			<tr>
+					<td>OPTIONS</td>
+					<td>Recomendada</td>
+					<td>No necesaria</td>
+					<td>Consulta capacidades del recurso.</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="valores-esperados">Valores esperados</h3>
+<h4 id="accept">Accept</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">Accept: application/vnd.api+json</span></span></span></code></pre></div>
+<h4 id="content-type">Content-Type</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">Content-Type: application/vnd.api+json</span></span></span></code></pre></div>
+<h3 id="resumen-práctico">Resumen práctico</h3>
+<table>
+	<thead>
+			<tr>
+					<th>Verbo</th>
+					<th>Cabeceras mínimas</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>GET</td>
+					<td>Accept</td>
+			</tr>
+			<tr>
+					<td>POST</td>
+					<td>Accept + Content-Type</td>
+			</tr>
+			<tr>
+					<td>PATCH</td>
+					<td>Accept + Content-Type</td>
+			</tr>
+			<tr>
+					<td>DELETE</td>
+					<td>Accept</td>
+			</tr>
+			<tr>
+					<td></td>
+					<td></td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="cabeceras-en-las-respuestas">Cabeceras en las respuestas</h3>
+<p>Todas las respuestas JSON:API deberían incluir:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">Content-Type: application/vnd.api+json</span></span></span></code></pre></div>
+<p>Y en el caso de creación de recursos (<code>201 Created</code>) es recomendable incluir:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">Location: /api/students/15</span></span></span></code></pre></div>
 
 	<div class="section-index">
     

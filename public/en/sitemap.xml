@@ -45,13 +45,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/laravel/fr/tags/"
+                hreflang="en"
+                href="http://localhost:1313/laravel/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/laravel/en/tags/"
+                hreflang="fr"
+                href="http://localhost:1313/laravel/fr/tags/"
                 />
   </url>
 </urlset>

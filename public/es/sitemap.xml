@@ -117,12 +117,6 @@
     <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/helper/30_request/</loc>
     <lastmod>2023-08-13T18:21:47+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/laravel/docs/13_api/3.la-vista/</loc>
-    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/laravel/docs/13_api/4.swagger/</loc>
-    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/laravel/docs/pendiente/10_api/3.la-vista/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
@@ -132,7 +126,13 @@
     <loc>http://localhost:1313/laravel/docs/pendiente/999_cheatseet/artisan/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/laravel/docs/13_api/3_headers/</loc>
+    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/laravel/docs/04_plantillas/03_componentes/</loc>
+    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/docs/13_api/4.swagger/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/laravel/docs/999_cheatseet/blade/</loc>
@@ -151,6 +151,9 @@
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/laravel/docs/03_rutas/</loc>
+    <lastmod>2023-04-08T18:21:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/laravel/docs/13_api/4.test/</loc>
     <lastmod>2023-04-08T18:21:47+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/laravel/docs/09_crud/03_el-controlador/04_borrar/</loc>

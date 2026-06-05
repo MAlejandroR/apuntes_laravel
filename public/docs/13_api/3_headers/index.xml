@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Cabeceras http on Laravel: Framework de php</title>
+		<link>http://localhost:1313/laravel/docs/13_api/3_headers/</link>
+		<description>Recent content in Cabeceras http on Laravel: Framework de php</description>
+		<generator>Hugo</generator>
+		<language>es</language>
+		
+		
+		
+		
+			<lastBuildDate></lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/laravel/docs/13_api/3_headers/index.xml" rel="self" type="application/rss+xml" />
+	</channel>
+</rss>

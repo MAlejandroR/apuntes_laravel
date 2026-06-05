@@ -19946,6 +19946,9 @@ body {
   left: auto;
   right: 4px; }
 
+.navbar.td-navbar, .td-navbar {
+  background: linear-gradient(90deg, #cc4726, #f05340) !important; }
+
 @font-face {
   font-family: 'icomoon';
   src: url("fonts/icomoon.eot?ou6vf1#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?ou6vf1") format("truetype"), url("fonts/icomoon.woff?ou6vf1") format("woff"), url("fonts/icomoon.svg?ou6vf1#icomoon") format("svg");
