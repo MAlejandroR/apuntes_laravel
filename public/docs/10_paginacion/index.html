@@ -306,11 +306,11 @@ En lugar de mostrar todos los registros de una tabla, el sistema muestra solo un
     <li><a href="#6-saber-en-qué-página-estamos">6. Saber en qué página estamos</a></li>
     <li><a href="#7-modificar-controlador-y-vistas">7. Modificar controlador y vistas</a>
       <ul>
-        <li><a href="#hahahugoshortcode36s24hbhb">HAHAHUGOSHORTCODE36s24HBHB</a></li>
-        <li><a href="#hahahugoshortcode36s29hbhb">HAHAHUGOSHORTCODE36s29HBHB</a></li>
-        <li><a href="#hahahugoshortcode36s34hbhb">HAHAHUGOSHORTCODE36s34HBHB</a></li>
-        <li><a href="#hahahugoshortcode36s36hbhb">HAHAHUGOSHORTCODE36s36HBHB</a></li>
-        <li><a href="#hahahugoshortcode36s43hbhb">HAHAHUGOSHORTCODE36s43HBHB</a></li>
+        <li><a href="#hahahugoshortcode32s24hbhb">HAHAHUGOSHORTCODE32s24HBHB</a></li>
+        <li><a href="#hahahugoshortcode32s29hbhb">HAHAHUGOSHORTCODE32s29HBHB</a></li>
+        <li><a href="#hahahugoshortcode32s34hbhb">HAHAHUGOSHORTCODE32s34HBHB</a></li>
+        <li><a href="#hahahugoshortcode32s36hbhb">HAHAHUGOSHORTCODE32s36HBHB</a></li>
+        <li><a href="#hahahugoshortcode32s43hbhb">HAHAHUGOSHORTCODE32s43HBHB</a></li>
       </ul>
     </li>
     <li><a href="#7-cambiar-la-cantidad-de-registros-por-página">7. Cambiar la cantidad de registros por página</a></li>
@@ -646,7 +646,7 @@ Si editas un profesor desde la página 4 del listado, puedes redirigir de nuevo 
 <h2 id="7-modificar-controlador-y-vistas">7. Modificar controlador y vistas</h2>
 <p>Para mantener los números de páginas tenemos que modificar el controlador, leerlo en las vistas y pasarlo entre ambos (de la vista al controlador y del controlador a la vista)
 No debemos perder este valor, para poderlo mantener</p>
-<h3 id="hahahugoshortcode36s24hbhb">
+<h3 id="hahahugoshortcode32s24hbhb">
 
 <strong>
 <span class="font-weight-bold text-accent fs-1.5">
@@ -684,7 +684,7 @@ Esto lo realizaremos en el
 </span></span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;filas&#39;</span>=&gt;[], <span style="color:#228b22">//Un array de objetos
 </span></span></span><span style="display:flex;"><span>    <span style="color:#cd5555">&#39;page&#39;</span>=&gt;<span style="color:#00688b">$page</span>
 </span></span><span style="display:flex;"><span>])</span></span></code></pre></div></p>
-<h3 id="hahahugoshortcode36s29hbhb">
+<h3 id="hahahugoshortcode32s29hbhb">
 
 <strong>
 <span class="font-weight-bold text-accent fs-1.5">
@@ -722,7 +722,7 @@ Y la vista create lo recoge y lo enviará al método store del controlador
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        &lt;form method=<span style="color:#cd5555">&#34;POST&#34;</span> action=<span style="color:#cd5555">&#34;{{ route(&#39;teachers.store&#39;) }}&#34;</span>?page=<span style="color:#cd5555">&#34;</span><span style="color:#cd5555">$page</span><span style="color:#cd5555">&#34;</span> class=<span style="color:#cd5555">&#34;bg-white p-4 rounded-2xl&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>            @csrf</span></span></code></pre></div></p>
-<h3 id="hahahugoshortcode36s34hbhb">
+<h3 id="hahahugoshortcode32s34hbhb">
 
 <strong>
 <span class="font-weight-bold text-accent fs-1.5">
@@ -742,7 +742,7 @@ Y la vista create lo recoge y lo enviará al método store del controlador
 </span></span><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">return</span> redirect()-&gt;<span style="color:#658b00">route</span>(<span style="color:#cd5555">&#39;teachers.index&#39;</span>,[<span style="color:#cd5555">&#39;page&#39;</span>=&gt;<span style="color:#00688b">$page</span>])-&gt;<span style="color:#658b00">with</span>(<span style="color:#cd5555">&#39;success&#39;</span>,<span style="color:#cd5555">&#39;Registro creado satisfactoriamente&#39;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#228b22">//
 </span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-<h3 id="hahahugoshortcode36s36hbhb">
+<h3 id="hahahugoshortcode32s36hbhb">
 
 <strong>
 <span class="font-weight-bold text-accent fs-1.5">
@@ -810,7 +810,7 @@ Y la vista create lo recoge y lo enviará al método store del controlador
 </span></span><span style="display:flex;"><span>        <span style="color:#228b22">//
 </span></span></span><span style="display:flex;"><span>  }</span></span></code></pre></div></li>
 </ul>
-<h3 id="hahahugoshortcode36s43hbhb">
+<h3 id="hahahugoshortcode32s43hbhb">
 
 <strong>
 <span class="font-weight-bold text-accent fs-1.5">

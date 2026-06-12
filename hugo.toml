@@ -171,3 +171,4 @@ svg_image_url = "https://www.plantuml.com/plantuml/svg/"
 svg = true
 [security]
   allowContent = ['.*']
+  [[security.funcs.readFile]]
